@@ -21,15 +21,16 @@ ops/kill-switches/*.flag
 brain/mempalace/chroma/
 brain/mempalace/knowledge_graph.db
 brain/mempalace/knowledge_graph.db-journal
+brain/mempalace/entities.json
+brain/mempalace/mempalace.yaml
 
 # Mem0 runtime
 brain/mem0/*.jsonl
 
-# Graphify output (régénéré)
-graphify-out/cache/
-graphify-out/graph.json
-graphify-out/graph.html
-graphify-out/.graphify_detect.json
+# Graphify output (régénéré) — on garde GRAPH_REPORT.md et wiki/, on ignore tout le reste
+graphify-out/*
+!graphify-out/GRAPH_REPORT.md
+!graphify-out/wiki/
 
 # Node / Next.js
 node_modules/
