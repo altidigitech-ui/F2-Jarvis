@@ -1,0 +1,36 @@
+# F2-JARVIS — Submodules des SaaS F2
+#
+# Chaque SaaS a son propre compte/org GitHub pour profiter du free tier
+# par org (Actions, Packages, etc.).
+#
+# À remplir avec les URLs réelles quand les comptes sont créés.
+#
+# Utilisation :
+#   git submodule add <url> saas/<name>
+#   git submodule update --init --recursive
+#   git submodule update --remote  # sync dernière version
+
+# [submodule "saas/leak-detector"]
+#   path = saas/leak-detector
+#   url = git@github.com:foundrytwo-ld/leak-detector.git
+#   branch = main
+
+# [submodule "saas/storemd"]
+#   path = saas/storemd
+#   url = git@github.com:foundrytwo-storemd/storemd.git
+#   branch = main
+
+# [submodule "saas/payloaddiff"]
+#   path = saas/payloaddiff
+#   url = git@github.com:foundrytwo-pd/payloaddiff.git
+#   branch = main
+
+# [submodule "saas/f2-ops-hub"]
+#   path = saas/f2-ops-hub
+#   url = git@github.com:foundrytwo-ops/f2-ops-hub.git
+#   branch = main
+
+# [submodule "saas/contentforge"]
+#   path = saas/contentforge
+#   url = git@github.com:foundrytwo-cf/contentforge.git
+#   branch = main

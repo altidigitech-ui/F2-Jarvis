@@ -1,0 +1,35 @@
+{
+  "name": "f2-jarvis-brain-3d",
+  "version": "0.1.0",
+  "private": true,
+  "description": "F2-JARVIS 3D brain visualizer — React Three Fiber",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3001",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 3001",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.164.1",
+    "@react-three/fiber": "^8.16.8",
+    "@react-three/drei": "^9.108.1",
+    "zustand": "^4.5.4",
+    "react-dropzone": "^14.2.3",
+    "lucide-react": "^0.400.0",
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.164.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4"
+  }
+}

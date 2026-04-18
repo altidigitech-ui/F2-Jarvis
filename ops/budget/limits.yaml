@@ -1,0 +1,81 @@
+# F2-JARVIS — Budget Limits
+#
+# Plan Anthropic : Max 5x ($100/mois, ~90€)
+# Claude Code inclus dans le plan Max.
+#
+# Ce fichier définit le budget INCRÉMENTAL (hors Max 5x).
+# Tout ce qui déborde du plan Max tombe dans ces limites.
+
+plan:
+  name: "Max 5x"
+  monthly_usd: 100
+  monthly_eur_estimate: 90
+  includes:
+    - claude_code
+    - claude_ai_conversations
+    - graphify_runs  # via Claude Code API
+    - background_agents  # via Claude Code
+
+extra_usage:
+  # Budget incrémental mensuel (hors Max 5x)
+  monthly_cap_eur: 30
+  daily_soft_cap_eur: 2
+  daily_hard_cap_eur: 5
+
+  # Par service
+  by_service:
+    ouroboros:
+      monthly_cap_eur: 10
+      rationale: "background loop 1/nuit, Haiku only, budget large pour buffer"
+    graphify:
+      monthly_cap_eur: 5
+      rationale: "re-indexing occasionnel, cache SHA256 réduit le coût"
+    mempalace:
+      monthly_cap_eur: 2
+      rationale: "local-first, embeddings locaux, rerank LLM rare"
+    mcp_external:
+      monthly_cap_eur: 8
+      rationale: "calls externes (Brevo, Stripe, etc. via MCP servers)"
+    buffer:
+      monthly_cap_eur: 5
+      rationale: "marge pour imprévus"
+
+model_tier_caps:
+  opus:
+    monthly_cap_eur: 5
+    require_explicit_request: true
+    require_fabrice_approval: true
+    rationale: "Opus réservé aux décisions d'archi structurantes, manuel uniquement"
+  sonnet:
+    monthly_cap_eur: 15
+    rationale: "usage rationné, Haiku préféré quand possible"
+  haiku:
+    monthly_cap_eur: 10
+    rationale: "default model, devrait couvrir la majorité des tâches"
+
+alerts:
+  daily:
+    threshold_eur: 2
+    channel: telegram
+  weekly:
+    threshold_eur: 10
+    channel: telegram
+  monthly_80pct:
+    trigger_at: 24  # 80% de 30€
+    action: "telegram + kill-switch ouroboros"
+  monthly_100pct:
+    trigger_at: 30
+    action: "telegram + kill-switch global"
+
+auto_actions:
+  # Si extra_usage > monthly_cap_eur * 0.9
+  at_90pct:
+    - "touch ops/kill-switches/ouroboros.flag"
+  at_100pct:
+    - "touch ops/kill-switches/global.flag"
+    - "telegram_alert('BUDGET EXHAUSTED')"
+
+overrides:
+  # Permet de lever temporairement un kill-switch
+  manual_override: false
+  override_expires: null  # ISO datetime

@@ -1,0 +1,39 @@
+{
+  "hooks": {
+    "pre-tool-use-graphify": {
+      "enabled": true,
+      "description": "Injecte le contexte du knowledge graph avant chaque grep/glob",
+      "failureMode": "warn"
+    },
+    "post-commit-graphify": {
+      "enabled": true,
+      "description": "Réindexe Graphify après chaque commit (code files seulement, incremental)",
+      "failureMode": "log"
+    },
+    "session-stop-handoff": {
+      "enabled": true,
+      "description": "Génère HANDOFF.md à la fin de chaque session",
+      "failureMode": "log"
+    },
+    "precompact-save": {
+      "enabled": true,
+      "description": "Save MemPalace avant context compaction",
+      "failureMode": "warn"
+    },
+    "budget-check": {
+      "enabled": true,
+      "description": "Vérifie le budget avant toute action bash potentiellement coûteuse",
+      "failureMode": "block",
+      "thresholds": {
+        "daily": 5,
+        "monthly": 30
+      }
+    },
+    "mempalace-save": {
+      "enabled": true,
+      "schedule": "every 10 minutes",
+      "description": "Save périodique de la session en cours dans MemPalace"
+    }
+  },
+  "disableAllHooks": false
+}

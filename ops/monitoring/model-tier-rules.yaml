@@ -1,0 +1,91 @@
+# F2-JARVIS — Model Tier Rules
+#
+# Quand utiliser quel modèle. Discipline de coût.
+
+defaults:
+  task_type_default:
+    retrieval: claude-haiku-4-5
+    summarization: claude-haiku-4-5
+    classification: claude-haiku-4-5
+    tagging: claude-haiku-4-5
+    formatting: claude-haiku-4-5
+    translation: claude-haiku-4-5
+    simple_qa: claude-haiku-4-5
+    code_generation: claude-sonnet-4-6
+    code_review: claude-sonnet-4-6
+    architecture_decision: claude-sonnet-4-6
+    creative_writing: claude-sonnet-4-6
+    complex_reasoning: claude-sonnet-4-6
+    multi_step_agent: claude-sonnet-4-6
+    deep_research: claude-opus-4-6  # manual only
+    critical_decision: claude-opus-4-6  # manual only
+
+escalation_rules:
+  # Auto-escalade : INTERDITE sauf règles explicites ci-dessous
+  never_auto_escalate_to:
+    - claude-opus-4-6
+    - claude-opus-4-7
+  
+  # Allowed: Haiku peut escalader vers Sonnet SI confidence < 0.7
+  haiku_to_sonnet:
+    condition: "confidence_score < 0.7 AND task_criticality == 'high'"
+    require_explicit_log: true
+  
+  # Sonnet → Opus : JAMAIS automatique
+  sonnet_to_opus:
+    enabled: false
+    rationale: "Opus only via explicit Fabrice request"
+
+triggers_opus_allowed:
+  # Opus autorisé UNIQUEMENT si :
+  - user_prompt_contains: "opus"
+  - user_prompt_contains: "ultrathink"
+  - user_prompt_contains: "critical decision"
+  - command: "/architecture-deep"  # command dédiée, à créer si besoin
+  - cli_flag: "--model opus"
+
+default_task_routing:
+  # Par agent / skill / command
+  agents:
+    f2-architect: claude-sonnet-4-6
+    f2-dev: claude-sonnet-4-6
+    f2-designer: claude-sonnet-4-6
+    f2-marketer: claude-sonnet-4-6  # creative
+    f2-auditor: claude-sonnet-4-6
+    f2-librarian: claude-haiku-4-5  # retrieval only
+    f2-accountant: claude-haiku-4-5  # reporting only
+  
+  commands:
+    /morning: claude-haiku-4-5
+    /status: claude-sonnet-4-6
+    /launch: claude-sonnet-4-6
+    /debrief: claude-sonnet-4-6  # via f2-auditor
+    /graphify-all: claude-haiku-4-5  # simple orchestration
+    /budget: claude-haiku-4-5
+    /review-proposals: claude-haiku-4-5
+    /jarvis: claude-haiku-4-5
+    /handoff: claude-haiku-4-5
+  
+  ouroboros:
+    consciousness_loop: claude-haiku-4-5
+    proposal_drafting: claude-haiku-4-5
+
+caching:
+  prompt_cache:
+    enabled: true
+    ttl: "5_minutes"  # cache write 1.25x
+    # Pour les skills always-on chargés à chaque session, utiliser TTL long
+    long_ttl: "1_hour"  # cache write 2x mais cache reads 10%
+  
+  apply_to:
+    - CLAUDE.md
+    - BIBLE.md
+    - skills/*/SKILL.md  # always-on skills
+    - graphify-out/GRAPH_REPORT.md
+    - studio/vision.md
+
+monitoring:
+  log_model_usage: true
+  log_cost_per_call: true
+  append_to: ops/budget/history.csv
+  alert_on_escalation: true  # Telegram si Haiku → Sonnet auto-escalated

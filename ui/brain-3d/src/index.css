@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Geist, Inter, system-ui, sans-serif;
+  background: #09090b;
+  color: white;
+  overscroll-behavior: none;
+}
+
+canvas {
+  touch-action: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #3b4fd8;
+  outline-offset: 2px;
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.f2.dev/design-tokens/v1.json",
+  "brand": {
+    "name": "FoundryTwo",
+    "short": "F2",
+    "domain": "foundrytwo.com"
+  },
+  "colors": {
+    "primary": {
+      "50": "#f5f7ff",
+      "100": "#e5eaff",
+      "500": "#3b4fd8",
+      "600": "#2f3fb5",
+      "700": "#242f88",
+      "900": "#0e1233"
+    },
+    "neutral": {
+      "0": "#ffffff",
+      "50": "#fafafa",
+      "100": "#f4f4f5",
+      "400": "#a1a1aa",
+      "600": "#52525b",
+      "800": "#27272a",
+      "900": "#18181b",
+      "950": "#09090b"
+    },
+    "accent": {
+      "green": "#22c55e",
+      "red": "#ef4444",
+      "amber": "#f59e0b"
+    },
+    "background": {
+      "light": "#ffffff",
+      "dark": "#0a0a0a"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "sans": "Geist, Inter, system-ui, sans-serif",
+      "mono": "Geist Mono, JetBrains Mono, ui-monospace, monospace",
+      "display": "Geist, Inter, system-ui, sans-serif"
+    },
+    "scale": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem"
+    },
+    "weight": {
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    }
+  },
+  "spacing": {
+    "scale": "4px base (Tailwind standard)",
+    "containerMaxWidth": "1280px"
+  },
+  "radius": {
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "lg": "0.75rem",
+    "xl": "1rem"
+  },
+  "theme": {
+    "default": "dark",
+    "rationale": "F2 targets dev/indie founders — dark mode is the professional default"
+  },
+  "antiPatterns": [
+    "purple-to-pink gradients on white",
+    "Inter font everywhere (use Geist as primary)",
+    "rounded-xl shadow-md on every card",
+    "glassmorphism blue",
+    "Hero + 3 features cards template"
+  ]
+}

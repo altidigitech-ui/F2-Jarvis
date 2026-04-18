@@ -1,0 +1,84 @@
+{
+  "$schema": "https://code.claude.com/schemas/settings.json",
+  "model": {
+    "default": "claude-haiku-4-5",
+    "planMode": "claude-sonnet-4-6",
+    "escalateRequiresExplicit": true
+  },
+  "outputStyle": "explanatory",
+  "thinking": true,
+  "permissions": {
+    "mode": "ask",
+    "allowlist": [
+      "git status",
+      "git diff",
+      "git log",
+      "git branch",
+      "npm run lint",
+      "npm run test",
+      "npm run build",
+      "graphify analyze",
+      "graphify --update",
+      "graphify status",
+      "mempalace search",
+      "mempalace list-wings",
+      "pytest",
+      "tsc --noEmit"
+    ],
+    "denylist": [
+      "rm -rf /",
+      "git push --force",
+      "git reset --hard HEAD~*",
+      "git commit -m * --amend"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Glob|Grep",
+        "command": ".claude/hooks/pre-tool-use-graphify.sh"
+      },
+      {
+        "matcher": "Bash",
+        "command": ".claude/hooks/budget-check.sh"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "git_commit",
+        "command": ".claude/hooks/post-commit-graphify.sh"
+      }
+    ],
+    "Stop": [
+      {
+        "command": ".claude/hooks/session-stop-handoff.sh"
+      }
+    ],
+    "PreCompact": [
+      {
+        "command": ".claude/hooks/precompact-save.sh"
+      }
+    ]
+  },
+  "contextBudget": {
+    "warnAt": 0.7,
+    "forceCompactAt": 0.85
+  },
+  "skills": {
+    "alwaysLoad": [
+      "graphify",
+      "f2-brand-voice",
+      "handoff-writer"
+    ],
+    "autoDiscover": true
+  },
+  "agents": {
+    "defaultEffort": "medium",
+    "backgroundAllowed": true
+  },
+  "statusLine": {
+    "showTokens": true,
+    "showBudget": true,
+    "showModel": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "_comment": "Ce fichier est git-ignored. Mets ici tes tokens et préférences perso non partagés.",
+  "tokens": {
+    "TELEGRAM_BOT_TOKEN": "",
+    "TELEGRAM_CHAT_ID": "",
+    "GITHUB_TOKEN": "",
+    "OPENROUTER_API_KEY": ""
+  },
+  "preferences": {
+    "verboseLogs": false,
+    "autoPushToGithub": false
+  }
+}
