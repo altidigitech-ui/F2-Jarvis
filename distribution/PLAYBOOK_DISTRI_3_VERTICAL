@@ -1,0 +1,311 @@
+# PLAYBOOK DISTRIBUTION — Les 3 Verticals
+
+**Date :** 03 avril 2026
+**Action :** Lundi 06/04/2026
+**Équipe :** R (Romain) + F (Fabrice) + F2 (FoundryTwo studio)
+
+---
+
+## SECTION 0 — RÈGLES ALGORITHMES (valable pour les 3 verticals)
+
+### Reddit — Ce que l'algo récompense
+
+1. **Les 60 premières minutes décident tout.** Un post avec 15 upvotes + 8 commentaires en 1h bat un post avec 40 upvotes + 0 commentaire. Sans traction initiale, le post meurt.
+2. **Les comptes anciens avec karma pèsent plus.** Un vote d'un compte de 3 ans avec 10K karma compte plus qu'un vote d'un compte de 1 semaine. Les comptes < 30 jours sont traités avec suspicion.
+3. **Les commentaires alimentent la visibilité.** Le nombre de commentaires n'entre pas directement dans le score, MAIS il augmente le temps de vie du post dans le feed et le CTR. Un post avec discussion active reste visible 3-6h dans un sub de 100K-1M membres.
+4. **Le premier commentaire est crucial.** Les commentaires postés dans les 5 premières minutes ont 3-5x plus de visibilité que ceux postés après.
+5. **Anti-spam actif.** Votes depuis la même IP = ignorés. Comptes qui votent toujours pour le même user = flaggés. Engagement bait = pénalisé.
+6. **Les saves > les upvotes** pour la longévité du post.
+
+**Timing optimal Reddit (EN, audience US) :**
+- **Meilleur** : 8h30-10h EST (14h30-16h FR) et 13h-14h EST (19h-20h FR), lundi à jeudi
+- **Bon** : 18h-21h EST (minuit-3h FR) pour du contenu entertainment/casual
+- **Éviter** : 2h-6h EST, vendredis après-midi, weekends (sauf contenu hobby)
+
+**Karma minimum avant de pitcher :**
+- Les gros subs (100K+) ont souvent un minimum karma pour poster
+- Objectif : 500+ karma avant toute mention de produit (2-3 semaines d'engagement actif)
+- Comment : répondre à des questions, poster des réponses détaillées, commenter utilement
+
+### Facebook Groups — Ce que l'algo récompense
+
+1. **Les commentaires longs > les likes.** L'algorithme pèse les "meaningful interactions" — commentaires substantiels, réponses aux réponses, conversations. Un like vaut presque rien.
+2. **Les groupes privés = 40% plus d'engagement** que les groupes publics.
+3. **Saves et shares = signaux les plus puissants.** Un contenu partagé en MP Messenger compte plus qu'un like.
+4. **Les posts sans liens externes performent mieux.** L'algo pénalise les liens sortants. Poster du contenu natif (texte, image, vidéo) directement dans le groupe.
+5. **Les questions ouvertes déclenchent des conversations.** Les polls et les questions sont les formats les plus engageants.
+6. **80/20 rule stricte.** 80% valeur/discussion, 20% promo. Les groupes qui détectent de la promo heavy bannissent rapidement.
+7. **Poster et répondre = critique.** Publier puis disparaître tue la portée. Répondre à CHAQUE commentaire dans les 2 premières heures.
+
+**Timing optimal Facebook Groups :**
+- **Meilleur** : 9h-11h EST (15h-17h FR) et 13h-15h EST (19h-21h FR)
+- **Bon** : 19h-21h EST (1h-3h FR) pour les groupes actifs le soir
+- **Poster 1-2 fois/jour** dans chaque groupe (pas plus — spam signal)
+
+---
+
+## SECTION 1 — COORDINATION DES 3 COMPTES (LA TOILE)
+
+### Principe : 3 portes d'entrée, 1 destination
+
+```
+R (@delgado_ro72224) ──── apporte la valeur growth/CRO ──┐
+                                                           │
+F (@FabGangi) ─────────── apporte la valeur technique ────┤──→ F2 (@foundrytwo) = hub central
+                                                           │       ↓
+Communautés ───────────── les gens découvrent R ou F ─────┘    Produits SaaS
+```
+
+**R poste et engage** → les gens voient son profil → trouvent F2
+**F poste et engage** → les gens voient son profil → trouvent F2
+**F2 poste les milestones** → crédibilité studio → les gens suivent
+
+### Règles de coordination cross-engagement
+
+| Action | Qui | Quand | Format |
+|--------|-----|-------|--------|
+| R poste un commentaire utile dans une communauté | R | Quotidien | Réponse détaillée, pas de lien |
+| F poste un commentaire technique | F | Quotidien | Tips, code snippets, explications |
+| R reply au post de F avec +valeur | R | Dans les 15 min du post de F | Ajout angle growth/marketing |
+| F reply au post de R avec +valeur | F | Dans les 15 min du post de R | Ajout angle technique |
+| F2 repost/cite les meilleurs contenus R et F | F2 | 1x/jour max | Milestone, data, build in public |
+
+**Règle #1 :** R et F ne mentionnent JAMAIS F2 ou le produit dans les 2 premières semaines d'infiltration. Ils apportent de la valeur pure.
+
+**Règle #2 :** Le cross-engagement entre R et F doit paraître NATUREL. Pas de "great point!" vide. Des réponses qui ajoutent réellement de l'information.
+
+**Règle #3 :** R et F ont des angles DIFFÉRENTS. R = growth, conversion, acquisition. F = technique, stack, automatisation. Pas de duplication.
+
+---
+
+## SECTION 2 — PLAYBOOK E-COMMERCE (Vertical 1)
+
+### Plateformes prioritaires
+
+| Priorité | Plateforme | Qui lead | Volume quotidien |
+|----------|-----------|----------|-----------------|
+| 1 | r/shopify (340K) | R | 5-8 commentaires/jour |
+| 2 | r/ecommerce (100K) | R + F | 3-5 commentaires/jour |
+| 3 | Shopify Entrepreneurs FB (100K) | R | 2-3 posts/semaine + 5 commentaires/jour |
+| 4 | Shopify Newbies FB (100K) | F | 2-3 commentaires/jour |
+| 5 | r/FulfillmentByAmazon (50K) | F | 2-3 commentaires/jour |
+
+### Semaine 1-2 : Phase infiltration (0 pitch)
+
+**R fait chaque jour :**
+
+| Heure (FR) | Action | Plateforme | Détail |
+|------------|--------|-----------|--------|
+| 9h-10h | Lire les 20 derniers posts | r/shopify + r/ecommerce | Noter les douleurs dans le sheet |
+| 10h-12h | Répondre à 5-8 questions | Reddit | Format : 3-5 paragraphes, expérience concrète, pas de lien |
+| 14h-15h | Poster dans FB groups | Shopify Entrepreneurs | Question ouverte OU réponse détaillée à un post existant |
+| 15h-16h | Commenter dans FB groups | Shopify Newbies + Ecom Entrepreneurs | Réponses utiles, pas de promo |
+| 16h-17h | Cross-engagement F | Reddit/FB | Reply au post de F avec +valeur growth |
+| 20h-21h | DMs aux gens qui ont répondu | Reddit + FB | Continuer la conversation, PAS de pitch |
+
+**F fait chaque jour :**
+
+| Heure (FR) | Action | Plateforme | Détail |
+|------------|--------|-----------|--------|
+| 9h-10h | Lire les posts techniques | r/shopify + r/ecommerce | Focus : problèmes techniques, outils, CSV, SEO |
+| 10h-11h | Répondre à 3-5 questions | Reddit | Format : solution technique claire, étape par étape |
+| 14h-14h30 | Commenter dans FB groups | Shopify Newbies | Tips techniques simples |
+| 14h30-15h | Cross-engagement R | Reddit/FB | Reply au post de R avec +valeur technique |
+
+**Types de contenu qui marchent sur r/shopify :**
+- "Here's how I fixed [specific problem] on my store" — posts step-by-step
+- "I analyzed 50 product listings and here's what converts" — posts data-driven
+- Réponses à "How do I improve my conversion rate?" avec des conseils spécifiques
+- Comparatifs d'apps honnêtes : "I tested X vs Y, here's what happened"
+
+### Semaine 3 : Phase validation
+
+**R poste dans 3 communautés :**
+- r/shopify : "I built a tool that scores your product listings and suggests improvements. Would love to test it on your store for free — drop your URL"
+- Shopify Entrepreneurs FB : même post adapté au ton du groupe
+- r/ecommerce : "What tools do you use to optimize your product descriptions? I'm building something and want to understand what's missing"
+
+**F2 poste :**
+- "We're building an AI product listing optimizer — here's what we learned from analyzing 200 Shopify stores" (post data/insights, pas pitch)
+
+**Seuil :** 10+ réponses positives en 48h → GO build. Sinon → itérer sur la douleur #2.
+
+### Semaine 4+ : Phase distribution (Volume × Constance)
+
+| Canal | Volume/semaine | Qui | Format |
+|-------|---------------|-----|--------|
+| Reddit comments (valeur) | 35-50 | R(25) + F(15) | Réponses utiles avec mention naturelle du produit quand pertinent |
+| Reddit posts (contenu) | 3-5 | R(3) + F(2) | Case studies, data, comparatifs — 80% valeur, 20% mention produit |
+| FB Groups posts | 5-7 | R | Tips, questions, résultats — lien en commentaire, pas dans le post |
+| FB Groups comments | 25-35 | R(20) + F(10) | Réponses utiles |
+| Cold DM Reddit | 10-15/jour | R | Aux gens qui ont exprimé la douleur → audit gratuit |
+| Cold DM FB | 10-15/jour | R | Idem |
+| F2 posts (studio) | 3/semaine | R (gère F2) | Milestones, data, build in public |
+
+---
+
+## SECTION 3 — PLAYBOOK MARKETING/FREELANCERS (Vertical 2)
+
+### Plateformes prioritaires
+
+| Priorité | Plateforme | Qui lead | Volume quotidien |
+|----------|-----------|----------|-----------------|
+| 1 | r/digital_marketing (200K) | R | 5-8 commentaires/jour |
+| 2 | r/freelance (200K) | R | 3-5 commentaires/jour |
+| 3 | Digital Distillery FB (148K) | R | 2-3 posts/semaine + commentaires |
+| 4 | r/SEO (200K) | F | 3-5 commentaires/jour |
+| 5 | Marketing Solved FB (30K) | R | 2 commentaires/jour |
+| 6 | Superstar SEO FB (76K) | F | 2 commentaires/jour |
+
+### Contenu qui marche dans ces communautés
+
+**Sur Reddit :**
+- "How I got my first 10 clients as a freelancer" — storytelling concret
+- "I compared 5 reporting tools, here's the honest breakdown" — comparatifs
+- Réponses détaillées à "How do I price my services?" avec frameworks
+- "Here's my exact workflow for managing 8 clients" — behind the scenes
+
+**Sur Facebook Groups :**
+- Questions ouvertes : "What's your biggest time waster as a freelancer?"
+- Tips actionables : "3 things I changed in my client reports that got me 2 referrals"
+- Utiliser les jours thématiques (IG Monday, Promo Wednesday sur Marketing Solved)
+- Réponses longues aux questions des autres (l'algo récompense les commentaires substantiels)
+
+### Angle spécifique R vs F dans cette vertical
+
+**R parle de :**
+- Trouver des clients sans cold call
+- Pricing des services marketing
+- Comment montrer les résultats aux clients (reporting)
+- Growth hacks pour freelancers
+- CRO et conversion optimization
+
+**F parle de :**
+- Automatisation des process marketing
+- Stack technique pour freelancers (outils, intégrations)
+- "Comment j'ai automatisé mon reporting en 30 min/semaine"
+- IA dans le workflow marketing
+
+### Phase validation (Semaine 3)
+
+**Post test R :**
+- "I'll create a free marketing performance report for your client — just share your Google Analytics/Meta Ads access"
+- OU "I built a tool that audits any website and generates a 1-page report you can send to prospects — want to try it free?"
+
+---
+
+## SECTION 4 — PLAYBOOK CONTENT CREATORS (Vertical 3)
+
+### Plateformes prioritaires
+
+| Priorité | Plateforme | Qui lead | Volume quotidien |
+|----------|-----------|----------|-----------------|
+| 1 | r/NewTubers (579K) | F | 5-8 commentaires/jour |
+| 2 | r/youtubers (262K) | F | 3-5 commentaires/jour |
+| 3 | r/ContentCreators (50K) | F | 2-3 commentaires/jour |
+| 4 | YouTube Creators Hub FB (50K) | R | 2-3 posts/semaine |
+| 5 | r/podcasting (100K) | F | 2 commentaires/jour |
+
+### ⚠️ Règles spéciales cette vertical
+
+1. **r/NewTubers a des "Critique Threads"** — threads dédiés où les gens demandent du feedback sur leurs vidéos. C'est LE lieu pour aider et se faire connaître. F doit y être actif quotidiennement.
+2. **r/youtube interdit les liens vidéo.** Tout doit être du texte/discussion. Pas de lien vers votre chaîne ou produit.
+3. **Les créateurs partagent des DONNÉES.** Posts avec des vrais chiffres (CPM, revenue, CTR) performent 3-5x mieux que les posts d'opinion.
+4. **Les thumbnails et titres sont le sujet #1.** Toute interaction autour de "how to improve thumbnails/titles" = haute visibilité.
+
+### Contenu qui marche
+
+**Sur Reddit :**
+- "I analyzed 100 thumbnails in [niche] and here's what gets clicks" — data post
+- Feedback détaillé sur les vidéos des autres dans les Critique Threads
+- "Here's my exact workflow for repurposing 1 video into 10 pieces of content"
+- Tips production : audio, lighting, editing workflow
+
+**Angle F (lead) :**
+- "Here's how I automate my content repurposing with AI tools"
+- Tips techniques : editing, workflow, optimisation
+- Data et analyse de performance
+
+**Angle R (support) :**
+- Tips growth : titres, thumbnails, SEO YouTube
+- "How to get your first 1000 subscribers" advice
+- Stratégie de contenu multi-plateforme
+
+### Phase validation (Semaine 3)
+
+**Post test F :**
+- "Drop your latest YouTube video link — I'll create 5 social media posts from it for free using our AI tool"
+- OU "Share your thumbnail — I'll analyze it and suggest 3 improvements"
+
+---
+
+## SECTION 5 — MÉTRIQUES DE SUIVI QUOTIDIEN
+
+### Dashboard partagé (Google Sheet ou Notion)
+
+**Chaque jour, R et F remplissent :**
+
+| Métrique | R | F |
+|----------|---|---|
+| Commentaires/réponses postés | __ | __ |
+| Plateforme(s) active(s) | __ | __ |
+| Upvotes/likes reçus sur commentaires | __ | __ |
+| Replies reçues à nos commentaires | __ | __ |
+| DMs reçus | __ | __ |
+| DMs envoyés (cold) | __ | __ |
+| Douleurs notées (nouveaux insights) | __ | __ |
+| Meilleur commentaire du jour (lequel + pourquoi) | __ | __ |
+| Karma Reddit (progression) | __ | __ |
+
+**Chaque vendredi, bilan :**
+
+| Métrique | Semaine X | Semaine X-1 | Δ |
+|----------|-----------|-------------|---|
+| Total interactions (R+F) | | | |
+| Replies organiques reçues | | | |
+| DMs reçus | | | |
+| Followers/karma gagnés | | | |
+| Douleurs documentées | | | |
+| Posts dans le top 10 du sub | | | |
+| Signups produit (si applicable) | | | |
+
+### Seuils d'alerte
+
+| Signal | Action |
+|--------|--------|
+| < 150 interactions/semaine (R+F combiné) | ALERTE VOLUME — pas assez actifs |
+| 0 replies organiques sur 3 jours consécutifs | Revoir le contenu, le ton, le timing |
+| Karma Reddit stagne après 1 semaine | Revoir la qualité des commentaires |
+| Compte shadowban ou post supprimé | Stop sur ce sub 48h, analyser pourquoi |
+| > 5 DMs positifs en 1 semaine | Signal fort — considérer validation anticipée |
+
+---
+
+## SECTION 6 — ANTI-PATTERNS (NE PAS FAIRE)
+
+| ❌ Ne pas faire | ✅ Faire à la place |
+|----------------|-------------------|
+| Poster un lien vers le produit dans les 2 premières semaines | Aider sans rien demander pendant 14 jours |
+| Copier-coller le même commentaire dans 5 subs | Adapter chaque commentaire au contexte du post |
+| Poster et disparaître | Répondre à CHAQUE reply dans les 2 premières heures |
+| Utiliser un compte neuf pour pitcher | Construire 500+ karma avant toute mention produit |
+| "Check out my tool!" comme commentaire | "I dealt with this exact problem. Here's how I solved it..." |
+| Poster aux heures FR (matin tôt) | Poster aux heures EST (14h-16h FR pour le matin US) |
+| R et F postent la même chose | R = angle growth. F = angle tech. Toujours différent. |
+| F2 fait du cold outreach | F2 ne fait JAMAIS de cold outreach. F2 = hub, pas chasseur. |
+| Faire 50 interactions le lundi puis 0 le reste de la semaine | Répartir : 15-20/jour minimum, TOUS les jours |
+| Ignorer les règles du sub/groupe | Lire la sidebar AVANT de poster. 1 violation = ban possible. |
+
+---
+
+## SECTION 7 — CALENDRIER RÉCAPITULATIF
+
+| Date | Phase | Actions clés |
+|------|-------|-------------|
+| 06-07/04 | Setup | Créer/optimiser comptes Reddit + FB. Rejoindre toutes les communautés. Lire les sidebars. |
+| 07-12/04 | Infiltration S1 | 15+ interactions/jour chacun. Observer. Documenter douleurs. ZERO pitch. |
+| 13-19/04 | Infiltration S2 | Continuer engagement. Devenir reconnu. Proposer audits/analyses gratuits. |
+| 20-22/04 | Validation | Landing page + post "qui veut tester gratuitement?" dans 3 communautés. |
+| 22/04 | Décision | 10+ signups → GO BUILD. Sinon → itérer douleur #2. |
+| 23/04 → mi-mai | Build + Distrib | F code MVP. R monte le volume cold outreach à 20-30/jour. |
+| Mi-mai | Scale ou Repeat | MRR > 0 → scale. MRR = 0 → analyse puis repeat le loop. |
