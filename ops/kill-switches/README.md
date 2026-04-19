@@ -82,4 +82,4 @@ Après avoir activé un kill-switch :
 3. Fixer le problème
 4. Désactiver le kill-switch (rm)
 5. Vérifier que le service reprend normalement
-6. Documenter dans `studio/decisions/` si l'incident mérite un DDR
+6. Documenter dans `tracking/decisions-log.md` si l'incident mérite un DDR

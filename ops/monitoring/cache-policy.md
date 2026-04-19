@@ -23,7 +23,7 @@ Le caching est rentable dès que le même prompt est lu 2x minimum.
   - `.claude/skills/f2-brand-voice/SKILL.md`
   - `.claude/skills/handoff-writer/SKILL.md`
 - `graphify-out/GRAPH_REPORT.md` (si > 1 session en cours par jour)
-- `studio/vision.md`
+- `strategie/CONTEXT.md`
 
 ### Ce qu'on met en cache (TTL 5min)
 

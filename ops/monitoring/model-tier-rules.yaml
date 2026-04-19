@@ -82,7 +82,7 @@ caching:
     - BIBLE.md
     - skills/*/SKILL.md  # always-on skills
     - graphify-out/GRAPH_REPORT.md
-    - studio/vision.md
+    - strategie/CONTEXT.md
 
 monitoring:
   log_model_usage: true
