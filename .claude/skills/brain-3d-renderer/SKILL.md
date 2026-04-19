@@ -15,8 +15,8 @@ when: on-demand
 
 | Zone anatomique | Dossier F2-JARVIS | Rôle |
 |---|---|---|
-| Cortex préfrontal | `studio/decisions/` | Décisions stratégiques |
-| Lobe frontal gauche | `studio/roadmap.md` + `studio/vision.md` | Planification |
+| Cortex préfrontal | `tracking/decisions-log.md` | Décisions stratégiques |
+| Lobe frontal gauche | `strategie/CONTEXT.md` | Planification |
 | Lobe temporal gauche | `marketing/` | Langage, marketing |
 | Lobe temporal droit | `marketing/brand/` | Créativité, brand |
 | Lobe pariétal | `ops/` | Coordination, ops |

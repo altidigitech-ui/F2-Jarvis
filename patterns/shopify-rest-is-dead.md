@@ -107,7 +107,7 @@ if available < 100:
 
 ## Références
 
-- Décision : `studio/decisions/2026-03-03-graphql-mandatory.md`
+- Décision : `tracking/decisions-log.md` (entrée 2026-03-03-graphql-mandatory)
 - Shopify docs : https://shopify.dev/docs/api/admin-graphql
 - Annonce deprecation REST (avril 2025) : https://shopify.dev/changelog
 - Skill : `.claude/skills/shopify-gql/SKILL.md`

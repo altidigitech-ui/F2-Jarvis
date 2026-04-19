@@ -68,5 +68,5 @@ Les plateformes **boost algorithmiquement** le contenu créé dans leur éditeur
 
 ## Références
 
-- Décision : `studio/decisions/2026-03-25-tiktok-native-preferred.md`
+- Décision : `tracking/decisions-log.md` (entrée 2026-03-25-tiktok-native-preferred)
 - Metrics : `marketing/analytics/leak-detector-launch-video-ab.csv`

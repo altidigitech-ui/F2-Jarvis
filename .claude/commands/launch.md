@@ -72,7 +72,7 @@ Utilisation : `/launch storemd` ou `/launch leak-detector`.
 - [ ] Daily check métriques
 - [ ] Support tickets < 24h
 - [ ] Post-mortem J+7 via /debrief
-- [ ] Decision record dans studio/decisions/
+- [ ] Decision record dans tracking/decisions-log.md
 ```
 
 ## Règles

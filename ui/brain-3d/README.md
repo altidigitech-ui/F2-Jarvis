@@ -16,8 +16,8 @@ Visualisation 3D du cerveau F2-JARVIS. Les régions anatomiques correspondent au
 
 | Zone | Dossier F2-JARVIS | Rôle |
 |---|---|---|
-| Cortex préfrontal | `studio/decisions/` | Décisions stratégiques |
-| Lobe frontal gauche | `studio/` | Vision, roadmap |
+| Cortex préfrontal | `tracking/decisions-log.md` | Décisions stratégiques |
+| Lobe frontal gauche | `strategie/` | Vision, roadmap |
 | Lobe temporal gauche | `marketing/` | Langage, content |
 | Lobe temporal droit | `marketing/brand/` | Créativité, branding |
 | Lobe pariétal | `ops/` | Coordination, ops |

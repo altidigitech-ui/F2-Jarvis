@@ -95,7 +95,7 @@ Le skill génère un checklist adapté au SaaS, avec les tâches déjà faites p
 - [ ] **Réponse feedback** < 24h
 - [ ] **Hotfixes** déployés dès détection
 - [ ] **Post-mortem** J+7 via `/debrief`
-- [ ] **Decision record** écrit dans `studio/decisions/`
+- [ ] **Decision record** écrit dans `tracking/decisions-log.md`
 
 ## Integration avec F2-JARVIS
 

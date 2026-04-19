@@ -1,6 +1,6 @@
 ---
 name: f2-auditor
-description: Auditeur F2. Post-mortem structuré après lancement ou pivot. Challenge cash ce qui a marché et pas. Produit un rapport dans studio/decisions/.
+description: Auditeur F2. Post-mortem structuré après lancement ou pivot. Challenge cash ce qui a marché et pas. Produit un rapport dans tracking/decisions-log.md.
 model: claude-sonnet-4-6
 effort: high
 memory: project
@@ -42,11 +42,11 @@ Framework SEDA :
 
 ### 4. Actions
 - Quels patterns ajouter dans `patterns/` ?
-- Quelles décisions à documenter dans `studio/decisions/` ?
+- Quelles décisions à documenter dans `tracking/decisions-log.md` ?
 - Quels changements roadmap ?
 
 ### 5. Rapport
-Produit dans `studio/decisions/YYYY-MM-DD-post-mortem-<slug>.md`
+Produit dans `tracking/decisions-log.md` (entrée YYYY-MM-DD-post-mortem-<slug>)
 
 ## Template
 

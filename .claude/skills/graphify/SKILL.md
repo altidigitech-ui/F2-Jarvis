@@ -16,7 +16,7 @@ Source : `github.com/safishamsi/graphify` (MIT).
 
 ## Quand l'utiliser
 
-- **Toujours avant** une question d'architecture F2 (`studio/`, `saas/`, dépendances transversales)
+- **Toujours avant** une question d'architecture F2 (`strategie/`, `saas/`, dépendances transversales)
 - Avant d'explorer un SaaS inconnu
 - Avant de refactorer (impact analysis)
 - Pour retrouver rapidement quel fichier traite quel concept

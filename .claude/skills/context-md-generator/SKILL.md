@@ -52,7 +52,7 @@ Chaque SaaS F2 (submodule dans `saas/`) a un CONTEXT.md à la racine. Ce fichier
 - Webhooks émis : <liste>
 
 ## Décisions clés
-<liens vers studio/decisions/*.md>
+<liens vers tracking/decisions-log.md (entrées datées)>
 
 ## Patterns utilisés
 <liens vers patterns/*.md>
@@ -75,7 +75,7 @@ Chaque SaaS F2 (submodule dans `saas/`) a un CONTEXT.md à la racine. Ce fichier
 2. Détecte la stack (package.json, pyproject.toml, requirements.txt)
 3. Lit les migrations Supabase pour comprendre le modèle
 4. Lit les routes pour lister les features
-5. Cross-ref avec `studio/decisions/` et `patterns/`
+5. Cross-ref avec `tracking/decisions-log.md` et `patterns/`
 6. Génère ou met à jour CONTEXT.md
 
 ## Fréquence recommandée
@@ -86,4 +86,4 @@ Chaque SaaS F2 (submodule dans `saas/`) a un CONTEXT.md à la racine. Ce fichier
 
 ## Règle critique
 
-Le CONTEXT.md est **descriptif**, pas prescriptif. Il reflète l'état actuel, pas les intentions. Les intentions vont dans `studio/roadmap.md`.
+Le CONTEXT.md est **descriptif**, pas prescriptif. Il reflète l'état actuel, pas les intentions. Les intentions vont dans `strategie/CONTEXT.md`.

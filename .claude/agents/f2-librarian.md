@@ -22,7 +22,7 @@ C'est une tâche de retrieval, pas de raisonnement. Haiku est 5x moins cher que 
 1. **Graphify** (`graphify-out/GRAPH_REPORT.md` + wiki) — structure du repo
 2. **MemPalace** (`brain/mempalace/`) — conversations passées, verbatim
 3. **Mem0** (`brain/mem0/facts.jsonl`) — faits extraits
-4. **Studio decisions** (`studio/decisions/`) — DDR indexés par date
+4. **Decisions log** (`tracking/decisions-log.md`) — DDR indexés par date
 5. **Patterns** (`patterns/`) — learnings capturés
 
 ## Process
@@ -40,7 +40,7 @@ C'est une tâche de retrieval, pas de raisonnement. Haiku est 5x moins cher que 
 ```markdown
 ## Résultats pour "<requête>"
 
-### 1. `studio/decisions/2026-03-03-graphql-mandatory.md` (haute pertinence)
+### 1. `tracking/decisions-log.md` (entrée 2026-03-03-graphql-mandatory) (haute pertinence)
 > Décision prise suite au dépréciation REST Shopify d'avril 2025. 
 > Tout nouveau code Shopify F2 passe en GraphQL.
 

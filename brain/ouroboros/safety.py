@@ -21,14 +21,31 @@ ALLOWED_WRITE_PATHS = [
 
 # Absolute deny: these patterns are never writable
 DENIED_WRITE_PATTERNS = [
+    # SaaS & infrastructure
     "saas/",        # never touch SaaS submodules
-    "studio/",      # only Fabrice edits
-    "marketing/",   # only humans write marketing
     ".claude/",     # config is Fabrice's
     ".git/",        # never touch git internals
+    # Root-level docs
     "BIBLE.md",
     "CLAUDE.md",
     "README.md",
+    "ARCH.md",
+    "ANTI-IA.md",
+    "VISUELS.md",
+    "AUDIT.md",
+    # Operational content (FoundryTwo) — humans only
+    "strategie/",
+    "produits/",
+    "marketing/",
+    "growth-marketing/",
+    "distribution/",
+    "f2/",
+    "romain/",
+    "fabrice/",
+    "la-toile/",
+    "asset-brand/",
+    "tracking/",
+    "archives/",
 ]
 
 
@@ -125,10 +142,18 @@ if __name__ == "__main__":
     tests = [
         (OUROBOROS_DIR / "proposals" / "test.md", True),
         (OUROBOROS_DIR / "diary" / "2026-04-17.md", True),
+        (OUROBOROS_DIR / "state" / "last_run.json", True),
         (REPO_ROOT / "saas" / "storemd" / "hack.py", False),
         (REPO_ROOT / "BIBLE.md", False),
-        (REPO_ROOT / "studio" / "decisions" / "hack.md", False),
+        (REPO_ROOT / "CLAUDE.md", False),
         (REPO_ROOT / ".claude" / "settings.json", False),
+        (REPO_ROOT / "strategie" / "CONTEXT.md", False),
+        (REPO_ROOT / "produits" / "STATUS.md", False),
+        (REPO_ROOT / "f2" / "context.md", False),
+        (REPO_ROOT / "romain" / "plan-30-jours.md", False),
+        (REPO_ROOT / "fabrice" / "plan-30-jours.md", False),
+        (REPO_ROOT / "tracking" / "decisions-log.md", False),
+        (REPO_ROOT / "marketing" / "context.md", False),
     ]
     for path, should_pass in tests:
         try:

@@ -46,4 +46,4 @@
 - Commit / PR : <lien>
 - Discussion : <lien>
 - Source externe : <lien>
-- Décisions liées : `studio/decisions/...`
+- Décisions liées : `tracking/decisions-log.md` (entrées datées)

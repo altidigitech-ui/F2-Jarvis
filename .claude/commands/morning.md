@@ -15,14 +15,14 @@ Génère un brief quotidien pour Fabrice. Orienté action, pas narratif.
    - `git submodule foreach 'git log --since="yesterday 00:00" --oneline'`
 3. **État des SaaS** :
    - Lire chaque `saas/*/CONTEXT.md` → extraire "Statut"
-   - Lire `studio/roadmap.md` → extraire milestones
+   - Lire `strategie/CONTEXT.md` → extraire milestones
 4. **Ouroboros proposals** non-triées :
    - `ls brain/ouroboros/proposals/*.md` (hors `archive/`)
    - Compter + lister titres
 5. **Posts** en draft :
    - `ls marketing/posts/draft/*.md`
 6. **Décisions en attente** :
-   - Grep "Statut: Proposée" dans `studio/decisions/*.md`
+   - Grep "Statut: Proposée" dans `tracking/decisions-log.md`
 7. **Synthèse 3 priorités** — basé sur tout ce qui précède, proposer 3 actions du jour.
 
 ## Template de sortie

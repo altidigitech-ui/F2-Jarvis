@@ -69,6 +69,6 @@ Ces usages restent **hors prod SaaS** et ne sont jamais dans le chemin critique 
 
 ## Références
 
-- Décision : `studio/decisions/2026-02-20-no-browser-automation.md`
+- Décision : `tracking/decisions-log.md` (entrée 2026-02-20-no-browser-automation)
 - VideoForge architecture : utilise fal.ai nativement
-- Incident post-mortem : `studio/decisions/post-mortem-higgsfield-playwright.md` (à venir)
+- Incident post-mortem : `tracking/decisions-log.md` (entrée post-mortem-higgsfield-playwright, à venir)

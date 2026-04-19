@@ -101,6 +101,6 @@ F2 Organization (Bitwarden)
 
 ## Références
 
-- Décision : `studio/decisions/2026-02-10-bitwarden-organizations.md`
+- Décision : `tracking/decisions-log.md` (entrée 2026-02-10-bitwarden-organizations)
 - Bitwarden Organizations : https://bitwarden.com/products/business/
 - Pricing Teams : $3/user/mois

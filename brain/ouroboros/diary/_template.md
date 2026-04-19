@@ -9,7 +9,7 @@
 <activité submodules>
 
 ### Conversations et décisions
-<ce que j'ai vu dans studio/decisions/, proposals/, drafts/>
+<ce que j'ai vu dans tracking/decisions-log.md, proposals/, drafts/>
 
 ## Connexions remarquées
 

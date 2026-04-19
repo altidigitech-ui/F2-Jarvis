@@ -56,7 +56,7 @@ Usage :
 5. `MemPalace` (18 connexions)
 
 ### Communautés
-- F2-core (studio/, marketing/, patterns/)
+- F2-core (strategie/, produits/, patterns/)
 - StoreMD (saas/storemd/)
 - Leak Detector (saas/leak-detector/)
 - Infra (ops/, .claude/)

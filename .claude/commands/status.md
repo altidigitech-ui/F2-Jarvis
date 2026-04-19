@@ -10,10 +10,10 @@ Rapport exhaustif de l'état F2. Utilisé hebdomadairement ou avant une réunion
 ## Sections
 
 1. **Timestamp**
-2. **Vision F2** — rappel 1 ligne depuis `studio/vision.md`
-3. **Roadmap actuelle** — prochains 30/60/90j depuis `studio/roadmap.md`
+2. **Vision F2** — rappel 1 ligne depuis `strategie/CONTEXT.md`
+3. **Roadmap actuelle** — prochains 30/60/90j depuis `strategie/CONTEXT.md`
 4. **État détaillé par SaaS** — 5-10 lignes par SaaS
-5. **Métriques** — MRR, signups, churn (depuis `studio/metrics/`)
+5. **Métriques** — MRR, signups, churn (depuis `tracking/`)
 6. **Décisions 7 derniers jours** — listées avec statut
 7. **Patterns ajoutés 7 derniers jours**
 8. **Santé opérationnelle** — kill-switches, budget, alerts
@@ -67,7 +67,7 @@ Studio SaaS indie, 1 SaaS/mois, indépendance financière août 2026.
 - Stack : FastAPI/Railway + Next.js/Vercel + Supabase
 - Architecture validée dans decisions/2026-03-20
 
-## Métriques (source: studio/metrics/mrr.csv)
+## Métriques (source: tracking/dashboard-hebdo.md)
 - MRR total F2 : 420 € (avril)
 - Signups total avril : 8
 - Churn : 0 (2 mois consécutifs)

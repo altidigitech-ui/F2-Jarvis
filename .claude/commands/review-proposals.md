@@ -44,7 +44,7 @@ le maintien du plan.
 
 Si `accept` :
 - Ajouter tâche dans `HANDOFF.md` "Ce qui reste à faire"
-- Optionnel : créer DDR dans `studio/decisions/`
+- Optionnel : créer DDR dans `tracking/decisions-log.md`
 - Déplacer la proposition vers `archive/accepted-YYYY-MM-DD-<slug>.md`
 
 Si `reject` :

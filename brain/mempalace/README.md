@@ -50,7 +50,7 @@ Analogie : palais de mémoire antique — tu te balades dans le palais, tu entre
 mempalace mine ./raw/transcripts/claude-export.json
 
 # Importer notes markdown
-mempalace mine ./studio/decisions/
+mempalace mine ./tracking/
 
 # Importer une conversation spécifique
 mempalace add --wing storemd --content "$(cat session.md)"
