@@ -1,10 +1,7 @@
 import { Request, Response } from "express";
-import { readFile } from "fs/promises";
-import path from "path";
 import Fuse from "fuse.js";
+import { ghRead } from "../lib/github.js";
 
-const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
-const CONCEPTS_PATH = path.join(REPO_ROOT, "graphify-out/concepts.json");
 const CACHE_TTL = 10 * 60 * 1000;
 
 export type ConceptNode = {
@@ -39,11 +36,14 @@ let _cache: { data: ConceptsData; ts: number } | null = null;
 async function loadConcepts(): Promise<ConceptsData | null> {
   if (_cache && Date.now() - _cache.ts < CACHE_TTL) return _cache.data;
   try {
-    const raw = await readFile(CONCEPTS_PATH, "utf-8");
-    const data = JSON.parse(raw) as ConceptsData;
+    const file = await ghRead("graphify-out/concepts.json");
+    if (!file) return null;
+    const data = JSON.parse(file.content) as ConceptsData;
     _cache = { data, ts: Date.now() };
     return data;
-  } catch {
+  } catch (err: unknown) {
+    const e = err as { status?: number; message?: string };
+    console.error("[graphify] loadConcepts error:", e?.status, e?.message);
     return null;
   }
 }
