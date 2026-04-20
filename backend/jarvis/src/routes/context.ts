@@ -225,6 +225,17 @@ function parseCrossItemsToday(
     if (row.length < 2) continue;
     const post = (row[0] || "").trim();
     if (!post || post.startsWith("---")) continue;
+
+    // Skip table header row (e.g. |Post|Heure pub.|Sujet|...|)
+    if (/^post$/i.test(post)) continue;
+
+    // Skip separator rows (e.g. |---|----|---|)
+    if (/^[-: ]+$/.test(post)) continue;
+
+    // Skip rows where every cell is empty or whitespace (empty template rows)
+    const allEmpty = row.every((c) => !c.trim());
+    if (allEmpty) continue;
+
     const hour = (row[1] || "").trim();
     const subject = (row[2] || "").trim();
     const replyCell = row[3] || row[4] || "";
