@@ -366,7 +366,19 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           )}
         </div>
 
-        <LiveClock color={accentColor} />
+        <div className="flex items-center gap-4">
+          <LiveClock color={accentColor} />
+          <button
+            onClick={async () => {
+              await fetch("/api/auth/logout", { method: "POST" });
+              window.location.href = "/login";
+            }}
+            className="text-[10px] font-mono text-slate-600 hover:text-red-400 transition-colors px-2 py-1 rounded border border-transparent hover:border-red-400/20"
+            title="Déconnexion"
+          >
+            ⏻
+          </button>
+        </div>
       </header>
 
       {/* 3-column layout */}

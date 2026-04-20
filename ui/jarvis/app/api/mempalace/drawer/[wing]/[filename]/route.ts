@@ -12,6 +12,8 @@ export async function GET(
   try {
     const res = await fetch(
       `${BACKEND}/mempalace/drawer/${encodeURIComponent(wing)}/${encodeURIComponent(filename)}`
+    ,
+      { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } }
     );
     if (res.status === 404) return Response.json({ error: "Not found" }, { status: 404 });
     const data = await res.json();

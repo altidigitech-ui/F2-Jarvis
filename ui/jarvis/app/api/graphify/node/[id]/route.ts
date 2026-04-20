@@ -8,8 +8,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
     return NextResponse.json({ error: "Not configured" }, { status: 503 });
   }
   try {
-    const res = await fetch(`${BACKEND}/graphify/node/${encodeURIComponent(id)}`, {
-      next: { revalidate: 600 },
+    const res = await fetch(`${BACKEND}/graphify/node/${encodeURIComponent(id)}`, { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" }, next: { revalidate: 600 },
     });
     if (!res.ok) return NextResponse.json({ error: "Not found" }, { status: 404 });
     const data = await res.json();

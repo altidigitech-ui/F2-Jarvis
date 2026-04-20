@@ -10,6 +10,8 @@ export async function GET(req: Request) {
   try {
     const res = await fetch(
       `${BACKEND}/graphify/related?from=${encodeURIComponent(from)}&depth=${depth}`
+    ,
+      { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } }
     );
     const data = await res.json();
     return NextResponse.json(data);

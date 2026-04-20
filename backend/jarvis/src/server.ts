@@ -36,9 +36,21 @@ const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "https://f2-jarvis.vercel.a
 app.use(cors({
   origin: ALLOWED_ORIGIN,
   methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
+  allowedHeaders: ["Content-Type", "X-JARVIS-AUTH"],
 }));
 app.use(express.json());
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+app.use((req: any, res: any, next: any) => {
+  if (req.path === "/health") return next();
+  const secret = process.env.BACKEND_SHARED_SECRET;
+  if (!secret) return next();
+  const provided = req.headers["x-jarvis-auth"];
+  if (provided !== secret) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  next();
+});
 
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
