@@ -666,9 +666,9 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   );
 
   const actionButtons: { type: ActionType; label: string }[] = [
-    { type: "mark_published", label: "✅ PUBLIÉ" },
-    { type: "log_decision", label: "📋 DÉCISION" },
-    { type: "incident_resolved", label: "🔧 RÉSOLU" },
+    { type: "mark_published", label: "✅ Publié" },
+    { type: "log_decision", label: "📋 Décision" },
+    { type: "incident_resolved", label: "🔧 Résolu" },
   ];
 
   const canSend = !isStreaming && (!!input.trim() || !!pendingImage);
@@ -747,13 +747,13 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 >
                   ◈
                 </div>
-                <p className="text-slate-600 text-sm">
+                <p className="text-slate-400 text-sm">
                   JARVIS en attente. Que faites-vous aujourd&apos;hui ?
                 </p>
-                <p className="text-slate-700 text-xs mt-2 font-mono">
+                <p className="text-slate-500 text-[12px] mt-2">
                   Drag & drop ou Ctrl+V pour coller un screenshot
                 </p>
-                <p className="text-slate-700 text-xs mt-1 font-mono">
+                <p className="text-slate-500 text-[12px] mt-1 font-mono">
                   /search &lt;query&gt; · /wing &lt;wing&gt; &lt;query&gt;
                 </p>
               </div>
@@ -1045,7 +1045,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
               type="button"
               onClick={() => fileInputRef.current?.click()}
               disabled={isStreaming}
-              className="flex items-center gap-1.5 text-[11px] font-mono px-2.5 py-1 rounded-lg transition-all"
+              className="flex items-center gap-1.5 text-[12px] font-mono px-3 py-1.5 rounded-lg transition-all min-h-[32px]"
               style={{
                 background: colors.bg,
                 border: `1px solid ${colors.border}`,
@@ -1054,11 +1054,11 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 opacity: isStreaming ? 0.5 : 1,
               }}
             >
-              <Paperclip size={11} />
-              JOINDRE IMAGE
+              <Paperclip size={12} />
+              Joindre image
             </button>
-            <div className="text-[9px] font-mono text-slate-700">
-              TRANSMIT · ⏎
+            <div className="text-[11px] text-slate-500">
+              Envoyer (⏎) · Drag & drop · Ctrl+V
             </div>
           </div>
 

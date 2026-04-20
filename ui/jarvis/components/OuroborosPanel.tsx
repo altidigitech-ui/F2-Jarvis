@@ -123,7 +123,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
         {/* Header */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <span className="text-[9px] font-mono text-slate-700 uppercase tracking-widest">
+            <span className="text-[12px] font-semibold text-slate-500">
               Ouroboros
             </span>
             {!loading && status && (
@@ -153,20 +153,20 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
         {/* Not initialized */}
         {!loading && status && !status.initialized && (
           <div className="space-y-2">
-            <div className="text-[10px] font-mono text-slate-600">
+            <div className="text-[12px] text-slate-500">
               Pas encore initialisé
             </div>
             <button
               onClick={handleInitialize}
               disabled={initLoading}
-              className="w-full text-[10px] font-mono py-1.5 rounded transition-all disabled:opacity-40"
+              className="w-full text-[12px] font-mono py-2 rounded transition-all disabled:opacity-40 min-h-[32px]"
               style={{
                 background: `${accentColor}15`,
                 border: `1px solid ${accentColor}30`,
                 color: accentColor,
               }}
             >
-              {initLoading ? "INIT…" : "INITIALISER"}
+              {initLoading ? "Init…" : "Initialiser"}
             </button>
           </div>
         )}
@@ -176,19 +176,19 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
           <div className="space-y-1.5">
             {/* Stats */}
             <div className="space-y-1">
-              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
-                <span>DERNIER CYCLE</span>
-                <span style={{ color: accentColor }}>
+              <div className="flex justify-between items-center text-[12px] text-slate-400">
+                <span>Dernier cycle</span>
+                <span className="font-mono" style={{ color: accentColor }}>
                   {status.lastCycle?.date ? timeAgo(status.lastCycle.date) : "jamais"}
                 </span>
               </div>
-              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
-                <span>PROCHAIN</span>
-                <span>{status.nextCycle ? timeUntil(status.nextCycle) : "--"}</span>
+              <div className="flex justify-between items-center text-[12px] text-slate-400">
+                <span>Prochain cycle</span>
+                <span className="font-mono">{status.nextCycle ? timeUntil(status.nextCycle) : "--"}</span>
               </div>
-              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
-                <span>PROPOSITIONS</span>
-                <span
+              <div className="flex justify-between items-center text-[12px] text-slate-400">
+                <span>Propositions</span>
+                <span className="font-mono"
                   style={{
                     color: (status.proposalsPending ?? 0) > 0 ? accentColor : undefined,
                     fontWeight: (status.proposalsPending ?? 0) > 0 ? 600 : undefined,
@@ -202,8 +202,8 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
             {/* Budget bar */}
             <div className="pt-1">
               <div className="flex justify-between items-baseline mb-1">
-                <span className="text-[9px] text-slate-700 uppercase tracking-wider font-mono">Budget</span>
-                <span className="text-[10px] font-mono" style={{ color: budgetPct > 80 ? "#f06464" : accentColor }}>
+                <span className="text-[12px] font-semibold text-slate-500">Budget</span>
+                <span className="text-[12px] font-mono" style={{ color: budgetPct > 80 ? "#f06464" : accentColor }}>
                   {budgetUsed.toFixed(2)}€ / {budgetCap}€
                 </span>
               </div>
@@ -222,7 +222,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
             <div className="pt-1">
               {!killConfirm ? (
                 <div className="flex items-center justify-between">
-                  <span className="text-[9px] font-mono text-slate-700 uppercase tracking-wider">Kill-switch</span>
+                  <span className="text-[12px] font-semibold text-slate-500">Arrêt d&apos;urgence</span>
                   <button
                     onClick={() => {
                       if (killActive) {
@@ -232,7 +232,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                       }
                     }}
                     disabled={actionLoading}
-                    className="flex items-center gap-1.5 text-[10px] font-mono px-2 py-0.5 rounded transition-all disabled:opacity-40"
+                    className="flex items-center gap-1.5 text-[12px] font-mono px-3 py-1 rounded transition-all disabled:opacity-40 min-h-[28px]"
                     style={{
                       background: killActive ? "rgba(240,100,100,0.12)" : "rgba(255,255,255,0.04)",
                       border: `1px solid ${killActive ? "rgba(240,100,100,0.3)" : "rgba(255,255,255,0.08)"}`,
@@ -248,7 +248,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                 </div>
               ) : (
                 <div
-                  className="p-2 rounded text-[10px] font-mono space-y-2"
+                  className="p-2 rounded text-[12px] font-mono space-y-2"
                   style={{ background: "rgba(240,100,100,0.06)", border: "1px solid rgba(240,100,100,0.2)" }}
                 >
                   <div className="text-red-400">Arrêter Ouroboros ?</div>
@@ -256,14 +256,14 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                     <button
                       onClick={() => handleKillSwitch(true)}
                       disabled={actionLoading}
-                      className="flex-1 py-1 rounded text-red-400 transition-all disabled:opacity-40"
+                      className="flex-1 py-1.5 rounded text-red-400 transition-all disabled:opacity-40 min-h-[28px]"
                       style={{ background: "rgba(240,100,100,0.15)", border: "1px solid rgba(240,100,100,0.3)" }}
                     >
                       {actionLoading ? "…" : "OUI"}
                     </button>
                     <button
                       onClick={() => setKillConfirm(false)}
-                      className="flex-1 py-1 rounded text-slate-500 transition-all"
+                      className="flex-1 py-1.5 rounded text-slate-500 transition-all min-h-[28px]"
                       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
                     >
                       NON
@@ -278,26 +278,26 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
               {(status.proposalsPending ?? 0) > 0 && (
                 <button
                   onClick={() => setShowProposals(true)}
-                  className="w-full text-[10px] font-mono py-1.5 rounded transition-all"
+                  className="w-full text-[12px] font-mono py-2 rounded transition-all min-h-[32px]"
                   style={{
                     background: `${accentColor}15`,
                     border: `1px solid ${accentColor}30`,
                     color: accentColor,
                   }}
                 >
-                  VOIR PROPOSITIONS ({status.proposalsPending})
+                  Voir propositions ({status.proposalsPending})
                 </button>
               )}
               {(status.proposalsPending ?? 0) === 0 && (
                 <button
                   onClick={() => setShowProposals(true)}
-                  className="w-full text-[10px] font-mono py-1.5 rounded transition-all text-slate-600 hover:text-slate-400"
+                  className="w-full text-[12px] font-mono py-2 rounded transition-all text-slate-500 hover:text-slate-300 min-h-[32px]"
                   style={{
                     background: "rgba(255,255,255,0.02)",
                     border: "1px solid rgba(255,255,255,0.06)",
                   }}
                 >
-                  PROPOSITIONS (0)
+                  Propositions (0)
                 </button>
               )}
 
@@ -305,28 +305,28 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                 <button
                   onClick={() => setTriggerConfirm(true)}
                   disabled={actionLoading || killActive}
-                  className="w-full text-[10px] font-mono py-1.5 rounded transition-all text-slate-600 hover:text-slate-400 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-full text-[12px] font-mono py-2 rounded transition-all text-slate-500 hover:text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed min-h-[32px]"
                   style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
                 >
-                  CYCLE MANUEL
+                  Lancer cycle maintenant
                 </button>
               ) : (
                 <div className="flex gap-1.5">
                   <button
                     onClick={handleTrigger}
                     disabled={actionLoading}
-                    className="flex-1 text-[10px] font-mono py-1.5 rounded transition-all disabled:opacity-40"
+                    className="flex-1 text-[12px] font-mono py-2 rounded transition-all disabled:opacity-40 min-h-[32px]"
                     style={{
                       background: `${accentColor}15`,
                       border: `1px solid ${accentColor}30`,
                       color: accentColor,
                     }}
                   >
-                    {actionLoading ? "…" : "LANCER"}
+                    {actionLoading ? "…" : "Lancer"}
                   </button>
                   <button
                     onClick={() => setTriggerConfirm(false)}
-                    className="flex-1 text-[10px] font-mono py-1.5 rounded text-slate-600 transition-all"
+                    className="flex-1 text-[12px] font-mono py-2 rounded text-slate-500 transition-all min-h-[32px]"
                     style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
                   >
                     ANNULER
@@ -336,17 +336,17 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
 
               <button
                 onClick={() => setShowDiary(true)}
-                className="w-full text-[10px] font-mono py-1.5 rounded transition-all text-slate-600 hover:text-slate-400"
+                className="w-full text-[12px] font-mono py-2 rounded transition-all text-slate-500 hover:text-slate-300 min-h-[32px]"
                 style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
               >
-                JOURNAL
+                Journal
               </button>
             </div>
           </div>
         )}
 
         {loading && (
-          <div className="text-[10px] font-mono text-slate-700">Chargement…</div>
+          <div className="text-[12px] text-slate-500">Chargement…</div>
         )}
       </div>
 

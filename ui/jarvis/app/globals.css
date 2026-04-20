@@ -132,3 +132,34 @@ body::after {
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+
+/* Typography utilities */
+:root {
+  --text-primary: #cbd5e1;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+}
+
+.text-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.025em;
+}
+
+.text-body {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.text-meta {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.text-title-section {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}

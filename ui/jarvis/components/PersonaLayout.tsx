@@ -116,7 +116,7 @@ function LiveClock({ color }: { color: string }) {
       <div className="text-sm font-mono font-semibold" style={{ color }} suppressHydrationWarning>
         {time} CEST
       </div>
-      <div className="text-[10px] text-slate-600 capitalize" suppressHydrationWarning>
+      <div className="text-[11px] text-slate-500 capitalize" suppressHydrationWarning>
         {date}
       </div>
     </div>
@@ -128,7 +128,7 @@ function Bar({ value, target, label, color }: { value: number; target: number; l
   return (
     <div className="mb-3">
       <div className="flex justify-between items-baseline mb-1">
-        <span className="text-[10px] text-slate-500 uppercase tracking-wider">{label}</span>
+        <span className="text-[12px] text-slate-400">{label}</span>
         <span className="text-xs font-mono" style={{ color }}>
           {value}/{target}
         </span>
@@ -298,7 +298,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
       {/* F2 mode banner */}
       {f2Mode && (
         <div
-          className="text-center text-[10px] font-mono py-1 tracking-widest"
+          className="text-center text-[12px] font-mono py-1.5 tracking-widest"
           style={{
             background: "rgba(151,196,89,0.12)",
             borderBottom: "1px solid rgba(151,196,89,0.25)",
@@ -317,7 +317,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="text-[10px] font-mono text-slate-600 hover:text-slate-400 transition-colors tracking-widest uppercase"
+            className="text-[12px] font-mono text-slate-500 hover:text-slate-300 transition-colors tracking-widest uppercase"
           >
             ← JARVIS
           </Link>
@@ -341,16 +341,16 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             <div className="flex items-center gap-1 ml-4">
               <button
                 onClick={() => setF2Mode(false)}
-                className={`text-[10px] font-mono px-2 py-1 rounded transition-all ${
-                  !f2Mode ? "text-slate-200 bg-white/10" : "text-slate-600 hover:text-slate-400"
+                className={`text-[12px] font-mono px-2 py-1 rounded transition-all ${
+                  !f2Mode ? "text-slate-200 bg-white/10" : "text-slate-500 hover:text-slate-300"
                 }`}
               >
                 ROMAIN
               </button>
               <button
                 onClick={() => setF2Mode(true)}
-                className={`text-[10px] font-mono px-2 py-1 rounded transition-all ${
-                  f2Mode ? "text-[#97C459] bg-[#97C459]/10" : "text-slate-600 hover:text-slate-400"
+                className={`text-[12px] font-mono px-2 py-1 rounded transition-all ${
+                  f2Mode ? "text-[#97C459] bg-[#97C459]/10" : "text-slate-500 hover:text-slate-300"
                 }`}
               >
                 F2
@@ -381,7 +381,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           <div className="px-3 pb-1">
             <button
               onClick={() => setGraphifyExpanded(true)}
-              className="w-full flex items-center gap-2 px-2 py-1.5 rounded text-[10px] font-mono transition-all hover:bg-white/5"
+              className="w-full flex items-center gap-2 px-2 py-2 rounded text-[12px] font-mono transition-all hover:bg-white/5 min-h-[32px]"
               style={{
                 border: `1px solid ${accentColor}20`,
                 color: accentColor,
@@ -389,8 +389,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               }}
             >
               <span>⬡</span>
-              <span>GRAPHIFY</span>
-              <span className="ml-auto text-[8px] opacity-50">concepts</span>
+              <span>Graphify</span>
+              <span className="ml-auto text-[10px] opacity-50">concepts</span>
             </button>
           </div>
 
@@ -398,7 +398,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           <div className="px-3 pb-2">
             <button
               onClick={() => setMempalaceExpanded(true)}
-              className="w-full flex items-center gap-2 px-2 py-1.5 rounded text-[10px] font-mono transition-all hover:bg-white/5"
+              className="w-full flex items-center gap-2 px-2 py-2 rounded text-[12px] font-mono transition-all hover:bg-white/5 min-h-[32px]"
               style={{
                 border: `1px solid ${accentColor}20`,
                 color: accentColor,
@@ -406,32 +406,32 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               }}
             >
               <span>🏛</span>
-              <span>MEMPALACE</span>
-              <span className="ml-auto text-[8px] opacity-50">drawers</span>
+              <span>MemPalace</span>
+              <span className="ml-auto text-[10px] opacity-50">drawers</span>
             </button>
           </div>
 
           <nav className="flex-1 px-3 pb-4">
-            <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2 px-1">
-              Canaux
+            <div className="text-[12px] font-semibold text-slate-500 mb-2 px-1">
+              Canaux de distribution
             </div>
             {cfg.channels.map((ch) => (
               <div
                 key={ch}
-                className="text-[10px] font-mono px-2 py-1.5 rounded mb-0.5 text-slate-500 hover:text-slate-300 hover:bg-white/5 cursor-pointer transition-colors flex items-center gap-2"
+                className="text-[12px] px-2 py-1.5 rounded mb-0.5 text-slate-400 hover:text-slate-200 hover:bg-white/5 cursor-pointer transition-colors flex items-center gap-2"
               >
                 <span className="w-1 h-1 rounded-full" style={{ background: accentColor, opacity: 0.5 }} />
                 {ch}
               </div>
             ))}
 
-            <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2 px-1 mt-4">
-              Liens
+            <div className="text-[12px] font-semibold text-slate-500 mb-2 px-1 mt-4">
+              Liens rapides
             </div>
             {["Plan hebdo", "Progress", "Tracking"].map((item) => (
               <div
                 key={item}
-                className="text-[10px] font-mono px-2 py-1.5 rounded mb-0.5 text-slate-500 hover:text-slate-300 hover:bg-white/5 cursor-pointer transition-colors"
+                className="text-[12px] px-2 py-1.5 rounded mb-0.5 text-slate-400 hover:text-slate-200 hover:bg-white/5 cursor-pointer transition-colors"
               >
                 {item}
               </div>
@@ -444,7 +444,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           {/* Timeline */}
           <div className="px-6 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
             <div className="flex items-center gap-2 mb-2">
-              <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest">
+              <div className="text-[12px] font-semibold text-slate-500">
                 {f2Mode ? "Planning F2 semaine" : "Aujourd'hui"}
               </div>
               {loading && (
@@ -456,7 +456,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             </div>
             <div className="flex gap-3 overflow-x-auto pb-1">
               {timeline.length === 0 ? (
-                <div className="text-[10px] font-mono text-slate-700 px-2 py-1.5">
+                <div className="text-[12px] text-slate-500 px-2 py-1.5">
                   {loading ? "Chargement…" : "Aucun post planifié aujourd'hui"}
                 </div>
               ) : (
@@ -488,19 +488,19 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         >
           {/* Compteurs */}
           <div className="p-4 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
-            <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-3">
+            <div className="text-[12px] font-semibold text-slate-500 mb-3">
               Compteurs du jour
             </div>
             <Bar value={counters.cold} target={cfg.coldTarget} label="Cold DM" color={accentColor} />
-            <Bar value={counters.twEng} target={10} label="TW Eng" color={accentColor} />
-            <Bar value={counters.liCom} target={10} label="LI Com" color={accentColor} />
-            <Bar value={counters.cross} target={2} label="Cross" color={accentColor} />
-            <Bar value={counters.ihPh} target={5} label="IH+PH" color={accentColor} />
+            <Bar value={counters.twEng} target={10} label="Twitter engagement" color={accentColor} />
+            <Bar value={counters.liCom} target={10} label="LinkedIn commentaires" color={accentColor} />
+            <Bar value={counters.cross} target={2} label="Cross-engagement" color={accentColor} />
+            <Bar value={counters.ihPh} target={5} label="IndieHackers + PH" color={accentColor} />
             <div
               className="mt-3 pt-3 border-t flex justify-between items-baseline"
               style={{ borderColor: "rgba(255,255,255,0.05)" }}
             >
-              <span className="text-[10px] text-slate-600 uppercase tracking-wider">Total</span>
+              <span className="text-[12px] text-slate-400">Total interactions</span>
               <span className="text-sm font-mono font-semibold" style={{ color: accentColor }}>
                 {counters.total}/{cfg.engTarget}
               </span>
@@ -509,18 +509,18 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
           {/* Alertes */}
           <div className="p-4 flex-1 overflow-y-auto" style={{ maxHeight: "200px" }}>
-            <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-3">
+            <div className="text-[12px] font-semibold text-slate-500 mb-3">
               Alertes
             </div>
             {alerts.length === 0 ? (
-              <div className="text-[10px] font-mono text-slate-700">
+              <div className="text-[12px] text-slate-500">
                 {loading ? "Chargement…" : "Aucune alerte active"}
               </div>
             ) : (
               alerts.map((alert, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-2 mb-2 text-[10px] p-2 rounded"
+                  className="flex items-start gap-2 mb-2 text-[12px] p-2 rounded"
                   style={{
                     background:
                       alert.level === "critical"
@@ -553,21 +553,21 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
           {/* Auto-commit status */}
           <div className="p-4 border-t" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
-            <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2">
-              Auto-commit
+            <div className="text-[12px] font-semibold text-slate-500 mb-2">
+              Commits automatiques
             </div>
-            <div className="space-y-1">
-              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
-                <span>NEXT BATCH</span>
-                <span style={{ color: accentColor }}>{batchLabel}</span>
+            <div className="space-y-1.5">
+              <div className="flex justify-between items-center text-[12px] text-slate-400">
+                <span>Prochain batch</span>
+                <span className="font-mono" style={{ color: accentColor }}>{batchLabel}</span>
               </div>
-              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
-                <span>DANS</span>
-                <span suppressHydrationWarning>{batchCountdown}</span>
+              <div className="flex justify-between items-center text-[12px] text-slate-400">
+                <span>Temps restant</span>
+                <span className="font-mono" suppressHydrationWarning>{batchCountdown}</span>
               </div>
-              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
-                <span>PENDING OPS</span>
-                <span style={{ color: pendingOps > 0 ? accentColor : undefined }}>
+              <div className="flex justify-between items-center text-[12px] text-slate-400">
+                <span>Actions en attente</span>
+                <span className="font-mono" style={{ color: pendingOps > 0 ? accentColor : undefined }}>
                   {pendingOps}
                 </span>
               </div>
