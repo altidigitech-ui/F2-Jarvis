@@ -388,7 +388,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
         maxTurns: 15,
         mcpServers: { jarvis: mcpServer },
         allowedTools: JARVIS_ALLOWED_TOOLS,
-        permissionMode: "bypassPermissions",
+        permissionMode: "dontAsk",
         ...(claudePath ? { pathToClaudeCodeExecutable: claudePath } : {}),
       },
     })) {
