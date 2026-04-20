@@ -1,9 +1,32 @@
 import { Request, Response } from "express";
 import { query } from "@anthropic-ai/claude-agent-sdk";
-import { readFile } from "fs/promises";
+import { readFile, access, constants } from "fs/promises";
 import path from "path";
 
 const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
+
+async function fileExecutable(p: string): Promise<boolean> {
+  try { await access(p, constants.X_OK); return true; } catch { return false; }
+}
+
+async function resolveClaudeBinary(): Promise<string | undefined> {
+  const candidates = [
+    process.env.CLAUDE_CODE_EXECUTABLE,
+    "/app/node_modules/@anthropic-ai/claude-agent-sdk-linux-x64/claude",
+    "/app/node_modules/@anthropic-ai/claude-agent-sdk-linux-x64-musl/claude",
+    "/usr/local/bin/claude",
+    path.join(process.cwd(), "node_modules/@anthropic-ai/claude-agent-sdk-linux-x64/claude"),
+  ].filter(Boolean) as string[];
+
+  for (const p of candidates) {
+    if (await fileExecutable(p)) {
+      console.log(`[chat] Claude binary found: ${p}`);
+      return p;
+    }
+  }
+  console.warn("[chat] No executable claude binary found, SDK will use default detection");
+  return undefined;
+}
 
 async function loadFile(relPath: string): Promise<string> {
   try {
@@ -60,6 +83,8 @@ ${contexts.join("\n")}`;
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.flushHeaders();
 
+  const claudePath = await resolveClaudeBinary();
+
   try {
     for await (const msg of query({
       prompt: message,
@@ -68,6 +93,7 @@ ${contexts.join("\n")}`;
         maxTurns: 1,
         allowedTools: [],
         permissionMode: "dontAsk",
+        ...(claudePath ? { pathToClaudeCodeExecutable: claudePath } : {}),
       },
     })) {
       if (msg.type === "assistant" && msg.message?.content) {
