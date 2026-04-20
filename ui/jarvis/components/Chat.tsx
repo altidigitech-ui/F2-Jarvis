@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Send, X, ImageIcon } from "lucide-react";
+import { Send, X, ImageIcon, Paperclip } from "lucide-react";
 
 type Persona = "romain" | "fabrice";
 type Mode = "normal" | "f2";
@@ -236,6 +236,7 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
   const [imageSizeError, setImageSizeError] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -634,13 +635,30 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
               transition: "border-color 0.2s",
             }}
           >
+            {/* Image upload button */}
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={isStreaming}
+              title="Ajouter une image"
+              className="flex-none w-7 h-7 rounded-lg flex items-center justify-center transition-all"
+              style={{
+                background: pendingImage ? colors.bg : "transparent",
+                border: `1px solid ${pendingImage ? colors.border : "rgba(255,255,255,0.06)"}`,
+                color: pendingImage ? colors.primary : "#475569",
+                cursor: isStreaming ? "not-allowed" : "pointer",
+              }}
+            >
+              <Paperclip size={12} />
+            </button>
+
             <textarea
               ref={textareaRef}
               value={input}
               onChange={handleInput}
               onKeyDown={handleKeyDown}
               onPaste={handlePaste}
-              placeholder={pendingImage ? "Message accompagnant l'image… (optionnel)" : "Message JARVIS… (⏎ envoyer, Shift+⏎ nouvelle ligne, Ctrl+V pour coller une image)"}
+              placeholder={pendingImage ? "Message accompagnant l'image… (optionnel)" : "Message JARVIS… (⏎ envoyer, Shift+⏎ nouvelle ligne)"}
               disabled={isStreaming}
               rows={1}
               className="flex-1 bg-transparent text-sm text-slate-300 placeholder:text-slate-600 resize-none outline-none leading-relaxed"
@@ -665,8 +683,21 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
             </button>
           </div>
           <div className="text-[9px] font-mono text-slate-700 mt-1.5 text-right">
-            TRANSMIT · ⏎ · drag & drop ou Ctrl+V pour image
+            TRANSMIT · ⏎ · 📎 image · drag & drop · Ctrl+V
           </div>
+
+          {/* Hidden file input */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/png,image/jpeg,image/webp,image/gif"
+            className="hidden"
+            onChange={async (e) => {
+              const file = e.target.files?.[0];
+              if (file) await attachImage(file);
+              e.target.value = "";
+            }}
+          />
         </div>
       </div>
     </>
