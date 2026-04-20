@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install --include=optional
+RUN npm install --include=optional --legacy-peer-deps
 
 # S'assurer que le binaire natif est exécutable
 RUN find /app/node_modules/@anthropic-ai -name "claude" -type f -exec chmod +x {} \; 2>/dev/null || true
