@@ -21,6 +21,7 @@ const MemPalaceView = dynamic(
   () => import("./MemPalaceView").then((m) => ({ default: m.MemPalaceView })),
   { ssr: false }
 );
+import { ErrorBoundary } from "./ErrorBoundary";
 import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
@@ -268,32 +269,38 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   return (
     <div className="relative min-h-screen flex flex-col z-10">
       {brainExpanded && (
-        <RepoGraph3DFullscreen
-          persona={persona}
-          mode={mode as "normal" | "f2"}
-          onClose={() => setBrainExpanded(false)}
-          onLoadFile={(name, content) => setFileContext({ name, content })}
-        />
+        <ErrorBoundary>
+          <RepoGraph3DFullscreen
+            persona={persona}
+            mode={mode as "normal" | "f2"}
+            onClose={() => setBrainExpanded(false)}
+            onLoadFile={(name, content) => setFileContext({ name, content })}
+          />
+        </ErrorBoundary>
       )}
       {graphifyExpanded && (
-        <GraphifyFullscreen
-          accentColor={accentColor}
-          onClose={() => setGraphifyExpanded(false)}
-          onSendToJarvis={(text) => {
-            setGraphifyPrefill(text);
-            setGraphifyExpanded(false);
-          }}
-        />
+        <ErrorBoundary>
+          <GraphifyFullscreen
+            accentColor={accentColor}
+            onClose={() => setGraphifyExpanded(false)}
+            onSendToJarvis={(text) => {
+              setGraphifyPrefill(text);
+              setGraphifyExpanded(false);
+            }}
+          />
+        </ErrorBoundary>
       )}
       {mempalaceExpanded && (
-        <MemPalaceView
-          accentColor={accentColor}
-          onClose={() => setMempalaceExpanded(false)}
-          onSendToJarvis={(text) => {
-            setGraphifyPrefill(text);
-            setMempalaceExpanded(false);
-          }}
-        />
+        <ErrorBoundary>
+          <MemPalaceView
+            accentColor={accentColor}
+            onClose={() => setMempalaceExpanded(false)}
+            onSendToJarvis={(text) => {
+              setGraphifyPrefill(text);
+              setMempalaceExpanded(false);
+            }}
+          />
+        </ErrorBoundary>
       )}
       {/* F2 mode banner */}
       {f2Mode && (
