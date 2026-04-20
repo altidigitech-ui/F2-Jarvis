@@ -221,9 +221,11 @@ type Props = {
   persona: Persona;
   mode?: Mode;
   onAction?: () => void;
+  fileContext?: { name: string; content: string } | null;
+  onFileContextClear?: () => void;
 };
 
-export function Chat({ persona, mode = "normal", onAction }: Props) {
+export function Chat({ persona, mode = "normal", onAction, fileContext, onFileContextClear }: Props) {
   const colors = PERSONA_COLORS[persona];
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -314,10 +316,15 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
     setMessages((prev) => [...prev, assistantMsg]);
 
     try {
+      // Prepend file context to the message if loaded from the graph
+      const messageWithContext = fileContext
+        ? `[Contexte fichier: ${fileContext.name}]\n\`\`\`\n${fileContext.content.slice(0, 2500)}\n\`\`\`\n\n${text || "Analyse ce fichier."}`
+        : (text || "Analyse cette image.");
+
       const body: Record<string, unknown> = {
         persona,
         mode,
-        message: text || "Analyse cette image.",
+        message: messageWithContext,
         history: messages.map((m) => ({ role: m.role, content: m.content })),
       };
 
@@ -592,6 +599,26 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
           className="px-6 py-4 border-t"
           style={{ borderColor: "rgba(255,255,255,0.04)" }}
         >
+          {/* File context banner */}
+          {fileContext && (
+            <div
+              className="flex items-center justify-between gap-2 mb-2 px-2 py-1.5 rounded text-[9px] font-mono"
+              style={{
+                background: `${colors.bg}`,
+                border: `1px solid ${colors.border}`,
+                color: colors.primary,
+              }}
+            >
+              <span>📄 {fileContext.name}</span>
+              <button
+                onClick={onFileContextClear}
+                className="opacity-60 hover:opacity-100 transition-opacity"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+
           {/* Image preview */}
           {pendingImage && (
             <div className="flex items-start gap-2 mb-3">
