@@ -4,6 +4,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Chat } from "./Chat";
+import { OuroborosPanel } from "./OuroborosPanel";
 
 const RepoGraph3D = dynamic(() => import("./RepoGraph3D"), {
   ssr: false,
@@ -443,7 +444,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
 
           {/* Alertes */}
-          <div className="p-4 flex-1 overflow-y-auto">
+          <div className="p-4 flex-1 overflow-y-auto" style={{ maxHeight: "200px" }}>
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-3">
               Alertes
             </div>
@@ -482,6 +483,9 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               ))
             )}
           </div>
+
+          {/* Ouroboros panel */}
+          <OuroborosPanel accentColor={accentColor} persona={persona} />
 
           {/* Auto-commit status */}
           <div className="p-4 border-t" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
