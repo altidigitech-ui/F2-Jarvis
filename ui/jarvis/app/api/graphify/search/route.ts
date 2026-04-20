@@ -7,7 +7,7 @@ export async function GET(req: Request) {
   const q = searchParams.get("q") ?? "";
   if (!BACKEND) return NextResponse.json({ results: [] });
   try {
-    const res = await fetch(`${BACKEND}/graphify/search?q=${encodeURIComponent(q)}`);
+    const res = await fetch(`${BACKEND}/graphify/search?q=${encodeURIComponent(q)}`, { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } })
     const data = await res.json();
     return NextResponse.json(data);
   } catch {

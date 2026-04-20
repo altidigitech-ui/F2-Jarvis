@@ -14,7 +14,7 @@ export async function POST(req: Request) {
   const body = await req.json();
   const response = await fetch(`${BACKEND}/search`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" },
     body: JSON.stringify(body),
   });
 

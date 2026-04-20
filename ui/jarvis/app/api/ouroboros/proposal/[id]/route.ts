@@ -9,7 +9,7 @@ export async function GET(
 ) {
   if (!BACKEND) return Response.json({ error: "RAILWAY_BACKEND_URL non configuré" }, { status: 500 });
   const { id } = await params;
-  const response = await fetch(`${BACKEND}/ouroboros/proposal/${encodeURIComponent(id)}`);
+  const response = await fetch(`${BACKEND}/ouroboros/proposal/${encodeURIComponent(id)}`, { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } })
   const data = await response.json();
   return Response.json(data, { status: response.status });
 }

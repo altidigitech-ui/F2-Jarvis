@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Backend not configured" }, { status: 503 });
   }
   try {
-    const res = await fetch(`${BACKEND}/file?path=${encodeURIComponent(filePath)}`);
+    const res = await fetch(`${BACKEND}/file?path=${encodeURIComponent(filePath)}`, { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } })
     const data = await res.json();
     return NextResponse.json(data, { status: res.status });
   } catch {
