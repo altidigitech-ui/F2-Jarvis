@@ -25,6 +25,46 @@ export function fibSpherePos(n: number, radius: number): [number, number, number
   });
 }
 
+// Multi-octave sine noise → gyri (brain folds) effect on hemisphere surface
+function createHemiGeo(phase: number): THREE.BufferGeometry {
+  const geo = new THREE.SphereGeometry(0.5, 52, 40);
+  const pos = geo.attributes.position as THREE.BufferAttribute;
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
+    const r = Math.sqrt(x * x + y * y + z * z);
+    if (r < 0.001) continue;
+    const n = (
+      Math.sin(x * 13 + y * 7  + phase)        * 0.40 +
+      Math.sin(y * 11 + z * 9  + phase * 0.80) * 0.35 +
+      Math.cos(z * 15 + x * 6  + phase * 1.20) * 0.30 +
+      Math.sin((x + z) * 19    + phase * 0.60) * 0.15 +
+      Math.cos((y - z) * 23    + phase * 1.50) * 0.10
+    ) * 0.068;
+    pos.setXYZ(i, x + (x / r) * n, y + (y / r) * n, z + (z / r) * n);
+  }
+  geo.computeVertexNormals();
+  return geo;
+}
+
+// Dense fine grooves → cerebellum texture
+function createCerebellumGeo(): THREE.BufferGeometry {
+  const geo = new THREE.SphereGeometry(0.28, 36, 28);
+  const pos = geo.attributes.position as THREE.BufferAttribute;
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
+    const r = Math.sqrt(x * x + y * y + z * z);
+    if (r < 0.001) continue;
+    const n = (
+      Math.sin(y * 30)             * 0.38 +
+      Math.sin(y * 24 + x * 9)    * 0.28 +
+      Math.cos(x * 18 + z * 12)   * 0.18
+    ) * 0.052;
+    pos.setXYZ(i, x + (x / r) * n, y + (y / r) * n, z + (z / r) * n);
+  }
+  geo.computeVertexNormals();
+  return geo;
+}
+
 export function BrainCore({
   color,
   rotateSpeed = 0.4,
@@ -32,40 +72,101 @@ export function BrainCore({
   color: string;
   rotateSpeed?: number;
 }) {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
-  useFrame((_, delta) => {
-    if (meshRef.current) meshRef.current.rotation.y += delta * rotateSpeed;
+  const leftGeo       = useMemo(() => createHemiGeo(0),    []);
+  const rightGeo      = useMemo(() => createHemiGeo(1.73), []);
+  const cerebellumGeo = useMemo(() => createCerebellumGeo(), []);
+
+  useEffect(
+    () => () => { leftGeo.dispose(); rightGeo.dispose(); cerebellumGeo.dispose(); },
+    [leftGeo, rightGeo, cerebellumGeo]
+  );
+
+  useFrame((state, delta) => {
+    if (!groupRef.current) return;
+    groupRef.current.rotation.y += delta * rotateSpeed;
+    // Subtle breathing pulse
+    const pulse = 1 + Math.sin(state.clock.elapsedTime * 1.5) * 0.018;
+    groupRef.current.scale.setScalar(pulse);
   });
 
   return (
-    <>
-      <mesh ref={meshRef}>
-        <icosahedronGeometry args={[0.5, 1]} />
+    <group ref={groupRef} rotation={[0.14, 0, 0]}>
+
+      {/* ── LEFT HEMISPHERE ── */}
+      <group position={[-0.19, 0.04, 0]} scale={[1, 0.93, 0.87]}>
+        <mesh geometry={leftGeo}>
+          <meshStandardMaterial
+            color={color} emissive={color} emissiveIntensity={0.55}
+            wireframe transparent opacity={0.82}
+          />
+        </mesh>
+        <mesh geometry={leftGeo}>
+          <meshStandardMaterial
+            color={color} emissive={color} emissiveIntensity={0.25}
+            transparent opacity={0.14}
+          />
+        </mesh>
+      </group>
+
+      {/* ── RIGHT HEMISPHERE ── */}
+      <group position={[0.19, 0.04, 0]} scale={[1, 0.93, 0.87]}>
+        <mesh geometry={rightGeo}>
+          <meshStandardMaterial
+            color={color} emissive={color} emissiveIntensity={0.55}
+            wireframe transparent opacity={0.82}
+          />
+        </mesh>
+        <mesh geometry={rightGeo}>
+          <meshStandardMaterial
+            color={color} emissive={color} emissiveIntensity={0.25}
+            transparent opacity={0.14}
+          />
+        </mesh>
+      </group>
+
+      {/* ── CORPUS CALLOSUM glow (connection between hemispheres) ── */}
+      <mesh scale={[0.48, 0.14, 0.48]}>
+        <sphereGeometry args={[0.42, 8, 6]} />
         <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={0.6}
-          wireframe
-          transparent
-          opacity={0.85}
+          color={color} emissive={color} emissiveIntensity={1.8}
+          transparent opacity={0.055}
         />
       </mesh>
-      <mesh>
-        <icosahedronGeometry args={[0.32, 0]} />
+
+      {/* ── CEREBELLUM (back-bottom, fine grooves) ── */}
+      <group position={[0, -0.38, -0.37]} scale={[0.92, 0.67, 0.72]}>
+        <mesh geometry={cerebellumGeo}>
+          <meshStandardMaterial
+            color={color} emissive={color} emissiveIntensity={0.50}
+            wireframe transparent opacity={0.72}
+          />
+        </mesh>
+        <mesh geometry={cerebellumGeo}>
+          <meshStandardMaterial
+            color={color} emissive={color} emissiveIntensity={0.20}
+            transparent opacity={0.12}
+          />
+        </mesh>
+      </group>
+
+      {/* ── BRAINSTEM ── */}
+      <mesh position={[0, -0.56, 0.03]} rotation={[0.18, 0, 0]}>
+        <cylinderGeometry args={[0.10, 0.16, 0.30, 14]} />
         <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={0.35}
-          transparent
-          opacity={0.28}
+          color={color} emissive={color} emissiveIntensity={0.40}
+          wireframe transparent opacity={0.55}
         />
       </mesh>
+
+      {/* ── AMBIENT HALO ── */}
       <mesh>
-        <sphereGeometry args={[0.68, 8, 8]} />
-        <meshStandardMaterial color={color} transparent opacity={0.04} side={THREE.BackSide} />
+        <sphereGeometry args={[0.90, 8, 8]} />
+        <meshStandardMaterial color={color} transparent opacity={0.028} side={THREE.BackSide} />
       </mesh>
-    </>
+
+    </group>
   );
 }
 
@@ -78,7 +179,7 @@ export function CenterLine({
   color: string;
   opacity?: number;
 }) {
-  const x = to[0], y = to[1], z = to[2];
+  const [x, y, z] = to;
 
   const geo = useMemo(() => {
     const g = new THREE.BufferGeometry();
@@ -95,10 +196,7 @@ export function CenterLine({
   const line = useMemo(() => new THREE.Line(geo, mat), [geo, mat]);
 
   useEffect(
-    () => () => {
-      geo.dispose();
-      mat.dispose();
-    },
+    () => () => { geo.dispose(); mat.dispose(); },
     [geo, mat]
   );
 
@@ -151,9 +249,10 @@ export function Brain3D({ persona, mode, onClick }: Props) {
           style={{ background: "transparent" }}
           performance={{ min: 0.5 }}
         >
-          <ambientLight intensity={0.5} />
-          <pointLight position={[2, 2, 2]} intensity={1.5} color={colors.core} />
-          <pointLight position={[-2, -1, -2]} intensity={0.5} color={colors.core} />
+          <ambientLight intensity={0.45} />
+          <pointLight position={[2, 2, 2]}    intensity={1.6} color={colors.core} />
+          <pointLight position={[-2, -1, -2]} intensity={0.6} color={colors.core} />
+          <pointLight position={[0, 3, 1]}    intensity={0.4} color={colors.glow} />
           <Suspense fallback={null}>
             <BrainCore color={colors.core} />
             <WingOrbit color={colors.wings} count={6} />
