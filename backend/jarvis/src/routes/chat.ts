@@ -3,6 +3,7 @@ import { query, type SDKUserMessage } from "@anthropic-ai/claude-agent-sdk";
 import { readFile, access, constants } from "fs/promises";
 import path from "path";
 import { searchDrawers } from "../lib/mempalace.js";
+import { buildGraphifyContext } from "./graphify.js";
 
 const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
 
@@ -112,9 +113,10 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
         `${persona}/plan-hebdo.md`, `${persona}/progress-semaine.md`,
       ];
 
-  const [contexts, mempalaceResults] = await Promise.all([
+  const [contexts, mempalaceResults, graphifySection] = await Promise.all([
     Promise.all(contextFiles.map(loadFile)),
     message ? searchDrawers(message, { limit: 5 }) : Promise.resolve([]),
+    message ? buildGraphifyContext(message) : Promise.resolve(""),
   ]);
 
   const mempalaceSection =
@@ -136,7 +138,7 @@ Date du jour : ${new Date().toLocaleDateString("fr-FR", { timeZone: "Europe/Pari
 
 ---
 
-${contexts.join("\n")}${mempalaceSection}`;
+${contexts.join("\n")}${mempalaceSection}${graphifySection}`;
 
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
   res.setHeader("Cache-Control", "no-cache, no-transform");

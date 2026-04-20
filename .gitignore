@@ -27,10 +27,11 @@ brain/mempalace/mempalace.yaml
 # Mem0 runtime
 brain/mem0/*.jsonl
 
-# Graphify output (régénéré) — on garde GRAPH_REPORT.md et wiki/, on ignore tout le reste
+# Graphify output (régénéré) — on garde GRAPH_REPORT.md, wiki/ et concepts.json (curated), on ignore tout le reste
 graphify-out/*
 !graphify-out/GRAPH_REPORT.md
 !graphify-out/wiki/
+!graphify-out/concepts.json
 
 # Node / Next.js
 node_modules/

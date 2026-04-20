@@ -16,6 +16,7 @@ const RepoGraph3D = dynamic(() => import("./RepoGraph3D"), {
 });
 
 const RepoGraph3DFullscreen = dynamic(() => import("./RepoGraph3DFullscreen"), { ssr: false });
+const GraphifyFullscreen = dynamic(() => import("./GraphifyFullscreen"), { ssr: false });
 import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
@@ -188,6 +189,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
   const [f2Mode, setF2ModeState] = useState(false);
   const [brainExpanded, setBrainExpanded] = useState(false);
+  const [graphifyExpanded, setGraphifyExpanded] = useState(false);
+  const [graphifyPrefill, setGraphifyPrefill] = useState<string | null>(null);
   const [fileContext, setFileContext] = useState<{ name: string; content: string } | null>(null);
   const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
   const [loading, setLoading] = useState(true);
@@ -265,6 +268,16 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           mode={mode as "normal" | "f2"}
           onClose={() => setBrainExpanded(false)}
           onLoadFile={(name, content) => setFileContext({ name, content })}
+        />
+      )}
+      {graphifyExpanded && (
+        <GraphifyFullscreen
+          accentColor={accentColor}
+          onClose={() => setGraphifyExpanded(false)}
+          onSendToJarvis={(text) => {
+            setGraphifyPrefill(text);
+            setGraphifyExpanded(false);
+          }}
         />
       )}
       {/* F2 mode banner */}
@@ -349,6 +362,23 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             />
           </div>
 
+          {/* Graphify button */}
+          <div className="px-3 pb-2">
+            <button
+              onClick={() => setGraphifyExpanded(true)}
+              className="w-full flex items-center gap-2 px-2 py-1.5 rounded text-[10px] font-mono transition-all hover:bg-white/5"
+              style={{
+                border: `1px solid ${accentColor}20`,
+                color: accentColor,
+                background: `${accentColor}08`,
+              }}
+            >
+              <span>⬡</span>
+              <span>GRAPHIFY</span>
+              <span className="ml-auto text-[8px] opacity-50">concepts</span>
+            </button>
+          </div>
+
           <nav className="flex-1 px-3 pb-4">
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2 px-1">
               Canaux
@@ -413,6 +443,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               onAction={handleAction}
               fileContext={fileContext}
               onFileContextClear={() => setFileContext(null)}
+              graphifyPrefill={graphifyPrefill}
+              onGraphifyPrefillClear={() => setGraphifyPrefill(null)}
             />
           </div>
         </main>

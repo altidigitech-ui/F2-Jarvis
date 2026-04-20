@@ -30,6 +30,7 @@ type Message = {
   image?: ImageAttachment;
   timestamp: string;
   mempalaceSources?: string[];
+  graphifySources?: string[];
   searchResults?: DrawerResult[];
   searchQuery?: string;
 };
@@ -63,6 +64,11 @@ function uid() {
 
 function extractCitations(text: string): string[] {
   const matches = [...text.matchAll(/\[([a-zA-Z0-9_-]+\/[a-zA-Z0-9_.-]+)\]/g)];
+  return [...new Set(matches.map((m) => m[1]))];
+}
+
+function extractGraphifyCitations(text: string): string[] {
+  const matches = [...text.matchAll(/\[G:([a-zA-Z0-9_-]+)\]/g)];
   return [...new Set(matches.map((m) => m[1]))];
 }
 
@@ -370,9 +376,11 @@ type Props = {
   onAction?: () => void;
   fileContext?: { name: string; content: string } | null;
   onFileContextClear?: () => void;
+  graphifyPrefill?: string | null;
+  onGraphifyPrefillClear?: () => void;
 };
 
-export function Chat({ persona, mode = "normal", onAction, fileContext, onFileContextClear }: Props) {
+export function Chat({ persona, mode = "normal", onAction, fileContext, onFileContextClear, graphifyPrefill, onGraphifyPrefillClear }: Props) {
   const colors = PERSONA_COLORS[persona];
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -391,6 +399,15 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, activeAction]);
+
+  useEffect(() => {
+    if (graphifyPrefill) {
+      setInput(graphifyPrefill);
+      onGraphifyPrefillClear?.();
+      textareaRef.current?.focus();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [graphifyPrefill]);
 
   const attachImage = useCallback(async (file: File) => {
     setImageSizeError(false);
@@ -594,10 +611,17 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
       // Extract MemPalace citations from final response
       const citations = extractCitations(fullText);
-      if (citations.length > 0) {
+      const graphifyCitations = extractGraphifyCitations(fullText);
+      if (citations.length > 0 || graphifyCitations.length > 0) {
         setMessages((prev) =>
           prev.map((m) =>
-            m.id === assistantId ? { ...m, mempalaceSources: citations } : m
+            m.id === assistantId
+              ? {
+                  ...m,
+                  ...(citations.length > 0 ? { mempalaceSources: citations } : {}),
+                  ...(graphifyCitations.length > 0 ? { graphifySources: graphifyCitations } : {}),
+                }
+              : m
           )
         );
       }
@@ -838,6 +862,29 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                       >
                         [{ref}]
                       </button>
+                    ))}
+                  </div>
+                )}
+
+              {/* Graphify concept sources */}
+              {msg.role === "assistant" &&
+                msg.graphifySources &&
+                msg.graphifySources.length > 0 && (
+                  <div className="ml-9 mt-1 flex flex-wrap gap-1.5">
+                    <span className="text-[8px] font-mono text-slate-700 self-center">⬡</span>
+                    {msg.graphifySources.map((id) => (
+                      <span
+                        key={id}
+                        className="text-[9px] font-mono px-2 py-0.5 rounded"
+                        style={{
+                          background: "rgba(155,143,255,0.1)",
+                          border: "1px solid rgba(155,143,255,0.2)",
+                          color: "#9b8fff",
+                          opacity: 0.85,
+                        }}
+                      >
+                        {id}
+                      </span>
                     ))}
                   </div>
                 )}
