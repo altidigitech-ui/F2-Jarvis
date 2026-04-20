@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import { readFile } from "fs/promises";
-import path from "path";
 import type { TimelineItem, CounterData, AlertItem } from "../lib/context-types.js";
-
-const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
+import { ghRead } from "../lib/github.js";
 
 async function readRepo(relPath: string): Promise<string> {
   try {
-    return await readFile(path.join(REPO_ROOT, relPath), "utf-8");
-  } catch {
+    const file = await ghRead(relPath);
+    if (!file) return "";
+    return file.content;
+  } catch (err) {
+    console.error(`[context] ghRead failed for ${relPath}:`, err);
     return "";
   }
 }

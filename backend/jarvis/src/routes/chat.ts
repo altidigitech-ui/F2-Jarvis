@@ -1,11 +1,10 @@
 import { Request, Response } from "express";
 import { query, type SDKUserMessage } from "@anthropic-ai/claude-agent-sdk";
-import { readFile, access, constants } from "fs/promises";
+import { access, constants } from "fs/promises";
 import path from "path";
 import { searchDrawers } from "../lib/mempalace.js";
+import { ghRead } from "../lib/github.js";
 import { buildGraphifyContext } from "./graphify.js";
-
-const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
 
 const VALID_IMAGE_TYPES = ["image/png", "image/jpeg", "image/gif", "image/webp"] as const;
 type ValidMediaType = (typeof VALID_IMAGE_TYPES)[number];
@@ -40,9 +39,11 @@ async function resolveClaudeBinary(): Promise<string | undefined> {
 
 async function loadFile(relPath: string): Promise<string> {
   try {
-    const content = await readFile(path.join(REPO_ROOT, relPath), "utf-8");
-    return `=== ${relPath} ===\n${content}\n`;
-  } catch {
+    const file = await ghRead(relPath);
+    if (!file) return `=== ${relPath} (absent) ===\n`;
+    return `=== ${relPath} ===\n${file.content}\n`;
+  } catch (err) {
+    console.error(`[chat] ghRead failed for ${relPath}:`, err);
     return `=== ${relPath} (absent) ===\n`;
   }
 }
