@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { chatRoute } from "./routes/chat";
-import { contextRoute } from "./routes/context";
-import { actionRoute } from "./routes/action";
+import { chatRoute } from "./routes/chat.js";
+import { contextRoute } from "./routes/context.js";
+import { actionRoute } from "./routes/action.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
