@@ -13,12 +13,25 @@ type ImageAttachment = {
   preview: string;
 };
 
+type DrawerResult = {
+  wing: string;
+  filename: string;
+  path: string;
+  tags: string[];
+  date: string;
+  content: string;
+  score: number;
+};
+
 type Message = {
   id: string;
   role: "user" | "assistant";
   content: string;
   image?: ImageAttachment;
   timestamp: string;
+  mempalaceSources?: string[];
+  searchResults?: DrawerResult[];
+  searchQuery?: string;
 };
 
 const PERSONA_COLORS: Record<Persona, { primary: string; bg: string; border: string }> = {
@@ -46,6 +59,11 @@ function getCESTTime() {
 
 function uid() {
   return Math.random().toString(36).slice(2, 9);
+}
+
+function extractCitations(text: string): string[] {
+  const matches = [...text.matchAll(/\[([a-zA-Z0-9_-]+\/[a-zA-Z0-9_.-]+)\]/g)];
+  return [...new Set(matches.map((m) => m[1]))];
 }
 
 async function processImageFile(file: File): Promise<ImageAttachment | null> {
@@ -82,7 +100,7 @@ function ActionForm({ action, persona, accentColor, onClose, onSuccess }: Action
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const set = (k: string, v: string) => setFields((f) => ({ ...f, [k]: v }));
+  const set = (k: string, v: string) => setFields((f: Record<string, string>) => ({ ...f, [k]: v }));
 
   const submit = async () => {
     if (loading) return;
@@ -217,6 +235,135 @@ function ActionForm({ action, persona, accentColor, onClose, onSuccess }: Action
   );
 }
 
+type DrawerPopupState = {
+  ref: string; // "wing/filename"
+  content: string | null;
+  loading: boolean;
+};
+
+function DrawerPopup({
+  popup,
+  accentColor,
+  onClose,
+}: {
+  popup: DrawerPopupState;
+  accentColor: string;
+  onClose: () => void;
+}) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: "rgba(0,0,0,0.75)" }}
+      onClick={onClose}
+    >
+      <div
+        className="w-full max-w-xl max-h-[80vh] flex flex-col rounded-2xl overflow-hidden"
+        style={{
+          background: "#0f1117",
+          border: `1px solid ${accentColor}30`,
+          boxShadow: `0 0 40px ${accentColor}15`,
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div
+          className="flex items-center justify-between px-4 py-3 border-b"
+          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+        >
+          <span className="text-[11px] font-mono" style={{ color: accentColor }}>
+            [{popup.ref}]
+          </span>
+          <button
+            onClick={onClose}
+            className="w-6 h-6 rounded-full flex items-center justify-center text-slate-500 hover:text-slate-300 transition-colors"
+            style={{ background: "rgba(255,255,255,0.05)" }}
+          >
+            <X size={12} />
+          </button>
+        </div>
+        <div className="flex-1 overflow-y-auto px-4 py-3">
+          {popup.loading ? (
+            <div className="text-[11px] font-mono text-slate-600 animate-pulse">Chargement…</div>
+          ) : popup.content ? (
+            <pre className="text-[11px] text-slate-300 whitespace-pre-wrap font-mono leading-relaxed">
+              {popup.content}
+            </pre>
+          ) : (
+            <div className="text-[11px] font-mono text-slate-600">Drawer introuvable.</div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SearchResults({
+  results,
+  query,
+  accentColor,
+  onDrawerClick,
+}: {
+  results: DrawerResult[];
+  query: string;
+  accentColor: string;
+  onDrawerClick: (ref: string, content: string) => void;
+}) {
+  if (results.length === 0) {
+    return (
+      <div className="text-[11px] font-mono text-slate-600">
+        Aucun drawer trouvé pour &quot;{query}&quot;.
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      <div className="text-[9px] font-mono text-slate-600 mb-3">
+        {results.length} RÉSULTAT{results.length > 1 ? "S" : ""} — &quot;{query}&quot;
+      </div>
+      {results.map((d, i) => (
+        <button
+          key={`${d.wing}/${d.filename}`}
+          onClick={() => onDrawerClick(`${d.wing}/${d.filename}`, d.content)}
+          className="w-full text-left p-3 rounded-xl transition-all hover:opacity-90"
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: `1px solid ${accentColor}20`,
+          }}
+        >
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <span className="text-[10px] font-mono" style={{ color: accentColor }}>
+              [{d.wing}/{d.filename}]
+            </span>
+            <span className="text-[9px] font-mono text-slate-700 shrink-0">
+              #{i + 1} · {Math.round((1 - d.score) * 100)}%
+            </span>
+          </div>
+          {d.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1 mb-1.5">
+              {d.tags.slice(0, 4).map((t) => (
+                <span
+                  key={t}
+                  className="text-[8px] font-mono px-1.5 py-0.5 rounded"
+                  style={{ background: `${accentColor}10`, color: accentColor, opacity: 0.7 }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
+          <p className="text-[11px] text-slate-500 leading-relaxed line-clamp-3">
+            {d.content.slice(0, 200)}
+            {d.content.length > 200 ? "…" : ""}
+          </p>
+          {d.date && (
+            <div className="text-[8px] font-mono text-slate-700 mt-1">{d.date}</div>
+          )}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 type Props = {
   persona: Persona;
   mode?: Mode;
@@ -236,6 +383,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [imageSizeError, setImageSizeError] = useState(false);
+  const [drawerPopup, setDrawerPopup] = useState<DrawerPopupState | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -282,9 +430,93 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     }
   }, [attachImage]);
 
+  const openDrawer = useCallback(async (ref: string, preloadedContent?: string) => {
+    if (preloadedContent !== undefined) {
+      setDrawerPopup({ ref, content: preloadedContent, loading: false });
+      return;
+    }
+    setDrawerPopup({ ref, content: null, loading: true });
+    const [wing, filename] = ref.split("/");
+    const path = `brain/mempalace/wings/${wing}/drawers/${filename}.md`;
+    try {
+      const res = await fetch(`/api/file?path=${encodeURIComponent(path)}`);
+      if (!res.ok) throw new Error("not found");
+      const text = await res.text();
+      setDrawerPopup({ ref, content: text, loading: false });
+    } catch {
+      setDrawerPopup({ ref, content: null, loading: false });
+    }
+  }, []);
+
+  const sendSearch = useCallback(async (rawText: string) => {
+    let query = "";
+    let wing: string | undefined;
+
+    if (rawText.startsWith("/wing ")) {
+      const parts = rawText.slice(6).trim().split(/\s+/);
+      wing = parts[0];
+      query = parts.slice(1).join(" ");
+    } else if (rawText.startsWith("/search ")) {
+      query = rawText.slice(8).trim();
+    }
+
+    if (!query) return;
+
+    const userMsg: Message = {
+      id: uid(),
+      role: "user",
+      content: rawText,
+      timestamp: getCESTTime(),
+    };
+    const assistantId = uid();
+    const assistantMsg: Message = {
+      id: assistantId,
+      role: "assistant",
+      content: "",
+      timestamp: getCESTTime(),
+      searchQuery: query,
+      searchResults: undefined,
+    };
+    setMessages((prev) => [...prev, userMsg, assistantMsg]);
+    setInput("");
+    if (textareaRef.current) textareaRef.current.style.height = "auto";
+    setIsStreaming(true);
+
+    try {
+      const res = await fetch("/api/search", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query, wing, limit: 5 }),
+      });
+      const data = await res.json() as { drawers?: DrawerResult[]; error?: string };
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantId
+            ? { ...m, searchResults: data.drawers ?? [], searchQuery: query }
+            : m
+        )
+      );
+    } catch (err) {
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantId
+            ? { ...m, content: `[Erreur recherche: ${(err as Error).message}]`, searchResults: [] }
+            : m
+        )
+      );
+    } finally {
+      setIsStreaming(false);
+    }
+  }, []);
+
   const send = async () => {
     const text = input.trim();
     if ((!text && !pendingImage) || isStreaming) return;
+
+    if (text.startsWith("/search ") || text.startsWith("/wing ")) {
+      await sendSearch(text);
+      return;
+    }
 
     const imageToSend = pendingImage;
 
@@ -316,7 +548,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     setMessages((prev) => [...prev, assistantMsg]);
 
     try {
-      // Prepend file context to the message if loaded from the graph
       const messageWithContext = fileContext
         ? `[Contexte fichier: ${fileContext.name}]\n\`\`\`\n${fileContext.content.slice(0, 2500)}\n\`\`\`\n\n${text || "Analyse ce fichier."}`
         : (text || "Analyse cette image.");
@@ -347,14 +578,26 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
+      let fullText = "";
 
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value, { stream: true });
+        fullText += chunk;
         setMessages((prev) =>
           prev.map((m) =>
             m.id === assistantId ? { ...m, content: m.content + chunk } : m
+          )
+        );
+      }
+
+      // Extract MemPalace citations from final response
+      const citations = extractCitations(fullText);
+      if (citations.length > 0) {
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantId ? { ...m, mempalaceSources: citations } : m
           )
         );
       }
@@ -431,6 +674,15 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         </div>
       )}
 
+      {/* Drawer popup */}
+      {drawerPopup && (
+        <DrawerPopup
+          popup={drawerPopup}
+          accentColor={colors.primary}
+          onClose={() => setDrawerPopup(null)}
+        />
+      )}
+
       <div
         className="flex flex-col h-full relative"
         onDragOver={handleDragOver}
@@ -476,6 +728,9 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 </p>
                 <p className="text-slate-700 text-xs mt-2 font-mono">
                   Drag & drop ou Ctrl+V pour coller un screenshot
+                </p>
+                <p className="text-slate-700 text-xs mt-1 font-mono">
+                  /search &lt;query&gt; · /wing &lt;wing&gt; &lt;query&gt;
                 </p>
               </div>
             </div>
@@ -537,12 +792,25 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                         />
                       </button>
                     )}
-                    {msg.content}
-                    {msg.role === "assistant" && msg.content === "" && isStreaming && (
-                      <span
-                        className="inline-block w-1 h-3 ml-0.5 animate-pulse"
-                        style={{ background: colors.primary }}
+
+                    {/* Search results */}
+                    {msg.searchResults !== undefined ? (
+                      <SearchResults
+                        results={msg.searchResults}
+                        query={msg.searchQuery ?? ""}
+                        accentColor={colors.primary}
+                        onDrawerClick={(ref, content) => openDrawer(ref, content)}
                       />
+                    ) : (
+                      <>
+                        {msg.content}
+                        {msg.role === "assistant" && msg.content === "" && isStreaming && (
+                          <span
+                            className="inline-block w-1 h-3 ml-0.5 animate-pulse"
+                            style={{ background: colors.primary }}
+                          />
+                        )}
+                      </>
                     )}
                   </div>
                   <span className="text-[9px] font-mono text-slate-700 px-1">
@@ -551,44 +819,71 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 </div>
               </div>
 
+              {/* MemPalace sources — below assistant bubble */}
+              {msg.role === "assistant" &&
+                msg.mempalaceSources &&
+                msg.mempalaceSources.length > 0 && (
+                  <div className="ml-9 mt-1.5 flex flex-wrap gap-1.5">
+                    {msg.mempalaceSources.map((ref) => (
+                      <button
+                        key={ref}
+                        onClick={() => openDrawer(ref)}
+                        className="text-[9px] font-mono px-2 py-1 rounded-lg transition-all hover:opacity-100"
+                        style={{
+                          background: `${colors.primary}10`,
+                          border: `1px solid ${colors.primary}25`,
+                          color: colors.primary,
+                          opacity: 0.75,
+                        }}
+                      >
+                        [{ref}]
+                      </button>
+                    ))}
+                  </div>
+                )}
+
               {/* Action buttons — last assistant message only, after streaming done */}
-              {msg.role === "assistant" && idx === lastAssistantIdx && !isStreaming && msg.content && (
-                <div className="ml-9 mt-2">
-                  {!activeAction && !lastActionDone && (
-                    <div className="flex gap-2 flex-wrap">
-                      {actionButtons.map(({ type, label }) => (
-                        <button
-                          key={type}
-                          onClick={() => setActiveAction(type)}
-                          className="text-[9px] font-mono px-2.5 py-1 rounded-full transition-all hover:opacity-100"
-                          style={{
-                            background: "rgba(255,255,255,0.03)",
-                            border: "1px solid rgba(255,255,255,0.08)",
-                            color: "#475569",
-                          }}
-                        >
-                          {label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                  {lastActionDone && (
-                    <div className="text-[9px] font-mono" style={{ color: colors.primary }}>
-                      ✓ Action enregistrée dans le repo
-                    </div>
-                  )}
-                  {activeAction && (
-                    <ActionForm
-                      action={activeAction}
-                      persona={persona}
-                      mode={mode}
-                      accentColor={colors.primary}
-                      onClose={() => setActiveAction(null)}
-                      onSuccess={handleActionSuccess}
-                    />
-                  )}
-                </div>
-              )}
+              {msg.role === "assistant" &&
+                msg.searchResults === undefined &&
+                idx === lastAssistantIdx &&
+                !isStreaming &&
+                msg.content && (
+                  <div className="ml-9 mt-2">
+                    {!activeAction && !lastActionDone && (
+                      <div className="flex gap-2 flex-wrap">
+                        {actionButtons.map(({ type, label }) => (
+                          <button
+                            key={type}
+                            onClick={() => setActiveAction(type)}
+                            className="text-[9px] font-mono px-2.5 py-1 rounded-full transition-all hover:opacity-100"
+                            style={{
+                              background: "rgba(255,255,255,0.03)",
+                              border: "1px solid rgba(255,255,255,0.08)",
+                              color: "#475569",
+                            }}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    {lastActionDone && (
+                      <div className="text-[9px] font-mono" style={{ color: colors.primary }}>
+                        ✓ Action enregistrée dans le repo
+                      </div>
+                    )}
+                    {activeAction && (
+                      <ActionForm
+                        action={activeAction}
+                        persona={persona}
+                        mode={mode}
+                        accentColor={colors.primary}
+                        onClose={() => setActiveAction(null)}
+                        onSuccess={handleActionSuccess}
+                      />
+                    )}
+                  </div>
+                )}
             </div>
           ))}
           <div ref={bottomRef} />
@@ -668,7 +963,11 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
               onChange={handleInput}
               onKeyDown={handleKeyDown}
               onPaste={handlePaste}
-              placeholder={pendingImage ? "Message accompagnant l'image… (optionnel)" : "Message JARVIS… (⏎ envoyer, Shift+⏎ nouvelle ligne)"}
+              placeholder={
+                pendingImage
+                  ? "Message accompagnant l'image… (optionnel)"
+                  : "Message JARVIS… (⏎ envoyer · /search query · /wing wing query)"
+              }
               disabled={isStreaming}
               rows={1}
               className="flex-1 bg-transparent text-sm text-slate-300 placeholder:text-slate-600 resize-none outline-none leading-relaxed"
@@ -693,7 +992,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
             </button>
           </div>
 
-          {/* Toolbar sous le champ */}
+          {/* Toolbar */}
           <div className="flex items-center justify-between mt-2">
             <button
               type="button"
