@@ -1,9 +1,17 @@
 import { Request, Response } from "express";
-import { query } from "@anthropic-ai/claude-agent-sdk";
+import { query, type SDKUserMessage } from "@anthropic-ai/claude-agent-sdk";
 import { readFile, access, constants } from "fs/promises";
 import path from "path";
 
 const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
+
+const VALID_IMAGE_TYPES = ["image/png", "image/jpeg", "image/gif", "image/webp"] as const;
+type ValidMediaType = (typeof VALID_IMAGE_TYPES)[number];
+
+type ImagePayload = {
+  data: string;
+  media_type: ValidMediaType;
+};
 
 async function fileExecutable(p: string): Promise<boolean> {
   try { await access(p, constants.X_OK); return true; } catch { return false; }
@@ -37,16 +45,53 @@ async function loadFile(relPath: string): Promise<string> {
   }
 }
 
+async function* makeMultimodalMessage(message: string, image: ImagePayload): AsyncIterable<SDKUserMessage> {
+  yield {
+    type: "user",
+    message: {
+      role: "user",
+      content: [
+        {
+          type: "image",
+          source: {
+            type: "base64",
+            media_type: image.media_type,
+            data: image.data,
+          },
+        },
+        {
+          type: "text",
+          text: message || "Analyse cette image.",
+        },
+      ],
+    },
+    parent_tool_use_id: null,
+  };
+}
+
 export async function chatRoute(req: Request, res: Response): Promise<void> {
-  const { persona, mode, message } = req.body as {
+  const { persona, mode, message, image } = req.body as {
     persona: "romain" | "fabrice";
     mode?: "normal" | "f2";
     message: string;
+    image?: ImagePayload;
   };
 
-  if (!persona || !message) {
+  if (!persona || (!message && !image)) {
     res.status(400).json({ error: "Missing persona or message" });
     return;
+  }
+
+  if (image) {
+    if (!VALID_IMAGE_TYPES.includes(image.media_type as ValidMediaType)) {
+      res.status(400).json({ error: "Format image non supporté (PNG, JPG, GIF, WEBP)" });
+      return;
+    }
+    // base64 is ~4/3 of binary size — 5 MB binary ≈ 6.7 MB base64
+    if (!image.data || image.data.length > 7 * 1024 * 1024) {
+      res.status(400).json({ error: "Image trop grande (max 5 MB)" });
+      return;
+    }
   }
 
   const isF2 = mode === "f2";
@@ -85,9 +130,13 @@ ${contexts.join("\n")}`;
 
   const claudePath = await resolveClaudeBinary();
 
+  const prompt = image
+    ? makeMultimodalMessage(message || "Analyse cette image.", image)
+    : message;
+
   try {
     for await (const msg of query({
-      prompt: message,
+      prompt,
       options: {
         systemPrompt,
         maxTurns: 1,
