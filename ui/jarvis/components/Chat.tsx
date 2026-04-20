@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Send } from "lucide-react";
 
 type Persona = "romain" | "fabrice";
+type Mode = "normal" | "f2";
+type ActionType = "mark_published" | "log_decision" | "incident_resolved" | null;
 
 type Message = {
   id: string;
@@ -37,19 +39,174 @@ function uid() {
   return Math.random().toString(36).slice(2, 9);
 }
 
-type Props = { persona: Persona };
+type ActionFormProps = {
+  action: ActionType;
+  persona: Persona;
+  mode: Mode;
+  accentColor: string;
+  onClose: () => void;
+  onSuccess: () => void;
+};
 
-export function Chat({ persona }: Props) {
+function ActionForm({ action, persona, accentColor, onClose, onSuccess }: ActionFormProps) {
+  const [fields, setFields] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const set = (k: string, v: string) => setFields((f) => ({ ...f, [k]: v }));
+
+  const submit = async () => {
+    if (loading) return;
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/action", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ persona, action, payload: fields }),
+      });
+      const data = await res.json() as { ok?: boolean; error?: string };
+      if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
+      onSuccess();
+    } catch (err) {
+      setError((err as Error).message);
+      setLoading(false);
+    }
+  };
+
+  const inputStyle = {
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    borderRadius: "6px",
+    color: "#cbd5e1",
+    fontSize: "11px",
+    padding: "6px 10px",
+    outline: "none",
+    width: "100%",
+    fontFamily: "inherit",
+  } as const;
+
+  const labelStyle = {
+    fontSize: "9px",
+    color: "#475569",
+    textTransform: "uppercase" as const,
+    letterSpacing: "0.08em",
+    marginBottom: "3px",
+    display: "block",
+  };
+
+  return (
+    <div
+      className="mt-2 p-3 rounded-xl"
+      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
+    >
+      <div className="space-y-2">
+        {action === "mark_published" && (
+          <>
+            <div>
+              <label style={labelStyle}>Titre / mot-clé du post</label>
+              <input
+                style={inputStyle}
+                placeholder="ex: Thread Twitter sur CRO…"
+                value={fields.title || ""}
+                onChange={(e) => set("title", e.target.value)}
+                autoFocus
+              />
+            </div>
+          </>
+        )}
+
+        {action === "log_decision" && (
+          <>
+            <div>
+              <label style={labelStyle}>Décision</label>
+              <input
+                style={inputStyle}
+                placeholder="ex: Pivot pricing vers monthly"
+                value={fields.decision || ""}
+                onChange={(e) => set("decision", e.target.value)}
+                autoFocus
+              />
+            </div>
+            <div>
+              <label style={labelStyle}>Rationale</label>
+              <input
+                style={inputStyle}
+                placeholder="ex: Conversion test — 3 signups en 24h"
+                value={fields.rationale || ""}
+                onChange={(e) => set("rationale", e.target.value)}
+              />
+            </div>
+          </>
+        )}
+
+        {action === "incident_resolved" && (
+          <>
+            <div>
+              <label style={labelStyle}>Mot-clé de l&apos;incident</label>
+              <input
+                style={inputStyle}
+                placeholder="ex: DNS, SUSPENDU, Twitter…"
+                value={fields.keyword || ""}
+                onChange={(e) => set("keyword", e.target.value)}
+                autoFocus
+              />
+            </div>
+          </>
+        )}
+
+        {error && (
+          <div className="text-[10px] font-mono" style={{ color: "#f06464" }}>
+            {error}
+          </div>
+        )}
+
+        <div className="flex gap-2 pt-1">
+          <button
+            onClick={submit}
+            disabled={loading}
+            className="text-[10px] font-mono px-3 py-1.5 rounded-lg transition-all"
+            style={{
+              background: `${accentColor}20`,
+              border: `1px solid ${accentColor}40`,
+              color: accentColor,
+              cursor: loading ? "wait" : "pointer",
+            }}
+          >
+            {loading ? "…" : "CONFIRMER"}
+          </button>
+          <button
+            onClick={onClose}
+            className="text-[10px] font-mono px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-400 transition-colors"
+            style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.06)" }}
+          >
+            ANNULER
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type Props = {
+  persona: Persona;
+  mode?: Mode;
+  onAction?: () => void;
+};
+
+export function Chat({ persona, mode = "normal", onAction }: Props) {
   const colors = PERSONA_COLORS[persona];
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
+  const [activeAction, setActiveAction] = useState<ActionType>(null);
+  const [lastActionDone, setLastActionDone] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, activeAction]);
 
   const send = async () => {
     const text = input.trim();
@@ -65,6 +222,8 @@ export function Chat({ persona }: Props) {
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setIsStreaming(true);
+    setActiveAction(null);
+    setLastActionDone(false);
 
     const assistantId = uid();
     const assistantMsg: Message = {
@@ -81,6 +240,7 @@ export function Chat({ persona }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           persona,
+          mode,
           message: text,
           history: messages.map((m) => ({ role: m.role, content: m.content })),
         }),
@@ -132,6 +292,23 @@ export function Chat({ persona }: Props) {
     }
   };
 
+  const handleActionSuccess = useCallback(() => {
+    setActiveAction(null);
+    setLastActionDone(true);
+    onAction?.();
+  }, [onAction]);
+
+  const lastAssistantIdx = messages.reduce(
+    (acc, m, i) => (m.role === "assistant" ? i : acc),
+    -1
+  );
+
+  const actionButtons: { type: ActionType; label: string }[] = [
+    { type: "mark_published", label: "✅ PUBLIÉ" },
+    { type: "log_decision", label: "📋 DÉCISION" },
+    { type: "incident_resolved", label: "🔧 RÉSOLU" },
+  ];
+
   return (
     <div className="flex flex-col h-full">
       {/* Messages */}
@@ -152,61 +329,101 @@ export function Chat({ persona }: Props) {
           </div>
         )}
 
-        {messages.map((msg) => (
-          <div
-            key={msg.id}
-            className={`flex gap-3 ${msg.role === "user" ? "flex-row-reverse" : "flex-row"}`}
-          >
-            {/* Avatar */}
+        {messages.map((msg, idx) => (
+          <div key={msg.id}>
             <div
-              className="flex-none w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold mt-0.5"
-              style={
-                msg.role === "user"
-                  ? {
-                      background: colors.bg,
-                      border: `1px solid ${colors.border}`,
-                      color: colors.primary,
-                    }
-                  : {
-                      background: "rgba(255,255,255,0.05)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                      color: "#64748b",
-                    }
-              }
+              className={`flex gap-3 ${msg.role === "user" ? "flex-row-reverse" : "flex-row"}`}
             >
-              {msg.role === "user" ? persona[0].toUpperCase() : "J"}
-            </div>
-
-            {/* Bubble */}
-            <div className={`max-w-[75%] ${msg.role === "user" ? "items-end" : "items-start"} flex flex-col gap-1`}>
+              {/* Avatar */}
               <div
-                className={`px-4 py-3 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
-                  msg.role === "user" ? "rounded-tr-sm" : "glass rounded-tl-sm"
-                }`}
+                className="flex-none w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold mt-0.5"
                 style={
                   msg.role === "user"
                     ? {
                         background: colors.bg,
                         border: `1px solid ${colors.border}`,
-                        color: "#e2e8f0",
+                        color: colors.primary,
                       }
                     : {
-                        color: "#cbd5e1",
+                        background: "rgba(255,255,255,0.05)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                        color: "#64748b",
                       }
                 }
               >
-                {msg.content}
-                {msg.role === "assistant" && msg.content === "" && isStreaming && (
-                  <span
-                    className="inline-block w-1 h-3 ml-0.5 animate-pulse"
-                    style={{ background: colors.primary }}
+                {msg.role === "user" ? persona[0].toUpperCase() : "J"}
+              </div>
+
+              {/* Bubble */}
+              <div className={`max-w-[75%] ${msg.role === "user" ? "items-end" : "items-start"} flex flex-col gap-1`}>
+                <div
+                  className={`px-4 py-3 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
+                    msg.role === "user" ? "rounded-tr-sm" : "glass rounded-tl-sm"
+                  }`}
+                  style={
+                    msg.role === "user"
+                      ? {
+                          background: colors.bg,
+                          border: `1px solid ${colors.border}`,
+                          color: "#e2e8f0",
+                        }
+                      : {
+                          color: "#cbd5e1",
+                        }
+                  }
+                >
+                  {msg.content}
+                  {msg.role === "assistant" && msg.content === "" && isStreaming && (
+                    <span
+                      className="inline-block w-1 h-3 ml-0.5 animate-pulse"
+                      style={{ background: colors.primary }}
+                    />
+                  )}
+                </div>
+                <span className="text-[9px] font-mono text-slate-700 px-1">
+                  {msg.timestamp}
+                </span>
+              </div>
+            </div>
+
+            {/* Action buttons — last assistant message only, after streaming done */}
+            {msg.role === "assistant" && idx === lastAssistantIdx && !isStreaming && msg.content && (
+              <div className="ml-9 mt-2">
+                {!activeAction && !lastActionDone && (
+                  <div className="flex gap-2 flex-wrap">
+                    {actionButtons.map(({ type, label }) => (
+                      <button
+                        key={type}
+                        onClick={() => setActiveAction(type)}
+                        className="text-[9px] font-mono px-2.5 py-1 rounded-full transition-all hover:opacity-100"
+                        style={{
+                          background: "rgba(255,255,255,0.03)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          color: "#475569",
+                        }}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {lastActionDone && (
+                  <div className="text-[9px] font-mono" style={{ color: colors.primary }}>
+                    ✓ Action enregistrée dans le repo
+                  </div>
+                )}
+                {activeAction && (
+                  <ActionForm
+                    action={activeAction}
+                    persona={persona}
+                    mode={mode}
+                    accentColor={colors.primary}
+                    onClose={() => setActiveAction(null)}
+                    onSuccess={handleActionSuccess}
                   />
                 )}
               </div>
-              <span className="text-[9px] font-mono text-slate-700 px-1">
-                {msg.timestamp}
-              </span>
-            </div>
+            )}
           </div>
         ))}
         <div ref={bottomRef} />

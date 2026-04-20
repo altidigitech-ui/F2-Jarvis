@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { BrainSVG } from "./BrainSVG";
+import { Chat } from "./Chat";
 import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
@@ -28,13 +29,41 @@ const PERSONA_CONFIG = {
   },
 } as const;
 
-
 const EMPTY_CONTEXT: ContextData = {
   timeline: [],
   counters: { cold: 0, repliesIn: 0, twEng: 0, liCom: 0, cross: 0, ihPh: 0, total: 0 },
   alerts: [],
   weekPlanningF2: [],
 };
+
+// Compute next batch time (12h, 18h, 22h CEST) and countdown
+function getNextBatch(): { label: string; secsUntil: number } {
+  const now = new Date();
+  const paris = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Paris" }));
+  const h = paris.getHours();
+  const m = paris.getMinutes();
+  const s = paris.getSeconds();
+  const currentSecs = h * 3600 + m * 60 + s;
+  const batches = [12 * 3600, 18 * 3600, 22 * 3600];
+
+  for (const b of batches) {
+    if (currentSecs < b) {
+      const diff = b - currentSecs;
+      const bh = Math.floor(b / 3600);
+      return { label: `${String(bh).padStart(2, "0")}:00`, secsUntil: diff };
+    }
+  }
+  // After 22h: next batch is 12h tomorrow
+  const diff = 24 * 3600 - currentSecs + 12 * 3600;
+  return { label: "12:00", secsUntil: diff };
+}
+
+function formatCountdown(secs: number): string {
+  const h = Math.floor(secs / 3600);
+  const m = Math.floor((secs % 3600) / 60);
+  const s = secs % 60;
+  return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
 
 function LiveClock({ color }: { color: string }) {
   const [time, setTime] = useState("");
@@ -138,21 +167,52 @@ function TimelineChip({
 
 type Props = {
   persona: Persona;
-  children: React.ReactNode;
   showF2Toggle?: boolean;
 };
 
-export function PersonaLayout({ persona, children, showF2Toggle = false }: Props) {
+export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const cfg = PERSONA_CONFIG[persona];
-  const [f2Mode, setF2Mode] = useState(false);
+  const lsKey = `jarvis_f2mode_${persona}`;
+
+  const [f2Mode, setF2ModeState] = useState(false);
   const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
   const [loading, setLoading] = useState(true);
+  const [pendingOps, setPendingOps] = useState(0);
+  const [batchLabel, setBatchLabel] = useState("--:--");
+  const [batchCountdown, setBatchCountdown] = useState("");
+  const pendingOpsRef = useRef(0);
+
+  // Restore f2Mode from localStorage (client-only)
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(lsKey);
+      if (stored === "true") setF2ModeState(true);
+    } catch { /* SSR or private mode */ }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const setF2Mode = useCallback((val: boolean) => {
+    setF2ModeState(val);
+    try { localStorage.setItem(lsKey, String(val)); } catch { /* ignore */ }
+  }, [lsKey]);
 
   const accentColor = f2Mode ? "#97C459" : cfg.color;
+  const mode = f2Mode ? "f2" : "normal";
+
+  // Batch countdown ticker
+  useEffect(() => {
+    const tick = () => {
+      const { label, secsUntil } = getNextBatch();
+      setBatchLabel(label);
+      setBatchCountdown(formatCountdown(secsUntil));
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   const fetchContext = useCallback(async () => {
     try {
-      const mode = f2Mode ? "f2" : "normal";
       const res = await fetch(`/api/context?persona=${persona}&mode=${mode}`);
       if (res.ok) {
         const data: ContextData = await res.json();
@@ -163,12 +223,21 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
     } finally {
       setLoading(false);
     }
-  }, [persona, f2Mode]);
+  }, [persona, mode]);
 
   useEffect(() => {
+    setLoading(true);
     fetchContext();
     const id = setInterval(fetchContext, 60_000);
     return () => clearInterval(id);
+  }, [fetchContext]);
+
+  // Called by Chat when an action completes
+  const handleAction = useCallback(() => {
+    pendingOpsRef.current += 1;
+    setPendingOps(pendingOpsRef.current);
+    // Refresh counters immediately
+    fetchContext();
   }, [fetchContext]);
 
   const { counters, alerts } = ctx;
@@ -176,6 +245,20 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
 
   return (
     <div className="relative min-h-screen flex flex-col z-10">
+      {/* F2 mode banner */}
+      {f2Mode && (
+        <div
+          className="text-center text-[10px] font-mono py-1 tracking-widest"
+          style={{
+            background: "rgba(151,196,89,0.12)",
+            borderBottom: "1px solid rgba(151,196,89,0.25)",
+            color: "#97C459",
+          }}
+        >
+          ◈ MODE F2 ACTIF — @foundrytwo
+        </div>
+      )}
+
       {/* Top bar */}
       <header
         className="glass flex items-center justify-between px-6 py-3 sticky top-0 z-20"
@@ -297,7 +380,9 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
           </div>
 
           {/* Chat area */}
-          <div className="flex-1 overflow-hidden">{children}</div>
+          <div className="flex-1 overflow-hidden">
+            <Chat persona={persona} mode={mode} onAction={handleAction} />
+          </div>
         </main>
 
         {/* Sidebar droite — 290px */}
@@ -372,9 +457,21 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2">
               Auto-commit
             </div>
-            <div className="flex items-center gap-2 text-[10px] text-slate-600 font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-              Désactivé — Phase 2
+            <div className="space-y-1">
+              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
+                <span>NEXT BATCH</span>
+                <span style={{ color: accentColor }}>{batchLabel}</span>
+              </div>
+              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
+                <span>DANS</span>
+                <span suppressHydrationWarning>{batchCountdown}</span>
+              </div>
+              <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
+                <span>PENDING OPS</span>
+                <span style={{ color: pendingOps > 0 ? accentColor : undefined }}>
+                  {pendingOps}
+                </span>
+              </div>
             </div>
           </div>
         </aside>

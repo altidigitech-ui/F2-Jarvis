@@ -17,8 +17,9 @@ async function loadFile(relPath: string): Promise<string> {
 }
 
 export async function POST(req: Request) {
-  const { persona, message } = await req.json() as {
+  const { persona, mode, message } = await req.json() as {
     persona: "romain" | "fabrice";
+    mode?: "normal" | "f2";
     message: string;
     history?: { role: string; content: string }[];
   };
@@ -27,21 +28,33 @@ export async function POST(req: Request) {
     return new Response("Missing persona or message", { status: 400 });
   }
 
-  const personaLabel = persona === "romain" ? "Romain Delgado" : "Fabrice Gangi";
+  const isF2 = mode === "f2";
+  const personaLabel = isF2 ? "l'équipe FoundryTwo (@foundrytwo)" : persona === "romain" ? "Romain Delgado" : "Fabrice Gangi";
 
-  const contextFiles = [
-    "CLAUDE.md",
-    "BIBLE.md",
-    "ANTI-IA.md",
-    `${persona}/context.md`,
-    `${persona}/VOIX.md`,
-    `${persona}/plan-hebdo.md`,
-    `${persona}/progress-semaine.md`,
-  ];
+  const contextFiles = isF2
+    ? [
+        "CLAUDE.md",
+        "BIBLE.md",
+        "ANTI-IA.md",
+        "f2/context.md",
+        "f2/plan-hebdo.md",
+        "f2/progress-semaine.md",
+        `${persona}/VOIX.md`,
+      ]
+    : [
+        "CLAUDE.md",
+        "BIBLE.md",
+        "ANTI-IA.md",
+        `${persona}/context.md`,
+        `${persona}/VOIX.md`,
+        `${persona}/plan-hebdo.md`,
+        `${persona}/progress-semaine.md`,
+      ];
 
   const contexts = await Promise.all(contextFiles.map(loadFile));
 
-  const systemPrompt = `Tu es JARVIS, l'assistant interne de ${personaLabel} au sein du studio FoundryTwo.
+  const modeLabel = isF2 ? " en mode compte studio @foundrytwo" : "";
+  const systemPrompt = `Tu es JARVIS, l'assistant interne de ${personaLabel}${modeLabel} au sein du studio FoundryTwo.
 
 Tu connais l'OS F2-Jarvis et tout le contexte ci-dessous. Tu réponds en français, directement, sans fluff. Pas de bullet points inutiles, pas de listes si une phrase suffit. Respect strict de ANTI-IA.md pour tout contenu destiné à la publication.
 
