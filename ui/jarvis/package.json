@@ -11,8 +11,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.2.114",
-    "@anthropic-ai/claude-agent-sdk-linux-x64": "0.2.114",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.8.0",
