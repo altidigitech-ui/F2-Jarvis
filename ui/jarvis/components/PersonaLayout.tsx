@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { BrainSVG } from "./BrainSVG";
+import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
 
@@ -12,50 +13,28 @@ const PERSONA_CONFIG = {
     role: "Growth · FoundryTwo",
     color: "#00ffb4",
     colorDim: "#00b890",
-    colorBg: "rgba(0,255,180,0.06)",
-    colorBorder: "rgba(0,255,180,0.15)",
     channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "PH", "F2"],
-    counters: {
-      interactions: { value: 0, target: 30, label: "Interactions" },
-      posts: { value: 0, target: 7, label: "Posts/sem" },
-      cold: { value: 0, target: 10, label: "Cold/jour" },
-    },
-    timeline: [
-      { time: "09:00", label: "LinkedIn — post du matin", done: false },
-      { time: "10:30", label: "Twitter — 5 interactions", done: false },
-      { time: "14:00", label: "Reddit — thread SaaS", done: false },
-      { time: "17:00", label: "Cold outreach x10", done: false },
-    ],
-    alerts: [
-      { level: "amber", text: "0/7 posts publiés cette semaine" },
-      { level: "amber", text: "Plan-hebdo à démarrer" },
-    ],
+    coldTarget: 10,
+    engTarget: 30,
   },
   fabrice: {
     label: "Fabrice",
     role: "Builder · FoundryTwo",
     color: "#9b8fff",
     colorDim: "#6d5fe0",
-    colorBg: "rgba(155,143,255,0.06)",
-    colorBorder: "rgba(155,143,255,0.15)",
     channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "PH"],
-    counters: {
-      interactions: { value: 0, target: 30, label: "Interactions" },
-      posts: { value: 0, target: 5, label: "Posts/sem" },
-      cold: { value: 0, target: 10, label: "Cold/jour" },
-    },
-    timeline: [
-      { time: "09:00", label: "Twitter — thread technique", done: false },
-      { time: "11:00", label: "LinkedIn — build in public", done: false },
-      { time: "14:00", label: "IndieHackers — engagement", done: false },
-      { time: "16:00", label: "Cold outreach x10", done: false },
-    ],
-    alerts: [
-      { level: "amber", text: "0/5 posts publiés cette semaine" },
-      { level: "red", text: "JARVIS V1 — en cours de build" },
-    ],
+    coldTarget: 10,
+    engTarget: 30,
   },
 } as const;
+
+
+const EMPTY_CONTEXT: ContextData = {
+  timeline: [],
+  counters: { cold: 0, repliesIn: 0, twEng: 0, liCom: 0, cross: 0, ihPh: 0, total: 0 },
+  alerts: [],
+  weekPlanningF2: [],
+};
 
 function LiveClock({ color }: { color: string }) {
   const [time, setTime] = useState("");
@@ -88,11 +67,7 @@ function LiveClock({ color }: { color: string }) {
 
   return (
     <div className="text-right">
-      <div
-        className="text-sm font-mono font-semibold"
-        style={{ color }}
-        suppressHydrationWarning
-      >
+      <div className="text-sm font-mono font-semibold" style={{ color }} suppressHydrationWarning>
         {time} CEST
       </div>
       <div className="text-[10px] text-slate-600 capitalize" suppressHydrationWarning>
@@ -102,18 +77,8 @@ function LiveClock({ color }: { color: string }) {
   );
 }
 
-function Counter({
-  value,
-  target,
-  label,
-  color,
-}: {
-  value: number;
-  target: number;
-  label: string;
-  color: string;
-}) {
-  const pct = Math.min((value / target) * 100, 100);
+function Bar({ value, target, label, color }: { value: number; target: number; label: string; color: string }) {
+  const pct = Math.min((value / Math.max(target, 1)) * 100, 100);
   return (
     <div className="mb-3">
       <div className="flex justify-between items-baseline mb-1">
@@ -132,6 +97,45 @@ function Counter({
   );
 }
 
+function TimelineChip({
+  item,
+  accentColor,
+}: {
+  item: TimelineItem;
+  accentColor: string;
+}) {
+  const isDone = item.status === "done";
+  const isBlocked = item.status === "blocked";
+  const statusIcon = isDone ? "✓" : isBlocked ? "⊘" : "·";
+
+  return (
+    <div
+      className="flex-none flex items-center gap-2 text-[10px] font-mono px-3 py-1.5 rounded-full"
+      style={{
+        background: isDone
+          ? `${accentColor}15`
+          : isBlocked
+          ? "rgba(240,100,100,0.08)"
+          : "rgba(255,255,255,0.03)",
+        border: `1px solid ${
+          isDone
+            ? accentColor + "30"
+            : isBlocked
+            ? "rgba(240,100,100,0.2)"
+            : "rgba(255,255,255,0.06)"
+        }`,
+        color: isDone ? accentColor : isBlocked ? "#f06464" : "#64748b",
+      }}
+    >
+      {item.time && <span>{item.time}</span>}
+      {item.time && <span>·</span>}
+      <span className="opacity-60">[{item.platform}]</span>
+      <span>{item.title.slice(0, 40)}{item.title.length > 40 ? "…" : ""}</span>
+      <span className="opacity-60">{statusIcon}</span>
+    </div>
+  );
+}
+
 type Props = {
   persona: Persona;
   children: React.ReactNode;
@@ -141,8 +145,34 @@ type Props = {
 export function PersonaLayout({ persona, children, showF2Toggle = false }: Props) {
   const cfg = PERSONA_CONFIG[persona];
   const [f2Mode, setF2Mode] = useState(false);
+  const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
+  const [loading, setLoading] = useState(true);
 
   const accentColor = f2Mode ? "#97C459" : cfg.color;
+
+  const fetchContext = useCallback(async () => {
+    try {
+      const mode = f2Mode ? "f2" : "normal";
+      const res = await fetch(`/api/context?persona=${persona}&mode=${mode}`);
+      if (res.ok) {
+        const data: ContextData = await res.json();
+        setCtx(data);
+      }
+    } catch {
+      // silently keep previous data on network error
+    } finally {
+      setLoading(false);
+    }
+  }, [persona, f2Mode]);
+
+  useEffect(() => {
+    fetchContext();
+    const id = setInterval(fetchContext, 60_000);
+    return () => clearInterval(id);
+  }, [fetchContext]);
+
+  const { counters, alerts } = ctx;
+  const timeline = f2Mode ? ctx.weekPlanningF2 : ctx.timeline;
 
   return (
     <div className="relative min-h-screen flex flex-col z-10">
@@ -179,9 +209,7 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
               <button
                 onClick={() => setF2Mode(false)}
                 className={`text-[10px] font-mono px-2 py-1 rounded transition-all ${
-                  !f2Mode
-                    ? "text-slate-200 bg-white/10"
-                    : "text-slate-600 hover:text-slate-400"
+                  !f2Mode ? "text-slate-200 bg-white/10" : "text-slate-600 hover:text-slate-400"
                 }`}
               >
                 ROMAIN
@@ -189,9 +217,7 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
               <button
                 onClick={() => setF2Mode(true)}
                 className={`text-[10px] font-mono px-2 py-1 rounded transition-all ${
-                  f2Mode
-                    ? "text-[#97C459] bg-[#97C459]/10"
-                    : "text-slate-600 hover:text-slate-400"
+                  f2Mode ? "text-[#97C459] bg-[#97C459]/10" : "text-slate-600 hover:text-slate-400"
                 }`}
               >
                 F2
@@ -210,12 +236,10 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
           className="w-[190px] flex-none flex flex-col border-r"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
-          {/* Brain SVG */}
           <div className="p-3">
             <BrainSVG color={accentColor} />
           </div>
 
-          {/* Nav rapide */}
           <nav className="flex-1 px-3 pb-4">
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2 px-1">
               Canaux
@@ -225,10 +249,7 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
                 key={ch}
                 className="text-[10px] font-mono px-2 py-1.5 rounded mb-0.5 text-slate-500 hover:text-slate-300 hover:bg-white/5 cursor-pointer transition-colors flex items-center gap-2"
               >
-                <span
-                  className="w-1 h-1 rounded-full"
-                  style={{ background: accentColor, opacity: 0.5 }}
-                />
+                <span className="w-1 h-1 rounded-full" style={{ background: accentColor, opacity: 0.5 }} />
                 {ch}
               </div>
             ))}
@@ -236,16 +257,12 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2 px-1 mt-4">
               Liens
             </div>
-            {[
-              { label: "Plan hebdo", href: "#" },
-              { label: "Progress", href: "#" },
-              { label: "Tracking", href: "#" },
-            ].map((item) => (
+            {["Plan hebdo", "Progress", "Tracking"].map((item) => (
               <div
-                key={item.label}
+                key={item}
                 className="text-[10px] font-mono px-2 py-1.5 rounded mb-0.5 text-slate-500 hover:text-slate-300 hover:bg-white/5 cursor-pointer transition-colors"
               >
-                {item.label}
+                {item}
               </div>
             ))}
           </nav>
@@ -254,29 +271,28 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
         {/* Centre — flex-1 */}
         <main className="flex-1 flex flex-col overflow-hidden min-w-0">
           {/* Timeline */}
-          <div
-            className="px-6 py-3 border-b"
-            style={{ borderColor: "rgba(255,255,255,0.04)" }}
-          >
-            <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2">
-              Aujourd&apos;hui
+          <div className="px-6 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest">
+                {f2Mode ? "Planning F2 semaine" : "Aujourd'hui"}
+              </div>
+              {loading && (
+                <div
+                  className="w-1 h-1 rounded-full animate-pulse"
+                  style={{ background: accentColor, opacity: 0.5 }}
+                />
+              )}
             </div>
             <div className="flex gap-3 overflow-x-auto pb-1">
-              {cfg.timeline.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex-none flex items-center gap-2 text-[10px] font-mono px-3 py-1.5 rounded-full"
-                  style={{
-                    background: item.done ? `${accentColor}15` : "rgba(255,255,255,0.03)",
-                    border: `1px solid ${item.done ? accentColor + "30" : "rgba(255,255,255,0.06)"}`,
-                    color: item.done ? accentColor : "#64748b",
-                  }}
-                >
-                  <span>{item.time}</span>
-                  <span>·</span>
-                  <span>{item.label}</span>
+              {timeline.length === 0 ? (
+                <div className="text-[10px] font-mono text-slate-700 px-2 py-1.5">
+                  {loading ? "Chargement…" : "Aucun post planifié aujourd'hui"}
                 </div>
-              ))}
+              ) : (
+                timeline.map((item, i) => (
+                  <TimelineChip key={i} item={item} accentColor={accentColor} />
+                ))
+              )}
             </div>
           </div>
 
@@ -290,48 +306,69 @@ export function PersonaLayout({ persona, children, showF2Toggle = false }: Props
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           {/* Compteurs */}
-          <div
-            className="p-4 border-b"
-            style={{ borderColor: "rgba(255,255,255,0.04)" }}
-          >
+          <div className="p-4 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-3">
-              Compteurs
+              Compteurs du jour
             </div>
-            <Counter
-              {...cfg.counters.interactions}
-              color={accentColor}
-            />
-            <Counter {...cfg.counters.posts} color={accentColor} />
-            <Counter {...cfg.counters.cold} color={accentColor} />
+            <Bar value={counters.cold} target={cfg.coldTarget} label="Cold DM" color={accentColor} />
+            <Bar value={counters.twEng} target={10} label="TW Eng" color={accentColor} />
+            <Bar value={counters.liCom} target={10} label="LI Com" color={accentColor} />
+            <Bar value={counters.cross} target={2} label="Cross" color={accentColor} />
+            <Bar value={counters.ihPh} target={5} label="IH+PH" color={accentColor} />
+            <div
+              className="mt-3 pt-3 border-t flex justify-between items-baseline"
+              style={{ borderColor: "rgba(255,255,255,0.05)" }}
+            >
+              <span className="text-[10px] text-slate-600 uppercase tracking-wider">Total</span>
+              <span className="text-sm font-mono font-semibold" style={{ color: accentColor }}>
+                {counters.total}/{cfg.engTarget}
+              </span>
+            </div>
           </div>
 
           {/* Alertes */}
-          <div className="p-4">
+          <div className="p-4 flex-1 overflow-y-auto">
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-3">
               Alertes
             </div>
-            {cfg.alerts.map((alert, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-2 mb-2 text-[10px] p-2 rounded"
-                style={{
-                  background:
-                    alert.level === "red"
-                      ? "rgba(240,149,149,0.06)"
-                      : "rgba(239,159,39,0.06)",
-                  border: `1px solid ${alert.level === "red" ? "rgba(240,149,149,0.15)" : "rgba(239,159,39,0.15)"}`,
-                  color:
-                    alert.level === "red" ? "#F09595" : "#EF9F27",
-                }}
-              >
-                <span className="mt-0.5">⚠</span>
-                <span>{alert.text}</span>
+            {alerts.length === 0 ? (
+              <div className="text-[10px] font-mono text-slate-700">
+                {loading ? "Chargement…" : "Aucune alerte active"}
               </div>
-            ))}
+            ) : (
+              alerts.map((alert, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-2 mb-2 text-[10px] p-2 rounded"
+                  style={{
+                    background:
+                      alert.level === "critical"
+                        ? "rgba(240,100,100,0.06)"
+                        : "rgba(239,159,39,0.06)",
+                    border: `1px solid ${
+                      alert.level === "critical"
+                        ? "rgba(240,100,100,0.15)"
+                        : "rgba(239,159,39,0.15)"
+                    }`,
+                    color: alert.level === "critical" ? "#F06464" : "#EF9F27",
+                  }}
+                >
+                  <span className="mt-0.5 flex-none">
+                    {alert.level === "critical" ? "⚠" : "·"}
+                  </span>
+                  <div>
+                    <div className="font-semibold">{alert.title}</div>
+                    {alert.description && (
+                      <div className="mt-0.5 opacity-70 leading-relaxed">{alert.description}</div>
+                    )}
+                  </div>
+                </div>
+              ))
+            )}
           </div>
 
           {/* Auto-commit status */}
-          <div className="mt-auto p-4 border-t" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
+          <div className="p-4 border-t" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
             <div className="text-[9px] font-mono text-slate-700 uppercase tracking-widest mb-2">
               Auto-commit
             </div>
