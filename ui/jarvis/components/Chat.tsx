@@ -645,7 +645,7 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
               style={{
                 background: pendingImage ? colors.bg : "transparent",
                 border: `1px solid ${pendingImage ? colors.border : "rgba(255,255,255,0.06)"}`,
-                color: pendingImage ? colors.primary : "#475569",
+                color: pendingImage ? colors.primary : "#64748b",
                 cursor: isStreaming ? "not-allowed" : "pointer",
               }}
             >
