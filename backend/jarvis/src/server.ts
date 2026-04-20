@@ -5,6 +5,7 @@ import { contextRoute } from "./routes/context.js";
 import { actionRoute } from "./routes/action.js";
 import { graphRoute } from "./routes/graph.js";
 import { fileRoute } from "./routes/file.js";
+import { searchRoute } from "./routes/search.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,6 +23,7 @@ app.get("/health", (_req, res) => {
 });
 
 app.post("/chat", chatRoute);
+app.post("/search", searchRoute);
 app.get("/context", contextRoute);
 app.post("/action", actionRoute);
 app.get("/graph", graphRoute);

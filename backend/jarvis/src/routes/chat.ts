@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { query, type SDKUserMessage } from "@anthropic-ai/claude-agent-sdk";
 import { readFile, access, constants } from "fs/promises";
 import path from "path";
+import { searchDrawers } from "../lib/mempalace.js";
 
 const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
 
@@ -111,7 +112,21 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
         `${persona}/plan-hebdo.md`, `${persona}/progress-semaine.md`,
       ];
 
-  const contexts = await Promise.all(contextFiles.map(loadFile));
+  const [contexts, mempalaceResults] = await Promise.all([
+    Promise.all(contextFiles.map(loadFile)),
+    message ? searchDrawers(message, { limit: 5 }) : Promise.resolve([]),
+  ]);
+
+  const mempalaceSection =
+    mempalaceResults.length > 0
+      ? `\n---\n\n## Souvenirs MemPalace pertinents\n\n${mempalaceResults
+          .map(
+            (d, i) =>
+              `### Souvenir ${i + 1} — [${d.wing}/${d.filename}]\n${d.content.slice(0, 800)}${d.content.length > 800 ? "…" : ""}`
+          )
+          .join("\n\n")}\n\nSi tu utilises un souvenir pour répondre, cite-le ainsi : [wing/filename] (ex: [romain/dan-castle-week5]).`
+      : "";
+
   const modeLabel = isF2 ? " en mode compte studio @foundrytwo" : "";
   const systemPrompt = `Tu es JARVIS, l'assistant interne de ${personaLabel}${modeLabel} au sein du studio FoundryTwo.
 
@@ -121,7 +136,7 @@ Date du jour : ${new Date().toLocaleDateString("fr-FR", { timeZone: "Europe/Pari
 
 ---
 
-${contexts.join("\n")}`;
+${contexts.join("\n")}${mempalaceSection}`;
 
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
   res.setHeader("Cache-Control", "no-cache, no-transform");
