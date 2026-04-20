@@ -635,23 +635,6 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
               transition: "border-color 0.2s",
             }}
           >
-            {/* Image upload button */}
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              disabled={isStreaming}
-              title="Ajouter une image"
-              className="flex-none w-7 h-7 rounded-lg flex items-center justify-center transition-all"
-              style={{
-                background: pendingImage ? colors.bg : "rgba(255,255,255,0.07)",
-                border: `1px solid ${pendingImage ? colors.border : "rgba(255,255,255,0.18)"}`,
-                color: pendingImage ? colors.primary : "#94a3b8",
-                cursor: isStreaming ? "not-allowed" : "pointer",
-              }}
-            >
-              <Paperclip size={14} />
-            </button>
-
             <textarea
               ref={textareaRef}
               value={input}
@@ -682,8 +665,28 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
               )}
             </button>
           </div>
-          <div className="text-[9px] font-mono text-slate-700 mt-1.5 text-right">
-            TRANSMIT · ⏎ · 📎 image · drag & drop · Ctrl+V
+
+          {/* Toolbar sous le champ */}
+          <div className="flex items-center justify-between mt-2">
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={isStreaming}
+              className="flex items-center gap-1.5 text-[11px] font-mono px-2.5 py-1 rounded-lg transition-all"
+              style={{
+                background: colors.bg,
+                border: `1px solid ${colors.border}`,
+                color: colors.primary,
+                cursor: isStreaming ? "not-allowed" : "pointer",
+                opacity: isStreaming ? 0.5 : 1,
+              }}
+            >
+              <Paperclip size={11} />
+              JOINDRE IMAGE
+            </button>
+            <div className="text-[9px] font-mono text-slate-700">
+              TRANSMIT · ⏎
+            </div>
           </div>
 
           {/* Hidden file input */}
