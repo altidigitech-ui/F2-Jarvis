@@ -643,13 +643,13 @@ export function Chat({ persona, mode = "normal", onAction }: Props) {
               title="Ajouter une image"
               className="flex-none w-7 h-7 rounded-lg flex items-center justify-center transition-all"
               style={{
-                background: pendingImage ? colors.bg : "transparent",
-                border: `1px solid ${pendingImage ? colors.border : "rgba(255,255,255,0.06)"}`,
-                color: pendingImage ? colors.primary : "#64748b",
+                background: pendingImage ? colors.bg : "rgba(255,255,255,0.07)",
+                border: `1px solid ${pendingImage ? colors.border : "rgba(255,255,255,0.18)"}`,
+                color: pendingImage ? colors.primary : "#94a3b8",
                 cursor: isStreaming ? "not-allowed" : "pointer",
               }}
             >
-              <Paperclip size={12} />
+              <Paperclip size={14} />
             </button>
 
             <textarea
