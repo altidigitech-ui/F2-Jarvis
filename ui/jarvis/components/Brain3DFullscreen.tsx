@@ -3,7 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Suspense, useMemo, useState } from "react";
-import { BrainCore, CenterLine, BRAIN_COLORS, fibSpherePos, type ColorKey } from "./Brain3D";
+import { BrainAnatomical, CenterLine, BRAIN_COLORS, fibSpherePos, type ColorKey } from "./Brain3D";
 
 export const MEMPALACE_WINGS = [
   { id: "f2-core", name: "F2 Core", drawers: 287 },
@@ -118,7 +118,7 @@ export function Brain3DFullscreen({ persona, mode, onClose }: Props) {
             <pointLight position={[5, 5, 5]} intensity={2} color={colors.core} />
             <pointLight position={[-5, -3, -5]} intensity={0.8} color={colors.core} />
             <Suspense fallback={null}>
-              <BrainCore color={colors.core} rotateSpeed={0.1} />
+              <BrainAnatomical color={colors.core} rotateSpeed={0.1} />
               <WingsSphere wingColor={colors.wings} activeWing={activeWing} onHover={setHoveredWing} />
             </Suspense>
             <OrbitControls enableZoom enablePan={false} minDistance={3} maxDistance={14} />

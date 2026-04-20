@@ -25,147 +25,153 @@ export function fibSpherePos(n: number, radius: number): [number, number, number
   });
 }
 
-// Multi-octave sine noise → gyri (brain folds) effect on hemisphere surface
-function createHemiGeo(phase: number): THREE.BufferGeometry {
-  const geo = new THREE.SphereGeometry(0.5, 52, 40);
+// Hemisphere with gyri/sulci via vertex displacement
+function createHemisphereGeo(): THREE.BufferGeometry {
+  const geo = new THREE.SphereGeometry(0.72, 48, 36);
   const pos = geo.attributes.position as THREE.BufferAttribute;
+
   for (let i = 0; i < pos.count; i++) {
-    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
-    const r = Math.sqrt(x * x + y * y + z * z);
-    if (r < 0.001) continue;
-    const n = (
-      Math.sin(x * 13 + y * 7  + phase)        * 0.40 +
-      Math.sin(y * 11 + z * 9  + phase * 0.80) * 0.35 +
-      Math.cos(z * 15 + x * 6  + phase * 1.20) * 0.30 +
-      Math.sin((x + z) * 19    + phase * 0.60) * 0.15 +
-      Math.cos((y - z) * 23    + phase * 1.50) * 0.10
-    ) * 0.068;
-    pos.setXYZ(i, x + (x / r) * n, y + (y / r) * n, z + (z / r) * n);
+    const ox = pos.getX(i);
+    const oy = pos.getY(i);
+    const oz = pos.getZ(i);
+    const len = Math.sqrt(ox * ox + oy * oy + oz * oz) || 0.001;
+    const nx = ox / len, ny = oy / len, nz = oz / len;
+
+    // Layer 1 — main lobes (frontal / parietal / occipital / temporal)
+    const major =
+      Math.sin(nx * 4.2 + nz * 3.5 + 1.1) * 0.11 +
+      Math.sin(ny * 3.8 + nx * 3.0 + 2.3) * 0.09 +
+      Math.sin(nz * 4.5 + ny * 3.2 + 0.7) * 0.08;
+
+    // Layer 2 — secondary gyri (main wrinkles)
+    const gyri =
+      Math.sin(nx * 9.5 + nz * 8.2 + 0.4) * 0.062 +
+      Math.sin(ny * 8.8 + nx * 7.1 + 2.0) * 0.052 +
+      Math.sin(nz * 10.3 + ny * 7.8 + 3.5) * 0.047;
+
+    // Layer 3 — fine sulci
+    const sulci =
+      Math.sin(nx * 16 + ny * 13 + nz * 14.5 + 1.0) * 0.022 +
+      Math.sin(nx * 21 + nz * 18 + 2.7) * 0.013;
+
+    const r = 1 + major + gyri + sulci;
+
+    // Brain proportions: wider X, flatter Y
+    pos.setXYZ(i, ox * r * 1.08, oy * r * 0.78, oz * r);
   }
+
   geo.computeVertexNormals();
   return geo;
 }
 
-// Dense fine grooves → cerebellum texture
+// Cerebellum: flat ellipsoid with horizontal folia ridges
 function createCerebellumGeo(): THREE.BufferGeometry {
-  const geo = new THREE.SphereGeometry(0.28, 36, 28);
+  const geo = new THREE.SphereGeometry(0.28, 32, 24);
   const pos = geo.attributes.position as THREE.BufferAttribute;
+
   for (let i = 0; i < pos.count; i++) {
-    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
-    const r = Math.sqrt(x * x + y * y + z * z);
-    if (r < 0.001) continue;
-    const n = (
-      Math.sin(y * 30)             * 0.38 +
-      Math.sin(y * 24 + x * 9)    * 0.28 +
-      Math.cos(x * 18 + z * 12)   * 0.18
-    ) * 0.052;
-    pos.setXYZ(i, x + (x / r) * n, y + (y / r) * n, z + (z / r) * n);
+    const ox = pos.getX(i);
+    const oy = pos.getY(i);
+    const oz = pos.getZ(i);
+    const len = Math.sqrt(ox * ox + oy * oy + oz * oz) || 0.001;
+    const ny = oy / len;
+
+    // Horizontal folia — characteristic cerebellum texture
+    const folia = Math.sin(ny * 22) * 0.07 + Math.sin(ny * 40) * 0.03;
+    const r = 1 + folia;
+
+    pos.setXYZ(i, ox * r * 1.6, oy * r * 0.55, oz * r);
   }
+
   geo.computeVertexNormals();
   return geo;
 }
 
-export function BrainCore({
+// Two-hemisphere anatomical brain, exported for fullscreen too
+export function BrainAnatomical({
   color,
-  rotateSpeed = 0.4,
+  rotateSpeed = 0.35,
 }: {
   color: string;
   rotateSpeed?: number;
 }) {
   const groupRef = useRef<THREE.Group>(null);
-
-  const leftGeo       = useMemo(() => createHemiGeo(0),    []);
-  const rightGeo      = useMemo(() => createHemiGeo(1.73), []);
-  const cerebellumGeo = useMemo(() => createCerebellumGeo(), []);
+  const hemiGeo = useMemo(() => createHemisphereGeo(), []);
+  const cereGeo = useMemo(() => createCerebellumGeo(), []);
 
   useEffect(
-    () => () => { leftGeo.dispose(); rightGeo.dispose(); cerebellumGeo.dispose(); },
-    [leftGeo, rightGeo, cerebellumGeo]
+    () => () => {
+      hemiGeo.dispose();
+      cereGeo.dispose();
+    },
+    [hemiGeo, cereGeo]
   );
 
-  useFrame((state, delta) => {
+  useFrame(({ clock }, delta) => {
     if (!groupRef.current) return;
     groupRef.current.rotation.y += delta * rotateSpeed;
-    // Subtle breathing pulse
-    const pulse = 1 + Math.sin(state.clock.elapsedTime * 1.5) * 0.018;
-    groupRef.current.scale.setScalar(pulse);
+    // Subtle breathing
+    const breathe = 1 + Math.sin(clock.getElapsedTime() * 0.9) * 0.012;
+    groupRef.current.scale.setScalar(breathe);
   });
 
   return (
-    <group ref={groupRef} rotation={[0.14, 0, 0]}>
-
-      {/* ── LEFT HEMISPHERE ── */}
-      <group position={[-0.19, 0.04, 0]} scale={[1, 0.93, 0.87]}>
-        <mesh geometry={leftGeo}>
-          <meshStandardMaterial
-            color={color} emissive={color} emissiveIntensity={0.55}
-            wireframe transparent opacity={0.82}
-          />
-        </mesh>
-        <mesh geometry={leftGeo}>
-          <meshStandardMaterial
-            color={color} emissive={color} emissiveIntensity={0.25}
-            transparent opacity={0.14}
-          />
-        </mesh>
-      </group>
-
-      {/* ── RIGHT HEMISPHERE ── */}
-      <group position={[0.19, 0.04, 0]} scale={[1, 0.93, 0.87]}>
-        <mesh geometry={rightGeo}>
-          <meshStandardMaterial
-            color={color} emissive={color} emissiveIntensity={0.55}
-            wireframe transparent opacity={0.82}
-          />
-        </mesh>
-        <mesh geometry={rightGeo}>
-          <meshStandardMaterial
-            color={color} emissive={color} emissiveIntensity={0.25}
-            transparent opacity={0.14}
-          />
-        </mesh>
-      </group>
-
-      {/* ── CORPUS CALLOSUM glow (connection between hemispheres) ── */}
-      <mesh scale={[0.48, 0.14, 0.48]}>
-        <sphereGeometry args={[0.42, 8, 6]} />
+    <group ref={groupRef}>
+      {/* Left hemisphere — wireframe holographic */}
+      <mesh geometry={hemiGeo} position={[-0.28, 0.04, 0]} rotation={[0.05, 0.08, 0.06]}>
         <meshStandardMaterial
-          color={color} emissive={color} emissiveIntensity={1.8}
-          transparent opacity={0.055}
+          color={color}
+          emissive={color}
+          emissiveIntensity={0.58}
+          wireframe
+          transparent
+          opacity={0.78}
+        />
+      </mesh>
+      {/* Left hemisphere — soft glow fill */}
+      <mesh geometry={hemiGeo} position={[-0.28, 0.04, 0]} rotation={[0.05, 0.08, 0.06]} scale={0.97}>
+        <meshStandardMaterial
+          color={color}
+          emissive={color}
+          emissiveIntensity={0.22}
+          transparent
+          opacity={0.11}
         />
       </mesh>
 
-      {/* ── CEREBELLUM (back-bottom, fine grooves) ── */}
-      <group position={[0, -0.38, -0.37]} scale={[0.92, 0.67, 0.72]}>
-        <mesh geometry={cerebellumGeo}>
-          <meshStandardMaterial
-            color={color} emissive={color} emissiveIntensity={0.50}
-            wireframe transparent opacity={0.72}
-          />
-        </mesh>
-        <mesh geometry={cerebellumGeo}>
-          <meshStandardMaterial
-            color={color} emissive={color} emissiveIntensity={0.20}
-            transparent opacity={0.12}
-          />
-        </mesh>
-      </group>
-
-      {/* ── BRAINSTEM ── */}
-      <mesh position={[0, -0.56, 0.03]} rotation={[0.18, 0, 0]}>
-        <cylinderGeometry args={[0.10, 0.16, 0.30, 14]} />
+      {/* Right hemisphere — wireframe holographic */}
+      <mesh geometry={hemiGeo} position={[0.28, 0.04, 0]} rotation={[0.05, -0.08, -0.06]}>
         <meshStandardMaterial
-          color={color} emissive={color} emissiveIntensity={0.40}
-          wireframe transparent opacity={0.55}
+          color={color}
+          emissive={color}
+          emissiveIntensity={0.58}
+          wireframe
+          transparent
+          opacity={0.78}
+        />
+      </mesh>
+      {/* Right hemisphere — soft glow fill */}
+      <mesh geometry={hemiGeo} position={[0.28, 0.04, 0]} rotation={[0.05, -0.08, -0.06]} scale={0.97}>
+        <meshStandardMaterial
+          color={color}
+          emissive={color}
+          emissiveIntensity={0.22}
+          transparent
+          opacity={0.11}
         />
       </mesh>
 
-      {/* ── AMBIENT HALO ── */}
-      <mesh>
-        <sphereGeometry args={[0.90, 8, 8]} />
-        <meshStandardMaterial color={color} transparent opacity={0.028} side={THREE.BackSide} />
+      {/* Cerebellum — back bottom */}
+      <mesh geometry={cereGeo} position={[0, -0.4, -0.52]}>
+        <meshStandardMaterial
+          color={color}
+          emissive={color}
+          emissiveIntensity={0.48}
+          wireframe
+          transparent
+          opacity={0.65}
+        />
       </mesh>
-
     </group>
   );
 }
@@ -205,10 +211,10 @@ export function CenterLine({
 
 function WingOrbit({ color, count }: { color: string; count: number }) {
   const groupRef = useRef<THREE.Group>(null);
-  const positions = useMemo(() => fibSpherePos(count, 1.4), [count]);
+  const positions = useMemo(() => fibSpherePos(count, 1.55), [count]);
 
   useFrame((_, delta) => {
-    if (groupRef.current) groupRef.current.rotation.y += delta * 0.08;
+    if (groupRef.current) groupRef.current.rotation.y += delta * 0.07;
   });
 
   return (
@@ -219,7 +225,7 @@ function WingOrbit({ color, count }: { color: string; count: number }) {
             <sphereGeometry args={[0.055, 8, 6]} />
             <meshStandardMaterial color={color} emissive={color} emissiveIntensity={1} />
           </mesh>
-          <CenterLine to={pos} color={color} opacity={0.15} />
+          <CenterLine to={pos} color={color} opacity={0.12} />
         </group>
       ))}
     </group>
@@ -243,18 +249,17 @@ export function Brain3D({ persona, mode, onClick }: Props) {
     >
       <div style={{ width: "100%", height: "160px" }}>
         <Canvas
-          camera={{ position: [0, 0, 3.5], fov: 42 }}
+          camera={{ position: [0, 0.1, 3.6], fov: 44 }}
           dpr={[1, 1.5]}
           gl={{ antialias: true, alpha: true }}
           style={{ background: "transparent" }}
           performance={{ min: 0.5 }}
         >
-          <ambientLight intensity={0.45} />
-          <pointLight position={[2, 2, 2]}    intensity={1.6} color={colors.core} />
-          <pointLight position={[-2, -1, -2]} intensity={0.6} color={colors.core} />
-          <pointLight position={[0, 3, 1]}    intensity={0.4} color={colors.glow} />
+          <ambientLight intensity={0.4} />
+          <pointLight position={[2, 2, 2]} intensity={2} color={colors.core} />
+          <pointLight position={[-2, 1, -2]} intensity={0.7} color={colors.core} />
           <Suspense fallback={null}>
-            <BrainCore color={colors.core} />
+            <BrainAnatomical color={colors.core} />
             <WingOrbit color={colors.wings} count={6} />
           </Suspense>
         </Canvas>
