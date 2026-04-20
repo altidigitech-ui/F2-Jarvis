@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { readdir, readFile, stat } from "fs/promises";
-import path from "path";
 
-const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
+const OWNER = "altidigitech-ui";
+const REPO  = "F2-Jarvis";
+const REF   = "main";
 
 type GraphNode = { id: string; name: string; wing: string; size: number; val: number };
 type GraphLink = { source: string; target: string; type: "wikilink" | "folder" };
@@ -11,7 +11,15 @@ type GraphData = { nodes: GraphNode[]; links: GraphLink[] };
 let _cache: { data: GraphData; ts: number } | null = null;
 const CACHE_TTL = 5 * 60 * 1000;
 
-const IGNORE = new Set([".git", "node_modules", "dist", ".next", ".vercel"]);
+const SKIP_PREFIXES = [
+  "node_modules/",
+  "ui/jarvis/node_modules/",
+  "backend/jarvis/node_modules/",
+  "ui/jarvis/.next/",
+  "ui/jarvis/dist/",
+  ".git/",
+  "backend/jarvis/dist/",
+];
 
 const WING_MAP: Record<string, string> = {
   "f2":               "f2-core",
@@ -21,6 +29,7 @@ const WING_MAP: Record<string, string> = {
   "romain":           "romain",
   "fabrice":          "fabrice",
   "growth-marketing": "growth-marketing",
+  "growth":           "growth-marketing",
   "distribution":     "distribution",
   "marketing":        "marketing",
   "saas":             "saas",
@@ -33,107 +42,79 @@ const WING_MAP: Record<string, string> = {
   "asset-brand":      "f2-core",
   "archives":         "f2-core",
   "raw":              "f2-core",
+  "ouroboros":        "f2-core",
+  "mempalace":        "f2-core",
 };
 
-function detectWing(relPath: string): string {
-  return WING_MAP[relPath.split("/")[0]] ?? "default";
+function detectWing(filePath: string): string {
+  return WING_MAP[filePath.split("/")[0]] ?? "default";
 }
 
-async function walkMd(dir: string, depth = 0): Promise<string[]> {
-  if (depth > 8) return [];
-  const out: string[] = [];
-  let entries;
-  try { entries = await readdir(dir, { withFileTypes: true }); } catch { return out; }
-  for (const e of entries) {
-    if (IGNORE.has(e.name)) continue;
-    const full = path.join(dir, e.name);
-    if (e.isDirectory()) out.push(...await walkMd(full, depth + 1));
-    else if (e.isFile() && e.name.endsWith(".md")) out.push(full);
-  }
-  return out;
+function githubHeaders() {
+  const token = process.env.GITHUB_TOKEN;
+  const h: Record<string, string> = {
+    Accept: "application/vnd.github.v3+json",
+    "Content-Type": "application/json",
+  };
+  if (token) h.Authorization = `Bearer ${token}`;
+  return h;
 }
 
-function extractLinks(content: string, allIds: Set<string>, fileDir: string): string[] {
-  const targets: string[] = [];
+type TreeEntry = { path?: string; type?: string; size?: number; sha?: string };
 
-  // [[wiki-links]] with optional [[file|alias]]
-  for (const m of content.matchAll(/\[\[([^\]|]+)(?:\|[^\]]+)?]]/g)) {
-    const ref = m[1].trim();
-    for (const id of allIds) {
-      if (path.basename(id, ".md") === ref || id === ref || id.endsWith(`/${ref}.md`)) {
-        targets.push(id);
-        break;
-      }
-    }
+async function fetchRepoTree(): Promise<TreeEntry[]> {
+  const url = `https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${REF}?recursive=1`;
+  const res = await fetch(url, { headers: githubHeaders() });
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`GitHub tree API ${res.status}: ${body.slice(0, 200)}`);
   }
-
-  // [text](relative-path.md)
-  for (const m of content.matchAll(/\[[^\]]*]\(([^)]+\.md)\)/g)) {
-    const rel = m[1];
-    if (rel.startsWith("http")) continue;
-    const abs = path.normalize(path.join(fileDir, rel));
-    const relId = path.relative(REPO_ROOT, abs).replace(/\\/g, "/");
-    if (allIds.has(relId)) targets.push(relId);
+  const json = await res.json() as { tree: TreeEntry[]; truncated?: boolean };
+  if (json.truncated) {
+    console.warn("[graph] GitHub tree truncated — some files may be missing");
   }
-
-  return [...new Set(targets)];
+  return json.tree;
 }
 
 async function buildGraph(): Promise<GraphData> {
-  const allPaths = await walkMd(REPO_ROOT);
-  const allIds = new Set(allPaths.map(p => path.relative(REPO_ROOT, p).replace(/\\/g, "/")));
-  const nodes: GraphNode[] = [];
+  const tree = await fetchRepoTree();
 
-  for (const fp of allPaths) {
-    const id = path.relative(REPO_ROOT, fp).replace(/\\/g, "/");
-    let size = 0;
-    try { size = (await stat(fp)).size; } catch { /* ignore */ }
-    nodes.push({
+  const mdFiles = tree.filter((e) => {
+    if (e.type !== "blob") return false;
+    const p = e.path ?? "";
+    if (!p.endsWith(".md")) return false;
+    return !SKIP_PREFIXES.some((prefix) => p.startsWith(prefix));
+  });
+
+  const nodes: GraphNode[] = mdFiles.map((e) => {
+    const id = e.path!;
+    const size = e.size ?? 0;
+    return {
       id,
-      name: path.basename(id, ".md"),
+      name: id.split("/").pop()!.replace(/\.md$/, ""),
       wing: detectWing(id),
       size,
       val: Math.max(0.5, Math.log10(size + 10) * 1.8),
-    });
+    };
+  });
+
+  // Folder links — chain pattern: file[i] → file[i+1] within the same folder
+  const byFolder = new Map<string, string[]>();
+  for (const n of nodes) {
+    const folder = n.id.includes("/") ? n.id.split("/").slice(0, -1).join("/") : ".";
+    if (!byFolder.has(folder)) byFolder.set(folder, []);
+    byFolder.get(folder)!.push(n.id);
   }
 
   const links: GraphLink[] = [];
-  const seen = new Set<string>();
-
-  for (const fp of allPaths) {
-    const id = path.relative(REPO_ROOT, fp).replace(/\\/g, "/");
-    let content = "";
-    try { content = await readFile(fp, "utf-8"); } catch { continue; }
-
-    for (const target of extractLinks(content, allIds, path.dirname(fp))) {
-      if (target === id) continue;
-      const key = [id, target].sort().join("→");
-      if (!seen.has(key)) {
-        seen.add(key);
-        links.push({ source: id, target, type: "wikilink" });
-      }
-    }
-  }
-
-  // Folder links: star topology, max 4 siblings per folder
-  const byDir = new Map<string, string[]>();
-  for (const n of nodes) {
-    const d = path.dirname(n.id);
-    if (!byDir.has(d)) byDir.set(d, []);
-    byDir.get(d)!.push(n.id);
-  }
-  for (const [, files] of byDir) {
+  for (const [, files] of byFolder) {
     if (files.length < 2) continue;
-    const anchor = files[0];
-    for (let i = 1; i < Math.min(files.length, 5); i++) {
-      const key = [anchor, files[i]].sort().join("→");
-      if (!seen.has(key)) {
-        seen.add(key);
-        links.push({ source: anchor, target: files[i], type: "folder" });
-      }
+    for (let i = 0; i < files.length - 1; i++) {
+      links.push({ source: files[i], target: files[i + 1], type: "folder" });
     }
   }
 
+  console.log(`[graph] ${nodes.length} nodes, ${links.length} folder links`);
   return { nodes, links };
 }
 
@@ -147,7 +128,11 @@ export async function graphRoute(_req: Request, res: Response): Promise<void> {
     _cache = { data, ts: Date.now() };
     res.json(data);
   } catch (err) {
-    console.error("graph error:", err);
-    res.json({ nodes: [], links: [] });
+    console.error("[graph] build failed:", err);
+    res.status(500).json({
+      error: "Graph build failed — check GITHUB_TOKEN and Railway logs",
+      nodes: [],
+      links: [],
+    });
   }
 }
