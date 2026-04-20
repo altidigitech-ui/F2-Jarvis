@@ -17,6 +17,10 @@ const RepoGraph3D = dynamic(() => import("./RepoGraph3D"), {
 
 const RepoGraph3DFullscreen = dynamic(() => import("./RepoGraph3DFullscreen"), { ssr: false });
 const GraphifyFullscreen = dynamic(() => import("./GraphifyFullscreen"), { ssr: false });
+const MemPalaceView = dynamic(
+  () => import("./MemPalaceView").then((m) => ({ default: m.MemPalaceView })),
+  { ssr: false }
+);
 import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
@@ -191,6 +195,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const [brainExpanded, setBrainExpanded] = useState(false);
   const [graphifyExpanded, setGraphifyExpanded] = useState(false);
   const [graphifyPrefill, setGraphifyPrefill] = useState<string | null>(null);
+  const [mempalaceExpanded, setMempalaceExpanded] = useState(false);
   const [fileContext, setFileContext] = useState<{ name: string; content: string } | null>(null);
   const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
   const [loading, setLoading] = useState(true);
@@ -280,6 +285,16 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           }}
         />
       )}
+      {mempalaceExpanded && (
+        <MemPalaceView
+          accentColor={accentColor}
+          onClose={() => setMempalaceExpanded(false)}
+          onSendToJarvis={(text) => {
+            setGraphifyPrefill(text);
+            setMempalaceExpanded(false);
+          }}
+        />
+      )}
       {/* F2 mode banner */}
       {f2Mode && (
         <div
@@ -363,7 +378,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
 
           {/* Graphify button */}
-          <div className="px-3 pb-2">
+          <div className="px-3 pb-1">
             <button
               onClick={() => setGraphifyExpanded(true)}
               className="w-full flex items-center gap-2 px-2 py-1.5 rounded text-[10px] font-mono transition-all hover:bg-white/5"
@@ -376,6 +391,23 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               <span>⬡</span>
               <span>GRAPHIFY</span>
               <span className="ml-auto text-[8px] opacity-50">concepts</span>
+            </button>
+          </div>
+
+          {/* MemPalace button */}
+          <div className="px-3 pb-2">
+            <button
+              onClick={() => setMempalaceExpanded(true)}
+              className="w-full flex items-center gap-2 px-2 py-1.5 rounded text-[10px] font-mono transition-all hover:bg-white/5"
+              style={{
+                border: `1px solid ${accentColor}20`,
+                color: accentColor,
+                background: `${accentColor}08`,
+              }}
+            >
+              <span>🏛</span>
+              <span>MEMPALACE</span>
+              <span className="ml-auto text-[8px] opacity-50">drawers</span>
             </button>
           </div>
 

@@ -204,3 +204,117 @@ export async function getDrawerCount(): Promise<number> {
     return 0;
   }
 }
+
+export interface WingInfo {
+  id: string;
+  name: string;
+  drawerCount: number;
+  lastUpdate: string;
+}
+
+export interface DrawerSummary {
+  id: string;
+  filename: string;
+  title: string;
+  preview: string;
+  tags: string[];
+  date: string;
+  source: string;
+  size: number;
+}
+
+export interface DrawerFull {
+  wing: string;
+  filename: string;
+  frontMatter: { tags: string[]; date: string; source: string };
+  content: string;
+  wikiLinks: string[];
+}
+
+export interface MemPalaceStats {
+  totalDrawers: number;
+  totalWings: number;
+  byWing: Record<string, number>;
+  lastUpdate: string;
+  oldestDrawer: string;
+  newestDrawer: string;
+}
+
+function extractTitle(content: string, filename: string): string {
+  const h1 = content.match(/^#\s+(.+)$/m);
+  if (h1) return h1[1].trim();
+  return filename.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function wingIdToName(id: string): string {
+  return id
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+export async function getWings(): Promise<WingInfo[]> {
+  const { drawers } = await getIndex();
+  const map = new Map<string, { count: number; dates: string[] }>();
+  for (const d of drawers) {
+    if (!map.has(d.wing)) map.set(d.wing, { count: 0, dates: [] });
+    const entry = map.get(d.wing)!;
+    entry.count++;
+    if (d.date) entry.dates.push(d.date);
+  }
+  return Array.from(map.entries()).map(([id, { count, dates }]) => ({
+    id,
+    name: wingIdToName(id),
+    drawerCount: count,
+    lastUpdate: dates.sort().pop() || "",
+  }));
+}
+
+export async function getWingDrawers(wingId: string): Promise<DrawerSummary[]> {
+  const { drawers } = await getIndex();
+  return drawers
+    .filter((d) => d.wing === wingId)
+    .map((d) => ({
+      id: d.filename,
+      filename: d.filename,
+      title: extractTitle(d.content, d.filename),
+      preview: d.content.replace(/^#.*$/m, "").trim().slice(0, 100),
+      tags: d.tags,
+      date: d.date,
+      source: d.source,
+      size: d.content.length,
+    }));
+}
+
+export async function getDrawerFull(wing: string, filename: string): Promise<DrawerFull | null> {
+  const { drawers } = await getIndex();
+  const d = drawers.find((x) => x.wing === wing && x.filename === filename);
+  if (!d) return null;
+  const wikiLinks = [...d.content.matchAll(/\[\[([^\]]+)\]\]/g)].map((m) => m[0]);
+  return {
+    wing: d.wing,
+    filename: d.filename,
+    frontMatter: { tags: d.tags, date: d.date, source: d.source },
+    content: d.content,
+    wikiLinks,
+  };
+}
+
+export async function getStats(): Promise<MemPalaceStats> {
+  const { drawers } = await getIndex();
+  const byWing: Record<string, number> = {};
+  const dates: string[] = [];
+  for (const d of drawers) {
+    byWing[d.wing] = (byWing[d.wing] || 0) + 1;
+    if (d.date) dates.push(d.date);
+  }
+  dates.sort();
+  return {
+    totalDrawers: drawers.length,
+    totalWings: Object.keys(byWing).length,
+    byWing,
+    lastUpdate: dates[dates.length - 1] || "",
+    oldestDrawer: dates[0] || "",
+    newestDrawer: dates[dates.length - 1] || "",
+  };
+}
