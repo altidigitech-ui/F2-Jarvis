@@ -1,0 +1,445 @@
+{
+  "version": "1.0",
+  "generated": "2026-04-20",
+  "description": "Graphify sémantique F2 — concepts structurés FoundryTwo (patterns, stratégie, distribution, produits)",
+  "nodes": [
+    {
+      "id": "distribution-first",
+      "label": "Distribution First",
+      "type": "principle",
+      "wing": "strategie",
+      "description": "Ne jamais builder sans validation communauté. 10+ signups en 48h avant de coder la première ligne. La distribution est le produit.",
+      "weight": 5
+    },
+    {
+      "id": "volume-constance",
+      "label": "Volume × Constance",
+      "type": "principle",
+      "wing": "strategie",
+      "description": "Romain: 30 interactions/jour + 10 cold outreach/jour. Fabrice: 30/jour + 10 cold/jour. Non-négociable. La croissance est compound.",
+      "weight": 5
+    },
+    {
+      "id": "complexity-moat",
+      "label": "Complexité = Moat",
+      "type": "principle",
+      "wing": "strategie",
+      "description": "Ne jamais filtrer par complexité technique. Un problème dur = barrière à l'entrée pour les concurrents. Le moat vient de là.",
+      "weight": 4
+    },
+    {
+      "id": "non-dev-target",
+      "label": "Cible NON-DEV",
+      "type": "principle",
+      "wing": "strategie",
+      "description": "Jamais de produit pour codeurs. Cible exclusive: e-commerçants, agences/freelancers, content creators. Le non-dev paie pour la douleur résolue.",
+      "weight": 4
+    },
+    {
+      "id": "ten-k-minimum",
+      "label": "Problèmes à 10K$/an",
+      "type": "principle",
+      "wing": "strategie",
+      "description": "Pricing reflète la douleur, pas la feature. Si le problème ne vaut pas 10K$/an pour la cible, passer à autre chose.",
+      "weight": 4
+    },
+    {
+      "id": "anti-ia-detection",
+      "label": "Anti-détection IA",
+      "type": "principle",
+      "wing": "f2",
+      "description": "Em-dash (—) interdit. Structure 'Not X — it's Y' interdite. Varier longueurs de phrases. Self-check GPTZero/ZeroGPT avant publication. Un ban = semaines de travail perdues.",
+      "weight": 4
+    },
+    {
+      "id": "communaute-douleur-build",
+      "label": "Communauté → Douleur → Build",
+      "type": "strategy",
+      "wing": "strategie",
+      "description": "Méthode F2: identifier la communauté → trouver la douleur partagée → valider 10 signups en 48h → build → distribution (volume × constance) → REPEAT.",
+      "weight": 5
+    },
+    {
+      "id": "two-saas-per-month",
+      "label": "2 SaaS/mois",
+      "type": "strategy",
+      "wing": "produits",
+      "description": "Objectif: lancer 2 SaaS par mois sur 3 verticals. Méthode distribution-first appliquée en série. Fail fast, pivot rapide.",
+      "weight": 4
+    },
+    {
+      "id": "three-verticals",
+      "label": "3 Verticals",
+      "type": "strategy",
+      "wing": "strategie",
+      "description": "E-commerce, Agences/Freelancers, Content Creators. Trois marchés avec douleurs distinctes, audiences distinctes, canaux distincts.",
+      "weight": 4
+    },
+    {
+      "id": "la-toile",
+      "label": "La Toile",
+      "type": "strategy",
+      "wing": "la-toile",
+      "description": "Architecture de visibilité invisible. Altistone en node central non public. Les SaaS périphériques alimentent la toile. Jamais mentionné en public.",
+      "weight": 4
+    },
+    {
+      "id": "warming-farming",
+      "label": "Warming → Farming",
+      "type": "strategy",
+      "wing": "distribution",
+      "description": "Warming = réchauffer la cible avant le pitch (commentaires, likes, valeur gratuite). Farming = récolte progressive une fois la relation établie.",
+      "weight": 4
+    },
+    {
+      "id": "build-in-public",
+      "label": "Build in Public",
+      "type": "strategy",
+      "wing": "f2",
+      "description": "Transparence sur la construction. Milestones publiés sur IH, Twitter, LinkedIn. Angle Fabrice = technique/code. Angle Romain = growth/metrics.",
+      "weight": 3
+    },
+    {
+      "id": "cold-dm-linkedin",
+      "label": "Cold DM LinkedIn",
+      "type": "pattern",
+      "wing": "distribution",
+      "description": "Structuré: hook personnalisé → preuve sociale courte → CTA spécifique. Max 5 lignes. Jamais de pitch générique. Taux réponse visé: 15-20%.",
+      "weight": 4
+    },
+    {
+      "id": "cold-dm-twitter",
+      "label": "Cold DM Twitter",
+      "type": "pattern",
+      "wing": "distribution",
+      "description": "DM après engagement organique (commentaire ou like de la cible). Plus court que LinkedIn. Référencer quelque chose de précis de leur timeline.",
+      "weight": 3
+    },
+    {
+      "id": "outreach-reddit",
+      "label": "Outreach Reddit",
+      "type": "pattern",
+      "wing": "distribution",
+      "description": "Commenter avec valeur réelle dans les subreddits cibles AVANT de DM. Lurk 2-3 semaines. Karma positif obligatoire. Pitch uniquement après 3+ commentaires utiles.",
+      "weight": 3
+    },
+    {
+      "id": "cold-outreach-facebook",
+      "label": "Outreach Facebook Groups",
+      "type": "pattern",
+      "wing": "distribution",
+      "description": "Facebook Groups e-commerce + agences. Valeur dans les commentaires d'abord, DM après. Volume > qualité au démarrage pour tester les hooks.",
+      "weight": 3
+    },
+    {
+      "id": "hook-technique",
+      "label": "Hook Technique",
+      "type": "technique",
+      "wing": "growth-marketing",
+      "description": "Premier mot = chiffre ou question provocante. Première ligne crochète ou le reste est mort. Tester 3-5 variants. Mesurer le CTR avant de scaler.",
+      "weight": 4
+    },
+    {
+      "id": "thread-twitter",
+      "label": "Thread Twitter",
+      "type": "pattern",
+      "wing": "growth-marketing",
+      "description": "Hook fort → valeur actionnable (5-10 points) → CTA final. 7-12 tweets max. Images/screenshots pour chaque point. Publier à 9h ou 18h CEST.",
+      "weight": 3
+    },
+    {
+      "id": "post-linkedin",
+      "label": "Post LinkedIn",
+      "type": "pattern",
+      "wing": "growth-marketing",
+      "description": "1 idée par post. Format court (150-300 mots). Pas de listes à puces. Ligne break tous les 2 phrases. Commentaire en first reply pour le lien.",
+      "weight": 3
+    },
+    {
+      "id": "cold-sequence",
+      "label": "Séquence Cold Outreach",
+      "type": "pattern",
+      "wing": "distribution",
+      "description": "Touch 1 (valeur pure, 0 pitch) → 3 jours → Touch 2 (follow-up doux + question) → 7 jours → Touch 3 (pitch direct si pas de réponse). Stop après.",
+      "weight": 4
+    },
+    {
+      "id": "dan-castle-success",
+      "label": "Dan Castle Success",
+      "type": "example",
+      "wing": "romain",
+      "description": "Cas réel: Romain, week 5. 3 warm intros obtenues via LinkedIn cold DM structuré. Hook personnalisé sur leur newsletter. 1 intro = 2 calls bookés. Taux de réponse: 22%.",
+      "weight": 3
+    },
+    {
+      "id": "twitter",
+      "label": "Twitter / X",
+      "type": "channel",
+      "wing": "growth-marketing",
+      "description": "Build-in-public (Fabrice), growth/CRO (Romain), studio milestones (@foundrytwo). 30 interactions/jour. Threads + DMs + replies. Audience: builders, e-commerce, SaaS.",
+      "weight": 4
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "type": "channel",
+      "wing": "growth-marketing",
+      "description": "Cold DM + posts longs. ROI élevé pour cible agences/freelancers. Algorithme favorise la régularité. Romain = growth/CRO. Fabrice = technique/builder.",
+      "weight": 4
+    },
+    {
+      "id": "reddit",
+      "label": "Reddit",
+      "type": "channel",
+      "wing": "distribution",
+      "description": "Subreddits niche: r/ecommerce, r/Entrepreneur, r/freelance, r/ContentCreator. Lurk avant pitch. Karma obligatoire. Volume modéré mais qualité haute.",
+      "weight": 3
+    },
+    {
+      "id": "facebook",
+      "label": "Facebook Groups",
+      "type": "channel",
+      "wing": "distribution",
+      "description": "Groups e-commerce + agences. Volume élevé, qualité variable. Bonne entrée pour tester hooks. Algorithme de groupe favorise l'engagement natif.",
+      "weight": 3
+    },
+    {
+      "id": "producthunt",
+      "label": "ProductHunt",
+      "type": "channel",
+      "wing": "growth-marketing",
+      "description": "Launch day coordonné: @foundrytwo + Romain + Fabrice. Préparation 2 semaines avant. Hunter de confiance requis. Cible: early adopters et presse tech.",
+      "weight": 3
+    },
+    {
+      "id": "indiehackers",
+      "label": "IndieHackers",
+      "type": "channel",
+      "wing": "growth-marketing",
+      "description": "Build-in-public milestones. Posts long-form sur les apprentissages. @foundrytwo = hub central. Audience: builders, solo founders, early SaaS.",
+      "weight": 3
+    },
+    {
+      "id": "romain",
+      "label": "Romain Delgado",
+      "type": "persona",
+      "wing": "romain",
+      "description": "Growth/CRO, full-time. Compte @foundrytwo géré par lui. Cibles: e-commerce + agences/freelancers. Voix: directe, data-driven, pas corporate. 30 interactions/jour.",
+      "weight": 3
+    },
+    {
+      "id": "fabrice",
+      "label": "Fabrice Gangi",
+      "type": "persona",
+      "wing": "fabrice",
+      "description": "CTO/Builder, full-time. F2-Jarvis infra, code SaaS. Cibles: e-commerce + content creators. Voix: technique, build-in-public, pas de jargon marketing. 30 interactions/jour.",
+      "weight": 3
+    },
+    {
+      "id": "foundrytwo-account",
+      "label": "@foundrytwo",
+      "type": "persona",
+      "wing": "f2",
+      "description": "Compte studio. Géré par Romain. Hub central build-in-public. Canaux: Twitter, LinkedIn, IH, PH, TikTok (différé). Voix: studio, milestones collectifs.",
+      "weight": 3
+    },
+    {
+      "id": "altistone",
+      "label": "Altistone",
+      "type": "product",
+      "wing": "produits",
+      "description": "SaaS e-commerce. Node central de La Toile (invisible en public). Problème: conversion/CRO pour marchands non-dev. Pricing reflète la douleur chiffrée.",
+      "weight": 4
+    },
+    {
+      "id": "vertical-ecommerce",
+      "label": "Vertical E-commerce",
+      "type": "concept",
+      "wing": "strategie",
+      "description": "Marchands e-commerce non-dev. Douleurs: conversion, abandon panier, analytics incompréhensibles, A/B testing trop complexe. Budget: élevé si ROI prouvé.",
+      "weight": 3
+    },
+    {
+      "id": "vertical-agences",
+      "label": "Vertical Agences",
+      "type": "concept",
+      "wing": "strategie",
+      "description": "Agences digitales et freelancers. Douleurs: reporting client, onboarding, facturation, gestion de projets multi-clients. Sensibles au prix mais paient si gain de temps.",
+      "weight": 3
+    },
+    {
+      "id": "vertical-content",
+      "label": "Vertical Content Creators",
+      "type": "concept",
+      "wing": "strategie",
+      "description": "Créateurs de contenu cherchant à monétiser. Douleurs: cross-posting, analytics fragmentés, monétisation de l'audience. Budget limité mais volume énorme.",
+      "weight": 3
+    },
+    {
+      "id": "validation-48h",
+      "label": "Validation 48h",
+      "type": "concept",
+      "wing": "strategie",
+      "description": "10 signups en 48h = GO. En dessous = kill ou pivot du message (pas forcément du produit). La landing sans code suffit pour valider. Pas de build avant ça.",
+      "weight": 4
+    },
+    {
+      "id": "funnel-invisible",
+      "label": "Funnel Invisible",
+      "type": "concept",
+      "wing": "la-toile",
+      "description": "L'utilisateur ne voit que le SaaS, pas la toile derrière. Les SaaS s'alimentent mutuellement en leads de façon opaque. Altistone = node central non mentionné.",
+      "weight": 3
+    },
+    {
+      "id": "mempalace",
+      "label": "MemPalace",
+      "type": "concept",
+      "wing": "f2",
+      "description": "Mémoire archive verbatim de F2-Jarvis. Structure Wings/Rooms/Drawers. Search local ChromaDB, 0 API call par query. Sauvegarde auto à chaque session.",
+      "weight": 3
+    },
+    {
+      "id": "ouroboros",
+      "label": "Ouroboros",
+      "type": "concept",
+      "wing": "f2",
+      "description": "Conscience de fond bridée. 1 cycle/nuit (2h-5h CEST). Read-only sur le repo. Écrit uniquement dans proposals/, diary/, state/. Fabrice valide via /review-proposals.",
+      "weight": 3
+    },
+    {
+      "id": "daily-brief-morning",
+      "label": "Brief /morning",
+      "type": "concept",
+      "wing": "f2",
+      "description": "Commande /morning: état de chaque SaaS, décisions en attente, posts à publier, ce qui a bougé depuis hier, 3 priorités recommandées. Démarre chaque session.",
+      "weight": 2
+    },
+    {
+      "id": "agent-each-saas",
+      "label": "Chaque SaaS = Agent",
+      "type": "principle",
+      "wing": "produits",
+      "description": "Chaque SaaS embarque un LLM + webhooks + notifications push. PWA sur tout. L'agent répond aux douleurs en temps réel. Interface non-dev obligatoire.",
+      "weight": 3
+    },
+    {
+      "id": "persona-voice",
+      "label": "Voix Séparées",
+      "type": "concept",
+      "wing": "f2",
+      "description": "R ≠ F ≠ F2 ≠ Produits. Chaque voix a son vocabulaire exclusif. Jamais de mélange. Voir romain/VOIX.md, fabrice/VOIX.md, f2/context.md.",
+      "weight": 3
+    },
+    {
+      "id": "pricing-pain",
+      "label": "Pricing = Douleur",
+      "type": "principle",
+      "wing": "produits",
+      "description": "Le prix reflète la douleur résolue, pas la feature livrée. Annuel > mensuel. Tiering basé sur la taille de la douleur, pas sur les features débloquées.",
+      "weight": 3
+    },
+    {
+      "id": "pwa-mobile",
+      "label": "PWA Mobile-First",
+      "type": "technique",
+      "wing": "produits",
+      "description": "PWA sur tous les SaaS F2. Push notifications natives. Offline-first pour non-dev. Pas d'app store = pas de friction à l'install. Critique pour la rétention.",
+      "weight": 3
+    },
+    {
+      "id": "f2-jarvis-os",
+      "label": "F2-Jarvis OS",
+      "type": "concept",
+      "wing": "f2",
+      "description": "OS interne FoundryTwo. 16 skills, 7 agents, 6 hooks, 9 commandes. Brain (Ouroboros + MemPalace), ops (budget, monitoring), patterns techniques.",
+      "weight": 4
+    },
+    {
+      "id": "graphify-knowledge",
+      "label": "Graphify Graph",
+      "type": "concept",
+      "wing": "f2",
+      "description": "Knowledge graph sémantique de F2. 71 nodes, 61 edges, 27 communities. Extraction code-first (tree-sitter, 0 LLM). Incrémental après chaque commit.",
+      "weight": 3
+    }
+  ],
+  "edges": [
+    { "source": "distribution-first", "target": "communaute-douleur-build", "relation": "implements", "weight": 1.0 },
+    { "source": "distribution-first", "target": "validation-48h", "relation": "requires", "weight": 0.9 },
+    { "source": "distribution-first", "target": "two-saas-per-month", "relation": "drives", "weight": 0.8 },
+    { "source": "volume-constance", "target": "cold-dm-linkedin", "relation": "drives", "weight": 0.8 },
+    { "source": "volume-constance", "target": "cold-dm-twitter", "relation": "drives", "weight": 0.7 },
+    { "source": "volume-constance", "target": "outreach-reddit", "relation": "drives", "weight": 0.7 },
+    { "source": "volume-constance", "target": "cold-outreach-facebook", "relation": "drives", "weight": 0.6 },
+    { "source": "communaute-douleur-build", "target": "validation-48h", "relation": "contains", "weight": 1.0 },
+    { "source": "communaute-douleur-build", "target": "two-saas-per-month", "relation": "enables", "weight": 0.9 },
+    { "source": "communaute-douleur-build", "target": "three-verticals", "relation": "structured-by", "weight": 0.8 },
+    { "source": "two-saas-per-month", "target": "three-verticals", "relation": "uses", "weight": 0.9 },
+    { "source": "three-verticals", "target": "vertical-ecommerce", "relation": "contains", "weight": 1.0 },
+    { "source": "three-verticals", "target": "vertical-agences", "relation": "contains", "weight": 1.0 },
+    { "source": "three-verticals", "target": "vertical-content", "relation": "contains", "weight": 1.0 },
+    { "source": "vertical-ecommerce", "target": "altistone", "relation": "has-product", "weight": 0.9 },
+    { "source": "la-toile", "target": "funnel-invisible", "relation": "implements", "weight": 0.9 },
+    { "source": "la-toile", "target": "altistone", "relation": "centers-on", "weight": 0.9 },
+    { "source": "la-toile", "target": "twitter", "relation": "uses", "weight": 0.6 },
+    { "source": "la-toile", "target": "linkedin", "relation": "uses", "weight": 0.7 },
+    { "source": "la-toile", "target": "reddit", "relation": "uses", "weight": 0.5 },
+    { "source": "la-toile", "target": "facebook", "relation": "uses", "weight": 0.5 },
+    { "source": "warming-farming", "target": "cold-dm-linkedin", "relation": "method", "weight": 0.8 },
+    { "source": "warming-farming", "target": "outreach-reddit", "relation": "method", "weight": 0.7 },
+    { "source": "warming-farming", "target": "cold-sequence", "relation": "contains", "weight": 0.9 },
+    { "source": "cold-dm-linkedin", "target": "dan-castle-success", "relation": "example", "weight": 0.9 },
+    { "source": "cold-dm-linkedin", "target": "hook-technique", "relation": "uses", "weight": 0.9 },
+    { "source": "cold-dm-linkedin", "target": "linkedin", "relation": "channel", "weight": 1.0 },
+    { "source": "cold-dm-twitter", "target": "hook-technique", "relation": "uses", "weight": 0.8 },
+    { "source": "cold-dm-twitter", "target": "twitter", "relation": "channel", "weight": 1.0 },
+    { "source": "outreach-reddit", "target": "reddit", "relation": "channel", "weight": 1.0 },
+    { "source": "cold-outreach-facebook", "target": "facebook", "relation": "channel", "weight": 1.0 },
+    { "source": "cold-sequence", "target": "cold-dm-linkedin", "relation": "uses", "weight": 0.9 },
+    { "source": "cold-sequence", "target": "cold-dm-twitter", "relation": "uses", "weight": 0.7 },
+    { "source": "hook-technique", "target": "thread-twitter", "relation": "applied-in", "weight": 0.8 },
+    { "source": "hook-technique", "target": "post-linkedin", "relation": "applied-in", "weight": 0.8 },
+    { "source": "thread-twitter", "target": "twitter", "relation": "posted-on", "weight": 1.0 },
+    { "source": "post-linkedin", "target": "linkedin", "relation": "posted-on", "weight": 1.0 },
+    { "source": "romain", "target": "cold-dm-linkedin", "relation": "executes", "weight": 0.9 },
+    { "source": "romain", "target": "twitter", "relation": "uses", "weight": 0.8 },
+    { "source": "romain", "target": "linkedin", "relation": "uses", "weight": 0.9 },
+    { "source": "romain", "target": "reddit", "relation": "uses", "weight": 0.7 },
+    { "source": "romain", "target": "facebook", "relation": "uses", "weight": 0.7 },
+    { "source": "romain", "target": "producthunt", "relation": "uses", "weight": 0.6 },
+    { "source": "romain", "target": "foundrytwo-account", "relation": "manages", "weight": 1.0 },
+    { "source": "fabrice", "target": "cold-dm-twitter", "relation": "executes", "weight": 0.7 },
+    { "source": "fabrice", "target": "twitter", "relation": "uses", "weight": 0.9 },
+    { "source": "fabrice", "target": "linkedin", "relation": "uses", "weight": 0.7 },
+    { "source": "fabrice", "target": "build-in-public", "relation": "practices", "weight": 0.9 },
+    { "source": "fabrice", "target": "f2-jarvis-os", "relation": "maintains", "weight": 1.0 },
+    { "source": "foundrytwo-account", "target": "producthunt", "relation": "uses", "weight": 0.8 },
+    { "source": "foundrytwo-account", "target": "indiehackers", "relation": "uses", "weight": 0.8 },
+    { "source": "foundrytwo-account", "target": "twitter", "relation": "uses", "weight": 0.7 },
+    { "source": "build-in-public", "target": "indiehackers", "relation": "posted-on", "weight": 0.9 },
+    { "source": "build-in-public", "target": "twitter", "relation": "posted-on", "weight": 0.8 },
+    { "source": "anti-ia-detection", "target": "post-linkedin", "relation": "governs", "weight": 0.9 },
+    { "source": "anti-ia-detection", "target": "thread-twitter", "relation": "governs", "weight": 0.8 },
+    { "source": "ten-k-minimum", "target": "pricing-pain", "relation": "implements", "weight": 0.9 },
+    { "source": "ten-k-minimum", "target": "altistone", "relation": "validates", "weight": 0.7 },
+    { "source": "non-dev-target", "target": "vertical-ecommerce", "relation": "scopes", "weight": 0.9 },
+    { "source": "non-dev-target", "target": "vertical-agences", "relation": "scopes", "weight": 0.9 },
+    { "source": "non-dev-target", "target": "vertical-content", "relation": "scopes", "weight": 0.9 },
+    { "source": "non-dev-target", "target": "pwa-mobile", "relation": "requires", "weight": 0.8 },
+    { "source": "dan-castle-success", "target": "romain", "relation": "achieved-by", "weight": 0.9 },
+    { "source": "complexity-moat", "target": "altistone", "relation": "applies-to", "weight": 0.7 },
+    { "source": "ouroboros", "target": "mempalace", "relation": "reads", "weight": 0.7 },
+    { "source": "ouroboros", "target": "f2-jarvis-os", "relation": "part-of", "weight": 0.9 },
+    { "source": "mempalace", "target": "f2-jarvis-os", "relation": "part-of", "weight": 0.9 },
+    { "source": "graphify-knowledge", "target": "f2-jarvis-os", "relation": "part-of", "weight": 1.0 },
+    { "source": "daily-brief-morning", "target": "romain", "relation": "serves", "weight": 0.8 },
+    { "source": "daily-brief-morning", "target": "fabrice", "relation": "serves", "weight": 0.8 },
+    { "source": "agent-each-saas", "target": "pwa-mobile", "relation": "implements", "weight": 0.8 },
+    { "source": "agent-each-saas", "target": "altistone", "relation": "applies-to", "weight": 0.7 },
+    { "source": "persona-voice", "target": "romain", "relation": "defines-for", "weight": 0.9 },
+    { "source": "persona-voice", "target": "fabrice", "relation": "defines-for", "weight": 0.9 },
+    { "source": "persona-voice", "target": "foundrytwo-account", "relation": "defines-for", "weight": 0.8 },
+    { "source": "pricing-pain", "target": "altistone", "relation": "applied-to", "weight": 0.8 }
+  ]
+}

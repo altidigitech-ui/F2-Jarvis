@@ -7,6 +7,12 @@ import { graphRoute } from "./routes/graph.js";
 import { fileRoute } from "./routes/file.js";
 import { searchRoute } from "./routes/search.js";
 import {
+  graphifyRoute,
+  graphifyNodeRoute,
+  graphifySearchRoute,
+  graphifyRelatedRoute,
+} from "./routes/graphify.js";
+import {
   ouroborosStatus,
   ouroborosProposals,
   ouroborosProposal,
@@ -38,6 +44,10 @@ app.get("/context", contextRoute);
 app.post("/action", actionRoute);
 app.get("/graph", graphRoute);
 app.get("/file", fileRoute);
+app.get("/graphify", graphifyRoute);
+app.get("/graphify/search", graphifySearchRoute);
+app.get("/graphify/related", graphifyRelatedRoute);
+app.get("/graphify/node/:id", graphifyNodeRoute);
 
 app.get("/ouroboros/status", ouroborosStatus);
 app.get("/ouroboros/proposals", ouroborosProposals);
