@@ -13,6 +13,26 @@ async function readRepo(relPath: string): Promise<string> {
   }
 }
 
+function getWeekStart(): Date {
+  const now = new Date();
+  const parisNow = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Paris" }));
+  const day = parisNow.getDay();
+  const diff = day === 0 ? -6 : 1 - day;
+  const monday = new Date(parisNow);
+  monday.setDate(parisNow.getDate() + diff);
+  monday.setHours(0, 0, 0, 0);
+  return monday;
+}
+
+function parseDateDDMM(s: string): Date | null {
+  const m = s.match(/(\d{2})\/(\d{2})/);
+  if (!m) return null;
+  const year = new Date().getFullYear();
+  const d = new Date(year, parseInt(m[2], 10) - 1, parseInt(m[1], 10));
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
 function getToday(): { day: string; dayName: string; weekday: string } {
   const now = new Date();
   const day = now.toLocaleDateString("fr-FR", { timeZone: "Europe/Paris", day: "2-digit", month: "2-digit" });
@@ -118,10 +138,14 @@ function parseAlerts(progress: string): AlertItem[] {
   const eventSection = section(progress, "ÉVÉNEMENTS NOTABLES") || section(progress, "EVENEMENTS NOTABLES");
   const rows = tableRows(eventSection);
   const criticalKeywords = ["SUSPENDU", "INCIDENT", "BLOQUÉ", "bloqué", "inaccessible", "DNS non configuré"];
-  const warningKeywords = ["En attente", "⏳", "pending", "En cours", "BLOQUÉ"];
+  const warningKeywords = ["En attente", "⏳", "pending", "En cours"];
+  const weekStart = getWeekStart();
   const seen = new Set<string>();
   for (const row of rows) {
     const full = row.join(" ");
+    const dateCell = row[0] || "";
+    const rowDate = parseDateDDMM(dateCell);
+    if (rowDate && rowDate < weekStart) continue;
     const event = row[1] || "";
     const action = row[4] || row[3] || "";
     if (!event || seen.has(event.slice(0, 40))) continue;
@@ -129,6 +153,7 @@ function parseAlerts(progress: string): AlertItem[] {
     const isCritical = criticalKeywords.some((kw) => full.includes(kw));
     const isWarning = warningKeywords.some((kw) => full.includes(kw));
     if (isCritical || isWarning) {
+      if (full.includes("RÉSOLU")) continue;
       alerts.push({
         level: isCritical ? "critical" : "warning",
         title: event.replace(/🔴|⚠|❌/g, "").trim().slice(0, 60),
@@ -138,6 +163,82 @@ function parseAlerts(progress: string): AlertItem[] {
     if (alerts.length >= 5) break;
   }
   return alerts;
+}
+
+function parseObjectiveItems(
+  planHebdo: string,
+  counters: { cold: number; twEng: number; liCom: number; ihPh: number; cross: number },
+  publishedBy: string,
+): TimelineItem[] {
+  if (!planHebdo) return [];
+  const items: TimelineItem[] = [];
+
+  const coldSection = section(planHebdo, "COLD OUTREACH");
+  const coldRows = tableRows(coldSection);
+  const coldDailyTarget = (() => {
+    for (const row of coldRows) {
+      const label = (row[0] || "").toLowerCase();
+      const val = row[1] || "";
+      if (label.includes("/jour") || label.includes("par jour") || label.includes("jour")) {
+        const m = val.match(/(\d+)/);
+        if (m) return parseInt(m[1], 10);
+      }
+    }
+    return 10;
+  })();
+  if (coldDailyTarget > 0) {
+    const done = counters.cold;
+    items.push({
+      time: "",
+      title: `Cold outreach: ${done}/${coldDailyTarget} aujourd'hui`,
+      platform: "OBJECTIF",
+      status: done >= coldDailyTarget ? "done" : "todo",
+      publishedBy,
+    });
+  }
+
+  const engTotalTarget = 30;
+  const engDone = counters.twEng + counters.liCom + counters.ihPh;
+  items.push({
+    time: "",
+    title: `Engagement: ${engDone}/${engTotalTarget} interactions aujourd'hui`,
+    platform: "OBJECTIF",
+    status: engDone >= engTotalTarget ? "done" : "todo",
+    publishedBy,
+  });
+
+  return items;
+}
+
+function parseCrossItemsToday(
+  crossTracker: string,
+  today: string,
+  weekday: string,
+  publishedBy: string,
+): TimelineItem[] {
+  if (!crossTracker) return [];
+  const items: TimelineItem[] = [];
+  const sec = section(crossTracker, `${weekday} ${today}`) || section(crossTracker, today);
+  if (!sec) return items;
+  const rows = tableRows(sec);
+  for (const row of rows) {
+    if (row.length < 2) continue;
+    const post = (row[0] || "").trim();
+    if (!post || post.startsWith("---")) continue;
+    const hour = (row[1] || "").trim();
+    const subject = (row[2] || "").trim();
+    const replyCell = row[3] || row[4] || "";
+    const done = replyCell.includes("✅");
+    const timeMatch = hour.match(/(\d{1,2})h/);
+    items.push({
+      time: timeMatch ? `${timeMatch[1].padStart(2, "0")}:00` : "",
+      title: `Cross: ${post}${subject ? " — " + subject.slice(0, 40) : ""}`,
+      platform: "CROSS",
+      status: done ? "done" : "todo",
+      publishedBy,
+    });
+  }
+  return items;
 }
 
 function parseF2Planning(f2PlanHebdo: string, publishedBy: string): TimelineItem[] {
@@ -186,7 +287,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
     ]);
 
   const publishedBy = persona === "romain" ? "R" : "F";
-  const timeline = parseTimeline(planHebdo, today, dayName, publishedBy);
+  const timelinePosts = parseTimeline(planHebdo, today, dayName, publishedBy);
   const cold = countTodayAny(coldLog, today);
   const twEng = countTodayInSection(engagementLog, "TWITTER", today);
   const liCom = countTodayInSection(engagementLog, "LINKEDIN", today);
@@ -198,6 +299,11 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   const counters: CounterData = {
     cold, repliesIn: 0, twEng, liCom, cross, ihPh, total: cold + twEng + liCom + ihPh + cross,
   };
+
+  const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, ihPh, cross }, publishedBy);
+  const crossItems = parseCrossItemsToday(crossTracker, today, weekday, publishedBy);
+  const timeline = [...timelinePosts, ...crossItems, ...objectives];
+
   const alerts = parseAlerts(progressSemaine);
   const weekPlanningF2 = mode === "f2" ? parseF2Planning(f2PlanHebdo, "F2") : [];
 
