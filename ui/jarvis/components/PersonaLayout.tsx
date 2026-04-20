@@ -22,7 +22,10 @@ const MemPalaceView = dynamic(
   { ssr: false }
 );
 import { ErrorBoundary } from "./ErrorBoundary";
-import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
+import { TimelineColumn } from "./TimelineColumn";
+import { QuickAccessSidebar } from "./QuickAccessSidebar";
+import { FileViewerModal } from "./FileViewerModal";
+import type { ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
 
@@ -144,44 +147,6 @@ function Bar({ value, target, label, color }: { value: number; target: number; l
   );
 }
 
-function TimelineChip({
-  item,
-  accentColor,
-}: {
-  item: TimelineItem;
-  accentColor: string;
-}) {
-  const isDone = item.status === "done";
-  const isBlocked = item.status === "blocked";
-  const statusIcon = isDone ? "✓" : isBlocked ? "⊘" : "·";
-
-  return (
-    <div
-      className="flex-none flex items-center gap-2 text-[10px] font-mono px-3 py-1.5 rounded-full"
-      style={{
-        background: isDone
-          ? `${accentColor}15`
-          : isBlocked
-          ? "rgba(240,100,100,0.08)"
-          : "rgba(255,255,255,0.03)",
-        border: `1px solid ${
-          isDone
-            ? accentColor + "30"
-            : isBlocked
-            ? "rgba(240,100,100,0.2)"
-            : "rgba(255,255,255,0.06)"
-        }`,
-        color: isDone ? accentColor : isBlocked ? "#f06464" : "#64748b",
-      }}
-    >
-      {item.time && <span>{item.time}</span>}
-      {item.time && <span>·</span>}
-      <span className="opacity-60">[{item.platform}]</span>
-      <span>{item.title.slice(0, 40)}{item.title.length > 40 ? "…" : ""}</span>
-      <span className="opacity-60">{statusIcon}</span>
-    </div>
-  );
-}
 
 type Props = {
   persona: Persona;
@@ -197,6 +162,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const [graphifyExpanded, setGraphifyExpanded] = useState(false);
   const [graphifyPrefill, setGraphifyPrefill] = useState<string | null>(null);
   const [mempalaceExpanded, setMempalaceExpanded] = useState(false);
+  const [openFilePath, setOpenFilePath] = useState<string | null>(null);
   const [fileContext, setFileContext] = useState<{ name: string; content: string } | null>(null);
   const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
   const [loading, setLoading] = useState(true);
@@ -266,6 +232,22 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const { counters, alerts } = ctx;
   const timeline = f2Mode ? ctx.weekPlanningF2 : ctx.timeline;
 
+  const filePaths = f2Mode
+    ? {
+        planHebdo: "f2/plan-hebdo.md",
+        postsBatch: "BATCH-SEMAINE-6.md",
+        crossEng: `${persona}/cross-engagement-tracker.md`,
+        cold: `${persona}/cold/cold-outreach-log.md`,
+        progress: "f2/progress-semaine.md",
+      }
+    : {
+        planHebdo: `${persona}/plan-hebdo.md`,
+        postsBatch: "BATCH-SEMAINE-6.md",
+        crossEng: `${persona}/cross-engagement-tracker.md`,
+        cold: `${persona}/cold/cold-outreach-log.md`,
+        progress: `${persona}/progress-semaine.md`,
+      };
+
   return (
     <div className="relative min-h-screen flex flex-col z-10">
       {brainExpanded && (
@@ -302,6 +284,11 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           />
         </ErrorBoundary>
       )}
+      <FileViewerModal
+        filePath={openFilePath}
+        accentColor={accentColor}
+        onClose={() => setOpenFilePath(null)}
+      />
       {/* F2 mode banner */}
       {f2Mode && (
         <div
@@ -381,11 +368,11 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         </div>
       </header>
 
-      {/* 3-column layout */}
+      {/* 4-column layout */}
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar gauche — 190px */}
+        {/* Sidebar gauche — 200px */}
         <aside
-          className="w-[190px] flex-none flex flex-col border-r"
+          className="w-[200px] flex-none flex flex-col border-r"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           <div className="p-3">
@@ -430,62 +417,22 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             </button>
           </div>
 
-          <nav className="flex-1 px-3 pb-4">
-            <div className="text-[12px] font-semibold text-slate-500 mb-2 px-1">
-              Canaux de distribution
-            </div>
-            {cfg.channels.map((ch) => (
-              <div
-                key={ch}
-                className="text-[12px] px-2 py-1.5 rounded mb-0.5 text-slate-400 hover:text-slate-200 hover:bg-white/5 cursor-pointer transition-colors flex items-center gap-2"
-              >
-                <span className="w-1 h-1 rounded-full" style={{ background: accentColor, opacity: 0.5 }} />
-                {ch}
-              </div>
-            ))}
-
-            <div className="text-[12px] font-semibold text-slate-500 mb-2 px-1 mt-4">
-              Liens rapides
-            </div>
-            {["Plan hebdo", "Progress", "Tracking"].map((item) => (
-              <div
-                key={item}
-                className="text-[12px] px-2 py-1.5 rounded mb-0.5 text-slate-400 hover:text-slate-200 hover:bg-white/5 cursor-pointer transition-colors"
-              >
-                {item}
-              </div>
-            ))}
-          </nav>
+          <QuickAccessSidebar
+            persona={persona}
+            accentColor={accentColor}
+            onOpenPlanHebdo={() => setOpenFilePath(filePaths.planHebdo)}
+            onOpenPostsBatch={() => setOpenFilePath(filePaths.postsBatch)}
+            onOpenCrossEngagement={() => setOpenFilePath(filePaths.crossEng)}
+            onOpenColdOutreach={() => setOpenFilePath(filePaths.cold)}
+            onOpenProgress={() => setOpenFilePath(filePaths.progress)}
+            onOpenMemory={() => setMempalaceExpanded(true)}
+          />
         </aside>
+
+        <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} />
 
         {/* Centre — flex-1 */}
         <main className="flex-1 flex flex-col overflow-hidden min-w-0">
-          {/* Timeline */}
-          <div className="px-6 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
-            <div className="flex items-center gap-2 mb-2">
-              <div className="text-[12px] font-semibold text-slate-500">
-                {f2Mode ? "Planning F2 semaine" : "Aujourd'hui"}
-              </div>
-              {loading && (
-                <div
-                  className="w-1 h-1 rounded-full animate-pulse"
-                  style={{ background: accentColor, opacity: 0.5 }}
-                />
-              )}
-            </div>
-            <div className="flex gap-3 overflow-x-auto pb-1">
-              {timeline.length === 0 ? (
-                <div className="text-[12px] text-slate-500 px-2 py-1.5">
-                  {loading ? "Chargement…" : "Aucun post planifié aujourd'hui"}
-                </div>
-              ) : (
-                timeline.map((item, i) => (
-                  <TimelineChip key={i} item={item} accentColor={accentColor} />
-                ))
-              )}
-            </div>
-          </div>
-
           {/* Chat area */}
           <div className="flex-1 overflow-hidden">
             <Chat
