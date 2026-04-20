@@ -1,9 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useEffect, useState, useCallback, useRef } from "react";
-import { BrainSVG } from "./BrainSVG";
 import { Chat } from "./Chat";
+
+const Brain3D = dynamic(() => import("./Brain3D").then((m) => m.Brain3D), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full flex items-center justify-center" style={{ height: "185px" }}>
+      <div className="w-12 h-12 rounded-full border border-white/10 animate-pulse" />
+    </div>
+  ),
+});
+
+const Brain3DFullscreen = dynamic(
+  () => import("./Brain3DFullscreen").then((m) => m.Brain3DFullscreen),
+  { ssr: false }
+);
 import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
@@ -175,6 +189,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const lsKey = `jarvis_f2mode_${persona}`;
 
   const [f2Mode, setF2ModeState] = useState(false);
+  const [brainExpanded, setBrainExpanded] = useState(false);
   const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
   const [loading, setLoading] = useState(true);
   const [pendingOps, setPendingOps] = useState(0);
@@ -245,6 +260,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
   return (
     <div className="relative min-h-screen flex flex-col z-10">
+      {brainExpanded && (
+        <Brain3DFullscreen
+          persona={persona}
+          mode={mode as "normal" | "f2"}
+          onClose={() => setBrainExpanded(false)}
+        />
+      )}
       {/* F2 mode banner */}
       {f2Mode && (
         <div
@@ -320,7 +342,11 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           <div className="p-3">
-            <BrainSVG color={accentColor} />
+            <Brain3D
+              persona={persona}
+              mode={mode as "normal" | "f2"}
+              onClick={() => setBrainExpanded(true)}
+            />
           </div>
 
           <nav className="flex-1 px-3 pb-4">
