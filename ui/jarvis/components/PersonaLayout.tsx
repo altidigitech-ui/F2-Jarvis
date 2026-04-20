@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Chat } from "./Chat";
 
-const Brain3D = dynamic(() => import("./Brain3D").then((m) => m.Brain3D), {
+const RepoGraph3D = dynamic(() => import("./RepoGraph3D"), {
   ssr: false,
   loading: () => (
     <div className="w-full flex items-center justify-center" style={{ height: "185px" }}>
@@ -14,10 +14,7 @@ const Brain3D = dynamic(() => import("./Brain3D").then((m) => m.Brain3D), {
   ),
 });
 
-const Brain3DFullscreen = dynamic(
-  () => import("./Brain3DFullscreen").then((m) => m.Brain3DFullscreen),
-  { ssr: false }
-);
+const RepoGraph3DFullscreen = dynamic(() => import("./RepoGraph3DFullscreen"), { ssr: false });
 import type { TimelineItem, CounterData, AlertItem, ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
@@ -190,6 +187,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
   const [f2Mode, setF2ModeState] = useState(false);
   const [brainExpanded, setBrainExpanded] = useState(false);
+  const [fileContext, setFileContext] = useState<{ name: string; content: string } | null>(null);
   const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
   const [loading, setLoading] = useState(true);
   const [pendingOps, setPendingOps] = useState(0);
@@ -261,10 +259,11 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   return (
     <div className="relative min-h-screen flex flex-col z-10">
       {brainExpanded && (
-        <Brain3DFullscreen
+        <RepoGraph3DFullscreen
           persona={persona}
           mode={mode as "normal" | "f2"}
           onClose={() => setBrainExpanded(false)}
+          onLoadFile={(name, content) => setFileContext({ name, content })}
         />
       )}
       {/* F2 mode banner */}
@@ -342,10 +341,10 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           <div className="p-3">
-            <Brain3D
+            <RepoGraph3D
               persona={persona}
               mode={mode as "normal" | "f2"}
-              onClick={() => setBrainExpanded(true)}
+              onExpand={() => setBrainExpanded(true)}
             />
           </div>
 
@@ -407,7 +406,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
           {/* Chat area */}
           <div className="flex-1 overflow-hidden">
-            <Chat persona={persona} mode={mode} onAction={handleAction} />
+            <Chat
+              persona={persona}
+              mode={mode}
+              onAction={handleAction}
+              fileContext={fileContext}
+              onFileContextClear={() => setFileContext(null)}
+            />
           </div>
         </main>
 
