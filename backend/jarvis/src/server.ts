@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { chatRoute } from "./routes/chat.js";
+import { chatHistoryRoute } from "./routes/chat-history.js";
 import { contextRoute } from "./routes/context.js";
 import { actionRoute } from "./routes/action.js";
 import { graphRoute } from "./routes/graph.js";
@@ -36,9 +37,9 @@ const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "https://f2-jarvis.vercel.a
 app.use(cors({
   origin: ALLOWED_ORIGIN,
   methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type", "X-JARVIS-AUTH"],
+  allowedHeaders: ["Content-Type", "X-JARVIS-AUTH", "X-USER-ID"],
 }));
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 app.use((req: any, res: any, next: any) => {
@@ -57,6 +58,7 @@ app.get("/health", (_req, res) => {
 });
 
 app.post("/chat", chatRoute);
+app.get("/chat/history", chatHistoryRoute);
 app.post("/search", searchRoute);
 app.get("/context", contextRoute);
 app.post("/action", actionRoute);

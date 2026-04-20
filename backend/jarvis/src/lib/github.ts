@@ -1,3 +1,5 @@
+import { cacheGet, cacheSet, cacheInvalidate } from "./cache.js";
+
 const OWNER = "altidigitech-ui";
 const REPO = "F2-Jarvis";
 const BRANCH = "main";
@@ -22,17 +24,22 @@ export interface GitHubFile {
 }
 
 export async function ghRead(filePath: string): Promise<GitHubFile | null> {
+  const cached = cacheGet(filePath);
+  if (cached) return cached;
+
   const res = await fetch(apiUrl(`contents/${filePath}?ref=${BRANCH}`), {
     headers: headers(),
-    // cache: "no-store" — not in Node's fetch type, but works at runtime
   });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`GitHub read failed: ${res.status} ${await res.text()}`);
-  const data = await res.json() as { content: string; sha: string };
-  return {
+  const data = (await res.json()) as { content: string; sha: string };
+  const file = {
     content: Buffer.from(data.content, "base64").toString("utf-8"),
     sha: data.sha,
   };
+
+  cacheSet(filePath, file.content, file.sha);
+  return file;
 }
 
 export async function ghWrite(
@@ -52,9 +59,10 @@ export async function ghWrite(
     }),
   });
   if (!res.ok) {
-    const err = await res.json() as { message?: string };
+    const err = (await res.json()) as { message?: string };
     throw new Error(`GitHub write failed: ${err.message || res.status}`);
   }
+  cacheInvalidate(filePath);
 }
 
 export async function ghUpdate(
@@ -103,9 +111,10 @@ export async function ghCreate(
     }),
   });
   if (!res.ok) {
-    const err = await res.json() as { message?: string };
+    const err = (await res.json()) as { message?: string };
     throw new Error(`GitHub create failed: ${err.message || res.status}`);
   }
+  cacheInvalidate(filePath);
 }
 
 export async function ghDelete(
@@ -123,7 +132,8 @@ export async function ghDelete(
     }),
   });
   if (!res.ok) {
-    const err = await res.json() as { message?: string };
+    const err = (await res.json()) as { message?: string };
     throw new Error(`GitHub delete failed: ${err.message || res.status}`);
   }
+  cacheInvalidate(filePath);
 }

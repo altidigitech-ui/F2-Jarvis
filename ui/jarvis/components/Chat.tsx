@@ -392,6 +392,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [imageSizeError, setImageSizeError] = useState(false);
   const [drawerPopup, setDrawerPopup] = useState<DrawerPopupState | null>(null);
+  const [historyLoaded, setHistoryLoaded] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -408,6 +409,64 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphifyPrefill]);
+
+  // Load persisted history on mount and when persona/mode changes
+  useEffect(() => {
+    let cancelled = false;
+    async function loadHistory() {
+      try {
+        const res = await fetch(`/api/chat/history?persona=${persona}&mode=${mode}`);
+        if (!res.ok) return;
+        const data = (await res.json()) as {
+          conversation_id: string | null;
+          messages: Array<{
+            id: string;
+            role: "user" | "assistant" | "system";
+            content: string;
+            image_media_type?: string | null;
+            image_data?: string | null;
+            created_at: string;
+          }>;
+        };
+        if (cancelled) return;
+        if (data.messages && data.messages.length > 0) {
+          const rehydrated: Message[] = data.messages
+            .filter((m) => m.role === "user" || m.role === "assistant")
+            .map((m) => ({
+              id: m.id,
+              role: m.role as "user" | "assistant",
+              content: m.content,
+              timestamp: new Date(m.created_at).toLocaleString("fr-FR", {
+                timeZone: "Europe/Paris",
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+              ...(m.image_data && m.image_media_type
+                ? {
+                    image: {
+                      data: m.image_data,
+                      media_type: m.image_media_type as ImageAttachment["media_type"],
+                      preview: `data:${m.image_media_type};base64,${m.image_data}`,
+                    },
+                  }
+                : {}),
+            }));
+          setMessages(rehydrated);
+        } else {
+          setMessages([]);
+        }
+        setHistoryLoaded(true);
+      } catch (err) {
+        console.error("[Chat] history load failed:", err);
+        setHistoryLoaded(true);
+      }
+    }
+    loadHistory();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [persona, mode]);
 
   const attachImage = useCallback(async (file: File) => {
     setImageSizeError(false);
