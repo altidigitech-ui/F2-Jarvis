@@ -13,6 +13,12 @@ import {
   graphifyRelatedRoute,
 } from "./routes/graphify.js";
 import {
+  mempalaceWingsRoute,
+  mempalaceWingRoute,
+  mempalaceDrawerRoute,
+  mempalaceStatsRoute,
+} from "./routes/mempalace.js";
+import {
   ouroborosStatus,
   ouroborosProposals,
   ouroborosProposal,
@@ -48,6 +54,11 @@ app.get("/graphify", graphifyRoute);
 app.get("/graphify/search", graphifySearchRoute);
 app.get("/graphify/related", graphifyRelatedRoute);
 app.get("/graphify/node/:id", graphifyNodeRoute);
+
+app.get("/mempalace/wings", mempalaceWingsRoute);
+app.get("/mempalace/stats", mempalaceStatsRoute);
+app.get("/mempalace/wing/:id", mempalaceWingRoute);
+app.get("/mempalace/drawer/:wing/:filename", mempalaceDrawerRoute);
 
 app.get("/ouroboros/status", ouroborosStatus);
 app.get("/ouroboros/proposals", ouroborosProposals);
