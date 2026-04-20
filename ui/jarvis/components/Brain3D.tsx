@@ -185,7 +185,7 @@ export function CenterLine({
   color: string;
   opacity?: number;
 }) {
-  const x = to[0], y = to[1], z = to[2];
+  const [x, y, z] = to;
 
   const geo = useMemo(() => {
     const g = new THREE.BufferGeometry();
@@ -202,10 +202,7 @@ export function CenterLine({
   const line = useMemo(() => new THREE.Line(geo, mat), [geo, mat]);
 
   useEffect(
-    () => () => {
-      geo.dispose();
-      mat.dispose();
-    },
+    () => () => { geo.dispose(); mat.dispose(); },
     [geo, mat]
   );
 

@@ -3,6 +3,8 @@ import cors from "cors";
 import { chatRoute } from "./routes/chat.js";
 import { contextRoute } from "./routes/context.js";
 import { actionRoute } from "./routes/action.js";
+import { graphRoute } from "./routes/graph.js";
+import { fileRoute } from "./routes/file.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,6 +24,8 @@ app.get("/health", (_req, res) => {
 app.post("/chat", chatRoute);
 app.get("/context", contextRoute);
 app.post("/action", actionRoute);
+app.get("/graph", graphRoute);
+app.get("/file", fileRoute);
 
 app.listen(PORT, () => {
   console.log(`JARVIS backend on port ${PORT}`);
