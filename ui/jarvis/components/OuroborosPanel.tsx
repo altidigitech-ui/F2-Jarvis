@@ -4,14 +4,15 @@ import { useState, useEffect, useCallback } from "react";
 import { OuroborosProposalsModal } from "./OuroborosProposalsModal";
 
 interface OuroborosStatus {
-  lastCycle: { id: number; date: string; duration: string } | null;
-  nextCycle: string;
-  proposalsPending: number;
-  budgetUsed: number;
-  budgetRemaining: number;
-  budgetCap: number;
-  killSwitchActive: boolean;
   initialized: boolean;
+  // Only present when initialized: true
+  lastCycle?: { id?: number; date?: string; duration?: string } | null;
+  nextCycle?: string | null;
+  proposalsPending?: number;
+  budgetUsed?: number;
+  budgetRemaining?: number;
+  budgetCap?: number;
+  killSwitchActive?: boolean;
 }
 
 function timeAgo(dateStr: string): string {
@@ -111,10 +112,10 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
     }
   }
 
-  const killActive = status?.killSwitchActive ?? false;
-  const budgetPct = status
-    ? Math.min((status.budgetUsed / Math.max(status.budgetCap, 0.01)) * 100, 100)
-    : 0;
+  const killActive = status?.killSwitchActive === true;
+  const budgetUsed = status?.budgetUsed ?? 0;
+  const budgetCap = status?.budgetCap ?? 10;
+  const budgetPct = budgetCap > 0 ? Math.min((budgetUsed / budgetCap) * 100, 100) : 0;
 
   return (
     <>
@@ -178,22 +179,22 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
               <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
                 <span>DERNIER CYCLE</span>
                 <span style={{ color: accentColor }}>
-                  {status.lastCycle ? timeAgo(status.lastCycle.date) : "jamais"}
+                  {status.lastCycle?.date ? timeAgo(status.lastCycle.date) : "jamais"}
                 </span>
               </div>
               <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
                 <span>PROCHAIN</span>
-                <span>{timeUntil(status.nextCycle)}</span>
+                <span>{status.nextCycle ? timeUntil(status.nextCycle) : "--"}</span>
               </div>
               <div className="flex justify-between items-center text-[10px] font-mono text-slate-600">
                 <span>PROPOSITIONS</span>
                 <span
                   style={{
-                    color: status.proposalsPending > 0 ? accentColor : undefined,
-                    fontWeight: status.proposalsPending > 0 ? 600 : undefined,
+                    color: (status.proposalsPending ?? 0) > 0 ? accentColor : undefined,
+                    fontWeight: (status.proposalsPending ?? 0) > 0 ? 600 : undefined,
                   }}
                 >
-                  {status.proposalsPending} pending
+                  {status.proposalsPending ?? 0} pending
                 </span>
               </div>
             </div>
@@ -203,7 +204,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
               <div className="flex justify-between items-baseline mb-1">
                 <span className="text-[9px] text-slate-700 uppercase tracking-wider font-mono">Budget</span>
                 <span className="text-[10px] font-mono" style={{ color: budgetPct > 80 ? "#f06464" : accentColor }}>
-                  {status.budgetUsed.toFixed(2)}€ / {status.budgetCap}€
+                  {budgetUsed.toFixed(2)}€ / {budgetCap}€
                 </span>
               </div>
               <div className="h-0.5 bg-white/5 rounded-full overflow-hidden">
@@ -274,7 +275,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
 
             {/* Action buttons */}
             <div className="pt-1 space-y-1.5">
-              {status.proposalsPending > 0 && (
+              {(status.proposalsPending ?? 0) > 0 && (
                 <button
                   onClick={() => setShowProposals(true)}
                   className="w-full text-[10px] font-mono py-1.5 rounded transition-all"
@@ -287,7 +288,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                   VOIR PROPOSITIONS ({status.proposalsPending})
                 </button>
               )}
-              {status.proposalsPending === 0 && (
+              {(status.proposalsPending ?? 0) === 0 && (
                 <button
                   onClick={() => setShowProposals(true)}
                   className="w-full text-[10px] font-mono py-1.5 rounded transition-all text-slate-600 hover:text-slate-400"

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ghRead, ghWrite, ghList, ghCreate, ghDelete } from "../lib/github.js";
+import { ghRead, ghList, ghCreate, ghDelete, GitHubDirEntry } from "../lib/github.js";
 
 const STATE_PATH = "brain/ouroboros/state.json";
 const PROPOSALS_PENDING = "brain/ouroboros/proposals/pending";
@@ -24,8 +24,44 @@ interface ProposalMeta {
   fullContent: string;
 }
 
+// Safe wrappers — never throw, always return null/[] on any error
+async function safeRead(path: string): Promise<string | null> {
+  try {
+    const file = await ghRead(path);
+    return file ? file.content : null;
+  } catch {
+    return null;
+  }
+}
+
+async function safeReadFull(path: string): Promise<{ content: string; sha: string } | null> {
+  try {
+    return await ghRead(path);
+  } catch {
+    return null;
+  }
+}
+
+async function safeList(path: string): Promise<GitHubDirEntry[]> {
+  try {
+    return await ghList(path);
+  } catch {
+    return [];
+  }
+}
+
+async function safeCreate(path: string, content: string, msg: string): Promise<boolean> {
+  try {
+    const existing = await safeRead(path);
+    if (existing !== null) return false;
+    await ghCreate(path, content, msg);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function parseFrontmatter(content: string): { meta: Record<string, string>; body: string } {
-  // Try YAML frontmatter first
   const fmMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (fmMatch) {
     const meta: Record<string, string> = {};
@@ -38,7 +74,7 @@ function parseFrontmatter(content: string): { meta: Record<string, string>; body
     return { meta, body: fmMatch[2] };
   }
 
-  // Fallback: parse **Key** : value bold fields
+  // Fallback: parse **Key** : value bold fields (actual template format)
   const meta: Record<string, string> = {};
   const boldRegex = /\*\*([^*]+)\*\*\s*:\s*(.+)/g;
   let match;
@@ -49,7 +85,7 @@ function parseFrontmatter(content: string): { meta: Record<string, string>; body
 }
 
 function mapPriority(raw: string): Priority {
-  const p = raw.toLowerCase();
+  const p = (raw || "").toLowerCase();
   if (p === "critique" || p === "critical") return "critical";
   if (p === "haute" || p === "high") return "high";
   if (p === "faible" || p === "low") return "low";
@@ -87,43 +123,43 @@ const PRIORITY_ORDER: Record<Priority, number> = { critical: 0, high: 1, medium:
 // GET /ouroboros/status
 export async function ouroborosStatus(req: Request, res: Response): Promise<void> {
   try {
-    let lastCycle = null;
-    let budgetUsed = 0;
-    let budgetCap = 10;
+    const stateContent = await safeRead(STATE_PATH);
 
-    const stateFile = await ghRead(STATE_PATH);
-    if (stateFile) {
-      try {
-        const state = JSON.parse(stateFile.content);
-        lastCycle = state.lastCycle || null;
-        budgetUsed = state.budgetUsed || 0;
-        budgetCap = state.budgetCap || 10;
-      } catch { /* ignore parse errors */ }
+    // Not initialized — return early, no more API calls
+    if (!stateContent) {
+      res.json({ initialized: false });
+      return;
     }
 
-    const pendingFiles = await ghList(PROPOSALS_PENDING);
+    let state: Record<string, unknown> = {};
+    try { state = JSON.parse(stateContent); } catch { /* use defaults */ }
+
+    const [pendingFiles, killContent] = await Promise.all([
+      safeList(PROPOSALS_PENDING),
+      safeRead(KILL_SWITCH_PATH),
+    ]);
+
     const proposalsPending = pendingFiles.filter(
       f => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("_")
     ).length;
 
-    const killFile = await ghRead(KILL_SWITCH_PATH);
-    const killSwitchActive = killFile !== null;
+    const budgetCap = (state.budgetCap as number) || 10;
+    const budgetUsed = (state.budgetUsed as number) || 0;
 
-    // Next cycle: 3 AM CEST (1 AM UTC in winter, 2 AM UTC in summer — approximate)
     const now = new Date();
     const nextCycle = new Date(now);
     nextCycle.setUTCDate(nextCycle.getUTCDate() + 1);
     nextCycle.setUTCHours(2, 0, 0, 0);
 
     res.json({
-      lastCycle,
+      initialized: true,
+      lastCycle: (state.lastCycle as object | null) || null,
       nextCycle: nextCycle.toISOString(),
       proposalsPending,
       budgetUsed,
       budgetRemaining: Math.max(0, budgetCap - budgetUsed),
       budgetCap,
-      killSwitchActive,
-      initialized: stateFile !== null || proposalsPending > 0,
+      killSwitchActive: killContent !== null,
     });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
@@ -135,16 +171,16 @@ export async function ouroborosStatus(req: Request, res: Response): Promise<void
 // GET /ouroboros/proposals
 export async function ouroborosProposals(req: Request, res: Response): Promise<void> {
   try {
-    const files = await ghList(PROPOSALS_PENDING);
+    const files = await safeList(PROPOSALS_PENDING);
     const mdFiles = files.filter(
       f => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("_")
     );
 
     const proposals: ProposalMeta[] = [];
     for (const file of mdFiles) {
-      const content = await ghRead(`${PROPOSALS_PENDING}/${file.name}`);
+      const content = await safeRead(`${PROPOSALS_PENDING}/${file.name}`);
       if (content) {
-        proposals.push(parseProposal(file.name, content.content));
+        proposals.push(parseProposal(file.name, content));
       }
     }
 
@@ -167,12 +203,12 @@ export async function ouroborosProposal(req: Request, res: Response): Promise<vo
   try {
     const { id } = req.params;
     const filename = id.endsWith(".md") ? id : `${id}.md`;
-    const content = await ghRead(`${PROPOSALS_PENDING}/${filename}`);
+    const content = await safeRead(`${PROPOSALS_PENDING}/${filename}`);
     if (!content) {
       res.status(404).json({ error: "Proposition introuvable" });
       return;
     }
-    res.json(parseProposal(filename, content.content));
+    res.json(parseProposal(filename, content));
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     res.status(500).json({ error: msg });
@@ -209,7 +245,7 @@ export async function ouroborosAction(req: Request, res: Response): Promise<void
     const filename = proposalId.endsWith(".md") ? proposalId : `${proposalId}.md`;
     const id = filename.replace(/\.md$/, "");
 
-    const file = await ghRead(`${PROPOSALS_PENDING}/${filename}`);
+    const file = await safeReadFull(`${PROPOSALS_PENDING}/${filename}`);
     if (!file) {
       res.status(404).json({ error: "Proposition introuvable dans pending" });
       return;
@@ -259,13 +295,13 @@ export async function ouroborosKillSwitch(req: Request, res: Response): Promise<
     const { active } = req.body as { active: boolean };
 
     if (active) {
-      const existing = await ghRead(KILL_SWITCH_PATH);
+      const existing = await safeRead(KILL_SWITCH_PATH);
       if (!existing) {
         const content = `Kill-switch activé via JARVIS le ${new Date().toISOString()}\n`;
         await ghCreate(KILL_SWITCH_PATH, content, "chore(ouroboros): activate kill-switch via JARVIS");
       }
     } else {
-      const file = await ghRead(KILL_SWITCH_PATH);
+      const file = await safeReadFull(KILL_SWITCH_PATH);
       if (file) {
         await ghDelete(KILL_SWITCH_PATH, file.sha, "chore(ouroboros): deactivate kill-switch via JARVIS");
       }
@@ -282,7 +318,7 @@ export async function ouroborosKillSwitch(req: Request, res: Response): Promise<
 // GET /ouroboros/diary
 export async function ouroborosDiary(req: Request, res: Response): Promise<void> {
   try {
-    const diaryDir = await ghList("brain/ouroboros/diary");
+    const diaryDir = await safeList("brain/ouroboros/diary");
     const mdFiles = diaryDir.filter(
       f => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("_")
     );
@@ -293,13 +329,12 @@ export async function ouroborosDiary(req: Request, res: Response): Promise<void>
     }
 
     mdFiles.sort((a, b) => b.name.localeCompare(a.name));
-    const recentFiles = mdFiles.slice(0, 10);
 
     const entries = [];
-    for (const file of recentFiles) {
-      const content = await ghRead(`brain/ouroboros/diary/${file.name}`);
+    for (const file of mdFiles.slice(0, 10)) {
+      const content = await safeRead(`brain/ouroboros/diary/${file.name}`);
       if (content) {
-        entries.push({ filename: file.name, content: content.content });
+        entries.push({ filename: file.name, content });
       }
     }
 
@@ -315,28 +350,40 @@ export async function ouroborosDiary(req: Request, res: Response): Promise<void>
 export async function ouroborosInitialize(req: Request, res: Response): Promise<void> {
   try {
     const created: string[] = [];
+    const skipped: string[] = [];
 
-    const stateExists = await ghRead(STATE_PATH);
-    if (!stateExists) {
-      const state = JSON.stringify({
-        lastCycle: null,
-        budgetUsed: 0,
-        budgetCap: 10,
-        initializedAt: new Date().toISOString(),
-      }, null, 2);
-      await ghCreate(STATE_PATH, state, "chore(ouroboros): initialize state via JARVIS");
-      created.push(STATE_PATH);
-    }
+    // Create state.json
+    const stateContent = JSON.stringify({
+      version: 1,
+      initializedAt: new Date().toISOString(),
+      lastCycle: null,
+      budgetUsed: 0,
+      budgetCap: 10,
+      totalCycles: 0,
+    }, null, 2);
+    const stateCreated = await safeCreate(
+      STATE_PATH,
+      stateContent,
+      "chore(ouroboros): initialize state.json via JARVIS"
+    );
+    (stateCreated ? created : skipped).push(STATE_PATH);
 
+    // Create proposal subdirectories
     for (const dir of [PROPOSALS_PENDING, PROPOSALS_ACCEPTED, PROPOSALS_REJECTED, PROPOSALS_IGNORED]) {
-      const entries = await ghList(dir);
-      if (entries.length === 0) {
-        await ghCreate(`${dir}/.gitkeep`, "", `chore(ouroboros): init ${dir.split("/").pop()} dir`);
-        created.push(dir);
-      }
+      const gitkeep = `${dir}/.gitkeep`;
+      const ok = await safeCreate(gitkeep, "", `chore(ouroboros): init ${dir.split("/").pop()} dir`);
+      (ok ? created : skipped).push(dir);
     }
 
-    res.json({ ok: true, created });
+    // Create triggers directory
+    const triggerOk = await safeCreate(
+      `${TRIGGERS_DIR}/.gitkeep`,
+      "",
+      "chore(ouroboros): init triggers dir"
+    );
+    (triggerOk ? created : skipped).push(TRIGGERS_DIR);
+
+    res.json({ ok: true, created, skipped });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("[/ouroboros/initialize]", err);
