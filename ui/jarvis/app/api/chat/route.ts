@@ -1,112 +1,24 @@
-import { query } from "@anthropic-ai/claude-agent-sdk";
-import { readFile } from "fs/promises";
-import path from "path";
-
 export const runtime = "nodejs";
 export const maxDuration = 120;
 
-const REPO_ROOT = path.resolve(process.cwd(), "../..");
-
-async function loadFile(relPath: string): Promise<string> {
-  try {
-    const content = await readFile(path.join(REPO_ROOT, relPath), "utf-8");
-    return `=== ${relPath} ===\n${content}\n`;
-  } catch {
-    return `=== ${relPath} (absent) ===\n`;
-  }
-}
+const BACKEND = process.env.RAILWAY_BACKEND_URL;
 
 export async function POST(req: Request) {
-  const { persona, mode, message } = await req.json() as {
-    persona: "romain" | "fabrice";
-    mode?: "normal" | "f2";
-    message: string;
-    history?: { role: string; content: string }[];
-  };
-
-  if (!persona || !message) {
-    return new Response("Missing persona or message", { status: 400 });
+  if (!BACKEND) {
+    return new Response("[Erreur: RAILWAY_BACKEND_URL non configuré]", { status: 500 });
   }
 
-  const isF2 = mode === "f2";
-  const personaLabel = isF2 ? "l'équipe FoundryTwo (@foundrytwo)" : persona === "romain" ? "Romain Delgado" : "Fabrice Gangi";
-
-  const contextFiles = isF2
-    ? [
-        "CLAUDE.md",
-        "BIBLE.md",
-        "ANTI-IA.md",
-        "f2/context.md",
-        "f2/plan-hebdo.md",
-        "f2/progress-semaine.md",
-        `${persona}/VOIX.md`,
-      ]
-    : [
-        "CLAUDE.md",
-        "BIBLE.md",
-        "ANTI-IA.md",
-        `${persona}/context.md`,
-        `${persona}/VOIX.md`,
-        `${persona}/plan-hebdo.md`,
-        `${persona}/progress-semaine.md`,
-      ];
-
-  const contexts = await Promise.all(contextFiles.map(loadFile));
-
-  const modeLabel = isF2 ? " en mode compte studio @foundrytwo" : "";
-  const systemPrompt = `Tu es JARVIS, l'assistant interne de ${personaLabel}${modeLabel} au sein du studio FoundryTwo.
-
-Tu connais l'OS F2-Jarvis et tout le contexte ci-dessous. Tu réponds en français, directement, sans fluff. Pas de bullet points inutiles, pas de listes si une phrase suffit. Respect strict de ANTI-IA.md pour tout contenu destiné à la publication.
-
-Date du jour : ${new Date().toLocaleDateString("fr-FR", { timeZone: "Europe/Paris", weekday: "long", day: "numeric", month: "long", year: "numeric" })}.
-
----
-
-${contexts.join("\n")}`;
-
-  const encoder = new TextEncoder();
-
-  const stream = new ReadableStream({
-    async start(controller) {
-      try {
-        for await (const msg of query({
-          prompt: message,
-          options: {
-            systemPrompt,
-            maxTurns: 1,
-            allowedTools: [],
-            permissionMode: "dontAsk",
-          },
-        })) {
-          if (
-            msg.type === "assistant" &&
-            msg.message?.content
-          ) {
-            for (const block of msg.message.content) {
-              if (block.type === "text" && block.text) {
-                controller.enqueue(encoder.encode(block.text));
-              }
-            }
-          }
-        }
-        controller.close();
-      } catch (err) {
-        const errMsg = err instanceof Error ? err.message : String(err);
-        // maxTurns=1 causes a "Reached maximum number of turns" error — this is expected, not a real failure
-        if (errMsg.includes("maximum number of turns") || errMsg.includes("max_turns")) {
-          controller.close();
-          return;
-        }
-        console.error("[/api/chat]", err);
-        controller.enqueue(encoder.encode(`[Erreur JARVIS: ${errMsg}]`));
-        controller.close();
-      }
-    },
+  const body = await req.json();
+  const response = await fetch(`${BACKEND}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
   });
 
-  return new Response(stream, {
+  return new Response(response.body, {
+    status: response.status,
     headers: {
-      "Content-Type": "text/plain; charset=utf-8",
+      "Content-Type": response.headers.get("content-type") || "text/plain; charset=utf-8",
       "Cache-Control": "no-cache, no-transform",
       "X-Content-Type-Options": "nosniff",
     },
