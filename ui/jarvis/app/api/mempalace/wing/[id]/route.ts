@@ -7,7 +7,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
   const { id } = await params;
   if (!BACKEND) return Response.json({ wing: id, drawers: [] });
   try {
-    const res = await fetch(`${BACKEND}/mempalace/wing/${encodeURIComponent(id)}`);
+    const res = await fetch(`${BACKEND}/mempalace/wing/${encodeURIComponent(id)}`, { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } })
     const data = await res.json();
     return Response.json(data, { status: res.status });
   } catch {

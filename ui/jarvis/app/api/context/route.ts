@@ -12,7 +12,7 @@ export async function GET(req: Request) {
   const backendUrl = new URL(`${BACKEND}/context`);
   backendUrl.search = url.search;
 
-  const response = await fetch(backendUrl.toString());
+  const response = await fetch(backendUrl.toString(), { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } });
   const data = await response.json();
   return Response.json(data, { status: response.status });
 }
