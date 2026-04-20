@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { ghUpdate } from "../lib/github";
+import { ghUpdate } from "../lib/github.js";
 import {
   appendDecision, appendProgressEvent, resolveProgressEvent,
   appendColdLog, appendEngagementLog, markPlanPublished, markCrossPublished,
-} from "../lib/markdown";
+} from "../lib/markdown.js";
 
 type Persona = "romain" | "fabrice";
 type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";

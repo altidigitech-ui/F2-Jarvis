@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { readFile } from "fs/promises";
 import path from "path";
-import type { TimelineItem, CounterData, AlertItem } from "../lib/context-types";
+import type { TimelineItem, CounterData, AlertItem } from "../lib/context-types.js";
 
 const REPO_ROOT = process.env.REPO_ROOT || path.resolve(process.cwd(), "../..");
 
