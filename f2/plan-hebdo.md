@@ -1,70 +1,47 @@
-# PLAN HEBDO F2 — Semaine du 13/04/2026 au 19/04/2026
+# PLAN HEBDO F2 — Semaine du 20/04/2026 au 26/04/2026
 
-**Rempli au batch :** 12/04/2026
-**Archivé le :** dimanche 19/04/2026
-**Référence :** `f2/playbook-semaine.md` (process d'exécution)
-**Contexte :** SEMAINE DE LANCEMENT StoreMD. Launch day = mardi 14/04.
+**Contexte :** SEMAINE 6 — POST-LAUNCH SCALE. Sales agressif. **Anglais uniquement.** Focus agencies distribution layer.
 
------
+## 1. POSTS TWITTER F2
 
-## 1. POSTS TWITTER F2 — SEMAINE
+|Jour|Vidéo|Sujet|Statut|
+|---|---|---|---|
+|Lun 20/04|`store-md-logo-reveal`|Week 6 numbers: [X] scans, [Y] leaks, [W] agencies|⏳|
+|Mar 21/04|`store-md-feature-health`|Store Health module detail|⏳|
+|Mer 22/04|`store-md-testimonial-founder`|"I thought my store was fine" — scored 34/100|⏳|
+|Jeu 23/04|`store-md-money-ghost-cumulative`|3 ghost apps × $189 × 12 = $2,268/year|⏳|
+|Ven 24/04|`store-md-stats`|Week 6 real numbers|⏳|
 
-|Jour              |Pilier              |Post prévu|Statut|
-|------------------|--------------------|----------|------|
-|**Lundi 13/04**   |Teaser studio       |Teaser launch demain, 43 features, 5 modules|⏳|
-|**Mardi 14/04**   |🔴 LAUNCH DAY      |StoreMD live, 5 modules détaillés, free scan, $0 MRR day 1|⏳|
-|**Mercredi 15/04**|Data thread         |4 exclusivités mondiales (Agentic, Visual, Simulation, Accessibility)|⏳|
-|**Jeudi 16/04**   |Communauté          |Question merchants — app count, speed score, theme code check|⏳|
-|**Vendredi 17/04**|Build in public     |Week 1 honest numbers — installs, scans, paid, MRR|⏳|
+## 2. LINKEDIN COMPANY F2 + IH
 
------
+|Jour|Plateforme|Sujet|Statut|
+|---|---|---|---|
+|Mar 21/04|LinkedIn Company (EN)|Week 2 post-launch honest numbers|⏳|
+|Mer 22/04|IH (EN)|Post-launch retro week 1→2 + feedback|⏳|
 
-## 2. POST IH — SEMAINE
+## 3. OBJECTIFS SEMAINE
 
-|Jour              |Type                  |Sujet|Statut|
-|------------------|----------------------|-----|------|
-|**Mercredi 15/04**|Launch post StoreMD   |Full story pivot LD → StoreMD, 5 douleurs, 43 features, pricing, premiers chiffres|⏳|
+|Objectif|Target|
+|---|---|
+|Scans gratuits|**50 min**|
+|Installs externes|**5 min** (vs 0 S5)|
+|Agencies onboardées|**10**|
+|MRR externe|**$200 min** (vs $0 S5)|
+|Cross-engagement 100%|Chaque jour|
 
------
+## 4. S5 RECAP
+Twitter F2 : 5 posts, 133 imp (plateau), ER 24.1% (vs 13.6%). LinkedIn Company : 1 post, 12 imp. IH : 1 post launch flop + 14 comments (x2.8). MRR : $0. Installs : 0.
 
-## 3. OBJECTIFS DE LA SEMAINE
+## 5. AGENCY ONBOARDING (PRIORITÉ S6)
 
-|Objectif|Métrique visée|
-|--------|--------------|
-|Lancer StoreMD|Live mardi 14/04|
-|Premiers installs|>10 installs semaine 1|
-|Premiers scans gratuits|>20 scans gratuits|
-|Documenter semaine 1|Post vendredi avec vrais chiffres|
-|IH launch post|Publié mercredi 15/04|
+- R cible 15 agency owners cold LinkedIn DM
+- F cible 5 agency owners cold Twitter + 10 LinkedIn DM
+- F2 pousse 3 posts qui parlent aux agencies
+- LinkedIn F jeudi 23/04 = pitch agencies direct
+- Tracker : `f2/agencies-onboarded-S6.md`
 
------
-
-## 4. DONNÉES DE LA SEMAINE PRÉCÉDENTE (semaine 4, 06/04-12/04)
-
-|Donnée                                        |Valeur|
-|----------------------------------------------|------|
-|Posts F2 Twitter publiés                      |4/5 (lun skip)|
-|Post F2 IH                                   |ANNULÉ (contenu obsolète, référence LD)|
-|Cross-engagement R sur F2 complété           |4/4 ✅|
-|Commentaires IH F2                           |5 (ven uniquement)|
-|MRR                                           |$0|
-
------
-
-## 5. VISUELS À PRÉPARER
-
-| Post | Type visuel | Outil | Statut |
-|------|------------|-------|--------|
-| Mardi launch | Screenshot StoreMD dashboard / health score | Screenshot réel ou Canva | ⏳ |
-
------
-
-## 6. CROSS-ENGAGEMENT — REPLIES R PRÉPARÉES
-
-Voir `romain/cross-engagement-tracker.md` pour le suivi complet.
-
------
-
-## 7. NOTES
-
-Semaine 5. SEMAINE DE LANCEMENT StoreMD. Le post vendredi F2 contient des placeholders à remplir avec les données réelles. Le post IH est prévu mercredi J+1 pour inclure les premiers chiffres.
+## 6. PRIORITÉS
+1. Demand creation agressive EN uniquement
+2. Case studies publiables (3 merchants qui partagent chiffres)
+3. Funnel scan → paid (5 installs minimum)
+4. Prochain produit : ProfitPilot (après scale StoreMD confirmé)

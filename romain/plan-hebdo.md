@@ -1,108 +1,49 @@
-# PLAN HEBDO R — Semaine du 13/04/2026 au 19/04/2026
+# PLAN HEBDO R — Semaine du 20/04/2026 au 26/04/2026
 
-**Rempli au batch :** 12/04/2026
-**Archivé le :** dimanche 19/04/2026
-**Référence :** `romain/playbook-semaine.md` (process d'exécution)
-**Contexte :** SEMAINE DE LANCEMENT StoreMD. Launch day = mardi 14/04.
+**Rempli au batch :** 20/04/2026
+**Contexte :** SEMAINE 6 — MODE SALES AGRESSIF. Reprise Twitter R. **Langue publication : anglais uniquement.**
 
------
+## 1. POSTS TWITTER R
 
-## 1. POSTS TWITTER R — SEMAINE
+|Jour|Vidéo|Sujet|Statut|
+|---|---|---|---|
+|Lun 20/04|`store-md-money-daily`|My Twitter was suspended 6 days. I scanned 47 stores instead.|⏳|
+|Mar 21/04|`store-md-horror-ghost-apps`|$80k/mo DTC — $2,646 ghost billing 14 months|⏳|
+|Mer 22/04|`store-md-horror-agency-ripoff`|If your agency hasn't mentioned ghost billing, AI readiness...|⏳|
+|Jeu 23/04|`store-md-stats`|Data from 50 scans|⏳|
+|Ven 24/04|`store-md-testimonial-agency`|Agency DM: $14,200/mo leaks on 8 clients|⏳|
 
-|Jour              |Type de post|Post prévu|Statut|
-|------------------|------------|----------|------|
-|**Lundi 13/04**   |Teaser / Data-drop|530+ reviews, 5 problèmes, teaser demain|⏳|
-|**Mardi 14/04**   |🔴 LAUNCH DAY|StoreMD live, 43 features, free scan 60s, agentic readiness|⏳|
-|**Mercredi 15/04** |Provocateur|Agentic Readiness, stores invisibles pour ChatGPT|⏳|
-|**Jeudi 16/04**   |Retour d'expérience|App bloat, 14 apps → 6.2s, App Impact Scanner|⏳|
-|**Vendredi 17/04** |Question qui tue|Ghost billing, 6 ans de facturation après désinstall|⏳|
+## 2. POSTS LINKEDIN R (EN)
 
------
+|Jour|Sujet|Statut|
+|---|---|---|
+|Mar 21/04|Long format: 47 stores scanned, DTC #12 breakdown|⏳|
+|Jeu 23/04|Agency angle: scan your client stores for free|⏳|
+|Ven 24/04|Week recap: [X] scans, $[Y] detected, [Z] agencies|⏳|
 
-## 2. POSTS LINKEDIN R — SEMAINE
+## 3. COLD OUTREACH
 
-|Jour              |Type de post|Sujet|Statut|
-|------------------|------------|-----|------|
-|**Mardi 14/04**   |Texte long (launch)|StoreMD launch, pivot LD → e-com, 5 douleurs, 43 features|⏳|
-|**Jeudi 16/04**   |Storytelling|App bloat conversations, 43 features overview, 5 modules|⏳|
+|Donnée|Objectif|
+|---|---|
+|Outreachs LinkedIn DM/jour|10|
+|Volume semaine|50|
+|CTA (EN)|"Drop your URL, free scan 60s, I'll send the report"|
 
------
+## 4. ENGAGEMENT
 
-## 3. COLD OUTREACH — OBJECTIFS SEMAINE
+|Plateforme|Volume/jour|
+|---|---|
+|Twitter replies|5-8|
+|Twitter likes|30-50|
+|LinkedIn comments (EN)|5-10|
+|IH comments (EN)|3-5|
+|PH karma|5 upvotes + 1 comment|
 
-**REPREND MARDI 14/04 (StoreMD live = CTA disponible)**
+## 5. S5 RECAP
+Twitter R : 0 posts (suspension). LinkedIn R : 2 posts, 339 imp (+52%), +15 abonnés. Cold : 6 LinkedIn, 3/4 positifs. MRR externe : $0.
 
-|Donnée                          |Objectif         |
-|--------------------------------|-----------------|
-|Outreachs/jour Twitter          |5 minimum        |
-|Outreachs/jour LinkedIn DM      |5 minimum        |
-|Volume minimum total            |10/jour          |
-|CTA                             |Free scan StoreMD [LINK]|
-|Démarrage                       |Mardi 14/04      |
-
------
-
-## 4. ENGAGEMENT — OBJECTIFS SEMAINE
-
-|Plateforme|Action                        |Volume/jour|
-|----------|------------------------------|-----------|
-|Twitter   |Replies engagement            |5-8 (gros threads)|
-|Twitter   |Likes                         |30-50      |
-|Twitter   |Cross-engagement R sur F et F2|Obligatoire|
-|LinkedIn  |Commentaires de valeur        |5-10       |
-|LinkedIn  |Demandes de connexion         |5-10       |
-|IH        |Commentaires                  |3-5        |
-|PH        |Karma farming                 |2-3 min    |
-
-**Note :** Semaine de lancement = engagement intensifié. Launch day mardi = R répond à TOUT en priorité (commentaires sur les posts de lancement avant engagement proactif).
-
------
-
-## 5. DONNÉES DE LA SEMAINE PRÉCÉDENTE (semaine 4, 06/04-12/04)
-
-|Donnée                        |Valeur|
-|------------------------------|------|
-|Cold outreachs réalisés       |0 (en pause, StoreMD pas live)|
-|Engagement Twitter replies    |~19 (8 mar + 5 jeu + 6 ven)|
-|Engagement LinkedIn comments  |5 (ven uniquement)|
-|Engagement IH comments        |5 (ven uniquement)|
-|PH karma sessions             |2 (mar + ven)|
-|Follows Twitter e-com         |~24|
-|Follows LinkedIn e-com        |6 influenceurs|
-|Cross-engagement R sur F      |5/5 ✅|
-|Cross-engagement R sur F2     |4/4 ✅ (lun skip)|
-|Cross-engagement R sur LI F   |2/2 ✅|
-|MRR                           |$0|
-|Signups StoreMD               |0 (pas live)|
-
------
-
-## 6. VISUELS À PRÉPARER
-
-| Post | Type visuel | Outil | Statut |
-|------|------------|-------|--------|
-| Mardi launch Twitter + LinkedIn | Screenshot StoreMD dashboard / health score | Canva Pro ou screenshot réel | ⏳ |
-
------
-
-## 7. CROSS-ENGAGEMENT — REPLIES PRÉPARÉES
-
-Voir `romain/cross-engagement-tracker.md` pour toutes les replies cross-engagement R sur les posts F et F2.
-
------
-
-## 8. OBJECTIFS DE LA SEMAINE
-
-|Objectif|Métrique visée|
-|--------|--------------|
-|Lancer StoreMD|Live mardi 14/04|
-|Premiers installs|>10 installs semaine 1|
-|Premiers scans gratuits|>20 scans gratuits|
-|Cold outreach post-launch|30+ outreachs (mar→ven)|
-|Engagement toutes plateformes|30 interactions/jour|
-
------
-
-## 9. NOTES
-
-Semaine 5. SEMAINE DE LANCEMENT StoreMD. Launch mardi 14/04. Cold outreach reprend mardi (CTA = free scan). Posts R centrés sur les 5 douleurs + features StoreMD. Engagement intensifié launch day. R répond à TOUT en priorité mardi.
+## 6. PRIORITÉS
+1. Sales mode agressif EN uniquement
+2. Agencies comme distribution layer (5 onboardées S6)
+3. 50 scans cible
+4. Cross-engagement R↔F↔F2 complet
