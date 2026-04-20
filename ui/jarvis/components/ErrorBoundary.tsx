@@ -18,8 +18,13 @@ export class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return this.props.fallback || (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center" style={{ background: "#020612" }}>
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-8" style={{ background: "#020612" }}>
           <div className="text-red-400 text-sm mb-3">Erreur lors du chargement de ce composant</div>
+          {process.env.NODE_ENV !== "production" && this.state.error && (
+            <pre className="text-xs text-slate-500 max-w-2xl overflow-auto p-4 bg-slate-900/50 rounded border border-slate-800 mb-4">
+              {this.state.error.stack || this.state.error.message}
+            </pre>
+          )}
           <button
             onClick={() => this.setState({ hasError: false })}
             className="px-3 py-1 text-xs font-mono border border-slate-600 rounded text-slate-400 hover:text-slate-200 transition-colors"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { X, Search, ChevronRight } from "lucide-react";
 
@@ -67,8 +67,18 @@ export async function fetchConcepts(): Promise<ConceptsData> {
 }
 
 const ForceGraph3D = dynamic(
-  () => import("react-force-graph-3d").then((m) => (m as { default: unknown }).default as React.ComponentType<Record<string, unknown>>),
-  { ssr: false }
+  async () => {
+    const mod = await import("react-force-graph-3d");
+    return mod.default;
+  },
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex-1 flex items-center justify-center text-slate-600 text-[10px] font-mono">
+        Chargement du graph 3D…
+      </div>
+    ),
+  }
 );
 
 type NodeDetailProps = {
@@ -85,13 +95,11 @@ function NodeDetail({ node, edges, allNodes, accentColor, onClose, onSendToJarvi
   const nodeColor = TYPE_COLORS[node.type] ?? "#888";
   const neighbors = edges
     .filter((e) => {
-      const src = typeof e.source === "string" ? e.source : e.source.id;
-      const tgt = typeof e.target === "string" ? e.target : e.target.id;
+      const { src, tgt } = getEdgeIds(e);
       return src === node.id || tgt === node.id;
     })
     .map((e) => {
-      const src = typeof e.source === "string" ? e.source : e.source.id;
-      const tgt = typeof e.target === "string" ? e.target : e.target.id;
+      const { src, tgt } = getEdgeIds(e);
       const neighborId = src === node.id ? tgt : src;
       const neighborNode = allNodes.find((n) => n.id === neighborId);
       const direction = src === node.id ? "→" : "←";
@@ -187,6 +195,12 @@ function NodeDetail({ node, edges, allNodes, accentColor, onClose, onSendToJarvi
   );
 }
 
+function getEdgeIds(e: ConceptEdge): { src: string; tgt: string } {
+  const src = typeof e.source === "string" ? e.source : ((e.source as ConceptNode)?.id ?? "");
+  const tgt = typeof e.target === "string" ? e.target : ((e.target as ConceptNode)?.id ?? "");
+  return { src, tgt };
+}
+
 type Props = {
   accentColor: string;
   onSendToJarvis?: (text: string) => void;
@@ -202,7 +216,6 @@ export default function GraphifyView({ accentColor, onSendToJarvis, onClose }: P
   const [selectedNodeEdges, setSelectedNodeEdges] = useState<ConceptEdge[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const [dims, setDims] = useState({ w: 800, h: 600 });
-  const graphRef = useRef<{ cameraPosition: (pos: object, lookAt?: object, ms?: number) => void } | null>(null);
 
   useEffect(() => {
     fetchConcepts().then((d) => { setData(d); setReady(true); });
@@ -255,18 +268,10 @@ export default function GraphifyView({ accentColor, onSendToJarvis, onClose }: P
       const n = node as ConceptNode;
       setSelectedNode(n);
       const edges = (data.edges ?? []).filter((e) => {
-        const src = typeof e.source === "string" ? e.source : e.source.id;
-        const tgt = typeof e.target === "string" ? e.target : e.target.id;
+        const { src, tgt } = getEdgeIds(e);
         return src === n.id || tgt === n.id;
       });
       setSelectedNodeEdges(edges);
-      if (graphRef.current) {
-        graphRef.current.cameraPosition(
-          { x: (n.x ?? 0) + 120, y: (n.y ?? 0) + 40, z: (n.z ?? 0) + 80 },
-          { x: n.x ?? 0, y: n.y ?? 0, z: n.z ?? 0 },
-          800
-        );
-      }
     },
     [data.edges]
   );
@@ -286,6 +291,15 @@ export default function GraphifyView({ accentColor, onSendToJarvis, onClose }: P
       onClose?.();
     },
     [onSendToJarvis, onClose]
+  );
+
+  const linksForGraph = useMemo(
+    () =>
+      data.edges.map((e) => {
+        const { src, tgt } = getEdgeIds(e);
+        return { source: src, target: tgt, relation: e.relation, weight: e.weight };
+      }),
+    [data.edges]
   );
 
   const types = [...new Set(data.nodes.map((n) => n.type))].sort();
@@ -366,10 +380,9 @@ export default function GraphifyView({ accentColor, onSendToJarvis, onClose }: P
 
       {/* Graph + panel */}
       <div className="flex-1 relative overflow-hidden" ref={containerRef}>
-        {ready && data.initialized && (
+        {ready && data.initialized && data.nodes.length > 0 && (
           <ForceGraph3D
-            ref={graphRef as React.Ref<unknown>}
-            graphData={{ nodes: data.nodes, links: data.edges }}
+            graphData={{ nodes: data.nodes, links: linksForGraph }}
             width={selectedNode ? dims.w - 288 : dims.w}
             height={dims.h}
             backgroundColor="#020612"
