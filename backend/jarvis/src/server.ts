@@ -6,6 +6,16 @@ import { actionRoute } from "./routes/action.js";
 import { graphRoute } from "./routes/graph.js";
 import { fileRoute } from "./routes/file.js";
 import { searchRoute } from "./routes/search.js";
+import {
+  ouroborosStatus,
+  ouroborosProposals,
+  ouroborosProposal,
+  ouroborosAction,
+  ouroborosTrigger,
+  ouroborosKillSwitch,
+  ouroborosDiary,
+  ouroborosInitialize,
+} from "./routes/ouroboros.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,6 +38,15 @@ app.get("/context", contextRoute);
 app.post("/action", actionRoute);
 app.get("/graph", graphRoute);
 app.get("/file", fileRoute);
+
+app.get("/ouroboros/status", ouroborosStatus);
+app.get("/ouroboros/proposals", ouroborosProposals);
+app.get("/ouroboros/proposal/:id", ouroborosProposal);
+app.post("/ouroboros/action", ouroborosAction);
+app.post("/ouroboros/trigger", ouroborosTrigger);
+app.post("/ouroboros/kill-switch", ouroborosKillSwitch);
+app.get("/ouroboros/diary", ouroborosDiary);
+app.post("/ouroboros/initialize", ouroborosInitialize);
 
 app.listen(PORT, () => {
   console.log(`JARVIS backend on port ${PORT}`);
