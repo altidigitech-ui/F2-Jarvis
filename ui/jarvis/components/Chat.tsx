@@ -23,6 +23,14 @@ type DrawerResult = {
   score: number;
 };
 
+type ToolEvent = {
+  name: string;
+  input: unknown;
+  preview?: string;
+  is_error?: boolean;
+  status: "running" | "done" | "error";
+};
+
 type Message = {
   id: string;
   role: "user" | "assistant";
@@ -33,6 +41,7 @@ type Message = {
   graphifySources?: string[];
   searchResults?: DrawerResult[];
   searchQuery?: string;
+  toolEvents?: ToolEvent[];
 };
 
 const PERSONA_COLORS: Record<Persona, { primary: string; bg: string; border: string }> = {
@@ -370,6 +379,54 @@ function SearchResults({
   );
 }
 
+function ToolCallLine({ event, accentColor }: { event: ToolEvent; accentColor: string }) {
+  const iconMap: Record<string, string> = {
+    repo_read: "📄",
+    repo_search: "🔍",
+    repo_list_publications: "📚",
+    repo_search_voice_examples: "🎙",
+    timeline_today: "📅",
+    counters_today: "📊",
+    propose_action: "✋",
+    recent_history: "🕰",
+    mempalace_search: "🏛",
+  };
+  const icon = iconMap[event.name] || "🔧";
+  const inputSummary = (() => {
+    if (!event.input || typeof event.input !== "object") return "";
+    const obj = event.input as Record<string, unknown>;
+    return Object.entries(obj)
+      .slice(0, 2)
+      .map(([k, v]) =>
+        `${k}=${typeof v === "string" ? v.slice(0, 40) : JSON.stringify(v).slice(0, 40)}`
+      )
+      .join(", ");
+  })();
+  const color =
+    event.status === "error"
+      ? "#F06464"
+      : event.status === "running"
+      ? "#94a3b8"
+      : accentColor;
+  return (
+    <div
+      className="flex items-center gap-2 py-1 px-2 rounded text-[10px] font-mono"
+      style={{
+        background: "rgba(255,255,255,0.02)",
+        border: `1px solid ${color}20`,
+        color,
+      }}
+    >
+      <span>{icon}</span>
+      <span className="font-semibold">{event.name}</span>
+      {inputSummary && <span className="opacity-60">({inputSummary})</span>}
+      {event.status === "running" && <span className="ml-auto opacity-60">…</span>}
+      {event.status === "done" && <span className="ml-auto opacity-40">✓</span>}
+      {event.status === "error" && <span className="ml-auto">✗</span>}
+    </div>
+  );
+}
+
 type Props = {
   persona: Persona;
   mode?: Mode;
@@ -654,21 +711,76 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
+      let buffer = "";
       let fullText = "";
+      const toolEvents: ToolEvent[] = [];
 
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        const chunk = decoder.decode(value, { stream: true });
-        fullText += chunk;
-        setMessages((prev) =>
-          prev.map((m) =>
-            m.id === assistantId ? { ...m, content: m.content + chunk } : m
-          )
-        );
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          let event: Record<string, unknown>;
+          try {
+            event = JSON.parse(line);
+          } catch {
+            // Backward-compat: plain text chunk
+            fullText += line + "\n";
+            setMessages((prev) =>
+              prev.map((m) => (m.id === assistantId ? { ...m, content: m.content + line + "\n" } : m))
+            );
+            continue;
+          }
+          if (event.type === "text" && typeof event.content === "string") {
+            fullText += event.content;
+            setMessages((prev) =>
+              prev.map((m) =>
+                m.id === assistantId ? { ...m, content: m.content + (event.content as string) } : m
+              )
+            );
+          } else if (event.type === "tool_use") {
+            const te: ToolEvent = {
+              name: String(event.name || "unknown"),
+              input: event.input,
+              status: "running",
+            };
+            toolEvents.push(te);
+            setMessages((prev) =>
+              prev.map((m) =>
+                m.id === assistantId
+                  ? { ...m, toolEvents: [...(m.toolEvents || []), te] }
+                  : m
+              )
+            );
+          } else if (event.type === "tool_result") {
+            const last = toolEvents[toolEvents.length - 1];
+            if (last) {
+              last.status = event.is_error ? "error" : "done";
+              last.preview = event.preview as string | undefined;
+              setMessages((prev) =>
+                prev.map((m) =>
+                  m.id === assistantId ? { ...m, toolEvents: [...toolEvents] } : m
+                )
+              );
+            }
+          } else if (event.type === "error") {
+            fullText += `\n[Erreur: ${event.message || "unknown"}]`;
+            setMessages((prev) =>
+              prev.map((m) =>
+                m.id === assistantId
+                  ? { ...m, content: m.content + `\n[Erreur: ${event.message}]` }
+                  : m
+              )
+            );
+          }
+          // event.type === "end" → do nothing, loop will end naturally
+        }
       }
 
-      // Extract MemPalace citations from final response
+      // Extract citations from final text
       const citations = extractCitations(fullText);
       const graphifyCitations = extractGraphifyCitations(fullText);
       if (citations.length > 0 || graphifyCitations.length > 0) {
@@ -947,6 +1059,15 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                     ))}
                   </div>
                 )}
+
+              {/* Tool events — live display */}
+              {msg.role === "assistant" && msg.toolEvents && msg.toolEvents.length > 0 && (
+                <div className="ml-9 mt-2 space-y-1">
+                  {msg.toolEvents.map((te, i) => (
+                    <ToolCallLine key={i} event={te} accentColor={colors.primary} />
+                  ))}
+                </div>
+              )}
 
               {/* Action buttons — last assistant message only, after streaming done */}
               {msg.role === "assistant" &&

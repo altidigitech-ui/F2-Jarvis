@@ -98,3 +98,65 @@ export function markPlanPublished(markdown: string, postTitle: string): string {
   }
   return lines.join("\n");
 }
+
+/**
+ * Queue a list of cold targets without an actual outreach (status ⏳ = à contacter).
+ * Appends N rows to the correct platform section.
+ * Used by action_type "queue_cold_targets".
+ */
+export function appendColdQueue(
+  markdown: string,
+  platform: "TWITTER" | "LINKEDIN",
+  targets: Array<{ target: string; vertical?: string; insight?: string; notes?: string }>
+): string {
+  let out = markdown;
+  const date = cestDate();
+  for (const t of targets) {
+    out = appendTableRow(out, platform, [
+      date,
+      "",
+      t.target,
+      t.vertical || "",
+      t.insight || "",
+      "Queued",
+      "⏳",
+      t.notes || "",
+    ]);
+  }
+  return out;
+}
+
+/**
+ * Update the reply status cell for a matching target row.
+ * Finds the row containing the target handle (case-insensitive) and replaces
+ * the first cell containing ⏳ with the new replyStatus.
+ */
+export function updateColdReply(
+  markdown: string,
+  target: string,
+  replyStatus: string,
+  notes?: string
+): string {
+  const needle = target.toLowerCase().replace(/^@/, "");
+  const lines = markdown.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!/^\|/.test(line.trim())) continue;
+    if (!line.toLowerCase().includes(needle)) continue;
+    if (/^\s*\|\s*(date|#|cible)/i.test(line)) continue;
+    const cells = line.split("|");
+    let updated = false;
+    for (let j = 1; j < cells.length - 1; j++) {
+      if (cells[j].includes("⏳")) {
+        cells[j] = ` ${replyStatus} `;
+        updated = true;
+        break;
+      }
+    }
+    if (updated && notes) {
+      cells[cells.length - 2] = ` ${cells[cells.length - 2].trim()} — ${notes} `;
+    }
+    if (updated) lines[i] = cells.join("|");
+  }
+  return lines.join("\n");
+}
