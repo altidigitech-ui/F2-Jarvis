@@ -1,5 +1,9 @@
 # Distribution terrain — Reddit + Facebook
 
+> **Hérite de : `strategie/CONTEXT.md` (source de vérité parent du repo).**
+> En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 Règles communes de la **distribution terrain** : infiltration de communautés, warming/farming, conversations Reddit et FB Groups. Les outputs par personne sont dans `../romain/reddit/`, `../romain/facebook/`, `../fabrice/reddit/`, `../fabrice/facebook/`.
 
 ---

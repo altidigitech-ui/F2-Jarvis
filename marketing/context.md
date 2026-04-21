@@ -1,8 +1,12 @@
 # CONTEXT MARKETING — Source de vérité
 
+> **Hérite de : `strategie/CONTEXT.md` (source de vérité parent du repo).**
+> En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 **Dernière mise à jour : 21 avril 2026**
 
-**Hérite de :** `context.md` (racine — source de vérité repo, architecture, rôles, règles transversales)
+**Hérite de :** `strategie/CONTEXT.md` (source de vérité parent du repo)
 **Ce fichier contient :** structure corporate, pipeline SaaS, modèle funnel, rôles par compte, comptes, taglines, audience, stratégie d'acquisition cold outreach, règles opérationnelles, décisions stratégiques.
 
 ---

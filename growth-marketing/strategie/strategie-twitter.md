@@ -1,8 +1,12 @@
 # STRATEGIE TWITTER/X -- Details Chirurgicaux
 
+> **Source de vérité parent : `strategie/CONTEXT.md` (racine).**
+> Ce fichier est une référence plateforme. En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 **Date de creation :** 31 mars 2026
 **Derniere mise a jour :** 21 avril 2026
-**Herite de :** `strategie-expansion-generale.md` (source de verite parent)
+**Herite de :** `strategie/CONTEXT.md` (source de verite parent) + `strategie-expansion-generale.md` (regles cross-plateforme)
 **S'appuie sur :** `growth-marketing/twitter/algo.md` (mecanique algorithmique)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les regles globales (types de comptes, anti-patterns generaux, funnel DM benchmarks), se referer au parent.
 
@@ -633,7 +637,8 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du fichier parent.
 
 | Document | Emplacement | Role |
 |----------|-------------|------|
-| strategie-expansion-generale.md | Source de verite parent | Regles globales, types comptes, anti-patterns, funnel DM |
+| strategie/CONTEXT.md | strategie/ | Source de verite parent du repo. Prime sur tout autre document. |
+| strategie-expansion-generale.md | growth-marketing/strategie/ | Reference cross-plateforme. Regles globales, types comptes, anti-patterns, funnel DM |
 | growth-marketing/twitter/algo.md | Repo FoundryTwo-main | Mecanique algorithmique Twitter/X 2026 |
 | growth-marketing/twitter/context.md | Repo | Regles Twitter communes |
 | romain/twitter/context.md | Repo | Voix R |

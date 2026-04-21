@@ -1,8 +1,12 @@
 # STRATEGIE LINKEDIN — Details Chirurgicaux
 
+> **Source de vérité parent : `strategie/CONTEXT.md` (racine).**
+> Ce fichier est une référence plateforme. En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 **Date de creation :** 2 avril 2026
 **Derniere mise a jour :** 21 avril 2026
-**Herite de :** `strategie-expansion-generale.md` (source de verite parent)
+**Herite de :** `strategie/CONTEXT.md` (source de verite parent) + `strategie-expansion-generale.md` (regles cross-plateforme)
 **S'appuie sur :** `growth-marketing/linkedin/algo.md` (mecanique algorithmique)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les regles globales (types de comptes, anti-patterns generaux, funnel DM benchmarks), se referer au parent.
 
@@ -1254,7 +1258,8 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du parent (strategie-expa
 
 | Document | Emplacement | Role |
 |----------|-------------|------|
-| strategie-expansion-generale.md | growth-marketing/strategie/ | Source de verite parent. Regles globales, types comptes, anti-patterns generaux, funnel DM benchmarks, sequence DM, timeline |
+| strategie/CONTEXT.md | strategie/ | Source de verite parent du repo. Prime sur tout autre document. |
+| strategie-expansion-generale.md | growth-marketing/strategie/ | Reference cross-plateforme. Regles globales, types comptes, anti-patterns generaux, funnel DM benchmarks, sequence DM, timeline |
 | strategie-twitter.md | growth-marketing/strategie/ | Fichier plateforme frere. Reference pour la coherence cross-plateforme (meme structure, memes decisions, details differents) |
 | growth-marketing/linkedin/algo.md | growth-marketing/linkedin/ | Mecanique algorithmique LinkedIn 2026. Donnees factuelles : poids interactions, golden hour, penalites, formats, Topic DNA, Knowledge Graph |
 | asset-brand/FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identite visuelle, storytelling, bios F2, tagline |

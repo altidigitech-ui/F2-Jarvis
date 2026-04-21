@@ -4,7 +4,8 @@
 **Dernière mise à jour :** 21 avril 2026
 **Statut :** ACTIF — Mode Explosion 24/7
 **Auteur :** Décision conjointe R + F, synthèse croisée Claude × Grok × GPT
-**Ce fichier est le PARENT.** Il prime sur tout autre document en cas de contradiction. Les fichiers plateforme (strategie-twitter.md, strategie-linkedin.md, strategie-ih.md, strategie-ph.md) héritent de ce fichier et ne le contredisent jamais.
+**Source de vérité parent du repo : `strategie/CONTEXT.md` (racine).**
+Ce fichier est une **référence plateforme multi-canal** — il détaille les règles globales de distribution cross-plateforme. En cas de contradiction avec `strategie/CONTEXT.md`, ce dernier prime.
 
 **Règle calendrier obligatoire :** Un calendrier intégral 2026 (janvier → décembre) doit être intégré comme fichier knowledge dans CHAQUE projet Claude (R, F, F2, et tout futur projet produit). Chaque system prompt de projet doit inclure la règle : "Toujours vérifier les dates contre le calendrier fourni dans les knowledge files. Ne jamais deviner un jour de la semaine." Aucune date ne doit être écrite sans vérification préalable.
 

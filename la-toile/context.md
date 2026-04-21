@@ -1,5 +1,9 @@
 # TOILE-CONTEXT.md — Source de Vérité
 
+> **Hérite de : `strategie/CONTEXT.md` (source de vérité parent du repo).**
+> En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 > Dernière mise à jour : 05 avril 2026
 > Version : 4.0 — Pivot distribution-first
 > Statut : EXÉCUTION — Pipeline 6 SaaS × 3 verticals

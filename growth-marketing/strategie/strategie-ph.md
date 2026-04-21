@@ -1,8 +1,12 @@
 # STRATÉGIE PRODUCT HUNT — Détails Chirurgicaux
 
+> **Source de vérité parent : `strategie/CONTEXT.md` (racine).**
+> Ce fichier est une référence plateforme. En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 **Date de création :** 02 avril 2026
 **Dernière mise à jour :** 21 avril 2026
-**Hérite de :** `strategie-expansion-generale.md` (source de vérité parent)
+**Hérite de :** `strategie/CONTEXT.md` (source de vérité parent) + `strategie-expansion-generale.md` (règles cross-plateforme)
 **S'appuie sur :** `growth-marketing/ph/algo.md` (mécanique plateforme, système de points, featuring, timing)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les règles globales (types de comptes, anti-patterns généraux, scalabilité), se référer au parent.
 
@@ -517,7 +521,8 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du fichier parent.
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| strategie-expansion-generale.md | growth-marketing/strategie/ | Source de vérité parent |
+| strategie/CONTEXT.md | strategie/ | Source de vérité parent du repo. Prime sur tout autre document. |
+| strategie-expansion-generale.md | growth-marketing/strategie/ | Référence cross-plateforme |
 | growth-marketing/ph/algo.md | Repo | Mécanique plateforme PH (points, featuring, timing, vélocité) |
 | growth-marketing/ph/context.md | Repo | Stratégie PH existante (pre-launch, launch day, post-launch, karma) |
 | f2/ph/context.md | Repo | Identité compte @foundrytwo PH |
