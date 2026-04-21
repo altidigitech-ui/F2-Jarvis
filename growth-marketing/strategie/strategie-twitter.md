@@ -64,7 +64,7 @@ Source de verite portfolio : `produits/STATUS.md` (racine).
 | Champ | Valeur |
 |-------|--------|
 | **Nom affiche** | FoundryTwo |
-| **Bio** | Two builders. One forge. 6 AI agents for e-com, agencies, creators. -- StoreMD -- ProfitPilot -- Real numbers, real failures. -- foundrytwo.com |
+| **Bio** | SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Results in minutes. · Currently live: StoreMD · foundrytwo.com |
 | **Lien** | foundrytwo.com |
 | **Avatar** | Logo F2 enclume |
 | **Banner** | Scene atelier ou banniere logo F2 |

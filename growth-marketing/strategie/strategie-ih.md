@@ -33,7 +33,7 @@
 | **Handle** | @FoundryTwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume |
-| **Bio** | SaaS studio. Two self-taught builders shipping AI-powered tools in public. Real numbers, real failures. Currently building: 6 AI agents for e-com, agencies, and creators |
+| **Bio** | SaaS studio. 6 AI agents for e-com, agencies, creators. Currently live: StoreMD. Real product data, strict integrity (no fake MRR, no fake testimonials). |
 | **Product** | Le SaaS le plus récemment lancé (mis à jour à chaque lancement) |
 | **Revenue** | Afficher dès que MRR > $0. $0 MRR affiché = transparence = valorisé sur IH. |
 | **Website** | foundrytwo.com |

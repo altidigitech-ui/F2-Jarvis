@@ -272,7 +272,7 @@ Ce positionnement est le même que sur IH — la cadence de production EST le co
 | **Handle** | @foundrytwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume |
-| **Tagline profil** | SaaS studio. Two builders shipping 6 AI agents for e-com, agencies, and creators — in public. |
+| **Tagline profil** | SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Currently live: StoreMD. |
 | **Website** | foundrytwo.com |
 | **Twitter** | @foundrytwo |
 | **Products** | Chaque SaaS est listé ici après son lancement |

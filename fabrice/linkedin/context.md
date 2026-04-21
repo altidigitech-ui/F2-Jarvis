@@ -27,7 +27,7 @@ Même logique que R (cf. linkedin/romain/context.md §1.1) : positionnement perm
 
 ```
 Paragraph 1 — Positionnement permanent (ne change pas avec chaque produit)
-I build AI agents that solve real problems. Co-founder and CTO of FoundryTwo, a studio where we ship one product after another — fast, lean, and in public.
+I build AI agents that solve real problems. Co-founder and CTO of FoundryTwo, a studio where we ship one product after another — fast, lean, and with real product data.
 
 Paragraph 2 — Preuve actuelle (évolue avec le portfolio)
 Currently building 6 AI agents that solve real problems for Shopify merchants and content creators. From automated chargeback defense to store speed diagnostics to content repurposing — every tool works while you sleep.

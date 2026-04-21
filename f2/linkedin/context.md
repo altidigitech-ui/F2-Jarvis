@@ -43,10 +43,10 @@ We're building 6 AI agents that solve real problems for Shopify merchants, marke
 What we stand for:
 → Real data, never fake testimonials
 → Full transparency on our process and results
-→ Building in public — every lesson shared
+→ Real product data, verifiable results
 → Ship fast, learn faster
 
-Products: ProfitPilot · StoreMD · ContentForge · [portfolio grows with each launch]
+Products: StoreMD · ProfitPilot · ClientPulse · [portfolio grows with each launch]
 
 Follow us for honest founder content and build updates.
 ```

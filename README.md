@@ -1,8 +1,12 @@
-# FoundryTwo
+# F2-Jarvis
 
-Studio SaaS indie. Distribution-first. 3–4 SaaS/mois.
-R (Growth) + F (CTO). Build in public, no fake stats.
-Repo opérationnel unifié — documentation .md, pas de code.
+Repo unifié du studio FoundryTwo. Contient DEUX systèmes :
+1. **F2-Jarvis (infra)** — cockpit web agentique + Claude Code setup + couche mémoire
+2. **FoundryTwo (contenu opé)** — stratégie, produits, marketing, distribution
+
+Studio SaaS indie. Distribution-first. 2 SaaS/mois sur 3 verticales (e-com, agences, creators).
+R (Growth) + F (CTO). Sales-mode dominant, integrity strict (BIBLE.md §3).
+Repo opérationnel unifié — documentation .md, pas de code applicatif.
 
 ---
 

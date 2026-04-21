@@ -35,7 +35,7 @@ Tout passe par @foundrytwo. R et F sont listés comme "makers" sur chaque listin
 | **Handle** | @foundrytwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume |
-| **Tagline profil** | SaaS studio. Two builders shipping 6 AI tools for e-com, agencies, and creators — in public. |
+| **Tagline profil** | SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Currently live: StoreMD. |
 | **Website** | foundrytwo.com |
 | **Twitter** | @foundrytwo |
 | **Makers associés** | Romain Delgado (R) + Fabrice Gangitano (F) |
@@ -233,8 +233,7 @@ Pricing: [gratuit/payant/free tier]
 🎁 PH-only offer: [deal exclusif — ex: 30% off lifetime,
 extended free trial, etc.]
 
-We're building in public — every number, every failure.
-This is product #[X] of 6 planned AI SaaS across 3 verticals.
+We ship AI agents that solve real problems. This is product #[X] from our portfolio of 6 AI agents across 3 verticals.
 [Mention des produits précédents si X > 1.]
 
 I'd love your honest feedback on:

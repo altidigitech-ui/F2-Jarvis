@@ -1,6 +1,6 @@
 # CONTEXT OPÉRATIONNEL F2 — @foundrytwo
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Géré par :** R (100% — rédaction, publication, réponses, gestion)
 **Ce fichier contient :** le cadre opérationnel du compte studio @foundrytwo — qui fait quoi, cycle hebdomadaire, relation avec le projet Claude "FoundryTwo".
 **Ce fichier ne contient PAS :** la stratégie par plateforme (growth-marketing/), les algorithmes (algo.md), ni le contenu lui-même (produit par le projet Claude F2).

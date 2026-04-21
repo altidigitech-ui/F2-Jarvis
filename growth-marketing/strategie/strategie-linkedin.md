@@ -120,10 +120,10 @@ We ship AI agents that solve real problems for Shopify merchants, freelance mark
 What we stand for:
 → Real data from 50+ merchant conversations, not assumptions
 → Full transparency on our process and results
-→ Building in public — every lesson shared
+→ Real product data, verifiable results
 → Ship fast, learn faster
 
-Currently shipping: 6 AI agents across e-commerce, marketing, and content verticals.
+Currently live: StoreMD (AI store diagnostics for Shopify). 5 more agents in the pipeline.
 
 Follow us for honest founder content and build updates.
 ```
@@ -237,7 +237,7 @@ Source de verite : produits/STATUS.md (racine).
 | we, our, the studio | I, my, me |
 | shipped, built, data shows, merchants told us | crushed it, killed it, smashed it |
 | honest, transparent, real numbers, terrain data | revolutionary, game-changing, disruptive |
-| we believe in building in public | opinions tranchees, provocations, hot takes |
+| data shows, merchants told us, real product data | opinions tranchees, provocations, hot takes |
 
 **Contraintes page company :**
 - Les commentaires F2 sont **signes** : "— Romain, co-founder" ou "— Fabrice, CTO" (pour humaniser le logo)
