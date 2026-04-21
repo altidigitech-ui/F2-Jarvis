@@ -22,6 +22,22 @@
 
 -----
 
+## REDDIT
+
+|Date|Sub|Post original (résumé + u/author)|Commentaire F|Karma gagné|Notes|
+|----|---|--------------------------------|-------------|-----------|-----|
+|    |   |                                |             |           |     |
+
+-----
+
+## FACEBOOK
+
+|Date|Groupe|Post original (résumé + auteur)|Commentaire F|Réactions|Notes|
+|----|------|------------------------------|-------------|---------|-----|
+|    |      |                              |             |         |     |
+
+-----
+
 ## IH
 
 |Date|Post original (résumé + auteur)|Commentaire F|

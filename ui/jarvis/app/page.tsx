@@ -28,8 +28,8 @@ function LiveClock() {
   return <span suppressHydrationWarning>{time} CEST</span>;
 }
 
-const ROMAIN_TAGS = ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "PH", "F2"];
-const FABRICE_TAGS = ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "PH"];
+const ROMAIN_TAGS = ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "IH", "PH"];
+const FABRICE_TAGS = ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK"];
 
 export default function HomePage() {
   return (
@@ -103,7 +103,7 @@ export default function HomePage() {
               </div>
 
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Distribution, CRO, e-commerce & agences. 30 interactions/jour.
+                Distribution, CRO, e-commerce & agences. 30 interactions/jour warming Reddit + Facebook S3.
               </p>
 
               <div className="flex flex-wrap gap-1.5">
@@ -176,7 +176,7 @@ export default function HomePage() {
               </div>
 
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Infra technique, SaaS, e-commerce & content creators. 30 interactions/jour.
+                Infra technique, SaaS, e-commerce & content creators. 30 interactions/jour warming Reddit + Facebook S3.
               </p>
 
               <div className="flex flex-wrap gap-1.5">
