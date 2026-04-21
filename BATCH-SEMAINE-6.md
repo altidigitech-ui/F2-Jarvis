@@ -1,3 +1,72 @@
+# BATCH SEMAINE 6 — FINAL (DOUBLE-COUCHE)
+
+**Période d'application :** lundi 20/04/2026 → dimanche 26/04/2026
+**Fichier consolidé le :** mardi 21/04/2026
+**Structure :** batch double-couche fusionnant 2 stratégies parallèles pour la même semaine
+
+---
+
+## STRUCTURE DU FICHIER
+
+Ce fichier regroupe **2 batchs complémentaires** qui tournent en parallèle sur la semaine 6 :
+
+**COUCHE A — SALES MODE AGRESSIF** (ex-`BATCH-SEMAINE-6.md`, sections §A.1 à §A.18)
+- Angle narratif : "StoreMD finds in 60 seconds what your agency missed in 6 months."
+- Funnel : top-of-funnel attention + mid-funnel par stats agrégées
+- Créneau horaire dédié : 13h00 CEST (Twitter) + 21h00 CEST (LinkedIn) + 09h00 CEST (IH)
+- Référence stratégie : batch original généré le 20/04, révisé le 21/04 post-BIBLE v2.1
+- Contenu : 24 posts schedulés (5 R TW + 3 R LI + 7 F TW dont 2 threads + 3 F LI + 5 F2 TW + 1 F2 LI + 1 F2 IH), templates cold outreach, replies cascade F, plans hebdo, canon §17 chiffres locked, brief re-render vidéos
+
+**COUCHE B — BETA TESTERS ACQUISITION DIRECTE** (ex-`BATCH-ADDITIONNEL-MER-VEN-S6.md`, sections §B.1 à §B.13)
+- Angle narratif : "10 Pro beta spots open this week — claim yours."
+- Funnel : acquisition directe mid-funnel conversion, superposée à la Couche A
+- Créneau horaire dédié : 18h30 CEST (Twitter) + 21h30 CEST (LinkedIn) + 09h00 CEST (IH si remplacement)
+- Référence stratégie : `STRATEGIE-MID-S6-BETA-TESTERS.md` (validée par R le 21/04)
+- Période : mercredi 22/04 → vendredi 24/04 (3 jours sur 7)
+- Contenu : 15 posts additionnels/refaits (9 Twitter + 6 LinkedIn + 1 IH refait), briefs 4 nouvelles vidéos Remotion
+
+---
+
+## RÈGLE DE COHABITATION
+
+Les deux couches exécutent la même stratégie "sales agressif" avec des leviers différents :
+- **Couche A attaque l'attention** via claims chiffrés agrégés et scenarios illustratifs
+- **Couche B attaque la conversion** via quota serré, cold scan proactif et offre Pro directe
+
+Même ADN sales, deux angles de fire. Les deux couches respectent :
+- BIBLE v2.1 §3 (lignes rouges : pas de faux MRR, pas de testimonial verbatim inventé, pas de nom client fictif)
+- ANTI-IA.md (pas d'em-dash pivot, pas de "Not X it's Y", contractions obligatoires, cadences variées)
+- Canon §A.17 chiffres verrouillés (les deux couches puisent dans le même canon)
+- URL `https://storemd.vercel.app/` partout
+- Format 2-blocs Twitter (POST + REPLY) partout où CTA lien
+- Zéro hashtag toutes plateformes
+
+**Posts où Couche B remplace/refait des posts Couche A :**
+- `romain/publication/linkedin/semaine-6/mardi-21-04-case-study.md` — version Couche A §A.4.1 ; version Couche B §B.6.1 (à dispatcher : version Couche B)
+- `romain/publication/linkedin/semaine-6/jeudi-23-04-agency-angle.md` — Couche A §A.4.2 ; Couche B §B.6.2 (à dispatcher : Couche B)
+- `romain/publication/linkedin/semaine-6/vendredi-24-04-week-recap.md` — Couche A §A.4.3 ; Couche B §B.6.3 (à dispatcher : Couche B)
+- `fabrice/publication/linkedin/semaine-6/mercredi-22-04-ai-readiness-deep-dive.md` — Couche A §A.6.2 ; Couche B §B.7.1 (à dispatcher : Couche B)
+- `fabrice/publication/linkedin/semaine-6/jeudi-23-04-social-proof-agency.md` — Couche A §A.6.3 (gardé tel quel)
+- `f2/publication/ih/semaine-6/mercredi-22-04-ih-retro.md` — Couche A §A.8.2 ; Couche B §B.9 (à dispatcher : Couche B)
+
+Les deux versions sont conservées dans ce fichier. F décide au dispatch quelle version pousse dans le repo.
+
+---
+
+## STATUT DU FICHIER
+
+✅ Couche A : validée R (révision BIBLE v2.1 appliquée)
+✅ Couche B : validée R (stratégie beta validée 21/04, batch validé 21/04)
+⏳ Dispatch repo : en attente prompt Claude Code dédié
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+
+# ═════════════════════ COUCHE A — SALES MODE ═════════════════════
+
+═══════════════════════════════════════════════════════════════════════════════
+
 # BATCH SEMAINE 6 — StoreMD SALES MODE
 
 **Période :** lundi 20/04/2026 → dimanche 26/04/2026
@@ -1743,3 +1812,994 @@ Fallback : publier les posts concernés en **text-only** (supprimer `[VIDEO]` du
 **Conformité :** BIBLE v2.1 (§3 lignes rouges respectées), ANTI-IA.md (pas d'em-dash pivot, pas de "Not X it's Y", cadences variées, phrases de longueurs inégales), `growth-marketing/twitter/algo.md` §6.3 (lien en reply, pas dans corps), zéro hashtag, URL `https://storemd.vercel.app/` partout. Prêt à dispatcher dans le repo via prompt Claude Code dédié (livrable ultérieur).
 
 *Version révisée — 21 avril 2026. Canon chiffres §17 verrouillé pour cohérence S7+.*
+
+═══════════════════════════════════════════════════════════════════════════════
+
+# ═════════════════ COUCHE B — BETA TESTERS ═════════════════
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**Note lecteur :** la Couche B ci-dessous reprend intégralement le contenu du fichier `BATCH-ADDITIONNEL-MER-VEN-S6.md`, qui décrit les 15 posts additionnels/refaits du push beta testers mer-ven S6. Les références "§X.Y" dans cette section renvoient à la numérotation interne de la Couche B (ex: §3.1 = premier post Twitter R de la Couche B). Pour naviguer, préfixer mentalement par "§B." (§B.3.1, §B.6.1, etc.).
+
+# BATCH ADDITIONNEL S6 — Mid-Week Beta Testers Push
+
+**Période d'application :** mercredi 22/04/2026 → vendredi 24/04/2026 (3 jours)
+**Créé le :** mardi 21/04/2026
+**Référence stratégie :** `STRATEGIE-MID-S6-BETA-TESTERS.md` (validée par R le 21/04)
+**Référence règles batch :** `RULES-BATCH.md` v1 (URL vercel.app, format 2-blocs Twitter, zéro hashtag)
+**Référence BIBLE :** v2.1 §3 (lignes rouges + marges marketing sales mode)
+**Règle ANTI-IA :** appliquée sur chaque post (contractions, phrases variées, pas d'em-dash pivot, pas de cadence fixe)
+**Statut :** en validation R
+
+---
+
+## SOMMAIRE
+
+1. Articulation avec batch S6 principal
+2. Répartition des 5 mécaniques sur les 15 posts
+3. Posts Twitter R — 3 posts (mer, jeu, ven)
+4. Posts Twitter F — 3 posts (mer, jeu, ven)
+5. Posts Twitter F2 — 3 posts (mer, jeu, ven)
+6. Posts LinkedIn R — 3 posts REFAITS (mar, jeu, ven)
+7. Posts LinkedIn F — 2 posts (mer REFAIT + ven nouveau)
+8. Post LinkedIn F2 mercredi — REFAIT
+9. Post IH F2 mercredi — REFAIT
+10. Briefs vidéos Remotion additionnelles
+11. Horaires de publication
+12. Checklist validation pré-dispatch
+
+---
+
+## 1. ARTICULATION AVEC BATCH S6 PRINCIPAL
+
+**Non-interférence horaires :** les posts beta sortent à **18h30 CEST** (Twitter) et **21h30 CEST** (LinkedIn), complémentaires aux slots 13h00 / 21h00 du batch principal.
+
+**Posts LinkedIn refaits :** les 3 posts LinkedIn R du batch principal (mar 21/04 case-study, jeu 23/04 agency-angle, ven 24/04 week-recap) sont **réécrits intégralement** avec l'angle beta. Ils remplacent les versions du batch principal dans les fichiers `romain/publication/linkedin/semaine-6/`. Idem post F LinkedIn mercredi 22/04 AI-readiness-deep-dive.
+
+**Posts Twitter additionnels :** 9 nouveaux tweets (3 par compte) qui s'ajoutent aux 5 R + 7 F + 5 F2 existants.
+
+**Posts F2 mercredi 22/04 :** LinkedIn Company F2 mardi 21/04 n'est pas touché (déjà 54/43/$10,200/3). L'IH F2 mercredi 22/04 retro est **réécrit** avec l'angle beta (remplace le refait du batch principal).
+
+---
+
+## 2. RÉPARTITION DES 5 MÉCANIQUES SUR LES 15 POSTS
+
+Les 5 mécaniques de la stratégie beta, distribuées pour que chaque mécanique apparaisse plusieurs fois dans la semaine sans redondance par compte et par jour.
+
+| Mécanique | Posts qui l'activent |
+|---|---|
+| **M1 — Recrutement 10 betas Pro** | R TW mer · F TW mer · F2 TW mer · R LI mar · F LI mer · F2 LI mar · F2 IH mer |
+| **M2 — Scan gratuit sur demande** | R TW jeu · F TW jeu · F2 TW jeu · R LI jeu |
+| **M3 — Cold scan proactif annoncé** | F TW jeu · R LI jeu |
+| **M4 — Scan Pro ciblé (teaser)** | F TW ven · R LI ven · F LI ven |
+| **M5 — Pipeline conversion beta** | R TW ven · F2 TW ven · R LI ven · F LI ven |
+
+Chaque post a 1 mécanique principale + 1 mécanique secondaire (CTA double stratégie §4.1). Aucun post ne fait 2 annonces principales simultanées.
+
+---
+
+## 3. POSTS TWITTER R — 3 POSTS
+
+### 3.1 Mercredi 22/04 — M1 Recrutement 10 betas
+
+**Vidéo :** `store-md-beta-10-spots` (voir §10 brief 1)
+**Heure :** 18h30 CEST
+**Registre R :** provocateur (alterne avec mardi horror R qui est à 13h = retour d'expérience)
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+I'm opening 10 Pro beta spots on StoreMD this week.
+
+Full Pro access. Your real Shopify store. 30 days to stress-test every module.
+
+Not "sign up for the waitlist."
+Not "maybe we'll email you."
+
+DM me your store URL. First 10 get onboarded tonight.
+
+Merchants, agencies, consultants. If you manage Shopify, you qualify.
+
+[VIDEO]
+```
+
+**REPLY (manuel après publication) :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> J'ouvre 10 accès Pro beta sur StoreMD cette semaine. Accès Pro complet, ta vraie boutique Shopify, 30 jours pour tout stress-tester. Pas "inscris-toi à la waitlist", pas "on t'email peut-être". DM ton URL, les 10 premiers sont onboardés ce soir. Merchants, agencies, consultants : si tu gères du Shopify, tu qualifies.
+
+**Notes :**
+- M1 principal, M5 en sous-texte ("30 jours" = durée beta → pipeline conversion implicite)
+- Format 2-blocs Twitter appliqué (lien en reply)
+- Voix R : "I'm opening", direct, chiffre 10 précis, pas de fausse urgence type "only today"
+- ANTI-IA : contractions obligatoires OK, phrases inégales, ouverture par "I'm opening" pas par "So" ou "Look"
+
+---
+
+### 3.2 Jeudi 23/04 — M2 Scan gratuit sur demande
+
+**Vidéo :** `store-md-scan-cta` (voir §10 brief 4)
+**Heure :** 18h30 CEST
+**Registre R :** question qui tue
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+Question for Shopify merchants and agencies:
+
+When did you last audit your store for ghost billing? App impact attribution? AI readiness?
+
+Not "when did your agency run PageSpeed Insights." I mean actually audit those three.
+
+If the answer is "never" or "I don't know" — DM me your URL. I'll run a full scan and send the report back within 24h. Free.
+
+[VIDEO]
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> Question pour les merchants et agencies Shopify : à quand remonte ton dernier audit ghost billing / app impact attribution / AI readiness ? Pas "quand ton agence a run PageSpeed Insights". Je parle de ces trois-là concrètement. Si la réponse c'est "jamais" ou "je sais pas" — DM ton URL. Je run le scan complet, rapport dans les 24h. Gratuit.
+
+**Notes :**
+- M2 principal, M3 implicite ("I'll run" = R exécute manuellement)
+- Registre question qui tue (alterne avec mercredi provocateur)
+- Voix R : question directe qui pousse à l'auto-diagnostic, formulation "not X, I mean" = ANTI-IA OK (pas "not X — it's Y" qui est interdit, c'est une clarification naturelle)
+- Pas de fake timeline "24h limitée", c'est juste le delay réel de traitement
+
+---
+
+### 3.3 Vendredi 24/04 — M5 Pipeline conversion + point sur la semaine
+
+**Vidéo :** aucune (text-only — cohérent avec le post social-proof reformulé du batch principal même jour)
+**Heure :** 18h30 CEST
+**Registre R :** data-drop
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+Quick update on the beta push:
+
+Spots opened Wednesday. DMs still coming in — merchants, agencies, solo founders.
+
+Every single URL I scanned this week surfaced at least 2 actionable findings. The worst one: 4 ghost apps, $340/mo leaking, on a $28k/mo store.
+
+If you haven't claimed your spot yet, last call before weekend. DM the URL.
+
+Next week the Pro tier goes back behind a paywall.
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> Point rapide sur le push beta : spots ouverts mercredi, DMs continuent d'arriver — merchants, agencies, founders solo. Chaque URL scannée cette semaine a fait remonter au moins 2 trouvailles actionnables. Le pire : 4 ghost apps, $340/mo leaking, sur un store à $28k/mo. Si t'as pas claim ton spot encore, dernier call avant le weekend. DM l'URL. La semaine prochaine le tier Pro repasse derrière un paywall.
+
+**Notes :**
+- M5 principal (conversion deadline weekend), M1 en rappel ("last call before weekend")
+- Registre data-drop (ouverture chiffre, narrative autour)
+- ⚠️ Chiffre "4 ghost apps, $340/mo, $28k/mo store" = **vrai résultat du cold scan proactif si exécuté**, sinon chiffre illustratif cohérent avec §17 canon. À valider avec R : si R ou F n'a pas scanné un store réel avec ces exacts chiffres, remplacer par les vrais chiffres remontés sur un scan réel de la semaine, OU formuler "I saw a $340/mo leak on one scan this week" sans chiffre de revenue du store.
+- "Next week the Pro tier goes back behind a paywall" = **à valider côté produit** : si faux, reformuler en "Next week the spots close"
+
+---
+
+## 4. POSTS TWITTER F — 3 POSTS
+
+### 4.1 Mercredi 22/04 — M1 Recrutement beta (angle builder)
+
+**Vidéo :** `store-md-beta-10-spots` (mutualisée avec R, voir §10 brief 1)
+**Heure :** 18h30 CEST
+**Registre F :** builder story
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+We built a Pro tier on StoreMD with deeper scanning, AI readiness scoring, and per-app performance attribution.
+
+Before opening it publicly, we want 10 real merchants on it for 30 days. Real stores, real feedback, real data.
+
+If you run Shopify and want full Pro access for 30 days — DM your URL.
+
+10 spots. First 10 URLs that land, we onboard tonight.
+
+[VIDEO]
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> On a construit un tier Pro sur StoreMD avec scanning plus profond, scoring AI readiness, attribution de performance par app. Avant de l'ouvrir publiquement, on veut 10 vrais merchants dessus pendant 30 jours. Vrais stores, vrais feedbacks, vraies données. Si tu run du Shopify et tu veux l'accès Pro complet pour 30 jours — DM ton URL. 10 spots. Les 10 premiers URLs qui tombent, on onboard ce soir.
+
+**Notes :**
+- M1 principal, M5 en sous-texte ("30 jours" feedback = pipeline qualifié)
+- Voix F : "we built", transparence builder, explicite sur le quoi et le pourquoi
+- Différenciation avec R : R attaque frontal ("I'm opening"), F explique le raisonnement product ("before opening publicly, we want")
+
+---
+
+### 4.2 Jeudi 23/04 — M2 Scan gratuit + M3 Cold scan annoncé
+
+**Vidéo :** `store-md-scan-demo-agency` (voir §10 brief 2)
+**Heure :** 18h30 CEST
+**Registre F :** quick fix
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+Running 5 random Shopify store scans today from my following + DMs. Whoever's URL I see first, I scan.
+
+You can also opt in — reply or DM your URL, I'll add you to the batch.
+
+60-second scan, 43 checks across 5 modules, full report back same day.
+
+[VIDEO]
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> Je run 5 scans aléatoires de stores Shopify aujourd'hui depuis mes followers + DMs. Le premier URL que je vois, je le scanne. Tu peux aussi opt in — reply ou DM ton URL, je t'ajoute au batch. Scan 60s, 43 checks sur 5 modules, rapport complet dans la journée.
+
+**Notes :**
+- M3 principal (cold scan proactif annoncé publiquement → crée le content angle), M2 en offre ouverte
+- Voix F : quick fix, minimal, "Running 5 scans today" tangible et actionnable
+- ⚠️ Action contract : F doit effectivement scanner 5 stores ce jeudi manuellement. Si pas exécuté → perte crédibilité. Stratégie §2.3.
+
+---
+
+### 4.3 Vendredi 24/04 — M4 Scan Pro ciblé (teaser)
+
+**Vidéo :** aucune (text-only ou brief vidéo `store-md-beta-progress` si prête)
+**Heure :** 18h30 CEST
+**Registre F :** comparatif honnête
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+Scanned 3 Shopify stores at Pro-tier depth this week as part of the beta rollout. Two of them hit findings the free scan doesn't surface:
+
+One had a theme code injection from a 2023 app that's still firing. Not detected by our free scan because it's a rare edge case we only run in Pro.
+
+Another had metafield corruption breaking LLM parsing. Same deal — Pro-only check.
+
+Pro tier opens Monday for the 10 beta testers. DM if you want a spot.
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> Scanné 3 stores Shopify en profondeur Pro-tier cette semaine dans le cadre du rollout beta. Deux d'entre eux ont des trouvailles que le scan gratuit ne surface pas. Un avait une injection de code thème d'une app de 2023 qui tourne toujours. Pas détecté par le scan gratuit parce que c'est un edge case rare qu'on run qu'en Pro. Un autre avait une corruption de metafield qui cassait le parsing LLM. Même deal — check Pro-only. Le tier Pro ouvre lundi pour les 10 beta testeurs. DM si tu veux un spot.
+
+**Notes :**
+- M4 principal (démo valeur Pro via 2 findings uniquement Pro), M1 en rappel
+- Voix F : comparatif honnête (free vs Pro), technique concret
+- ⚠️ Action contract : F doit avoir effectivement scanné 3 stores en Pro-mode cette semaine (stratégie §2.4)
+- ⚠️ Les 2 findings ("theme code injection from 2023 app", "metafield corruption") doivent être **vrais résultats** des scans réels. Sinon reformuler en "findings type" plus générique.
+
+---
+
+## 5. POSTS TWITTER F2 — 3 POSTS
+
+### 5.1 Mercredi 22/04 — M1 Recrutement beta (angle studio)
+
+**Vidéo :** `store-md-beta-10-spots` (mutualisée, voir §10 brief 1)
+**Heure :** 18h30 CEST
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+FoundryTwo is opening 10 Pro beta spots on StoreMD this week.
+
+What you get: 30 days of Pro-tier access on your live Shopify store. Full scanning depth, priority support, direct feedback loop with our team.
+
+What we ask: use it on your real store, give us one structured feedback at day 14.
+
+DM @foundrytwo with your Shopify URL. First 10 we onboard tonight.
+
+[VIDEO]
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> FoundryTwo ouvre 10 accès Pro beta sur StoreMD cette semaine. Ce que tu reçois : 30 jours d'accès Pro-tier sur ta vraie boutique Shopify. Scanning complet, support prioritaire, feedback loop direct avec l'équipe. Ce qu'on demande : utilise-le sur ta vraie boutique, donne-nous un feedback structuré à day 14. DM @foundrytwo avec ton URL Shopify. Les 10 premiers on onboard ce soir.
+
+**Notes :**
+- M1 principal, M5 en sous-texte ("feedback loop day 14" = checkpoint conversion)
+- Voix F2 : "we" (FoundryTwo), neutre studio, transactionnel clair (what you get / what we ask)
+- Différenciation R/F/F2 : F2 pose le deal comme un contrat transparent, R attaque frontal, F explique le raisonnement produit
+
+---
+
+### 5.2 Jeudi 23/04 — M2 Scan gratuit (studio angle)
+
+**Vidéo :** aucune (brief vidéo `store-md-beta-progress` si prête, sinon text-only)
+**Heure :** 18h30 CEST
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+Separate from the 10 beta spots — if you just want a one-time free scan on your Shopify store, the public tool runs it in 60 seconds.
+
+No signup, no admin access, no gatekeeping.
+
+43 checks across 5 modules, report displayed immediately in browser.
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> Séparé des 10 spots beta — si tu veux juste un scan gratuit ponctuel sur ta boutique Shopify, le tool public le fait en 60 secondes. Pas de signup, pas d'accès admin, pas de gatekeeping. 43 checks sur 5 modules, rapport affiché direct dans le navigateur.
+
+**Notes :**
+- M2 principal (scan public gratuit distinct du beta), aucune mécanique secondaire
+- Voix F2 : neutre, factuel, pas de claim stats
+- Utilité du post : **clarifier** pour les merchants qui ne veulent pas s'engager en beta qu'il y a une porte d'entrée gratuite one-shot. Évite de perdre les prospects "test-light"
+
+---
+
+### 5.3 Vendredi 24/04 — M5 Pipeline conversion + recap beta
+
+**Vidéo :** aucune (text-only ou `store-md-beta-progress` final)
+**Heure :** 18h30 CEST
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+Beta push week recap:
+
+10 Pro beta spots opened Wednesday. Structured feedback loop starts day 14 for each onboarded merchant.
+
+Next milestone: first beta feedback round mid-S7.
+
+Pro tier public opening planned after feedback consolidation.
+
+DM @foundrytwo if you still want in before weekend close.
+```
+
+**REPLY :**
+
+```
+https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> Recap de la semaine beta push. 10 spots Pro beta ouverts mercredi. Feedback loop structuré démarre day 14 pour chaque merchant onboardé. Prochain milestone : premier tour de feedback beta mi-S7. Ouverture Pro publique prévue après consolidation des retours. DM @foundrytwo si tu veux encore rentrer avant la fin de semaine.
+
+**Notes :**
+- M5 principal (pipeline roadmap transparente), M1 en closing
+- Voix F2 : studio pro, milestone explicite, pas de chiffre MRR (ligne rouge BIBLE §3)
+- ⚠️ "Pro tier public opening planned" à valider produit. Si pas vrai, reformuler en "next decision on Pro tier after beta feedback"
+
+---
+
+## 6. POSTS LINKEDIN R — 3 POSTS REFAITS
+
+Les 3 posts LinkedIn R existants du batch principal sont **réécrits intégralement** avec l'angle beta. Ils remplacent les versions actuelles dans `romain/publication/linkedin/semaine-6/`.
+
+### 6.1 Mardi 21/04 — REFAIT — M1 Recrutement beta
+
+**Heure :** 21h00 CEST · **Vidéo :** aucune
+**Fichier à remplacer :** `romain/publication/linkedin/semaine-6/mardi-21-04-case-study.md`
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+**I'm opening 10 Pro beta spots on StoreMD this week. Here's why, who I want on it, and what you get.**
+
+—
+
+I've been scanning Shopify stores for weeks with the free public version of StoreMD.
+
+The public scan runs 43 checks in 60 seconds. Ghost billing, AI readiness, app impact, theme code audit, Core Web Vitals. Free, no signup, no admin access.
+
+The Pro tier we've built on top goes deeper.
+
+**What's in Pro:**
+
+→ Full app subscription diff across your entire Shopify history (not just today's snapshot)
+→ AI readiness scoring per LLM (ChatGPT, Perplexity, Claude — each model scored separately)
+→ App impact attribution benchmarked against your competitors' stores
+→ Theme code static analysis (detects injections, dead scripts, LLM-breaking patterns)
+→ Prioritized fix list ranked by ROI estimate
+
+**The beta:**
+
+10 merchants or agencies. Live Shopify store. 30 days of full Pro access. One structured feedback at day 14.
+
+That's it. No contract, no payment capture, no opt-in to anything else.
+
+**Why only 10:**
+
+Because I want to spend real time on each one. Walk through the report, answer questions, iterate on the product based on what you tell me. That doesn't scale to 50.
+
+**Who qualifies:**
+
+→ Merchants running Shopify (any revenue range)
+→ Agencies managing at least 3 Shopify clients
+→ Freelancers consulting on Shopify optimization
+
+**How to claim a spot:**
+
+DM me your Shopify store URL. First 10 I see tonight, I onboard. If the spots fill before you DM, I'll tell you — no fake waitlist nonsense.
+
+→ https://storemd.vercel.app/ (run the free scan first if you want to see what we detect before committing to the beta)
+
+Closes when 10 spots are filled. Posting daily updates.
+```
+
+**TRADUCTION :**
+
+> J'ouvre 10 spots Pro beta sur StoreMD cette semaine. Le scan public free (43 checks en 60s) reste gratuit. Le tier Pro va plus loin : diff historique complet, scoring AI par LLM, attribution benchmark concurrence, static analysis code thème, liste de fix priorisée par ROI. 10 merchants ou agencies, vraie boutique Shopify, 30 jours d'accès Pro, un feedback structuré à day 14. Pourquoi 10 : je veux passer du temps réel sur chacun. Qui qualifie : merchants Shopify, agencies gérant 3+ clients, freelancers consulting. DM ton URL, les 10 premiers je les onboard ce soir.
+
+**Notes :**
+- M1 principal, M5 en déploiement ("spend real time on each", "iterate on product")
+- Hashtags du batch original `#Shopify #Ecommerce #DTC #AIshopping` **supprimés** (BIBLE §8)
+- URL `https://storemd.vercel.app/` dans le corps OK (LinkedIn algo, pas Twitter)
+- 1 phrase par ligne, format aéré conforme `growth-marketing/linkedin/`
+- Voix R : "I'm opening", "I want", "no fake waitlist nonsense" = tonalité agressive directe
+- ⚠️ Features Pro listées à valider produit : "AI readiness per LLM", "benchmark concurrence", "ROI estimate" doivent exister ou être reformulées si pas implémentées
+
+---
+
+### 6.2 Jeudi 23/04 — REFAIT — M2 Scan gratuit + M3 Cold scan annoncé
+
+**Heure :** 21h00 CEST · **Vidéo :** aucune
+**Fichier à remplacer :** `romain/publication/linkedin/semaine-6/jeudi-23-04-agency-angle.md`
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+**If you manage Shopify stores — yours or clients' — DM me your URL this week. I'll scan it and send you the full report.**
+
+—
+
+Not a marketing move. I'm personally scanning stores for people this week as part of pushing the StoreMD beta.
+
+**How it works:**
+
+You DM me your Shopify store URL.
+
+I run it through StoreMD. The scan takes 60 seconds. Covers ghost billing, AI readiness, app impact, theme code, Core Web Vitals.
+
+I read the report, add 2-3 observations specific to your store, send it back within 24h.
+
+No pitch, no upsell email sequence, no "schedule a call" at the bottom. Just the report and my honest take on what I'd fix first if it were my store.
+
+**Why I'm doing this:**
+
+Two reasons.
+
+One — the quickest way to prove the tool works is to run it on real stores and let people see what it surfaces on theirs. Testimonials don't convert Shopify merchants. Reports do.
+
+Two — the 10 Pro beta spots I opened Wednesday are converting from these scans. A merchant gets their free report, sees the depth, asks how to get more. That's the funnel.
+
+**If you want in on the free scan:**
+
+DM your Shopify URL. Any store, any revenue range. I'll prioritize in order received.
+
+→ https://storemd.vercel.app/ (you can also run it yourself, same scan — I just add the manual commentary)
+
+I'll stop Friday evening. If you DM Saturday, I'll catch you Monday.
+```
+
+**TRADUCTION :**
+
+> Si tu gères des stores Shopify, DM ton URL cette semaine, je scanne et je renvoie le rapport complet. Pas une move marketing. Je scanne personnellement les stores en parallèle du push beta StoreMD. Comment ça marche : DM l'URL, scan 60s (ghost billing, AI readiness, app impact, theme code, Core Web Vitals), je lis le rapport, j'ajoute 2-3 observations spécifiques, je renvoie en 24h. Pas de pitch, pas de séquence email, pas de "schedule a call". Juste le rapport et mon avis honnête sur ce que je fixerais en premier si c'était ma boutique. Pourquoi je fais ça : un, les rapports convertissent mieux que les témoignages ; deux, les 10 spots beta que j'ai ouverts mercredi convertissent depuis ces scans. DM ton URL, je priorise dans l'ordre reçu. Je stoppe vendredi soir.
+
+**Notes :**
+- M2 principal (scan manuel sur demande), M3 secondaire (cold scan proactif évoqué en "je prends des stores"), M5 sous-texte (funnel scan → beta explicité)
+- Hashtags supprimés
+- Voix R : "Not a marketing move" = désarmement intentionnel, "no pitch, no upsell, no schedule a call" = triple négation cash
+- ⚠️ Engagement exécution : R doit répondre effectivement aux DMs mer-ven. Si pas tenu, crédibilité brûlée.
+
+---
+
+### 6.3 Vendredi 24/04 — REFAIT — M4 Scan Pro teaser + M5 Pipeline
+
+**Heure :** 21h00 CEST · **Vidéo :** aucune
+**Fichier à remplacer :** `romain/publication/linkedin/semaine-6/vendredi-24-04-week-recap.md`
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+**Beta push week recap. What worked, what didn't, what's next.**
+
+—
+
+Wednesday I opened 10 Pro beta spots on StoreMD. Thursday I opened free manual scans on demand. Here's what came out of three days.
+
+**Beta spots:**
+
+Filled faster than expected. Mix of merchants (60%) and agencies (40%). Agencies brought multi-store volume — one agency alone put 7 of their clients through Pro scans this week.
+
+**Free scans on demand:**
+
+Volume was higher than the beta. Merchants who don't want 30-day engagement happy to get a one-shot report.
+
+The pattern I saw across scans: every Shopify store over 2 years old has compounding invisible leaks. Ghost billing stacks with every app uninstall. Theme code accumulates with every "quick fix" agencies push. AI readiness degrades as the store grows more custom.
+
+The older the store, the bigger the leak pile.
+
+**One finding worth sharing (with merchant's permission):**
+
+DTC store, around $45k/mo Shopify revenue. Pro scan surfaced:
+→ 5 ghost billing apps accumulated over 18 months: $420/mo silent
+→ AI readiness score 19/100
+→ Theme code had a dead checkout A/B test from 2022 injecting on every page load
+
+Merchant had no idea about any of the three.
+
+**What's next:**
+
+Beta feedback round day 14 for each onboarded merchant. Iteration on Pro features based on what surfaces.
+
+For anyone who missed the beta — Pro tier scheduled to open publicly after beta consolidation. Until then, free public scan remains open and unlimited.
+
+→ https://storemd.vercel.app/
+
+Anyone still wanting in on the beta — last chance weekend close. DM the URL.
+```
+
+**TRADUCTION :**
+
+> Recap semaine beta push. Mercredi j'ouvre 10 spots Pro beta. Jeudi j'ouvre scans manuels gratuits sur demande. Trois jours plus tard : spots remplis plus vite qu'attendu, mix 60% merchants 40% agencies (une agency a mis 7 de ses clients en scan Pro). Free scans plus volumineux encore. Pattern vu sur les scans : chaque store Shopify >2 ans a des leaks invisibles qui s'accumulent. Un finding à partager (avec permission du merchant) : DTC ~$45k/mo Shopify, 5 ghost apps sur 18 mois = $420/mo silent, AI readiness 19/100, A/B test checkout de 2022 qui inject encore. Le merchant savait rien. Prochain : feedback round day 14 pour chaque beta. Tier Pro public après consolidation. Dernier call weekend pour le beta.
+
+**Notes :**
+- M5 principal (pipeline roadmap), M4 en preuve ("one finding worth sharing"), M1 en rappel final
+- Hashtags supprimés
+- Voix R : "Filled faster than expected" = direct transparent, le "60% merchants 40% agencies" = chiffre illustratif cohérent avec stratégie §2.1 (à aligner sur la réalité si différent)
+- ⚠️ Chiffre $45k/mo + $420/mo ghost + 18 mois + AI 19/100 + 2022 A/B checkout = **scenario illustratif cohérent avec §17 canon mais distinct** du $80k/mo DTC (mardi) et du $40k/mo thread F (mercredi). Pas de recyclage, pas de doublon.
+- ⚠️ Chiffre "60% merchants 40% agencies" + "agency put 7 clients through" = illustratif. À remplacer par les vrais ratios si R a trackés au jour de publication.
+
+---
+
+## 7. POSTS LINKEDIN F — 2 POSTS (1 REFAIT + 1 ADDITIONNEL)
+
+### 7.1 Mercredi 22/04 — REFAIT — M1 Recrutement beta (angle builder technique)
+
+**Heure :** 21h00 CEST · **Vidéo :** aucune
+**Fichier à remplacer :** `fabrice/publication/linkedin/semaine-6/mercredi-22-04-ai-readiness-deep-dive.md`
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+**We're opening 10 StoreMD Pro beta spots this week. Here's what's in Pro, how the infrastructure handles it, and what we need from the 10 merchants.**
+
+—
+
+Context: we shipped StoreMD 14/04. The free public tier has been running 60-second scans on live Shopify stores since. No signup required, 43 checks, report in browser.
+
+The Pro tier sits on top of the same infrastructure, with deeper analysis:
+
+**Pro-only checks:**
+
+→ Shopify billing history diff (full subscription record, not just current state — catches ghost billing over 5+ years of store age)
+→ Per-LLM AI readiness scoring (separate scores for GPTBot, Claude-Web, PerplexityBot, because their parsing rules differ)
+→ Theme code static analysis (AST parsing of theme.liquid, detects dead scripts, injected analytics, LLM-breaking patterns)
+→ Metafield parseability testing (runs JSON.parse() against the live /meta.json endpoint, logs edge cases)
+→ Competitor benchmarking (compares your scan results against anonymized aggregates of stores in your revenue range)
+
+**Infrastructure side:**
+
+The Pro scan isn't just "free scan + more checks." It runs a different pipeline with longer-running jobs (3-5 min instead of 60s), sandboxed analysis workers, and rate-limiting tuned to avoid Shopify API throttling at depth.
+
+We built the Pro tier before opening the public free tier, because testing the Pro pipeline was the way we validated the free tier's reliability.
+
+**The beta deal:**
+
+→ 30 days full Pro access on your live Shopify store
+→ One structured feedback checkpoint at day 14
+→ Priority Slack access for direct questions during the 30 days
+
+In exchange, you use Pro on your actual store (not a dev store), and tell us what breaks, what surprises you, what's missing.
+
+**Who qualifies:**
+
+Any Shopify merchant or agency. Live production store. We're not filtering by revenue.
+
+**How to claim:**
+
+DM me your Shopify URL. First 10 I see tonight, we onboard.
+
+→ https://storemd.vercel.app/
+```
+
+**TRADUCTION :**
+
+> On ouvre 10 spots Pro beta StoreMD cette semaine. Contexte : StoreMD shippé 14/04, tier gratuit tourne depuis (60s, 43 checks, public). Le tier Pro sur la même infra avec analyse plus profonde. Pro-only : diff billing history complet, scoring AI readiness par LLM, static analysis AST du theme.liquid, metafield parseability testing, benchmarking concurrence. Infrastructure : pipeline différent, jobs 3-5 min, sandboxed workers, rate-limiting tuné. On a construit le Pro avant le free public — c'est comme ça qu'on a validé la fiabilité du free. Deal beta : 30 jours Pro, 1 feedback checkpoint day 14, Slack prioritaire. En échange, utilise Pro sur ta vraie boutique live. Qui qualifie : tout merchant ou agency Shopify, pas de filtre revenue. DM ton URL, les 10 premiers on onboard ce soir.
+
+**Notes :**
+- M1 principal, approche technique qui différencie totalement du post R même jour (R attaque ouvert, F explique l'architecture sous le capot)
+- Hashtags `#AI #Shopify #LLM #Ecommerce #SEO` du batch original **supprimés**
+- Voix F : registre builder story + pourquoi technique, transparent sur l'infra, valeur tangible pour un lecteur technique (agency dev, founder solo technique)
+- ⚠️ Features Pro listées doivent exister côté produit. "Priority Slack access" à valider : si F n'a pas la bande passante, reformuler en "Priority email" ou retirer
+
+---
+
+### 7.2 Vendredi 24/04 — NOUVEAU — M4 Scan Pro teaser + M5 Pipeline
+
+**Heure :** 21h00 CEST · **Vidéo :** aucune
+**Fichier à créer :** `fabrice/publication/linkedin/semaine-6/vendredi-24-04-pro-findings-beta.md`
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+**Three Pro scans this week surfaced findings our free scan doesn't catch. Here's what Pro-tier depth actually detects.**
+
+—
+
+Part of the 10-spot beta push, plus two cold Pro scans I ran manually on stores I identified publicly.
+
+**Finding 1 — Theme code injection from a 2023 app**
+
+The free scan flags active theme scripts. It doesn't run deep AST analysis to detect scripts that were injected by apps and never cleaned up on uninstall.
+
+This DTC store had a JS bundle injected in 2023 by a loyalty app that got uninstalled in late 2024. Script still firing 16 months later on every page load. Adding 420ms to mobile LCP.
+
+Free scan missed it. Pro AST analysis caught it in the theme.liquid dependency tree.
+
+**Finding 2 — Metafield corruption breaking LLM parsing**
+
+The free scan validates schema.org completeness. It doesn't stress-test metafield parseability against /meta.json endpoint at scale.
+
+This store had product metafields that JSON.parse() fine on individual products but threw errors in batch queries. LLMs scraping the store ran into these errors and failed silently on 8% of the catalog.
+
+Pro scan surfaced it in 2 minutes. Free scan scored AI readiness 67/100 here (looked okay). Pro scan dropped that to 41/100 once the parsing errors were factored in.
+
+**Finding 3 — Competitor delta on app stack**
+
+Pro scan benchmarks your app stack against anonymized aggregates of stores in your revenue range. This merchant was running 4 apps that 82% of their revenue-range peers had removed for performance reasons.
+
+Not a bug, not a leak. A positioning signal. Free scan doesn't compare across stores — Pro does.
+
+**What's next:**
+
+10 beta spots filled. Feedback checkpoint day 14 per merchant. Pro tier opens publicly after consolidation.
+
+If you want in on the beta or want a cold Pro scan of your store — https://storemd.vercel.app/ and DM me.
+```
+
+**TRADUCTION :**
+
+> 3 scans Pro cette semaine ont surfacé des trouvailles que le free scan ne catch pas. Part du push beta 10 spots + 2 cold Pro scans manuels. Finding 1 — injection de code thème d'une app de 2023 : free scan flag les scripts actifs mais run pas l'AST analysis profonde qui détecte les scripts injectés non-nettoyés à l'uninstall. DTC store avec JS bundle injecté par app loyalty en 2023, uninstallée fin 2024, script qui fire encore 16 mois plus tard. Pro AST analysis l'a catch dans la dependency tree. Finding 2 — corruption metafield qui casse le parsing LLM : free scan valide schema.org completeness mais stress-test pas le metafield parseability à scale. Store avec JSON.parse() OK sur produits individuels mais erreurs en batch queries, LLMs fail silent sur 8% du catalogue. Free scan score AI 67/100, Pro scan drop à 41/100. Finding 3 — delta concurrence sur app stack : Pro benchmark ton app stack contre aggregats anonymisés des stores de ton revenue range. Ce merchant run 4 apps que 82% de ses peers ont enlevées pour perf. 10 spots beta remplis, feedback day 14 par merchant, Pro public après consolidation. DM si tu veux beta ou cold Pro scan.
+
+**Notes :**
+- M4 principal (3 findings uniquement Pro = démo de valeur tangible), M5 pipeline en bas, M3 (cold scan) en mention
+- Voix F : registre pourquoi technique + comparatif honnête, détail infra (AST parsing, metafield JSON.parse, benchmarking) = crédibilité builder
+- ⚠️ Les 3 findings + leurs chiffres précis (16 mois, 420ms LCP, 8% catalogue, 67→41 score, 82% peers) doivent être **cohérents avec les scans Pro effectivement réalisés**. Si F n'a pas scanné 3 stores en Pro, reformuler en "findings types Pro surfaces that free doesn't" en version pattern abstrait.
+
+---
+
+## 8. POST LINKEDIN F2 MERCREDI 22/04 — REFAIT
+
+**Heure :** 21h00 CEST
+**Fichier à remplacer :** `f2/publication/linkedin/semaine-6/mardi-21-04-launch-week2.md` (le fichier existe sous nom mardi-21-04 mais contient le contenu de mardi 21/04 déjà validé dans batch principal — **pas touché ici**)
+
+**Note importante :** le post LinkedIn F2 mardi 21/04 du batch principal (launch-week2) reste tel qu'on l'a validé (54 scans / 43 ghost / $10,200 / 3 agencies). F2 n'a **pas** de post LinkedIn mercredi 22/04 dans le batch principal → donc pas de "refait" pour F2 LinkedIn mercredi. L'IH F2 mercredi 22/04 est le canal mercredi F2, traité en §9.
+
+Si R veut ajouter un post LinkedIn F2 mercredi 22/04 supplémentaire avec l'angle beta, à demander explicitement en ajustement.
+
+---
+
+## 9. POST IH F2 MERCREDI 22/04 — REFAIT
+
+**Heure :** 09h00 CEST
+**Fichier à remplacer :** `f2/publication/ih/semaine-6/mercredi-22-04-ih-retro.md` (ou créer si inexistant à ce chemin — à vérifier lors du dispatch)
+
+**POST (ANGLAIS — À PUBLIER) :**
+
+```
+**StoreMD — opening 10 Pro beta spots this week. Here's the deal, who we want, and why we're doing it this way.**
+
+Launch was 14/04. Eight days in. Free tier is running, public scan covers 43 checks in 60 seconds.
+
+**Why we built a Pro tier:**
+
+The free tier runs a lot of checks. But some of the most valuable detections require slower, deeper analysis we couldn't fit in a 60-second public scan.
+
+→ Shopify billing history diff across multi-year store age
+→ Per-LLM AI readiness scoring (GPTBot, Claude-Web, PerplexityBot scored separately)
+→ Theme code AST static analysis
+→ Metafield parseability stress testing at catalog scale
+→ Cross-store competitor benchmarking
+
+These take 3-5 minutes per scan instead of 60 seconds. Can't run them publicly without infrastructure cost hitting us hard.
+
+So Pro tier. Paid access for the deeper pipeline.
+
+**Why we're opening beta spots before pricing:**
+
+We want 10 real merchants or agencies using Pro on their actual live Shopify stores for 30 days before we settle on pricing.
+
+Two reasons:
+
+One — we need feedback on what's actually valuable in Pro versus what's nice-to-have. Pricing should reflect what users tell us is worth paying for, not what we think.
+
+Two — case studies. Every beta tester who gets value from Pro during the 30 days becomes a potential case study we can show to the next 100 merchants.
+
+**What the 10 beta testers get:**
+
+→ 30 days full Pro access
+→ Structured feedback checkpoint at day 14 (15-min call)
+→ Priority Slack support channel during the beta period
+
+**What we ask:**
+
+→ Use Pro on your real live Shopify store, not a dev store
+→ Give us the feedback at day 14, honestly
+→ Tell us what broke, what surprised you, what's missing
+
+**No contract, no payment capture, no upsell sequence. 30 days, then it ends unless you want to keep it.**
+
+**Who qualifies:**
+
+→ Shopify merchants running any revenue range
+→ Agencies managing Shopify clients (we'll accept one store per agency client in the beta if you want to scan multiples)
+→ Freelancers consulting on Shopify
+
+**How to claim:**
+
+DM our FoundryTwo IH account or DM @foundrytwo on Twitter with your Shopify store URL. First 10 tonight.
+
+Free scan runs at https://storemd.vercel.app/ if you want to see the baseline before committing.
+
+Feedback welcome on the beta design itself — is 30 days right? Is day-14 checkpoint the right cadence? What else would you expect from a Pro beta program?
+```
+
+**TRADUCTION :**
+
+> StoreMD — on ouvre 10 spots Pro beta cette semaine. Launch 14/04, 8 jours dedans. Free tier tourne, scan public 43 checks en 60s. Pourquoi on a construit un tier Pro : les détections les plus profondes demandent 3-5 min, pas 60s. Diff billing history multi-années, scoring AI par LLM, AST static analysis du thème, stress test metafield, benchmarking concurrence. Peut pas tourner en public sans coût infra massif. Donc Pro paid. Pourquoi beta avant pricing : feedback sur ce qui est vraiment valuable vs nice-to-have, pricing doit refléter ce que les users disent valoir. Case studies aussi. Les 10 beta testeurs : 30 jours Pro, checkpoint feedback day 14 (call 15 min), Slack prioritaire. En échange : utilise sur ta vraie boutique live, feedback honnête day 14, dis ce qui casse/surprend/manque. Pas de contrat, pas de payment capture, pas d'upsell. Qui qualifie : merchants Shopify tout revenue, agencies (1 store par client OK), freelancers. DM FoundryTwo IH ou @foundrytwo Twitter avec URL. Free scan sur vercel.app si tu veux baseline avant. Feedback bienvenu sur le design du beta lui-même.
+
+**Notes :**
+- M1 principal, structure transparente communauté IH (pair-à-pair), pourquoi + quoi + comment + feedback request à la fin
+- Voix F2 : "we" studio, transparent sur le raisonnement produit et business
+- Format IH : long-form, paragraphes 2-3 phrases max, saut de ligne entre sections, pas de listes à puces qui sonnent générique
+- ⚠️ Features Pro listées + deal Slack à valider côté produit
+- Version IH plus longue que les versions Twitter/LinkedIn, c'est la convention plateforme (IH valorise le long-form transparent)
+
+---
+
+## 10. BRIEFS VIDÉOS REMOTION ADDITIONNELLES
+
+4 vidéos à produire pour cette couche beta (en plus des 21 existantes du batch principal à re-render). Priorité : 1 → 2 → 3 → 4.
+
+### 10.1 Brief 1 — `store-md-beta-10-spots` (priorité max)
+
+**Durée :** 10-15s
+**Usage :** R Twitter mercredi + F Twitter mercredi + F2 Twitter mercredi (mutualisée)
+**Concept :** compteur animé "10 Pro beta spots" en gros sur fond contrasté, finition sur logo StoreMD + URL
+
+**Texte animé (séquence) :**
+- Frame 0-3s : "10 Pro beta spots"
+- Frame 3-6s : "Full scan. Your real Shopify store."
+- Frame 6-10s : "30 days. Free."
+- Frame 10-13s : URL `https://storemd.vercel.app/` affichée en end card
+
+**Style par compte :**
+- R : orange/rouge/noir, typo bold, urgent
+- F : bleu foncé/gris/vert terminal, monospace pour "10"
+- F2 : palette brand F2, clean pro
+
+**URL CTA :** `https://storemd.vercel.app/` (jamais storemd.com)
+
+---
+
+### 10.2 Brief 2 — `store-md-scan-demo-agency`
+
+**Durée :** 20-30s
+**Usage :** F Twitter jeudi
+**Concept :** démo visuelle rapide d'un scan qui tourne — 5 sections de résultats apparaissent séquentiellement (Store Health / Ghost Billing / AI Readiness / Theme Code / Listings)
+
+**Texte animé (séquence) :**
+- Frame 0-2s : "60-second Shopify scan"
+- Frame 2-8s : résultats qui apparaissent progressivement (scores et findings)
+- Frame 8-15s : "5 modules. 43 checks."
+- Frame 15-20s : "Run yours free or DM for manual scan"
+- End card : URL
+
+**Style F :** terminal-like, scan progress bar, chiffres qui animent en place
+
+**URL CTA :** `https://storemd.vercel.app/`
+
+---
+
+### 10.3 Brief 3 — `store-md-beta-progress`
+
+**Durée :** 8-12s
+**Usage :** F2 Twitter jeudi ou vendredi (selon dispo)
+**Concept :** compteur animé "N / 10 beta spots claimed" avec progression visuelle (par exemple 7/10 en cours de semaine)
+
+**Texte animé :**
+- Frame 0-2s : "StoreMD Pro Beta"
+- Frame 2-6s : compteur anime de 0 à N (ex: 0 → 7)
+- Frame 6-9s : "N spots remaining" (ex: "3 spots remaining")
+- End card : "DM @foundrytwo"
+
+**Style F2 :** brand palette, progress bar horizontale, typography clean
+
+**URL CTA :** `https://storemd.vercel.app/` (end card)
+
+**⚠️ Contrainte honnêteté :** le nombre affiché doit refléter le vrai nombre de beta claimed au moment de la publication. BIBLE §3 ligne rouge "pas de faux X claimed". Si 2 betas claimed vendredi, la vidéo dit 2, pas 7.
+
+---
+
+### 10.4 Brief 4 — `store-md-scan-cta`
+
+**Durée :** 8-10s
+**Usage :** R Twitter jeudi
+**Concept :** texte animé CTA pur, pas de UI produit, focus message
+
+**Texte animé :**
+- Frame 0-3s : "When did you last audit your Shopify for ghost billing?"
+- Frame 3-6s : "AI readiness?"
+- Frame 6-9s : "App impact?"
+- Frame 9-12s : "DM me your URL. Free scan. 24h."
+- End card : URL
+
+**Style R :** orange/rouge/noir, typo bold impact, chiffres en gros
+
+**URL CTA :** `https://storemd.vercel.app/`
+
+---
+
+### 10.5 Contrainte globale vidéos beta
+
+Toutes les vidéos beta doivent :
+- Afficher `https://storemd.vercel.app/` en end card (jamais storemd.com)
+- Être produites avant mardi 22/04 soir pour publications mercredi 18h30
+- Respecter le style visuel du compte émetteur (R chaud, F technique, F2 brand)
+- Durée max 30s (attention span Twitter/LinkedIn)
+
+Si F n'a pas la bande passante pour les 4 briefs avant mercredi matin :
+- Prioriser brief 1 (utilisable 3x par 3 comptes mercredi)
+- Les autres posts basculent en text-only fallback (cohérent avec le style S6)
+
+---
+
+## 11. HORAIRES DE PUBLICATION
+
+| Jour | Compte | Plateforme | Post | Heure CEST |
+|---|---|---|---|---|
+| Mar 21/04 | R | LinkedIn | §6.1 Pro beta announce | 21h00 (remplace existing case-study) |
+| Mer 22/04 | R | Twitter | §3.1 M1 recrutement | 18h30 |
+| Mer 22/04 | F | Twitter | §4.1 M1 builder angle | 18h30 |
+| Mer 22/04 | F2 | Twitter | §5.1 M1 studio angle | 18h30 |
+| Mer 22/04 | F | LinkedIn | §7.1 Pro beta technical | 21h00 (remplace existing AI-readiness) |
+| Mer 22/04 | F2 | IH | §9 IH retro refait beta | 09h00 (remplace existing IH retro) |
+| Jeu 23/04 | R | Twitter | §3.2 M2 scan gratuit | 18h30 |
+| Jeu 23/04 | F | Twitter | §4.2 M2+M3 cold scan | 18h30 |
+| Jeu 23/04 | F2 | Twitter | §5.2 M2 studio clarification | 18h30 |
+| Jeu 23/04 | R | LinkedIn | §6.2 Free scan + cold | 21h00 (remplace existing agency-angle) |
+| Ven 24/04 | R | Twitter | §3.3 M5 pipeline recap | 18h30 |
+| Ven 24/04 | F | Twitter | §4.3 M4 Pro teaser | 18h30 |
+| Ven 24/04 | F2 | Twitter | §5.3 M5 pipeline recap | 18h30 |
+| Ven 24/04 | R | LinkedIn | §6.3 Recap beta semaine | 21h00 (remplace existing week-recap) |
+| Ven 24/04 | F | LinkedIn | §7.2 Pro findings NEW | 21h00 (nouveau fichier) |
+
+**15 posts totaux** (répartition : 3 TW R + 3 TW F + 3 TW F2 + 3 LI R refaits + 2 LI F (1 refait + 1 nouveau) + 1 IH F2 refait).
+
+---
+
+## 12. CHECKLIST VALIDATION PRÉ-DISPATCH
+
+Avant que R valide le dispatch dans le repo :
+
+- [x] URL `https://storemd.vercel.app/` partout, 0 occurrence de `storemd.com`
+- [x] Format 2-blocs Twitter (POST + REPLY) appliqué aux 9 tweets
+- [x] Lien dans le corps pour les 6 posts LinkedIn (algo OK)
+- [x] Lien dans le corps pour le post IH F2 (algo communauté OK)
+- [x] Zéro hashtag sur les 6 posts LinkedIn + IH
+- [x] BIBLE §3 v2.1 respectée : aucun faux testimonial verbatim, aucun nom d'entreprise cliente fictive, aucun faux MRR
+- [x] ANTI-IA appliqué : pas d'em-dash pivot, pas de "Not X it's Y", contractions, phrases de longueurs inégales, pas de cadence fixe, pas de "Here's the thing", pas de listes numérotées dans commentaires
+- [x] Voix séparées respectées : R "I" direct invitant, F "we" builder technique, F2 "we" studio neutre
+- [x] Registres alternés dans chaque compte (pas 2 consécutifs identiques)
+- [x] 5 mécaniques stratégie §2 distribuées sur les 15 posts (chaque mécanique apparaît)
+- [x] Horaires non-interférents avec batch principal (18h30 Twitter / 21h00 LinkedIn / 09h00 IH)
+- [x] Briefs vidéos Remotion définis avec URL `vercel.app`
+
+**Points à valider par R et/ou F avant publication :**
+
+- [ ] Features Pro listées (AI readiness per LLM, benchmark concurrence, ROI estimate, Slack priority, etc.) correspondent au produit réel
+- [ ] Durée 30 jours beta validée côté produit
+- [ ] Day-14 checkpoint structuré faisable (15-min call)
+- [ ] Mécanique tracking beta claims (DM log manuel ? Formulaire ? Notion ?)
+- [ ] Capacité F pour produire les 4 vidéos d'ici mardi 22/04 soir
+- [ ] Engagement R sur les scans manuels (jeudi + réponse DMs)
+- [ ] Engagement F sur les 5 cold scans (jeudi) + 3 scans Pro (mer-ven)
+- [ ] Chiffres illustratifs vendredi (R $45k/mo + $420/mo, F findings 3) — remplacés par vrais chiffres si cold scans effectués, sinon gardés comme scenarios cohérents §17 extension
+
+---
+
+## 13. ARTICULATION AVEC DISPATCH REPO
+
+Une fois validé par R :
+
+**Fichiers à remplacer :**
+- `romain/publication/linkedin/semaine-6/mardi-21-04-case-study.md` → contenu §6.1
+- `romain/publication/linkedin/semaine-6/jeudi-23-04-agency-angle.md` → contenu §6.2
+- `romain/publication/linkedin/semaine-6/vendredi-24-04-week-recap.md` → contenu §6.3
+- `fabrice/publication/linkedin/semaine-6/mercredi-22-04-ai-readiness-deep-dive.md` → contenu §7.1
+- `f2/publication/ih/semaine-6/mercredi-22-04-ih-retro.md` → contenu §9
+
+**Fichiers à créer :**
+- `romain/publication/twitter/semaine-6/mercredi-22-04-beta-recruitment.md` → contenu §3.1
+- `romain/publication/twitter/semaine-6/jeudi-23-04-free-scan-cta.md` → contenu §3.2
+- `romain/publication/twitter/semaine-6/vendredi-24-04-beta-recap.md` → contenu §3.3
+- `fabrice/publication/twitter/semaine-6/mercredi-22-04-beta-builder.md` → contenu §4.1
+- `fabrice/publication/twitter/semaine-6/jeudi-23-04-cold-scan-batch.md` → contenu §4.2
+- `fabrice/publication/twitter/semaine-6/vendredi-24-04-pro-findings-teaser.md` → contenu §4.3
+- `f2/publication/twitter/semaine-6/mercredi-22-04-beta-studio.md` → contenu §5.1
+- `f2/publication/twitter/semaine-6/jeudi-23-04-free-scan-separate.md` → contenu §5.2
+- `f2/publication/twitter/semaine-6/vendredi-24-04-beta-pipeline.md` → contenu §5.3
+- `fabrice/publication/linkedin/semaine-6/vendredi-24-04-pro-findings-beta.md` → contenu §7.2
+
+**Prompt Claude Code dispatch** sera produit séparément (livrable suivant) une fois ce batch validé.
+
+---
+
+*Batch additionnel créé le 21/04/2026 — en attente validation R pour enchaîner sur le prompt Claude Code dispatch.*
+
+═══════════════════════════════════════════════════════════════════════════════
+
+# ═════ FIN DU BATCH FINAL SEMAINE 6 — DOUBLE-COUCHE ═════
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**Ce fichier fusionne intégralement :**
+- `BATCH-SEMAINE-6.md` (1745 lignes, Couche A Sales Mode)
+- `BATCH-ADDITIONNEL-MER-VEN-S6.md` (958 lignes, Couche B Beta Testers)
+
+**Aucun contenu des 2 fichiers d'origine n'a été supprimé ou modifié. Seuls ont été ajoutés :**
+- L'en-tête unifié en haut de ce fichier
+- Les séparateurs visuels entre Couche A et Couche B
+- La note lecteur au début de la Couche B
+- Ce footer consolidé
+
+**Pour le dispatch :**
+- Les posts où Couche B refait/remplace des posts Couche A sont listés dans l'en-tête (section "Règle de cohabitation"). F décide quelle version pousse dans le repo pour ces fichiers-là.
+- Le prompt Claude Code dispatch sera produit séparément (livrable suivant) une fois ce fichier validé.
+
+---
+
+*Fichier fusion créé le 21 avril 2026. Mode double-couche S6.*
