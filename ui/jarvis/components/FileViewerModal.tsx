@@ -1,14 +1,65 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+type Persona = "romain" | "fabrice";
+type Mode = "normal" | "f2";
 
 type Props = {
   filePath: string | null;
   accentColor: string;
   onClose: () => void;
+  persona?: Persona;
+  mode?: Mode;
 };
 
-export function FileViewerModal({ filePath, accentColor, onClose }: Props) {
-  const [content, setContent] = useState<string>("");
+/**
+ * Filters BATCH-SEMAINE-*.md to show only sections relevant to the active persona.
+ *
+ * Fabrice (normal): sections 1-2 + 5, 6, 9 + 10+
+ * Romain  (normal): sections 1-2 + 3, 4 + 10+
+ * F2      (f2):     sections 1-2 + 7, 8 + 10+
+ *
+ * Sections detected by "## N." at line start.
+ */
+function filterBatchByPersona(
+  content: string,
+  persona: Persona,
+  mode: Mode
+): string {
+  if (!content) return content;
+
+  const keepPersonaSections: Set<number> =
+    mode === "f2"
+      ? new Set([7, 8])
+      : persona === "fabrice"
+      ? new Set([5, 6, 9])
+      : new Set([3, 4]);
+
+  const lines = content.split("\n");
+  const out: string[] = [];
+
+  let keepCurrent = true; // keep preamble before first section header
+  const sectionHeaderRe = /^##\s+(\d+)\.\s+/;
+
+  for (const line of lines) {
+    const match = sectionHeaderRe.exec(line);
+    if (match) {
+      const n = parseInt(match[1], 10);
+      keepCurrent = n <= 2 || n >= 10 || keepPersonaSections.has(n);
+    }
+    if (keepCurrent) out.push(line);
+  }
+
+  const personaLabel =
+    mode === "f2" ? "FoundryTwo (F2)" : persona === "fabrice" ? "Fabrice" : "Romain";
+  const header = `> **Vue filtrée : ${personaLabel}**\n> Sections globales (1-2, 10+) incluses. Sections des autres personas masquées.\n\n---\n\n`;
+  return header + out.join("\n");
+}
+
+export function FileViewerModal({ filePath, accentColor, onClose, persona, mode }: Props) {
+  const [rawContent, setRawContent] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,15 +67,25 @@ export function FileViewerModal({ filePath, accentColor, onClose }: Props) {
     if (!filePath) return;
     setLoading(true);
     setError(null);
+    setRawContent("");
     fetch(`/api/file?path=${encodeURIComponent(filePath)}`)
       .then((r) => r.json())
       .then((data) => {
         if (data.error) setError(data.error);
-        else setContent(data.content || "");
+        else setRawContent(data.content || "");
       })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, [filePath]);
+
+  const content = useMemo(() => {
+    if (!rawContent) return "";
+    const isBatch = filePath?.toLowerCase().includes("batch-semaine");
+    if (isBatch && persona) {
+      return filterBatchByPersona(rawContent, persona, mode || "normal");
+    }
+    return rawContent;
+  }, [rawContent, filePath, persona, mode]);
 
   if (!filePath) return null;
 
@@ -57,16 +118,249 @@ export function FileViewerModal({ filePath, accentColor, onClose }: Props) {
             ×
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto px-6 py-5">
           {loading && <div className="text-slate-500 text-[12px]">Chargement…</div>}
-          {error && <div className="text-red-400 text-[12px]">Erreur : {error}</div>}
+          {error && (
+            <div className="text-red-400 text-[12px] font-mono">Erreur : {error}</div>
+          )}
           {content && (
-            <pre className="text-[12px] text-slate-300 leading-relaxed whitespace-pre-wrap font-mono">
-              {content}
-            </pre>
+            <MarkdownRenderer content={content} accentColor={accentColor} />
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function MarkdownRenderer({
+  content,
+  accentColor,
+}: {
+  content: string;
+  accentColor: string;
+}) {
+  return (
+    <div className="markdown-body" style={{ color: "#cbd5e1", fontSize: "13px", lineHeight: 1.65 }}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          h1: ({ children }) => (
+            <h1
+              style={{
+                color: accentColor,
+                fontSize: "20px",
+                fontWeight: 700,
+                margin: "16px 0 10px",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              {children}
+            </h1>
+          ),
+          h2: ({ children }) => (
+            <h2
+              style={{
+                color: accentColor,
+                fontSize: "16px",
+                fontWeight: 600,
+                margin: "18px 0 8px",
+                paddingTop: "10px",
+                borderTop: `1px solid ${accentColor}20`,
+              }}
+            >
+              {children}
+            </h2>
+          ),
+          h3: ({ children }) => (
+            <h3
+              style={{
+                color: "#e2e8f0",
+                fontSize: "14px",
+                fontWeight: 600,
+                margin: "14px 0 6px",
+              }}
+            >
+              {children}
+            </h3>
+          ),
+          h4: ({ children }) => (
+            <h4
+              style={{
+                color: "#cbd5e1",
+                fontSize: "13px",
+                fontWeight: 600,
+                margin: "10px 0 4px",
+              }}
+            >
+              {children}
+            </h4>
+          ),
+          p: ({ children }) => (
+            <p style={{ margin: "8px 0", color: "#cbd5e1" }}>{children}</p>
+          ),
+          ul: ({ children }) => (
+            <ul
+              style={{
+                listStyle: "disc outside",
+                paddingLeft: "22px",
+                margin: "8px 0",
+                color: "#cbd5e1",
+              }}
+            >
+              {children}
+            </ul>
+          ),
+          ol: ({ children }) => (
+            <ol
+              style={{
+                listStyle: "decimal outside",
+                paddingLeft: "22px",
+                margin: "8px 0",
+                color: "#cbd5e1",
+              }}
+            >
+              {children}
+            </ol>
+          ),
+          li: ({ children }) => (
+            <li style={{ margin: "3px 0", color: "#cbd5e1" }}>{children}</li>
+          ),
+          a: ({ href, children }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: accentColor, textDecoration: "underline" }}
+            >
+              {children}
+            </a>
+          ),
+          strong: ({ children }) => (
+            <strong style={{ color: "#f1f5f9", fontWeight: 600 }}>{children}</strong>
+          ),
+          em: ({ children }) => (
+            <em style={{ color: "#cbd5e1", fontStyle: "italic" }}>{children}</em>
+          ),
+          blockquote: ({ children }) => (
+            <blockquote
+              style={{
+                borderLeft: `3px solid ${accentColor}80`,
+                paddingLeft: "12px",
+                margin: "10px 0",
+                color: "#94a3b8",
+                fontStyle: "italic",
+                background: `${accentColor}05`,
+              }}
+            >
+              {children}
+            </blockquote>
+          ),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          code: ({ inline, children, ...props }: any) => {
+            if (inline) {
+              return (
+                <code
+                  {...props}
+                  style={{
+                    background: "rgba(255,255,255,0.06)",
+                    padding: "1px 5px",
+                    borderRadius: "3px",
+                    fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: "12px",
+                    color: accentColor,
+                  }}
+                >
+                  {children}
+                </code>
+              );
+            }
+            return (
+              <code
+                style={{
+                  fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+                  fontSize: "12px",
+                  color: "#cbd5e1",
+                }}
+              >
+                {children}
+              </code>
+            );
+          },
+          pre: ({ children }) => (
+            <pre
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                padding: "10px 14px",
+                borderRadius: "6px",
+                margin: "10px 0",
+                overflowX: "auto",
+                fontSize: "12px",
+                lineHeight: 1.55,
+              }}
+            >
+              {children}
+            </pre>
+          ),
+          hr: () => (
+            <hr
+              style={{
+                border: "none",
+                borderTop: "1px solid rgba(255,255,255,0.08)",
+                margin: "18px 0",
+              }}
+            />
+          ),
+          table: ({ children }) => (
+            <div style={{ overflowX: "auto", margin: "10px 0" }}>
+              <table
+                style={{
+                  borderCollapse: "collapse",
+                  width: "100%",
+                  fontSize: "12px",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                }}
+              >
+                {children}
+              </table>
+            </div>
+          ),
+          thead: ({ children }) => (
+            <thead style={{ background: `${accentColor}10` }}>{children}</thead>
+          ),
+          tbody: ({ children }) => <tbody>{children}</tbody>,
+          tr: ({ children }) => (
+            <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{children}</tr>
+          ),
+          th: ({ children }) => (
+            <th
+              style={{
+                padding: "8px 10px",
+                textAlign: "left",
+                color: accentColor,
+                fontWeight: 600,
+                borderRight: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              {children}
+            </th>
+          ),
+          td: ({ children }) => (
+            <td
+              style={{
+                padding: "7px 10px",
+                color: "#cbd5e1",
+                borderRight: "1px solid rgba(255,255,255,0.05)",
+                verticalAlign: "top",
+              }}
+            >
+              {children}
+            </td>
+          ),
+        }}
+      >
+        {content}
+      </ReactMarkdown>
     </div>
   );
 }
