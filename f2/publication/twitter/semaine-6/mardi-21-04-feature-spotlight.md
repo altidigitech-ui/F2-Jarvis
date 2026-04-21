@@ -2,11 +2,15 @@
 
 **Date :** Mardi 21/04
 **Heure :** 13h00 CEST
+**Compte :** F2
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo :** `store-md-feature-health`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
+```
 Store Health module — one of 5 in StoreMD.
 
 Checks in under 60s:
@@ -17,13 +21,21 @@ Checks in under 60s:
 • Schema + metafields completeness
 
 Score out of 100. No signup to see it.
-storemd.com
 
 [VIDEO]
+```
+
+---
+
+## REPLY (à publier manuellement après le post)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.7.2

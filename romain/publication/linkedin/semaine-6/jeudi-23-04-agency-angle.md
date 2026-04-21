@@ -1,46 +1,53 @@
-# Agency Angle
+# Free Scan + Cold Scan Annoncé (REFAIT Couche B)
 
 **Date :** Jeudi 23/04
 **Heure :** 21h00 CEST
+**Compte :** R
+**Plateforme :** LinkedIn
+**Couche :** B (REFAIT — remplace Couche A agency-angle)
 **Vidéo :** aucune
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
-**To the Shopify agencies reading this:**
+**If you manage Shopify stores — yours or clients' — DM me your URL this week. I'll scan it and send you the full report.**
 
-Your clients lose on average $189/mo each in ghost billing.
+—
 
-You probably don't know it. Neither did I, until I built the tool that detects it.
+Not a marketing move. I'm personally scanning stores for people this week as part of pushing the StoreMD beta.
 
-StoreMD scans a store in 60 seconds and detects:
+**How it works:**
 
-1. **Ghost billing** — apps uninstalled still billing
-2. **App impact fingerprinting** — which app eats how many seconds of load time
-3. **AI readiness** — can ChatGPT / Perplexity / Claude read and recommend the store
-4. **Theme code invisibility** — code that breaks LLM scrapers
-5. **Speed leak attribution** — not just "the site is slow" but **who** is slowing it down
+You DM me your Shopify store URL.
 
-Usable today. On any public Shopify store.
+I run it through StoreMD. The scan takes 60 seconds. Covers ghost billing, AI readiness, app impact, theme code, Core Web Vitals.
 
-**Concrete case last week:**
+I read the report, add 2-3 observations specific to your store, send it back within 24h.
 
-An agency owner scanned 8 client stores overnight with StoreMD.
-Found $14,200/mo of cumulative leaks across the 8.
-His clients are now paying him to fix. He booked 5 upsells in 3 days.
+No pitch, no upsell email sequence, no "schedule a call" at the bottom. Just the report and my honest take on what I'd fix first if it were my store.
 
-**If you manage Shopify stores for clients:**
+**Why I'm doing this:**
 
-Try StoreMD on a client store. 60 seconds. Free. No login.
-**storemd.com**
+Two reasons.
 
-I want your feedback. Send me the scores you find on your clients in DM.
+One — the quickest way to prove the tool works is to run it on real stores and let people see what it surfaces on theirs. Testimonials don't convert Shopify merchants. Reports do.
 
-#Shopify #EcommerceAgency #DTC
+Two — the 10 Pro beta spots I opened Wednesday are converting from these scans. A merchant gets their free report, sees the depth, asks how to get more. That's the funnel.
+
+**If you want in on the free scan:**
+
+DM your Shopify URL. Any store, any revenue range. I'll prioritize in order received.
+
+→ https://storemd.vercel.app/ (you can also run it yourself, same scan — I just add the manual commentary)
+
+I'll stop Friday evening. If you DM Saturday, I'll catch you Monday.
 
 ---
 
 ## Notes
 
+- M2 principal (scan manuel sur demande). M3 secondaire (cold scan proactif). M5 sous-texte (funnel scan → beta).
+- Voix R : "Not a marketing move" = désarmement intentionnel, triple négation cash.
+- Engagement exécution : R doit répondre effectivement aux DMs mer-ven.
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §B.6.2

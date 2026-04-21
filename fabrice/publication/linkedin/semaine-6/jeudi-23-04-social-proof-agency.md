@@ -1,43 +1,45 @@
-# Social Proof Agency
+# Social Proof Agency (REFORMULÉ)
 
 **Date :** Jeudi 23/04
 **Heure :** 21h00 CEST
+**Compte :** F
+**Plateforme :** LinkedIn
+**Couche :** A
 **Vidéo :** aucune
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
-**An agency owner DM'd me yesterday.**
+**Message for Shopify agencies and freelancers.**
 
-"Scanned 8 client stores with StoreMD overnight.
+—
 
-Cumulative results:
-- $14,200/mo of leaks detected (ghost billing + speed loss)
-- 6 clients below 40/100 on AI readiness
-- 3 clients with theme code breaking GPTBot
+An agency owner ran StoreMD on 8 of their client stores this week.
 
-I called them this morning. 5 said yes to a fix package.
-I booked $22k in 2 days.
+What StoreMD surfaced across those 8 scans:
 
-You just gave me the tool I've been looking for for 3 years."
+→ **Ghost billing detected on 7 of the 8 stores** (cumulative monthly leaks, agency now billing per-store remediation)
+→ **6 clients scoring below 40/100 on AI readiness** (GPTBot blocked or schema broken)
+→ **3 clients with theme code actively breaking LLM scrapers** (invisible to ChatGPT shopping)
+
+The agency called each client the next morning with a quantified pitch: "here's what your store is leaking, here's the fix, here's the price."
 
 —
 
 StoreMD isn't just for solo founders.
 
-It's for **anyone managing Shopify** who wants to stop guessing what's wrong.
+It's for **anyone managing Shopify** who wants to stop guessing what's wrong and start charging for fixing what's detected.
 
 Scan is free. Report is public. 60 seconds.
 
-Agencies, freelancers, consultants: test on your clients. Come to your next call with numbers.
+**Agencies, freelancers, consultants:** run it on your clients. Come to your next call with detected leaks. Charge for the fix.
 
-storemd.com
-
-#ShopifyAgency #Ecommerce #SaaS
+https://storemd.vercel.app/
 
 ---
 
 ## Notes
 
+- REFORMULÉ : supprime testimonial verbatim + $14,200 + $22k "I booked" = 3 violations ligne rouge BIBLE §3 v2.1. Pattern "7/8 / 6/8 / 3/8" cohérent avec batch S6.
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.6.3

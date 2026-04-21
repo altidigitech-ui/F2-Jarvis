@@ -1,7 +1,7 @@
 # PLAN HEBDO R — Semaine du 20/04/2026 au 26/04/2026
 
 **Rempli au batch :** 20/04/2026
-**Contexte :** SEMAINE 6 — MODE SALES AGRESSIF. Reprise Twitter R. **Langue publication : anglais uniquement.**
+**Contexte :** SEMAINE 6 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta testers mer-ven). Reprise Twitter R. **Langue publication : anglais uniquement.**
 
 ## 1. POSTS TWITTER R
 
@@ -13,6 +13,14 @@
 |Jeu 23/04|`store-md-stats`|Data from 50 scans|⏳|
 |Ven 24/04|`store-md-testimonial-agency`|Agency DM: $14,200/mo leaks on 8 clients|⏳|
 
+## 1B. POSTS TWITTER R — COUCHE B (3 posts beta, 18h30 CEST)
+
+|Jour|Vidéo|Sujet|Statut|
+|---|---|---|---|
+|Mer 22/04|`store-md-beta-10-spots`|M1 Recrutement 10 betas|⏳|
+|Jeu 23/04|`store-md-scan-cta`|M2 Scan gratuit sur demande|⏳|
+|Ven 24/04|aucune|M5 Pipeline conversion recap|⏳|
+
 ## 2. POSTS LINKEDIN R (EN)
 
 |Jour|Sujet|Statut|
@@ -20,6 +28,14 @@
 |Mar 21/04|Long format: 47 stores scanned, DTC #12 breakdown|⏳|
 |Jeu 23/04|Agency angle: scan your client stores for free|⏳|
 |Ven 24/04|Week recap: [X] scans, $[Y] detected, [Z] agencies|⏳|
+
+## 2B. POSTS LINKEDIN R — COUCHE B (3 posts REFAITS beta, 21h00 CEST)
+
+|Jour|Sujet|Statut|
+|---|---|---|
+|Mar 21/04|REFAIT beta recrutement (remplace case study Couche A)|⏳|
+|Jeu 23/04|REFAIT scan gratuit + cold scan (remplace agency angle Couche A)|⏳|
+|Ven 24/04|REFAIT Pro teaser + pipeline (remplace week recap Couche A)|⏳|
 
 ## 3. COLD OUTREACH
 

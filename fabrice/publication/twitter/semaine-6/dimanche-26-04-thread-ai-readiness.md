@@ -2,14 +2,20 @@
 
 **Date :** Dimanche 26/04
 **Heure :** 13h00 CEST
+**Compte :** F
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo tête :** `store-md-before-after-ai`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
+```
 1/7 🧵 How StoreMD detects AI invisibility in 60 seconds.
 
 Technical deep dive for builders + agency devs.
+
+[VIDEO]
 
 ---
 
@@ -63,11 +69,20 @@ Score: 0-25 points. 82% of stores fail.
 ChatGPT shopping grew 340% in Q1 2026. If your store scores 23/100, you're not in the race.
 
 StoreMD gives this score in 60s. Free.
-storemd.com
+```
+
+---
+
+## REPLY (à publier manuellement sous le tweet 7/7)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
+- Thread 7 tweets. Vidéo [VIDEO] uniquement sur le tweet 1/7. REPLY URL sous le tweet 7/7.
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.5.7

@@ -2,11 +2,15 @@
 
 **Date :** Mardi 21/04
 **Heure :** 13h00 CEST
+**Compte :** R
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo :** `store-md-horror-ghost-apps`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
+```
 Wednesday, I scanned an $80k/mo DTC brand.
 
 StoreMD findings in 58 seconds:
@@ -20,13 +24,22 @@ Owner's face when I shared the report.
 
 Every Shopify store has this. You just don't know yet.
 
-Free scan: storemd.com
+Free scan.
 
 [VIDEO]
+```
+
+---
+
+## REPLY (à publier manuellement après le post)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.3.2
