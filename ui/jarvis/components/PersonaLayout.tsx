@@ -37,24 +37,36 @@ const PERSONA_CONFIG = {
     role: "Growth · FoundryTwo",
     color: "#00ffb4",
     colorDim: "#00b890",
-    channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "PH", "F2"],
+    channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "IH", "PH", "F2"],
     coldTarget: 10,
     engTarget: 30,
+    redditTarget: 8,
+    facebookTarget: 6,
+    twTarget: 10,
+    liTarget: 10,
+    ihPhTarget: 5,
+    hasIhPh: true,
   },
   fabrice: {
     label: "Fabrice",
     role: "Builder · FoundryTwo",
     color: "#9b8fff",
     colorDim: "#6d5fe0",
-    channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "PH"],
+    channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK"],
     coldTarget: 10,
     engTarget: 30,
+    redditTarget: 8,
+    facebookTarget: 6,
+    twTarget: 15,
+    liTarget: 15,
+    ihPhTarget: 0,
+    hasIhPh: false,
   },
 } as const;
 
 const EMPTY_CONTEXT: ContextData = {
   timeline: [],
-  counters: { cold: 0, repliesIn: 0, twEng: 0, liCom: 0, cross: 0, ihPh: 0, total: 0 },
+  counters: { cold: 0, repliesIn: 0, twEng: 0, liCom: 0, reddit: 0, facebook: 0, cross: 0, ihPh: 0, total: 0 },
   alerts: [],
   weekPlanningF2: [],
 };
@@ -600,7 +612,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           className="w-[290px] flex-none flex flex-col border-l overflow-y-auto"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
-          {/* Compteurs — grille 2×3 cliquable */}
+          {/* Compteurs — grille dynamique selon persona */}
           <div className="p-4 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
             <div className="text-[12px] font-semibold text-slate-500 mb-3">
               Compteurs du jour
@@ -616,30 +628,46 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               <CounterTile
                 label="TW eng."
                 value={counters.twEng}
-                target={10}
+                target={cfg.twTarget}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
               />
               <CounterTile
                 label="LI com."
                 value={counters.liCom}
-                target={10}
+                target={cfg.liTarget}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
               />
+              <CounterTile
+                label="Reddit"
+                value={counters.reddit}
+                target={cfg.redditTarget}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+              />
+              <CounterTile
+                label="Facebook"
+                value={counters.facebook}
+                target={cfg.facebookTarget}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+              />
+              {cfg.hasIhPh && (
+                <CounterTile
+                  label="IH + PH"
+                  value={counters.ihPh}
+                  target={cfg.ihPhTarget}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+                />
+              )}
               <CounterTile
                 label="Cross"
                 value={counters.cross}
                 target={2}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.crossEng)}
-              />
-              <CounterTile
-                label="IH + PH"
-                value={counters.ihPh}
-                target={5}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
               />
               <CounterTile
                 label="Total"

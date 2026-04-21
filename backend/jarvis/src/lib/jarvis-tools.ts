@@ -385,7 +385,7 @@ export function createJarvisMcpServer(options: {
 - batch_cold: { platform: "TWITTER"|"LINKEDIN", targets: [{target, vertical, insight, type?}], vertical?, insight? }
 - queue_cold_targets: { platform: "TWITTER"|"LINKEDIN", targets: [{target, vertical?, insight?, notes?}] }
 - update_cold_reply: { target: "@handle", reply_status: string, notes?: string }
-- log_engagement: { platform: "TWITTER"|"LINKEDIN"|"IH"|"PH", post: string, reply: string }
+- log_engagement: { platform: "TWITTER"|"LINKEDIN"|"REDDIT"|"FACEBOOK"|"IH"|"PH", post: string, reply: string }
 - log_interaction: { event: string, platform: string, activity: string, action: string }
 - mark_cross_published: { post: string, reply: string }
 - resolve_alert: { keyword: string }

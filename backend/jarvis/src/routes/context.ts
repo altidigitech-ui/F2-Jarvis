@@ -167,7 +167,7 @@ function parseAlerts(progress: string): AlertItem[] {
 
 function parseObjectiveItems(
   planHebdo: string,
-  counters: { cold: number; twEng: number; liCom: number; ihPh: number; cross: number },
+  counters: { cold: number; twEng: number; liCom: number; reddit: number; facebook: number; ihPh: number; cross: number },
   publishedBy: string,
 ): TimelineItem[] {
   if (!planHebdo) return [];
@@ -198,7 +198,7 @@ function parseObjectiveItems(
   }
 
   const engTotalTarget = 30;
-  const engDone = counters.twEng + counters.liCom + counters.ihPh;
+  const engDone = counters.twEng + counters.liCom + counters.reddit + counters.facebook + counters.ihPh;
   items.push({
     time: "",
     title: `Engagement: ${engDone}/${engTotalTarget} interactions aujourd'hui`,
@@ -302,16 +302,28 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   const cold = countTodayAny(coldLog, today);
   const twEng = countTodayInSection(engagementLog, "TWITTER", today);
   const liCom = countTodayInSection(engagementLog, "LINKEDIN", today);
+  const reddit = countTodayInSection(engagementLog, "REDDIT", today);
+  const facebook =
+    countTodayInSection(engagementLog, "FACEBOOK", today) +
+    countTodayInSection(engagementLog, "FB", today);
   const ihPh =
     countTodayInSection(engagementLog, "IH", today) +
     countTodayInSection(engagementLog, "PH", today) +
     countTodayInSection(engagementLog, "INDIEHA", today);
   const cross = countCrossToday(crossTracker, today, weekday);
   const counters: CounterData = {
-    cold, repliesIn: 0, twEng, liCom, cross, ihPh, total: cold + twEng + liCom + ihPh + cross,
+    cold,
+    repliesIn: 0,
+    twEng,
+    liCom,
+    reddit,
+    facebook,
+    cross,
+    ihPh,
+    total: cold + twEng + liCom + reddit + facebook + ihPh + cross,
   };
 
-  const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, ihPh, cross }, publishedBy);
+  const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, reddit, facebook, ihPh, cross }, publishedBy);
   const crossItems = parseCrossItemsToday(crossTracker, today, weekday, publishedBy);
   const timeline = [...timelinePosts, ...crossItems, ...objectives];
 

@@ -11,6 +11,8 @@ export interface CounterData {
   repliesIn: number;
   twEng: number;
   liCom: number;
+  reddit: number;
+  facebook: number;
   cross: number;
   ihPh: number;
   total: number;

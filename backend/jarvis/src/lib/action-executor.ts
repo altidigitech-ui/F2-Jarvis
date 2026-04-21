@@ -13,7 +13,7 @@ import {
 } from "./markdown.js";
 
 type Persona = "fabrice" | "romain";
-type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";
+type Platform = "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH";
 
 export interface PendingAction {
   id: string;
