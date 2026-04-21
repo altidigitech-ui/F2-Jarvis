@@ -1,5 +1,8 @@
 "use client";
+
+import { useState } from "react";
 import type { TimelineItem } from "../lib/context-types";
+import { emitSendToChat } from "@/lib/jarvisEvents";
 
 type Props = {
   items: TimelineItem[];
@@ -37,6 +40,9 @@ export function TimelineColumn({ items, accentColor, loading }: Props) {
 }
 
 function TimelineCard({ item, accentColor }: { item: TimelineItem; accentColor: string }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   const isDone = item.status === "done";
   const isBlocked = item.status === "blocked";
 
@@ -58,9 +64,30 @@ function TimelineCard({ item, accentColor }: { item: TimelineItem; accentColor: 
     ? "rgba(240,100,100,0.04)"
     : "rgba(255,255,255,0.02)";
 
+  async function copyTitle() {
+    try {
+      await navigator.clipboard.writeText(item.title);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      /* clipboard unavailable */
+    }
+    setMenuOpen(false);
+  }
+
+  function markPublished() {
+    emitSendToChat(`j'ai posté ${item.title}`);
+    setMenuOpen(false);
+  }
+
+  function adjust() {
+    emitSendToChat(`ajuster le post "${item.title}"`);
+    setMenuOpen(false);
+  }
+
   return (
     <div
-      className="rounded-lg p-3 transition-colors hover:bg-white/[0.04] cursor-pointer"
+      className="relative rounded-lg p-3 transition-colors hover:bg-white/[0.04]"
       style={{
         background: bgColor,
         border: `1px solid ${borderColor}`,
@@ -70,12 +97,24 @@ function TimelineCard({ item, accentColor }: { item: TimelineItem; accentColor: 
         {item.time && (
           <span className="text-[11px] font-mono text-slate-400">{item.time}</span>
         )}
-        <span
-          className="text-[9px] font-mono font-semibold tracking-wider px-1.5 py-0.5 rounded"
-          style={{ color: tag.color, background: tag.bg }}
-        >
-          {tag.text}
-        </span>
+        <div className="flex items-center gap-1.5 ml-auto">
+          <span
+            className="text-[9px] font-mono font-semibold tracking-wider px-1.5 py-0.5 rounded"
+            style={{ color: tag.color, background: tag.bg }}
+          >
+            {tag.text}
+          </span>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen((v) => !v);
+            }}
+            className="text-[11px] text-slate-600 hover:text-slate-300 transition-colors w-5 h-5 flex items-center justify-center rounded"
+            title="Actions"
+          >
+            ⋯
+          </button>
+        </div>
       </div>
       <div className="text-[12px] text-slate-300 leading-snug mb-1.5">
         {item.title}
@@ -84,6 +123,43 @@ function TimelineCard({ item, accentColor }: { item: TimelineItem; accentColor: 
         <span className="font-mono">[{item.platform}]</span>
         {item.publishedBy && <span>· {item.publishedBy}</span>}
       </div>
+
+      {menuOpen && (
+        <div
+          className="absolute right-1 top-8 z-30 rounded-lg py-1 min-w-[160px] shadow-xl"
+          style={{
+            background: "#1a1f2e",
+            border: "1px solid rgba(255,255,255,0.1)",
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={copyTitle}
+            className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors flex items-center gap-2"
+          >
+            {copied ? "✓ Copié" : "Copier titre"}
+          </button>
+          <button
+            onClick={markPublished}
+            className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors"
+          >
+            Marquer publié
+          </button>
+          <button
+            onClick={adjust}
+            className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors"
+          >
+            Ajuster
+          </button>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="w-full text-left px-3 py-1.5 text-[10px] font-mono text-slate-600 hover:bg-white/5 transition-colors border-t"
+            style={{ borderColor: "rgba(255,255,255,0.05)" }}
+          >
+            Fermer
+          </button>
+        </div>
+      )}
     </div>
   );
 }

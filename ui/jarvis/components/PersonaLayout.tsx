@@ -25,6 +25,8 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import { TimelineColumn } from "./TimelineColumn";
 import { QuickAccessSidebar } from "./QuickAccessSidebar";
 import { FileViewerModal } from "./FileViewerModal";
+import { CounterTile } from "./CounterTile";
+import { onRepoUpdated } from "@/lib/jarvisEvents";
 import type { ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
@@ -148,6 +150,154 @@ function Bar({ value, target, label, color }: { value: number; target: number; l
 }
 
 
+type AlertRowProps = {
+  alert: { title: string; description?: string; level: string };
+  persona: Persona;
+  mode: "normal" | "f2";
+  onResolved: () => void;
+};
+
+function AlertRow({ alert, persona, mode, onResolved }: AlertRowProps) {
+  const [state, setState] = useState<"idle" | "resolving" | "done" | "error">("idle");
+
+  async function resolve() {
+    if (state !== "idle") return;
+    setState("resolving");
+    try {
+      const proposeRes = await fetch("/api/action/propose", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          persona,
+          mode,
+          action_type: "resolve_alert",
+          params: { keyword: alert.title.slice(0, 60) },
+          preview: `Résoudre alerte: ${alert.title}`,
+        }),
+      });
+      const proposeData = (await proposeRes.json()) as {
+        ok?: boolean;
+        action?: { id: string };
+        error?: string;
+      };
+      if (!proposeRes.ok || !proposeData.ok || !proposeData.action?.id) {
+        throw new Error(proposeData.error || "propose failed");
+      }
+      const execRes = await fetch("/api/action/execute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action_id: proposeData.action.id }),
+      });
+      const execData = (await execRes.json()) as { ok?: boolean; error?: string };
+      if (!execRes.ok || !execData.ok) {
+        throw new Error(execData.error || "execute failed");
+      }
+      setState("done");
+      onResolved();
+    } catch (err) {
+      console.error("[AlertRow] resolve failed:", err);
+      setState("error");
+      setTimeout(() => setState("idle"), 3000);
+    }
+  }
+
+  const isCritical = alert.level === "critical";
+  return (
+    <div
+      className="flex items-start gap-2 mb-2 text-[12px] p-2 rounded"
+      style={{
+        background: isCritical ? "rgba(240,100,100,0.06)" : "rgba(239,159,39,0.06)",
+        border: `1px solid ${isCritical ? "rgba(240,100,100,0.15)" : "rgba(239,159,39,0.15)"}`,
+        color: isCritical ? "#F06464" : "#EF9F27",
+        opacity: state === "done" ? 0.4 : 1,
+      }}
+    >
+      <span className="mt-0.5 flex-none">{isCritical ? "⚠" : "·"}</span>
+      <div className="flex-1 min-w-0">
+        <div className="font-semibold">{alert.title}</div>
+        {alert.description && (
+          <div className="mt-0.5 opacity-70 leading-relaxed">{alert.description}</div>
+        )}
+      </div>
+      <button
+        onClick={resolve}
+        disabled={state !== "idle"}
+        className="flex-none w-5 h-5 rounded-full flex items-center justify-center transition-opacity hover:opacity-100"
+        style={{
+          background: "rgba(255,255,255,0.05)",
+          color: "#94a3b8",
+          fontSize: "10px",
+          opacity: state === "idle" ? 0.6 : 0.3,
+          cursor: state === "idle" ? "pointer" : "default",
+        }}
+        title={
+          state === "idle"
+            ? "Résoudre (commit resolve_alert)"
+            : state === "resolving"
+            ? "Résolution en cours…"
+            : state === "done"
+            ? "Résolu"
+            : "Erreur, réessaye"
+        }
+      >
+        {state === "resolving" ? "…" : state === "done" ? "✓" : state === "error" ? "!" : "✕"}
+      </button>
+    </div>
+  );
+}
+
+function F2Banner() {
+  const [expanded, setExpanded] = useState(false);
+  const rules = [
+    "Pronom : we / our / the studio (jamais I)",
+    "Data-driven, neutre, transparent sur les échecs",
+    "Pas de revolutionary, game-changing, 🚀🔥",
+    "Pas d'em-dash comme pivot, pas de Not X it's Y",
+    "Contractions obligatoires en anglais",
+    "Zéro fake stats, zéro fake testimonials",
+  ];
+  return (
+    <div
+      className="text-center text-[12px] font-mono tracking-widest"
+      style={{
+        background: "rgba(151,196,89,0.12)",
+        borderBottom: "1px solid rgba(151,196,89,0.25)",
+        color: "#97C459",
+      }}
+    >
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className="w-full py-1.5 flex items-center justify-center gap-2 hover:bg-white/5 transition-colors"
+      >
+        <span>◈ MODE F2 ACTIF — @foundrytwo</span>
+        <span className="opacity-60 text-[10px]">{expanded ? "▲" : "▼"}</span>
+      </button>
+      {expanded && (
+        <div
+          className="px-6 py-3 text-left"
+          style={{ background: "rgba(151,196,89,0.04)" }}
+        >
+          <div className="text-[10px] font-mono uppercase opacity-70 mb-2">
+            Règles voix F2 (checklist avant publication)
+          </div>
+          <ul className="space-y-1">
+            {rules.map((r, i) => (
+              <li
+                key={i}
+                className="text-[11px] font-mono flex gap-2 opacity-90"
+                style={{ color: "#c5d99e" }}
+              >
+                <span>✓</span>
+                <span>{r}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
 type Props = {
   persona: Persona;
   showF2Toggle?: boolean;
@@ -221,6 +371,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
     return () => clearInterval(id);
   }, [fetchContext]);
 
+  useEffect(() => {
+    const unsubscribe = onRepoUpdated(() => {
+      setTimeout(() => fetchContext(), 1500);
+    });
+    return unsubscribe;
+  }, [fetchContext]);
+
   // Called by Chat when an action completes
   const handleAction = useCallback(() => {
     pendingOpsRef.current += 1;
@@ -249,7 +406,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
       };
 
   return (
-    <div className="relative min-h-screen flex flex-col z-10">
+    <div className="relative h-screen overflow-hidden flex flex-col z-10">
       {brainExpanded && (
         <ErrorBoundary>
           <RepoGraph3DFullscreen
@@ -290,18 +447,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         onClose={() => setOpenFilePath(null)}
       />
       {/* F2 mode banner */}
-      {f2Mode && (
-        <div
-          className="text-center text-[12px] font-mono py-1.5 tracking-widest"
-          style={{
-            background: "rgba(151,196,89,0.12)",
-            borderBottom: "1px solid rgba(151,196,89,0.25)",
-            color: "#97C459",
-          }}
-        >
-          ◈ MODE F2 ACTIF — @foundrytwo
-        </div>
-      )}
+      {f2Mode && <F2Banner />}
 
       {/* Top bar */}
       <header
@@ -452,28 +598,58 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           className="w-[290px] flex-none flex flex-col border-l"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
-          {/* Compteurs */}
+          {/* Compteurs — grille 2×3 cliquable */}
           <div className="p-4 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
             <div className="text-[12px] font-semibold text-slate-500 mb-3">
               Compteurs du jour
             </div>
-            <Bar value={counters.cold} target={cfg.coldTarget} label="Cold DM" color={accentColor} />
-            <Bar value={counters.twEng} target={10} label="Twitter engagement" color={accentColor} />
-            <Bar value={counters.liCom} target={10} label="LinkedIn commentaires" color={accentColor} />
-            <Bar value={counters.cross} target={2} label="Cross-engagement" color={accentColor} />
-            <Bar value={counters.ihPh} target={5} label="IndieHackers + PH" color={accentColor} />
-            <div
-              className="mt-3 pt-3 border-t flex justify-between items-baseline"
-              style={{ borderColor: "rgba(255,255,255,0.05)" }}
-            >
-              <span className="text-[12px] text-slate-400">Total interactions</span>
-              <span className="text-sm font-mono font-semibold" style={{ color: accentColor }}>
-                {counters.total}/{cfg.engTarget}
-              </span>
+            <div className="grid grid-cols-2 gap-1.5">
+              <CounterTile
+                label="Cold DM"
+                value={counters.cold}
+                target={cfg.coldTarget}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(filePaths.cold)}
+              />
+              <CounterTile
+                label="TW eng."
+                value={counters.twEng}
+                target={10}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+              />
+              <CounterTile
+                label="LI com."
+                value={counters.liCom}
+                target={10}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+              />
+              <CounterTile
+                label="Cross"
+                value={counters.cross}
+                target={2}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(filePaths.crossEng)}
+              />
+              <CounterTile
+                label="IH + PH"
+                value={counters.ihPh}
+                target={5}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+              />
+              <CounterTile
+                label="Total"
+                value={counters.total}
+                target={cfg.engTarget}
+                accentColor={accentColor}
+                onClick={() => setOpenFilePath(filePaths.progress)}
+              />
             </div>
           </div>
 
-          {/* Alertes */}
+          {/* Alertes — dismissibles via resolve_alert */}
           <div className="p-4 flex-1 overflow-y-auto" style={{ maxHeight: "200px" }}>
             <div className="text-[12px] font-semibold text-slate-500 mb-3">
               Alertes
@@ -484,32 +660,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               </div>
             ) : (
               alerts.map((alert, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-2 mb-2 text-[12px] p-2 rounded"
-                  style={{
-                    background:
-                      alert.level === "critical"
-                        ? "rgba(240,100,100,0.06)"
-                        : "rgba(239,159,39,0.06)",
-                    border: `1px solid ${
-                      alert.level === "critical"
-                        ? "rgba(240,100,100,0.15)"
-                        : "rgba(239,159,39,0.15)"
-                    }`,
-                    color: alert.level === "critical" ? "#F06464" : "#EF9F27",
-                  }}
-                >
-                  <span className="mt-0.5 flex-none">
-                    {alert.level === "critical" ? "⚠" : "·"}
-                  </span>
-                  <div>
-                    <div className="font-semibold">{alert.title}</div>
-                    {alert.description && (
-                      <div className="mt-0.5 opacity-70 leading-relaxed">{alert.description}</div>
-                    )}
-                  </div>
-                </div>
+                <AlertRow
+                  key={`${alert.title}-${i}`}
+                  alert={alert}
+                  persona={persona}
+                  mode={mode}
+                  onResolved={() => fetchContext()}
+                />
               ))
             )}
           </div>
