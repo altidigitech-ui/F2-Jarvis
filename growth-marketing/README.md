@@ -66,10 +66,9 @@ marketing/context.md (source de vérité : funnel, comptes, pipeline 6 SaaS, col
         │   ├── context.md (stratégie PH, pre-launch, launch day, karma)
         │   │   └── f2/context.md → f2/roadmap.md
         │
-        └── tiktok/ (⏳ TODO)
+        └── tiktok/ (⏸ SUSPENDU — pipeline vidéo en construction)
             ├── algo.md
-            ├── context.md
-            └── f2/context.md → f2/roadmap.md
+            └── context.md
 ```
 
 **Règle d'héritage :** chaque fichier enfant hérite de son parent et ne duplique JAMAIS le contenu du parent. Si une règle est dans `growth-marketing/context.md`, elle n'est pas répétée dans `twitter/context.md`. Si une stratégie est dans `twitter/context.md`, elle n'est pas répétée dans `twitter/romain/context.md`.
@@ -130,16 +129,16 @@ marketing/context.md (source de vérité : funnel, comptes, pipeline 6 SaaS, col
 | ph/f2/context.md | Compte @foundrytwo PH : identité, configuration listing par produit, qui gère, milestones. | ✅ |
 | ph/f2/roadmap.md | Roadmap PH F2 : par lancement (pas par phase), karma farming continu, checkpoints par lancement. | ✅ |
 
-### 3.6 TikTok (⏳ TODO — reporté)
+### 3.6 TikTok (⏸ SUSPENDU — pipeline vidéo en construction)
 
 | Fichier | Rôle | Statut |
 |---------|------|--------|
-| tiktok/algo.md | — | ⏳ TODO |
-| tiktok/context.md | — | ⏳ TODO |
-| tiktok/f2/context.md | — | ⏳ TODO |
-| tiktok/f2/roadmap.md | — | ⏳ TODO |
+| tiktok/algo.md | Mécanique plateforme TikTok 2026 | ✅ Documenté (prêt pour réactivation) |
+| tiktok/context.md | Statut suspendu + règles plateforme | ✅ |
+| `f2/tiktok/context.md` | Détail opérationnel suspension + critères réactivation | ✅ |
+| `f2/tiktok/roadmap.md` | Roadmap d'activation séquentielle | ✅ |
 
-TikTok est reporté. Il sera activé quand la routine des canaux principaux (Twitter, LinkedIn, IH, PH) sera intégrée et que de la social proof + des données réelles seront disponibles.
+TikTok est suspendu — Fabrice construit le pipeline vidéo (génération + montage automatisé) nécessaire pour une cadence suffisante. Réactivation cible : M3 (juin 2026), à aligner avec le vertical Creators. Voir `f2/tiktok/context.md` pour les critères de réactivation.
 
 ---
 
