@@ -91,6 +91,7 @@ F2-Jarvis/
 ├── ANTI-IA.md                ← Règle #0
 ├── VISUELS.md                ← Algo visuel
 ├── AUDIT.md                  ← Audit du repo
+├── TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md  ← Rules batch + template double-couche
 │
 │  ─── INFRASTRUCTURE AI (F2-Jarvis) ───
 ├── .claude/                  ← Config Claude Code : skills/ (16), agents/ (7), commands/ (9), hooks/ (6)
@@ -102,7 +103,7 @@ F2-Jarvis/
 ├── backend/                  ← Backends : jarvis/ (Express Railway, vrai cerveau Jarvis)
 │
 │  ─── CONTENU OPÉRATIONNEL (FoundryTwo) ───
-├── strategie/                ← Source de vérité stratégique (CONTEXT, PLAYBOOK-DISTRIBUTION, WARMING-FARMING, verticals/)
+├── strategie/                ← Source de vérité stratégique (CONTEXT, PLAYBOOK-DISTRIBUTION, WARMING-FARMING, STRATEGIE-BETA-TESTERS, verticals/)
 ├── produits/                 ← Source de vérité produits (STATUS, MUTATIONS, NOUVEAUX, PRINCIPES-ANTI-CONCURRENTS)
 ├── marketing/                ← Marketing macro (funnel, pipeline)
 ├── growth-marketing/         ← Algos + context par plateforme (twitter, linkedin, ih, ph, tiktok)
@@ -138,6 +139,8 @@ F2-Jarvis/
 | `AUDIT.md` | Checklist des résidus du merge (à supprimer après validation finale) |
 | `ARCH.md` | Arbre ASCII actuel du repo |
 | `README.md` | Navigation complète du repo |
+| `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` | Rules obligatoires pour tout batch + template structure double-couche |
+| `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md` | Mécaniques conversion mid-funnel (beta, cold scan proactif, Pro ciblé) |
 
 ---
 

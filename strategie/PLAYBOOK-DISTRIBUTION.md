@@ -154,3 +154,32 @@ Les posts en "Rising" = meilleur ratio visibilité/compétition. Commenter un po
 4. Pour chaque post : copier le titre + 2 lignes de contexte → coller à Claude → Claude génère le commentaire avec le framework adapté (voir angles-et-templates.md) et la voix (voir VOIX.md) → 30 sec par commentaire
 5. Relire, ajuster 2-3 mots si nécessaire → poster → 1 min par commentaire
 6. Total : 15-20 min pour 5 commentaires de qualité
+
+---
+
+## 6. PATTERN DOUBLE-COUCHE + BETA TESTERS (validé S6)
+
+### Quand activer le double-couche
+
+Utiliser quand 2 stratégies parallèles sont décidées pour la même semaine et que les audiences sont assez grandes pour absorber 2× les posts sans saturation. Couche A = continuation (volume habituel, angle principal). Couche B = activation directe (quota, cold scan, beta). Jamais 2 couches avec le même objectif funnel.
+
+### Références
+
+- Template complet + rules batch : `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` (racine repo)
+- Stratégie de référence S6 : `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md`
+- Cross-engagement : les trackers `{persona}/cross-engagement-tracker.md` doivent inclure les replies des 2 couches (Couche A + Couche B séparées, compteurs consolidés en bas)
+
+### Mécaniques beta à réactiver
+
+1. Recrutement beta testers (quota réel, pas de fake scarcity)
+2. Analyses gratuites sur demande (DM/comment → rapport)
+3. Cold scan proactif (5 stores/jour/personne, DM non-sollicité avec rapport)
+4. Test Pro ciblé (2-3 stores stratégiques, scan complet)
+5. Prospection conversion J0/J7/J14/J30
+
+### Règles de cohabitation A + B
+
+- Créneaux horaires séparés (écart min 3h sur le même compte)
+- Pas de mélange mécaniques : chaque post = 1 couche
+- Chiffres locked canon §17 partagé entre les 2 couches
+- Cross-engagement 2× le volume (1 reply set par couche)

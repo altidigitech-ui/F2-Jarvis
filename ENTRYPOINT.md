@@ -141,6 +141,7 @@ Lundi-Vendredi   → Exécution zéro rédaction (copier-coller depuis batch)
 ```
 
 BATCH actif : `BATCH-SEMAINE-N.md` à la racine du repo. Archivé dimanche soir dans `archives/batches/`.
+Template pour créer un nouveau batch (simple ou double-couche) : `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` — contient les RULES BATCH (PARTIE 1) + le template de structure (PARTIE 2).
 
 ---
 
@@ -163,6 +164,8 @@ Si vous tombez sur ces éléments en lisant d'anciens documents, ils sont **obso
 3. Lire `produits/STATUS.md` (ce qu'on a)
 4. Lire `{persona}/VOIX.md` + `{persona}/context.md` selon qui vous aidez
 5. Consulter `BATCH-SEMAINE-N.md` pour savoir ce qui se joue cette semaine
+6. Si batch double-couche actif : lire `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` (les RULES PARTIE 1 s'appliquent à TOUT batch, même simple)
+7. Stratégie de conversion mid-funnel (beta testers, cold scan proactif) : `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md`
 
 **Si vous êtes R ou F ouvrant votre journée :**
 1. Ouvrir l'app web F2-Jarvis → dashboard persona

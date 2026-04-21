@@ -289,3 +289,24 @@ Le framework de scoring /35 reste utilisable pour évaluer de nouvelles idées, 
 | 03/04/2026 | Cadence 2 SaaS/mois | Claude Code = build en 2-5j. La distribution est le bottleneck. |
 | 03/04/2026 | Ce repo = distribution uniquement | Le build se fait dans des projets Claude séparés |
 | 08/04/2026 | Fusion 9→6 SaaS : ListingLab→StoreMD, ChargebackShield→ProfitPilot | Anti-app-bloat, plus de valeur par produit, 96 features Shopify totales |
+| 21/04/2026 | Ajout couche beta testers mid-S6 | Sales agressif produisait attention sans conversion. Beta + cold scan = pipeline de conversations actives |
+| 21/04/2026 | Système batch double-couche validé | 2 stratégies parallèles sur même semaine, template + rules consolidés |
+
+---
+
+## 13. MÉCANISME DE CONVERSION MID-FUNNEL (validé S6)
+
+### Pattern : Beta Testers + Cold Scan Proactif
+
+Stratégie de conversion mid-funnel testée et validée semaine 6 (20-26/04/2026). Superpose une couche d'acquisition directe sur le sales mode existant.
+
+5 mécaniques :
+1. Recrutement beta testers — 10 accès Pro, quota réel, premier arrivé premier servi
+2. Analyses gratuites sur demande — DM + comment, rapport commenté par R/F
+3. Cold scan proactif — 5 stores/jour/personne, rapport envoyé en DM non-sollicité
+4. Test Pro ciblé — 2-3 stores stratégiques/jour, scan Pro complet
+5. Prospection conversion beta → client — cadence J0/J7/J14/J30
+
+Détail complet : `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md`
+
+Ce pattern est réutilisable sur tout SaaS du portfolio (pas spécifique StoreMD). Il peut être activé/désactivé par semaine via le système de batch double-couche (`TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md`).
