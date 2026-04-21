@@ -445,6 +445,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         filePath={openFilePath}
         accentColor={accentColor}
         onClose={() => setOpenFilePath(null)}
+        persona={persona}
+        mode={mode}
       />
       {/* F2 mode banner */}
       {f2Mode && <F2Banner />}
