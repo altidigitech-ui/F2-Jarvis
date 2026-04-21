@@ -2,7 +2,7 @@
 
 > Instructions permanentes pour Claude Code. Ce fichier est lu à chaque session.
 > `BIBLE.md` contient les principes non-négociables (lecture obligatoire aussi).
-> Dernière mise à jour : 19 avril 2026.
+> Dernière mise à jour : 21 avril 2026.
 
 ---
 
@@ -76,7 +76,7 @@ COMMUNAUTÉ → DOULEUR → VALIDATION (10 signups/48h) → BUILD → DISTRIBUTI
 ### Compte studio @foundrytwo (F2)
 - Géré par R
 - Canaux : Twitter, LinkedIn, IndieHackers, ProductHunt, TikTok (différé)
-- Rôle : hub central, build in public, milestones
+- Rôle : hub central, sales-mode dominant, Friday Studio Update (build-in-public format réservé, règle stricte BIBLE.md §3), milestones
 
 ---
 
@@ -98,7 +98,8 @@ F2-Jarvis/
 ├── ops/                      ← Discipline : budget/, monitoring/, kill-switches/
 ├── patterns/                 ← Patterns techniques décisionnels (7 entrées)
 ├── raw/                      ← Inbox brute (transcripts, screenshots) — non-versionné par défaut
-├── ui/                       ← Frontends internes (web/, brain-3d/)
+├── ui/                       ← Frontends internes : jarvis/ (app Vercel), brain-3d/, web/
+├── backend/                  ← Backends : jarvis/ (Express Railway, vrai cerveau Jarvis)
 │
 │  ─── CONTENU OPÉRATIONNEL (FoundryTwo) ───
 ├── strategie/                ← Source de vérité stratégique (CONTEXT, PLAYBOOK-DISTRIBUTION, WARMING-FARMING, verticals/)
@@ -141,6 +142,13 @@ F2-Jarvis/
 ---
 
 ## §5 — Infrastructure AI F2-Jarvis
+
+> **Pour une doc détaillée, voir :**
+> - `ui/jarvis/README.md` — Frontend web
+> - `backend/jarvis/README.md` — Backend Railway
+> - `brain/README.md` — Couche mémoire
+> - `.claude/README.md` — Config Claude Code
+> - `ops/README.md` — Budget & kill-switches
 
 ### Skills (`.claude/skills/`, 16 total)
 
