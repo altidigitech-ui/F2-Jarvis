@@ -366,11 +366,11 @@ Les anti-patterns généraux sont dans growth-marketing/context.md §11. Voici c
 | Document | Emplacement | Contenu | Statut |
 |----------|-------------|---------|--------|
 | algo.md | growth-marketing/twitter/ | Mécanique algorithmique, poids, pénalités | ✅ |
-| f2/context.md | growth-marketing/twitter/f2/ | Voix F2, contenu, cibles spécifiques | ✅ |
-| f2/roadmap.md | growth-marketing/twitter/f2/ | Planning Twitter F2 | ✅ |
-| fabrice/context.md | growth-marketing/twitter/fabrice/ | Voix F, contenu tech/builder | ✅ |
-| fabrice/roadmap.md | growth-marketing/twitter/fabrice/ | Planning Twitter F | ✅ |
-| romain/context.md | growth-marketing/twitter/romain/ | Voix R, contenu growth/CRO | ✅ |
-| romain/roadmap.md | growth-marketing/twitter/romain/ | Planning Twitter R | ✅ |
+| f2/context.md | f2/twitter/ | Voix F2, contenu, cibles spécifiques | ✅ |
+| f2/roadmap.md | f2/twitter/ | Planning Twitter F2 | ✅ |
+| fabrice/context.md | fabrice/twitter/ | Voix F, contenu tech/builder | ✅ |
+| fabrice/roadmap.md | fabrice/twitter/ | Planning Twitter F | ✅ |
+| romain/context.md | romain/twitter/ | Voix R, contenu growth/CRO | ✅ |
+| romain/roadmap.md | romain/twitter/ | Planning Twitter R | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, frameworks, phases | ✅ |
 | marketing/context.md | marketing/ | Cold outreach, planning R/F, funnel, comptes | ✅ |

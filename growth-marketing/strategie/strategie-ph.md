@@ -520,7 +520,7 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du fichier parent.
 | strategie-expansion-generale.md | growth-marketing/strategie/ | Source de vérité parent |
 | growth-marketing/ph/algo.md | Repo | Mécanique plateforme PH (points, featuring, timing, vélocité) |
 | growth-marketing/ph/context.md | Repo | Stratégie PH existante (pre-launch, launch day, post-launch, karma) |
-| growth-marketing/ph/f2/context.md | Repo | Identité compte @foundrytwo PH |
-| growth-marketing/ph/f2/roadmap.md | Repo | Planning PH par lancement |
+| f2/ph/context.md | Repo | Identité compte @foundrytwo PH |
+| f2/ph/roadmap.md | Repo | Planning PH par lancement |
 | audit-explosion-marketing-v2.md | growth-marketing/strategie/ | Audit source (PH = retard critique, 0 karma) |
 | recherche-comptes-produit-studio-FR.md | growth-marketing/strategie/ | Recherche comptes produit/studio |

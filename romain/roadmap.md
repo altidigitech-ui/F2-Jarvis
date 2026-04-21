@@ -202,5 +202,5 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Remplacé p
 | romain/engagement/claude/context.md | romain/engagement/claude/ | Règles engagement |
 | romain/publication/claude/context.md | romain/publication/claude/ | Règles publication |
 | growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
-| growth-marketing/twitter/romain/roadmap.md | growth-marketing/twitter/romain/ | Roadmap Twitter R (détails plateforme) |
-| growth-marketing/linkedin/romain/roadmap.md | growth-marketing/linkedin/romain/ | Roadmap LinkedIn R (détails plateforme) |
+| romain/twitter/roadmap.md | romain/twitter/ | Roadmap Twitter R (détails plateforme) |
+| romain/linkedin/roadmap.md | romain/linkedin/ | Roadmap LinkedIn R (détails plateforme) |

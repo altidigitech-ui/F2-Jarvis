@@ -1264,9 +1264,9 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du parent (strategie-expa
 | Fichier a mettre a jour | Emplacement | Ce qui change |
 |--------------------------|-------------|---------------|
 | growth-marketing/linkedin/context.md | growth-marketing/linkedin/ | Volumes, horaires, engagement, DM outreach — aligner sur ce fichier strategie |
-| growth-marketing/linkedin/romain/context.md | growth-marketing/linkedin/romain/ | Voix R, contenu, routine — aligner sur §3.1, §4.1, §14.5 |
-| growth-marketing/linkedin/fabrice/context.md | growth-marketing/linkedin/fabrice/ | Voix F, contenu, routine — aligner sur §3.2, §4.3, §14.4 |
-| growth-marketing/linkedin/f2/context.md | growth-marketing/linkedin/f2/ | Page F2, 3 posts/sem, 5 commentaires signes — aligner sur §2.3, §4.5, §10.6 |
-| growth-marketing/linkedin/romain/roadmap.md | growth-marketing/linkedin/romain/ | Planning LinkedIn R par phase — aligner sur ce fichier |
-| growth-marketing/linkedin/fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Planning LinkedIn F par phase — aligner sur ce fichier |
-| growth-marketing/linkedin/f2/roadmap.md | growth-marketing/linkedin/f2/ | Planning page F2 — aligner sur ce fichier |
+| romain/linkedin/context.md | romain/linkedin/ | Voix R, contenu, routine — aligner sur §3.1, §4.1, §14.5 |
+| fabrice/linkedin/context.md | fabrice/linkedin/ | Voix F, contenu, routine — aligner sur §3.2, §4.3, §14.4 |
+| f2/linkedin/context.md | f2/linkedin/ | Page F2, 3 posts/sem, 5 commentaires signes — aligner sur §2.3, §4.5, §10.6 |
+| romain/linkedin/roadmap.md | romain/linkedin/ | Planning LinkedIn R par phase — aligner sur ce fichier |
+| fabrice/linkedin/roadmap.md | fabrice/linkedin/ | Planning LinkedIn F par phase — aligner sur ce fichier |
+| f2/linkedin/roadmap.md | f2/linkedin/ | Planning page F2 — aligner sur ce fichier |

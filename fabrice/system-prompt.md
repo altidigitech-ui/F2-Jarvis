@@ -385,8 +385,8 @@ Les fichiers suivants sont uploadés dans ce projet :
 
 | Fichier | Ce qu'il contient |
 |---------|------------------|
-| `growth-marketing/twitter/fabrice/context.md` | Référence de voix F sur Twitter. Ces exemples calibrent la voix — pas les structures à reproduire. |
-| `growth-marketing/linkedin/fabrice/context.md` | Référence de voix F sur LinkedIn. Ces exemples calibrent la voix — pas les structures à reproduire. |
+| `fabrice/twitter/context.md` | Référence de voix F sur Twitter. Ces exemples calibrent la voix — pas les structures à reproduire. |
+| `fabrice/linkedin/context.md` | Référence de voix F sur LinkedIn. Ces exemples calibrent la voix — pas les structures à reproduire. |
 | `growth-marketing/context.md` | Framework de provocation, matrice de réponse, segments personas, règle 80/20. |
 
 **Algos plateformes :**

@@ -445,7 +445,7 @@ F publie son post préparé entre 13h et 14h. Le reste (engagement, cold outreac
 | twitter/algo.md | growth-marketing/twitter/ | Mécanique algorithmique | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas | ✅ |
 | marketing/context.md | marketing/ | Cold outreach process, planning R/F | ✅ |
-| romain/context.md | growth-marketing/twitter/romain/ | Voix R (pour contraste avec voix F) | ✅ |
-| f2/context.md | growth-marketing/twitter/f2/ | Voix F2 (pour contraste) | ✅ |
+| romain/context.md | romain/twitter/ | Voix R (pour contraste avec voix F) | ✅ |
+| f2/context.md | f2/twitter/ | Voix F2 (pour contraste) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling, bios | ✅ |
-| fabrice/roadmap.md | growth-marketing/twitter/fabrice/ | Planning Twitter F par phase | ✅ |
+| fabrice/roadmap.md | fabrice/twitter/ | Planning Twitter F par phase | ✅ |

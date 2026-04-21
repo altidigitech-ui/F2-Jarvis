@@ -201,11 +201,11 @@ Court, pertinent, personnalisé, pas de pitch.
 
 | Document | Emplacement | Rôle | Statut |
 |----------|-------------|------|--------|
-| fabrice/context.md | growth-marketing/linkedin/fabrice/ | Voix, contenu, engagement à valeur, exemples, workflow | ✅ |
+| fabrice/context.md | fabrice/linkedin/ | Voix, contenu, engagement à valeur, exemples, workflow | ✅ |
 | linkedin/context.md | growth-marketing/linkedin/ | Règles communes, engagement à valeur, formats, profil | ✅ |
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
 | marketing/context.md | marketing/ | Planning R/F, funnel | ✅ |
-| twitter/fabrice/roadmap.md | growth-marketing/twitter/fabrice/ | Planning Twitter F (pour coordination) | ✅ |
-| romain/roadmap.md | growth-marketing/linkedin/romain/ | Planning LinkedIn R (pour coordination cross-engagement) | ✅ |
+| twitter/fabrice/roadmap.md | fabrice/twitter/ | Planning Twitter F (pour coordination) | ✅ |
+| romain/roadmap.md | romain/linkedin/ | Planning LinkedIn R (pour coordination cross-engagement) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |

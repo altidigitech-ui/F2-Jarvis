@@ -471,9 +471,9 @@ Les anti-patterns généraux sont dans growth-marketing/context.md §11. Voici c
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, frameworks, phases, volumes | ✅ |
 | marketing/context.md | marketing/ | Cold outreach, planning R/F, funnel, comptes | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling, bios | ✅ |
-| romain/context.md | growth-marketing/linkedin/romain/ | Voix R, contenu growth e-com/agences LinkedIn | ✅ |
-| romain/roadmap.md | growth-marketing/linkedin/romain/ | Planning LinkedIn R | ✅ |
-| fabrice/context.md | growth-marketing/linkedin/fabrice/ | Voix F, contenu technique e-com/creators LinkedIn | ✅ |
-| fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Planning LinkedIn F | ✅ |
-| f2/context.md | growth-marketing/linkedin/f2/ | Configuration page company F2 | ✅ |
-| f2/roadmap.md | growth-marketing/linkedin/f2/ | Planning page F2 (minimal) | ✅ |
+| romain/context.md | romain/linkedin/ | Voix R, contenu growth e-com/agences LinkedIn | ✅ |
+| romain/roadmap.md | romain/linkedin/ | Planning LinkedIn R | ✅ |
+| fabrice/context.md | fabrice/linkedin/ | Voix F, contenu technique e-com/creators LinkedIn | ✅ |
+| fabrice/roadmap.md | fabrice/linkedin/ | Planning LinkedIn F | ✅ |
+| f2/context.md | f2/linkedin/ | Configuration page company F2 | ✅ |
+| f2/roadmap.md | f2/linkedin/ | Planning page F2 (minimal) | ✅ |

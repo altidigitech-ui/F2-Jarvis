@@ -30,10 +30,10 @@ R gère @foundrytwo sur toutes les plateformes. Les détails stratégiques et op
 
 | Plateforme | Handle | Ce que F2 y fait | Volume | Référence |
 |-----------|--------|-----------------|--------|-----------|
-| **Twitter** | @foundrytwo | Squelette éditorial 5j/sem. Contenu portfolio multi-vertical. Cross-engagement protocol R→F→F2. | 1 post/jour (lun-ven) | growth-marketing/twitter/f2/context.md |
-| **LinkedIn** | /company/foundrytwo | Vitrine crédibilité. 0 contenu original. 0-1 repost/sem. | < 15 min/mois | growth-marketing/linkedin/f2/context.md |
-| **IH** | @foundrytwo | Show IH à chaque lancement SaaS. Build in public portfolio. Update 1/sem (mercredi). | 1 post/sem + 15 min/jour | growth-marketing/ih/f2/context.md |
-| **PH** | @foundrytwo | Lancement de chaque SaaS. Karma farming R+F en parallèle. | 1 lancement/mois + 15-20 min/sem karma | growth-marketing/ph/f2/context.md |
+| **Twitter** | @foundrytwo | Squelette éditorial 5j/sem. Contenu portfolio multi-vertical. Cross-engagement protocol R→F→F2. | 1 post/jour (lun-ven) | f2/twitter/context.md |
+| **LinkedIn** | /company/foundrytwo | Vitrine crédibilité. 0 contenu original. 0-1 repost/sem. | < 15 min/mois | f2/linkedin/context.md |
+| **IH** | @foundrytwo | Show IH à chaque lancement SaaS. Build in public portfolio. Update 1/sem (mercredi). | 1 post/sem + 15 min/jour | f2/ih/context.md |
+| **PH** | @foundrytwo | Lancement de chaque SaaS. Karma farming R+F en parallèle. | 1 lancement/mois + 15-20 min/sem karma | f2/ph/context.md |
 
 ---
 
@@ -125,10 +125,10 @@ Les comptes produits sont des **vitrines statiques** — pas des canaux de publi
 | marketing/roadmap.md | marketing/ | Squelette éditorial, batch, horaires, cadence |
 | growth-marketing/context.md | growth-marketing/ | Build My Community, 4 piliers, matrice cross-plateforme |
 | growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme, allocation temps |
-| growth-marketing/twitter/f2/context.md | growth-marketing/twitter/f2/ | Stratégie Twitter F2 |
-| growth-marketing/linkedin/f2/context.md | growth-marketing/linkedin/f2/ | Stratégie LinkedIn F2 |
-| growth-marketing/ih/f2/context.md | growth-marketing/ih/f2/ | Stratégie IH F2 |
-| growth-marketing/ph/f2/context.md | growth-marketing/ph/f2/ | Stratégie PH F2 |
+| f2/twitter/context.md | f2/twitter/ | Stratégie Twitter F2 |
+| f2/linkedin/context.md | f2/linkedin/ | Stratégie LinkedIn F2 |
+| f2/ih/context.md | f2/ih/ | Stratégie IH F2 |
+| f2/ph/context.md | f2/ph/ | Stratégie PH F2 |
 | f2/publication/context.md | f2/publication/ | Contexte pour le projet Claude F2 |
 | f2/publication/prompt.md | f2/publication/ | System prompt du projet Claude F2 |
 | f2/playbook-semaine.md | f2/ | Process semaine type |

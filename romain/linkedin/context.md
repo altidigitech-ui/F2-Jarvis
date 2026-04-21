@@ -358,6 +358,6 @@ Chaque post LinkedIn de R doit passer le test : "Si quelqu'un suit R sur Twitter
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
 | marketing/context.md | marketing/ | Cold outreach process, planning R/F | ✅ |
-| twitter/romain/context.md | growth-marketing/twitter/romain/ | Voix R Twitter (pour contraste et adaptation) | ✅ |
+| twitter/romain/context.md | romain/twitter/ | Voix R Twitter (pour contraste et adaptation) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| romain/roadmap.md | growth-marketing/linkedin/romain/ | Planning LinkedIn R par phase | ✅ |
+| romain/roadmap.md | romain/linkedin/ | Planning LinkedIn R par phase | ✅ |

@@ -246,12 +246,12 @@ R est full-time. La repartition des ~3h/jour est flexible — pas d'horaires fix
 
 | Document | Emplacement | Role | Statut |
 |----------|-------------|------|--------|
-| romain/context.md | growth-marketing/twitter/romain/ | Voix, angle, cold outreach, engagement, exemples | Done |
+| romain/context.md | romain/twitter/ | Voix, angle, cold outreach, engagement, exemples | Done |
 | twitter/context.md | growth-marketing/twitter/ | Regles communes, cross-engagement, timing, formats | Done |
 | twitter/algo.md | growth-marketing/twitter/ | Mecanique algorithmique | Done |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks provocation/reponse, personas | Done |
 | marketing/context.md | marketing/ | Cold outreach process, templates, planning R/F | Done |
-| f2/context.md | growth-marketing/twitter/f2/ | Voix F2 (R redige et publie F2) | Done |
-| f2/roadmap.md | growth-marketing/twitter/f2/ | Planning F2 (R gere) | Done |
-| fabrice/context.md | growth-marketing/twitter/fabrice/ | Voix F (pour coordination cross-engagement) | Done |
-| fabrice/roadmap.md | growth-marketing/twitter/fabrice/ | Planning F | Done |
+| f2/context.md | f2/twitter/ | Voix F2 (R redige et publie F2) | Done |
+| f2/roadmap.md | f2/twitter/ | Planning F2 (R gere) | Done |
+| fabrice/context.md | fabrice/twitter/ | Voix F (pour coordination cross-engagement) | Done |
+| fabrice/roadmap.md | fabrice/twitter/ | Planning F | Done |

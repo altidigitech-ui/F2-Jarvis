@@ -143,4 +143,4 @@ Ajouter chaque nouveau SaaS dans la Products section au moment de son lancement.
 | linkedin/context.md | growth-marketing/linkedin/ | Règles communes, rôle page F2 §1.3, checklist §8.3 | ✅ |
 | linkedin/algo.md | growth-marketing/linkedin/ | Pourquoi les pages company ont 1.6% de reach | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, logo, about, tagline | ✅ |
-| f2/roadmap.md | growth-marketing/linkedin/f2/ | Planning de setup et mises à jour | ✅ |
+| f2/roadmap.md | f2/linkedin/ | Planning de setup et mises à jour | ✅ |

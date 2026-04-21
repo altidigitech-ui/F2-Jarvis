@@ -201,7 +201,7 @@ Try it free: storemd.tech
 
 | Document | Emplacement | Rôle | Statut |
 |----------|-------------|------|--------|
-| f2/context.md | growth-marketing/ph/f2/ | Identité compte, configuration listing, qui gère | ✅ |
+| f2/context.md | f2/ph/ | Identité compte, configuration listing, qui gère | ✅ |
 | ph/context.md | growth-marketing/ph/ | Stratégie PH, pre-launch, launch day, post-launch, karma, multi-produit | ✅ |
 | ph/algo.md | growth-marketing/ph/ | Mécanique plateforme, points, featuring, timing | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, Build My Community | ✅ |

@@ -372,5 +372,5 @@ Même sujet ≠ même post. Chaque plateforme a son format.
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, matrice cross-plateforme, allocation temps | ✅ |
 | marketing/context.md | marketing/ | Cold outreach process, templates IH, planning R | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| f2/context.md | growth-marketing/ih/f2/ | Configuration compte @foundrytwo IH | ✅ |
-| f2/roadmap.md | growth-marketing/ih/f2/ | Planning IH par phase | ✅ |
+| f2/context.md | f2/ih/ | Configuration compte @foundrytwo IH | ✅ |
+| f2/roadmap.md | f2/ih/ | Planning IH par phase | ✅ |

@@ -133,4 +133,4 @@ Tout ce qui suit est défini dans le parent `ph/context.md` et ne doit pas être
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
 | marketing/context.md | marketing/ | Inventaire comptes (R + F PH perso), planning R/F | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| f2/roadmap.md | growth-marketing/ph/f2/ | Planning PH par lancement | ✅ |
+| f2/roadmap.md | f2/ph/ | Planning PH par lancement | ✅ |

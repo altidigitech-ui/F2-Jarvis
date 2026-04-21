@@ -379,7 +379,7 @@ Chaque post LinkedIn de F doit passer le test : "Si quelqu'un suit F sur Twitter
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
 | marketing/context.md | marketing/ | Planning R/F, funnel | ✅ |
-| twitter/fabrice/context.md | growth-marketing/twitter/fabrice/ | Voix F Twitter (pour contraste et adaptation) | ✅ |
-| romain/context.md | growth-marketing/linkedin/romain/ | Voix R LinkedIn (pour contraste) | ✅ |
+| twitter/fabrice/context.md | fabrice/twitter/ | Voix F Twitter (pour contraste et adaptation) | ✅ |
+| romain/context.md | romain/linkedin/ | Voix R LinkedIn (pour contraste) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Planning LinkedIn F par phase | ✅ |
+| fabrice/roadmap.md | fabrice/linkedin/ | Planning LinkedIn F par phase | ✅ |

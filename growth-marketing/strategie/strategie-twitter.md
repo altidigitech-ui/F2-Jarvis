@@ -636,7 +636,7 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du fichier parent.
 | strategie-expansion-generale.md | Source de verite parent | Regles globales, types comptes, anti-patterns, funnel DM |
 | growth-marketing/twitter/algo.md | Repo FoundryTwo-main | Mecanique algorithmique Twitter/X 2026 |
 | growth-marketing/twitter/context.md | Repo | Regles Twitter communes |
-| growth-marketing/twitter/romain/context.md | Repo | Voix R |
-| growth-marketing/twitter/fabrice/context.md | Repo | Voix F |
-| growth-marketing/twitter/f2/context.md | Repo | Voix F2 |
+| romain/twitter/context.md | Repo | Voix R |
+| fabrice/twitter/context.md | Repo | Voix F |
+| f2/twitter/context.md | Repo | Voix F2 |
 | asset-brand/FOUNDRYTWO-BRAND-BIBLE.md | Repo | Identite visuelle, storytelling |

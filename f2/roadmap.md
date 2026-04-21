@@ -152,6 +152,6 @@ LD lancé le 16/03/2026. ~8 signups, 0 MRR. En mutation vers StoreMD (diagnostic
 | f2/publication/context.md | f2/publication/ | Fichier de connaissance projet Claude F2 |
 | f2/publication/prompt.md | f2/publication/ | System prompt projet Claude F2 |
 | growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
-| growth-marketing/twitter/f2/roadmap.md | growth-marketing/twitter/f2/ | Roadmap Twitter F2 (détails plateforme) |
-| growth-marketing/ih/f2/roadmap.md | growth-marketing/ih/f2/ | Roadmap IH F2 (détails plateforme) |
-| growth-marketing/ph/f2/roadmap.md | growth-marketing/ph/f2/ | Roadmap PH F2 (détails plateforme) |
+| f2/twitter/roadmap.md | f2/twitter/ | Roadmap Twitter F2 (détails plateforme) |
+| f2/ih/roadmap.md | f2/ih/ | Roadmap IH F2 (détails plateforme) |
+| f2/ph/roadmap.md | f2/ph/ | Roadmap PH F2 (détails plateforme) |

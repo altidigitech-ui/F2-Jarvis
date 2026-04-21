@@ -326,5 +326,5 @@ PH n'a PAS d'allocation quotidienne comme les autres canaux. Le temps est concen
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
 | marketing/context.md | marketing/ | Cold outreach process, planning R/F, funnel, comptes | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| f2/context.md | growth-marketing/ph/f2/ | Configuration compte @foundrytwo PH | ✅ |
-| f2/roadmap.md | growth-marketing/ph/f2/ | Planning PH par lancement | ✅ |
+| f2/context.md | f2/ph/ | Configuration compte @foundrytwo PH | ✅ |
+| f2/roadmap.md | f2/ph/ | Planning PH par lancement | ✅ |

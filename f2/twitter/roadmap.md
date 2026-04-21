@@ -243,7 +243,7 @@ Points fixes où R et F évaluent la performance F2 et prennent des décisions s
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| f2/context.md | growth-marketing/twitter/f2/ | Voix, squelette éditorial, exemples, workflow |
+| f2/context.md | f2/twitter/ | Voix, squelette éditorial, exemples, workflow |
 | twitter/context.md | growth-marketing/twitter/ | Règles communes, cross-engagement, timing, formats |
 | twitter/algo.md | growth-marketing/twitter/ | Mécanique algorithmique |
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, phases |

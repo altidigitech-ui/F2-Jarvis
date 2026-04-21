@@ -111,7 +111,7 @@ La page company n'a pas de métriques de croissance à suivre activement. Les se
 
 | Document | Emplacement | Rôle | Statut |
 |----------|-------------|------|--------|
-| f2/context.md | growth-marketing/linkedin/f2/ | Configuration, règles opérationnelles, checklist | ✅ |
+| f2/context.md | f2/linkedin/ | Configuration, règles opérationnelles, checklist | ✅ |
 | linkedin/context.md | growth-marketing/linkedin/ | Règles communes, rôle page F2 §1.3 | ✅ |
 | linkedin/algo.md | growth-marketing/linkedin/ | Pourquoi pages company = 1.6% reach | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, logo, about, tagline | ✅ |

@@ -199,5 +199,5 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Remplacé p
 | fabrice/engagement/claude/context.md | fabrice/engagement/claude/ | Règles engagement technique accessible |
 | fabrice/publication/claude/context.md | fabrice/publication/claude/ | Règles publication technique |
 | growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
-| growth-marketing/twitter/fabrice/roadmap.md | growth-marketing/twitter/fabrice/ | Roadmap Twitter F (détails plateforme) |
-| growth-marketing/linkedin/fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Roadmap LinkedIn F (détails plateforme) |
+| fabrice/twitter/roadmap.md | fabrice/twitter/ | Roadmap Twitter F (détails plateforme) |
+| fabrice/linkedin/roadmap.md | fabrice/linkedin/ | Roadmap LinkedIn F (détails plateforme) |

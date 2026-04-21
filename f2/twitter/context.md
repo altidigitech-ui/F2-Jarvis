@@ -325,4 +325,4 @@ Le contenu F2 évolue avec la maturité du portfolio et de la communauté.
 | growth-marketing/context.md | growth-marketing/ | ✅ |
 | marketing/context.md | marketing/ | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | ✅ |
-| f2/roadmap.md | growth-marketing/twitter/f2/ | ✅ |
+| f2/roadmap.md | f2/twitter/ | ✅ |

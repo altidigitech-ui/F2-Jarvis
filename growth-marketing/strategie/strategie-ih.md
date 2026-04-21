@@ -494,7 +494,7 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du fichier parent.
 | strategie-expansion-generale.md | growth-marketing/strategie/ | Source de vérité parent |
 | growth-marketing/ih/algo.md | Repo | Mécanique plateforme IH (classement, formats, données) |
 | growth-marketing/ih/context.md | Repo | Règles IH existantes (voix, contenu, cold, engagement) |
-| growth-marketing/ih/f2/context.md | Repo | Identité compte @FoundryTwo IH |
-| growth-marketing/ih/f2/roadmap.md | Repo | Planning IH par phase |
+| f2/ih/context.md | Repo | Identité compte @FoundryTwo IH |
+| f2/ih/roadmap.md | Repo | Planning IH par phase |
 | audit-explosion-marketing-v2.md | growth-marketing/strategie/ | Audit source (IH = gap critique identifié) |
 | recherche-comptes-produit-studio-FR.md | growth-marketing/strategie/ | Recherche (IH = 23.1% conversion, meilleur canal) |
