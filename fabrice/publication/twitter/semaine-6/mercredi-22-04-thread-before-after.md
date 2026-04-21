@@ -2,15 +2,21 @@
 
 **Date :** Mercredi 22/04
 **Heure :** 13h00 CEST
+**Compte :** F
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo tête :** `store-md-before-after-billing`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
+```
 1/8 🧵 Before/After StoreMD on a real $40k/mo store.
 
 Scanned last week. Owner agreed to share numbers.
 Here's what changed in 72 hours.
+
+[VIDEO]
 
 ---
 
@@ -57,7 +63,6 @@ What the agency was charging: $1,800/mo for "Shopify audits" that never caught t
 7/8 This isn't a cherry-picked case. It's 94% of stores I scan.
 
 Try yours. Free. 60 seconds. No signup.
-storemd.com
 
 ---
 
@@ -66,10 +71,20 @@ I'll scan it personally and send the report back.
 
 Agencies: same offer. Bring your client URLs.
 Let's find the money.
+```
+
+---
+
+## REPLY (à publier manuellement sous le tweet 8/8)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
+- Thread 8 tweets. Vidéo [VIDEO] uniquement sur le tweet 1/8. REPLY URL sous le tweet 8/8.
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.5.3

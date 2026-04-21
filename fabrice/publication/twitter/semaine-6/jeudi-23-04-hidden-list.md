@@ -2,11 +2,15 @@
 
 **Date :** Jeudi 23/04
 **Heure :** 13h00 CEST
+**Compte :** F
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo :** `store-md-list-hidden`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
+```
 5 things Shopify's dashboard HIDES from merchants:
 
 1. Apps uninstalled but still billing
@@ -16,13 +20,21 @@
 5. Theme code that breaks LLM scrapers
 
 StoreMD surfaces all 5. In 60s.
-storemd.com
 
 [VIDEO]
+```
+
+---
+
+## REPLY (à publier manuellement après le post)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.5.4

@@ -1,6 +1,6 @@
 # PLAN HEBDO F2 — Semaine du 20/04/2026 au 26/04/2026
 
-**Contexte :** SEMAINE 6 — POST-LAUNCH SCALE. Sales agressif. **Anglais uniquement.** Focus agencies distribution layer.
+**Contexte :** SEMAINE 6 — POST-LAUNCH SCALE. Sales agressif **DOUBLE-COUCHE** (Couche A sales + Couche B beta testers mer-ven). **Anglais uniquement.** Focus agencies distribution layer.
 
 ## 1. POSTS TWITTER F2
 
@@ -12,12 +12,26 @@
 |Jeu 23/04|`store-md-money-ghost-cumulative`|3 ghost apps × $189 × 12 = $2,268/year|⏳|
 |Ven 24/04|`store-md-stats`|Week 6 real numbers|⏳|
 
+## 1B. POSTS TWITTER F2 — COUCHE B (3 posts beta, 18h30 CEST)
+
+|Jour|Vidéo|Sujet|Statut|
+|---|---|---|---|
+|Mer 22/04|`store-md-beta-10-spots`|M1 Beta studio angle|⏳|
+|Jeu 23/04|`store-md-scan-cta`|M2 Free scan separate|⏳|
+|Ven 24/04|`store-md-beta-progress`|M5 Beta pipeline recap|⏳|
+
 ## 2. LINKEDIN COMPANY F2 + IH
 
 |Jour|Plateforme|Sujet|Statut|
 |---|---|---|---|
 |Mar 21/04|LinkedIn Company (EN)|Week 2 post-launch honest numbers|⏳|
-|Mer 22/04|IH (EN)|Post-launch retro week 1→2 + feedback|⏳|
+|Mer 22/04|IH (EN)|Post-launch retro week 1→2 + feedback (Couche A reformulé)|⏳|
+
+## 2B. IH F2 — COUCHE B (1 post REFAIT, 09h00 CEST)
+
+|Jour|Plateforme|Sujet|Statut|
+|---|---|---|---|
+|Mer 22/04|IH (EN)|REFAIT honest retro → angle beta testers (remplace Couche A)|⏳|
 
 ## 3. OBJECTIFS SEMAINE
 

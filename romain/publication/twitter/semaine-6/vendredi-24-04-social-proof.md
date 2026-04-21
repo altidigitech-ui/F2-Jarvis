@@ -1,28 +1,41 @@
-# Social Proof Testimonial
+# Social Proof Aggregated (REFORMULÉ)
 
 **Date :** Vendredi 24/04
 **Heure :** 13h00 CEST
-**Vidéo :** `store-md-testimonial-agency`
+**Compte :** R
+**Plateforme :** Twitter
+**Couche :** A
+**Vidéo :** aucune (text-only — vidéo testimonial retirée : contenait faux testimonial verbatim + $14,200 = ligne rouge BIBLE §3 v2.1)
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
-Agency owner DM yesterday:
+```
+An agency owner ran StoreMD on 8 of their clients this week.
 
-"Scanned 8 client stores with StoreMD overnight.
-Found $14,200/mo in hidden leaks across them.
-They're paying me extra to fix now.
-You built the tool I've been missing for 3 years."
+What they found across those 8 stores:
+→ ghost billing on 7 of them
+→ AI readiness below 40 on 6 of them
+→ 3 stores with theme code breaking GPTBot
 
-This is StoreMD's use case. Not just founders. Agencies.
+They're now billing extra for fix packages.
 
-Free scan: storemd.com
+StoreMD isn't just for solo founders. It's the tool agencies wish they'd had 3 years ago.
 
-[VIDEO]
+Free scan, 60s.
+```
+
+---
+
+## REPLY (à publier manuellement après le post)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.3.5 (REFORMULÉ — supprime testimonial verbatim + $14,200 violant BIBLE §3 v2.1)

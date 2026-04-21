@@ -2,11 +2,15 @@
 
 **Date :** Mardi 21/04
 **Heure :** 13h00 CEST
+**Compte :** F
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo :** `store-md-tier-apps-danger`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
+```
 StoreMD just scanned a store with 14 apps.
 
 App impact scanner breakdown:
@@ -18,13 +22,20 @@ App impact scanner breakdown:
 
 Total bloat: 8.8s. Merchant thought "my apps are fine."
 
-storemd.com
-
 [VIDEO]
+```
+
+---
+
+## REPLY (à publier manuellement après le post)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.5.2

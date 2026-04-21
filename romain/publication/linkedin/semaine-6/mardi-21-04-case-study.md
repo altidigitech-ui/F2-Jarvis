@@ -1,64 +1,62 @@
-# Long Case Study
+# Pro Beta Announce — Recrutement 10 betas (REFAIT Couche B)
 
 **Date :** Mardi 21/04
 **Heure :** 21h00 CEST
+**Compte :** R
+**Plateforme :** LinkedIn
+**Couche :** B (REFAIT — remplace Couche A case-study)
 **Vidéo :** aucune
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
-I just scanned 47 Shopify stores in 6 days. For free.
-
-Here's what StoreMD found.
+**I'm opening 10 Pro beta spots on StoreMD this week. Here's why, who I want on it, and what you get.**
 
 —
 
-**Store #12 — $80k/month DTC brand**
+I've been scanning Shopify stores for weeks with the free public version of StoreMD.
 
-3 ghost apps billed for 14 months. Total lost: $2,646.
-A loyalty app "uninstalled" in January, still charging $49/mo.
-Load time: 4.3s. 23% cart abandonment on mobile.
-AI readiness: 12/100. Invisible on ChatGPT shopping.
+The public scan runs 43 checks in 60 seconds. Ghost billing, AI readiness, app impact, theme code audit, Core Web Vitals. Free, no signup, no admin access.
 
-The owner knew none of this.
+The Pro tier we've built on top goes deeper.
 
-His Shopify agency was charging him $2,000/mo for "audits" that never looked at these three things.
+**What's in Pro:**
 
-—
+→ Full app subscription diff across your entire Shopify history (not just today's snapshot)
+→ AI readiness scoring per LLM (ChatGPT, Perplexity, Claude — each model scored separately)
+→ App impact attribution benchmarked against your competitors' stores
+→ Theme code static analysis (detects injections, dead scripts, LLM-breaking patterns)
+→ Prioritized fix list ranked by ROI estimate
 
-**Pattern across 47 scans:**
+**The beta:**
 
-→ 94% have at least 1 ghost app billing
-→ Average: $189/mo lost per store
-→ 78% score below 60/100 on AI readiness
-→ 67% have 4+ seconds load time on mobile
-→ 42% have theme code breaking LLM scrapers
+10 merchants or agencies. Live Shopify store. 30 days of full Pro access. One structured feedback at day 14.
 
-—
+That's it. No contract, no payment capture, no opt-in to anything else.
 
-**What it concretely means**
+**Why only 10:**
 
-Most active Shopify stores today:
-- Pay for apps they no longer use
-- Are invisible to AI shoppers (ChatGPT, Perplexity, Claude)
-- Lose sales on speed without knowing which
-- Are audited by agencies that don't check these topics
+Because I want to spend real time on each one. Walk through the report, answer questions, iterate on the product based on what you tell me. That doesn't scale to 50.
 
-StoreMD scans in 60 seconds. It detects those 5 leaks: ghost billing, app impact, speed, AI readiness, theme code invisibility.
+**Who qualifies:**
 
-Free. No signup. No credit card. Just your URL.
+→ Merchants running Shopify (any revenue range)
+→ Agencies managing at least 3 Shopify clients
+→ Freelancers consulting on Shopify optimization
 
-**storemd.com**
+**How to claim a spot:**
 
-—
+DM me your Shopify store URL. First 10 I see tonight, I onboard. If the spots fill before you DM, I'll tell you — no fake waitlist nonsense.
 
-Running a Shopify store? DM me your URL. I'll scan it for free and send the full report back. Zero BS.
+→ https://storemd.vercel.app/ (run the free scan first if you want to see what we detect before committing to the beta)
 
-#Shopify #Ecommerce #DTC #AIshopping
+Closes when 10 spots are filled. Posting daily updates.
 
 ---
 
 ## Notes
 
+- M1 principal. M5 en déploiement ("spend real time on each", "iterate on product").
+- Features Pro listées à valider produit : "AI readiness per LLM", "benchmark concurrence", "ROI estimate".
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §B.6.1

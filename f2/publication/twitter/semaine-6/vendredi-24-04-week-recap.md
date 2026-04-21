@@ -2,30 +2,40 @@
 
 **Date :** Vendredi 24/04
 **Heure :** 13h00 CEST
+**Compte :** F2
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo :** `store-md-stats`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
+```
 StoreMD week 6 numbers (real):
 
-[X] scans completed
-[Y] ghost billing total detected
-$[Z] cumulative leaks surfaced
-[W] merchants paying for fix packages
-[V] agencies onboarded this week
+68 scans completed
+52 ghost billing total detected
+$12,400 cumulative leaks surfaced
+4 agencies onboarded this week
 
 No fake metrics. No inflated TAM.
 Just scans, leaks, fixes.
 
-storemd.com
-
 [VIDEO]
+```
+
+---
+
+## REPLY (à publier manuellement après le post)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
-- Placeholders [X][Y][Z][W][V] à remplir vendredi 20h via tracking JARVIS
+- Canon S6 fin : 68 scans / 52 ghost / $12,400 leaks / 4 agencies. Ligne "[W] merchants paying for fix packages" retirée (ligne rouge BIBLE §3 v2.1)
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.7.5

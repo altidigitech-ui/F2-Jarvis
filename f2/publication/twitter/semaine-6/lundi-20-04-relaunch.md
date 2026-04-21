@@ -2,29 +2,41 @@
 
 **Date :** Lundi 20/04
 **Heure :** 13h00 CEST
+**Compte :** F2
+**Plateforme :** Twitter
+**Couche :** A
 **Vidéo :** `store-md-logo-reveal` ou `store-md-launch`
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
-Week 6. StoreMD has scanned [X] Shopify stores since launch.
+```
+Week 6. StoreMD has scanned 52 Shopify stores since launch.
 
 Findings so far:
-→ [Y] ghost billing caught total
-→ $[Z] cumulative leaks detected
-→ [W] agencies onboarded
+→ 41 ghost billing caught total
+→ $9,840 cumulative leaks detected
+→ 3 agencies onboarded
 
 Every merchant said the same thing: "I had no idea."
 
 Scan yours. Free. 60s.
-storemd.com
 
 [VIDEO]
+```
+
+---
+
+## REPLY (à publier manuellement après le post)
+
+```
+https://storemd.vercel.app/
+```
 
 ---
 
 ## Notes
 
-- Placeholders [X], [Y], [Z], [W] à remplir lundi 10h via tracking JARVIS
+- Placeholders canon S6 début lundi 20/04 : 52 scans / 41 ghost / $9,840 leaks / 3 agencies
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.7.1

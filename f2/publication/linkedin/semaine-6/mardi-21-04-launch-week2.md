@@ -2,6 +2,9 @@
 
 **Date :** Mardi 21/04
 **Heure :** 21h00 CEST
+**Compte :** F2
+**Plateforme :** LinkedIn
+**Couche :** A
 **Vidéo :** aucune
 **Statut :** ⏳ À publier
 
@@ -13,10 +16,10 @@ Launch on 14/04. Today is Monday 21/04.
 
 **What happened in 7 days:**
 
-→ **[X] free scans** completed (public, no signup)
-→ **[Y] ghost billing detected** on scanned stores
-→ **$[Z] cumulative leaks found** for real merchants
-→ **[W] agencies** tested on multiple clients
+→ **54 free scans** completed (public, no signup)
+→ **43 ghost billing detected** on scanned stores
+→ **$10,200 cumulative leaks found** for real merchants
+→ **3 agencies** tested on multiple clients
 
 **The pattern confirming across 47+ scans:**
 
@@ -36,7 +39,7 @@ StoreMD doesn't invent these numbers — it detects them in each scanned store.
 
 StoreMD is the first Shopify scanner covering these 3 axes simultaneously. 60 seconds. Free. No signup.
 
-**storemd.com**
+**https://storemd.vercel.app/**
 
 —
 
@@ -50,12 +53,10 @@ If you manage Shopify or know someone who does, send the URL. We scan, we send t
 
 FoundryTwo — we build fast, we publish the real numbers.
 
-#Shopify #SaaS #Ecommerce #AI #FoundryTwo
-
 ---
 
 ## Notes
 
-- Placeholders [X][Y][Z][W] à remplir mardi 10h via tracking JARVIS
+- Canon S6 mardi 21/04 : 54 scans / 43 ghost / $10,200 leaks / 3 agencies. Placeholders [X][Y][Z][W] remplis.
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.8.1

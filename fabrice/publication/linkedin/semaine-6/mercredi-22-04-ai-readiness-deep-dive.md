@@ -1,52 +1,61 @@
-# AI Readiness Deep Dive
+# Pro Beta Technical — Recrutement beta builder (REFAIT Couche B)
 
 **Date :** Mercredi 22/04
 **Heure :** 21h00 CEST
+**Compte :** F
+**Plateforme :** LinkedIn
+**Couche :** B (REFAIT — remplace Couche A AI-readiness-deep-dive)
 **Vidéo :** aucune
 **Statut :** ⏳ À publier
 
 ## POST (ANGLAIS — À PUBLIER)
 
-**Your Shopify store is invisible to ChatGPT. Here's why.**
+**We're opening 10 StoreMD Pro beta spots this week. Here's what's in Pro, how the infrastructure handles it, and what we need from the 10 merchants.**
 
 —
 
-ChatGPT shopping grew +340% Q1 2026. Perplexity +180%. Claude shopping is starting to emerge.
+Context: we shipped StoreMD 14/04. The free public tier has been running 60-second scans on live Shopify stores since. No signup required, 43 checks, report in browser.
 
-LLMs recommend products based on what they can **parse** in your page. Not your brand. Not your ads budget. Your **data structure**.
+The Pro tier sits on top of the same infrastructure, with deeper analysis:
 
-**StoreMD scores your store on 4 AI readiness criteria:**
+**Pro-only checks:**
 
-**1. Schema.org completeness (25 pts)** — 67% of scanned stores miss at least aggregateRating.
+→ Shopify billing history diff (full subscription record, not just current state — catches ghost billing over 5+ years of store age)
+→ Per-LLM AI readiness scoring (separate scores for GPTBot, Claude-Web, PerplexityBot, because their parsing rules differ)
+→ Theme code static analysis (AST parsing of theme.liquid, detects dead scripts, injected analytics, LLM-breaking patterns)
+→ Metafield parseability testing (runs JSON.parse() against the live /meta.json endpoint, logs edge cases)
+→ Competitor benchmarking (compares your scan results against anonymized aggregates of stores in your revenue range)
 
-**2. Metafields parseability (25 pts)** — 78% of stores have broken or incomplete metafields.
+**Infrastructure side:**
 
-**3. LLM scraper accessibility (25 pts)** — 54% block or limit GPTBot without knowing it.
+The Pro scan isn't just "free scan + more checks." It runs a different pipeline with longer-running jobs (3-5 min instead of 60s), sandboxed analysis workers, and rate-limiting tuned to avoid Shopify API throttling at depth.
 
-**4. Structured content signal (25 pts)** — 82% of stores have JS-only reviews = invisible to LLMs.
+We built the Pro tier before opening the public free tier, because testing the Pro pipeline was the way we validated the free tier's reliability.
 
-—
+**The beta deal:**
 
-**Total score 0-100.**
+→ 30 days full Pro access on your live Shopify store
+→ One structured feedback checkpoint at day 14
+→ Priority Slack access for direct questions during the 30 days
 
-Across 47 stores scanned this week:
-- 8% score > 80 (recommendable)
-- 25% between 40 and 80 (partially visible)
-- **67% below 40** (invisible to AI shopping)
+In exchange, you use Pro on your actual store (not a dev store), and tell us what breaks, what surprises you, what's missing.
 
-If your store does $40k/mo and scores 23/100, you're missing the AI traffic that will explode by end of 2026.
+**Who qualifies:**
 
-—
+Any Shopify merchant or agency. Live production store. We're not filtering by revenue.
 
-**StoreMD calculates your AI readiness score in 60 seconds.**
+**How to claim:**
 
-storemd.com — free, no signup, no admin access.
+DM me your Shopify URL. First 10 I see tonight, we onboard.
 
-#AI #Shopify #LLM #Ecommerce #SEO
+→ https://storemd.vercel.app/
 
 ---
 
 ## Notes
 
+- M1 principal. Approche technique — différencie totalement du post R même jour (R attaque ouvert, F explique l'architecture).
+- Voix F : registre builder story + pourquoi technique, transparent sur l'infra.
+- Features Pro + "Priority Slack access" à valider produit. Si pas la bande passante, reformuler en "Priority email" ou retirer.
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §B.7.1

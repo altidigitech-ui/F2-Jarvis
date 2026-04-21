@@ -2,6 +2,9 @@
 
 **Date :** Mardi 21/04
 **Heure :** 21h00 CEST
+**Compte :** F
+**Plateforme :** LinkedIn
+**Couche :** A
 **Vidéo :** aucune
 **Statut :** ⏳ À publier
 
@@ -54,13 +57,11 @@ The owner didn't know. His Shopify agency ($2k/mo) wasn't looking at this.
 
 **StoreMD runs this scan for free, no signup, no admin access. 60 seconds.**
 
-Managing Shopify? DM me your URL or test on storemd.com.
-
-#Shopify #Ecommerce #SaaS #DTC
+Managing Shopify? DM me your URL or test on https://storemd.vercel.app/.
 
 ---
 
 ## Notes
 
 - Traduction française disponible dans BATCH-SEMAINE-6.md pour référence
-- Ne pas publier la traduction
+- Source : BATCH-SEMAINE-6.md §A.6.1
