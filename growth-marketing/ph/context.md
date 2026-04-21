@@ -168,8 +168,7 @@ while you sleep.
 Launch offer:
 🎁 PH-only: [deal exclusif — ex: 3 mois Pro gratuit, 50% first year]
 
-We're building in public — every number, every failure.
-This is product #[X] out of 9. [Mention du portefeuille si X > 1.]
+We ship AI agents that solve real problems. This is product #[X] from our portfolio of 6 across 3 verticals. Friday studio updates when we have meaningful product data to share.
 
 Would love your feedback:
 1. [Question spécifique liée au produit]
@@ -273,7 +272,7 @@ Ce positionnement est le même que sur IH — la cadence de production EST le co
 | **Handle** | @foundrytwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume |
-| **Tagline profil** | SaaS studio. Two builders shipping 6 AI agents for e-com, agencies, and creators — in public. |
+| **Tagline profil** | SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Currently live: StoreMD. |
 | **Website** | foundrytwo.com |
 | **Twitter** | @foundrytwo |
 | **Products** | Chaque SaaS est listé ici après son lancement |
@@ -327,5 +326,5 @@ PH n'a PAS d'allocation quotidienne comme les autres canaux. Le temps est concen
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
 | marketing/context.md | marketing/ | Cold outreach process, planning R/F, funnel, comptes | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| f2/context.md | growth-marketing/ph/f2/ | Configuration compte @foundrytwo PH | ✅ |
-| f2/roadmap.md | growth-marketing/ph/f2/ | Planning PH par lancement | ✅ |
+| f2/context.md | f2/ph/ | Configuration compte @foundrytwo PH | ✅ |
+| f2/roadmap.md | f2/ph/ | Planning PH par lancement | ✅ |

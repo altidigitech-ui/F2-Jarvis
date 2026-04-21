@@ -1,6 +1,6 @@
 # ROADMAP TWITTER F2 — @foundrytwo
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `twitter/f2/context.md` (voix, squelette éditorial, workflow, exemples)
 **Hérite de :** `twitter/context.md` (cross-engagement, timing, formats, métriques)
 **Durée :** 3 mois (Avril → Juin+). Phase 4 définie fin mai sur base des données réelles.
@@ -17,14 +17,28 @@
 
 F2 reste à 1 post/jour 5j/semaine sur toute la période. Pas de montée en volume — la montée se fait sur R et F. F2 monte en **qualité et densité de données**, pas en fréquence.
 
-### 1.1 Portfolio — 3 verticales × 6 SaaS
+### 1.1 Portfolio — 3 verticales × 6 AI agents
+
+> Note historique : @LeakDetectorF2 muté en @StoreMD le 14/04/2026.
+
+Source de vérité : `produits/STATUS.md` (racine).
+
+**À venir (comptes Twitter à créer à J-14 de chaque launch) :**
+- @StoreMD (actif depuis 14/04 — remplace @LeakDetectorF2)
+- @ProfitPilot (M1 fin avril / mai)
+- @ClientPulse (M2 mai)
+- @AdAudit (M2 mai-juin)
+- @CreatorSuite (M3 juin)
+- @LeadQuiz (M3 juin-juillet)
 
 | Verticale | SaaS | Phase d'activation |
 |-----------|------|--------------------|
-| **E-com** | Leak Detector, ChargebackDefender, PriceRadar | Phase 1 (Avril) |
-| **Agencies** | BriefForge, AdWatcher, InvoiceGuard | Phase 2 (Mai) |
-| **Creators** | ContentFlow, AdWatcher, InvoiceGuard | Phase 2 (Mai) |
-| **Cross-vertical** | DataMerge, ReviewPulse | Phase 3 (Juin+) |
+| **E-commerce** | StoreMD (✅ live), ProfitPilot (⏳ backlog) | Phase 1 (Avril-Mai) |
+| **Agences** | ClientPulse, AdAudit | Phase 2 (Mai-Juin) |
+| **Creators** | CreatorSuite | Phase 3 (Juin+) |
+| **E-com + Coaches** | LeadQuiz | Phase 3 (Juin-Juillet) |
+
+Règle : chaque compte produit est une VITRINE du produit uniquement. Publication assurée par R (angle marketing) + F (angle technique). Pas de cold, pas de DM, pas d'engagement proactif depuis ces comptes.
 
 ---
 
@@ -229,7 +243,7 @@ Points fixes où R et F évaluent la performance F2 et prennent des décisions s
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| f2/context.md | growth-marketing/twitter/f2/ | Voix, squelette éditorial, exemples, workflow |
+| f2/context.md | f2/twitter/ | Voix, squelette éditorial, exemples, workflow |
 | twitter/context.md | growth-marketing/twitter/ | Règles communes, cross-engagement, timing, formats |
 | twitter/algo.md | growth-marketing/twitter/ | Mécanique algorithmique |
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, phases |

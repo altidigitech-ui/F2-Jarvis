@@ -1,8 +1,12 @@
 # STRATEGIE LINKEDIN — Details Chirurgicaux
 
+> **Source de vérité parent : `strategie/CONTEXT.md` (racine).**
+> Ce fichier est une référence plateforme. En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 **Date de creation :** 2 avril 2026
-**Derniere mise a jour :** 05 avril 2026
-**Herite de :** `strategie-expansion-generale.md` (source de verite parent)
+**Derniere mise a jour :** 21 avril 2026
+**Herite de :** `strategie/CONTEXT.md` (source de verite parent) + `strategie-expansion-generale.md` (regles cross-plateforme)
 **S'appuie sur :** `growth-marketing/linkedin/algo.md` (mecanique algorithmique)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les regles globales (types de comptes, anti-patterns generaux, funnel DM benchmarks), se referer au parent.
 
@@ -120,10 +124,10 @@ We ship AI agents that solve real problems for Shopify merchants, freelance mark
 What we stand for:
 → Real data from 50+ merchant conversations, not assumptions
 → Full transparency on our process and results
-→ Building in public — every lesson shared
+→ Real product data, verifiable results
 → Ship fast, learn faster
 
-Currently shipping: 6 AI agents across e-commerce, marketing, and content verticals.
+Currently live: StoreMD (AI store diagnostics for Shopify). 5 more agents in the pipeline.
 
 Follow us for honest founder content and build updates.
 ```
@@ -137,17 +141,15 @@ Follow us for honest founder content and build updates.
 
 | Produit | Description | Vertical | Statut |
 |---------|-------------|----------|--------|
-| ProfitPilot | AI-powered chargeback defense for Shopify merchants | E-commerce | A ajouter |
-| SpeedAudit | Store speed diagnostics — finds app bloat killing conversions | E-commerce | A ajouter |
-| InventoryPulse | Predictive inventory alerts before stockouts | E-commerce | A ajouter |
-| AdScoreAI | Ad creative scoring before you spend | Marketing | A ajouter |
-| EmailCleanup | List hygiene automation for better deliverability | Marketing | A ajouter |
-| ReportFlash | Client reports generated in 3 minutes, not 15 hours | Marketing | A ajouter |
-| ClipEngine | Long-form to short-form content repurposing | Content | A ajouter |
-| ThumbnailRank | AI thumbnail A/B testing for creators | Content | A ajouter |
-| CaptionDraft | Platform-native caption generation | Content | A ajouter |
+| StoreMD | AI that diagnoses your Shopify store health in 60 seconds | E-commerce | ✅ Live (depuis 14/04/2026) |
+| ProfitPilot | Know your real profit margin, not just revenue | E-commerce | À ajouter au launch |
+| ClientPulse | Client reporting that writes itself, for agencies | Agences | À ajouter au launch |
+| AdAudit | Find out which campaign actually drove the last sale | Agences | À ajouter au launch |
+| CreatorSuite | One video → 5 platforms in 15 minutes | Creators | À ajouter au launch |
+| LeadQuiz | Interactive quizzes that qualify leads, AI-generated | E-com + Coaches | À ajouter au launch |
 
 Chaque nouveau agent = 1 nouvelle entree dans Products au moment du launch.
+Source de verite : produits/STATUS.md (racine).
 
 **Associer les profils R et F comme employes** de FoundryTwo pour que "@FoundryTwo" dans leurs headlines pointe vers la page.
 
@@ -239,7 +241,7 @@ Chaque nouveau agent = 1 nouvelle entree dans Products au moment du launch.
 | we, our, the studio | I, my, me |
 | shipped, built, data shows, merchants told us | crushed it, killed it, smashed it |
 | honest, transparent, real numbers, terrain data | revolutionary, game-changing, disruptive |
-| we believe in building in public | opinions tranchees, provocations, hot takes |
+| data shows, merchants told us, real product data | opinions tranchees, provocations, hot takes |
 
 **Contraintes page company :**
 - Les commentaires F2 sont **signes** : "— Romain, co-founder" ou "— Fabrice, CTO" (pour humaniser le logo)
@@ -604,11 +606,11 @@ Le produit/agent a pitcher depend du PROFIL du prospect, pas du compte qui outre
 
 | Profil prospect | Vertical/Agent a pitcher | Qui outreache | Framing |
 |----------------|-------------------------|---------------|---------|
-| Shopify merchant (operations) | E-commerce agents (ProfitPilot, SpeedAudit, InventoryPulse) | R (angle business) | "You're losing $800/month to chargebacks. 71% is friendly fraud you could fight automatically." |
-| Shopify merchant (growth) | E-commerce agents (SpeedAudit) | R (angle business) | "Your store loads in 4+ seconds. Every second above 3s costs 7% in conversions. We found the exact apps causing it." |
-| Agency owner | Marketing agents (ReportFlash, AdScoreAI, EmailCleanup) | R (angle business) | "You bill 15h/month for client reports. What if that took 3 minutes instead?" |
-| Freelance marketer | Marketing agents (AdScoreAI, EmailCleanup) | R (angle business) | "You're scoring ad creatives by gut. What if an AI told you the click-through probability before you spend?" |
-| Content creator | Content agents (ClipEngine, ThumbnailRank, CaptionDraft) | R (angle business) or F (angle tech) | "You spend 8 hours on a video and 0 minutes repurposing. That's 80% of distribution left on the table." |
+| Shopify merchant (operations) | E-commerce agents (StoreMD, ProfitPilot) | R (angle business) | "You're losing $800/month to chargebacks. 71% is friendly fraud you could fight automatically." |
+| Shopify merchant (growth) | E-commerce agents (StoreMD, AdAudit) | R (angle business) | "Your store loads in 4+ seconds. Every second above 3s costs 7% in conversions. We found the exact apps causing it." |
+| Agency owner | Marketing agents (ClientPulse, AdAudit, LeadQuiz) | R (angle business) | "You bill 15h/month for client reports. What if that took 3 minutes instead?" |
+| Freelance marketer | Marketing agents (AdAudit, LeadQuiz) | R (angle business) | "You're scoring ad creatives by gut. What if an AI told you the click-through probability before you spend?" |
+| Content creator | Content agents (CreatorSuite) | R (angle business) or F (angle tech) | "You spend 8 hours on a video and 0 minutes repurposing. That's 80% of distribution left on the table." |
 | CTO / tech lead e-commerce | All verticals (technical angle) | F (angle technique) | "We're building 6 AI agents on shared Shopify infrastructure. Curious how you handle API rate limits at scale." |
 | Indie hacker / builder | All verticals | F d'abord (pair technique) puis R | Sequence croisee |
 
@@ -1110,7 +1112,7 @@ Les profils perso R et F parlent de TOUS les agents (chacun avec son angle), exa
 
 ### 13.4 Rotation de contenu multi-agents (R et F)
 
-**Pas d'alternance rigide** (lundi = ProfitPilot, mardi = SpeedAudit). Le sujet du post est dicte par les signaux du marche, les donnees terrain recentes, et l'inspiration. Les agents avec le plus de donnees terrain auront naturellement plus de contenu.
+**Pas d'alternance rigide** (lundi = ProfitPilot, mardi = StoreMD). Le sujet du post est dicte par les signaux du marche, les donnees terrain recentes, et l'inspiration. Les agents avec le plus de donnees terrain auront naturellement plus de contenu.
 
 **Regle de base :** couvrir les 3 verticales (e-commerce, marketing, content) au minimum 1 fois/semaine chacune. Ne pas poster 5 posts e-commerce d'affilee sans couvrir marketing ou content.
 
@@ -1256,7 +1258,8 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du parent (strategie-expa
 
 | Document | Emplacement | Role |
 |----------|-------------|------|
-| strategie-expansion-generale.md | growth-marketing/strategie/ | Source de verite parent. Regles globales, types comptes, anti-patterns generaux, funnel DM benchmarks, sequence DM, timeline |
+| strategie/CONTEXT.md | strategie/ | Source de verite parent du repo. Prime sur tout autre document. |
+| strategie-expansion-generale.md | growth-marketing/strategie/ | Reference cross-plateforme. Regles globales, types comptes, anti-patterns generaux, funnel DM benchmarks, sequence DM, timeline |
 | strategie-twitter.md | growth-marketing/strategie/ | Fichier plateforme frere. Reference pour la coherence cross-plateforme (meme structure, memes decisions, details differents) |
 | growth-marketing/linkedin/algo.md | growth-marketing/linkedin/ | Mecanique algorithmique LinkedIn 2026. Donnees factuelles : poids interactions, golden hour, penalites, formats, Topic DNA, Knowledge Graph |
 | asset-brand/FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identite visuelle, storytelling, bios F2, tagline |
@@ -1266,9 +1269,9 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du parent (strategie-expa
 | Fichier a mettre a jour | Emplacement | Ce qui change |
 |--------------------------|-------------|---------------|
 | growth-marketing/linkedin/context.md | growth-marketing/linkedin/ | Volumes, horaires, engagement, DM outreach — aligner sur ce fichier strategie |
-| growth-marketing/linkedin/romain/context.md | growth-marketing/linkedin/romain/ | Voix R, contenu, routine — aligner sur §3.1, §4.1, §14.5 |
-| growth-marketing/linkedin/fabrice/context.md | growth-marketing/linkedin/fabrice/ | Voix F, contenu, routine — aligner sur §3.2, §4.3, §14.4 |
-| growth-marketing/linkedin/f2/context.md | growth-marketing/linkedin/f2/ | Page F2, 3 posts/sem, 5 commentaires signes — aligner sur §2.3, §4.5, §10.6 |
-| growth-marketing/linkedin/romain/roadmap.md | growth-marketing/linkedin/romain/ | Planning LinkedIn R par phase — aligner sur ce fichier |
-| growth-marketing/linkedin/fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Planning LinkedIn F par phase — aligner sur ce fichier |
-| growth-marketing/linkedin/f2/roadmap.md | growth-marketing/linkedin/f2/ | Planning page F2 — aligner sur ce fichier |
+| romain/linkedin/context.md | romain/linkedin/ | Voix R, contenu, routine — aligner sur §3.1, §4.1, §14.5 |
+| fabrice/linkedin/context.md | fabrice/linkedin/ | Voix F, contenu, routine — aligner sur §3.2, §4.3, §14.4 |
+| f2/linkedin/context.md | f2/linkedin/ | Page F2, 3 posts/sem, 5 commentaires signes — aligner sur §2.3, §4.5, §10.6 |
+| romain/linkedin/roadmap.md | romain/linkedin/ | Planning LinkedIn R par phase — aligner sur ce fichier |
+| fabrice/linkedin/roadmap.md | fabrice/linkedin/ | Planning LinkedIn F par phase — aligner sur ce fichier |
+| f2/linkedin/roadmap.md | f2/linkedin/ | Planning page F2 — aligner sur ce fichier |

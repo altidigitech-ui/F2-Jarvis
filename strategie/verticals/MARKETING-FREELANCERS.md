@@ -98,7 +98,7 @@
 | LinkedIn Sales Navigator | 80-130$/mois | Prospection LinkedIn |
 | Hunter.io | Free-99$/mois | Email finder |
 
-**Opportunité** : Pas un nouvel outil de cold email — plutôt un outil qui IDENTIFIE les prospects qualifiés. Ex : "montre-moi les sites web dans [niche] qui ont un mauvais SEO/conversion" → la prospection se fait en apportant de la valeur (audit gratuit), pas en spammant. Leak Detector pivotait vers ça mais pour des devs. Le même concept pour des agences = beaucoup plus vendable.
+**Opportunité** : Pas un nouvel outil de cold email — plutôt un outil qui IDENTIFIE les prospects qualifiés. Ex : "montre-moi les sites web dans [niche] qui ont un mauvais SEO/conversion" → la prospection se fait en apportant de la valeur (audit gratuit), pas en spammant. StoreMD (ex Leak Detector, muté en avril 2026) est parti dans cette direction pour les merchants Shopify. Le même concept appliqué aux agences = beaucoup plus vendable.
 
 ### 🟡 Douleur 3 : Content creation at scale (multi-clients)
 
@@ -149,9 +149,9 @@
 - **Douleur** : Trouver des clients sans spammer
 - **Différenciation** : Identifie des prospects avec des problèmes concrets (mauvais SEO, site lent, pas de CTA) → génère un mini-audit → le freelancer approche avec de la valeur
 - **Pricing** : Free (5 audits/mois) → 29$/mois (50 audits) → 79$/mois (illimité)
-- **Stack** : FastAPI + Playwright (scraping) + Claude API (analyse) — très proche de Leak Detector
+- **Stack** : FastAPI + Playwright (scraping) + Claude API (analyse) — très proche de StoreMD
 - **Validation** : Offrir des audits gratuits aux freelancers, mesurer combien l'utilisent pour closer des clients
-- **Synergie** : Leak Detector core repackagé pour une cible non-dev
+- **Synergie** : StoreMD core repackagé pour une cible non-dev
 
 ### Opportunité #3 : Workflow content multi-clients
 - **Douleur** : Gérer 10+ comptes social media
@@ -178,6 +178,6 @@
 
 ### Semaine 2 (13-19 avril)
 - Poster "I'll create a free marketing report for your client" dans 2-3 communautés
-- OU poster "I'll audit your website for free" (réutilisation Leak Detector pour cible agence)
+- OU poster "I'll audit your website for free" (même approche que StoreMD appliquée à la cible agence)
 - Mesurer l'intérêt
 - Décision vendredi 18/04

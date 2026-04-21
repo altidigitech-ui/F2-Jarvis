@@ -108,7 +108,7 @@ LD lancé le 16/03/2026. ~8 signups, 0 MRR. En mutation vers StoreMD (diagnostic
 
 | Phase | Données terrain | Build in public | Lancements |
 |-------|----------------|----------------|------------|
-| 1 (Avril) | Données terrain e-com : 530+ reviews, chargebacks $800/mois, app tax Shopify, threads Reddit | Build in public des 3 premiers SaaS e-com. Méthode studio. | LD actif. Premiers SaaS e-com quand prêts. |
+| 1 (Avril) | Données terrain e-com : 530+ reviews, chargebacks $800/mois, app tax Shopify, threads Reddit | Build in public des 3 premiers SaaS e-com. Méthode studio. | StoreMD ✅ live. Prochains SaaS e-com en backlog. |
 | 2 (Mai) | Données multi-vertical : e-com + agences. Patterns cross-vertical. | Progression portfolio. Métriques multi-produit. | Lancements PH/IH pour chaque SaaS prêt. |
 | 3 (Juin+) | Autorité terrain : données agrégées 3 verticals. Guides cross-produit. | Portfolio complet. La cadence EST le contenu. | Derniers SaaS du pipeline. |
 
@@ -152,6 +152,6 @@ LD lancé le 16/03/2026. ~8 signups, 0 MRR. En mutation vers StoreMD (diagnostic
 | f2/publication/context.md | f2/publication/ | Fichier de connaissance projet Claude F2 |
 | f2/publication/prompt.md | f2/publication/ | System prompt projet Claude F2 |
 | growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
-| growth-marketing/twitter/f2/roadmap.md | growth-marketing/twitter/f2/ | Roadmap Twitter F2 (détails plateforme) |
-| growth-marketing/ih/f2/roadmap.md | growth-marketing/ih/f2/ | Roadmap IH F2 (détails plateforme) |
-| growth-marketing/ph/f2/roadmap.md | growth-marketing/ph/f2/ | Roadmap PH F2 (détails plateforme) |
+| f2/twitter/roadmap.md | f2/twitter/ | Roadmap Twitter F2 (détails plateforme) |
+| f2/ih/roadmap.md | f2/ih/ | Roadmap IH F2 (détails plateforme) |
+| f2/ph/roadmap.md | f2/ph/ | Roadmap PH F2 (détails plateforme) |

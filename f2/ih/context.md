@@ -1,6 +1,6 @@
 # CONTEXT IH F2 — @foundrytwo
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `ih/context.md` (voix IH, contenu, cold outreach, engagement, workflow, allocation temps)
 **S'appuie sur :** `ih/algo.md` (mécanique plateforme, classement, formats)
 **Ce fichier contient :** les spécificités opérationnelles du compte @foundrytwo sur IndieHackers. La voix, les types de contenu, l'engagement, et le cold outreach sont définis dans le parent `ih/context.md` — ce fichier ne les duplique pas.
@@ -14,7 +14,7 @@
 | **Handle** | @foundrytwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume (brand bible §3) |
-| **Bio** | SaaS studio. Two self-taught builders shipping AI agents in public. Real numbers, real failures. Currently building: 6 AI agents for e-com, agencies, and creators. |
+| **Bio** | SaaS studio. 6 AI agents for e-com, agencies, creators. Currently live: StoreMD. Real product data, strict integrity (no fake MRR, no fake testimonials). |
 | **Product** | Le SaaS le plus récemment lancé (mis à jour à chaque lancement) |
 | **Revenue** | Afficher le MRR dès que disponible. La transparence sur les revenus est la norme IH. |
 | **Website** | foundrytwo.com |
@@ -27,9 +27,8 @@ Le profil suit la structure **permanent + preuve actuelle** :
 |---------|-----------|---------------------------|
 | **Nom** | FoundryTwo | ❌ Ne change jamais |
 | **Avatar** | Logo F2 sur enclume | ❌ Ne change que si le branding évolue |
-| **Bio — ligne 1** | "SaaS studio. Two self-taught builders shipping AI agents in public." | ❌ Ne change jamais |
-| **Bio — ligne 2** | "Real numbers, real failures." | ❌ Ne change jamais |
-| **Bio — ligne 3** | "Currently building: [portfolio actuel]" | ✅ Mise à jour à chaque lancement |
+| **Bio — ligne 1** | "SaaS studio. 6 AI agents for e-com, agencies, creators." | ✅ Mise à jour si le portfolio change |
+| **Bio — ligne 2** | "Currently live: StoreMD. Real product data, strict integrity." | ✅ Mise à jour à chaque lancement |
 | **Product** | — | ✅ Ajouter chaque nouveau produit (afficher le plus récent) |
 | **Revenue** | — | ✅ Mettre à jour le MRR mensuellement |
 
@@ -101,4 +100,4 @@ Tout ce qui suit est défini dans le parent `ih/context.md` et ne doit pas être
 | ih/algo.md | growth-marketing/ih/ | Mécanique plateforme, classement, formats | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| f2/roadmap.md | growth-marketing/ih/f2/ | Planning IH par phase | ✅ |
+| f2/roadmap.md | f2/ih/ | Planning IH par phase | ✅ |

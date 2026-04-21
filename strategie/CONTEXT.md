@@ -1,7 +1,11 @@
 # CONTEXT — Distribution-First Method (V2)
 
+> **SOURCE DE VÉRITÉ PARENT DU REPO.**
+> Ce fichier prime sur tout autre document stratégique en cas de contradiction.
+> Hérite de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 **Source de vérité** pour la stratégie FoundryTwo.
-**Dernière mise à jour :** 03 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Utilisé par :** F (Fabrice), R (Romain), Claude
 **Statut :** ACTIF — remplace TOUT ce qui précède
 

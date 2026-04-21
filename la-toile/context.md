@@ -1,5 +1,9 @@
 # TOILE-CONTEXT.md — Source de Vérité
 
+> **Hérite de : `strategie/CONTEXT.md` (source de vérité parent du repo).**
+> En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 > Dernière mise à jour : 05 avril 2026
 > Version : 4.0 — Pivot distribution-first
 > Statut : EXÉCUTION — Pipeline 6 SaaS × 3 verticals
@@ -54,7 +58,7 @@ Altistone (Holding — personne morale, invisible)
     └── FoundryTwo (marque publique, studio, storytelling)
         │
         ├── VERTICAL M1 — E-COMMERCE (avril 2026)
-        │   ├── StoreMD (ex Leak Detector — mutation en cours)
+        │   ├── StoreMD (✅ live 14/04/2026 — ex Leak Detector, mutation complétée)
         │   └── ProfitPilot
         │
         ├── VERTICAL M2 — AGENCIES / MARKETING (mai 2026)
@@ -67,7 +71,7 @@ Altistone (Holding — personne morale, invisible)
         │   ├── LeadQuiz
         │   └── Wildcard (à définir)
         │
-        └── [Historique] Leak Detector (SaaS #1 — lancé, mutation StoreMD)
+        └── [Historique] Leak Detector (lancé 16/03/2026 — muté en StoreMD le 14/04/2026)
 ```
 
 **Règle** : le public interagit avec FoundryTwo et les produits. ALTI = le bureau. F2 = le showroom.

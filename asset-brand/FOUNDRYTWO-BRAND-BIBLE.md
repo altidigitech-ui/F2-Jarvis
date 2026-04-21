@@ -27,7 +27,7 @@
 
 FoundryTwo est un studio SaaS fondé par deux associés autodidactes, formés par l'IA pour construire des produits IA. Le studio documente le parcours avec transparence — les réussites, les échecs, les leçons — et ship un nouveau SaaS à intervalle régulier. La communauté suit la forge — les succès, les échecs, les leçons.
 
-**Ce qu'on est :** Un studio tech authentique qui build in public.
+**Ce qu'on est :** Un studio tech authentique. Sales-mode dominant, data produit vérifiable. Le format build-in-public existe mais se limite au Friday Studio Update et aux formats IH/Show.
 **Ce qu'on n'est pas :** Un mème account, un jeu, un side-project.
 **Le ton :** Pro mais accessible. Honnête. Data-driven. Jamais arrogant. Jamais fake.
 
@@ -276,9 +276,9 @@ Negative prompt: cartoon, anime, chibi, photorealistic face, visible face featur
 **Nom affiché :** FoundryTwo
 **Bio :**
 ```
-Two self-taught builders. One forge. We craft AI-powered SaaS.
+SaaS studio. 6 AI agents for Shopify merchants, agencies, creators.
 
-6 AI agents for e-com, agencies, and creators. Real numbers, real failures.
+Results in minutes. Currently live: StoreMD.
 
 🔨 foundrytwo.com
 ```
@@ -300,12 +300,12 @@ We ship SaaS tools that solve real problems, and we document the entire journey:
 What we stand for:
 → Real data, never fake testimonials
 → Full transparency on our process and results
-→ Building in public — every lesson shared
+→ Real product data, verifiable results
 → Ship fast, learn faster
 
-Currently shipping: 6 AI agents for Shopify merchants, marketing agencies, and content creators.
+Currently live: StoreMD (AI store diagnostics for Shopify merchants). 5 more agents in the pipeline.
 
-Follow us for honest founder content and build updates.
+Follow us for product data and studio updates.
 ```
 **Lien :** foundrytwo.com
 
@@ -315,7 +315,7 @@ Follow us for honest founder content and build updates.
 **Nom :** FoundryTwo
 **Bio :**
 ```
-SaaS studio forging AI-powered tools. Two self-taught builders, shipping transparently. Building 6 AI agents for e-com, agencies, and creators.
+SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Currently live: StoreMD.
 ```
 **Lien :** foundrytwo.com
 
@@ -389,8 +389,8 @@ Directive : insight basé uniquement sur des données réelles issues de nos pro
 | Bannière Twitter F2 | 1500×500 PNG | asset-brand/logo/f2/twitter_banner_foundrytwo.png |
 | Couverture LinkedIn F2 | 1128×191 PNG | asset-brand/logo/f2/linkedin_cover_OPTION_A_impact.png |
 | Logo TikTok F2 | 1080×1920 PNG | asset-brand/logo/f2/logo f2 marteau tiktok.png |
-| Logo Leak Detector | 1024×1024 PNG | asset-brand/logo/leak-detector/logo LD gpt.png |
-| Bannière Twitter Leak Detector | 1500×500 PNG | asset-brand/logo/leak-detector/leakdetector_twitter_banner.png |
+| Logo Leak Detector (historique) | 1024×1024 PNG | asset-brand/logo/leak-detector/logo LD gpt.png |
+| Bannière Twitter Leak Detector (historique) | 1500×500 PNG | asset-brand/logo/leak-detector/leakdetector_twitter_banner.png |
 
 **⏳ Reste à faire :**
 

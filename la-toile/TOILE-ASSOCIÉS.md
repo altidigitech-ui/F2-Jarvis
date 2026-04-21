@@ -79,7 +79,7 @@ R: [===LAUNCH M1===]    [===LAUNCH M2===]    [===LAUNCH M3===]    [===LAUNCH BIG
 
 | # | Vertical | Produit | Cible | Lancement prévu |
 |---|---|---|---|---|
-| 1 | M1 E-com | StoreMD (ex Leak Detector) | E-commerçants | Avril 2026 (mutation) |
+| 1 | M1 E-com | StoreMD (✅ live 14/04/2026) | E-commerçants | Live |
 | 2 | M1 E-com | ProfitPilot | E-commerçants | Avril 2026 |
 | 3 | M2 Agencies | ClientPulse | Agences marketing | Mai 2026 |
 | 5 | M2 Agencies | ProfitPilot | Agences marketing | Mai 2026 |

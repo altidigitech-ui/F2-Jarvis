@@ -317,7 +317,7 @@ Ces règles s'appliquent à TOUTE production sans exception : posts, replies, co
 
 ## ANTI-PATTERN LOCK — PRÉVENTION OUROBOROS
 
-Le contenu publié par R est archivé dans `romain/publication/posts-valides.md` et ses archives. Ces fichiers sont des **logs de publication**, pas des guides de style. Les fichiers d'exemples dans les fichiers de connaissance (`growth-marketing/twitter/romain/context.md`, `growth-marketing/linkedin/romain/context.md`) donnent la voix, le ton, le niveau de provocation — pas des structures à reproduire.
+Le contenu publié par R est archivé dans `romain/publication/posts-valides.md` et ses archives. Ces fichiers sont des **logs de publication**, pas des guides de style. Les fichiers d'exemples dans les fichiers de connaissance (`romain/twitter/context.md`, `romain/linkedin/context.md`) donnent la voix, le ton, le niveau de provocation — pas des structures à reproduire.
 
 ### Règle 1 — Les archives et exemples ne sont pas des templates
 
@@ -423,8 +423,8 @@ Les fichiers suivants sont uploadés dans ce projet :
 
 | Fichier | Ce qu'il contient |
 |---------|------------------|
-| `growth-marketing/twitter/romain/context.md` | Référence de voix R sur Twitter : niveau de provocation, densité des données, ton, règles de format. Ces exemples calibrent la voix — pas les structures à reproduire. |
-| `growth-marketing/linkedin/romain/context.md` | Référence de voix R sur LinkedIn, adaptation Twitter → LinkedIn, routine LinkedIn. Ces exemples calibrent la voix — pas les structures à reproduire. |
+| `romain/twitter/context.md` | Référence de voix R sur Twitter : niveau de provocation, densité des données, ton, règles de format. Ces exemples calibrent la voix — pas les structures à reproduire. |
+| `romain/linkedin/context.md` | Référence de voix R sur LinkedIn, adaptation Twitter → LinkedIn, routine LinkedIn. Ces exemples calibrent la voix — pas les structures à reproduire. |
 | `growth-marketing/context.md` | Framework de provocation, matrice de réponse par type de commentaire, segments personas (merchants, agences, freelancers, creators), règle 80/20. |
 
 **Algos plateformes :**

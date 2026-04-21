@@ -60,7 +60,7 @@
 |---|---|---|---|
 | F2 Twitter | R | R | 7h30-8h00 |
 | F2 LinkedIn | R | R | 8h00-8h15 |
-| F2 TikTok | R | R | 18h-19h |
+| F2 TikTok | R | R | ⏸ SUSPENDU — pipeline vidéo en construction (cf. f2/tiktok/context.md) |
 | F LinkedIn perso | F | F | Flexible (horaire optimal FR) |
 | F Twitter perso | F | F | Flexible (horaire optimal US) |
 | R LinkedIn perso | R | R | Flexible (horaire optimal FR) |
@@ -142,14 +142,14 @@ F et R batchent le contenu de la semaine en parallèle :
 
 #### Calendrier semaine type
 
-| Jour | R publie (F2 matin) | R publie (F2 LinkedIn) | R publie (R perso) | F publie (F perso) | R publie (produit/soir) | R publie (TikTok) |
+| Jour | R publie (F2 matin) | R publie (F2 LinkedIn) | R publie (R perso) | F publie (F perso) | R publie (produit/soir) | TikTok (⏸ SUSPENDU) |
 |---|---|---|---|---|---|---|
 | **Lundi** | F2 Twitter : build | F2 LinkedIn : build long | R LinkedIn : growth | F LinkedIn + F Twitter | Produit Twitter : tips | — |
-| **Mardi** | F2 Twitter : engage/hot take | — | — | F LinkedIn + F Twitter | R Twitter : growth | F2 TikTok : short #1 |
+| **Mardi** | F2 Twitter : engage/hot take | — | — | F LinkedIn + F Twitter | R Twitter : growth | ⏸ suspendu |
 | **Mercredi** | F2 Twitter : insight | F2 LinkedIn : insight | R LinkedIn : growth | F LinkedIn + F Twitter | Produit Twitter : changelog | — |
-| **Jeudi** | F2 Twitter : engage | — | R LinkedIn : growth | F LinkedIn + F Twitter | ALTI repost + Produit data | F2 TikTok : short #2 |
+| **Jeudi** | F2 Twitter : engage | — | R LinkedIn : growth | F LinkedIn + F Twitter | ALTI repost + Produit data | ⏸ suspendu |
 | **Vendredi** | F2 Twitter : récap | F2 LinkedIn : récap | — | F LinkedIn : récap | — | — |
-| **Samedi** | F2 Twitter : Forge Log | — | — | — | — | F2 TikTok : short #3 |
+| **Samedi** | F2 Twitter : Forge Log | — | — | — | — | ⏸ suspendu |
 
 **"Engage"** dans la colonne = liker + commenter les posts de l'autre branche. Pas juste un like. Un vrai commentaire de 1-2 lignes.
 

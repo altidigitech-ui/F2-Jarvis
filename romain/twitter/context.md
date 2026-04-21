@@ -438,6 +438,6 @@ Zero redaction de posts. Execution uniquement : publier, cross-engagement, repon
 | twitter/algo.md | growth-marketing/twitter/ | Mecanique algorithmique | Done |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks provocation/reponse, personas | Done |
 | marketing/context.md | marketing/ | Cold outreach process, templates, planning R/F | Done |
-| f2/context.md | growth-marketing/twitter/f2/ | Voix F2 (pour contraste avec voix R) | Done |
+| f2/context.md | f2/twitter/ | Voix F2 (pour contraste avec voix R) | Done |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identite, storytelling, bios | Done |
-| romain/roadmap.md | growth-marketing/twitter/romain/ | Planning Twitter R par phase | Done |
+| romain/roadmap.md | romain/twitter/ | Planning Twitter R par phase | Done |

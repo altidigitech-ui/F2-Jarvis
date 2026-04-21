@@ -1,6 +1,6 @@
 # ROADMAP F — Progression opérationnelle @FabGangi
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `fabrice/context.md` (cadre opérationnel, planning, projet Claude, historique LD)
 **Se synchronise avec :** `growth-marketing/roadmap.md` (coordination cross-plateforme)
 **Cadence cible :** 2 SaaS/mois (répartis sur 3 verticals : e-com, agences, creators).
@@ -47,7 +47,7 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Remplacé p
 
 ### 4.1 Phase 1 — Avril 2026 : E-com technique + brand building
 
-**Produits distribués :** LD (actif, en mutation vers StoreMD) + StoreMD, ProfitPilot quand live.
+**Produits distribués :** StoreMD (✅ live 14/04/2026) + ProfitPilot quand live.
 
 **Focus F :** installer le brand building e-com sur Twitter/LinkedIn avec un angle technique accessible. Expliquer aux merchants le "pourquoi technique" de leurs problèmes. Lurk les communautés creators pour préparer Phase 2.
 
@@ -199,5 +199,5 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Remplacé p
 | fabrice/engagement/claude/context.md | fabrice/engagement/claude/ | Règles engagement technique accessible |
 | fabrice/publication/claude/context.md | fabrice/publication/claude/ | Règles publication technique |
 | growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
-| growth-marketing/twitter/fabrice/roadmap.md | growth-marketing/twitter/fabrice/ | Roadmap Twitter F (détails plateforme) |
-| growth-marketing/linkedin/fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Roadmap LinkedIn F (détails plateforme) |
+| fabrice/twitter/roadmap.md | fabrice/twitter/ | Roadmap Twitter F (détails plateforme) |
+| fabrice/linkedin/roadmap.md | fabrice/linkedin/ | Roadmap LinkedIn F (détails plateforme) |

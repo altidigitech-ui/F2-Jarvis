@@ -32,15 +32,15 @@ Génère un brief quotidien pour Fabrice. Orienté action, pas narratif.
 
 ## Git activité (depuis hier)
 - f2-jarvis: 4 commits
-- saas/storemd: 2 commits (migration GraphQL terminée)
-- saas/leak-detector: 1 commit (hotfix webhook HMAC)
+- saas/storemd: 2 commits (derniers)
 
 ## État des SaaS
-- ✅ Leak Detector — live, MRR à jour
-- 🔧 StoreMD — transformation V2 phase 3/4
-- ⏸️ PayloadDiff — en attente (after StoreMD)
-- 📝 ContentForge — concept
-- 🛠️ F2 Ops Hub — docs prêts
+- ✅ StoreMD — live depuis 14/04/2026, MRR à jour
+- ⏳ ProfitPilot — backlog M1
+- ⏳ ClientPulse — backlog M2
+- ⏳ AdAudit — backlog M2
+- ⏳ CreatorSuite — backlog M3
+- ⏳ LeadQuiz — backlog M3
 
 ## À arbitrer aujourd'hui
 ### 3 propositions Ouroboros en attente

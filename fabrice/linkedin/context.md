@@ -27,7 +27,7 @@ Même logique que R (cf. linkedin/romain/context.md §1.1) : positionnement perm
 
 ```
 Paragraph 1 — Positionnement permanent (ne change pas avec chaque produit)
-I build AI agents that solve real problems. Co-founder and CTO of FoundryTwo, a studio where we ship one product after another — fast, lean, and in public.
+I build AI agents that solve real problems. Co-founder and CTO of FoundryTwo, a studio where we ship one product after another — fast, lean, and with real product data.
 
 Paragraph 2 — Preuve actuelle (évolue avec le portfolio)
 Currently building 6 AI agents that solve real problems for Shopify merchants and content creators. From automated chargeback defense to store speed diagnostics to content repurposing — every tool works while you sleep.
@@ -379,7 +379,7 @@ Chaque post LinkedIn de F doit passer le test : "Si quelqu'un suit F sur Twitter
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
 | marketing/context.md | marketing/ | Planning R/F, funnel | ✅ |
-| twitter/fabrice/context.md | growth-marketing/twitter/fabrice/ | Voix F Twitter (pour contraste et adaptation) | ✅ |
-| romain/context.md | growth-marketing/linkedin/romain/ | Voix R LinkedIn (pour contraste) | ✅ |
+| twitter/fabrice/context.md | fabrice/twitter/ | Voix F Twitter (pour contraste et adaptation) | ✅ |
+| romain/context.md | romain/linkedin/ | Voix R LinkedIn (pour contraste) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Planning LinkedIn F par phase | ✅ |
+| fabrice/roadmap.md | fabrice/linkedin/ | Planning LinkedIn F par phase | ✅ |

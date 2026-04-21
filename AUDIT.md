@@ -1,6 +1,6 @@
 # AUDIT — Merge FoundryTwo + Co-do-va-bu-di
 
-> Fichier temporaire. À supprimer après validation finale.
+> Résidus merge initial (03/04/2026). Le cleanup complet du 21/04/2026 (8 commits) a traité ces points. Conservé pour historique.
 > Généré le 19 avril 2026 après fusion des deux repos, mis à jour après batch de nettoyage.
 
 ---

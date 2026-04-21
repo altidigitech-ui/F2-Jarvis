@@ -32,8 +32,8 @@ F2-JARVIS ne doit JAMAIS forcer Fabrice à re-contextualiser. Ce skill garantit 
 - [ ] Item 3
 
 ## État des SaaS F2
-- **Leak Detector** : <statut 1 ligne>
 - **StoreMD** : <statut 1 ligne>
+- **ProfitPilot** : <statut 1 ligne>
 - ...
 
 ## Décisions en attente

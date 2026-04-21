@@ -1,8 +1,12 @@
 # STRATÉGIE PRODUCT HUNT — Détails Chirurgicaux
 
+> **Source de vérité parent : `strategie/CONTEXT.md` (racine).**
+> Ce fichier est une référence plateforme. En cas de contradiction avec le parent, le parent prime.
+> Hérite aussi de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+
 **Date de création :** 02 avril 2026
-**Dernière mise à jour :** 05 avril 2026
-**Hérite de :** `strategie-expansion-generale.md` (source de vérité parent)
+**Dernière mise à jour :** 21 avril 2026
+**Hérite de :** `strategie/CONTEXT.md` (source de vérité parent) + `strategie-expansion-generale.md` (règles cross-plateforme)
 **S'appuie sur :** `growth-marketing/ph/algo.md` (mécanique plateforme, système de points, featuring, timing)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les règles globales (types de comptes, anti-patterns généraux, scalabilité), se référer au parent.
 
@@ -14,9 +18,9 @@
 
 | Compte | Handle | Type | Géré par | Rôle | Statut |
 |--------|--------|------|----------|------|--------|
-| **F2** | @foundrytwo | Studio | R | Lance chaque SaaS. Maker comment. Réponses aux commentaires. | ⏳ Profil à créer |
-| **R** | Profil perso | Maker | R | Karma farming. Listé comme maker sur chaque listing F2. | ⏳ Profil à créer |
-| **F** | Profil perso | Maker | F | Karma farming. Listé comme maker sur chaque listing F2. | ⏳ Profil à créer |
+| **F2** | @foundrytwo | Studio | R | Lance chaque SaaS. Maker comment. Réponses aux commentaires. | ✅ Profils actifs, karma faible à construire |
+| **R** | Profil perso | Maker | R | Karma farming. Listé comme maker sur chaque listing F2. | ✅ Profils actifs, karma faible à construire |
+| **F** | Profil perso | Maker | F | Karma farming. Listé comme maker sur chaque listing F2. | ✅ Profils actifs, karma faible à construire |
 
 **Les profils R et F ne lancent RIEN.** Ils ne publient rien. Ils existent pour 2 raisons uniquement :
 1. **Karma farming :** en upvotant et commentant régulièrement, R et F construisent un karma élevé
@@ -35,7 +39,7 @@ Tout passe par @foundrytwo. R et F sont listés comme "makers" sur chaque listin
 | **Handle** | @foundrytwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume |
-| **Tagline profil** | SaaS studio. Two builders shipping 6 AI tools for e-com, agencies, and creators — in public. |
+| **Tagline profil** | SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Currently live: StoreMD. |
 | **Website** | foundrytwo.com |
 | **Twitter** | @foundrytwo |
 | **Makers associés** | Romain Delgado (R) + Fabrice Gangitano (F) |
@@ -233,8 +237,7 @@ Pricing: [gratuit/payant/free tier]
 🎁 PH-only offer: [deal exclusif — ex: 30% off lifetime,
 extended free trial, etc.]
 
-We're building in public — every number, every failure.
-This is product #[X] of 6 planned AI SaaS across 3 verticals.
+We ship AI agents that solve real problems. This is product #[X] from our portfolio of 6 AI agents across 3 verticals.
 [Mention des produits précédents si X > 1.]
 
 I'd love your honest feedback on:
@@ -518,10 +521,11 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du fichier parent.
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| strategie-expansion-generale.md | growth-marketing/strategie/ | Source de vérité parent |
+| strategie/CONTEXT.md | strategie/ | Source de vérité parent du repo. Prime sur tout autre document. |
+| strategie-expansion-generale.md | growth-marketing/strategie/ | Référence cross-plateforme |
 | growth-marketing/ph/algo.md | Repo | Mécanique plateforme PH (points, featuring, timing, vélocité) |
 | growth-marketing/ph/context.md | Repo | Stratégie PH existante (pre-launch, launch day, post-launch, karma) |
-| growth-marketing/ph/f2/context.md | Repo | Identité compte @foundrytwo PH |
-| growth-marketing/ph/f2/roadmap.md | Repo | Planning PH par lancement |
+| f2/ph/context.md | Repo | Identité compte @foundrytwo PH |
+| f2/ph/roadmap.md | Repo | Planning PH par lancement |
 | audit-explosion-marketing-v2.md | growth-marketing/strategie/ | Audit source (PH = retard critique, 0 karma) |
 | recherche-comptes-produit-studio-FR.md | growth-marketing/strategie/ | Recherche comptes produit/studio |

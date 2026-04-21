@@ -26,14 +26,14 @@
 
 | Plateforme | Compte | Actions clés Phase 1 | Référence |
 |-----------|--------|---------------------|-----------|
-| **Twitter** | R | Warming e-com. 10 cold outreach/j (angle growth). 15 interactions/j. 1 post/j. Données terrain dans les replies. | twitter/romain/roadmap.md §2 |
-| **Twitter** | F | Warming e-com (angle technique). 10 cold outreach/j. 15 interactions/j. 1 post/j (5/sem). | twitter/fabrice/roadmap.md §2 |
-| **Twitter** | F2 | Squelette éditorial 5j/sem. Portfolio build in public. Cross-engagement protocol R→F→F2. | twitter/f2/roadmap.md §2 |
-| **LinkedIn** | R | Profil optimisé. Warming merchants + freelancers. 15 interactions/j + 5 cold/j. 3-4 posts/sem. | linkedin/romain/roadmap.md §2 |
-| **LinkedIn** | F | Profil optimisé. Warming merchants + creators. 15 interactions/j + 5 cold/j. 2-3 posts/sem. | linkedin/fabrice/roadmap.md §2 |
-| **LinkedIn** | F2 | Page company configurée. 0 contenu original. 0-1 repost/sem. | linkedin/f2/roadmap.md §2 |
-| **IH** | F2 | Build in public portfolio. 1 update/sem. | ih/f2/roadmap.md §2 |
-| **PH** | F2 | Karma farming R+F. Préparation lancements SaaS e-com. | ph/f2/roadmap.md §3 |
+| **Twitter** | R | Warming e-com. 10 cold outreach/j (angle growth). 15 interactions/j. 1 post/j. Données terrain dans les replies. | romain/twitter/roadmap.md §2 |
+| **Twitter** | F | Warming e-com (angle technique). 10 cold outreach/j. 15 interactions/j. 1 post/j (5/sem). | fabrice/twitter/roadmap.md §2 |
+| **Twitter** | F2 | Squelette éditorial 5j/sem. Portfolio build in public. Cross-engagement protocol R→F→F2. | f2/twitter/roadmap.md §2 |
+| **LinkedIn** | R | Profil optimisé. Warming merchants + freelancers. 15 interactions/j + 5 cold/j. 3-4 posts/sem. | romain/linkedin/roadmap.md §2 |
+| **LinkedIn** | F | Profil optimisé. Warming merchants + creators. 15 interactions/j + 5 cold/j. 2-3 posts/sem. | fabrice/linkedin/roadmap.md §2 |
+| **LinkedIn** | F2 | Page company configurée. 0 contenu original. 0-1 repost/sem. | f2/linkedin/roadmap.md §2 |
+| **IH** | F2 | Build in public portfolio. 1 update/sem. | f2/ih/roadmap.md §2 |
+| **PH** | F2 | Karma farming R+F. Préparation lancements SaaS e-com. | f2/ph/roadmap.md §3 |
 
 ### 2.2 Coordination lancement SaaS (process générique)
 
@@ -79,14 +79,14 @@ Quand un SaaS est prêt au lancement, TOUTES les plateformes sont mobilisées si
 
 | Plateforme | Compte | Actions clés Phase 2 | Référence |
 |-----------|--------|---------------------|-----------|
-| **Twitter** | R | Distribution e-com (data posts avec métriques réelles) + warming agences. 10 cold/j multi-vertical. | twitter/romain/roadmap.md §3 |
-| **Twitter** | F | Distribution e-com (angle tech) + warming creators. 10 cold/j. | twitter/fabrice/roadmap.md §3 |
-| **Twitter** | F2 | Data threads terrain. Teasers nouveaux SaaS. Lancements. | twitter/f2/roadmap.md §3 |
-| **LinkedIn** | R | Posts data-driven multi-vertical + carousels. 3-4/sem. Contenu cross-vertical. | linkedin/romain/roadmap.md §3 |
-| **LinkedIn** | F | Posts techniques + carousels. 2-3/sem. Warming creators. | linkedin/fabrice/roadmap.md §3 |
-| **LinkedIn** | F2 | 0-1 repost/sem. Products section mise à jour à chaque lancement. | linkedin/f2/roadmap.md |
-| **IH** | F2 | Show IH pour chaque SaaS lancé. Updates portfolio multi-produit. | ih/f2/roadmap.md §3 |
-| **PH** | F2 | Lancements pour chaque SaaS prêt (full process). Karma R+F en construction. | ph/f2/roadmap.md §4 |
+| **Twitter** | R | Distribution e-com (data posts avec métriques réelles) + warming agences. 10 cold/j multi-vertical. | romain/twitter/roadmap.md §3 |
+| **Twitter** | F | Distribution e-com (angle tech) + warming creators. 10 cold/j. | fabrice/twitter/roadmap.md §3 |
+| **Twitter** | F2 | Data threads terrain. Teasers nouveaux SaaS. Lancements. | f2/twitter/roadmap.md §3 |
+| **LinkedIn** | R | Posts data-driven multi-vertical + carousels. 3-4/sem. Contenu cross-vertical. | romain/linkedin/roadmap.md §3 |
+| **LinkedIn** | F | Posts techniques + carousels. 2-3/sem. Warming creators. | fabrice/linkedin/roadmap.md §3 |
+| **LinkedIn** | F2 | 0-1 repost/sem. Products section mise à jour à chaque lancement. | f2/linkedin/roadmap.md |
+| **IH** | F2 | Show IH pour chaque SaaS lancé. Updates portfolio multi-produit. | f2/ih/roadmap.md §3 |
+| **PH** | F2 | Lancements pour chaque SaaS prêt (full process). Karma R+F en construction. | f2/ph/roadmap.md §4 |
 
 ### 3.3 Milestone cross-plateforme fin mai
 
@@ -115,14 +115,14 @@ Quand un SaaS est prêt au lancement, TOUTES les plateformes sont mobilisées si
 
 | Plateforme | Compte | Actions clés Phase 3 | Référence |
 |-----------|--------|---------------------|-----------|
-| **Twitter** | R | Autorité multi-vertical (e-com + agences). Guest posts. 10 cold/j. | twitter/romain/roadmap.md §4 |
-| **Twitter** | F | Autorité technique multi-vertical (e-com + creators). Deep dives. 10 cold/j. | twitter/fabrice/roadmap.md §4 |
-| **Twitter** | F2 | Communauté active. Community spotlight. Benchmarks. | twitter/f2/roadmap.md §4 |
-| **LinkedIn** | R | Carousels ambitieux. DMs entrants. Positionnement expert multi-vertical. | linkedin/romain/roadmap.md §4 |
-| **LinkedIn** | F | Deep dives. Contenu cross-produit. Autorité technique. | linkedin/fabrice/roadmap.md §4 |
-| **LinkedIn** | F2 | 0-1 repost/sem. Products section complète. | linkedin/f2/roadmap.md |
-| **IH** | F2 | Updates studio (portefeuille complet). 1+ guide cross-produit. Autorité "AI agent studio". | ih/f2/roadmap.md §4 |
-| **PH** | F2 | Lancements SaaS restants (process rodé). Karma R+F fort. Communauté PH fidèle. | ph/f2/roadmap.md §5 |
+| **Twitter** | R | Autorité multi-vertical (e-com + agences). Guest posts. 10 cold/j. | romain/twitter/roadmap.md §4 |
+| **Twitter** | F | Autorité technique multi-vertical (e-com + creators). Deep dives. 10 cold/j. | fabrice/twitter/roadmap.md §4 |
+| **Twitter** | F2 | Communauté active. Community spotlight. Benchmarks. | f2/twitter/roadmap.md §4 |
+| **LinkedIn** | R | Carousels ambitieux. DMs entrants. Positionnement expert multi-vertical. | romain/linkedin/roadmap.md §4 |
+| **LinkedIn** | F | Deep dives. Contenu cross-produit. Autorité technique. | fabrice/linkedin/roadmap.md §4 |
+| **LinkedIn** | F2 | 0-1 repost/sem. Products section complète. | f2/linkedin/roadmap.md |
+| **IH** | F2 | Updates studio (portefeuille complet). 1+ guide cross-produit. Autorité "AI agent studio". | f2/ih/roadmap.md §4 |
+| **PH** | F2 | Lancements SaaS restants (process rodé). Karma R+F fort. Communauté PH fidèle. | f2/ph/roadmap.md §5 |
 
 ### 4.3 Coordination lancements SaaS (avantages cumulés)
 
@@ -230,14 +230,14 @@ Ce fichier coordonne les plateformes du dossier growth-marketing. Le marketing/r
 |----------|-------------|------|--------|
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, matrice contenu, Build My Community | ✅ |
 | marketing/roadmap.md | marketing/ | Plan macro, cadence R/F, pipeline SaaS | ✅ |
-| twitter/romain/roadmap.md | growth-marketing/twitter/romain/ | Roadmap Twitter R | ✅ |
-| twitter/fabrice/roadmap.md | growth-marketing/twitter/fabrice/ | Roadmap Twitter F | ✅ |
-| twitter/f2/roadmap.md | growth-marketing/twitter/f2/ | Roadmap Twitter F2 | ✅ |
-| linkedin/romain/roadmap.md | growth-marketing/linkedin/romain/ | Roadmap LinkedIn R | ✅ |
-| linkedin/fabrice/roadmap.md | growth-marketing/linkedin/fabrice/ | Roadmap LinkedIn F | ✅ |
-| linkedin/f2/roadmap.md | growth-marketing/linkedin/f2/ | Roadmap LinkedIn F2 | ✅ |
-| ih/f2/roadmap.md | growth-marketing/ih/f2/ | Roadmap IH F2 | ✅ |
-| ph/f2/roadmap.md | growth-marketing/ph/f2/ | Roadmap PH F2 | ✅ |
+| romain/twitter/roadmap.md | romain/twitter/ | Roadmap Twitter R | ✅ |
+| fabrice/twitter/roadmap.md | fabrice/twitter/ | Roadmap Twitter F | ✅ |
+| f2/twitter/roadmap.md | f2/twitter/ | Roadmap Twitter F2 | ✅ |
+| romain/linkedin/roadmap.md | romain/linkedin/ | Roadmap LinkedIn R | ✅ |
+| fabrice/linkedin/roadmap.md | fabrice/linkedin/ | Roadmap LinkedIn F | ✅ |
+| f2/linkedin/roadmap.md | f2/linkedin/ | Roadmap LinkedIn F2 | ✅ |
+| f2/ih/roadmap.md | f2/ih/ | Roadmap IH F2 | ✅ |
+| f2/ph/roadmap.md | f2/ph/ | Roadmap PH F2 | ✅ |
 | ph/context.md | growth-marketing/ph/ | Stratégie PH, protocole launch day | ✅ |
 | ph/algo.md | growth-marketing/ph/ | Mécanique PH | ✅ |
 | `../produits/` | Racine | Source de vérité produits | ✅ |

@@ -27,7 +27,7 @@ description: Review les propositions d'Ouroboros. Liste toutes les propositions 
 ## Propositions Ouroboros à reviewer — 18 avril 2026
 
 ### 1. 2026-04-17-storemd-cac-inconsistency.md
-**Observation** : Le rapport marketing Q1 donne un CAC Leak Detector de 32€,
+**Observation** : Le rapport marketing Q1 donne un CAC StoreMD de 32€,
 alors que le plan budget Romain (15 avril) suppose un CAC < 25€.
 
 **Recommandation** : Recalculer le budget ads avec le CAC réel.

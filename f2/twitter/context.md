@@ -1,6 +1,6 @@
 # CONTEXT TWITTER F2 — @foundrytwo
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `twitter/context.md` (règles Twitter communes, cross-engagement, timing, formats)
 **Hérite de :** `growth-marketing/context.md` (piliers, frameworks, phases)
 **S'appuie sur :** `asset-brand/FOUNDRYTWO-BRAND-BIBLE.md` (identité, palette, storytelling)
@@ -16,28 +16,31 @@
 | **Nom affiché** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume |
 | **Banner** | Scène wide du duo dans l'atelier ou bannière avec logo F2 |
-| **Bio** | Two self-taught builders. One forge. We craft AI agents for e-com, agencies & creators. · 6 SaaS in the pipeline · Everything is public: real numbers, real failures. · 🔨 foundrytwo.com |
+| **Bio** | SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Results in minutes. · Currently live: StoreMD · 🔨 foundrytwo.com |
 | **Lien** | foundrytwo.com |
 | **Emplacement** | Marseille, France |
 | **Premium** | ✅ Obligatoire (cf. twitter/context.md §9) |
 
 La bio sera mise à jour à chaque milestone significatif (premier client payant, MRR franchi, nouveau SaaS lancé, nouvelle verticale couverte).
 
-### 1.1 Portfolio — 6 SaaS AI Agents
+### 1.1 Portfolio F2 — 6 AI agents sur 3 verticales
 
-| # | Nom | Verticale | Description courte |
-|---|-----|-----------|-------------------|
-| 1 | Leak Detector | E-com | Audit automatisé des fuites de conversion |
-| 2 | ChargebackDefender | E-com | Agent anti-chargebacks & fraude amicale |
-| 3 | PriceRadar | E-com | Surveillance concurrentielle des prix |
-| 4 | ReviewPulse | E-com / Agencies | Analyse et réponse automatisée aux avis |
-| 5 | AdWatcher | Agencies / Creators | Monitoring des performances pub |
-| 6 | BriefForge | Agencies | Génération automatisée de briefs créatifs |
-| 7 | ContentFlow | Creators | Pipeline de contenu AI-assisted |
-| 8 | InvoiceGuard | Agencies / Creators | Suivi facturation et relances automatiques |
-| 9 | DataMerge | E-com / Agencies | Consolidation de données multi-sources |
+> Note historique : @LeakDetectorF2 a été muté en @StoreMD le 14/04/2026. Le compte @LeakDetectorF2 est archivé.
 
-F2 = **studio qui build 6 AI agents pour e-com, agences, creators.** Pas un produit unique. Le positionnement est portfolio + build in public.
+FoundryTwo ship 6 AI agents répartis sur 3 verticales. Chaque agent résout un problème opérationnel concret d'une cible non-dev.
+
+| # | Agent | Vertical | Cible | One-liner |
+|---|-------|----------|-------|-----------|
+| 1 | StoreMD | E-commerce | Shopify merchants | AI that diagnoses your Shopify store health in 60 seconds |
+| 2 | ProfitPilot | E-commerce | Shopify merchants | Know your real profit margin, not just revenue |
+| 3 | ClientPulse | Agences | Agency owners | Client reporting that writes itself |
+| 4 | AdAudit | Agences | Agency owners | Find out which campaign actually drove the last sale |
+| 5 | CreatorSuite | Creators | Content creators | One video → 5 platforms in 15 minutes |
+| 6 | LeadQuiz | E-com + Coaches | Merchants + coaches | Interactive quizzes that qualify leads, AI-generated |
+
+Source de vérité détails : `produits/STATUS.md` (racine).
+
+Le compte @foundrytwo parle des 6 agents. Jamais nominé de produit qui n'est pas dans cette liste.
 
 ---
 
@@ -86,7 +89,7 @@ Max 1-2 par tweet. Émojis autorisés pour F2 : 🔨 (forge), 📊 (data), 🧵 
 | **Milestones** | "First paying customer on product #2. Took us 11 days." |
 | **Build in public updates portfolio** | "This week: shipped email alerts on StoreMD, defined 105 features across 3 SaaS, onboarded 12 beta users." |
 | **Questions ouvertes à la communauté** | "Shopify merchants: what's the most you've lost to chargebacks in a single month?" |
-| **Annonces produit (tout le portfolio)** | "New agent: PriceRadar. Competitive price monitoring for e-com. Here's how it works." |
+| **Annonces produit (tout le portfolio)** | "New agent: ProfitPilot. Real profit margins for Shopify merchants. Here's how it works." |
 | **Récaps hebdomadaires portfolio** | "Week 4 recap: 6 SaaS, what worked, what didn't, what's next." |
 
 ### 3.2 F2 ne publie PAS
@@ -322,4 +325,4 @@ Le contenu F2 évolue avec la maturité du portfolio et de la communauté.
 | growth-marketing/context.md | growth-marketing/ | ✅ |
 | marketing/context.md | marketing/ | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | ✅ |
-| f2/roadmap.md | growth-marketing/twitter/f2/ | ✅ |
+| f2/roadmap.md | f2/twitter/ | ✅ |

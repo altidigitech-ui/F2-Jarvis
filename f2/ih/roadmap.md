@@ -248,7 +248,7 @@ become harder than building them?
 
 | Document | Emplacement | Rôle | Statut |
 |----------|-------------|------|--------|
-| f2/context.md | growth-marketing/ih/f2/ | Identité compte, squelette éditorial, qui gère | ✅ |
+| f2/context.md | f2/ih/ | Identité compte, squelette éditorial, qui gère | ✅ |
 | ih/context.md | growth-marketing/ih/ | Voix, contenu, cold outreach, engagement, workflow | ✅ |
 | ih/algo.md | growth-marketing/ih/ | Mécanique plateforme, classement, données | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme | ✅ |

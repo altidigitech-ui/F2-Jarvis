@@ -44,11 +44,10 @@ Studio SaaS indie, 1 SaaS/mois, indépendance financière août 2026.
 
 ## SaaS
 
-### Leak Detector ✅ live
-- MRR : 420 €
-- 14 clients
-- Statut : maintenance mode, en transition vers StoreMD
-- Dernière décision : migration GraphQL complétée (2026-03-15)
+### StoreMD ✅ live
+- MRR : à jour (voir tracking/)
+- Statut : live depuis 14/04/2026 (héritage Leak Detector muté)
+- Dernière décision : mutation LD → StoreMD complétée (14/04/2026)
 
 ### StoreMD 🔧 transformation
 - Statut : V2 phase 3/4 (execution Claude Code)

@@ -1,7 +1,7 @@
 ---
 name: shopify-gql
 description: Pattern F2 pour intégration Shopify via GraphQL Admin API. REST est legacy depuis avril 2025. Inclut read_reports + ShopifyQL SDK, rate limits cost-based, webhooks, custom distribution app.
-trigger: Shopify, StoreMD, Leak Detector, intégration marchand
+trigger: Shopify, StoreMD, intégration marchand
 when: on-demand
 ---
 

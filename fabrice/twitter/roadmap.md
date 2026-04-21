@@ -221,12 +221,12 @@ Possibilité de monter à 2 posts/jour si l'engagement rate > 1.5% et que F a la
 
 | Document | Emplacement | Rôle | Statut |
 |----------|-------------|------|--------|
-| fabrice/context.md | growth-marketing/twitter/fabrice/ | Voix, angle technique accessible, cold outreach, engagement | ✅ |
+| fabrice/context.md | fabrice/twitter/ | Voix, angle technique accessible, cold outreach, engagement | ✅ |
 | twitter/context.md | growth-marketing/twitter/ | Règles communes, cross-engagement, timing, formats | ✅ |
 | twitter/algo.md | growth-marketing/twitter/ | Mécanique algorithmique | ✅ |
 | growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas | ✅ |
 | marketing/context.md | marketing/ | Cold outreach process, planning R/F | ✅ |
-| romain/context.md | growth-marketing/twitter/romain/ | Voix R (pour contraste) | ✅ |
-| romain/roadmap.md | growth-marketing/twitter/romain/ | Planning R (pour coordination cross-engagement) | ✅ |
-| f2/context.md | growth-marketing/twitter/f2/ | Voix F2 (pour cross-engagement) | ✅ |
-| f2/roadmap.md | growth-marketing/twitter/f2/ | Planning F2 (pour coordination) | ✅ |
+| romain/context.md | romain/twitter/ | Voix R (pour contraste) | ✅ |
+| romain/roadmap.md | romain/twitter/ | Planning R (pour coordination cross-engagement) | ✅ |
+| f2/context.md | f2/twitter/ | Voix F2 (pour cross-engagement) | ✅ |
+| f2/roadmap.md | f2/twitter/ | Planning F2 (pour coordination) | ✅ |

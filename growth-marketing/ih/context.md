@@ -194,7 +194,7 @@ Le profil est le point de conversion. Quand quelqu'un lit un commentaire de @fou
 | **Handle** | @foundrytwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume |
-| **Bio** | SaaS studio. Two self-taught builders shipping AI agents in public. Real numbers, real failures. Currently building: 6 AI agents for e-com, agencies, and creators. |
+| **Bio** | SaaS studio. 6 AI agents for e-com, agencies, creators. Currently live: StoreMD. Real product data, strict integrity (no fake MRR, no fake testimonials). |
 | **Product** | Le SaaS le plus récemment lancé (mis à jour à chaque lancement) |
 | **Revenue** | Afficher le MRR quand disponible. La transparence sur les revenus est la norme IH. |
 | **Website** | foundrytwo.com |
@@ -205,7 +205,7 @@ Le profil est le point de conversion. Quand quelqu'un lit un commentaire de @fou
 |-----------|-------------|
 | Chaque nouveau SaaS lancé | Mettre à jour Product avec le dernier SaaS + ajouter dans la bio "Currently building" |
 | Premier MRR | Activer l'affichage du revenue |
-| 3+ produits live | Bio : "X AI agents shipped. Building 9 total." |
+| 3+ produits live | Bio : "X AI agents shipped. Building 6 total." |
 | foundrytwo.com hub live | Vérifier que le lien website pointe vers foundrytwo.com |
 
 ---
@@ -372,5 +372,5 @@ Même sujet ≠ même post. Chaque plateforme a son format.
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, matrice cross-plateforme, allocation temps | ✅ |
 | marketing/context.md | marketing/ | Cold outreach process, templates IH, planning R | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| f2/context.md | growth-marketing/ih/f2/ | Configuration compte @foundrytwo IH | ✅ |
-| f2/roadmap.md | growth-marketing/ih/f2/ | Planning IH par phase | ✅ |
+| f2/context.md | f2/ih/ | Configuration compte @foundrytwo IH | ✅ |
+| f2/roadmap.md | f2/ih/ | Planning IH par phase | ✅ |

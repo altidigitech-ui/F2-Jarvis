@@ -1,6 +1,6 @@
 # CONTEXT PH F2 — @foundrytwo
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `ph/context.md` (stratégie PH, pre-launch, launch day, post-launch, karma, multi-produit)
 **S'appuie sur :** `ph/algo.md` (mécanique plateforme, système de points, featuring, timing)
 **Ce fichier contient :** les spécificités opérationnelles du compte @foundrytwo sur Product Hunt. La stratégie, le protocole launch day, le karma farming, et la cadence multi-produit sont définis dans le parent `ph/context.md` — ce fichier ne les duplique pas.
@@ -14,7 +14,7 @@
 | **Handle** | @foundrytwo |
 | **Nom** | FoundryTwo |
 | **Avatar** | Logo F2 sur enclume (brand bible §3) |
-| **Tagline profil** | SaaS studio. Two builders shipping 6 AI agents for e-com, agencies, and creators — in public. |
+| **Tagline profil** | SaaS studio. 6 AI agents for Shopify merchants, agencies, creators. Currently live: StoreMD. |
 | **Website** | foundrytwo.com |
 | **Twitter** | @foundrytwo |
 | **Makers associés** | R (Romain Delgado) + F (Fabrice Gangitano) — listés comme makers sur chaque listing |
@@ -25,7 +25,7 @@
 |---------|-----------|--------|
 | **Nom** | FoundryTwo | ❌ Ne change jamais |
 | **Avatar** | Logo F2 sur enclume | ❌ Ne change que si le branding évolue |
-| **Tagline** | "SaaS studio. Two builders shipping 6 AI agents..." | ✅ Mettre à jour le compteur quand pertinent ("[X] AI agents shipped") |
+| **Tagline** | "SaaS studio. 6 AI agents for Shopify merchants, agencies, creators." | ✅ Mettre à jour le compteur quand pertinent ("[X] AI agents shipped") |
 | **Products** | — | ✅ Chaque SaaS ajouté après son lancement |
 | **Website** | foundrytwo.com | ❌ Permanent |
 
@@ -133,4 +133,4 @@ Tout ce qui suit est défini dans le parent `ph/context.md` et ne doit pas être
 | growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
 | marketing/context.md | marketing/ | Inventaire comptes (R + F PH perso), planning R/F | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
-| f2/roadmap.md | growth-marketing/ph/f2/ | Planning PH par lancement | ✅ |
+| f2/roadmap.md | f2/ph/ | Planning PH par lancement | ✅ |
