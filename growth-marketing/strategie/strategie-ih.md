@@ -1,7 +1,7 @@
 # STRATÉGIE INDIEHACKERS — Détails Chirurgicaux
 
 **Date de création :** 02 avril 2026
-**Dernière mise à jour :** 05 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `strategie-expansion-generale.md` (source de vérité parent)
 **S'appuie sur :** `growth-marketing/ih/algo.md` (mécanique plateforme, classement, formats, données)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les règles globales (types de comptes, anti-patterns généraux, scalabilité), se référer au parent.
@@ -385,11 +385,11 @@ Les guides deviennent possibles à partir du mois 2-3 quand on a assez de donné
 
 ### 10.1 Évolution du contenu par phase
 
-| Phase | Produits live | Format des updates | Angle |
-|-------|-------------|-------------------|-------|
-| M1 (avril) | Vertical e-com (StoreMD, ProfitPilot, StoreMD module Listings) | Update verticale : chiffres e-com + learnings merchants | "We're building AI tools for Shopify merchants" |
-| M2 (mai) | E-com + Vertical agences (ClientPulse, ProfitPilot, AdAudit) | Update multi-vertical : dashboard 2 verticals + learning croisé | "We're a SaaS studio covering e-com and agencies" |
-| M3+ (juin) | E-com + Agences + Vertical creators (CreatorSuite, LeadQuiz) | Update portefeuille complet : dashboard 3 verticals + échec du mois + vision | "6 AI SaaS across 3 verticals — here's what we've learned" |
+| Phase | Produits live (prévus) | Format des updates | Angle |
+|-------|----------------------|-------------------|-------|
+| M1 (avril) | StoreMD (✅ live 14/04), ProfitPilot (upcoming) | Update verticale : données merchants + learnings StoreMD | "We're building AI tools for Shopify merchants" |
+| M2 (mai) | + ClientPulse, AdAudit | Update multi-vertical : dashboard 2 verticales + learning croisé | "We're a SaaS studio covering e-com and agencies" |
+| M3+ (juin) | + CreatorSuite, LeadQuiz | Update portefeuille complet : 6 agents sur 3 verticales + échec du mois + vision | "6 AI SaaS across 3 verticals: here's what we've learned" |
 
 ### 10.2 Show IH pour chaque nouveau SaaS
 
@@ -410,7 +410,7 @@ Les commentaires cold outreach sur IH s'adaptent au profil du prospect :
 |------------|---------------------|----------|
 | "My Shopify store is slow / no sales" | StoreMD | Diagnostic store + patterns terrain |
 | "Chargebacks are killing my margins" | ProfitPilot | Données terrain + solution |
-| "My product listings don't convert" | StoreMD module Listings | Patterns listings + insights |
+| "My product listings don't convert" | StoreMD (module Listings) | Patterns listings + insights |
 | "Agency reporting takes forever" | ClientPulse | Automation angle + insights |
 | "Can't figure out my real profit margin" | ProfitPilot | Données merchants + solution |
 | "Which ad campaign actually works?" | AdAudit | Attribution patterns + solution |

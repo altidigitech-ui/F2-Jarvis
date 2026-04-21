@@ -144,7 +144,7 @@
 2. **Reporting clients** — "je passe 5h/semaine à faire des rapports", "mes clients veulent des dashboards" → reporting automatisé IA
 3. **Pricing & proposals** — "comment pricer mes services", "comment faire des devis rapidement" → générateur de proposals IA
 4. **Content creation at scale** — "je dois produire du contenu pour 10 clients" → outil de batch content IA
-5. **SEO audit** — "comment montrer aux clients leur SEO est mauvais" → audit SEO automatisé (proche Leak Detector mais cible non-dev)
+5. **SEO audit** — "comment montrer aux clients leur SEO est mauvais" → audit SEO automatisé (proche StoreMD mais cible non-dev)
 6. **Social media management** — "je gère 15 comptes, c'est l'enfer" → scheduling + analytics simplifié
 7. **Facturation / invoicing** — process manuels, relances impayés
 
@@ -333,6 +333,6 @@
 
 | Question | Réponse attendue | Quand |
 |----------|-----------------|-------|
-| Que fait-on de Leak Detector et PayloadDiff ? | Maintenir en l'état ou kill ? | Batch vendredi 04/04 |
+| ~~Que fait-on de Leak Detector et PayloadDiff ?~~ | Décision prise : Leak Detector muté en StoreMD (✅ live 14/04/2026). PayloadDiff retiré du pipeline. | Décidé 14/04/2026 |
 | FicheProduitAI avance-t-il comme premier produit e-commerce ? | À valider après infiltration | Vendredi 18/04 |
 | Faut-il un compte Reddit/Facebook dédié ou les comptes perso ? | Comptes perso = plus authentique | Lundi 06/04 |

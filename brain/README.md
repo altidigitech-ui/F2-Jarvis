@@ -29,7 +29,7 @@ Source : `github.com/MemPalace/mempalace` (MIT).
 Extrait les faits, préférences, relations de tes conversations et docs. Forme la "mémoire de travail" queryable rapidement.
 
 Exemples de facts stockés :
-- "CAC Leak Detector = 32€ (avril 2026)"
+- "CAC StoreMD = 32€ (avril 2026)"
 - "Fabrice préfère GraphQL sur Shopify"
 - "Romain gère LinkedIn FR"
 - "StoreMD launch prévu semaine 17"

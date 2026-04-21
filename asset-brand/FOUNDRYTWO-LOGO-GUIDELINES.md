@@ -66,9 +66,9 @@ Chaque SaaS sous la bannière FoundryTwo a **son propre logo avec sa propre iden
 - **Typographie du nom** — le nom du SaaS peut utiliser une variante typo adaptée à son positionnement
 - **Style de sparks** — les particules peuvent varier (data, code, feu, électricité) selon l'identité du produit
 
-### 4.3 Exemple — Leak Detector
+### 4.3 Exemple — StoreMD (ex Leak Detector)
 
-Le logo Leak Detector respecte le thème forge (style cinématique, fond dark, sparks) tout en ayant sa propre identité visuelle liée à la détection et l'analyse. Il est reconnaissable seul ET identifiable comme produit FoundryTwo.
+Le logo Leak Detector (devenu StoreMD en avril 2026) respecte le thème forge (style cinématique, fond dark, sparks) tout en ayant sa propre identité visuelle liée à la détection et l'analyse. Il est reconnaissable seul ET identifiable comme produit FoundryTwo.
 
 > **Note :** Même principe pour chaque SaaS du portfolio (StoreMD, ProfitPilot, etc.)
 
@@ -92,7 +92,7 @@ Tous les fichiers dans `asset-brand/logo/f2/`
 | linkedin_cover_OPTION_A_impact.png | 1128×191 | Couverture LinkedIn ⚠️ dimensions non standard (1584×396 recommandé) — possiblement à corriger |
 | logo f2 marteau tiktok.png | 1080×1920 | Format TikTok vertical |
 
-### 5.2 Leak Detector
+### 5.2 Leak Detector (historique — muté en StoreMD)
 
 Tous les fichiers dans `asset-brand/logo/leak-detector/`
 

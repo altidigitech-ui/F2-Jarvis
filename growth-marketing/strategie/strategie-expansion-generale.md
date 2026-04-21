@@ -1,7 +1,7 @@
 # STRATÉGIE D'EXPANSION MARKETING — Source de Vérité
 
 **Date de création :** 31 mars 2026
-**Dernière mise à jour :** 05 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Statut :** ACTIF — Mode Explosion 24/7
 **Auteur :** Décision conjointe R + F, synthèse croisée Claude × Grok × GPT
 **Ce fichier est le PARENT.** Il prime sur tout autre document en cas de contradiction. Les fichiers plateforme (strategie-twitter.md, strategie-linkedin.md, strategie-ih.md, strategie-ph.md) héritent de ce fichier et ne le contredisent jamais.
@@ -34,16 +34,17 @@ R et F sont en mode marketing full-time depuis le 30 mars 2026. Il n'y a plus de
 
 | Verticale | Produit | Statut | Cible | Proposition de valeur |
 |-----------|---------|--------|-------|----------------------|
-| **M1 E-com** | **StoreMD** | À lancer (avril 2026) | Merchants Shopify/WooCommerce | Diagnostic complet de boutique e-com. Score /100, fixes actionnables, revenue leaks identifiés. |
-| **M1 E-com** | **ProfitPilot** | À lancer (avril 2026) | Merchants e-com (tous CMS) | Prévention chargebacks par IA. Détecte les transactions à risque avant expédition. |
-| **M2 Agences** | **ClientPulse** | Prévu mai 2026 | Agences marketing, freelances | Dashboard client automatisé. Rapports, alertes, satisfaction en temps réel. |
-| **M2 Agences** | **ProfitPilot** | Prévu mai 2026 | Agences, consultants growth | Suivi rentabilité par client/projet. Marge réelle vs estimée, alertes dérive. |
-| **M2 Agences** | **AdAudit** | Prévu mai 2026 | Agences paid media, freelances ads | Audit IA de campagnes pub. Détecte le gaspillage, suggère les optimisations. |
-| **M3 Créateurs** | **CreatorSuite** | Prévu juin 2026 | Content creators, influenceurs | Suite d'outils creator economy : analytics cross-plateforme, monetization insights. |
-| **M3 Créateurs** | **LeadQuiz** | Prévu juin 2026 | Solopreneurs, coaches, créateurs | Générateur de quiz lead magnet. Capture emails via quiz interactifs personnalisés. |
-| **M3 Créateurs** | **Wildcard** | Prévu juin 2026 | Défini selon données terrain | Slot flexible. Le produit sera défini par les signaux marché collectés en avril-mai. |
+| **M1 E-com** | **StoreMD** | ✅ Live (14/04/2026) | Merchants Shopify/WooCommerce | Diagnostic complet de boutique e-com. 43 checks, 5 modules, revenue leaks identifiés. |
+| **M1 E-com** | **ProfitPilot** | ⏳ Backlog (avril-mai 2026) | Merchants e-com (tous CMS) | Santé financière complète : profit réel, anti-fraude, tarifs. |
+| **M2 Agences** | **ClientPulse** | ⏳ Backlog (mai 2026) | Agences marketing, freelances | Dashboard client automatisé. Rapports, alertes, satisfaction en temps réel. |
+| **M2 Agences** | **AdAudit** | ⏳ Backlog (mai 2026) | Agences paid media, freelances ads | Audit IA de campagnes pub. Détecte le gaspillage, suggère les optimisations. |
+| **M3 Créateurs** | **CreatorSuite** | ⏳ Backlog (juin 2026) | Content creators, influenceurs | Suite d'outils creator economy : repurposing, analytics cross-plateforme. |
+| **M3 E-com + Coaches** | **LeadQuiz** | ⏳ Backlog (juin 2026) | Solopreneurs, coaches, créateurs | Générateur de quiz lead magnet. Capture emails via quiz interactifs personnalisés. |
+| **M3 Wildcard** | **Wildcard** | ⏳ Backlog (juin 2026) | Défini selon données terrain | Slot flexible. Le produit sera défini par les signaux marché collectés en avril-mai. |
 
-**Historique :** Leak Detector (LD) est LIVE depuis le 16/03/2026 sur leakdetector.tech. LD sera muté en StoreMD quand StoreMD lance — même ADN (audit IA), repositionné pour les merchants e-com.
+Source de vérité détails : `produits/STATUS.md` (racine).
+
+**Historique :** Leak Detector (leakdetector.tech) a été muté intégralement en StoreMD (storemd.vercel.app) le 14/04/2026. Module Health Check de StoreMD = héritage direct LD. Compte @LeakDetectorF2 archivé.
 
 **Cadence studio :** 2 SaaS lancés par mois, 1 verticale par mois. Chaque SaaS a son propre compte Twitter créé au fur et à mesure des lancements. Chaque SaaS est intégré dans le portfolio promu par TOUT l'écosystème.
 
@@ -56,7 +57,7 @@ R et F sont en mode marketing full-time depuis le 30 mars 2026. Il n'y a plus de
 | **R** | @delgado_ro72224 | Profil perso | R (Romain) | ✅ Actif | Voix Growth / E-com & Marketing. Cold outreach, engagement, DM, publication. Parle de TOUS les produits angle growth/revenue. Exemples : "Your Shopify store leaks 30% of revenue — here's the data from 50+ merchant audits." / "This agency doubled client retention with one dashboard change." |
 | **F** | @FabGangi | Profil perso | F (Fabrice) | ✅ Actif | Voix AI agents for e-com & creators. Cold outreach, engagement, DM, publication. Parle de TOUS les produits angle technique/automation. Exemples : "How we built a store diagnostic that catches 47 revenue leaks in 60 seconds." / "The AI agent that writes product listings 10x faster than a human." |
 | **F2** | @foundrytwo | Compte studio | R (gère) | ✅ Actif | Voix studio hub. Publication + cross-engagement + réponse mentions. PAS de cold, PAS de DM, PAS d'engagement proactif externe. Parle du PORTFOLIO complet. |
-| **LD** | @LeakDetectorF2 | Compte produit | R (gère) | À activer | Voix produit LD (sera muté en StoreMD). Publication + réponse mentions + QT contenu sectoriel e-com/CRO. PAS de cold, PAS de DM, PAS d'engagement proactif externe. Note : LD sera muté en StoreMD quand StoreMD lance. |
+| **StoreMD** | @StoreMD | Compte produit | R (gère) | ✅ Actif | Voix produit StoreMD. Publication + réponse mentions + QT contenu sectoriel e-com. PAS de cold, PAS de DM, PAS d'engagement proactif externe. |
 
 **Comptes produit créés au fur et à mesure des lancements.** Chaque nouveau SaaS du portfolio obtient son propre compte Twitter lors de la préparation du lancement (J-14). Géré alternativement par R ou F, mêmes règles que LD (publication + réactif uniquement).
 
@@ -96,7 +97,7 @@ R et F sont en mode marketing full-time depuis le 30 mars 2026. Il n'y a plus de
 
 | Personne | Rédaction | Comptes gérés (publication + gestion quotidienne) |
 |----------|-----------|--------------------------------------------------|
-| **R (Romain)** | R rédige R + F2 | Twitter : @delgado_ro72224, @foundrytwo, @LeakDetectorF2 — LinkedIn : Romain Delgado, page FoundryTwo — IH : @FoundryTwo — PH : profil perso R, profil @foundrytwo |
+| **R (Romain)** | R rédige R + F2 | Twitter : @delgado_ro72224, @foundrytwo, @StoreMD — LinkedIn : Romain Delgado, page FoundryTwo — IH : @FoundryTwo — PH : profil perso R, profil @foundrytwo |
 | **F (Fabrice)** | F rédige F | Twitter : @FabGangi, futurs comptes produit attribués à F — LinkedIn : Fabrice Gangitano — PH : profil perso F |
 
 ### 3.2 Ce que "gérer" veut dire
@@ -105,7 +106,7 @@ Gérer un compte = rédiger ou valider les posts, publier aux horaires, répondr
 
 ### 3.3 Ce que "gérer" ne veut PAS dire
 
-Gérer un compte ne signifie PAS vendre uniquement les produits associés à ce compte. R gère @LeakDetectorF2 mais R parle aussi de tous les produits du portfolio depuis @delgado_ro72224. F gère ses comptes produit attribués mais F parle aussi de tous les produits depuis @FabGangi. La gestion est opérationnelle. La vente est écosystémique.
+Gérer un compte ne signifie PAS vendre uniquement les produits associés à ce compte. R gère @StoreMD mais R parle aussi de tous les produits du portfolio depuis @delgado_ro72224. F gère ses comptes produit attribués mais F parle aussi de tous les produits depuis @FabGangi. La gestion est opérationnelle. La vente est écosystémique.
 
 ---
 
@@ -749,9 +750,9 @@ Le ghostban de R (@delgado_ro72224) est levé depuis le 29/03/2026. La reprise d
 
 | Fichier | Contenu | Statut |
 |---------|---------|--------|
-| `strategie-twitter.md` | Détails chirurgicaux Twitter : bios exactes, tons par compte, volumes par action, horaires, engagement protocol, cold process, DM process, cross-engagement, ramp-up, Grok prompts, vidéos/visuels, anti-patterns spécifiques | ⏳ À créer |
-| `strategie-linkedin.md` | Détails chirurgicaux LinkedIn : profils exacts (headline, About), tons par compte, volumes, commentaires AAA, DM séquences complètes, connexions, page company, anti-patterns spécifiques | ⏳ À créer |
-| `strategie-ih.md` | Détails chirurgicaux IH : profil, types de posts, framework 90/10, commentaires, timing, cross-plateforme | ⏳ À créer |
-| `strategie-ph.md` | Détails chirurgicaux PH : karma farming, pre-launch, timeline, maker comment, profils, cadence multi-produit | ⏳ À créer |
+| `strategie-twitter.md` | Détails chirurgicaux Twitter : bios exactes, tons par compte, volumes par action, horaires, engagement protocol, cold process, DM process, cross-engagement, ramp-up, Grok prompts, vidéos/visuels, anti-patterns spécifiques | ✅ Existant |
+| `strategie-linkedin.md` | Détails chirurgicaux LinkedIn : profils exacts (headline, About), tons par compte, volumes, commentaires AAA, DM séquences complètes, connexions, page company, anti-patterns spécifiques | ✅ Existant |
+| `strategie-ih.md` | Détails chirurgicaux IH : profil, types de posts, framework 90/10, commentaires, timing, cross-plateforme | ✅ Existant |
+| `strategie-ph.md` | Détails chirurgicaux PH : karma farming, pre-launch, timeline, maker comment, profils, cadence multi-produit | ✅ Existant |
 
 **Règle d'héritage :** chaque fichier enfant hérite de CE fichier et ne duplique JAMAIS son contenu. Si une règle est ici, elle n'est pas répétée dans le fichier plateforme. Si un détail est spécifique à une plateforme, il va dans le fichier plateforme, pas ici.

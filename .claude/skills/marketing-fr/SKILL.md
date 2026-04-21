@@ -20,7 +20,7 @@ when: on-demand
 Observation concrète ou question provocante. Pas de "Hot take 🔥".
 
 Exemples OK :
-- "On a lancé Leak Detector en 47 jours. Voilà ce qu'on a appris."
+- "On a lancé StoreMD en 47 jours. Voilà ce qu'on a appris."
 - "Shopify a tué son API REST en avril 2025. Personne n'en parle."
 - "J'ai vu 200 landing pages SaaS cette semaine. 80% font la même erreur."
 
@@ -76,7 +76,7 @@ et t'alerte si un champ critique change sans raison.
 
 On le lance fin avril. Early access : payloaddiff.com.
 
-Retour sur Leak Detector dans un prochain post.
+Retour sur StoreMD dans un prochain post.
 ```
 
 ## Pair avec

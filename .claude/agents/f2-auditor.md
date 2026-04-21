@@ -53,7 +53,7 @@ Produit dans `tracking/decisions-log.md` (entrée YYYY-MM-DD-post-mortem-<slug>)
 ```markdown
 # Post-mortem — <titre>
 **Date** : 2026-04-17
-**Cycle** : <ex: Lancement Leak Detector, 15 février - 28 février>
+**Cycle** : <ex: Lancement StoreMD, 14 avril 2026>
 **Auteur** : Fabrice (via f2-auditor)
 
 ## Stated goal

@@ -127,7 +127,7 @@ Note : page LinkedIn F2 = vitrine statique. 0-1 repost/mois. < 15 min/mois.
 |-------|--------|--------|
 | Handle | @FoundryTwo | ✅ |
 | Bio | SaaS studio building 6 AI agents for e-com, agencies & creators. Building in public. | À mettre à jour |
-| Product | Leak Detector (live, en mutation) + pipeline 6 SaaS | À mettre à jour |
+| Product | StoreMD (✅ live 14/04/2026) — portfolio 6 AI agents | ✅ Actif |
 
 ---
 

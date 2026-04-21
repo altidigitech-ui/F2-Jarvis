@@ -58,7 +58,7 @@ Usage :
 ### Communautés
 - F2-core (strategie/, produits/, patterns/)
 - StoreMD (saas/storemd/)
-- Leak Detector (saas/leak-detector/)
+- StoreMD (saas/storemd/)
 - Infra (ops/, .claude/)
 - Brain (brain/)
 

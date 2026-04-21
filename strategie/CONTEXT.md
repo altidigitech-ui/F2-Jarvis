@@ -1,7 +1,7 @@
 # CONTEXT — Distribution-First Method (V2)
 
 **Source de vérité** pour la stratégie FoundryTwo.
-**Dernière mise à jour :** 03 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Utilisé par :** F (Fabrice), R (Romain), Claude
 **Statut :** ACTIF — remplace TOUT ce qui précède
 

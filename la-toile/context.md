@@ -54,7 +54,7 @@ Altistone (Holding — personne morale, invisible)
     └── FoundryTwo (marque publique, studio, storytelling)
         │
         ├── VERTICAL M1 — E-COMMERCE (avril 2026)
-        │   ├── StoreMD (ex Leak Detector — mutation en cours)
+        │   ├── StoreMD (✅ live 14/04/2026 — ex Leak Detector, mutation complétée)
         │   └── ProfitPilot
         │
         ├── VERTICAL M2 — AGENCIES / MARKETING (mai 2026)
@@ -67,7 +67,7 @@ Altistone (Holding — personne morale, invisible)
         │   ├── LeadQuiz
         │   └── Wildcard (à définir)
         │
-        └── [Historique] Leak Detector (SaaS #1 — lancé, mutation StoreMD)
+        └── [Historique] Leak Detector (lancé 16/03/2026 — muté en StoreMD le 14/04/2026)
 ```
 
 **Règle** : le public interagit avec FoundryTwo et les produits. ALTI = le bureau. F2 = le showroom.

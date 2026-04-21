@@ -62,7 +62,7 @@ Pertinent ou rien. Pas de "THIS" tout court.
 ## Exemple thread
 
 ```
-1/ We migrated Leak Detector from Shopify REST to GraphQL in 3 days.
+1/ We migrated StoreMD from Shopify REST to GraphQL in 3 days.
 Here's what nobody tells you.
 
 2/ The "read_reports" + ShopifyQL combo replaces 90% of REST analytics endpoints.

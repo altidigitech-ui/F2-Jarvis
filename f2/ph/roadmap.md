@@ -14,7 +14,7 @@
 
 | Mois | Vertical | Produits | Lancements PH | Karma R+F à ce stade |
 |------|----------|----------|----------------|----------------------|
-| Avril | E-com (M1) | StoreMD, StoreMD module Listings, ProfitPilot | 1-3 lancements (espacés de 1-2 semaines) | En construction (farming + historique LD) |
+| Avril | E-com (M1) | StoreMD, ProfitPilot | 1-2 lancements (espacés de 1-2 semaines) | En construction (farming + historique LD) |
 | Mai | Agences (M2) | ClientPulse, ProfitPilot, AdAudit | 1-3 lancements | Moyen (3+ lancements + karma cumulé) |
 | Juin+ | Creators (M3) | CreatorSuite, LeadQuiz, Wildcard | 1-3 lancements | Fort (6+ lancements + karma cumulé) |
 
@@ -50,11 +50,10 @@ Le full process 4-8 semaines s'applique maintenant. Avec 3 SaaS e-com à lancer 
 
 | Produit | Semaine de lancement estimée | Pre-launch | Ship page |
 |---------|------------------------------|------------|-----------|
-| StoreMD | Quand MVP live | Full process | ⏳ |
-| StoreMD module Listings | +1-2 semaines après StoreMD | Full process | ⏳ |
-| ProfitPilot | +1-2 semaines après StoreMD module Listings | Full process | ⏳ |
+| StoreMD | ✅ Live 14/04/2026 | Fait | ✅ |
+| ProfitPilot | +1-2 semaines après StoreMD | Full process | ⏳ |
 
-### 3.3 Maker comment M1 (exemple StoreMD)
+### 3.3 Maker comment M1 — StoreMD
 
 ```
 Hey PH! 👋 Romain here, co-founder of FoundryTwo.

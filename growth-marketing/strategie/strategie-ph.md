@@ -1,7 +1,7 @@
 # STRATÉGIE PRODUCT HUNT — Détails Chirurgicaux
 
 **Date de création :** 02 avril 2026
-**Dernière mise à jour :** 05 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `strategie-expansion-generale.md` (source de vérité parent)
 **S'appuie sur :** `growth-marketing/ph/algo.md` (mécanique plateforme, système de points, featuring, timing)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les règles globales (types de comptes, anti-patterns généraux, scalabilité), se référer au parent.
@@ -14,9 +14,9 @@
 
 | Compte | Handle | Type | Géré par | Rôle | Statut |
 |--------|--------|------|----------|------|--------|
-| **F2** | @foundrytwo | Studio | R | Lance chaque SaaS. Maker comment. Réponses aux commentaires. | ⏳ Profil à créer |
-| **R** | Profil perso | Maker | R | Karma farming. Listé comme maker sur chaque listing F2. | ⏳ Profil à créer |
-| **F** | Profil perso | Maker | F | Karma farming. Listé comme maker sur chaque listing F2. | ⏳ Profil à créer |
+| **F2** | @foundrytwo | Studio | R | Lance chaque SaaS. Maker comment. Réponses aux commentaires. | ✅ Profils actifs, karma faible à construire |
+| **R** | Profil perso | Maker | R | Karma farming. Listé comme maker sur chaque listing F2. | ✅ Profils actifs, karma faible à construire |
+| **F** | Profil perso | Maker | F | Karma farming. Listé comme maker sur chaque listing F2. | ✅ Profils actifs, karma faible à construire |
 
 **Les profils R et F ne lancent RIEN.** Ils ne publient rien. Ils existent pour 2 raisons uniquement :
 1. **Karma farming :** en upvotant et commentant régulièrement, R et F construisent un karma élevé

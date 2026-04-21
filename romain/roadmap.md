@@ -1,6 +1,6 @@
 # ROADMAP R — Progression opérationnelle @delgado_ro72224
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `romain/context.md` (cadre opérationnel, planning, projet Claude, historique LD)
 **Se synchronise avec :** `growth-marketing/roadmap.md` (coordination cross-plateforme)
 **Cadence cible :** 2 SaaS/mois (répartis sur 3 verticals : e-com, agences, creators).
@@ -13,7 +13,7 @@
 
 | Phase | Période | Produits distribués (FT) | Focus R |
 |-------|---------|--------------------------|---------|
-| 1 | Avril 2026 | LD (actif) + StoreMD, ProfitPilot (quand live) | Warming e-com Twitter/LinkedIn + brand building. Cold outreach insights e-com. |
+| 1 | Avril 2026 | StoreMD (✅ live 14/04), ProfitPilot (backlog) | Warming e-com Twitter/LinkedIn + brand building. Cold outreach insights e-com. |
 | 2 | Mai 2026 | + ClientPulse, ProfitPilot, AdAudit | Expansion agences Twitter/LinkedIn. Cold outreach agences. Contenu multi-vertical. |
 | 3 | Juin-juillet 2026 | + CreatorSuite, LeadQuiz, Wildcard | Scale les 3 verticals. Autorité "expert growth multi-vertical". |
 
@@ -47,7 +47,7 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Remplacé p
 
 ### 4.1 Phase 1 — Avril 2026 : Warming e-com + brand building
 
-**Produits distribués :** LD (actif, en mutation vers StoreMD) + StoreMD, ProfitPilot quand live.
+**Produits distribués :** StoreMD (✅ live 14/04/2026) + ProfitPilot quand live.
 
 **Focus R :** installer le brand building e-com sur Twitter/LinkedIn. Construire la présence de R comme expert growth e-com. Le cold outreach passe des audits LD aux insights terrain.
 

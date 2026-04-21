@@ -1,6 +1,6 @@
 # CONTEXT MARKETING — Source de vérité
 
-**Dernière mise à jour : 04 avril 2026**
+**Dernière mise à jour : 21 avril 2026**
 
 **Hérite de :** `context.md` (racine — source de vérité repo, architecture, rôles, règles transversales)
 **Ce fichier contient :** structure corporate, pipeline SaaS, modèle funnel, rôles par compte, comptes, taglines, audience, stratégie d'acquisition cold outreach, règles opérationnelles, décisions stratégiques.
@@ -13,10 +13,9 @@
 Altistone (Holding — personne morale)
 └── Alti DigiTech (SASU — société opérationnelle, production digitale)
     └── FoundryTwo (Studio / marque publique — image de marque, storytelling)
-        ├── Leak Detector (SaaS #0 — LIVE 16/03/2026, en mutation vers StoreMD)
-        ├── StoreMD, ProfitPilot (Mois 1 — E-commerce)
-        ├── ClientPulse, AdAudit (Mois 2 — Agences + E-com)
-        └── CreatorSuite, LeadQuiz, Wildcard (Mois 3 — Creators + E-com)
+        ├── StoreMD (✅ Live 14/04/2026 — héritage Leak Detector muté), ProfitPilot (M1 — E-commerce)
+        ├── ClientPulse, AdAudit (M2 — Agences)
+        └── CreatorSuite, LeadQuiz, Wildcard (M3 — Creators + E-com)
 ```
 
 | Entité | Rôle | Visibilité publique |
@@ -24,7 +23,7 @@ Altistone (Holding — personne morale)
 | Altistone | Holding, détient Alti DigiTech | Invisible — back-office uniquement |
 | Alti DigiTech | SASU opérationnelle, domaines, contrats, facturation | Invisible — entité juridique uniquement |
 | FoundryTwo | Studio public, image de marque, communauté, storytelling | **Visible** — toute communication passe par FoundryTwo |
-| Leak Detector | Premier SaaS, en mutation vers StoreMD | **Visible** — produit avec sa propre identité |
+| StoreMD | SaaS #1, live depuis 14/04/2026 (héritage Leak Detector) | **Visible** — produit avec sa propre identité |
 
 **Règle fondamentale :** le public interagit avec FoundryTwo (le studio) et les produits. Il ne voit jamais Altistone ni Alti DigiTech. La propriété juridique reste invisible.
 
@@ -34,8 +33,7 @@ Altistone (Holding — personne morale)
 
 | # | Produit | Vertical | Mois | Statut |
 |---|---------|----------|------|--------|
-| 0 | Leak Detector | (en mutation vers StoreMD) | Actif | LIVE 16/03/2026 (~8 signups, 0€ MRR) |
-| 1 | StoreMD | E-commerce | Mois 1 (avril) | En développement |
+| 1 | StoreMD | E-commerce | Mois 1 (avril) | ✅ LIVE 14/04/2026 (mutation de Leak Detector) |
 | 2 | ProfitPilot | E-commerce | Mois 1 | Planifié |
 | 3 | ClientPulse | Agences/Freelancers | Mois 2 (mai) | Planifié |
 | 4 | AdAudit | Agences | Mois 2 | Planifié |

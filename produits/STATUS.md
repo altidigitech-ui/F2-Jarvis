@@ -1,11 +1,11 @@
 # STATUS PRODUITS
 
-Dernière mise à jour : 08/04/2026
+Dernière mise à jour : 21/04/2026
 Quand F finit un build → mettre à jour ce fichier → R commence la distribution.
 
 | # | Produit | Statut | Mois | Vertical | Features | Modules | Distribué dans |
 |---|---------|--------|------|----------|----------|---------|----------------|
-| 1 | StoreMD | ⏳ Backlog | Mois 1 | E-commerce | 43 | 5 (Health+Listings+Agentic+Compliance+Browser) | r/shopify, Shopify Entrepreneurs FB |
+| 1 | StoreMD | ✅ Live (14/04/2026) | Mois 1 | E-commerce | 43 | 5 (Health+Listings+Agentic+Compliance+Browser) | r/shopify, Shopify Entrepreneurs FB |
 | 2 | ProfitPilot | ⏳ Backlog | Mois 1 | E-commerce | 41 | 4 (Profit+Anti-Fraude+Intelligence+Tarifs) | r/shopify, Shopify Entrepreneurs FB |
 | 3 | ClientPulse | ⏳ Backlog | Mois 2 | Agences/Freelancers | 6 modules | 6 | r/digital_marketing, r/freelance |
 | 4 | AdAudit | ⏳ Backlog | Mois 2 | Agences | 10 | — | r/digital_marketing, r/PPC |
@@ -19,6 +19,9 @@ Statuts : ⏳ Backlog | 🔨 En cours | ✅ Live | 🔴 Killed
 - ListingLab (14 features) → Module Listings de StoreMD
 - ChargebackShield (18 features) → Module Anti-Fraude de ProfitPilot
 - Raison : anti-app-bloat (3 apps Shopify au lieu de 5), plus de valeur par produit, cross-sell plus clair
+
+**Décisions mutation (14/04/2026) :**
+- Leak Detector (site leakdetector.tech) → muté intégralement en StoreMD (storemd.vercel.app). Module Health Check = héritage direct LD. Compte Twitter @LeakDetectorF2 archivé.
 
 Specs détaillées : voir MUTATIONS.md et NOUVEAUX.md dans ce dossier.
 Total features Shopify : 96 (StoreMD 43 + ProfitPilot 41 + LeadQuiz 12)

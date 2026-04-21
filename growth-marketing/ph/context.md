@@ -168,8 +168,7 @@ while you sleep.
 Launch offer:
 🎁 PH-only: [deal exclusif — ex: 3 mois Pro gratuit, 50% first year]
 
-We're building in public — every number, every failure.
-This is product #[X] out of 9. [Mention du portefeuille si X > 1.]
+We ship AI agents that solve real problems. This is product #[X] from our portfolio of 6 across 3 verticals. Friday studio updates when we have meaningful product data to share.
 
 Would love your feedback:
 1. [Question spécifique liée au produit]

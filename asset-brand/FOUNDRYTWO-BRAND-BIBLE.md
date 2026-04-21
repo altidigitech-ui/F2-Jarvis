@@ -389,8 +389,8 @@ Directive : insight basé uniquement sur des données réelles issues de nos pro
 | Bannière Twitter F2 | 1500×500 PNG | asset-brand/logo/f2/twitter_banner_foundrytwo.png |
 | Couverture LinkedIn F2 | 1128×191 PNG | asset-brand/logo/f2/linkedin_cover_OPTION_A_impact.png |
 | Logo TikTok F2 | 1080×1920 PNG | asset-brand/logo/f2/logo f2 marteau tiktok.png |
-| Logo Leak Detector | 1024×1024 PNG | asset-brand/logo/leak-detector/logo LD gpt.png |
-| Bannière Twitter Leak Detector | 1500×500 PNG | asset-brand/logo/leak-detector/leakdetector_twitter_banner.png |
+| Logo Leak Detector (historique) | 1024×1024 PNG | asset-brand/logo/leak-detector/logo LD gpt.png |
+| Bannière Twitter Leak Detector (historique) | 1500×500 PNG | asset-brand/logo/leak-detector/leakdetector_twitter_banner.png |
 
 **⏳ Reste à faire :**
 

@@ -1,7 +1,7 @@
 # STRATEGIE TWITTER/X -- Details Chirurgicaux
 
 **Date de creation :** 31 mars 2026
-**Derniere mise a jour :** 05 avril 2026
+**Derniere mise a jour :** 21 avril 2026
 **Herite de :** `strategie-expansion-generale.md` (source de verite parent)
 **S'appuie sur :** `growth-marketing/twitter/algo.md` (mecanique algorithmique)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les regles globales (types de comptes, anti-patterns generaux, funnel DM benchmarks), se referer au parent.
@@ -10,16 +10,17 @@
 
 ## 1. L'ECOSYSTEME TWITTER -- 4 COMPTES + COMPTES PRODUIT AU FIL DES LANCEMENTS
 
+> **Note historique :** @LeakDetectorF2 a ete mute en @StoreMD le 14/04/2026. Le compte @LeakDetectorF2 est archive.
+
 | # | Compte | Handle | Type | Gere par | Premium | Statut |
 |---|--------|--------|------|----------|---------|--------|
 | 1 | **R** | @delgado_ro72224 | Profil perso | R | Actif | ACTIF depuis 16/03 |
 | 2 | **F** | @FabGangi | Profil perso | F | Actif | ACTIF depuis 16/03 |
 | 3 | **F2** | @foundrytwo | Studio hub | R (gere) | Actif | ACTIF depuis 16/03 |
-| 4 | **LD** | @LeakDetectorF2 | Produit | R (gere) | A activer | INACTIF -- a activer semaine 3 |
+| 4 | **StoreMD** | @StoreMD | Produit | R (gere) | Actif | ACTIF depuis 14/04 (remplace @LeakDetectorF2) |
 
-Comptes produit crees au fur et a mesure des lancements SaaS (StoreMD, ProfitPilot, etc.).
-
-> **Note :** LD sera mute en StoreMD quand StoreMD lance.
+Comptes produit crees au fur et a mesure des lancements SaaS (ProfitPilot, ClientPulse, etc.).
+Source de verite portfolio : `produits/STATUS.md` (racine).
 
 ---
 
@@ -73,21 +74,19 @@ Comptes produit crees au fur et a mesure des lancements SaaS (StoreMD, ProfitPil
 - Liste de produits mise a jour au fil des lancements (max 2-3 nommes, le reste en "6 AI agents")
 - Quand MRR > $0 -> ajouter le MRR dans la bio : "-- $XXX MRR"
 
-### 2.4 LD -- @LeakDetectorF2
+### 2.4 StoreMD -- @StoreMD
 
-Ce compte N'A JAMAIS PUBLIE. Bio a creer de zero.
+Compte produit actif depuis le 14/04/2026. Remplace @LeakDetectorF2 (mute et archive).
 
 | Champ | Valeur |
 |-------|--------|
-| **Nom affiche** | Leak Detector |
-| **Bio** | AI-powered landing page audit in 60 seconds. Score /100 across 8 categories. Fix what's leaking revenue. -- Built by @foundrytwo -- Free: 3 audits/month |
-| **Lien** | leakdetector.tech |
-| **Avatar** | Logo Leak Detector |
-| **Banner** | Screenshot du dashboard LD avec un score, ou visuel before/after |
+| **Nom affiche** | StoreMD |
+| **Bio** | AI that diagnoses your Shopify store health in 60 seconds. 43 checks across 5 modules. Free scan: storemd.vercel.app -- Built by @foundrytwo |
+| **Lien** | storemd.vercel.app |
+| **Avatar** | Logo StoreMD |
+| **Banner** | Screenshot du dashboard StoreMD avec un score, ou visuel before/after |
 | **Emplacement** | -- (pas necessaire pour un compte produit) |
-| **Premium** | A activer -- obligatoire avant le 1er post |
-
-> **Note :** Ce compte sera mute en @StoreMD quand StoreMD lance. En attendant, LD reste actif.
+| **Premium** | Actif |
 
 ---
 
@@ -189,7 +188,7 @@ Ce compte N'A JAMAIS PUBLIE. Bio a creer de zero.
 
 **F2 ne provoque JAMAIS, ne donne JAMAIS d'opinion, ne fait JAMAIS de cold outreach.**
 
-### 3.4 LD -- Voix Produit Leak Detector
+### 3.4 StoreMD -- Voix Produit @StoreMD
 
 **Pronom :** Pas de pronom personnel. Le produit parle de lui-meme a la 3eme personne ou avec des formulations impersonnelles.
 **Ton :** Factuel, produit, data-driven. Demo en action.
@@ -197,20 +196,18 @@ Ce compte N'A JAMAIS PUBLIE. Bio a creer de zero.
 
 | Autorise | Interdit |
 |----------|----------|
-| Leak Detector, the audit, the score, the report | I, we, our |
-| X pages analyzed, average score, top leaks | opinions, provocations, hot takes |
-| Paste any URL. Get your score in 60 seconds. | "You should try us!" |
-| data from X audits, patterns across X pages | comparaisons avec des concurrents |
+| StoreMD, the scan, the score, the report | I, we, our |
+| X stores scanned, average score, top issues found | opinions, provocations, hot takes |
+| Scan your store in 60 seconds. | "You should try us!" |
+| data from X scans, patterns across X stores | comparaisons avec des concurrents |
 
-**Exemples de posts LD :**
-- "200 pages analyzed. Average score: 67/100. The #1 leak across all pages: unclear headlines. Here's the breakdown by category."
-- "New: re-analyze the same page after fixing your leaks. Watch your score move from 52 to 81."
-- "What 8 categories does Leak Detector audit? Social Proof -- CTA -- Copy -- Urgency -- Trust -- Layout -- Mobile UX -- Page Speed. Paste your URL: leakdetector.tech [lien en reply]"
-- [Screenshot du dashboard avec un score] "Score: 45/100. Top leak: zero social proof above the fold."
+**Exemples de posts StoreMD :**
+- "200 stores scanned. Average health score: 58/100. The #1 issue: ghost billing from unused apps. Average cost: $127/month."
+- "New: re-scan after fixing issues. Watch your store health score move from 52 to 81."
+- "What does StoreMD check? 43 checks across 5 modules: Health, Listings, Agentic, Compliance, Browser. Scan yours free: storemd.vercel.app [lien en reply]"
+- [Screenshot du dashboard avec un score] "Store health: 45/100. Top issue: 14 apps injecting JavaScript on every page load."
 
-**LD ne parle JAMAIS d'un autre produit. LD = voix de LD uniquement.**
-
-> **Note :** Ce compte sera mute en @StoreMD quand StoreMD lance. Le ton et le positionnement seront adaptes a ce moment-la.
+**StoreMD ne parle JAMAIS d'un autre produit. StoreMD = voix de StoreMD uniquement.**
 
 ---
 
@@ -322,7 +319,7 @@ Les horaires sont echelonnes pour que chaque post ait sa propre golden hour de 6
 
 | Heure CET (indicatif) | Compte | Raison |
 |------------------------|--------|--------|
-| 10h00 | **LD** (@LeakDetectorF2) | Matinee EU, audience B2B EU qui demarre. |
+| 10h00 | **StoreMD** (@StoreMD) | Matinee EU, audience B2B EU qui demarre. |
 | 12h00 | **F** (@FabGangi) | Pause dejeuner EU, audience dev. |
 | 14h00 | **F2** (@foundrytwo) | Audience US East active. |
 | 15h00 | **R** (@delgado_ro72224) | Matin US West, bureau US East. Audience growth/e-com US maximale. |
@@ -628,7 +625,7 @@ Ces anti-patterns s'ajoutent aux anti-patterns globaux du fichier parent.
 | 3+ hashtags | -40% reach. Signal spam. | 0-1 hashtag. Max absolu 2. Jamais de hashtags generiques (#success #business). |
 | RT massif de ses propres posts | Percu comme spam. L'algo penalise l'auto-amplification excessive. | 1 RT max de son propre post (via un autre compte eco). |
 | Supprimer et reposter le meme contenu | Trigger spam detection. Le contenu est flagged comme duplique. | Laisser le post tel quel. Meme un post rate. |
-| Mentionner @LeakDetectorF2 dans chaque post R | Percu comme coordination artificielle. | Mention naturelle 1-2x/semaine max. Le profil fait le travail de redirection. |
+| Mentionner @StoreMD dans chaque post R | Percu comme coordination artificielle. | Mention naturelle 1-2x/semaine max. Le profil fait le travail de redirection. |
 
 ---
 

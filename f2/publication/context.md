@@ -18,7 +18,7 @@ FoundryTwo est un **studio SaaS** créé par deux builders autodidactes basés �
 |------|--------|
 | **Fondateurs** | R (Romain — growth, CRO, marketing) et F (Fabrice — CTO, technique, code) |
 | **Modèle** | Studio SaaS multi-vertical : F code les SaaS pendant que R distribue et lance |
-| **Portfolio** | 6 AI agents répartis sur 3 verticals. Leak Detector = SaaS #0 actif, en mutation vers StoreMD. |
+| **Portfolio** | 6 AI agents répartis sur 3 verticals. StoreMD ✅ live depuis 14/04/2026 (mutation complétée de Leak Detector). 5 autres en backlog. |
 | **Cadence** | 2 SaaS/mois. Chaque produit est un nouveau lancement. |
 | **Positionnement** | Le studio, pas un seul produit. @foundrytwo = FoundryTwo le studio multi-vertical, pas "les gars de Leak Detector" |
 | **Cible** | Merchants Shopify, freelancers marketing, content creators (NON-devs) |
@@ -341,7 +341,7 @@ Le contenu F2 évolue avec le nombre de produits live et les verticals couverts 
 
 | Phase | Contenu dominant | Positionnement |
 |-------|-----------------|---------------|
-| Phase 1 (LD actif + 3 en dev) | Données terrain, build in public portfolio, insights e-com | "We're building 6 AI agents for e-com, agencies, and creators." |
+| Phase 1 (StoreMD live + 5 en backlog) | Données terrain, build in public portfolio, insights e-com | "We're building 6 AI agents for e-com, agencies, and creators." |
 | Phase 2 (3-6 SaaS live) | Cross-produit, cross-vertical, métriques portfolio | "AI agent studio, multi-vertical." |
 | Phase 3 (6 SaaS) | Studio complet, dashboard portfolio, guides cross-produit | "The studio that ships 3 AI agents per month." |
 
@@ -395,17 +395,16 @@ Le studio construit 6 AI agents répartis sur 3 verticals. Détails produits : v
 
 | Vertical | SaaS | One-liner | Statut |
 |----------|------|-----------|--------|
-| E-com Shopify | StoreMD | Diagnostic complet de store Shopify propulsé par l'IA | En dev (Mois 1) |
-| E-com Shopify | ProfitPilot | Santé financière complète (profit + anti-fraude + tarifs) | Planifié (Mois 1) |
-| Agences/Freelancers | ClientPulse | Suivi satisfaction client automatisé par IA | Planifié (Mois 2) |
-| Agences | AdAudit | Audit de campagnes publicitaires par IA | Planifié (Mois 2) |
-| Creators | CreatorSuite | Suite de productivité pour content creators par IA | Planifié (Mois 3) |
-| E-com + Coaches | LeadQuiz | Génération de leads par quiz interactif propulsé par IA | Planifié (Mois 3) |
-| À déterminer | Wildcard | SaaS #9 — vertical et concept à définir | Planifié (Mois 3) |
+| E-com Shopify | StoreMD | Diagnostic complet de store Shopify propulsé par l'IA | ✅ Live (14/04/2026) |
+| E-com Shopify | ProfitPilot | Santé financière complète (profit + anti-fraude + tarifs) | ⏳ Backlog |
+| Agences/Freelancers | ClientPulse | Suivi satisfaction client automatisé par IA | ⏳ Backlog |
+| Agences | AdAudit | Audit de campagnes publicitaires par IA | ⏳ Backlog |
+| Creators | CreatorSuite | Suite de productivité pour content creators par IA | ⏳ Backlog |
+| E-com + Coaches | LeadQuiz | Génération de leads par quiz interactif propulsé par IA | ⏳ Backlog |
 
-### 10.2 Leak Detector (SaaS #0)
+### 10.2 Historique — Leak Detector (SaaS #0)
 
-Leak Detector est ACTIF et en mutation vers StoreMD. Lancé le 16/03/2026, ~8 signups, 0 MRR. Le concept évolue d'un audit de landing page vers un diagnostic complet de store Shopify.
+Leak Detector a été lancé le 16/03/2026 (~8 signups, 0 MRR), puis muté en StoreMD (✅ live 14/04/2026). Le concept a évolué d'un audit de landing page vers un diagnostic complet de store Shopify. Mutation complétée.
 
 ### 10.3 Règles produit
 

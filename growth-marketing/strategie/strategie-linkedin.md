@@ -1,7 +1,7 @@
 # STRATEGIE LINKEDIN — Details Chirurgicaux
 
 **Date de creation :** 2 avril 2026
-**Derniere mise a jour :** 05 avril 2026
+**Derniere mise a jour :** 21 avril 2026
 **Herite de :** `strategie-expansion-generale.md` (source de verite parent)
 **S'appuie sur :** `growth-marketing/linkedin/algo.md` (mecanique algorithmique)
 **Ce fichier ne duplique PAS le contenu du parent.** Pour les regles globales (types de comptes, anti-patterns generaux, funnel DM benchmarks), se referer au parent.
@@ -137,17 +137,15 @@ Follow us for honest founder content and build updates.
 
 | Produit | Description | Vertical | Statut |
 |---------|-------------|----------|--------|
-| ProfitPilot | AI-powered chargeback defense for Shopify merchants | E-commerce | A ajouter |
-| SpeedAudit | Store speed diagnostics — finds app bloat killing conversions | E-commerce | A ajouter |
-| InventoryPulse | Predictive inventory alerts before stockouts | E-commerce | A ajouter |
-| AdScoreAI | Ad creative scoring before you spend | Marketing | A ajouter |
-| EmailCleanup | List hygiene automation for better deliverability | Marketing | A ajouter |
-| ReportFlash | Client reports generated in 3 minutes, not 15 hours | Marketing | A ajouter |
-| ClipEngine | Long-form to short-form content repurposing | Content | A ajouter |
-| ThumbnailRank | AI thumbnail A/B testing for creators | Content | A ajouter |
-| CaptionDraft | Platform-native caption generation | Content | A ajouter |
+| StoreMD | AI that diagnoses your Shopify store health in 60 seconds | E-commerce | ✅ Live (depuis 14/04/2026) |
+| ProfitPilot | Know your real profit margin, not just revenue | E-commerce | À ajouter au launch |
+| ClientPulse | Client reporting that writes itself, for agencies | Agences | À ajouter au launch |
+| AdAudit | Find out which campaign actually drove the last sale | Agences | À ajouter au launch |
+| CreatorSuite | One video → 5 platforms in 15 minutes | Creators | À ajouter au launch |
+| LeadQuiz | Interactive quizzes that qualify leads, AI-generated | E-com + Coaches | À ajouter au launch |
 
 Chaque nouveau agent = 1 nouvelle entree dans Products au moment du launch.
+Source de verite : produits/STATUS.md (racine).
 
 **Associer les profils R et F comme employes** de FoundryTwo pour que "@FoundryTwo" dans leurs headlines pointe vers la page.
 
@@ -604,11 +602,11 @@ Le produit/agent a pitcher depend du PROFIL du prospect, pas du compte qui outre
 
 | Profil prospect | Vertical/Agent a pitcher | Qui outreache | Framing |
 |----------------|-------------------------|---------------|---------|
-| Shopify merchant (operations) | E-commerce agents (ProfitPilot, SpeedAudit, InventoryPulse) | R (angle business) | "You're losing $800/month to chargebacks. 71% is friendly fraud you could fight automatically." |
-| Shopify merchant (growth) | E-commerce agents (SpeedAudit) | R (angle business) | "Your store loads in 4+ seconds. Every second above 3s costs 7% in conversions. We found the exact apps causing it." |
-| Agency owner | Marketing agents (ReportFlash, AdScoreAI, EmailCleanup) | R (angle business) | "You bill 15h/month for client reports. What if that took 3 minutes instead?" |
-| Freelance marketer | Marketing agents (AdScoreAI, EmailCleanup) | R (angle business) | "You're scoring ad creatives by gut. What if an AI told you the click-through probability before you spend?" |
-| Content creator | Content agents (ClipEngine, ThumbnailRank, CaptionDraft) | R (angle business) or F (angle tech) | "You spend 8 hours on a video and 0 minutes repurposing. That's 80% of distribution left on the table." |
+| Shopify merchant (operations) | E-commerce agents (StoreMD, ProfitPilot) | R (angle business) | "You're losing $800/month to chargebacks. 71% is friendly fraud you could fight automatically." |
+| Shopify merchant (growth) | E-commerce agents (StoreMD, AdAudit) | R (angle business) | "Your store loads in 4+ seconds. Every second above 3s costs 7% in conversions. We found the exact apps causing it." |
+| Agency owner | Marketing agents (ClientPulse, AdAudit, LeadQuiz) | R (angle business) | "You bill 15h/month for client reports. What if that took 3 minutes instead?" |
+| Freelance marketer | Marketing agents (AdAudit, LeadQuiz) | R (angle business) | "You're scoring ad creatives by gut. What if an AI told you the click-through probability before you spend?" |
+| Content creator | Content agents (CreatorSuite) | R (angle business) or F (angle tech) | "You spend 8 hours on a video and 0 minutes repurposing. That's 80% of distribution left on the table." |
 | CTO / tech lead e-commerce | All verticals (technical angle) | F (angle technique) | "We're building 6 AI agents on shared Shopify infrastructure. Curious how you handle API rate limits at scale." |
 | Indie hacker / builder | All verticals | F d'abord (pair technique) puis R | Sequence croisee |
 
@@ -1110,7 +1108,7 @@ Les profils perso R et F parlent de TOUS les agents (chacun avec son angle), exa
 
 ### 13.4 Rotation de contenu multi-agents (R et F)
 
-**Pas d'alternance rigide** (lundi = ProfitPilot, mardi = SpeedAudit). Le sujet du post est dicte par les signaux du marche, les donnees terrain recentes, et l'inspiration. Les agents avec le plus de donnees terrain auront naturellement plus de contenu.
+**Pas d'alternance rigide** (lundi = ProfitPilot, mardi = StoreMD). Le sujet du post est dicte par les signaux du marche, les donnees terrain recentes, et l'inspiration. Les agents avec le plus de donnees terrain auront naturellement plus de contenu.
 
 **Regle de base :** couvrir les 3 verticales (e-commerce, marketing, content) au minimum 1 fois/semaine chacune. Ne pas poster 5 posts e-commerce d'affilee sans couvrir marketing ou content.
 

@@ -108,7 +108,7 @@ LD lancé le 16/03/2026. ~8 signups, 0 MRR. En mutation vers StoreMD (diagnostic
 
 | Phase | Données terrain | Build in public | Lancements |
 |-------|----------------|----------------|------------|
-| 1 (Avril) | Données terrain e-com : 530+ reviews, chargebacks $800/mois, app tax Shopify, threads Reddit | Build in public des 3 premiers SaaS e-com. Méthode studio. | LD actif. Premiers SaaS e-com quand prêts. |
+| 1 (Avril) | Données terrain e-com : 530+ reviews, chargebacks $800/mois, app tax Shopify, threads Reddit | Build in public des 3 premiers SaaS e-com. Méthode studio. | StoreMD ✅ live. Prochains SaaS e-com en backlog. |
 | 2 (Mai) | Données multi-vertical : e-com + agences. Patterns cross-vertical. | Progression portfolio. Métriques multi-produit. | Lancements PH/IH pour chaque SaaS prêt. |
 | 3 (Juin+) | Autorité terrain : données agrégées 3 verticals. Guides cross-produit. | Portfolio complet. La cadence EST le contenu. | Derniers SaaS du pipeline. |
 
