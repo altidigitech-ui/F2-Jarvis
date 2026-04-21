@@ -1,4 +1,4 @@
-# STRATÉGIE D'EXPANSION MARKETING — Source de Vérité
+# STRATÉGIE D'EXPANSION MARKETING — Référence plateforme cross-canal
 
 **Date de création :** 31 mars 2026
 **Dernière mise à jour :** 21 avril 2026
