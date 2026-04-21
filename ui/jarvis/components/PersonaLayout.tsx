@@ -518,7 +518,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar gauche — 200px */}
         <aside
-          className="w-[200px] flex-none flex flex-col border-r"
+          className="w-[200px] flex-none flex flex-col border-r overflow-y-auto"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           <div className="p-3">
@@ -595,7 +595,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
         {/* Sidebar droite — 290px */}
         <aside
-          className="w-[290px] flex-none flex flex-col border-l"
+          className="w-[290px] flex-none flex flex-col border-l overflow-y-auto"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           {/* Compteurs — grille 2×3 cliquable */}
@@ -650,7 +650,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
 
           {/* Alertes — dismissibles via resolve_alert */}
-          <div className="p-4 flex-1 overflow-y-auto" style={{ maxHeight: "200px" }}>
+          <div className="p-4">
             <div className="text-[12px] font-semibold text-slate-500 mb-3">
               Alertes
             </div>
