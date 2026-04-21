@@ -2,6 +2,11 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Send, X, ImageIcon, Paperclip } from "lucide-react";
+import { ActionCard } from "./jarvis/ActionCard";
+import { ContentCard } from "./jarvis/ContentCard";
+import { TagLine } from "./jarvis/TagLine";
+import { parseJarvisMarkers } from "@/lib/parseJarvisMarkers";
+import { onSendToChat } from "@/lib/jarvisEvents";
 
 type Persona = "romain" | "fabrice";
 type Mode = "normal" | "f2";
@@ -466,6 +471,14 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphifyPrefill]);
+
+  useEffect(() => {
+    const unsubscribe = onSendToChat((text) => {
+      setInput(text);
+      setTimeout(() => textareaRef.current?.focus(), 0);
+    });
+    return unsubscribe;
+  }, []);
 
   // Load persisted history on mount and when persona/mode changes
   useEffect(() => {
@@ -998,12 +1011,51 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                       />
                     ) : (
                       <>
-                        {msg.content}
-                        {msg.role === "assistant" && msg.content === "" && isStreaming && (
-                          <span
-                            className="inline-block w-1 h-3 ml-0.5 animate-pulse"
-                            style={{ background: colors.primary }}
-                          />
+                        {msg.role === "assistant" ? (
+                          (() => {
+                            const parsed = parseJarvisMarkers(msg.content);
+                            return (
+                              <>
+                                <span>{parsed.cleanText}</span>
+                                {msg.content === "" && isStreaming && (
+                                  <span
+                                    className="inline-block w-1 h-3 ml-0.5 animate-pulse"
+                                    style={{ background: colors.primary }}
+                                  />
+                                )}
+                                {parsed.contents.map((c, i) => (
+                                  <ContentCard
+                                    key={`content-${i}`}
+                                    type={c.type}
+                                    content={c.content}
+                                    contentFr={c.contentFr}
+                                    accentColor={colors.primary}
+                                  />
+                                ))}
+                                {parsed.actions.map((a) => (
+                                  <ActionCard
+                                    key={`action-${a.id}`}
+                                    actionId={a.id}
+                                    accentColor={colors.primary}
+                                  />
+                                ))}
+                                {!isStreaming && parsed.tags.length > 0 && (
+                                  <TagLine
+                                    tags={parsed.tags.map((t) => t.label)}
+                                    accentColor={colors.primary}
+                                    onTagClick={(label) => {
+                                      setInput(label);
+                                      setTimeout(() => {
+                                        textareaRef.current?.focus();
+                                      }, 0);
+                                    }}
+                                  />
+                                )}
+                              </>
+                            );
+                          })()
+                        ) : (
+                          <>{msg.content}</>
                         )}
                       </>
                     )}
