@@ -1,6 +1,6 @@
 # ARCH — Structure du repo FoundryTwo
 
-Arbre ASCII généré le 19 avril 2026 (après batch de nettoyage post-merge). Profondeur max : 3.
+Arbre ASCII généré le 22 avril 2026 (post-intégration double-couche S6). Profondeur max : 3.
 Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 
 ```
@@ -10,6 +10,7 @@ Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 ├── AUDIT.md
 ├── CLAUDE.md
 ├── README.md
+├── TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md
 ├── VISUELS.md
 ├── asset-brand
 │   ├── FOUNDRYTWO-BRAND-BIBLE.md
@@ -239,6 +240,7 @@ Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 ├── strategie
 │   ├── CONTEXT.md
 │   ├── PLAYBOOK-DISTRIBUTION.md
+│   ├── STRATEGIE-MID-S6-BETA-TESTERS.md
 │   ├── WARMING-FARMING.md
 │   └── verticals
 │       ├── CONTENT-CREATORS.md

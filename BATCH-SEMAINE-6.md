@@ -21,7 +21,7 @@ Ce fichier regroupe **2 batchs complémentaires** qui tournent en parallèle sur
 - Angle narratif : "10 Pro beta spots open this week — claim yours."
 - Funnel : acquisition directe mid-funnel conversion, superposée à la Couche A
 - Créneau horaire dédié : 18h30 CEST (Twitter) + 21h30 CEST (LinkedIn) + 09h00 CEST (IH si remplacement)
-- Référence stratégie : `STRATEGIE-MID-S6-BETA-TESTERS.md` (validée par R le 21/04)
+- Référence stratégie : `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md` (validée par R le 21/04)
 - Période : mercredi 22/04 → vendredi 24/04 (3 jours sur 7)
 - Contenu : 15 posts additionnels/refaits (9 Twitter + 6 LinkedIn + 1 IH refait), briefs 4 nouvelles vidéos Remotion
 
@@ -1825,8 +1825,8 @@ Fallback : publier les posts concernés en **text-only** (supprimer `[VIDEO]` du
 
 **Période d'application :** mercredi 22/04/2026 → vendredi 24/04/2026 (3 jours)
 **Créé le :** mardi 21/04/2026
-**Référence stratégie :** `STRATEGIE-MID-S6-BETA-TESTERS.md` (validée par R le 21/04)
-**Référence règles batch :** `RULES-BATCH.md` v1 (URL vercel.app, format 2-blocs Twitter, zéro hashtag)
+**Référence stratégie :** `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md` (validée par R le 21/04)
+**Référence règles batch :** `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` PARTIE 1 (URL vercel.app, format 2-blocs Twitter, zéro hashtag, chiffres locked, checklist pré-dispatch)
 **Référence BIBLE :** v2.1 §3 (lignes rouges + marges marketing sales mode)
 **Règle ANTI-IA :** appliquée sur chaque post (contractions, phrases variées, pas d'em-dash pivot, pas de cadence fixe)
 **Statut :** en validation R
