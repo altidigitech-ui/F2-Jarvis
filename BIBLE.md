@@ -14,8 +14,26 @@ Aucun contenu publié ne doit échouer un détecteur IA (GPTZero, ZeroGPT, Origi
 ### 2. TOILE — Altistone invisible
 Altistone et la toile n'existent pas publiquement. Aucune mention dans posts, replies, cold outreach, ou docs publics. Voir `strategie/CONTEXT.md` et `la-toile/`.
 
-### 3. Zéro donnée inventée
-Pas de "many users", "great results", "impressive growth". Pas de fake testimonials. Exemples marqués comme tels. Templates avec placeholders.
+### 3. Intégrité des données — lignes rouges et marges marketing
+
+Règle révisée le 21/04/2026 (S6) après virage build-in-public → sales mode agressif.
+
+**Lignes rouges — interdites dans tous les contenus (posts, replies, cold outreach, docs publics), sans exception :**
+
+- **Faux MRR, faux revenue, faux nombre de clients payants.** Aucun chiffre business studio (MRR StoreMD, revenue FoundryTwo, installs payantes, ARR) ne doit être inventé ou gonflé. Ces métriques sont vérifiables par des tiers (Shopify App Store publicly listed revenue ranges, Twitter investigations, "where's the traction?" challenges). Mentir ici = compte grillé + crédibilité studio détruite + review Shopify refusée.
+- **Testimonials directs verbatim inventés.** Aucune citation entre guillemets attribuée à un client, une agency, un merchant, qui n'aurait pas été reçue verbatim. "Agency owner told me..." OK si c'est reformulé. "Agency owner DM: 'Scanned 8 stores overnight, found $14,200 in leaks'" — INTERDIT sans le DM réel verbatim.
+- **Noms d'entreprises clientes fictives.** Jamais de "Nike uses StoreMD", "Gymshark is our client", même en hypothèse. Zéro tolérance.
+- **Faux process / faux produit.** Claim produit = vérifiable sur storemd.vercel.app. Si le post dit "43 checks in 60s across 5 modules", le produit doit effectivement faire ça. Pas d'inflation features.
+
+**Marge marketing — acceptable dans les posts sales/marketing produit (StoreMD, ProfitPilot, SaaS futurs) :**
+
+- **Statistiques agrégées e-com génériques.** "94% of Shopify stores have ghost billing", "average store loses $189/mo to zombie apps", "78% score below 60/100 on AI readiness" — cadence habituelle du marketing SaaS e-com. Ces chiffres servent de pattern de douleur, pas de métrique studio.
+- **Scenarios illustratifs.** "A $40k/mo DTC brand with these exact issues", "An agency charging $1,800/mo for vanity audits" — pattern de merchant plausible, pas case study avec nom réel.
+- **Volumes de scans présentés narratively.** "I scanned 47 stores this month" reste acceptable comme push marketing tant que la lecture moyenne du post n'induit pas un claim business studio vérifiable.
+
+**Distinction stricte :** build-in-public (updates studio, plan hebdo public, MRR transparent, recap semaine) ≠ sales-mode produit. Les marges marketing du sales-mode ne s'appliquent JAMAIS au build-in-public. Si le post dit "nous avons X clients" ou "notre MRR est Y", c'est build-in-public, la règle stricte s'applique.
+
+**Règle générale — pas de fake testimonial direct, pas de faux MRR, pas de nom client fictif. Le reste est tolérance marketing.**
 
 ### 4. Volume × Constance non-négociable
 R : 30 interactions/jour + 10 cold outreach/jour + 7 posts/semaine. F : 30 interactions/jour + 10 cold outreach/jour + 5 posts/semaine.
@@ -49,4 +67,5 @@ Ouroboros lit tout le repo en read-only. Il écrit UNIQUEMENT dans `brain/ourobo
 
 ---
 
-*Version 2.0 — 19 avril 2026. Fabrice Gangi, owner.*
+*Version 2.1 — 21 avril 2026. Fabrice Gangi, owner.*
+*Changelog : §3 révisé pour clarifier la distinction build-in-public (règle stricte) vs sales-mode produit (marges marketing tolérées). Lignes rouges formalisées : faux MRR, testimonials verbatim inventés, noms clients fictifs, faux claims produit.*
