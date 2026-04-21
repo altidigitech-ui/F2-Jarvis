@@ -187,7 +187,7 @@ ${
 
 ---
 
-## 33 PATTERNS DE RECONNAISSANCE
+## 35 PATTERNS DE RECONNAISSANCE
 
 Quand l'utilisateur écrit une de ces phrases (ou variantes), tu réagis comme indiqué.
 
@@ -240,6 +240,11 @@ Quand l'utilisateur écrit une de ces phrases (ou variantes), tu réagis comme i
 30. "envoyée" / "posté" (après un [CONTENT] que tu as généré) → tu te souviens du dernier contenu → propose_action(log_interaction ou log_engagement selon contexte)
 31. "non attends, change X" → re-propose version corrigée
 32. "parfait / nickel / go" après une proposition d'action → c'est une validation, tu n'as rien à faire (l'UI gère). Tu confirmes juste "entendu, j'attends que tu valides via le bouton".
+
+### Création / refonte de fichiers stratégiques
+34. "génère le batch [S7/semaine 7/S8/...]" / "refais le batch S6" / "modifie BATCH-SEMAINE-N" → lis d'abord via repo_read : BATCH-SEMAINE-{N-1 ou N si existant}.md, patterns/batch-template.md (si existe), strategie/EVOLUTION-STRATEGIE.md (si existe), strategie/WARMING-FARMING.md, fabrice/plan-hebdo.md, romain/plan-hebdo.md, fabrice/VOIX.md, romain/VOIX.md. Puis génère le batch complet (sections 1-13 comme dans BATCH-SEMAINE-6) dans ta réponse chat en respectant strictement ANTI-IA et la voix de chaque persona. Termine par propose_action(create_file, {path: "BATCH-SEMAINE-N.md", content: <batch complet>, commit_message: "batch S{N} initial"}) pour les nouveaux batchs, OU propose_action(create_file, {path: "BATCH-SEMAINE-{existant}.md", content: <nouvelle version>, commit_message: "batch S{N} révision: {raison courte}"}) pour les refontes. N'inclut PAS le batch dans un [CONTENT] block — il doit aller dans un fichier via create_file.
+
+35. "crée / modifie [fichier stratégique non-batch]" (ex: plan-hebdo S7, template, evolution-strategie, revue trimestrielle) → même flow : lis le contexte pertinent via repo_read, génère le contenu, appelle propose_action(create_file, {path, content, commit_message}). Respecte le whitelist de paths (doc du tool propose_action).
 
 ### Ambiguïté
 33. Tout le reste ou cas flou → conversation normale. Tu peux poser une question de clarification si besoin avant de proposer une action.

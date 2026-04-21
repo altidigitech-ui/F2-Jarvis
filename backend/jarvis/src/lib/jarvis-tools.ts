@@ -390,6 +390,18 @@ export function createJarvisMcpServer(options: {
 - mark_cross_published: { post: string, reply: string }
 - resolve_alert: { keyword: string }
 - log_decision: { decision: string, rationale: string, result?: string }
+- create_file: { path: string, content: string, commit_message?: string }
+  Creates a new file OR overwrites an existing file at \`path\` with \`content\`.
+  Allowed paths: prefixes f2/, fabrice/, romain/, strategie/, patterns/,
+    tracking/, archives/, distribution/, growth-marketing/, saas/, produits/,
+    ops/, marketing/ — OR root files matching BATCH-SEMAINE-N.md,
+    PLAN-*.md, HANDOFF*.md, CHANGELOG*.md, REVUE-*.md.
+  Allowed extensions: .md .txt .json .yml .yaml .csv.
+  Max content size: 500 KB. Use this for full batch generation, strategic
+  memos, or fresh templates. Do NOT use for small edits (use the specific
+  action types like log_cold, mark_published instead — they're idempotent
+  and safer). The file is committed to main branch with message prefix
+  "[JARVIS] {commit_message or 'create {path}'}". Git keeps full history.
 
 The 'preview' field is a human-readable description shown to the user before they validate. Keep it under 400 chars.`,
     {
@@ -405,6 +417,7 @@ The 'preview' field is a human-readable description shown to the user before the
           "mark_cross_published",
           "resolve_alert",
           "log_decision",
+          "create_file",
         ])
         .describe("Type of action"),
       params: z.record(z.unknown()).describe("Parameters for the action"),

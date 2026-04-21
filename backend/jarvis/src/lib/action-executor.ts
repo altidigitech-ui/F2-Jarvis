@@ -1,5 +1,5 @@
 import { getSupabase } from "./supabase.js";
-import { ghUpdate } from "./github.js";
+import { ghCreate, ghRead, ghUpdate, ghWrite } from "./github.js";
 import {
   appendColdLog,
   appendColdQueue,
@@ -14,6 +14,98 @@ import {
 
 type Persona = "fabrice" | "romain";
 type Platform = "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH";
+
+// ---------------------------------------------------------------------------
+// create_file security guards
+// ---------------------------------------------------------------------------
+
+/** Max content size allowed for create_file actions (500 KB). */
+const CREATE_FILE_MAX_BYTES = 500 * 1024;
+
+/** File extensions allowed for create_file (whitelisted, safer path). */
+const CREATE_FILE_ALLOWED_EXTENSIONS = new Set([
+  ".md",
+  ".txt",
+  ".json",
+  ".yml",
+  ".yaml",
+  ".csv",
+]);
+
+/**
+ * Path prefixes allowed for create_file.
+ * Anything under backend/, ui/, supabase-migrations/, brain/mempalace/ is REFUSED
+ * to prevent JARVIS from overwriting code, migrations, or the verbatim archive.
+ * Racine allowed if filename starts with BATCH-, PLAN-, HANDOFF-, or CHANGELOG-.
+ */
+const CREATE_FILE_ALLOWED_PREFIXES = [
+  "f2/",
+  "fabrice/",
+  "romain/",
+  "strategie/",
+  "patterns/",
+  "tracking/",
+  "archives/",
+  "distribution/",
+  "growth-marketing/",
+  "saas/",
+  "produits/",
+  "ops/",
+  "marketing/",
+];
+
+/** Exact filenames allowed at repo root (in addition to prefixes). */
+const CREATE_FILE_ALLOWED_ROOT_PATTERNS: RegExp[] = [
+  /^BATCH-SEMAINE-\d+\.md$/,
+  /^PLAN-[\w-]+\.md$/,
+  /^HANDOFF(-[\w-]+)?\.md$/,
+  /^CHANGELOG(-[\w-]+)?\.md$/,
+  /^REVUE-[\w-]+\.md$/,
+];
+
+function validateCreateFilePath(path: string): void {
+  if (!path || typeof path !== "string") {
+    throw new Error("create_file: path is required");
+  }
+  // No traversal
+  if (path.includes("..") || path.startsWith("/") || path.includes("\\")) {
+    throw new Error(`create_file: illegal path "${path}" (no traversal, no absolute, no backslash)`);
+  }
+  // Extension whitelist
+  const lastDot = path.lastIndexOf(".");
+  if (lastDot < 0) {
+    throw new Error(`create_file: path "${path}" has no extension`);
+  }
+  const ext = path.slice(lastDot).toLowerCase();
+  if (!CREATE_FILE_ALLOWED_EXTENSIONS.has(ext)) {
+    throw new Error(
+      `create_file: extension "${ext}" not allowed. Allowed: ${[...CREATE_FILE_ALLOWED_EXTENSIONS].join(", ")}`
+    );
+  }
+  // Prefix OR root pattern
+  const hasPrefix = CREATE_FILE_ALLOWED_PREFIXES.some((p) => path.startsWith(p));
+  const hasRootPattern = CREATE_FILE_ALLOWED_ROOT_PATTERNS.some((re) => re.test(path));
+  if (!hasPrefix && !hasRootPattern) {
+    throw new Error(
+      `create_file: path "${path}" not allowed. Must start with one of ${CREATE_FILE_ALLOWED_PREFIXES.join(", ")} OR match a root pattern (BATCH-SEMAINE-N.md, PLAN-*.md, HANDOFF*.md, CHANGELOG*.md, REVUE-*.md)`
+    );
+  }
+}
+
+function validateCreateFileContent(content: string): void {
+  if (typeof content !== "string") {
+    throw new Error("create_file: content must be a string");
+  }
+  const byteSize = Buffer.byteLength(content, "utf-8");
+  if (byteSize > CREATE_FILE_MAX_BYTES) {
+    throw new Error(
+      `create_file: content too large (${byteSize} bytes, max ${CREATE_FILE_MAX_BYTES})`
+    );
+  }
+  if (content.length === 0) {
+    throw new Error("create_file: content cannot be empty");
+  }
+}
 
 export interface PendingAction {
   id: string;
@@ -53,6 +145,14 @@ function resolveFilePath(
       };
     case "log_decision":
       return { path: `tracking/decisions-log.md`, commitPrefix: `decision` };
+    case "create_file": {
+      const path = String(_params.path || "");
+      validateCreateFilePath(path);
+      return {
+        path,
+        commitPrefix: `create`,
+      };
+    }
     default:
       throw new Error(`Unknown action_type: ${actionType}`);
   }
@@ -187,11 +287,32 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
     const { path, commitPrefix } = resolveFilePath(action.action_type, persona, action.params);
     const previewShort = action.preview.slice(0, 60).replace(/\n/g, " ");
 
-    await ghUpdate(
-      path,
-      (md) => applyTransform(action.action_type, action.params, md),
-      `[JARVIS] ${commitPrefix}: ${previewShort}`
-    );
+    if (action.action_type === "create_file") {
+      // Dedicated path: create new file OR overwrite existing one (no transform).
+      const content = String((action.params as Record<string, unknown>).content || "");
+      const userCommitMsg = String((action.params as Record<string, unknown>).commit_message || "");
+      validateCreateFileContent(content);
+
+      const existing = await ghRead(path).catch(() => null);
+      const finalCommitMsg =
+        userCommitMsg && userCommitMsg.length < 200
+          ? `[JARVIS] ${userCommitMsg}`
+          : `[JARVIS] ${commitPrefix} ${path}: ${previewShort}`;
+
+      if (existing) {
+        // Overwrite with fresh SHA
+        await ghWrite(path, content, existing.sha, finalCommitMsg);
+      } else {
+        await ghCreate(path, content, finalCommitMsg);
+      }
+    } else {
+      // Existing generic path: apply transform on top of current file content
+      await ghUpdate(
+        path,
+        (md) => applyTransform(action.action_type, action.params, md),
+        `[JARVIS] ${commitPrefix}: ${previewShort}`
+      );
+    }
 
     const { data: updated, error: updateErr } = await sb
       .from("jarvis_pending_actions")
