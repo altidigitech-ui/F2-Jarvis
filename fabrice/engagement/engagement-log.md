@@ -25,6 +25,7 @@
 | 22/04/2026 | 15:54 | Arijit Chowdhury — visitors won't complain, they'll just leave | they'll just leave is the brutal part. merchants assume it's images but it's the script tags firing before the page renders. scanned a $40k/mo store recently, images perfectly optimized, 6 zombie apps. |  |  |
 | 22/04/2026 | 16:18 | Ellie Camejo — ghost billing $4,800/year zombie apps (bookkeeping founder) | the fulfillment integration one is the worst tbh. the 3PL switches, the merchant moves on, and the tool just keeps billing... $4,800 is a good year. I've seen stores closer to $6-7k in pure ghost billing. |  |  |
 | 22/04/2026 | 16:18 | Martín Martínez — too many apps slow your store / custom dev vs apps | the timing piece is underrated here. most merchants think about going custom after the store is already slow, not before. by then there's 3 years of installs, partial uninstalls, and leftover code from both. |  |  |
+| 22/04/2026 | 16:38 | Arijit Chowdhury — post store speed / bounce ('visitors won't complain, they'll just leave') | Arijit a répondu au comment F : 'real bottleneck is bloated third-party scripts and leftover app injections / zombie scripts firing in the critical rendering path'. Positive author engagement. |  |  |
 
 -----
 
