@@ -21,6 +21,7 @@
 |Date|Heure|Post original (résumé + auteur)|Commentaire F|Likes reçus|Replies reçues|
 |----|-----|------------------------------|-------------|-----------|--------------|
 |    |     |                              |             |           |              |
+| 22/04/2026 | 15:54 | Muhammad Nadeem Arif — WordPress vs Shopify speed | shopify's speed claim is true at day 1... the issue is what happens at month 6 with 12-15 apps. I scanned a store last week with 14 apps, 8 had leftover code from uninstalls, page at 7.2s. |  |  |
 
 -----
 
