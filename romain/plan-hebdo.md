@@ -8,9 +8,9 @@
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 20/04|`store-md-money-daily`|My Twitter was suspended 6 days. I scanned 47 stores instead.|📅 Schedulé|
-|Mar 21/04|`store-md-horror-ghost-apps`|$80k/mo DTC — $2,646 ghost billing 14 months|📅 Schedulé|
-|Mer 22/04|`store-md-horror-agency-ripoff`|If your agency hasn't mentioned ghost billing, AI readiness...|📅 Schedulé|
+|Lun 20/04|`store-md-money-daily`|My Twitter was suspended 6 days. I scanned 47 stores instead.|✅ Publié|
+|Mar 21/04|`store-md-horror-ghost-apps`|$80k/mo DTC — $2,646 ghost billing 14 months|✅ Publié|
+|Mer 22/04|`store-md-horror-agency-ripoff`|If your agency hasn't mentioned ghost billing, AI readiness...|✅ Publié|
 |Jeu 23/04|`store-md-stats`|Data from 50 scans|📅 Schedulé|
 |Ven 24/04|`store-md-testimonial-agency`|Agency DM: $14,200/mo leaks on 8 clients|📅 Schedulé|
 
@@ -26,7 +26,7 @@
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 21/04|Long format: 47 stores scanned, DTC #12 breakdown|📅 Schedulé|
+|Mar 21/04|Long format: 47 stores scanned, DTC #12 breakdown|✅ Publié|
 |Jeu 23/04|Agency angle: scan your client stores for free|📅 Schedulé|
 |Ven 24/04|Week recap: [X] scans, $[Y] detected, [Z] agencies|📅 Schedulé|
 
@@ -34,7 +34,7 @@
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 21/04|REFAIT beta recrutement (remplace case study Couche A)|📅 Schedulé|
+|Mar 21/04|REFAIT beta recrutement (remplace case study Couche A)|✅ Publié|
 |Jeu 23/04|REFAIT scan gratuit + cold scan (remplace agency angle Couche A)|📅 Schedulé|
 |Ven 24/04|REFAIT Pro teaser + pipeline (remplace week recap Couche A)|📅 Schedulé|
 
