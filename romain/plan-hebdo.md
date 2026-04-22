@@ -1,41 +1,42 @@
 # PLAN HEBDO R — Semaine du 20/04/2026 au 26/04/2026
 
 **Rempli au batch :** 20/04/2026
+**Mis à jour :** 22/04/2026
 **Contexte :** SEMAINE 6 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta testers mer-ven). Reprise Twitter R. **Langue publication : anglais uniquement.**
 
-## 1. POSTS TWITTER R
+## 1. POSTS TWITTER R — COUCHE A
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 20/04|`store-md-money-daily`|My Twitter was suspended 6 days. I scanned 47 stores instead.|⏳|
-|Mar 21/04|`store-md-horror-ghost-apps`|$80k/mo DTC — $2,646 ghost billing 14 months|⏳|
-|Mer 22/04|`store-md-horror-agency-ripoff`|If your agency hasn't mentioned ghost billing, AI readiness...|⏳|
-|Jeu 23/04|`store-md-stats`|Data from 50 scans|⏳|
-|Ven 24/04|`store-md-testimonial-agency`|Agency DM: $14,200/mo leaks on 8 clients|⏳|
+|Lun 20/04|`store-md-money-daily`|My Twitter was suspended 6 days. I scanned 47 stores instead.|📅 Schedulé|
+|Mar 21/04|`store-md-horror-ghost-apps`|$80k/mo DTC — $2,646 ghost billing 14 months|📅 Schedulé|
+|Mer 22/04|`store-md-horror-agency-ripoff`|If your agency hasn't mentioned ghost billing, AI readiness...|📅 Schedulé|
+|Jeu 23/04|`store-md-stats`|Data from 50 scans|📅 Schedulé|
+|Ven 24/04|`store-md-testimonial-agency`|Agency DM: $14,200/mo leaks on 8 clients|📅 Schedulé|
 
 ## 1B. POSTS TWITTER R — COUCHE B (3 posts beta, 18h30 CEST)
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Mer 22/04|`store-md-beta-10-spots`|M1 Recrutement 10 betas|⏳|
-|Jeu 23/04|`store-md-scan-cta`|M2 Scan gratuit sur demande|⏳|
-|Ven 24/04|aucune|M5 Pipeline conversion recap|⏳|
+|Mer 22/04|`store-md-beta-10-spots`|M1 Recrutement 10 betas|📅 Schedulé|
+|Jeu 23/04|`store-md-scan-cta`|M2 Scan gratuit sur demande|📅 Schedulé|
+|Ven 24/04|aucune|M5 Pipeline conversion recap|📅 Schedulé|
 
-## 2. POSTS LINKEDIN R (EN)
+## 2. POSTS LINKEDIN R (EN) — COUCHE A
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 21/04|Long format: 47 stores scanned, DTC #12 breakdown|⏳|
-|Jeu 23/04|Agency angle: scan your client stores for free|⏳|
-|Ven 24/04|Week recap: [X] scans, $[Y] detected, [Z] agencies|⏳|
+|Mar 21/04|Long format: 47 stores scanned, DTC #12 breakdown|📅 Schedulé|
+|Jeu 23/04|Agency angle: scan your client stores for free|📅 Schedulé|
+|Ven 24/04|Week recap: [X] scans, $[Y] detected, [Z] agencies|📅 Schedulé|
 
 ## 2B. POSTS LINKEDIN R — COUCHE B (3 posts REFAITS beta, 21h00 CEST)
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 21/04|REFAIT beta recrutement (remplace case study Couche A)|⏳|
-|Jeu 23/04|REFAIT scan gratuit + cold scan (remplace agency angle Couche A)|⏳|
-|Ven 24/04|REFAIT Pro teaser + pipeline (remplace week recap Couche A)|⏳|
+|Mar 21/04|REFAIT beta recrutement (remplace case study Couche A)|📅 Schedulé|
+|Jeu 23/04|REFAIT scan gratuit + cold scan (remplace agency angle Couche A)|📅 Schedulé|
+|Ven 24/04|REFAIT Pro teaser + pipeline (remplace week recap Couche A)|📅 Schedulé|
 
 ## 3. COLD OUTREACH
 
@@ -55,10 +56,24 @@
 |IH comments (EN)|3-5|
 |PH karma|5 upvotes + 1 comment|
 
-## 5. S5 RECAP
+## 5. CROSS-ENGAGEMENT R↔F↔F2
+
+> Replies croisées entre comptes R, F et F2 sur les posts du jour.
+> Couche A = reply sur le post principal (13h00 Twitter / 21h00 LinkedIn).
+> Couche B = reply sur le post beta (18h30 Twitter / 21h30 LinkedIn) — décalé en soirée.
+
+|Jour|Cross Couche A|Cross Couche B|
+|---|---|---|
+|Lun 20/04|✅ Fait|— (pas de Couche B lundi)|
+|Mar 21/04|✅ Fait|✅ Fait|
+|Mer 22/04|✅ Fait|⏳ À faire (Couche B publie plus tard)|
+|Jeu 23/04|⏳|⏳|
+|Ven 24/04|⏳|⏳|
+
+## 6. S5 RECAP
 Twitter R : 0 posts (suspension). LinkedIn R : 2 posts, 339 imp (+52%), +15 abonnés. Cold : 6 LinkedIn, 3/4 positifs. MRR externe : $0.
 
-## 6. PRIORITÉS
+## 7. PRIORITÉS
 1. Sales mode agressif EN uniquement
 2. Agencies comme distribution layer (5 onboardées S6)
 3. 50 scans cible
