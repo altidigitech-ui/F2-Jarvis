@@ -7,7 +7,7 @@
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
 |Lun 20/04|`store-md-myth-apps-fine`|"My apps are fine" — 94% wrong|✅ Publié 13:42|
-|Mar 21/04|`store-md-tier-apps-danger`|14 apps = 8.8s total bloat|⏳|
+|Mar 21/04|`store-md-tier-apps-danger`|14 apps = 8.8s total bloat|✅ Publié 13:42|
 |Mer 22/04|`store-md-before-after-billing`|🧵 THREAD $40k/mo 72h case study|⏳|
 |Jeu 23/04|`store-md-list-hidden`|5 things Shopify dashboard HIDES|⏳|
 |Ven 24/04|`store-md-money-visitors`|$189/mo × 12 = $2,268/year|⏳|
