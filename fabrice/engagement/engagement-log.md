@@ -12,6 +12,7 @@
 |----|-----|-------------------------------|-------|-----------|--------------|
 |    |     |                               |       |           |              |
 | 22/04/2026 | 15:26 | @Oghenemineee — silent videos + VN editor | For fully silent content the transcript approach doesn't help much. Pointed to beat sync + VN tools for visual rhythm. Mentioned voiceover workflow as the bigger time saver when applicable. |  |  |
+| 22/04/2026 | 15:26 | @delgado_ro72224 — agency audit / zombie scripts | Amplifié l'angle : les agences auditent ce qui est visible (images) pas ce qui est invisible (zombie scripts). Merchant paie pour le fix facile, le vrai problème reste. |  |  |
 
 -----
 
