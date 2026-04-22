@@ -22,6 +22,7 @@ import {
   mempalaceDrawerRoute,
   mempalaceStatsRoute,
 } from "./routes/mempalace.js";
+import { targetsRoute } from "./routes/targets.js";
 import {
   ouroborosStatus,
   ouroborosProposals,
@@ -79,6 +80,8 @@ app.get("/mempalace/wings", mempalaceWingsRoute);
 app.get("/mempalace/stats", mempalaceStatsRoute);
 app.get("/mempalace/wing/:id", mempalaceWingRoute);
 app.get("/mempalace/drawer/:wing/:filename", mempalaceDrawerRoute);
+
+app.get("/targets", targetsRoute);
 
 app.get("/ouroboros/status", ouroborosStatus);
 app.get("/ouroboros/proposals", ouroborosProposals);

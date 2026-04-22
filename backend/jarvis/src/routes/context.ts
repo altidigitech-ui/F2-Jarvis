@@ -306,10 +306,11 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   const facebook =
     countTodayInSection(engagementLog, "FACEBOOK", today) +
     countTodayInSection(engagementLog, "FB", today);
-  const ihPh =
+  const ih =
     countTodayInSection(engagementLog, "IH", today) +
-    countTodayInSection(engagementLog, "PH", today) +
     countTodayInSection(engagementLog, "INDIEHA", today);
+  const ph = countTodayInSection(engagementLog, "PH", today);
+  const ihPh = ih + ph;
   const cross = countCrossToday(crossTracker, today, weekday);
   const counters: CounterData = {
     cold,
@@ -319,11 +320,13 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
     reddit,
     facebook,
     cross,
+    ih,
+    ph,
     ihPh,
     total: cold + twEng + liCom + reddit + facebook + ihPh + cross,
   };
 
-  const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, reddit, facebook, ihPh, cross }, publishedBy);
+  const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, reddit, facebook, ihPh: ih + ph, cross }, publishedBy);
   const crossItems = parseCrossItemsToday(crossTracker, today, weekday, publishedBy);
   const timeline = [...timelinePosts, ...crossItems, ...objectives];
 

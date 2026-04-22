@@ -31,42 +31,37 @@ import type { ContextData } from "@/lib/context-types";
 
 type Persona = "romain" | "fabrice";
 
-const PERSONA_CONFIG = {
-  romain: {
-    label: "Romain",
-    role: "Growth · FoundryTwo",
-    color: "#00ffb4",
-    colorDim: "#00b890",
-    channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "IH", "PH", "F2"],
-    coldTarget: 10,
-    engTarget: 30,
-    redditTarget: 8,
-    facebookTarget: 6,
-    twTarget: 10,
-    liTarget: 10,
-    ihPhTarget: 5,
-    hasIhPh: true,
-  },
-  fabrice: {
-    label: "Fabrice",
-    role: "Builder · FoundryTwo",
-    color: "#9b8fff",
-    colorDim: "#6d5fe0",
-    channels: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK"],
-    coldTarget: 10,
-    engTarget: 30,
-    redditTarget: 8,
-    facebookTarget: 6,
-    twTarget: 15,
-    liTarget: 15,
-    ihPhTarget: 0,
-    hasIhPh: false,
-  },
+const PERSONA_STATIC = {
+  romain: { label: "Romain", role: "Growth · FoundryTwo", color: "#00ffb4", colorDim: "#00b890" },
+  fabrice: { label: "Fabrice", role: "Builder · FoundryTwo", color: "#9b8fff", colorDim: "#6d5fe0" },
 } as const;
+
+interface PersonaTargets {
+  cold: number;
+  twEng: number;
+  liCom: number;
+  reddit: number;
+  facebook: number;
+  cross: number;
+  ph: number;
+  ih: number;
+  ihPh: number;
+  engTarget: number;
+  platforms: string[];
+  hasIhPh: boolean;
+  hasPh: boolean;
+  hasIh: boolean;
+}
+
+// Fallback targets used when the /targets fetch fails
+const TARGETS_FALLBACK: Record<"romain" | "fabrice", PersonaTargets> = {
+  romain:  { cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 2, ph: 5, ih: 5, ihPh: 5,  engTarget: 30, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK","IH","PH"], hasIhPh: true,  hasPh: true,  hasIh: true  },
+  fabrice: { cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 2, ph: 0, ih: 0, ihPh: 0, engTarget: 30, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"],             hasIhPh: false, hasPh: false, hasIh: false },
+};
 
 const EMPTY_CONTEXT: ContextData = {
   timeline: [],
-  counters: { cold: 0, repliesIn: 0, twEng: 0, liCom: 0, reddit: 0, facebook: 0, cross: 0, ihPh: 0, total: 0 },
+  counters: { cold: 0, repliesIn: 0, twEng: 0, liCom: 0, reddit: 0, facebook: 0, cross: 0, ihPh: 0, ph: 0, ih: 0, total: 0 },
   alerts: [],
   weekPlanningF2: [],
 };
@@ -316,9 +311,11 @@ type Props = {
 };
 
 export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
-  const cfg = PERSONA_CONFIG[persona];
+  const cfg = PERSONA_STATIC[persona];
   const lsKey = `jarvis_f2mode_${persona}`;
 
+  const [targets, setTargets] = useState<PersonaTargets>(TARGETS_FALLBACK[persona] as PersonaTargets);
+  const [weekNumber, setWeekNumber] = useState<number>(1);
   const [f2Mode, setF2ModeState] = useState(false);
   const [brainExpanded, setBrainExpanded] = useState(false);
   const [graphifyExpanded, setGraphifyExpanded] = useState(false);
@@ -341,6 +338,19 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
     } catch { /* SSR or private mode */ }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Fetch dynamic targets from batch
+  useEffect(() => {
+    fetch("/api/config/targets")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (data && data[persona]) {
+          setTargets(data[persona] as PersonaTargets);
+          setWeekNumber(data.weekNumber ?? 1);
+        }
+      })
+      .catch(() => { /* keep fallback */ });
+  }, [persona]);
 
   const setF2Mode = useCallback((val: boolean) => {
     setF2ModeState(val);
@@ -379,13 +389,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   useEffect(() => {
     setLoading(true);
     fetchContext();
-    const id = setInterval(fetchContext, 60_000);
+    const id = setInterval(fetchContext, 30_000);
     return () => clearInterval(id);
   }, [fetchContext]);
 
   useEffect(() => {
     const unsubscribe = onRepoUpdated(() => {
-      setTimeout(() => fetchContext(), 1500);
+      setTimeout(() => fetchContext(), 500);
     });
     return unsubscribe;
   }, [fetchContext]);
@@ -580,6 +590,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           <QuickAccessSidebar
             persona={persona}
             accentColor={accentColor}
+            weekNumber={weekNumber}
             onOpenPlanHebdo={() => setOpenFilePath(filePaths.planHebdo)}
             onOpenPostsBatch={() => setOpenFilePath(filePaths.postsBatch)}
             onOpenCrossEngagement={() => setOpenFilePath(filePaths.crossEng)}
@@ -619,45 +630,71 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             </div>
             <div className="grid grid-cols-2 gap-1.5">
               <CounterTile
-                label="Cold DM"
+                label="Cold"
                 value={counters.cold}
-                target={cfg.coldTarget}
+                target={targets.cold}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.cold)}
               />
-              <CounterTile
-                label="TW eng."
-                value={counters.twEng}
-                target={cfg.twTarget}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-              />
-              <CounterTile
-                label="LI com."
-                value={counters.liCom}
-                target={cfg.liTarget}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-              />
-              <CounterTile
-                label="Reddit"
-                value={counters.reddit}
-                target={cfg.redditTarget}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-              />
-              <CounterTile
-                label="Facebook"
-                value={counters.facebook}
-                target={cfg.facebookTarget}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-              />
-              {cfg.hasIhPh && (
+              {targets.platforms.includes("TWITTER") && (
+                <CounterTile
+                  label="TW eng."
+                  value={counters.twEng}
+                  target={targets.twEng}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+                />
+              )}
+              {targets.platforms.includes("LINKEDIN") && (
+                <CounterTile
+                  label="LI com."
+                  value={counters.liCom}
+                  target={targets.liCom}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+                />
+              )}
+              {targets.platforms.includes("REDDIT") && (
+                <CounterTile
+                  label="Reddit"
+                  value={counters.reddit}
+                  target={targets.reddit}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+                />
+              )}
+              {targets.platforms.includes("FACEBOOK") && (
+                <CounterTile
+                  label="Facebook"
+                  value={counters.facebook}
+                  target={targets.facebook}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+                />
+              )}
+              {targets.hasIh && targets.hasPh && (
                 <CounterTile
                   label="IH + PH"
                   value={counters.ihPh}
-                  target={cfg.ihPhTarget}
+                  target={targets.ihPh}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+                />
+              )}
+              {targets.hasIh && !targets.hasPh && (
+                <CounterTile
+                  label="IH"
+                  value={counters.ih ?? counters.ihPh}
+                  target={targets.ih}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
+                />
+              )}
+              {targets.hasPh && !targets.hasIh && (
+                <CounterTile
+                  label="PH"
+                  value={counters.ph ?? counters.ihPh}
+                  target={targets.ph}
                   accentColor={accentColor}
                   onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
                 />
@@ -665,14 +702,14 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               <CounterTile
                 label="Cross"
                 value={counters.cross}
-                target={2}
+                target={targets.cross}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.crossEng)}
               />
               <CounterTile
                 label="Total"
                 value={counters.total}
-                target={cfg.engTarget}
+                target={targets.engTarget}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.progress)}
               />

@@ -458,6 +458,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -712,10 +713,14 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         };
       }
 
+      const controller = new AbortController();
+      abortRef.current = controller;
+
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
+        signal: controller.signal,
       });
 
       if (!res.ok || !res.body) {
@@ -810,14 +815,19 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         );
       }
     } catch (err) {
-      setMessages((prev) =>
-        prev.map((m) =>
-          m.id === assistantId
-            ? { ...m, content: `[Erreur: ${(err as Error).message}]` }
-            : m
-        )
-      );
+      const errMsg = (err as Error).message;
+      // AbortError = user clicked Stop, no need to show error message
+      if ((err as Error).name !== "AbortError") {
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantId
+              ? { ...m, content: m.content || `[Erreur: ${errMsg}]` }
+              : m
+          )
+        );
+      }
     } finally {
+      abortRef.current = null;
       setIsStreaming(false);
     }
   };
@@ -1252,23 +1262,35 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
               className="flex-1 bg-transparent text-sm text-slate-300 placeholder:text-slate-600 resize-none outline-none leading-relaxed"
               style={{ maxHeight: "120px" }}
             />
-            <button
-              onClick={send}
-              disabled={!canSend}
-              className="flex-none w-7 h-7 rounded-lg flex items-center justify-center transition-all"
-              style={{
-                background: canSend ? colors.bg : "transparent",
-                border: `1px solid ${canSend ? colors.border : "rgba(255,255,255,0.06)"}`,
-                color: canSend ? colors.primary : "#334155",
-                cursor: !canSend ? "not-allowed" : "pointer",
-              }}
-            >
-              {isStreaming ? (
-                <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: colors.primary }} />
-              ) : (
+            {isStreaming ? (
+              <button
+                onClick={() => abortRef.current?.abort()}
+                className="flex-none px-2 h-7 rounded-lg flex items-center gap-1 text-[10px] font-mono transition-all"
+                style={{
+                  background: "rgba(240,100,100,0.12)",
+                  border: "1px solid rgba(240,100,100,0.3)",
+                  color: "#f06464",
+                  cursor: "pointer",
+                }}
+                title="Arrêter la génération"
+              >
+                <span className="text-[8px]">■</span> Stop
+              </button>
+            ) : (
+              <button
+                onClick={send}
+                disabled={!canSend}
+                className="flex-none w-7 h-7 rounded-lg flex items-center justify-center transition-all"
+                style={{
+                  background: canSend ? colors.bg : "transparent",
+                  border: `1px solid ${canSend ? colors.border : "rgba(255,255,255,0.06)"}`,
+                  color: canSend ? colors.primary : "#334155",
+                  cursor: !canSend ? "not-allowed" : "pointer",
+                }}
+              >
                 <Send size={12} />
-              )}
-            </button>
+              </button>
+            )}
           </div>
 
           {/* Toolbar */}

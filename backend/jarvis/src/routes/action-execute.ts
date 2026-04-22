@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { executeAction } from "../lib/action-executor.js";
 import { getSupabase } from "../lib/supabase.js";
+import { cacheInvalidateAll } from "../lib/cache.js";
 
 export async function actionExecuteRoute(req: Request, res: Response): Promise<void> {
   const userId = (req.headers["x-user-id"] as string | undefined) || "";
@@ -34,6 +35,7 @@ export async function actionExecuteRoute(req: Request, res: Response): Promise<v
     }
 
     const updated = await executeAction(action_id);
+    cacheInvalidateAll();
     res.json({ ok: true, action: updated });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
