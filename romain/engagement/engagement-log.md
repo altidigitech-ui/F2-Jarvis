@@ -51,3 +51,4 @@
 |Date|Action|Détail|
 |----|------|------|
 |    |      |      |
+| 22/04/2026 | 17:15 | AdsAgent – Google Ads Claude Connector (Today's launch) | 5 upvotes (AdsAgent, Stanley for X, Instant Highlights V2, sneo.ai, Entendo) + 1 commentaire substantif sur AdsAgent |  |  |
