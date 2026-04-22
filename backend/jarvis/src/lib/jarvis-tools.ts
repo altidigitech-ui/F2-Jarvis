@@ -605,4 +605,5 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__propose_action",
   "mcp__jarvis__recent_history",
   "mcp__jarvis__mempalace_search",
+  "web_search",
 ];

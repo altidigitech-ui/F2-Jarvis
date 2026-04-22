@@ -6,12 +6,14 @@ type Persona = "romain" | "fabrice";
 type QuickAccessSidebarProps = {
   persona: Persona;
   accentColor: string;
+  weekNumber?: number;
   onOpenPlanHebdo: () => void;
   onOpenPostsBatch: () => void;
   onOpenCrossEngagement: () => void;
   onOpenColdOutreach: () => void;
   onOpenProgress: () => void;
   onOpenMemory: () => void;
+  onOpenToday?: () => void;
 };
 
 const ICONS = {
@@ -21,28 +23,34 @@ const ICONS = {
   cross: "🔄",
   cold: "📩",
   progress: "📊",
-  memory: "🧠",
 };
 
 export function QuickAccessSidebar({
   accentColor,
+  weekNumber,
   onOpenPlanHebdo,
   onOpenPostsBatch,
   onOpenCrossEngagement,
   onOpenColdOutreach,
   onOpenProgress,
-  onOpenMemory,
+  onOpenToday,
 }: QuickAccessSidebarProps) {
   const [active, setActive] = useState<string>("today");
 
+  const planLabel = weekNumber ? `Plan semaine ${weekNumber}` : "Plan semaine";
+
   const items = [
-    { id: "today", label: "Aujourd'hui", icon: ICONS.today, onClick: () => setActive("today") },
-    { id: "plan", label: "Plan semaine 6", icon: ICONS.plan, onClick: onOpenPlanHebdo },
+    {
+      id: "today",
+      label: "Aujourd'hui",
+      icon: ICONS.today,
+      onClick: onOpenToday ?? (() => window.scrollTo({ top: 0, behavior: "smooth" })),
+    },
+    { id: "plan", label: planLabel, icon: ICONS.plan, onClick: onOpenPlanHebdo },
     { id: "posts", label: "Posts batchés", icon: ICONS.posts, onClick: onOpenPostsBatch },
     { id: "cross", label: "Cross-engagement", icon: ICONS.cross, onClick: onOpenCrossEngagement },
     { id: "cold", label: "Cold outreach", icon: ICONS.cold, onClick: onOpenColdOutreach },
     { id: "progress", label: "Progress semaine", icon: ICONS.progress, onClick: onOpenProgress },
-    { id: "memory", label: "Mémoire", icon: ICONS.memory, onClick: onOpenMemory },
   ];
 
   return (

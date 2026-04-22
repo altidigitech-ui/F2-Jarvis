@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -62,12 +62,22 @@ export function FileViewerModal({ filePath, accentColor, onClose, persona, mode 
   const [rawContent, setRawContent] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyAll = useCallback(() => {
+    if (!rawContent) return;
+    navigator.clipboard.writeText(rawContent).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
+  }, [rawContent]);
 
   useEffect(() => {
     if (!filePath) return;
     setLoading(true);
     setError(null);
     setRawContent("");
+    setCopied(false);
     fetch(`/api/file?path=${encodeURIComponent(filePath)}`)
       .then((r) => r.json())
       .then((data) => {
@@ -111,12 +121,27 @@ export function FileViewerModal({ filePath, accentColor, onClose, persona, mode 
             <span className="text-[14px]">📄</span>
             <span className="font-mono text-[12px] text-slate-300">{filePath}</span>
           </div>
-          <button
-            onClick={onClose}
-            className="text-slate-500 hover:text-slate-200 text-[18px] leading-none px-2"
-          >
-            ×
-          </button>
+          <div className="flex items-center gap-2">
+            {rawContent && (
+              <button
+                onClick={handleCopyAll}
+                className="text-[11px] font-mono px-2.5 py-1 rounded transition-all"
+                style={{
+                  background: copied ? `${accentColor}20` : "rgba(255,255,255,0.05)",
+                  border: `1px solid ${copied ? accentColor + "40" : "rgba(255,255,255,0.08)"}`,
+                  color: copied ? accentColor : "#94a3b8",
+                }}
+              >
+                {copied ? "✓ Copié" : "Copier tout"}
+              </button>
+            )}
+            <button
+              onClick={onClose}
+              className="text-slate-500 hover:text-slate-200 text-[18px] leading-none px-2"
+            >
+              ×
+            </button>
+          </div>
         </div>
         <div className="flex-1 overflow-y-auto px-6 py-5">
           {loading && <div className="text-slate-500 text-[12px]">Chargement…</div>}
