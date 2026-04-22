@@ -23,6 +23,7 @@
 |    |     |                              |             |           |              |
 | 22/04/2026 | 15:54 | Muhammad Nadeem Arif — WordPress vs Shopify speed | shopify's speed claim is true at day 1... the issue is what happens at month 6 with 12-15 apps. I scanned a store last week with 14 apps, 8 had leftover code from uninstalls, page at 7.2s. |  |  |
 | 22/04/2026 | 15:54 | Arijit Chowdhury — visitors won't complain, they'll just leave | they'll just leave is the brutal part. merchants assume it's images but it's the script tags firing before the page renders. scanned a $40k/mo store recently, images perfectly optimized, 6 zombie apps. |  |  |
+| 22/04/2026 | 16:18 | Ellie Camejo — ghost billing $4,800/year zombie apps (bookkeeping founder) | the fulfillment integration one is the worst tbh. the 3PL switches, the merchant moves on, and the tool just keeps billing... $4,800 is a good year. I've seen stores closer to $6-7k in pure ghost billing. |  |  |
 
 -----
 
