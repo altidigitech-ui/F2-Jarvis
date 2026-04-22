@@ -11,6 +11,7 @@
 |Date|Heure|Post original (résumé + @handle)|Reply F|Likes reçus|Replies reçues|
 |----|-----|-------------------------------|-------|-----------|--------------|
 |    |     |                               |       |           |              |
+| 22/04/2026 | 15:26 | @Oghenemineee — silent videos + VN editor | For fully silent content the transcript approach doesn't help much. Pointed to beat sync + VN tools for visual rhythm. Mentioned voiceover workflow as the bigger time saver when applicable. |  |  |
 
 -----
 
