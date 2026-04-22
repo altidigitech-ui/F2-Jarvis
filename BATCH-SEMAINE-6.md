@@ -2644,23 +2644,24 @@ Feedback welcome on the beta design itself — is 30 days right? Is day-14 check
 
 ---
 
-### 10.3 Brief 3 — `store-md-beta-progress`
+### 10.3 Brief 3 — `store-md-beta-urgence` *(révisé 21/04/2026 — remplace `store-md-beta-progress` reporté au batch S7)*
 
 **Durée :** 8-12s
-**Usage :** F2 Twitter jeudi ou vendredi (selon dispo)
-**Concept :** compteur animé "N / 10 beta spots claimed" avec progression visuelle (par exemple 7/10 en cours de semaine)
+**Usage :** F2 Twitter jeudi ou vendredi (selon dispo) — fallback text-only si non prête à temps
+**Concept :** compte à rebours avant ouverture officielle lundi — urgence sur les 10 places, "10" en gros au centre, aucun compteur claimed (beta pas encore ouverte)
 
-**Texte animé :**
-- Frame 0-2s : "StoreMD Pro Beta"
-- Frame 2-6s : compteur anime de 0 à N (ex: 0 → 7)
-- Frame 6-9s : "N spots remaining" (ex: "3 spots remaining")
-- End card : "DM @foundrytwo"
+**Texte animé (séquence) :**
+- Frame 0-2s : `"StoreMD Pro Beta"`
+- Frame 2-4s : `"Opens Monday."`
+- Frame 4-7s : `"10 spots. That's it."`
+- Frame 7-10s : `"Reserve yours now — DM @foundrytwo"`
+- Frame 10-12s : URL `https://storemd.vercel.app/` affichée en end card
 
-**Style F2 :** brand palette, progress bar horizontale, typography clean
+**Style F2 :** palette brand F2, fond sombre, `"10"` oversized au centre pendant frame 4-7s, typography clean sans progress bar
 
-**URL CTA :** `https://storemd.vercel.app/` (end card)
+**URL CTA :** `https://storemd.vercel.app/` (jamais storemd.com)
 
-**⚠️ Contrainte honnêteté :** le nombre affiché doit refléter le vrai nombre de beta claimed au moment de la publication. BIBLE §3 ligne rouge "pas de faux X claimed". Si 2 betas claimed vendredi, la vidéo dit 2, pas 7.
+**⚠️ Note post-lancement :** à partir de lundi 27/04, produire une version `store-md-beta-progress-LIVE` avec le vrai compteur mis à jour selon DMs reçus (ex: `"4 testers in — 6 spots left"`). BIBLE §3 : le chiffre affiché doit refléter la réalité au moment de la publication.
 
 ---
 
