@@ -27,6 +27,7 @@
 | 22/04/2026 | 16:18 | Martín Martínez — too many apps slow your store / custom dev vs apps | the timing piece is underrated here. most merchants think about going custom after the store is already slow, not before. by then there's 3 years of installs, partial uninstalls, and leftover code from both. |  |  |
 | 22/04/2026 | 16:38 | Arijit Chowdhury — post store speed / bounce ('visitors won't complain, they'll just leave') | Arijit a répondu au comment F : 'real bottleneck is bloated third-party scripts and leftover app injections / zombie scripts firing in the critical rendering path'. Positive author engagement. |  |  |
 | 22/04/2026 | 16:38 | Arijit Chowdhury — reply reçue (critical rendering path / zombie scripts) | Reply F : 'critical rendering path is the right framing. speed audits score images because they're easy to sell. leftover injection stays after uninstall, keeps firing on every page load. no one notices because the app is gone.' |  |  |
+| 22/04/2026 | 16:45 | Saad Memon — blog→Twitter/LinkedIn/newsletter automatisé avec Make.com + OpenAI ($5) | the tooling side gets easier fast. getting Make.com + OpenAI connected for this kind of pipeline takes an afternoon honestly. the part that trips people up later is tone calibration per platform. Twitter and LinkedIn need different registers and models don't always nail that without some prompt tuning. Make.com for this use case is underrated tbh. most people reach for Zapier first and it's 5x more expensive for the same logic |  |  |
 
 -----
 
