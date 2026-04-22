@@ -19,6 +19,9 @@
 |Date|Heure|Cible|Vertical|Insight|Type|Réponse|Suite|
 |----|-----|-----|--------|-------|----|-------|-----|
 |    |     |     |        |       |    |       |     |
+| 22/04/2026 | 14:48 | @SirPelzBuilds | ecom | Builder Shopify + apprentissage JS — reply sur JS bloat et app conflicts, angle StoreMD | reply | ⏳ |  |
+| 22/04/2026 | 14:48 | @Oghenemineee | creator | Video editing 5h+ au lieu de 1h — reply workflow transcription-first pour réduire editing | reply | ⏳ |  |
+| 22/04/2026 | 14:48 | @robbehcochrane | creator | YouTube creator, editing prend des heures — reply transcript-first workflow, question setup | reply | ⏳ |  |
 
 -----
 
