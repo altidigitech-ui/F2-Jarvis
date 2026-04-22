@@ -41,6 +41,7 @@
 |----|---|--------------------------------|-------------|-----------|-----|
 |    |   |                                |             |           |     |
 | 22/04/2026 | 17:47 | u/Fragrant-Barnacle-16 — Questions/Aide concernant les abonnements Shopify (subscription billing anchor date, API contracts) | Reply F : Recharge/Bold APIs pour billing date override, fallback native Shopify subscription contracts API si dev capacity disponible. |  |  |
+| 22/04/2026 | 17:50 | u/Xolaris05 — Traffic quality / intent signal, conversion Shopify | Reply F : angle traffic intent vs conversion leak, diagnostic sessions + comportement pré-achat. |  |  |
 
 -----
 
