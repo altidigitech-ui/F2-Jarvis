@@ -6,9 +6,9 @@
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 20/04|`store-md-logo-reveal`|Week 6 numbers: [X] scans, [Y] leaks, [W] agencies|📅 Schedulé|
-|Mar 21/04|`store-md-feature-health`|Store Health module detail|📅 Schedulé|
-|Mer 22/04|`store-md-testimonial-founder`|"I thought my store was fine" — scored 34/100|📅 Schedulé|
+|Lun 20/04|`store-md-logo-reveal`|Week 6 numbers: [X] scans, [Y] leaks, [W] agencies|✅ Publié|
+|Mar 21/04|`store-md-feature-health`|Store Health module detail|✅ Publié|
+|Mer 22/04|`store-md-testimonial-founder`|"I thought my store was fine" — scored 34/100|✅ Publié|
 |Jeu 23/04|`store-md-money-ghost-cumulative`|3 ghost apps × $189 × 12 = $2,268/year|📅 Schedulé|
 |Ven 24/04|`store-md-stats`|Week 6 real numbers|📅 Schedulé|
 
