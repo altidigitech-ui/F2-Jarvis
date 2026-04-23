@@ -477,12 +477,15 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         mode={mode}
       />
       {/* Top bar */}
+      {f2Mode && (
+        <div className="fixed top-0 left-0 right-0 z-30">
+          <F2Banner />
+        </div>
+      )}
       <header
-        className="relative glass flex items-center justify-between px-6 py-3 sticky top-0 z-20"
+        className={`glass flex items-center justify-between px-6 py-3 sticky top-0 z-20 ${f2Mode ? "mt-8" : ""}`}
         style={{ borderBottom: `1px solid ${accentColor}20` }}
       >
-        {/* F2 mode banner — absolutely positioned below the header, no flex space consumed */}
-        {f2Mode && <F2Banner />}
         <div className="flex items-center gap-4">
           <Link
             href="/"
