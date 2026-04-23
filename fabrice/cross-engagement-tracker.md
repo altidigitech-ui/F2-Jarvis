@@ -520,3 +520,17 @@ Cocher au fur et à mesure :
 ---
 
 *Tracker F S6 final fusionné 21/04/2026. Couche A : replies rédigées selon canon §17 BATCH-SEMAINE-6.md + voix F `fabrice/VOIX.md` + ANTI-IA.md. Couche B : replies rédigées selon ton founder enthousiaste validé 21/04 + BIBLE v2.1 §3 + ANTI-IA.md. Posts Couche B source : `BATCH-ADDITIONNEL-MER-VEN-S6.md` (ou section Couche B de `batch-semaine-6-final.md`).*
+
+
+**Reply R publiée (23/04/2026 17:19:54 CEST) :**
+
+```
+Cross-engagement F fait sur post Romain 13h
+```
+
+
+**Reply R publiée (23/04/2026 17:19:54 CEST) :**
+
+```
+Cross-engagement F fait sur post F2 13h
+```
