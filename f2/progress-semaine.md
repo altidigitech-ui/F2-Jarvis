@@ -12,6 +12,8 @@
 |----|---------|----------|------------------------|
 |22/04|Reply @aryan_sinh sur post beta F2 (question naming StoreMD)|IH (compte F2)|Reply : nom verrouillé, fonctionnel = voulu, app B2B Shopify pas une marque consumer, le rapport fait le travail pas le nom.|
 |22/04|IH engagement (compte F2 @foundrytwo) — 5 commentaires feed|IH (compte F2)|5 commentaires : @kubaklatt (ad URL monitor, blind spot pattern commun), @atomfoundryai (100+ e-commerce stores analyzed, conversion vs traffic), @HarshGarg06 (worst support month, proactive outreach), @PrepProject (where is your time spent, outreach et distribution), @Ridhisha (retention trapped, 530+ app reviews hostage retention pattern). Mix engagement valeur + builder-to-builder.|
+|23/04|IH replies notifications (compte F2 @foundrytwo) — 3 replies|IH (compte F2)|3 replies : @aryan_sinh sur post beta F2 (100% direct outreach, zero organic spread yet, $300/mo ghost billing recall), @atomfoundryai sur "100+ e-commerce stores" (two layers structural + psychological, fix order matters), @kubaklatt sur ad URL monitor (hourly checks 90%+ for v1, don't build v2 before paying users).|
+|23/04|IH engagement (compte F2 @foundrytwo) — 2 commentaires nouveaux|IH (compte F2)|2 commentaires : @Nvsn_ai "2 weeks Reddit beta ghosted" (StoreMD beta design, value before commitment, 10 spots deadline), @AyeshaBuilds "Trust Leaks Free Audits" (trust leaks vs technical leaks complementary, question audit format v1 vs v2).|
 
 -----
 
