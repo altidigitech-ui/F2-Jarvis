@@ -12,7 +12,6 @@ type QuickAccessSidebarProps = {
   onOpenCrossEngagement: () => void;
   onOpenColdOutreach: () => void;
   onOpenProgress: () => void;
-  onOpenMemory: () => void;
   onOpenToday?: () => void;
 };
 

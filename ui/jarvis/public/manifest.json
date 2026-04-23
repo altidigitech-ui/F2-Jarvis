@@ -1,0 +1,15 @@
+{
+  "name": "F2-JARVIS",
+  "short_name": "JARVIS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020612",
+  "theme_color": "#00ffb4",
+  "icons": [
+    {
+      "src": "/next.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

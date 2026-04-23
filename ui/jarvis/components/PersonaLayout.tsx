@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Chat } from "./Chat";
 import { OuroborosPanel } from "./OuroborosPanel";
+import { BatchCard } from "./BatchCard";
+import { MobileNav, type MobilePanel } from "./MobileNav";
 
 const RepoGraph3D = dynamic(() => import("./RepoGraph3D"), {
   ssr: false,
@@ -328,6 +330,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const [pendingOps, setPendingOps] = useState(0);
   const [batchLabel, setBatchLabel] = useState("--:--");
   const [batchCountdown, setBatchCountdown] = useState("");
+  const [mobilePanel, setMobilePanel] = useState<MobilePanel>(null);
   const pendingOpsRef = useRef(0);
 
   // Restore f2Mode from localStorage (client-only)
@@ -538,11 +541,103 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         </div>
       </header>
 
+      {/* Mobile overlays */}
+      {mobilePanel === "timeline" && (
+        <div
+          className="fixed inset-0 z-50 md:hidden flex flex-col"
+          style={{ background: "#020612" }}
+        >
+          <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+            <span className="text-[12px] font-mono text-slate-400 uppercase tracking-widest">Timeline</span>
+            <button onClick={() => setMobilePanel(null)} className="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button>
+          </div>
+          <div className="flex-1 overflow-y-auto">
+            <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} />
+          </div>
+        </div>
+      )}
+      {mobilePanel === "counters" && (
+        <div
+          className="fixed inset-0 z-50 md:hidden flex flex-col"
+          style={{ background: "#020612" }}
+        >
+          <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+            <span className="text-[12px] font-mono text-slate-400 uppercase tracking-widest">Compteurs du jour</span>
+            <button onClick={() => setMobilePanel(null)} className="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button>
+          </div>
+          <div className="flex-1 overflow-y-auto p-4">
+            <div className="grid grid-cols-2 gap-2">
+              <CounterTile label="Cold" value={counters.cold} target={targets.cold} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              {targets.platforms.includes("TWITTER") && (
+                <CounterTile label="TW eng." value={counters.twEng} target={targets.twEng} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
+              {targets.platforms.includes("LINKEDIN") && (
+                <CounterTile label="LI com." value={counters.liCom} target={targets.liCom} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
+              {targets.platforms.includes("REDDIT") && (
+                <CounterTile label="Reddit" value={counters.reddit} target={targets.reddit} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
+              {targets.hasIhPh && (
+                <CounterTile label="IH + PH" value={counters.ihPh} target={targets.ihPh} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
+              <CounterTile label="Cross" value={counters.cross} target={targets.cross} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Total" value={counters.total} target={targets.engTarget} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+            </div>
+          </div>
+        </div>
+      )}
+      {mobilePanel === "menu" && (
+        <div
+          className="fixed inset-0 z-50 md:hidden flex"
+          onClick={() => setMobilePanel(null)}
+        >
+          <div
+            className="w-72 flex flex-col overflow-y-auto"
+            style={{ background: "#020612", borderRight: `1px solid ${accentColor}20` }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+              <span className="text-[12px] font-mono text-slate-400 uppercase tracking-widest">Menu</span>
+              <button onClick={() => setMobilePanel(null)} className="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button>
+            </div>
+            <div className="p-3 flex flex-col gap-2">
+              <button
+                onClick={() => { setGraphifyExpanded(true); setMobilePanel(null); }}
+                className="w-full flex items-center gap-2 px-2 py-2 rounded text-[12px] font-mono hover:bg-white/5 min-h-[32px]"
+                style={{ border: `1px solid ${accentColor}20`, color: accentColor, background: `${accentColor}08` }}
+              >
+                <span>⬡</span><span>Graphify</span>
+              </button>
+              <button
+                onClick={() => { setMempalaceExpanded(true); setMobilePanel(null); }}
+                className="w-full flex items-center gap-2 px-2 py-2 rounded text-[12px] font-mono hover:bg-white/5 min-h-[32px]"
+                style={{ border: `1px solid ${accentColor}20`, color: accentColor, background: `${accentColor}08` }}
+              >
+                <span>🏛</span><span>MemPalace</span>
+              </button>
+            </div>
+            <QuickAccessSidebar
+              persona={persona}
+              accentColor={accentColor}
+              weekNumber={weekNumber}
+              onOpenPlanHebdo={() => { setOpenFilePath(filePaths.planHebdo); setMobilePanel(null); }}
+              onOpenPostsBatch={() => { setOpenFilePath(filePaths.postsBatch); setMobilePanel(null); }}
+              onOpenCrossEngagement={() => { setOpenFilePath(filePaths.crossEng); setMobilePanel(null); }}
+              onOpenColdOutreach={() => { setOpenFilePath(filePaths.cold); setMobilePanel(null); }}
+              onOpenProgress={() => { setOpenFilePath(filePaths.progress); setMobilePanel(null); }}
+            />
+            <BatchCard accentColor={accentColor} />
+            <OuroborosPanel accentColor={accentColor} persona={persona} />
+          </div>
+          <div className="flex-1" />
+        </div>
+      )}
+
       {/* 4-column layout */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar gauche — 200px */}
+      <div className="flex flex-1 overflow-hidden pb-14 md:pb-0">
+        {/* Sidebar gauche — 200px, cachée sur mobile */}
         <aside
-          className="w-[200px] flex-none flex flex-col border-r overflow-y-auto"
+          className="hidden md:flex w-[200px] flex-none flex-col border-r overflow-y-auto"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           <div className="p-3">
@@ -596,11 +691,12 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             onOpenCrossEngagement={() => setOpenFilePath(filePaths.crossEng)}
             onOpenColdOutreach={() => setOpenFilePath(filePaths.cold)}
             onOpenProgress={() => setOpenFilePath(filePaths.progress)}
-            onOpenMemory={() => setMempalaceExpanded(true)}
           />
         </aside>
 
-        <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} />
+        <div className="hidden md:block">
+          <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} />
+        </div>
 
         {/* Centre — flex-1 */}
         <main className="flex-1 flex flex-col overflow-hidden min-w-0">
@@ -618,9 +714,9 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
         </main>
 
-        {/* Sidebar droite — 290px */}
+        {/* Sidebar droite — 290px, cachée sur mobile */}
         <aside
-          className="w-[290px] flex-none flex flex-col border-l overflow-y-auto"
+          className="hidden md:flex w-[290px] flex-none flex-col border-l overflow-y-auto"
           style={{ borderColor: "rgba(255,255,255,0.05)" }}
         >
           {/* Compteurs — grille dynamique selon persona */}
@@ -738,6 +834,9 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             )}
           </div>
 
+          {/* Batch S{N+1} card */}
+          <BatchCard accentColor={accentColor} />
+
           {/* Ouroboros panel */}
           <OuroborosPanel accentColor={accentColor} persona={persona} />
 
@@ -765,6 +864,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
         </aside>
       </div>
+
+      {/* Bottom navigation — mobile only */}
+      <MobileNav
+        accentColor={accentColor}
+        activePanel={mobilePanel}
+        onToggle={setMobilePanel}
+      />
     </div>
   );
 }
