@@ -311,7 +311,7 @@ C'est :
 **Type de funnel :** [top-of-funnel attention / mid-funnel conversion / bottom-funnel closing]
 **Tonalité :** [agressif / pédagogique / communautaire / urgence / autre]
 **Mécaniques principales :** [M1, M2, M3...] — détaillées dans `[FICHIER-STRATEGIE-COUCHE-A].md` §2
-**Créneau horaire dédié :** [ex: 13h00 CEST Twitter + 21h00 CEST LinkedIn]
+**Créneau horaire dédié :** cf. §3 — horaires fixes par compte et par couche
 
 ### 1.2 Couche B — [NOM COUCHE B, ex: BETA TESTERS ACQUISITION DIRECTE]
 
@@ -320,7 +320,7 @@ C'est :
 **Type de funnel :** [doit être différent ou complémentaire de Couche A]
 **Tonalité :** [même agressivité que A mais levier différent / ton complémentaire]
 **Mécaniques principales :** [M1, M2, M3...] — détaillées dans `[FICHIER-STRATEGIE-COUCHE-B].md` §2
-**Créneau horaire dédié :** [ex: 18h30 CEST Twitter + 21h30 CEST LinkedIn — distinct de Couche A]
+**Créneau horaire dédié :** cf. §3 — horaires fixes par compte et par couche
 
 ### 1.3 Règle de cohabitation (non-contradiction)
 
@@ -394,34 +394,51 @@ Règle timing 5 min après publication reste absolue des 2 côtés.
 
 **Principe de non-cannibalisation :** les 2 couches ne publient jamais au même créneau sur le même compte.
 
-### 3.1 Horaires Twitter
+### 3.1 Horaires Twitter — Ordre F → R → F2 (ne change jamais)
 
-| Jour | Compte | Couche A (heure) | Couche B (heure) |
+| Couche | F | R | F2 |
 |---|---|---|---|
-| Lundi | R | [ex: 13h00] | [ex: 18h30] |
-| Lundi | F | [13h00] | [18h30] |
-| Lundi | F2 | [13h00] | [18h30] |
-| Mardi | ... | ... | ... |
+| **A** | 13h00 | 14h00 | 15h00 |
+| **B** | 18h00 | 19h00 | 20h00 |
 
-[Compléter tous les jours avec les 3 comptes]
+Cross-engagement Twitter (5 min max après publication) :
+- F publie → R reply à +5 min
+- R publie → F reply à +5 min
+- F2 publie → R + F reply à +5 min
+- F2 ne cross-engage jamais
 
-### 3.2 Horaires LinkedIn
+Jours Twitter : lundi-samedi (dimanche OFF)
 
-| Jour | Compte | Couche A (heure) | Couche B (heure) |
-|---|---|---|---|
-| [Jour] | [Compte] | [HHhMM] | [HHhMM] |
+### 3.2 Horaires LinkedIn — Ordre R → F (ne change jamais)
 
-### 3.3 Horaires IH + PH
+| Couche | R | F |
+|---|---|---|
+| **A** | 17h00 | 17h30 |
+| **B** | 20h30 | 21h00 |
 
-| Jour | Compte | Couche A (heure) | Couche B (heure) |
-|---|---|---|---|
-| [Mer] | F2 IH | [HHhMM] | [HHhMM ou jour différent] |
+LinkedIn F2 company (Couche A uniquement, pas de double couche) :
+- Mardi : 17h45
+- Jeudi : 17h45
+
+Cross-engagement LinkedIn (5 min max après publication) :
+- R publie → F commente à +5 min
+- F publie → R commente à +5 min
+- F2 publie → R + F commentent à +5 min
+- F2 ne cross-engage jamais
+
+Jours LinkedIn R + F : lundi + mardi + jeudi
+
+### 3.3 Horaires IH — F2 uniquement
+
+- Jour : jeudi
+- Heure : 17h15 CEST
+- Aucun cross-engagement
 
 ### 3.4 Règle d'écart minimum
 
 **Entre 2 publications du même compte même jour : minimum 3 heures d'écart.** Sinon l'algo Twitter/LinkedIn pénalise (comportement spammy) et les 2 posts se cannibalisent en engagement.
 
-Recommandation : créneau Couche A matin/midi (13h00), créneau Couche B soir (18h30 ou 21h30).
+Les horaires sont fixés en §3. Pas de variation par semaine.
 
 ---
 
@@ -831,8 +848,7 @@ Les 2 couches doivent respecter les règles suivantes pour éviter qu'un lecteur
 ### 9.2 Test de cohabitation
 
 Avant de valider le batch, simuler le parcours d'un lecteur qui voit :
-- Le post A du matin à 13h00
-- Le post B du soir à 18h30
+- Les posts Couche A commencent à 13h00 (F), les posts Couche B à 18h00 (F) — cf. §3 pour le dispatch complet par compte.
 - Sur le même compte, le même jour
 
 → Est-ce que le lecteur perçoit une incohérence ? Si oui → refaire un des 2 posts.
