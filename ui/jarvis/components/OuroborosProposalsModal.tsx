@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useState, useEffect, useCallback } from "react";
 
 interface Proposal {
@@ -62,36 +63,63 @@ function formatDate(dateStr: string): string {
   }
 }
 
-function SimpleMarkdown({ content }: { content: string }) {
+function renderInline(text: string): React.ReactNode {
+  const parts: React.ReactNode[] = [];
+  const regex = /(\*\*[^*]+\*\*|\*[^*]+\*)/g;
+  let lastIndex = 0;
+  let key = 0;
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
+    const token = match[0];
+    if (token.startsWith("**")) {
+      parts.push(<strong key={key++} className="font-semibold text-slate-200">{token.slice(2, -2)}</strong>);
+    } else {
+      parts.push(<em key={key++}>{token.slice(1, -1)}</em>);
+    }
+    lastIndex = match.index + token.length;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return parts.length > 0 ? <>{parts}</> : text;
+}
+
+function SimpleMarkdown({ content, large }: { content: string; large?: boolean }) {
   const lines = content.split("\n");
+  const textSm = large ? "text-[14px]" : "text-[10px]";
+  const textH2 = large ? "text-[15px]" : "text-[11px]";
+  const textH1 = large ? "text-base" : "text-sm";
+  const lineStyle = large ? { lineHeight: "1.7" } : undefined;
+  const gap = large ? "space-y-2" : "space-y-1";
+  const emptyH = large ? "h-3" : "h-1";
+
   return (
-    <div className="space-y-1">
+    <div className={gap}>
       {lines.map((line, i) => {
         if (line.startsWith("## "))
           return (
-            <div key={i} className="text-[11px] font-mono font-semibold text-slate-300 mt-3 mb-1">
-              {line.slice(3)}
+            <div key={i} className={`${textH2} font-mono font-semibold text-slate-300 mt-4 mb-1`}>
+              {renderInline(line.slice(3))}
             </div>
           );
         if (line.startsWith("# "))
           return (
-            <div key={i} className="text-sm font-mono font-bold text-slate-200 mb-2">
-              {line.slice(2)}
+            <div key={i} className={`${textH1} font-mono font-bold text-slate-200 mb-2`}>
+              {renderInline(line.slice(2))}
             </div>
           );
         if (line.startsWith("- "))
           return (
-            <div key={i} className="text-[10px] font-mono text-slate-400 pl-2">
-              · {line.slice(2)}
+            <div key={i} className={`${textSm} font-mono text-slate-400 pl-2 flex gap-1.5`} style={lineStyle}>
+              <span className="text-slate-600 flex-none">·</span>
+              <span>{renderInline(line.slice(2))}</span>
             </div>
           );
         if (line.startsWith("---"))
           return <div key={i} className="border-t my-2" style={{ borderColor: "rgba(255,255,255,0.06)" }} />;
-        if (line.trim() === "") return <div key={i} className="h-1" />;
-        const boldParsed = line.replace(/\*\*([^*]+)\*\*/g, "«$1»");
+        if (line.trim() === "") return <div key={i} className={emptyH} />;
         return (
-          <div key={i} className="text-[10px] font-mono text-slate-400 leading-relaxed">
-            {boldParsed}
+          <div key={i} className={`${textSm} font-mono text-slate-400`} style={lineStyle}>
+            {renderInline(line)}
           </div>
         );
       })}
@@ -454,7 +482,7 @@ export function OuroborosProposalsModal({ accentColor, persona, mode, onClose }:
                     >
                       {entry.filename.replace(/\.md$/, "")}
                     </div>
-                    <SimpleMarkdown content={entry.content} />
+                    <SimpleMarkdown content={entry.content} large />
                   </div>
                 ))}
               </div>
