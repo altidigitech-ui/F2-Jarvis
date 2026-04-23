@@ -182,7 +182,11 @@ function parseBatch(md: string): { fabrice: Partial<PersonaTargets>; romain: Par
 }
 
 function buildPersonaTargets(base: PersonaTargets, overrides: Partial<PersonaTargets>): PersonaTargets {
-  const platforms = overrides.platforms ?? base.platforms;
+  const basePlatforms = new Set(base.platforms);
+  if (overrides.platforms) {
+    for (const p of overrides.platforms) basePlatforms.add(p);
+  }
+  const platforms = Array.from(basePlatforms);
   const hasIh = platforms.includes("IH");
   const hasPh = platforms.includes("PH");
   const hasIhPh = hasIh || hasPh;
