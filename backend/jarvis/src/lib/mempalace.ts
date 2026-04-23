@@ -300,6 +300,10 @@ export async function getDrawerFull(wing: string, filename: string): Promise<Dra
   };
 }
 
+export function invalidateMempalaceCache(): void {
+  _cache.expiresAt = 0;
+}
+
 export async function getStats(): Promise<MemPalaceStats> {
   const { drawers } = await getIndex();
   const byWing: Record<string, number> = {};

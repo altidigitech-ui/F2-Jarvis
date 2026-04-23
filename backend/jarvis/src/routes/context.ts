@@ -96,7 +96,8 @@ function parseTimeline(planHebdo: string, today: string, dayName: string, publis
     for (const row of rows) {
       if (row.length < 2) continue;
       const dayCell = row[0].replace(/\*\*/g, "").toLowerCase();
-      if (!dayCell.includes(today) && !dayCell.includes(dayName)) continue;
+      const dayAbbr = dayName.slice(0, 3);
+      if (!dayCell.includes(today) && !dayCell.includes(dayName) && !dayCell.includes(dayAbbr)) continue;
       const subject = row[2] || row[1] || "";
       const statusCell = row[row.length - 1] || "";
       const timeMatch = statusCell.match(/(\d{1,2})h/);

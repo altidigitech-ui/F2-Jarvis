@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { ghRead, ghList, ghCreate, ghDelete, GitHubDirEntry } from "../lib/github.js";
 
 const STATE_PATH = "brain/ouroboros/state.json";
+const DIARY_PATH = "brain/ouroboros/diary";
 const PROPOSALS_PENDING = "brain/ouroboros/proposals/pending";
 const PROPOSALS_ACCEPTED = "brain/ouroboros/proposals/accepted";
 const PROPOSALS_REJECTED = "brain/ouroboros/proposals/rejected";
@@ -134,14 +135,27 @@ export async function ouroborosStatus(req: Request, res: Response): Promise<void
     let state: Record<string, unknown> = {};
     try { state = JSON.parse(stateContent); } catch { /* use defaults */ }
 
-    const [pendingFiles, killContent] = await Promise.all([
+    const [pendingFiles, killContent, diaryFiles] = await Promise.all([
       safeList(PROPOSALS_PENDING),
       safeRead(KILL_SWITCH_PATH),
+      safeList(DIARY_PATH),
     ]);
 
     const proposalsPending = pendingFiles.filter(
       f => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("_")
     ).length;
+
+    const diaryMdFiles = diaryFiles
+      .filter(f => f.type === "file" && f.name.endsWith(".md"))
+      .sort((a, b) => b.name.localeCompare(a.name));
+    const diaryCount = diaryMdFiles.length;
+    const lastDiaryDate = diaryMdFiles.length > 0 ? diaryMdFiles[0].name.replace(".md", "") : null;
+
+    let cycleRunning = false;
+    try {
+      const { ouroborosQueue } = await import("../lib/queues.js");
+      cycleRunning = (await ouroborosQueue.getActiveCount()) > 0;
+    } catch { /* Redis unavailable */ }
 
     const budgetCap = (state.budgetCap as number) || 10;
     const budgetUsed = (state.budgetUsed as number) || 0;
@@ -156,6 +170,9 @@ export async function ouroborosStatus(req: Request, res: Response): Promise<void
       lastCycle: (state.lastCycle as object | null) || null,
       nextCycle: nextCycle.toISOString(),
       proposalsPending,
+      diaryCount,
+      lastDiaryDate,
+      cycleRunning,
       budgetUsed,
       budgetRemaining: Math.max(0, budgetCap - budgetUsed),
       budgetCap,

@@ -9,6 +9,9 @@ interface OuroborosStatus {
   lastCycle?: { id?: number; date?: string; duration?: string } | null;
   nextCycle?: string | null;
   proposalsPending?: number;
+  diaryCount?: number;
+  lastDiaryDate?: string | null;
+  cycleRunning?: boolean;
   budgetUsed?: number;
   budgetRemaining?: number;
   budgetCap?: number;
@@ -68,7 +71,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
 
   useEffect(() => {
     fetchStatus();
-    const id = setInterval(fetchStatus, 120_000);
+    const id = setInterval(fetchStatus, 60_000);
     return () => clearInterval(id);
   }, [fetchStatus]);
 
@@ -197,6 +200,21 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                   {status.proposalsPending ?? 0} pending
                 </span>
               </div>
+              {(status.diaryCount ?? 0) > 0 && (
+                <div className="flex justify-between items-center text-[12px] text-slate-400">
+                  <span>Journal</span>
+                  <span className="font-mono">
+                    {status.diaryCount} entrée{(status.diaryCount ?? 0) > 1 ? "s" : ""}
+                    {status.lastDiaryDate ? ` · ${status.lastDiaryDate}` : ""}
+                  </span>
+                </div>
+              )}
+              {status.cycleRunning && (
+                <div className="flex justify-between items-center text-[12px]" style={{ color: accentColor }}>
+                  <span>Cycle en cours</span>
+                  <span className="font-mono animate-pulse">⟳</span>
+                </div>
+              )}
             </div>
 
             {/* Budget bar */}
