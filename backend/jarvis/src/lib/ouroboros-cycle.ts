@@ -101,8 +101,21 @@ Date du jour : ${date}.
 ## TA MISSION
 
 Analyser les signaux du repo et produire :
-1. 0 à 3 propositions structurées (si pertinentes)
+1. 0 à 5 propositions structurées (si pertinentes)
 2. 1 entrée de journal
+
+**Types de propositions attendues :**
+
+a) **Incohérences et risques** (observés dans les fichiers, patterns, alertes)
+b) **Actions proactives concrètes**, notamment :
+   - Cross-engagement non fait aujourd'hui → "Proposer rappel cross-engagement"
+   - Batch S{N+1} non commencé et on est jeudi/vendredi → "Proposer de commencer le batch"
+   - Cold outreach en attente de follow-up (réponses non traitées) → "Proposer suivi cold"
+   - Compteurs Twitter/LinkedIn à <30% de l'objectif en fin de journée → "Proposer sprint engagement"
+   - plan-hebdo non mis à jour depuis lundi → "Proposer mise à jour planning"
+   - progress-semaine vide en fin de semaine → "Proposer bilan hebdo"
+
+La priorité est d'être **utile et actionnable**, pas exhaustif. 0 proposal vaut mieux que 5 proposals génériques.
 
 ## FORMAT OBLIGATOIRE
 
@@ -111,7 +124,7 @@ Pour chaque proposition, utilise ce bloc exact :
 ---PROPOSAL---
 **Priorité:** faible | moyenne | haute
 **Titre:** (une ligne)
-**Contexte:** (ce que tu as observé)
+**Contexte:** (ce que tu as observé — données précises)
 **Recommandation:** (action concrète à prendre)
 **Risques si ignoré:** (conséquences)
 ---END-PROPOSAL---

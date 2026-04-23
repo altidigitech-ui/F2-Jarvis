@@ -52,6 +52,8 @@ const CREATE_FILE_ALLOWED_PREFIXES = [
   "produits/",
   "ops/",
   "marketing/",
+  "brain/jarvis-workspace/",
+  ".claude/agents/",
 ];
 
 /** Exact filenames allowed at repo root (in addition to prefixes). */
