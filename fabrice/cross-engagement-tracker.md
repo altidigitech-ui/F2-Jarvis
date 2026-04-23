@@ -562,3 +562,31 @@ ran into this building the ghost billing module. the billing contract and the ap
 ```
 the no admin access part matters more than it sounds tbh. merchants share a URL. they don't share store access, even for something free. I built the whole detection pipeline around public-facing signals because of that. everything it catches is visible without touching the backend.
 ```
+
+
+**Reply R publiée (23/04/2026 20:47:28 CEST) :**
+
+```
+Romain cross-engage sur post F 13h
+```
+
+
+**Reply R publiée (23/04/2026 20:47:28 CEST) :**
+
+```
+F2 cross-engage sur post F 18h30
+```
+
+
+**Reply R publiée (23/04/2026 20:47:28 CEST) :**
+
+```
+F2 cross-engage sur post F 13h
+```
+
+
+**Reply R publiée (23/04/2026 20:47:28 CEST) :**
+
+```
+Romain cross-engage sur post F 18h30
+```
