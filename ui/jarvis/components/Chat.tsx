@@ -458,13 +458,15 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const [selectedActionIds, setSelectedActionIds] = useState<Set<string>>(new Set());
   const [committedActionIds, setCommittedActionIds] = useState<Set<string>>(new Set());
   const [batchCommitting, setBatchCommitting] = useState(false);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatScrollRef.current) {
+      chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
+    }
   }, [messages, activeAction]);
 
   useEffect(() => {
@@ -533,8 +535,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
             }));
           setMessages(rehydrated);
           setTimeout(() => {
-            const container = document.querySelector('[data-chat-scroll]');
-            if (container) container.scrollTop = container.scrollHeight;
+            if (chatScrollRef.current) chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
           }, 100);
         } else {
           setMessages([]);
@@ -843,8 +844,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       abortRef.current = null;
       setIsStreaming(false);
       setTimeout(() => {
-        const container = document.querySelector('[data-chat-scroll]');
-        if (container) container.scrollTop = container.scrollHeight;
+        if (chatScrollRef.current) chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
       }, 100);
     }
   };
@@ -981,7 +981,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         )}
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4" data-chat-scroll="true">
+        <div ref={chatScrollRef} className="flex-1 overflow-y-auto px-6 py-4 space-y-4" data-chat-scroll="true">
           {messages.length === 0 && (
             <div className="flex items-center justify-center h-full">
               <div className="text-center">
@@ -1228,7 +1228,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 )}
             </div>
           ))}
-          <div ref={bottomRef} />
         </div>
 
         {/* Batch commit floating button */}
