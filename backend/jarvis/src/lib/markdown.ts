@@ -85,7 +85,7 @@ export function markCrossPublished(markdown: string, postSummary: string, replyC
     }
   }
   const suffix2 = `\n\n**Reply R publiée (${cestNow()} CEST) :**\n\n\`\`\`\n${replyContent}\n\`\`\`\n`;
-  return lines.join("\n") + (postSummary ? "" : suffix2);
+  return lines.join("\n") + (replyContent ? suffix2 : "");
 }
 
 export function markPlanPublished(markdown: string, postTitle: string): string {
