@@ -31,152 +31,109 @@ export interface TargetsResponse {
 
 const DEFAULTS: Record<"fabrice" | "romain", PersonaTargets> = {
   fabrice: {
-    cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 2,
+    cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 4,
     ph: 0, ih: 0, ihPh: 0, engTarget: 30,
     platforms: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK"],
     hasIhPh: false, hasPh: false, hasIh: false,
   },
   romain: {
-    cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 2,
+    cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 4,
     ph: 5, ih: 5, ihPh: 5, engTarget: 30,
     platforms: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "IH", "PH"],
     hasIhPh: true, hasPh: true, hasIh: true,
   },
 };
 
-function extractNumber(text: string): number | null {
-  const m = text.match(/(\d+)/);
-  return m ? parseInt(m[1], 10) : null;
-}
-
 function parseBatch(md: string): { fabrice: Partial<PersonaTargets>; romain: Partial<PersonaTargets> } {
   const fabrice: Partial<PersonaTargets> = {};
   const romain: Partial<PersonaTargets> = {};
 
-  const lines = md.split("\n");
-  let currentSection = "";
+  const fPlatforms = new Set<string>();
+  const rPlatforms = new Set<string>();
 
-  for (const line of lines) {
-    const secMatch = /^##\s+\d+\.\s+(.+)$/.exec(line.trim());
-    if (secMatch) {
-      currentSection = secMatch[1].toUpperCase();
+  let sectionNum = 0;
+  let fabriceCold = 0;
+  let romainCold = 0;
+  // Prevent double-counting the Twitter cascade in section 9
+  let fabriceTweetColdSet = false;
+
+  for (const line of md.split("\n")) {
+    const raw = line.trim();
+
+    // ── ## N. Section header ──────────────────────────────────────────
+    const sec = /^##\s+(\d+)\.\s+(.+)$/.exec(raw);
+    if (sec) {
+      sectionNum = parseInt(sec[1], 10);
+      const title = sec[2].toUpperCase();
+      const inFab = sectionNum >= 5 && sectionNum <= 6;
+      const inRom = sectionNum >= 3 && sectionNum <= 4;
+      const inF2  = sectionNum >= 7 && sectionNum <= 8;
+      if (title.includes("TWITTER"))            { if (inFab || (!inRom && !inF2)) fPlatforms.add("TWITTER");  if (inRom || (!inFab && !inF2)) rPlatforms.add("TWITTER"); }
+      if (title.includes("LINKEDIN"))           { if (inFab || (!inRom && !inF2)) fPlatforms.add("LINKEDIN"); if (inRom || (!inFab && !inF2)) rPlatforms.add("LINKEDIN"); }
+      if (title.includes("REDDIT"))             { if (inFab || (!inRom && !inF2)) fPlatforms.add("REDDIT");   if (inRom || (!inFab && !inF2)) rPlatforms.add("REDDIT"); }
+      if (title.includes("FACEBOOK") || title.includes("FB")) { if (inFab || (!inRom && !inF2)) fPlatforms.add("FACEBOOK"); if (inRom || (!inFab && !inF2)) rPlatforms.add("FACEBOOK"); }
+      if (title.includes("IH") || title.includes("INDIEHACKER")) { if (inRom || (!inFab && !inF2)) rPlatforms.add("IH"); }
+      if (title.includes("PH") || title.includes("PRODUCTHUNT")) { if (inFab || (!inRom && !inF2)) fPlatforms.add("PH"); if (inRom || (!inFab && !inF2)) rPlatforms.add("PH"); }
       continue;
     }
 
-    // Detect platforms from section headers (## POSTS TWITTER, ## POSTS LINKEDIN etc.)
-    if (currentSection.includes("POSTS TWITTER")) {
-      if (line.includes("FABRICE") || line.toLowerCase().includes("fabrice")) fabrice.platforms = [...(fabrice.platforms || []), "TWITTER"];
-      if (line.includes("ROMAIN") || line.toLowerCase().includes("romain")) romain.platforms = [...(romain.platforms || []), "TWITTER"];
-    }
-
-    // Cold outreach target
-    if (currentSection.includes("COLD") && (line.toLowerCase().includes("/jour") || line.toLowerCase().includes("par jour"))) {
-      const num = extractNumber(line);
-      if (num !== null) {
-        fabrice.cold = num;
-        romain.cold = num;
-      }
-    }
-  }
-
-  // Detect active platforms from section names
-  const fPlatforms: Set<string> = new Set();
-  const rPlatforms: Set<string> = new Set();
-
-  let currentSectionName = "";
-  let inFabriceSection = false;
-  let inRomainSection = false;
-  let inF2Section = false;
-
-  for (const line of lines) {
-    const secMatch = /^##\s+(\d+)\.\s+(.+)$/.exec(line.trim());
-    if (secMatch) {
-      const secNum = parseInt(secMatch[1], 10);
-      const secTitle = secMatch[2].toUpperCase();
-      currentSectionName = secTitle;
-
-      // Sections 5-6 are Fabrice, 3-4 are Romain, 7-8 are F2 (based on batch structure)
-      inFabriceSection = secNum >= 5 && secNum <= 6;
-      inRomainSection = secNum >= 3 && secNum <= 4;
-      inF2Section = secNum >= 7 && secNum <= 8;
-
-      if (secTitle.includes("TWITTER")) {
-        if (inFabriceSection || (!inRomainSection && !inF2Section)) fPlatforms.add("TWITTER");
-        if (inRomainSection || (!inFabriceSection && !inF2Section)) rPlatforms.add("TWITTER");
-      }
-      if (secTitle.includes("LINKEDIN")) {
-        if (inFabriceSection || (!inRomainSection && !inF2Section)) fPlatforms.add("LINKEDIN");
-        if (inRomainSection || (!inFabriceSection && !inF2Section)) rPlatforms.add("LINKEDIN");
-      }
-      if (secTitle.includes("REDDIT")) {
-        if (inFabriceSection || (!inRomainSection && !inF2Section)) fPlatforms.add("REDDIT");
-        if (inRomainSection || (!inFabriceSection && !inF2Section)) rPlatforms.add("REDDIT");
-      }
-      if (secTitle.includes("FACEBOOK") || secTitle.includes("FB")) {
-        if (inFabriceSection || (!inRomainSection && !inF2Section)) fPlatforms.add("FACEBOOK");
-        if (inRomainSection || (!inFabriceSection && !inF2Section)) rPlatforms.add("FACEBOOK");
-      }
-      if (secTitle.includes("IH") || secTitle.includes("INDIEHACKER")) {
-        if (inRomainSection || (!inFabriceSection && !inF2Section)) rPlatforms.add("IH");
-      }
-      if (secTitle.includes("PH") || secTitle.includes("PRODUCTHUNT")) {
-        if (inFabriceSection || (!inRomainSection && !inF2Section)) fPlatforms.add("PH");
-        if (inRomainSection || (!inFabriceSection && !inF2Section)) rPlatforms.add("PH");
+    // ── ### N.N Sub-section header — cold outreach per persona ────────
+    // Matches: "### 10.1 Romain LinkedIn DM — 50/semaine (10/jour)"
+    // Skips:   "### 10.2 Fabrice Twitter DM — 15/semaine (5/j × 3j)"  (only 3 days)
+    const sub = /^###\s+\d+\.\d+\s+(.+)$/.exec(raw);
+    if (sub) {
+      const subTitle = sub[1];
+      const isRomain  = /romain/i.test(subTitle);
+      const isFabrice = /fabrice/i.test(subTitle);
+      // Only capture strictly (N/jour) — not (N/j × Nj)
+      const jourMatch = subTitle.match(/\((\d+)\/jour\)/i);
+      if (jourMatch) {
+        const num = parseInt(jourMatch[1], 10);
+        if (num > 0 && num <= 50) {
+          if (isRomain)  romainCold  += num;
+          if (isFabrice) fabriceCold += num;
+        }
       }
       continue;
     }
 
-    // Parse cold target from table rows
-    if (currentSectionName.includes("COLD")) {
-      if (line.includes("|") && (line.toLowerCase().includes("par jour") || line.toLowerCase().includes("/jour"))) {
-        const cells = line.split("|").map((c) => c.trim()).filter(Boolean);
-        for (const cell of cells) {
-          const num = extractNumber(cell);
-          if (num !== null && num > 0 && num <= 50) {
-            fabrice.cold = num;
-            romain.cold = num;
-            break;
-          }
+    // ── Section 2 — "Volume publication" table: cross-eng per persona ─
+    if (sectionNum === 2 && raw.includes("|")) {
+      const cells = raw.split("|").map(c => c.trim()).filter(Boolean);
+      if (cells.length >= 3) {
+        const account   = cells[0];
+        const crossCell = cells[2];
+        if (/^Twitter F\b/.test(account)) {
+          // "12 cross-eng + **70 cold replies/semaine**" → weekly 12
+          const m = crossCell.match(/^(\d+)/);
+          if (m) fabrice.cross = Math.ceil(parseInt(m[1], 10) / 5);
+        }
+        if (/^Twitter R\b/.test(account)) {
+          // "13 (voir tracker R)" → weekly 13
+          const m = crossCell.match(/^(\d+)/);
+          if (m) romain.cross = Math.ceil(parseInt(m[1], 10) / 5);
         }
       }
     }
 
-    // Parse cross target
-    if (currentSectionName.includes("CROSS")) {
-      if (line.includes("|") && line.toLowerCase().includes("par jour")) {
-        const cells = line.split("|").map((c) => c.trim()).filter(Boolean);
-        for (const cell of cells) {
-          const num = extractNumber(cell);
-          if (num !== null && num > 0 && num <= 20) {
-            fabrice.cross = num;
-            romain.cross = num;
-            break;
-          }
-        }
-      }
-    }
-
-    // Parse engagement targets per platform
-    if (currentSectionName.includes("ENGAGEMENT") || currentSectionName.includes("ENG")) {
-      if (line.includes("Twitter") || line.includes("TWITTER")) {
-        const num = extractNumber(line);
-        if (num !== null && num > 0) {
-          if (inFabriceSection) fabrice.twEng = num;
-          if (inRomainSection) romain.twEng = num;
-        }
-      }
-      if (line.includes("LinkedIn") || line.includes("LINKEDIN")) {
-        const num = extractNumber(line);
-        if (num !== null && num > 0) {
-          if (inFabriceSection) fabrice.liCom = num;
-          if (inRomainSection) romain.liCom = num;
+    // ── Section 9 — Replies cascade Twitter F → Fabrice cold ──────────
+    // "**Volume cible : 70 replies/semaine** (14/jour × 5 jours, 0 weekend)"
+    if (sectionNum === 9 && !raw.includes("|") && !fabriceTweetColdSet) {
+      const m = raw.match(/(\d+)\/jour/i);
+      if (m) {
+        const num = parseInt(m[1], 10);
+        if (num > 0 && num <= 50) {
+          fabriceCold += num;
+          fabriceTweetColdSet = true;
         }
       }
     }
   }
 
+  if (fabriceCold > 0) fabrice.cold = fabriceCold;
+  if (romainCold  > 0) romain.cold  = romainCold;
   if (fPlatforms.size > 0) fabrice.platforms = Array.from(fPlatforms);
-  if (rPlatforms.size > 0) romain.platforms = Array.from(rPlatforms);
+  if (rPlatforms.size > 0) romain.platforms  = Array.from(rPlatforms);
 
   return { fabrice, romain };
 }
@@ -198,7 +155,7 @@ function buildPersonaTargets(base: PersonaTargets, overrides: Partial<PersonaTar
     liCom: overrides.liCom ?? base.liCom,
     reddit: overrides.reddit ?? base.reddit,
     facebook: overrides.facebook ?? base.facebook,
-    cross: overrides.cross ?? base.cross,
+    cross: Math.max(base.cross, overrides.cross ?? base.cross),
     ph,
     ih,
     ihPh: ih + ph,
