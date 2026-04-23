@@ -9,7 +9,7 @@
 ## TWITTER
 
 |Date|Heure|Post original (résumé + @handle)|Reply R|Likes reçus|Replies reçues|
-|----|-----|-------------------------------|-------|-----------|--------------|
+|----|-----|-------------------------------|-------|-----------|-------------- |
 |23/04||@pauljauregui 15K — Shopify migration, nobody leaves|Every merchant I've talked to who tried migrating came back within 3 months. It's not loyalty, it's operational lock-in. Your apps, your theme, your payment setup. Rebuilding that costs more than a year of Shopify fees.|||
 |23/04||@KaiCromwell 12K — ICP agency lesson, 4-5x in 2 years|4-5x in 2 years means the short term cash was tempting enough to override the lesson each time. What finally made it stick?|||
 |23/04||@Goldikam 3.5K — homepage A/B test +18% conversion|+18% from a homepage test is massive. Most merchants I talk to never touch the homepage because they think the money is on the PDP. What was the biggest change in your variant?|||
@@ -24,7 +24,7 @@
 ## LINKEDIN
 
 |Date|Heure|Post original (résumé + auteur)|Commentaire R|Likes reçus|Replies reçues|
-|----|-----|------------------------------|-------------|-----------|--------------|
+|----|-----|------------------------------|-------------|-----------|-------------- |
 |23/04||Matthew Hapgood — Shopify conversion rate ignored for months, Amazon comparison|The Amazon comparison nails it. Amazon forces you to care about conversion because your ranking depends on it. Shopify doesn't punish you for a bad conversion rate so merchants never look at it. The merchants I talk to usually discover their conversion rate is broken when they try to scale ads and the ROAS tanks. By then they've been bleeding for months without knowing. 1.5% isn't normal. It's the default when nobody's watching.|||
 |23/04||Shabeer Shah — Shopify audit $8K/mo ad spend, ROAS 2.1x to 4.3x landing page fix|The page speed one is the silent killer. Most merchants blame the creative or the audience when their ROAS drops but they never check that their 14 installed apps turned a 2-second page into a 6-second page. 2.1x to 4.3x without touching the ads is the proof that the funnel matters more than the traffic source. How many of those bloated apps were still billing after you removed them?|||
 |23/04||Raajan Chauhan — Shopify sellers tracking ROAS wrong, returns/refunds/chargebacks|This is the conversation nobody wants to have. The merchants I work with in fashion and accessories see 15-25% return rates. Their dashboard says 3.5x ROAS but after returns, refunds and chargebacks the real number is closer to 2x. Some are actually losing money and don't know it because they never reconcile ad spend against net-kept revenue. Do you see most of your clients calculating ROAS from Shopify's dashboard or from their actual books?|||
@@ -65,6 +65,15 @@
 
 |Date|Action|Détail|
 |----|------|------|
-|    |      |      |
-| 22/04/2026 | 17:15 | AdsAgent – Google Ads Claude Connector (Today's launch) | 5 upvotes (AdsAgent, Stanley for X, Instant Highlights V2, sneo.ai, Entendo) + 1 commentaire substantif sur AdsAgent |  |  |
-|23/04|17:00|5 upvotes (Typewise AI CS, Wellows, Magic Patterns 2.0, Hookdeck Outpost, MailerLogic) + 1 commentaire Wellows (AI visibility e-com brands, agency multi-brand dashboard question)|||
+|22/04|Upvote|AdsAgent – Google Ads Claude Connector|
+|22/04|Upvote|Stanley for X|
+|22/04|Upvote|Instant Highlights V2 by HeyGen|
+|22/04|Upvote|sneo.ai|
+|22/04|Upvote|Entendo|
+|22/04|Commentaire|AdsAgent — agency/merchant no retainer, diagnose + implement same session|
+|23/04|Upvote|Typewise AI CS|
+|23/04|Upvote|Wellows|
+|23/04|Upvote|Magic Patterns 2.0|
+|23/04|Upvote|Hookdeck Outpost|
+|23/04|Upvote|MailerLogic|
+|23/04|Commentaire|Wellows — AI visibility e-com brands, agency multi-brand dashboard question|
