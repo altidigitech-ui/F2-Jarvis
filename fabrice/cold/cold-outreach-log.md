@@ -26,6 +26,8 @@
 | 23/04/2026 |  | @sierrachristian | ecom | DTC owner actif, $44K rev / $10K Meta spend. Angle: leaks côté Shopify pendant qu'il scale Meta. | Queued | ⏳ | Prio 2 — data-driven, réceptif aux metrics de perte |
 | 23/04/2026 |  | @UntAaron | ecom | Portfolio DTC $1.2M/an, a posté sur attribution double-counting. Angle: ghost billing = autre couche de leak. | Queued | ⏳ | Prio 2 — déjà sensibilisé aux problèmes de tracking/attribution |
 | 23/04/2026 |  | @DanielLeither | ecom | 16yo, $10K/mo Shopify single-product, cherche des conseils de focus. Angle: auditer le store avant de scaler. | Queued | ⏳ | Prio 3 — petit volume mais merchant authentique |
+| 23/04/2026 | 20:03 | @sierrachristian | ecom | DTC $44K rev / $10K Meta spend — angle ghost billing + apps post-trial côté Shopify | DM | ⏳ |  |
+| 23/04/2026 | 20:03 | @UntAaron | ecom | DTC $1.2M/an, attribution issues — angle ghost billing comme couche de leak dans les modèles attribution | DM | ⏳ |  |
 
 -----
 
