@@ -48,6 +48,9 @@
 | 22/04/2026 | 17:47 | r/shopify — u/Fragrant-Barnacle-16 — subscription billing anchor date, API contracts | Reply F : Recharge/Bold APIs pour billing date override, fallback native Shopify subscription contracts API si dev capacity disponible. |  |  |
 | 22/04/2026 | 17:50 | r/shopify — u/Xolaris05 — Traffic quality / intent signal, conversion Shopify | Reply F : angle traffic intent vs conversion leak, diagnostic sessions + comportement pré-achat. |  |  |
 | 22/04/2026 | 17:54 | r/shopify — u/ungodlygirl — Missing payouts Apple Pay / ghost billing (24 upvotes) | Reply F : angle ghost billing, apps qui continuent à facturer post-désinstallation, audit script tags orphelins. |  |  |
+| 23/04/2026 | 22:22 | r/AskReddit — u/Calico_Mittens : what makes a salad a salad? | any food that becomes negotiable once you add dressing. that's my working definition and I'm sticking to it. |  |  |
+| 23/04/2026 | 22:22 | r/AskReddit — u/Otherwise_Golf_3265 : What activity do you recommend for stress? | building something. not in a hustle-culture way. but when I have a specific problem to solve, that focus is the only thing that actually clears my head. |  |  |
+| 23/04/2026 | 22:22 | r/AskReddit — u/surfsound_swimmers : If you could meet your past and future selves, what would you talk about? | past me: stop overthinking the idea, just ship something. anything. the longer you wait the more reasons you'll find not to. future me: I'd skip the philosophy and just ask if any of it actually worked out. |  |  |
 
 -----
 
