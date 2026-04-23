@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
 import { query, type SDKUserMessage } from "@anthropic-ai/claude-agent-sdk";
-import { access, constants } from "fs/promises";
-import path from "path";
 import { ghRead } from "../lib/github.js";
+import { resolveClaudeBinary } from "../lib/claude-binary.js";
 import {
   loadOrCreateConversation,
   loadMessages,
@@ -21,34 +20,6 @@ type ImagePayload = {
 
 type Persona = "romain" | "fabrice";
 type Mode = "normal" | "f2";
-
-async function fileExecutable(p: string): Promise<boolean> {
-  try {
-    await access(p, constants.X_OK);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-async function resolveClaudeBinary(): Promise<string | undefined> {
-  const candidates = [
-    process.env.CLAUDE_CODE_EXECUTABLE,
-    "/app/node_modules/@anthropic-ai/claude-agent-sdk-linux-x64/claude",
-    "/app/node_modules/@anthropic-ai/claude-agent-sdk-linux-x64-musl/claude",
-    "/usr/local/bin/claude",
-    path.join(process.cwd(), "node_modules/@anthropic-ai/claude-agent-sdk-linux-x64/claude"),
-  ].filter(Boolean) as string[];
-
-  for (const p of candidates) {
-    if (await fileExecutable(p)) {
-      console.log(`[chat] Claude binary found: ${p}`);
-      return p;
-    }
-  }
-  console.warn("[chat] No executable claude binary found");
-  return undefined;
-}
 
 async function loadFile(relPath: string): Promise<string> {
   try {
@@ -474,6 +445,15 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       } catch (err) {
         console.error("[chat] saveMessage assistant failed:", err);
       }
+    }
+
+    // fire-and-forget mempalace ingestion
+    if (fullAssistantText && message) {
+      import("../lib/queues.js")
+        .then(({ mempalaceQueue }) =>
+          mempalaceQueue.add("ingest", { persona, userMessage: message, assistantResponse: fullAssistantText })
+        )
+        .catch(() => {});
     }
 
     res.end();

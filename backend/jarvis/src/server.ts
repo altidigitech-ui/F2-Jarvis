@@ -23,6 +23,7 @@ import {
   mempalaceStatsRoute,
 } from "./routes/mempalace.js";
 import { targetsRoute } from "./routes/targets.js";
+import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
 import {
   ouroborosStatus,
   ouroborosProposals,
@@ -82,6 +83,7 @@ app.get("/mempalace/wing/:id", mempalaceWingRoute);
 app.get("/mempalace/drawer/:wing/:filename", mempalaceDrawerRoute);
 
 app.get("/targets", targetsRoute);
+app.post("/action/execute-batch", actionExecuteBatchRoute);
 
 app.get("/ouroboros/status", ouroborosStatus);
 app.get("/ouroboros/proposals", ouroborosProposals);
@@ -94,4 +96,18 @@ app.post("/ouroboros/initialize", ouroborosInitialize);
 
 app.listen(PORT, () => {
   console.log(`JARVIS backend on port ${PORT}`);
+  scheduleOuroborosCycle();
 });
+
+async function scheduleOuroborosCycle() {
+  try {
+    const { ouroborosQueue } = await import("./lib/queues.js");
+    await ouroborosQueue.add("nightly", {}, {
+      repeat: { pattern: "0 2 * * *" },
+      jobId: "ouroboros-nightly",
+    });
+    console.log("[server] ouroboros nightly job scheduled");
+  } catch (err) {
+    console.warn("[server] ouroboros scheduling skipped:", err instanceof Error ? err.message : err);
+  }
+}

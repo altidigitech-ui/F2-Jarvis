@@ -6,7 +6,7 @@ import { ActionCard } from "./jarvis/ActionCard";
 import { ContentCard } from "./jarvis/ContentCard";
 import { TagLine } from "./jarvis/TagLine";
 import { parseJarvisMarkers } from "@/lib/parseJarvisMarkers";
-import { onSendToChat } from "@/lib/jarvisEvents";
+import { onSendToChat, emitRepoUpdated } from "@/lib/jarvisEvents";
 
 type Persona = "romain" | "fabrice";
 type Mode = "normal" | "f2";
@@ -455,6 +455,9 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const [imageSizeError, setImageSizeError] = useState(false);
   const [drawerPopup, setDrawerPopup] = useState<DrawerPopupState | null>(null);
   const [historyLoaded, setHistoryLoaded] = useState(false);
+  const [selectedActionIds, setSelectedActionIds] = useState<Set<string>>(new Set());
+  const [committedActionIds, setCommittedActionIds] = useState<Set<string>>(new Set());
+  const [batchCommitting, setBatchCommitting] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -848,6 +851,39 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     }
   };
 
+  const handleActionToggle = useCallback((id: string, selected: boolean) => {
+    setSelectedActionIds((prev) => {
+      const next = new Set(prev);
+      if (selected) next.add(id);
+      else next.delete(id);
+      return next;
+    });
+  }, []);
+
+  const handleBatchCommit = useCallback(async () => {
+    if (batchCommitting || selectedActionIds.size === 0) return;
+    setBatchCommitting(true);
+    const ids = [...selectedActionIds];
+    try {
+      const res = await fetch("/api/action/execute-batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action_ids: ids }),
+      });
+      const data = (await res.json()) as { ok?: boolean; results?: Array<{ id: string; ok: boolean }> };
+      if (data.ok) {
+        const committed = (data.results ?? []).filter((r) => r.ok).map((r) => r.id);
+        setCommittedActionIds((prev) => new Set([...prev, ...committed]));
+        setSelectedActionIds(new Set());
+        emitRepoUpdated({});
+      }
+    } catch {
+      // silent — user can retry
+    } finally {
+      setBatchCommitting(false);
+    }
+  }, [batchCommitting, selectedActionIds]);
+
   const handleActionSuccess = useCallback(() => {
     setActiveAction(null);
     setLastActionDone(true);
@@ -1047,6 +1083,9 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                                     key={`action-${a.id}`}
                                     actionId={a.id}
                                     accentColor={colors.primary}
+                                    selected={selectedActionIds.has(a.id)}
+                                    onToggle={handleActionToggle}
+                                    committed={committedActionIds.has(a.id)}
                                   />
                                 ))}
                                 {!isStreaming && parsed.tags.length > 0 && (
@@ -1177,6 +1216,29 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
           ))}
           <div ref={bottomRef} />
         </div>
+
+        {/* Batch commit floating button */}
+        {selectedActionIds.size > 0 && (
+          <div className="px-6 py-2">
+            <button
+              onClick={handleBatchCommit}
+              disabled={batchCommitting}
+              className="w-full text-[12px] font-mono py-2 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+              style={{
+                background: colors.bg,
+                border: `1px solid ${colors.border}`,
+                color: colors.primary,
+                fontWeight: 600,
+              }}
+            >
+              {batchCommitting ? (
+                "Commit en cours…"
+              ) : (
+                `Commit (${selectedActionIds.size}) ▶`
+              )}
+            </button>
+          </div>
+        )}
 
         {/* Input area */}
         <div
