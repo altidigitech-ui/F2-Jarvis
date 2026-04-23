@@ -12,6 +12,10 @@
 |Date|Heure|Post original (résumé + @handle)|Reply F|Likes reçus|Replies reçues|
 |----|-----|-------------------------------|-------|-----------|-------------- |
 |    |     |                               |       |           |               |
+| 23/04/2026 | 20:46 | @delgado_ro72224 (Romain) — cross 10 scans today | let's run it. 5 from my side are already queued. whoever finds the store with the most ghost billing wins — I'm betting it's over $200/mo somewhere in that batch. |  |  |
+| 23/04/2026 | 20:46 | @ybouane — app blocks / legacy apps (thread @delgado_ro72224) | yeah app blocks are cleaner. the legacy problem is massive though. there's still thousands of apps built before blocks existed and they're not rewriting their whole codebase for it. so merchants end up with both running at the same time, their dashboard shows none of it. |  |  |
+| 23/04/2026 | 20:46 | @ybouane — direct reply 'good app idea' | it's already live tbh. free scan, 60 seconds, no admin access needed. the ghost billing findings are usually what surprises people the most. |  |  |
+| 23/04/2026 | 20:46 | @UntAaron — rejet soft / humour attribution pitch | haha I'll take that. tbh the attribution noise angle was the least subtle thing I've sent this week. if the shopify layer ever shows up in your data unexpectedly, you know where to find me. |  |  |
 
 -----
 
