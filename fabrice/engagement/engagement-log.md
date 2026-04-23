@@ -51,6 +51,10 @@
 | 23/04/2026 | 22:22 | r/AskReddit — u/Calico_Mittens : what makes a salad a salad? | any food that becomes negotiable once you add dressing. that's my working definition and I'm sticking to it. |  |  |
 | 23/04/2026 | 22:22 | r/AskReddit — u/Otherwise_Golf_3265 : What activity do you recommend for stress? | building something. not in a hustle-culture way. but when I have a specific problem to solve, that focus is the only thing that actually clears my head. |  |  |
 | 23/04/2026 | 22:22 | r/AskReddit — u/surfsound_swimmers : If you could meet your past and future selves, what would you talk about? | past me: stop overthinking the idea, just ship something. anything. the longer you wait the more reasons you'll find not to. future me: I'd skip the philosophy and just ask if any of it actually worked out. |  |  |
+| 23/04/2026 | 22:25 | r/AskReddit — u/Dry-Somewhere7927 : what actor do you never want to meet? | Reply engagement AskReddit 23/04 |  |  |
+| 23/04/2026 | 22:25 | r/AskReddit — u/justlooking4533 : Why some transgender women don't like to reveal they were men before? | Reply engagement AskReddit 23/04 |  |  |
+| 23/04/2026 | 22:25 | r/AskReddit — u/InterestedInAlot_ : What crime case cant you get out of your head? | Reply engagement AskReddit 23/04 |  |  |
+| 23/04/2026 | 22:25 | r/AskReddit — u/Unique_Pirate5021 : What is a quality that you admire most in a person you DISLIKE? | Reply engagement AskReddit 23/04 |  |  |
 
 -----
 
