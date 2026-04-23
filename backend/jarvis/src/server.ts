@@ -24,6 +24,7 @@ import {
 } from "./routes/mempalace.js";
 import { targetsRoute } from "./routes/targets.js";
 import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
+import { batchStatusRoute, batchUploadRoute } from "./routes/batch.js";
 import {
   ouroborosStatus,
   ouroborosProposals,
@@ -84,6 +85,8 @@ app.get("/mempalace/drawer/:wing/:filename", mempalaceDrawerRoute);
 
 app.get("/targets", targetsRoute);
 app.post("/action/execute-batch", actionExecuteBatchRoute);
+app.get("/batch/status", batchStatusRoute);
+app.post("/batch/upload", batchUploadRoute);
 
 app.get("/ouroboros/status", ouroborosStatus);
 app.get("/ouroboros/proposals", ouroborosProposals);

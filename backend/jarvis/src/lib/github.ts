@@ -117,6 +117,27 @@ export async function ghCreate(
   cacheInvalidate(filePath);
 }
 
+export async function ghCreateFromBase64(
+  filePath: string,
+  base64Content: string,
+  commitMessage: string
+): Promise<void> {
+  const res = await fetch(apiUrl(`contents/${filePath}`), {
+    method: "PUT",
+    headers: headers(),
+    body: JSON.stringify({
+      message: commitMessage,
+      content: base64Content,
+      branch: BRANCH,
+    }),
+  });
+  if (!res.ok) {
+    const err = (await res.json()) as { message?: string };
+    throw new Error(`GitHub create failed: ${err.message || res.status}`);
+  }
+  cacheInvalidate(filePath);
+}
+
 export async function ghDelete(
   filePath: string,
   sha: string,
