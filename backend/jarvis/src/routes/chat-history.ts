@@ -6,7 +6,9 @@ type Mode = "normal" | "f2";
 
 export async function chatHistoryRoute(req: Request, res: Response): Promise<void> {
   const persona = (req.query.persona as string) as Persona;
-  const mode = ((req.query.mode as string) || "normal") as Mode;
+  // Guard: only "normal" or "f2" are valid modes (Supabase check constraint)
+  const rawMode = (req.query.mode as string) || "normal";
+  const mode: Mode = rawMode === "f2" ? "f2" : "normal";
   const userId = (req.headers["x-user-id"] as string | undefined) || "";
 
   if (!persona || (persona !== "fabrice" && persona !== "romain")) {

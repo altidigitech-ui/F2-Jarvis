@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Check, X, Loader2 } from "lucide-react";
+import { Check, X, Loader2, ChevronDown, ChevronUp } from "lucide-react";
 
 type Props = {
   actionId: string;
@@ -34,6 +34,7 @@ const ACTION_ICONS: Record<string, string> = {
 export function ActionCard({ actionId, accentColor, selected = false, onToggle, committed = false }: Props) {
   const [details, setDetails] = useState<ActionDetails | null>(null);
   const [loading, setLoading] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -54,7 +55,7 @@ export function ActionCard({ actionId, accentColor, selected = false, onToggle, 
   }, [actionId]);
 
   const icon = details ? (ACTION_ICONS[details.action_type] || "✏️") : "✏️";
-  const label = details
+  const previewShort = details
     ? `${icon} ${details.action_type} — ${details.preview.slice(0, 60)}${details.preview.length > 60 ? "…" : ""}`
     : loading
     ? "Chargement…"
@@ -77,7 +78,7 @@ export function ActionCard({ actionId, accentColor, selected = false, onToggle, 
             Action proposée
           </div>
           <div className="text-[11px] font-mono text-slate-400 truncate">
-            {label}
+            {previewShort}
           </div>
         </div>
         <div
@@ -93,58 +94,92 @@ export function ActionCard({ actionId, accentColor, selected = false, onToggle, 
 
   return (
     <div
-      className="mt-2 rounded-xl px-3 py-2.5 flex items-center gap-3 transition-all"
+      className="mt-2 rounded-xl px-3 py-2.5 transition-all"
       style={{
         background: selected ? `${accentColor}08` : "rgba(255,255,255,0.03)",
         border: `1px solid ${selected ? accentColor + "50" : accentColor + "30"}`,
       }}
     >
-      <div className="flex-1 min-w-0">
-        <div
-          className="text-[10px] font-mono uppercase tracking-wider mb-0.5"
-          style={{ color: accentColor, opacity: 0.7 }}
+      <div className="flex items-center gap-3">
+        {/* Clickable text zone — toggles expanded */}
+        <button
+          className="flex-1 min-w-0 text-left"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
         >
-          Action proposée
-        </div>
-        <div className="text-[11px] font-mono text-slate-400 truncate flex items-center gap-1">
-          {loading && <Loader2 size={10} className="animate-spin flex-none" />}
-          <span className="truncate">{label}</span>
+          <div
+            className="text-[10px] font-mono uppercase tracking-wider mb-0.5 flex items-center gap-1"
+            style={{ color: accentColor, opacity: 0.7 }}
+          >
+            Action proposée
+            <span className="ml-auto opacity-60">
+              {expanded ? <ChevronUp size={10} /> : <ChevronDown size={10} />}
+            </span>
+          </div>
+          <div className="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+            {loading && <Loader2 size={10} className="animate-spin flex-none" />}
+            {!expanded && (
+              <span className="truncate">{previewShort}</span>
+            )}
+            {expanded && details && (
+              <span
+                className="text-[10px] font-mono px-1.5 py-0.5 rounded flex-none"
+                style={{ background: `${accentColor}18`, color: accentColor }}
+              >
+                {details.action_type}
+              </span>
+            )}
+          </div>
+        </button>
+
+        {/* Buttons */}
+        <div className="flex items-center gap-1.5 flex-none">
+          <button
+            onClick={() => onToggle?.(actionId, !selected)}
+            className="text-[11px] font-mono px-3 py-1.5 rounded-lg transition-all hover:opacity-90 flex items-center gap-1.5"
+            style={
+              selected
+                ? { background: accentColor, color: "#000", fontWeight: 600 }
+                : {
+                    background: "rgba(255,255,255,0.04)",
+                    border: `1px solid ${accentColor}40`,
+                    color: accentColor,
+                  }
+            }
+            title={selected ? "Désélectionner" : "Sélectionner pour commit"}
+          >
+            <Check size={12} />
+            {selected ? "Sélectionnée" : "Valider"}
+          </button>
+          {selected && (
+            <button
+              onClick={() => onToggle?.(actionId, false)}
+              className="text-[11px] font-mono px-2.5 py-1.5 rounded-lg transition-all hover:opacity-80"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                color: "#94a3b8",
+              }}
+              title="Désélectionner"
+            >
+              <X size={12} />
+            </button>
+          )}
         </div>
       </div>
 
-      <div className="flex items-center gap-1.5 flex-none">
-        <button
-          onClick={() => onToggle?.(actionId, !selected)}
-          className="text-[11px] font-mono px-3 py-1.5 rounded-lg transition-all hover:opacity-90 flex items-center gap-1.5"
-          style={
-            selected
-              ? { background: accentColor, color: "#000", fontWeight: 600 }
-              : {
-                  background: "rgba(255,255,255,0.04)",
-                  border: `1px solid ${accentColor}40`,
-                  color: accentColor,
-                }
-          }
-          title={selected ? "Désélectionner" : "Sélectionner pour commit"}
+      {/* Expanded preview */}
+      {expanded && details && (
+        <div
+          className="mt-2 max-h-[200px] overflow-y-auto rounded-lg px-2 py-2 text-[11px] font-mono text-slate-300 whitespace-pre-wrap"
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: `1px solid ${accentColor}20`,
+          }}
         >
-          <Check size={12} />
-          {selected ? "Sélectionnée" : "Valider"}
-        </button>
-        {selected && (
-          <button
-            onClick={() => onToggle?.(actionId, false)}
-            className="text-[11px] font-mono px-2.5 py-1.5 rounded-lg transition-all hover:opacity-80"
-            style={{
-              background: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "#94a3b8",
-            }}
-            title="Désélectionner"
-          >
-            <X size={12} />
-          </button>
-        )}
-      </div>
+          {details.preview}
+        </div>
+      )}
     </div>
   );
 }

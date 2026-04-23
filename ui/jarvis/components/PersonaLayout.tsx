@@ -398,7 +398,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
   useEffect(() => {
     const unsubscribe = onRepoUpdated(() => {
-      setTimeout(() => fetchContext(), 1500);
+      setTimeout(() => fetchContext(), 2000);
+      setTimeout(() => fetchContext(), 5000);
     });
     return unsubscribe;
   }, [fetchContext]);
