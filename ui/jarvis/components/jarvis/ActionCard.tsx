@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Check, X, Loader2 } from "lucide-react";
 
 type Props = {
@@ -10,7 +11,55 @@ type Props = {
   committed?: boolean;
 };
 
+type ActionDetails = {
+  action_type: string;
+  preview: string;
+  status: string;
+};
+
+const ACTION_ICONS: Record<string, string> = {
+  mark_published: "✅",
+  log_cold: "📤",
+  batch_cold: "📤",
+  queue_cold_targets: "🎯",
+  update_cold_reply: "💬",
+  log_engagement: "💬",
+  log_interaction: "📊",
+  mark_cross_published: "🔁",
+  resolve_alert: "🔧",
+  log_decision: "📋",
+  create_file: "📄",
+};
+
 export function ActionCard({ actionId, accentColor, selected = false, onToggle, committed = false }: Props) {
+  const [details, setDetails] = useState<ActionDetails | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function fetchDetails() {
+      try {
+        const res = await fetch(`/api/action/${actionId}`);
+        if (!res.ok) return;
+        const data = await res.json() as ActionDetails;
+        if (!cancelled) setDetails(data);
+      } catch {
+        // silent — fall back to ID display
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+    fetchDetails();
+    return () => { cancelled = true; };
+  }, [actionId]);
+
+  const icon = details ? (ACTION_ICONS[details.action_type] || "✏️") : "✏️";
+  const label = details
+    ? `${icon} ${details.action_type} — ${details.preview.slice(0, 60)}${details.preview.length > 60 ? "…" : ""}`
+    : loading
+    ? "Chargement…"
+    : `ID: ${actionId.slice(0, 8)}…`;
+
   if (committed) {
     return (
       <div
@@ -28,7 +77,7 @@ export function ActionCard({ actionId, accentColor, selected = false, onToggle, 
             Action proposée
           </div>
           <div className="text-[11px] font-mono text-slate-400 truncate">
-            ID: {actionId.slice(0, 8)}…
+            {label}
           </div>
         </div>
         <div
@@ -57,8 +106,9 @@ export function ActionCard({ actionId, accentColor, selected = false, onToggle, 
         >
           Action proposée
         </div>
-        <div className="text-[11px] font-mono text-slate-400 truncate">
-          ID: {actionId.slice(0, 8)}…
+        <div className="text-[11px] font-mono text-slate-400 truncate flex items-center gap-1">
+          {loading && <Loader2 size={10} className="animate-spin flex-none" />}
+          <span className="truncate">{label}</span>
         </div>
       </div>
 

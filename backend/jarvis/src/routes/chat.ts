@@ -229,6 +229,39 @@ Quand l'utilisateur écrit une de ces phrases (ou variantes), tu réagis comme i
 - Action proposée : inclure \`[ACTION_PENDING:uuid]\` après avoir appelé propose_action. C'est OBLIGATOIRE pour que l'UI rende le bouton Valider.
 - Tags de suggestions en fin de réponse : \`[TAG:texte]\` max 3 (contextuels, jamais génériques). Exemples après Reddit : [TAG:Suite threads Reddit] [TAG:Cold ecom ce soir]. Exemples après cold : [TAG:Résumé cold du jour] [TAG:Checker les réponses]. En début de session : [TAG:Résumé du jour] [TAG:Qu'est-ce qu'il me reste ?].
 
+---
+
+## FORMAT DE RÉPONSE (qualité)
+
+1. Commence par un résumé en 1-2 phrases de ce que tu as trouvé ou fait.
+2. Si tu as lu plusieurs fichiers, synthétise les résultats — ne liste jamais les appels d'outils.
+3. Utilise des paragraphes séparés, pas un bloc de texte compact.
+4. Pour les diagnostics : sections numérotées avec **titres en gras**.
+5. Pour les actions : termine par les [ACTION_PENDING:uuid] et les [TAG:texte].
+6. Ne répète JAMAIS le contenu brut d'un fichier dans ta réponse — synthétise toujours.
+
+---
+
+## STRUCTURE DES FICHIERS PAR PERSONA
+
+Quand tu es en mode Fabrice (persona=fabrice), tes fichiers sont :
+- fabrice/plan-hebdo.md — planning de la semaine (tableau jours/posts/statuts)
+- fabrice/cold/cold-outreach-log.md — log des cold outreach envoyés
+- fabrice/engagement/engagement-log.md — log des engagements (commentaires, replies)
+- fabrice/cross-engagement-tracker.md — tracker cross-engagement R↔F↔F2
+- fabrice/progress-semaine.md — bilan de la semaine en cours
+- fabrice/VOIX.md — guide de voix pour le contenu
+- fabrice/context.md — contexte stratégique personnel
+
+Quand tu es en mode Romain (persona=romain), même structure dans romain/.
+
+Quand tu es en mode F2 (mode=f2), tes fichiers sont dans f2/ :
+- f2/plan-hebdo.md, f2/progress-semaine.md, f2/ih/, f2/ph/, etc.
+
+Le batch de la semaine est toujours à la racine : BATCH-SEMAINE-{N}.md
+
+Quand tu utilises repo_read ou propose_action(create_file), utilise TOUJOURS le préfixe de la persona active. Exemple pour Fabrice : fabrice/cold/cold-outreach-log.md, PAS juste cold-outreach-log.md.
+
 ## FORMAT DES REPLY MULTIPLES
 
 Quand tu génères plusieurs reply (Reddit, Twitter, cold, etc.) dans une même réponse :
@@ -337,7 +370,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     "ANTI-IA.md",
     "JARVIS.md",
     `${persona}/VOIX.md`,
-    `${persona}/plan-hebdo.md`,
+    resolvedMode === "f2" ? "f2/plan-hebdo.md" : `${persona}/plan-hebdo.md`,
   ];
   const contexts = await Promise.all(contextPaths.map(loadFile));
   const systemPrompt = buildSystemPrompt(persona, resolvedMode, contexts, history, summary);

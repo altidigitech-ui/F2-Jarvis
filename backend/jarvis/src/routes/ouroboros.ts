@@ -94,8 +94,10 @@ function mapPriority(raw: string): Priority {
 }
 
 function extractTitle(body: string): string {
-  // Ouroboros proposal format: **Titre:** or **Title:**
-  const boldMatch = body.match(/\*\*Titr[ée]:\*\*\s*(.+)/i);
+  // Handles **Titre:** (colon inside) and **Titre :** (French spacing) and **Titre** : (colon outside)
+  const boldMatch =
+    body.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) ||
+    body.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i);
   if (boldMatch) return boldMatch[1].trim();
   // Standard markdown heading
   const headingMatch = body.match(/^#\s+(.+)$/m);

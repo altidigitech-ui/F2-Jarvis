@@ -487,10 +487,15 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   // Load persisted history on mount and when persona/mode changes
   useEffect(() => {
     let cancelled = false;
+    setMessages([]);
+    setHistoryLoaded(false);
     async function loadHistory() {
       try {
         const res = await fetch(`/api/chat/history?persona=${persona}&mode=${mode}`);
-        if (!res.ok) return;
+        if (!res.ok) {
+          if (!cancelled) setHistoryLoaded(true);
+          return;
+        }
         const data = (await res.json()) as {
           conversation_id: string | null;
           messages: Array<{
