@@ -83,14 +83,20 @@ function parseFrontMatter(raw: string): { meta: Record<string, string | string[]
 }
 
 function pathToDrawer(filePath: string, rawContent: string): Drawer | null {
-  // Expected: brain/mempalace/wings/<wing>/drawers/<filename>.md
+  // Accepts both:
+  //   brain/mempalace/wings/<wing>/drawers/<filename>.md  (standard, 6+ parts)
+  //   brain/mempalace/wings/<wing>/<filename>.md          (wing-level, 5 parts)
   const parts = filePath.split("/");
-  // parts: ["brain", "mempalace", "wings", "<wing>", "drawers", "<filename>.md"]
-  if (parts.length < 6) return null;
   const wingIdx = parts.indexOf("wings");
   if (wingIdx === -1) return null;
+  // Need at least wing + filename after "wings"
+  if (parts.length < wingIdx + 3) return null;
+
   const wing = parts[wingIdx + 1];
   const filename = parts[parts.length - 1].replace(/\.md$/, "");
+
+  // Skip index files and hidden files at any level
+  if (filename === "index" || filename.startsWith(".")) return null;
 
   const { meta, body } = parseFrontMatter(rawContent);
   return {
@@ -120,7 +126,8 @@ async function buildIndex(): Promise<Cache> {
     paths = await fetchDrawerPaths();
   } catch (err) {
     console.warn("[mempalace] Failed to fetch drawer paths:", err);
-    return { drawers: [], index: null, expiresAt: Date.now() + CACHE_TTL };
+    // Short TTL on failure so the next request retries quickly
+    return { drawers: [], index: null, expiresAt: Date.now() + 60_000 };
   }
 
   if (paths.length === 0) {
