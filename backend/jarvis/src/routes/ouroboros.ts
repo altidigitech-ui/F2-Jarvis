@@ -152,9 +152,11 @@ export async function ouroborosStatus(req: Request, res: Response): Promise<void
     const lastDiaryDate = diaryMdFiles.length > 0 ? diaryMdFiles[0].name.replace(".md", "") : null;
 
     let cycleRunning = false;
+    let workerOnline = false;
     try {
       const { ouroborosQueue } = await import("../lib/queues.js");
       cycleRunning = (await ouroborosQueue.getActiveCount()) > 0;
+      workerOnline = true;
     } catch { /* Redis unavailable */ }
 
     const budgetCap = (state.budgetCap as number) || 10;
@@ -173,6 +175,7 @@ export async function ouroborosStatus(req: Request, res: Response): Promise<void
       diaryCount,
       lastDiaryDate,
       cycleRunning,
+      workerOnline,
       budgetUsed,
       budgetRemaining: Math.max(0, budgetCap - budgetUsed),
       budgetCap,
@@ -291,14 +294,9 @@ export async function ouroborosAction(req: Request, res: Response): Promise<void
 // POST /ouroboros/trigger
 export async function ouroborosTrigger(req: Request, res: Response): Promise<void> {
   try {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const triggerPath = `${TRIGGERS_DIR}/manual-${timestamp}.trigger`;
-    const content = `Manual cycle triggered via JARVIS at ${new Date().toISOString()}\n`;
-
-    await ghCreate(triggerPath, content, "chore(ouroboros): manual cycle trigger via JARVIS");
-
-    const estimatedStart = new Date(Date.now() + 5 * 60 * 1000).toISOString();
-    res.json({ triggered: true, estimatedStart, triggerPath });
+    const { ouroborosQueue } = await import("../lib/queues.js");
+    const job = await ouroborosQueue.add("manual", {}, { priority: 1 });
+    res.json({ triggered: true, jobId: job.id });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("[/ouroboros/trigger]", err);
