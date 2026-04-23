@@ -508,6 +508,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
           }>;
         };
         if (cancelled) return;
+        console.log("[Chat] loading history for", persona, mode, "response:", data);
         if (data.messages && data.messages.length > 0) {
           const rehydrated: Message[] = data.messages
             .filter((m) => m.role === "user" || m.role === "assistant")
