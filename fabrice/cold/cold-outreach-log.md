@@ -22,6 +22,10 @@
 | 22/04/2026 | 14:48 | @SirPelzBuilds | ecom | Builder Shopify + apprentissage JS — reply sur JS bloat et app conflicts, angle StoreMD | reply | ⏳ |  |
 | 22/04/2026 | 14:48 | @Oghenemineee | creator | Video editing 5h+ au lieu de 1h — reply workflow transcription-first pour réduire editing | reply | ⏳ |  |
 | 22/04/2026 | 14:48 | @robbehcochrane | creator | YouTube creator, editing prend des heures — reply transcript-first workflow, question setup | reply | ⏳ |  |
+| 23/04/2026 |  | @MEEcom44 | ecom | A posté sur 4 apps Shopify oubliées post-free-trial — ghost billing angle direct. Reply sur le tweet. | Queued | ⏳ | Prio 1 — tweet frais (22/04), cold reply déjà générée |
+| 23/04/2026 |  | @sierrachristian | ecom | DTC owner actif, $44K rev / $10K Meta spend. Angle: leaks côté Shopify pendant qu'il scale Meta. | Queued | ⏳ | Prio 2 — data-driven, réceptif aux metrics de perte |
+| 23/04/2026 |  | @UntAaron | ecom | Portfolio DTC $1.2M/an, a posté sur attribution double-counting. Angle: ghost billing = autre couche de leak. | Queued | ⏳ | Prio 2 — déjà sensibilisé aux problèmes de tracking/attribution |
+| 23/04/2026 |  | @DanielLeither | ecom | 16yo, $10K/mo Shopify single-product, cherche des conseils de focus. Angle: auditer le store avant de scaler. | Queued | ⏳ | Prio 3 — petit volume mais merchant authentique |
 
 -----
 
