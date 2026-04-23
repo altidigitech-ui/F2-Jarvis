@@ -10,7 +10,8 @@
 
 |Date|Événement|Plateforme|Action prise / à prendre|
 |----|---------|----------|------------------------|
-|    |         |          |                        |
+|22/04|Reply @aryan_sinh sur post beta F2 (question naming StoreMD)|IH (compte F2)|Reply : nom verrouillé, fonctionnel = voulu, app B2B Shopify pas une marque consumer, le rapport fait le travail pas le nom.|
+|22/04|IH engagement (compte F2 @foundrytwo) — 5 commentaires feed|IH (compte F2)|5 commentaires : @kubaklatt (ad URL monitor, blind spot pattern commun), @atomfoundryai (100+ e-commerce stores analyzed, conversion vs traffic), @HarshGarg06 (worst support month, proactive outreach), @PrepProject (where is your time spent, outreach et distribution), @Ridhisha (retention trapped, 530+ app reviews hostage retention pattern). Mix engagement valeur + builder-to-builder.|
 
 -----
 
