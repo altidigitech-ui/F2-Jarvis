@@ -138,6 +138,69 @@ export async function ghCreateFromBase64(
   cacheInvalidate(filePath);
 }
 
+export async function ghCreateMultiple(
+  files: Array<{ path: string; content: string }>,
+  commitMessage: string
+): Promise<void> {
+  if (files.length === 0) return;
+
+  const hdrs = headers();
+
+  // 1. GET /git/ref/heads/main → SHA du dernier commit
+  const refRes = await fetch(apiUrl(`git/ref/heads/${BRANCH}`), { headers: hdrs });
+  if (!refRes.ok) throw new Error(`GitHub get ref failed: ${refRes.status} ${await refRes.text()}`);
+  const refData = (await refRes.json()) as { object: { sha: string } };
+  const latestCommitSha = refData.object.sha;
+
+  // 2. GET /git/commits/{sha} → tree SHA
+  const commitRes = await fetch(apiUrl(`git/commits/${latestCommitSha}`), { headers: hdrs });
+  if (!commitRes.ok) throw new Error(`GitHub get commit failed: ${commitRes.status} ${await commitRes.text()}`);
+  const commitData = (await commitRes.json()) as { tree: { sha: string } };
+  const treeSha = commitData.tree.sha;
+
+  // 3. POST /git/trees avec tous les fichiers
+  const treeRes = await fetch(apiUrl(`git/trees`), {
+    method: "POST",
+    headers: hdrs,
+    body: JSON.stringify({
+      base_tree: treeSha,
+      tree: files.map((f) => ({
+        path: f.path,
+        mode: "100644",
+        type: "blob",
+        content: f.content,
+      })),
+    }),
+  });
+  if (!treeRes.ok) throw new Error(`GitHub create tree failed: ${treeRes.status} ${await treeRes.text()}`);
+  const treeData = (await treeRes.json()) as { sha: string };
+
+  // 4. POST /git/commits avec le nouveau tree
+  const newCommitRes = await fetch(apiUrl(`git/commits`), {
+    method: "POST",
+    headers: hdrs,
+    body: JSON.stringify({
+      message: commitMessage,
+      tree: treeData.sha,
+      parents: [latestCommitSha],
+    }),
+  });
+  if (!newCommitRes.ok) throw new Error(`GitHub create commit failed: ${newCommitRes.status} ${await newCommitRes.text()}`);
+  const newCommitData = (await newCommitRes.json()) as { sha: string };
+
+  // 5. PATCH /git/refs/heads/main → pointer vers le nouveau commit
+  const updateRefRes = await fetch(apiUrl(`git/refs/heads/${BRANCH}`), {
+    method: "PATCH",
+    headers: hdrs,
+    body: JSON.stringify({ sha: newCommitData.sha }),
+  });
+  if (!updateRefRes.ok) throw new Error(`GitHub update ref failed: ${updateRefRes.status} ${await updateRefRes.text()}`);
+
+  for (const f of files) {
+    cacheInvalidate(f.path);
+  }
+}
+
 export async function ghDelete(
   filePath: string,
   sha: string,
