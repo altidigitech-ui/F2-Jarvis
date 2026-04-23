@@ -299,7 +299,24 @@ export async function ouroborosAction(req: Request, res: Response): Promise<void
     await ghCreate(`${dest}/${filename}`, content, commitMsg);
     await ghDelete(`${PROPOSALS_PENDING}/${filename}`, file.sha, commitMsg);
 
-    res.json({ ok: true, action, proposalId: id });
+    let chatMessage: string | undefined;
+    if (action === "accept") {
+      const rawContent = file.content;
+      const recommMatch = rawContent.match(
+        /\*\*Recommandation[^*]*\*\*\s*:\s*([\s\S]*?)(?=\*\*Risques|\*\*Action|\*\*Pr[io]|\n---|\n##|$)/i
+      ) || rawContent.match(
+        /\*\*Recommandation\s*:\s*\*\*\s*([\s\S]*?)(?=\*\*Risques|\*\*Action|\*\*Pr[io]|\n---|\n##|$)/i
+      );
+      const recommendation = recommMatch ? recommMatch[1].trim() : rawContent.slice(0, 500);
+      const titleMatch =
+        rawContent.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) ||
+        rawContent.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) ||
+        rawContent.match(/^#\s+(.+)$/m);
+      const title = titleMatch ? titleMatch[1].trim() : id;
+      chatMessage = `[OUROBOROS] ${title}\n\n${recommendation}${comment ? `\n\nContexte: ${comment}` : ""}\n\nExécute cette recommandation.`;
+    }
+
+    res.json({ ok: true, action, proposalId: id, ...(chatMessage !== undefined ? { chatMessage } : {}) });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("[/ouroboros/action]", err);
