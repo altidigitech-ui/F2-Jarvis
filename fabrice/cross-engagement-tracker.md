@@ -548,3 +548,17 @@ Cross Fabrice sur post F2 13h
 ```
 Cross Fabrice sur post Romain 13h
 ```
+
+
+**Reply R publiée (23/04/2026 19:40:37 CEST) :**
+
+```
+ran into this building the ghost billing module. the billing contract and the app install state are two completely separate things in Shopify's API. you can remove an app from the dashboard and the subscription contract stays active. that gap is why merchants have no idea — their admin just says 'uninstalled'.
+```
+
+
+**Reply R publiée (23/04/2026 19:40:38 CEST) :**
+
+```
+the no admin access part matters more than it sounds tbh. merchants share a URL. they don't share store access, even for something free. I built the whole detection pipeline around public-facing signals because of that. everything it catches is visible without touching the backend.
+```
