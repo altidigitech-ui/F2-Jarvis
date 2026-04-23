@@ -142,7 +142,7 @@ Commence par explorer : recent_history pour Fabrice et Romain (7 jours), counter
       prompt: userPrompt,
       options: {
         systemPrompt,
-        maxTurns: 10,
+        maxTurns: 15,
         mcpServers: { jarvis: mcpServer },
         allowedTools: OUROBOROS_SANDBOX_ALLOWED_TOOLS,
         permissionMode: "dontAsk",

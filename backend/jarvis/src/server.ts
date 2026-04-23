@@ -102,11 +102,12 @@ app.listen(PORT, () => {
 async function scheduleOuroborosCycle() {
   try {
     const { ouroborosQueue } = await import("./lib/queues.js");
-    await ouroborosQueue.add("nightly", {}, {
-      repeat: { pattern: "0 2 * * *" },
-      jobId: "ouroboros-nightly",
-    });
-    console.log("[server] ouroboros nightly job scheduled");
+    await ouroborosQueue.upsertJobScheduler(
+      "ouroboros-repeat",
+      { every: 7_200_000 },
+      { name: "ouroboros-cycle" }
+    );
+    console.log("[server] ouroboros repeat job scheduled (every 2h)");
   } catch (err) {
     console.warn("[server] ouroboros scheduling skipped:", err instanceof Error ? err.message : err);
   }
