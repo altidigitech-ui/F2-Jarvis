@@ -99,7 +99,9 @@ app.post("/ouroboros/initialize", ouroborosInitialize);
 
 app.listen(PORT, () => {
   console.log(`JARVIS backend on port ${PORT}`);
-  scheduleOuroborosCycle();
+  scheduleOuroborosCycle().catch((err) =>
+    console.warn("[server] ouroboros init error:", err instanceof Error ? err.message : err)
+  );
 });
 
 async function scheduleOuroborosCycle() {
