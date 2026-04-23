@@ -27,7 +27,11 @@ Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 │   ├── claude-code-prompts.md
 │   ├── context.md
 │   ├── engagement
-│   │   └── chrome
+│   │   ├── chrome
+│   │   │   ├── IH-prompt.md
+│   │   │   └── LINKEDIN-prompt.md
+│   │   ├── engagement-log.md
+│   │   └── archives
 │   ├── ih
 │   │   ├── context.md
 │   │   └── roadmap.md
