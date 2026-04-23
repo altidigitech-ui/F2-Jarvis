@@ -1,6 +1,6 @@
 import { query } from "@anthropic-ai/claude-agent-sdk";
 import { resolveClaudeBinary } from "./claude-binary.js";
-import { ghRead, ghCreate, ghWrite } from "./github.js";
+import { ghRead, ghCreateMultiple } from "./github.js";
 import { createJarvisMcpServer } from "../lib/jarvis-tools.js";
 
 const OUROBOROS_SANDBOX_ALLOWED_TOOLS = [
@@ -52,18 +52,16 @@ async function getState(): Promise<Record<string, unknown>> {
   }
 }
 
-async function updateState(state: Record<string, unknown>): Promise<void> {
-  try {
-    const existing = await ghRead("brain/ouroboros/state.json");
-    const content = JSON.stringify({ ...state, lastCycle: { date: getCESTDate(), timestamp: new Date().toISOString() }, totalCycles: ((state.totalCycles as number) || 0) + 1 }, null, 2);
-    if (existing) {
-      await ghWrite("brain/ouroboros/state.json", content, existing.sha, "[OUROBOROS] update state");
-    } else {
-      await ghCreate("brain/ouroboros/state.json", content, "[OUROBOROS] init state");
-    }
-  } catch (err) {
-    console.warn("[ouroboros-cycle] state update failed:", err);
-  }
+function buildStateContent(state: Record<string, unknown>, date: string): string {
+  return JSON.stringify(
+    {
+      ...state,
+      lastCycle: { date, timestamp: new Date().toISOString() },
+      totalCycles: ((state.totalCycles as number) || 0) + 1,
+    },
+    null,
+    2
+  );
 }
 
 export async function runOuroborosCycle(): Promise<void> {
@@ -172,18 +170,22 @@ Commence par explorer : recent_history pour Fabrice et Romain (7 jours), counter
     return;
   }
 
-  // Parse and write proposals
+  const filesToCreate: Array<{ path: string; content: string }> = [];
+
+  // Collecter les proposals
   const proposalBlocks = [...fullText.matchAll(/---PROPOSAL---([\s\S]*?)---END-PROPOSAL---/g)];
+  const timestamp = Date.now();
   for (const [, body] of proposalBlocks) {
     const titleMatch = body.match(/\*\*Titre:\*\*\s*(.+)/);
     const priorityMatch = body.match(/\*\*Priorité:\*\*\s*(.+)/);
     const title = titleMatch ? titleMatch[1].trim() : "Sans titre";
     const priority = priorityMatch ? priorityMatch[1].trim() : "faible";
     const safeTitle = title.toLowerCase().replace(/[^a-z0-9]/g, "-").slice(0, 40);
-    const timestamp = Date.now();
     const filename = `${date}-${safeTitle}-${timestamp}.md`;
 
-    const proposalContent = `---
+    filesToCreate.push({
+      path: `brain/ouroboros/proposals/pending/${filename}`,
+      content: `---
 date: "${date}"
 auteur: Ouroboros
 priorité: ${priority}
@@ -191,25 +193,18 @@ statut: pending
 ---
 
 ${body.trim()}
-`;
-
-    try {
-      await ghCreate(
-        `brain/ouroboros/proposals/pending/${filename}`,
-        proposalContent,
-        `[OUROBOROS] proposal: ${title.slice(0, 50)}`
-      );
-      console.log(`[ouroboros-cycle] wrote proposal: ${filename}`);
-    } catch (err) {
-      console.warn(`[ouroboros-cycle] failed to write proposal ${filename}:`, err);
-    }
+`,
+    });
+    console.log(`[ouroboros-cycle] queued proposal: ${filename}`);
   }
 
-  // Parse and write diary
+  // Collecter le diary
   const diaryMatch = fullText.match(/---DIARY---([\s\S]*?)---END-DIARY---/);
   const diaryContent = diaryMatch ? diaryMatch[1].trim() : fullText.slice(0, 500).trim();
   if (diaryContent) {
-    const diaryEntry = `---
+    filesToCreate.push({
+      path: `brain/ouroboros/diary/${date}.md`,
+      content: `---
 date: "${date}"
 auteur: Ouroboros
 ---
@@ -217,19 +212,24 @@ auteur: Ouroboros
 # Journal — ${date}
 
 ${diaryContent}
-`;
-    try {
-      await ghCreate(
-        `brain/ouroboros/diary/${date}.md`,
-        diaryEntry,
-        `[OUROBOROS] diary ${date}`
-      );
-      console.log(`[ouroboros-cycle] diary written for ${date}`);
-    } catch (err) {
-      console.warn("[ouroboros-cycle] diary write failed:", err);
-    }
+`,
+    });
   }
 
-  await updateState(state);
-  console.log(`[ouroboros-cycle] cycle complete — ${proposalBlocks.length} proposals`);
+  // Collecter le state
+  filesToCreate.push({
+    path: "brain/ouroboros/state.json",
+    content: buildStateContent(state, date),
+  });
+
+  // UN SEUL commit pour tout
+  try {
+    await ghCreateMultiple(
+      filesToCreate,
+      `[OUROBOROS] cycle ${date}: ${filesToCreate.length} fichiers (${proposalBlocks.length} proposals + diary)`
+    );
+    console.log(`[ouroboros-cycle] cycle complete — ${proposalBlocks.length} proposals, 1 commit`);
+  } catch (err) {
+    console.error("[ouroboros-cycle] batch commit failed:", err);
+  }
 }
