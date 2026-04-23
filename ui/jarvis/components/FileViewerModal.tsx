@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -153,6 +153,60 @@ export function FileViewerModal({ filePath, accentColor, onClose, persona, mode 
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function CodeBlock({ children }: { children: ReactNode }) {
+  const [copied, setCopied] = useState(false);
+  const preRef = useRef<HTMLPreElement>(null);
+
+  const handleCopy = () => {
+    const text = preRef.current?.textContent ?? "";
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
+  };
+
+  return (
+    <div style={{ position: "relative" }}>
+      <button
+        onClick={handleCopy}
+        title="Copier"
+        style={{
+          position: "absolute",
+          top: "6px",
+          right: "6px",
+          background: copied ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.1)",
+          borderRadius: "4px",
+          padding: "2px 7px",
+          cursor: "pointer",
+          fontSize: "11px",
+          color: copied ? "#94a3b8" : "#475569",
+          lineHeight: "18px",
+          zIndex: 1,
+          transition: "all 0.15s",
+        }}
+      >
+        {copied ? "✓" : "📋"}
+      </button>
+      <pre
+        ref={preRef}
+        style={{
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          padding: "10px 40px 10px 14px",
+          borderRadius: "6px",
+          margin: "10px 0",
+          overflowX: "auto",
+          fontSize: "12px",
+          lineHeight: 1.55,
+        }}
+      >
+        {children}
+      </pre>
     </div>
   );
 }
@@ -311,22 +365,7 @@ function MarkdownRenderer({
               </code>
             );
           },
-          pre: ({ children }) => (
-            <pre
-              style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                padding: "10px 14px",
-                borderRadius: "6px",
-                margin: "10px 0",
-                overflowX: "auto",
-                fontSize: "12px",
-                lineHeight: 1.55,
-              }}
-            >
-              {children}
-            </pre>
-          ),
+          pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
           hr: () => (
             <hr
               style={{

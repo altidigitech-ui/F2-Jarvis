@@ -12,6 +12,7 @@ interface OuroborosStatus {
   diaryCount?: number;
   lastDiaryDate?: string | null;
   cycleRunning?: boolean;
+  workerOnline?: boolean;
   budgetUsed?: number;
   budgetRemaining?: number;
   budgetCap?: number;
@@ -181,8 +182,12 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
             <div className="space-y-1">
               <div className="flex justify-between items-center text-[12px] text-slate-400">
                 <span>Dernier cycle</span>
-                <span className="font-mono" style={{ color: accentColor }}>
-                  {status.lastCycle?.date ? timeAgo(status.lastCycle.date) : "jamais"}
+                <span className="font-mono" style={{ color: status.lastCycle?.date ? accentColor : "#475569" }}>
+                  {status.lastCycle?.date
+                    ? timeAgo(status.lastCycle.date)
+                    : status.workerOnline
+                    ? "En attente du premier cycle (toutes les 2h)"
+                    : "jamais"}
                 </span>
               </div>
               <div className="flex justify-between items-center text-[12px] text-slate-400">
