@@ -62,6 +62,8 @@ Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 │   ├── angles-et-templates.md
 │   ├── claude-code-prompts.md
 │   ├── cold
+│   │   ├── chrome
+│   │   │   └── linkedin-prompt.md
 │   │   ├── claude
 │   │   ├── cold-outreach-log.md
 │   │   └── grok
@@ -164,6 +166,8 @@ Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 │   ├── angles-et-templates.md
 │   ├── claude-code-prompts.md
 │   ├── cold
+│   │   ├── chrome
+│   │   │   └── linkedin-prompt.md
 │   │   ├── claude
 │   │   ├── cold-outreach-log.md
 │   │   └── grok
