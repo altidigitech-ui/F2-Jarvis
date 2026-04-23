@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useState, useEffect, useCallback } from "react";
+import { emitSendToChat } from "../lib/jarvisEvents";
 
 interface Proposal {
   id: string;
@@ -137,6 +138,8 @@ export function OuroborosProposalsModal({ accentColor, persona, mode, onClose }:
   const [filterWing, setFilterWing] = useState<string>("all");
   const [filterType, setFilterType] = useState<string>("all");
   const [done, setDone] = useState<Set<string>>(new Set());
+  const [acceptConfirmId, setAcceptConfirmId] = useState<string | null>(null);
+  const [acceptComment, setAcceptComment] = useState("");
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -165,17 +168,23 @@ export function OuroborosProposalsModal({ accentColor, persona, mode, onClose }:
     return () => window.removeEventListener("keydown", handler);
   }, [onClose]);
 
-  async function handleAction(proposalId: string, action: "accept" | "reject" | "ignore") {
+  async function handleAction(proposalId: string, action: "accept" | "reject" | "ignore", comment?: string) {
     setActionLoading(proposalId + action);
     try {
       const res = await fetch("/api/ouroboros/action", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ proposalId, action, persona }),
+        body: JSON.stringify({ proposalId, action, persona, ...(comment ? { comment } : {}) }),
       });
       if (res.ok) {
+        const data = await res.json();
         setDone(prev => new Set([...prev, proposalId]));
         setExpandedId(null);
+        setAcceptConfirmId(null);
+        setAcceptComment("");
+        if (action === "accept" && data.chatMessage) {
+          emitSendToChat(data.chatMessage);
+        }
       }
     } finally {
       setActionLoading(null);
@@ -407,43 +416,89 @@ export function OuroborosProposalsModal({ accentColor, persona, mode, onClose }:
                           </div>
 
                           {/* Action buttons */}
-                          <div className="flex gap-2 pt-3 border-t" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
-                            <button
-                              onClick={() => handleAction(p.id, "accept")}
-                              disabled={actionLoading !== null}
-                              className="flex-1 text-[11px] font-mono py-2 rounded transition-all disabled:opacity-40"
-                              style={{
-                                background: "rgba(74,222,128,0.08)",
-                                border: "1px solid rgba(74,222,128,0.25)",
-                                color: "#4ade80",
-                              }}
-                            >
-                              {actionLoading === p.id + "accept" ? "…" : "✅ ACCEPTER"}
-                            </button>
-                            <button
-                              onClick={() => handleAction(p.id, "reject")}
-                              disabled={actionLoading !== null}
-                              className="flex-1 text-[11px] font-mono py-2 rounded transition-all disabled:opacity-40"
-                              style={{
-                                background: "rgba(240,100,100,0.08)",
-                                border: "1px solid rgba(240,100,100,0.25)",
-                                color: "#f06464",
-                              }}
-                            >
-                              {actionLoading === p.id + "reject" ? "…" : "❌ REJETER"}
-                            </button>
-                            <button
-                              onClick={() => handleAction(p.id, "ignore")}
-                              disabled={actionLoading !== null}
-                              className="flex-1 text-[11px] font-mono py-2 rounded transition-all disabled:opacity-40"
-                              style={{
-                                background: "rgba(255,255,255,0.04)",
-                                border: "1px solid rgba(255,255,255,0.1)",
-                                color: "#64748b",
-                              }}
-                            >
-                              {actionLoading === p.id + "ignore" ? "…" : "⊘ IGNORER"}
-                            </button>
+                          <div className="pt-3 border-t" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
+                            {acceptConfirmId !== p.id ? (
+                              <div className="flex gap-2">
+                                <button
+                                  onClick={() => { setAcceptConfirmId(p.id); setAcceptComment(""); }}
+                                  disabled={actionLoading !== null}
+                                  className="flex-1 text-[11px] font-mono py-2 rounded transition-all disabled:opacity-40"
+                                  style={{
+                                    background: "rgba(74,222,128,0.08)",
+                                    border: "1px solid rgba(74,222,128,0.25)",
+                                    color: "#4ade80",
+                                  }}
+                                >
+                                  ✅ ACCEPTER
+                                </button>
+                                <button
+                                  onClick={() => handleAction(p.id, "reject")}
+                                  disabled={actionLoading !== null}
+                                  className="flex-1 text-[11px] font-mono py-2 rounded transition-all disabled:opacity-40"
+                                  style={{
+                                    background: "rgba(240,100,100,0.08)",
+                                    border: "1px solid rgba(240,100,100,0.25)",
+                                    color: "#f06464",
+                                  }}
+                                >
+                                  {actionLoading === p.id + "reject" ? "…" : "❌ REJETER"}
+                                </button>
+                                <button
+                                  onClick={() => handleAction(p.id, "ignore")}
+                                  disabled={actionLoading !== null}
+                                  className="flex-1 text-[11px] font-mono py-2 rounded transition-all disabled:opacity-40"
+                                  style={{
+                                    background: "rgba(255,255,255,0.04)",
+                                    border: "1px solid rgba(255,255,255,0.1)",
+                                    color: "#64748b",
+                                  }}
+                                >
+                                  {actionLoading === p.id + "ignore" ? "…" : "⊘ IGNORER"}
+                                </button>
+                              </div>
+                            ) : (
+                              <div
+                                className="p-3 rounded"
+                                style={{ background: "rgba(74,222,128,0.04)", border: "1px solid rgba(74,222,128,0.15)" }}
+                              >
+                                <div className="text-[9px] font-mono text-slate-600 mb-2 uppercase tracking-widest">
+                                  Commentaire (optionnel)
+                                </div>
+                                <textarea
+                                  value={acceptComment}
+                                  onChange={e => setAcceptComment(e.target.value)}
+                                  placeholder="ex: j'ai déjà fait le cross B3, ignore la partie LinkedIn…"
+                                  className="w-full text-[11px] font-mono text-slate-300 bg-transparent resize-none outline-none placeholder:text-slate-700"
+                                  rows={3}
+                                />
+                                <div className="flex gap-2 mt-2">
+                                  <button
+                                    onClick={() => handleAction(p.id, "accept", acceptComment || undefined)}
+                                    disabled={actionLoading !== null}
+                                    className="flex-1 text-[11px] font-mono py-1.5 rounded transition-all disabled:opacity-40"
+                                    style={{
+                                      background: "rgba(74,222,128,0.15)",
+                                      border: "1px solid rgba(74,222,128,0.4)",
+                                      color: "#4ade80",
+                                    }}
+                                  >
+                                    {actionLoading === p.id + "accept" ? "…" : "Confirmer"}
+                                  </button>
+                                  <button
+                                    onClick={() => { setAcceptConfirmId(null); setAcceptComment(""); }}
+                                    disabled={actionLoading !== null}
+                                    className="text-[11px] font-mono px-4 py-1.5 rounded transition-all disabled:opacity-40"
+                                    style={{
+                                      background: "rgba(255,255,255,0.04)",
+                                      border: "1px solid rgba(255,255,255,0.1)",
+                                      color: "#64748b",
+                                    }}
+                                  >
+                                    Annuler
+                                  </button>
+                                </div>
+                              </div>
+                            )}
                           </div>
                         </div>
                       )}
