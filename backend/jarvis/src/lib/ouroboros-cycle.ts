@@ -80,8 +80,7 @@ export async function runOuroborosCycle(): Promise<void> {
   const date = getCESTDate();
 
   const claudePath = await resolveClaudeBinary();
-  const port = process.env.PORT || 3001;
-  const backendBase = `http://127.0.0.1:${port}`;
+  const backendBase = process.env.RAILWAY_BACKEND_URL || `http://127.0.0.1:${process.env.PORT || 3001}`;
   const authSecret = process.env.BACKEND_SHARED_SECRET || "";
 
   const mcpServer = createJarvisMcpServer({
