@@ -335,6 +335,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     "CLAUDE.md",
     "BIBLE.md",
     "ANTI-IA.md",
+    "JARVIS.md",
     `${persona}/VOIX.md`,
     `${persona}/plan-hebdo.md`,
   ];
