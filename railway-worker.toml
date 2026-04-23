@@ -1,0 +1,7 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "backend/jarvis/Dockerfile"
+
+[deploy]
+startCommand = "npm run worker"
+restartPolicyType = "on_failure"
