@@ -94,8 +94,22 @@ function mapPriority(raw: string): Priority {
 }
 
 function extractTitle(body: string): string {
-  const match = body.match(/^#\s+(.+)$/m);
-  return match ? match[1].trim() : "Sans titre";
+  // Ouroboros proposal format: **Titre:** or **Title:**
+  const boldMatch = body.match(/\*\*Titr[ée]:\*\*\s*(.+)/i);
+  if (boldMatch) return boldMatch[1].trim();
+  // Standard markdown heading
+  const headingMatch = body.match(/^#\s+(.+)$/m);
+  if (headingMatch) return headingMatch[1].trim();
+  // Last resort: first non-empty, non-frontmatter line up to 60 chars
+  const firstMeaningful = body.trim().split(/\r?\n/).find(l => l.trim() && !l.startsWith("**") && !l.startsWith("---"));
+  return firstMeaningful ? firstMeaningful.trim().slice(0, 60) : "Sans titre";
+}
+
+function extractPriority(meta: Record<string, string>, body: string): string {
+  if (meta.priority) return meta.priority;
+  if (meta["priorité"]) return meta["priorité"];
+  const bodyMatch = body.match(/\*\*Priorit[ée]:\*\*\s*(.+)/i);
+  return bodyMatch ? bodyMatch[1].trim() : "medium";
 }
 
 function parseProposal(filename: string, content: string): ProposalMeta {
@@ -108,8 +122,8 @@ function parseProposal(filename: string, content: string): ProposalMeta {
   return {
     id,
     filename,
-    type: meta.type || "pattern",
-    priority: mapPriority(meta.priority || meta["priorité"] || "medium"),
+    type: meta.type || "",
+    priority: mapPriority(extractPriority(meta, body)),
     wing: meta.wing || "f2-core",
     title,
     preview,
