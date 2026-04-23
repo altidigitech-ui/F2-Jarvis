@@ -8,6 +8,7 @@ type Persona = "fabrice" | "romain";
 
 type ActionRow = {
   id: string;
+  status: string;
   action_type: string;
   params: Record<string, unknown>;
   preview: string;
@@ -36,25 +37,31 @@ export async function actionExecuteBatchRoute(req: Request, res: Response): Prom
 
     const { data: rows, error: readErr } = await sb
       .from("jarvis_pending_actions")
-      .select("id, action_type, params, preview, jarvis_conversations!inner(user_id, persona)")
-      .in("id", action_ids)
-      .in("status", ["pending", "validated"]);
+      .select("id, status, action_type, params, preview, jarvis_conversations!inner(user_id, persona)")
+      .in("id", action_ids);
 
-    if (readErr || !rows || rows.length === 0) {
+    if (readErr) {
+      res.status(500).json({ error: readErr.message });
+      return;
+    }
+    if (!rows || rows.length === 0) {
       res.status(404).json({ error: "Actions not found" });
       return;
     }
 
-    const actions = rows as unknown as ActionRow[];
+    const allRows = rows as unknown as ActionRow[];
+    // Only process pending/validated — return already-executed ones as ok:true (idempotent)
+    const actions = allRows.filter((r) => r.status === "pending" || r.status === "validated");
+    const alreadyDone = allRows.filter((r) => r.status === "executed");
 
-    for (const row of actions) {
+    for (const row of allRows) {
       if (row.jarvis_conversations.user_id !== userId) {
         res.status(403).json({ error: "Forbidden" });
         return;
       }
     }
 
-    const results: Array<{ id: string; ok: boolean; error?: string }> = [];
+    const results: Array<{ id: string; ok: boolean; error?: string }> = alreadyDone.map((r) => ({ id: r.id, ok: true }));
     const normalExecutedIds: string[] = [];
     const failedById = new Map<string, string>();
 
