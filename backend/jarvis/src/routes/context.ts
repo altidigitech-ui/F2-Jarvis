@@ -84,7 +84,7 @@ function platformOf(sectionTitle: string): string {
 function parseTimeline(planHebdo: string, today: string, dayName: string, publishedBy: string): TimelineItem[] {
   if (!planHebdo) return [];
   const items: TimelineItem[] = [];
-  const sectionRegex = /^##\s+\d+\.\s*(POSTS\s+\w+.*)/gm;
+  const sectionRegex = /^##\s+\d+[A-Za-z]?\.\s*(POSTS\s+\w+.*)/gm;
   let match;
   while ((match = sectionRegex.exec(planHebdo)) !== null) {
     const title = match[1];
@@ -98,7 +98,8 @@ function parseTimeline(planHebdo: string, today: string, dayName: string, publis
       const dayCell = row[0].replace(/\*\*/g, "").toLowerCase();
       const dayAbbr = dayName.slice(0, 3);
       if (!dayCell.includes(today) && !dayCell.includes(dayName) && !dayCell.includes(dayAbbr)) continue;
-      const subject = row[2] || row[1] || "";
+      // 4-col (Jour|Vidéo|Sujet|Statut) → row[2]; 3-col (Jour|Sujet|Statut) → row[1]
+      const subject = row.length >= 4 ? (row[2] || row[1]) : row[1];
       const statusCell = row[row.length - 1] || "";
       const timeMatch = statusCell.match(/(\d{1,2})h/);
       items.push({
@@ -256,7 +257,7 @@ function parseCrossItemsToday(
 function parseF2Planning(f2PlanHebdo: string, publishedBy: string): TimelineItem[] {
   if (!f2PlanHebdo) return [];
   const items: TimelineItem[] = [];
-  const sectionRegex = /^##\s+\d+\.\s*(POSTS\s+\w+.*)/gm;
+  const sectionRegex = /^##\s+\d+[A-Za-z]?\.\s*(POSTS\s+\w+.*)/gm;
   let match;
   while ((match = sectionRegex.exec(f2PlanHebdo)) !== null) {
     const title = match[1];
@@ -267,7 +268,8 @@ function parseF2Planning(f2PlanHebdo: string, publishedBy: string): TimelineItem
     for (const row of tableRows(sectionContent)) {
       if (row.length < 2) continue;
       const dayCell = row[0].replace(/\*\*/g, "").replace(/🔴/g, "").trim();
-      const subject = row[2] || row[1] || "";
+      // 4-col (Jour|Vidéo|Sujet|Statut) → row[2]; 3-col (Jour|Sujet|Statut) → row[1]
+      const subject = row.length >= 4 ? (row[2] || row[1]) : row[1];
       const statusCell = row[row.length - 1] || "";
       const timeMatch = statusCell.match(/(\d{1,2})h/);
       items.push({
