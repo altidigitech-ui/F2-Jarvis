@@ -1,12 +1,6 @@
 import { Request, Response } from "express";
 import { ghRead, ghList, ghCreateFromBase64 } from "../lib/github.js";
-
-const WEEK_EPOCH = new Date("2026-04-06T00:00:00+02:00").getTime();
-const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-
-function currentWeekNumber(): number {
-  return Math.max(1, Math.floor((Date.now() - WEEK_EPOCH) / WEEK_MS) + 1);
-}
+import { resolveCurrentBatchNumber } from "../lib/batch-number.js";
 
 async function fileExists(path: string): Promise<boolean> {
   try {
@@ -33,7 +27,7 @@ interface Criterion {
 }
 
 export async function batchStatusRoute(req: Request, res: Response): Promise<void> {
-  const weekN = currentWeekNumber();
+  const weekN = await resolveCurrentBatchNumber();
   const weekN1 = weekN + 1;
 
   try {
@@ -92,7 +86,7 @@ export async function batchUploadRoute(req: Request, res: Response): Promise<voi
   }
 
   const safeName = filename.replace(/[^a-zA-Z0-9._-]/g, "_");
-  const weekN1 = currentWeekNumber() + 1;
+  const weekN1 = (await resolveCurrentBatchNumber()) + 1;
   const path = `raw/analytics/S${weekN1}/${safeName}`;
 
   try {

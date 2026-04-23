@@ -1,9 +1,6 @@
 import { Request, Response } from "express";
 import { ghRead } from "../lib/github.js";
-
-// Week 1 = 6 April 2026 (Monday)
-const WEEK_EPOCH = new Date("2026-04-06T00:00:00+02:00").getTime();
-const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+import { resolveCurrentBatchNumber } from "../lib/batch-number.js";
 
 // Cache 30 min — batch changes rarely during the day
 let _cache: { weekNumber: number; data: TargetsResponse; expiresAt: number } | null = null;
@@ -46,11 +43,6 @@ const DEFAULTS: Record<"fabrice" | "romain", PersonaTargets> = {
     hasIhPh: true, hasPh: true, hasIh: true,
   },
 };
-
-function currentWeekNumber(): number {
-  const now = Date.now();
-  return Math.max(1, Math.floor((now - WEEK_EPOCH) / WEEK_MS) + 1);
-}
 
 function extractNumber(text: string): number | null {
   const m = text.match(/(\d+)/);
@@ -215,8 +207,9 @@ function buildPersonaTargets(base: PersonaTargets, overrides: Partial<PersonaTar
 }
 
 export async function targetsRoute(_req: Request, res: Response): Promise<void> {
+  let weekNumber = _cache?.data.weekNumber ?? 1;
   try {
-    const weekNumber = currentWeekNumber();
+    weekNumber = await resolveCurrentBatchNumber();
 
     if (_cache && _cache.weekNumber === weekNumber && Date.now() < _cache.expiresAt) {
       res.json(_cache.data);
@@ -260,7 +253,6 @@ export async function targetsRoute(_req: Request, res: Response): Promise<void> 
     const msg = err instanceof Error ? err.message : String(err);
     console.error("[/targets]", err);
     // Return defaults on error so the UI doesn't break
-    const weekNumber = currentWeekNumber();
     res.json({
       weekNumber,
       batchFile: `BATCH-SEMAINE-${weekNumber}.md`,

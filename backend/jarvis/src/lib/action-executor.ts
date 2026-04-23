@@ -118,7 +118,7 @@ export interface PendingAction {
   status: string;
 }
 
-function resolveFilePath(
+export function resolveFilePath(
   actionType: string,
   persona: Persona,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -160,7 +160,7 @@ function resolveFilePath(
   }
 }
 
-function applyTransform(
+export function applyTransform(
   actionType: string,
   params: Record<string, unknown>,
   md: string
