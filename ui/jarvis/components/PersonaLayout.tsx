@@ -267,26 +267,28 @@ function F2Banner() {
   ];
   return (
     <div
-      className="text-center text-[12px] font-mono tracking-widest"
+      className="absolute left-0 right-0 z-30 text-center text-[11px] font-mono tracking-widest"
       style={{
-        background: "rgba(151,196,89,0.12)",
-        borderBottom: "1px solid rgba(151,196,89,0.25)",
-        color: "#97C459",
+        top: "100%",
+        background: "rgba(151,196,89,0.92)",
+        backdropFilter: "blur(8px)",
+        borderBottom: "1px solid rgba(151,196,89,0.35)",
+        color: "#1a2e0a",
       }}
     >
       <button
         onClick={() => setExpanded((v) => !v)}
-        className="w-full py-1.5 flex items-center justify-center gap-2 hover:bg-white/5 transition-colors"
+        className="w-full py-1 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
       >
-        <span>◈ MODE F2 ACTIF — @foundrytwo</span>
-        <span className="opacity-60 text-[10px]">{expanded ? "▲" : "▼"}</span>
+        <span className="font-semibold">◈ MODE F2 ACTIF — @foundrytwo</span>
+        <span className="opacity-70 text-[10px]">{expanded ? "▲" : "▼"}</span>
       </button>
       {expanded && (
         <div
           className="px-6 py-3 text-left"
-          style={{ background: "rgba(151,196,89,0.04)" }}
+          style={{ background: "rgba(120,180,60,0.15)" }}
         >
-          <div className="text-[10px] font-mono uppercase opacity-70 mb-2">
+          <div className="text-[10px] font-mono uppercase opacity-70 mb-2" style={{ color: "#1a2e0a" }}>
             Règles voix F2 (checklist avant publication)
           </div>
           <ul className="space-y-1">
@@ -294,7 +296,7 @@ function F2Banner() {
               <li
                 key={i}
                 className="text-[11px] font-mono flex gap-2 opacity-90"
-                style={{ color: "#c5d99e" }}
+                style={{ color: "#1a2e0a" }}
               >
                 <span>✓</span>
                 <span>{r}</span>
@@ -474,14 +476,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         persona={persona}
         mode={mode}
       />
-      {/* F2 mode banner */}
-      {f2Mode && <F2Banner />}
-
       {/* Top bar */}
       <header
-        className="glass flex items-center justify-between px-6 py-3 sticky top-0 z-20"
+        className="relative glass flex items-center justify-between px-6 py-3 sticky top-0 z-20"
         style={{ borderBottom: `1px solid ${accentColor}20` }}
       >
+        {/* F2 mode banner — absolutely positioned below the header, no flex space consumed */}
+        {f2Mode && <F2Banner />}
         <div className="flex items-center gap-4">
           <Link
             href="/"
