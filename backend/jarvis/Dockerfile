@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY backend/jarvis/package*.json ./
 RUN npm install --include=optional --legacy-peer-deps
 
 # S'assurer que le binaire natif est exécutable
@@ -22,7 +22,7 @@ RUN echo "=== Claude binaries found ===" && \
     which claude 2>/dev/null || echo "claude not in PATH" && \
     echo "==========================="
 
-COPY . .
+COPY backend/jarvis/ .
 RUN npm run build
 
 EXPOSE 3000
