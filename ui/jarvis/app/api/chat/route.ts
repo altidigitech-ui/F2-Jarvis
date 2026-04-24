@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
 export const maxDuration = 120;
+export const maxBodySize = "25mb";
 
 const BACKEND = process.env.RAILWAY_BACKEND_URL;
 

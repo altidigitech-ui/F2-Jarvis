@@ -18,6 +18,8 @@ type ImageAttachment = {
   preview: string;
 };
 
+type FileAttachment = { name: string; content: string };
+
 type DrawerResult = {
   wing: string;
   filename: string;
@@ -449,7 +451,8 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const [isStreaming, setIsStreaming] = useState(false);
   const [activeAction, setActiveAction] = useState<ActionType>(null);
   const [lastActionDone, setLastActionDone] = useState(false);
-  const [pendingImage, setPendingImage] = useState<ImageAttachment | null>(null);
+  const [pendingImages, setPendingImages] = useState<ImageAttachment[]>([]);
+  const [pendingFiles, setPendingFiles] = useState<FileAttachment[]>([]);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [imageSizeError, setImageSizeError] = useState(false);
@@ -568,7 +571,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       return;
     }
     const img = await processImageFile(file);
-    if (img) setPendingImage(img);
+    if (img) setPendingImages(prev => [...prev, img]);
   }, []);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -585,8 +588,22 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const handleDrop = useCallback(async (e: React.DragEvent) => {
     e.preventDefault();
     setIsDraggingOver(false);
-    const file = Array.from(e.dataTransfer.files).find((f) => f.type.startsWith("image/"));
-    if (file) await attachImage(file);
+    const imageFiles = Array.from(e.dataTransfer.files).filter((f) => f.type.startsWith("image/"));
+    for (const file of imageFiles) {
+      await attachImage(file);
+    }
+    const textFiles = Array.from(e.dataTransfer.files).filter((f) =>
+      !f.type.startsWith("image/") && (
+        f.type.startsWith("text/") ||
+        f.name.endsWith(".md") || f.name.endsWith(".txt") || f.name.endsWith(".csv") ||
+        f.name.endsWith(".json") || f.name.endsWith(".yml") || f.name.endsWith(".yaml") ||
+        f.type === "application/json"
+      )
+    );
+    for (const file of textFiles) {
+      const content = await file.text();
+      setPendingFiles(prev => [...prev, { name: file.name, content }]);
+    }
   }, [attachImage]);
 
   const handlePaste = useCallback(async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
@@ -680,26 +697,28 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
   const send = async (overrideText?: string) => {
     const text = (overrideText || input).trim();
-    if ((!text && !pendingImage) || isStreaming) return;
+    if ((!text && pendingImages.length === 0 && pendingFiles.length === 0 && !fileContext) || isStreaming) return;
 
     if (text.startsWith("/search ") || text.startsWith("/wing ")) {
       await sendSearch(text);
       return;
     }
 
-    const imageToSend = pendingImage;
+    const imagesToSend = [...pendingImages];
+    const filesToSend = [...pendingFiles];
 
     const userMsg: Message = {
       id: uid(),
       role: "user",
       content: text,
-      image: imageToSend || undefined,
+      image: imagesToSend[0] || undefined,
       timestamp: getCESTTime(),
     };
 
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
-    setPendingImage(null);
+    setPendingImages([]);
+    setPendingFiles([]);
     setImageSizeError(false);
     setIsStreaming(true);
     setActiveAction(null);
@@ -717,22 +736,25 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     setMessages((prev) => [...prev, assistantMsg]);
 
     try {
-      const messageWithContext = fileContext
-        ? `[Contexte fichier: ${fileContext.name}]\n\`\`\`\n${fileContext.content.slice(0, 2500)}\n\`\`\`\n\n${text || "Analyse ce fichier."}`
-        : (text || "Analyse cette image.");
+      if (fileContext) {
+        filesToSend.push({ name: fileContext.name, content: fileContext.content });
+        onFileContextClear?.();
+      }
+
+      const messageToSend = text || (imagesToSend.length > 0 ? "Analyse ces images." : "Analyse ces fichiers.");
 
       const body: Record<string, unknown> = {
         persona,
         mode,
-        message: messageWithContext,
+        message: messageToSend,
         history: messages.map((m) => ({ role: m.role, content: m.content })),
       };
 
-      if (imageToSend) {
-        body.image = {
-          data: imageToSend.data,
-          media_type: imageToSend.media_type,
-        };
+      if (imagesToSend.length > 0) {
+        body.images = imagesToSend.map(img => ({ data: img.data, media_type: img.media_type }));
+      }
+      if (filesToSend.length > 0) {
+        body.files = filesToSend;
       }
 
       const controller = new AbortController();
@@ -923,7 +945,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     { type: "incident_resolved", label: "🔧 Résolu" },
   ];
 
-  const canSend = !isStreaming && (!!input.trim() || !!pendingImage);
+  const canSend = !isStreaming && (!!input.trim() || pendingImages.length > 0 || pendingFiles.length > 0 || !!fileContext);
 
   return (
     <>
@@ -1286,32 +1308,41 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
             </div>
           )}
 
-          {/* Image preview */}
-          {pendingImage && (
-            <div className="flex items-start gap-2 mb-3">
-              <div className="relative inline-block">
-                <img
-                  src={pendingImage.preview}
-                  alt="preview"
-                  className="h-16 rounded-lg object-cover"
-                  style={{ maxWidth: "160px" }}
-                />
-                <button
-                  onClick={() => { setPendingImage(null); setImageSizeError(false); }}
-                  className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full flex items-center justify-center"
-                  style={{
-                    background: "#1e293b",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    color: "#94a3b8",
-                    fontSize: "8px",
-                  }}
+          {/* Attachments preview */}
+          {(pendingImages.length > 0 || pendingFiles.length > 0) && (
+            <div className="flex gap-2 flex-wrap px-0 py-1 mb-2">
+              {pendingImages.map((img, i) => (
+                <div key={`img-${i}`} className="relative group">
+                  <img
+                    src={img.preview}
+                    alt=""
+                    className="w-16 h-16 rounded-lg object-cover border border-white/10"
+                  />
+                  <button
+                    onClick={() => { setPendingImages(prev => prev.filter((_, j) => j !== i)); setImageSizeError(false); }}
+                    className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ background: "rgba(240,100,100,0.8)", color: "#fff", fontSize: "8px" }}
+                  >
+                    ✕
+                  </button>
+                </div>
+              ))}
+              {pendingFiles.map((file, i) => (
+                <div
+                  key={`file-${i}`}
+                  className="relative group flex items-center gap-1.5 px-2 py-1 rounded-lg"
+                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                 >
-                  ✕
-                </button>
-              </div>
-              <span className="text-[9px] font-mono text-slate-600 pt-1">
-                {pendingImage.media_type.split("/")[1].toUpperCase()}
-              </span>
+                  <span className="text-[11px] font-mono text-slate-400">📄 {file.name}</span>
+                  <button
+                    onClick={() => setPendingFiles(prev => prev.filter((_, j) => j !== i))}
+                    className="text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ color: "#f06464" }}
+                  >
+                    ✕
+                  </button>
+                </div>
+              ))}
             </div>
           )}
 
@@ -1336,8 +1367,8 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
               onKeyDown={handleKeyDown}
               onPaste={handlePaste}
               placeholder={
-                pendingImage
-                  ? "Message accompagnant l'image… (optionnel)"
+                (pendingImages.length > 0 || pendingFiles.length > 0)
+                  ? "Message accompagnant les fichiers… (optionnel)"
                   : "Message JARVIS… (⏎ envoyer · /search query · /wing wing query)"
               }
               disabled={isStreaming}
@@ -1392,7 +1423,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
               }}
             >
               <Paperclip size={12} />
-              Joindre image
+              Joindre fichier
             </button>
             <div className="text-[11px] text-slate-500">
               Envoyer (⏎) · Drag & drop · Ctrl+V
@@ -1403,11 +1434,19 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/png,image/jpeg,image/webp,image/gif"
+            multiple
+            accept="image/png,image/jpeg,image/webp,image/gif,.md,.txt,.csv,.json,.yml,.yaml,.pdf"
             className="hidden"
             onChange={async (e) => {
-              const file = e.target.files?.[0];
-              if (file) await attachImage(file);
+              const files = Array.from(e.target.files || []);
+              for (const file of files) {
+                if (file.type.startsWith("image/")) {
+                  await attachImage(file);
+                } else {
+                  const content = await file.text();
+                  setPendingFiles(prev => [...prev, { name: file.name, content }]);
+                }
+              }
               e.target.value = "";
             }}
           />

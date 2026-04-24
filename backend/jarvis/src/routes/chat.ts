@@ -34,22 +34,23 @@ async function loadFile(relPath: string): Promise<string> {
 
 async function* makeMultimodalMessage(
   message: string,
-  image: ImagePayload
+  images: ImagePayload[]
 ): AsyncIterable<SDKUserMessage> {
+  const imageBlocks = images.map((img) => ({
+    type: "image" as const,
+    source: {
+      type: "base64" as const,
+      media_type: img.media_type,
+      data: img.data,
+    },
+  }));
   yield {
     type: "user",
     message: {
       role: "user",
       content: [
-        {
-          type: "image",
-          source: {
-            type: "base64",
-            media_type: image.media_type,
-            data: image.data,
-          },
-        },
-        { type: "text", text: message || "Analyse cette image." },
+        ...imageBlocks,
+        { type: "text" as const, text: message || "Analyse ces images." },
       ],
     },
     parent_tool_use_id: null,
@@ -347,27 +348,44 @@ function writeEvent(res: Response, event: Record<string, unknown>): void {
 }
 
 export async function chatRoute(req: Request, res: Response): Promise<void> {
-  const { persona, mode, message, image } = req.body as {
+  const { persona, mode, message, image, images, files } = req.body as {
     persona: Persona;
     mode?: Mode;
     message: string;
     image?: ImagePayload;
+    images?: ImagePayload[];
+    files?: Array<{ name: string; content: string }>;
   };
 
-  if (!persona || (!message && !image)) {
+  if (!persona || (!message && !image && !images?.length && !files?.length)) {
     res.status(400).json({ error: "Missing persona or message" });
     return;
   }
 
-  if (image) {
-    if (!VALID_IMAGE_TYPES.includes(image.media_type as ValidMediaType)) {
+  const allImages: ImagePayload[] = [];
+  if (images && images.length > 0) {
+    allImages.push(...images);
+  } else if (image) {
+    allImages.push(image);
+  }
+
+  for (const img of allImages) {
+    if (!VALID_IMAGE_TYPES.includes(img.media_type as ValidMediaType)) {
       res.status(400).json({ error: "Unsupported image format" });
       return;
     }
-    if (!image.data || image.data.length > 7 * 1024 * 1024) {
+    if (!img.data || img.data.length > 7 * 1024 * 1024) {
       res.status(400).json({ error: "Image too large (max 5 MB)" });
       return;
     }
+  }
+
+  let enrichedMessage = message || "";
+  if (files && files.length > 0) {
+    const fileBlocks = files.map(f =>
+      `[Fichier joint: ${f.name}]\n\`\`\`\n${f.content.slice(0, 50000)}\n\`\`\``
+    ).join("\n\n");
+    enrichedMessage = `${fileBlocks}\n\n${enrichedMessage || "Analyse ces fichiers."}`;
   }
 
   const resolvedMode: Mode = mode === "f2" ? "f2" : "normal";
@@ -458,9 +476,9 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
 
   if (conversationId) {
     try {
-      await saveMessage(conversationId, "user", message || "[image seule]", {
-        imageMediaType: image?.media_type,
-        imageData: image?.data,
+      await saveMessage(conversationId, "user", message || "[image/fichier]", {
+        imageMediaType: allImages[0]?.media_type,
+        imageData: allImages[0]?.data,
       });
     } catch (err) {
       console.error("[chat] saveMessage user failed:", err);
@@ -475,9 +493,9 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
 
   const claudePath = await resolveClaudeBinary();
 
-  const prompt = image
-    ? makeMultimodalMessage(message || "Analyse cette image.", image)
-    : message;
+  const prompt = allImages.length > 0
+    ? makeMultimodalMessage(enrichedMessage || "Analyse ces images.", allImages)
+    : enrichedMessage || message;
 
   const port = process.env.PORT || 3001;
   const backendBase = `http://127.0.0.1:${port}`;
@@ -498,7 +516,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       prompt,
       options: {
         systemPrompt,
-        maxTurns: 15,
+        maxTurns: 30,
         mcpServers: { jarvis: mcpServer },
         allowedTools: JARVIS_ALLOWED_TOOLS,
         permissionMode: "dontAsk",
