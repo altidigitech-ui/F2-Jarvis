@@ -3,7 +3,7 @@ import { ghUpdate } from "../lib/github.js";
 import { cacheInvalidateAll } from "../lib/cache.js";
 import {
   appendDecision, appendProgressEvent, resolveProgressEvent,
-  appendColdLog, appendEngagementLog, markPlanPublished,
+  appendColdLog, appendEngagementLog, markPlanPublished, markCrossPublished,
 } from "../lib/markdown.js";
 
 type Persona = "romain" | "fabrice";
