@@ -3,8 +3,9 @@ import { ghUpdate } from "../lib/github.js";
 import { cacheInvalidateAll } from "../lib/cache.js";
 import {
   appendDecision, appendProgressEvent, resolveProgressEvent,
-  appendColdLog, appendEngagementLog, markPlanPublished, markCrossPublished,
+  appendColdLog, appendEngagementLog, markPlanPublished,
 } from "../lib/markdown.js";
+import { applySideEffects } from "../lib/action-executor.js";
 
 type Persona = "romain" | "fabrice";
 type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";
@@ -33,13 +34,8 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
           (md) => markPlanPublished(md, title),
           `[JARVIS] ✅ Published: ${title.slice(0, 60)}`,
         );
-        if (payload.crossReply) {
-          await ghUpdate(
-            `${persona}/cross-engagement-tracker.md`,
-            (md) => markCrossPublished(md, title, payload.crossReply),
-            `[JARVIS] ✅ Cross published: ${title.slice(0, 50)}`,
-          );
-        }
+        cacheInvalidateAll();
+        await applySideEffects("mark_published", { title }, persona);
         break;
       }
       case "mark_cross_published": {
@@ -85,6 +81,8 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
           `[JARVIS] ✅ Cross: ${post.slice(0, 60)}`,
         );
 
+        cacheInvalidateAll();
+        await applySideEffects("mark_cross_published", { post, cross_id: crossId, reply }, persona);
         break;
       }
       case "log_decision": {
@@ -112,6 +110,15 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
           (md) => appendColdLog(md, platform, payload.target || "", payload.vertical || "", payload.insight || "", payload.type || "DM"),
           `[JARVIS] 📨 Cold: ${payload.target || ""}`,
         );
+        cacheInvalidateAll();
+        await applySideEffects("log_cold", {
+          platform,
+          target: payload.target || "",
+          vertical: payload.vertical || "",
+          insight: payload.insight || "",
+          type: payload.type || "DM",
+          targets: [{ target: payload.target || "" }],
+        }, persona);
         break;
       }
       case "log_interaction": {
