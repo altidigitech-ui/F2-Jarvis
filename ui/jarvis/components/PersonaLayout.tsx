@@ -27,6 +27,7 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import { TimelineColumn } from "./TimelineColumn";
 import { QuickAccessSidebar } from "./QuickAccessSidebar";
 import { FileViewerModal } from "./FileViewerModal";
+import { PromptsModal } from "./PromptsModal";
 import { CounterTile } from "./CounterTile";
 import { onRepoUpdated } from "@/lib/jarvisEvents";
 import type { ContextData } from "@/lib/context-types";
@@ -326,6 +327,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const [graphifyPrefill, setGraphifyPrefill] = useState<string | null>(null);
   const [mempalaceExpanded, setMempalaceExpanded] = useState(false);
   const [openFilePath, setOpenFilePath] = useState<string | null>(null);
+  const [promptsOpen, setPromptsOpen] = useState(false);
   const [fileContext, setFileContext] = useState<{ name: string; content: string } | null>(null);
   const [ctx, setCtx] = useState<ContextData>(EMPTY_CONTEXT);
   const [loading, setLoading] = useState(true);
@@ -476,6 +478,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         persona={persona}
         mode={mode}
       />
+      {promptsOpen && (
+        <PromptsModal
+          persona={persona}
+          accentColor={accentColor}
+          onClose={() => setPromptsOpen(false)}
+        />
+      )}
       {/* Top bar */}
       {f2Mode && (
         <div className="fixed top-0 left-0 right-0 z-30">
@@ -630,6 +639,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               onOpenCrossEngagement={() => { setOpenFilePath(filePaths.crossEng); setMobilePanel(null); }}
               onOpenColdOutreach={() => { setOpenFilePath(filePaths.cold); setMobilePanel(null); }}
               onOpenProgress={() => { setOpenFilePath(filePaths.progress); setMobilePanel(null); }}
+              onOpenPrompts={() => { setPromptsOpen(true); setMobilePanel(null); }}
             />
             <BatchCard accentColor={accentColor} />
             <OuroborosPanel accentColor={accentColor} persona={persona} />
@@ -696,6 +706,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             onOpenCrossEngagement={() => setOpenFilePath(filePaths.crossEng)}
             onOpenColdOutreach={() => setOpenFilePath(filePaths.cold)}
             onOpenProgress={() => setOpenFilePath(filePaths.progress)}
+            onOpenPrompts={() => setPromptsOpen(true)}
           />
         </aside>
 
