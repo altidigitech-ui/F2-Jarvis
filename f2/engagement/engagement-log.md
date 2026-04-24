@@ -21,3 +21,9 @@
 |23/04|@kubaklatt — reply thread, hourly checks v1|Hourly checks 90%+ for v1. Ship that, get usage data. Don't build v2 before v1 has paying users.|
 |23/04|@Nvsn_ai — 2 weeks Reddit beta ghosted|StoreMD beta designed around ghosting. Scan first send report, value before commitment. 10 spots hard deadline creates urgency. Live walkthrough easier ask than handing credentials.|
 |23/04|@AyeshaBuilds — Trust Leaks Free Audits|Trust leaks vs technical leaks complementary. StoreMD technical side, RoastMyLanding conversion side. Both invisible until pointed out. Question audit format v1 vs v2.|
+|24/04|@aryan_sinh — reply closing J+9, post beta StoreMD|Reply closing : once first 10 in, will post real update on how onboarding played out. Appreciate you following along.|
+|24/04|@andreiRS — Who is ChatGPT recommending instead of you? (IH post)|LLM web surface area pattern. Tools with solid docs/integration guides/forum mentions cited more. Shopify side : structured SKU data 3x more cited than flat text content. Per-LLM scoring GPTBot/Claude-Web/PerplexityBot.|
+|24/04|@getwhitebg — Good Products Get Ignored for a Dumb Reason (hidden tax)|Hidden tax framing right. Non-optimized images + degraded load times almost always together. Zombie scripts from uninstalled apps still firing. Two conversion problems from one bad setup. Complementary to full store audit.|
+|24/04|@EhaanParvez — Hi I'm 17, I built a Shopify app Filleo|Founder-to-founder angle. Getting first stores to actually use it is the hard part. Distribution is the wall. Similar path from our side building StoreMD.|
+|24/04|Own post StoreMD — Update J+9 (thread IH launch)|Day 9 update : 200+ scans, ghost apps 73%, broken nav correlation pattern unexpected. Beta spots still open for agency owners. Install required to run scan, free to start.|
+|24/04|@emberfyi — Opportunité #7 (IH engagement session du 24/04)|Commentaire engagement IH — contexte détail à préciser si nécessaire.|
