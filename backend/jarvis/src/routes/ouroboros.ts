@@ -545,6 +545,11 @@ export async function ouroborosInitialize(req: Request, res: Response): Promise<
     );
     (triggerOk ? created : skipped).push(TRIGGERS_DIR);
 
+    // Create MemPalace f2 wing
+    const f2DrawersGitkeep = "brain/mempalace/wings/f2/drawers/.gitkeep";
+    const f2Ok = await safeCreate(f2DrawersGitkeep, "", "chore: init mempalace f2 wing");
+    (f2Ok ? created : skipped).push("brain/mempalace/wings/f2");
+
     res.json({ ok: true, created, skipped });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

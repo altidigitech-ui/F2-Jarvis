@@ -13,6 +13,7 @@ new Worker(
     try {
       await archiveDailyConversation("fabrice");
       await archiveDailyConversation("romain");
+      await archiveDailyConversation("f2");
     } catch (err) {
       console.warn("[worker] daily archive failed:", err);
     }
@@ -25,7 +26,7 @@ new Worker(
   "mempalace-ingest",
   async (job) => {
     const { persona, userMessage, assistantResponse } = job.data as {
-      persona: "romain" | "fabrice";
+      persona: "romain" | "fabrice" | "f2";
       userMessage: string;
       assistantResponse: string;
     };
