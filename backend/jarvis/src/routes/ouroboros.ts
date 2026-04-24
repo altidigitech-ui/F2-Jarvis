@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ghRead, ghList, ghCreate, ghDelete, GitHubDirEntry } from "../lib/github.js";
+import { ghRead, ghList, ghCreate, ghDelete, ghDeleteMultiple, GitHubDirEntry } from "../lib/github.js";
 
 const STATE_PATH = "brain/ouroboros/state.json";
 const DIARY_PATH = "brain/ouroboros/diary";
@@ -480,26 +480,22 @@ export async function ouroborosPurgeDuplicates(req: Request, res: Response): Pro
       }
     }
 
-    let movedCount = 0;
-    for (const p of purged) {
-      const file = await safeReadFull(`${PROPOSALS_PENDING}/${p.filename}`);
-      if (!file) continue;
+    const pathsToDelete = purged
+      .map(p => `${PROPOSALS_PENDING}/${p.filename}`)
+      .filter(Boolean);
 
-      const content = file.content + `\n\n---\n**Purgé automatiquement** : ${p.reason}\n`;
-      try {
-        await ghCreate(`${PROPOSALS_IGNORED}/${p.filename}`, content, `chore(ouroboros): purge duplicate — ${p.filename}`);
-        await ghDelete(`${PROPOSALS_PENDING}/${p.filename}`, file.sha, `chore(ouroboros): purge duplicate — ${p.filename}`);
-        movedCount++;
-      } catch {
-        // Continue with others
-      }
+    if (pathsToDelete.length > 0) {
+      await ghDeleteMultiple(
+        pathsToDelete,
+        `chore(ouroboros): purge ${pathsToDelete.length} duplicate proposals`
+      );
     }
 
     res.json({
       ok: true,
       total: proposals.length,
       kept: kept.size,
-      purged: movedCount,
+      purged: pathsToDelete.length,
       details: purged.map(p => ({ filename: p.filename, title: p.title, reason: p.reason })),
     });
   } catch (err) {

@@ -221,3 +221,61 @@ export async function ghDelete(
   }
   cacheInvalidate(filePath);
 }
+
+export async function ghDeleteMultiple(
+  paths: string[],
+  commitMessage: string
+): Promise<void> {
+  if (paths.length === 0) return;
+
+  const hdrs = headers();
+
+  const refRes = await fetch(apiUrl(`git/ref/heads/${BRANCH}`), { headers: hdrs });
+  if (!refRes.ok) throw new Error(`GitHub get ref failed: ${refRes.status} ${await refRes.text()}`);
+  const refData = (await refRes.json()) as { object: { sha: string } };
+  const latestCommitSha = refData.object.sha;
+
+  const commitRes = await fetch(apiUrl(`git/commits/${latestCommitSha}`), { headers: hdrs });
+  if (!commitRes.ok) throw new Error(`GitHub get commit failed: ${commitRes.status} ${await commitRes.text()}`);
+  const commitData = (await commitRes.json()) as { tree: { sha: string } };
+  const treeSha = commitData.tree.sha;
+
+  const treeRes = await fetch(apiUrl(`git/trees`), {
+    method: "POST",
+    headers: hdrs,
+    body: JSON.stringify({
+      base_tree: treeSha,
+      tree: paths.map((p) => ({
+        path: p,
+        mode: "100644",
+        type: "blob",
+        sha: null,
+      })),
+    }),
+  });
+  if (!treeRes.ok) throw new Error(`GitHub create tree failed: ${treeRes.status} ${await treeRes.text()}`);
+  const treeData = (await treeRes.json()) as { sha: string };
+
+  const newCommitRes = await fetch(apiUrl(`git/commits`), {
+    method: "POST",
+    headers: hdrs,
+    body: JSON.stringify({
+      message: commitMessage,
+      tree: treeData.sha,
+      parents: [latestCommitSha],
+    }),
+  });
+  if (!newCommitRes.ok) throw new Error(`GitHub create commit failed: ${newCommitRes.status} ${await newCommitRes.text()}`);
+  const newCommitData = (await newCommitRes.json()) as { sha: string };
+
+  const updateRefRes = await fetch(apiUrl(`git/refs/heads/${BRANCH}`), {
+    method: "PATCH",
+    headers: hdrs,
+    body: JSON.stringify({ sha: newCommitData.sha }),
+  });
+  if (!updateRefRes.ok) throw new Error(`GitHub update ref failed: ${updateRefRes.status} ${await updateRefRes.text()}`);
+
+  for (const p of paths) {
+    cacheInvalidate(p);
+  }
+}
