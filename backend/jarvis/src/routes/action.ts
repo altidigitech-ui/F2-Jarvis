@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { ghUpdate } from "../lib/github.js";
+import { cacheInvalidateAll } from "../lib/cache.js";
 import {
   appendDecision, appendProgressEvent, resolveProgressEvent,
   appendColdLog, appendEngagementLog, markPlanPublished, markCrossPublished,
@@ -88,6 +89,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
         res.status(400).json({ error: "Unknown action" });
         return;
     }
+    cacheInvalidateAll();
     res.json({ ok: true });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
