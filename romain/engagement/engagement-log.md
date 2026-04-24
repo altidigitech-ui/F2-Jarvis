@@ -77,3 +77,9 @@
 |23/04|Upvote|Hookdeck Outpost|
 |23/04|Upvote|MailerLogic|
 |23/04|Commentaire|Wellows — AI visibility e-com brands, agency multi-brand dashboard question|
+|24/04|Upvote|Bansi AI by Writesonic|
+|24/04|Upvote|Beezi AI|
+|24/04|Upvote|Nordcraft 2.0|
+|24/04|Upvote|Onboarding0|
+|24/04|Upvote|Yutori Delegate|
+|24/04|Commentaire|Bansi AI — agency batch workflow, brand kit consistency across 15 videos question|
