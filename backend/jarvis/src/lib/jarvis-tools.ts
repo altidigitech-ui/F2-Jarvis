@@ -474,12 +474,16 @@ The 'preview' field is a human-readable description shown to the user before the
       }
       try {
         const sb = getSupabase();
+        const enrichedParams = {
+          ...params,
+          _persona_prefix: options.mode === "f2" ? "f2" : options.persona,
+        };
         const { data, error } = await sb
           .from("jarvis_pending_actions")
           .insert({
             conversation_id: conversationId,
             action_type,
-            params,
+            params: enrichedParams,
             preview,
           })
           .select("id")
@@ -894,5 +898,4 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__conversation_search",
   "mcp__jarvis__code_check",
   "mcp__jarvis__ouroboros_proposals",
-  "web_search",
 ];
