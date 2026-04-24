@@ -410,19 +410,21 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       .slice(0, 5);
 
     if (pendingMd.length > 0) {
-      const snippets: string[] = [];
-      for (const file of pendingMd) {
-        try {
-          const fileData = await ghRead(`brain/ouroboros/proposals/pending/${file.name}`);
-          if (!fileData) continue;
-          const raw = fileData.content;
-          const titleMatch = raw.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) || raw.match(/^#\s+(.+)$/m);
-          const priorityMatch = raw.match(/\*\*Priorit[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/priorité:\s*(.+)/i);
-          const title = titleMatch ? titleMatch[1].trim() : file.name;
-          const priority = priorityMatch ? priorityMatch[1].trim() : "?";
-          snippets.push(`- [${priority}] ${title}`);
-        } catch { /* skip */ }
-      }
+      const snippetResults = await Promise.all(
+        pendingMd.map(async (file: { name: string }) => {
+          try {
+            const fileData = await ghRead(`brain/ouroboros/proposals/pending/${file.name}`);
+            if (!fileData) return null;
+            const raw = fileData.content;
+            const titleMatch = raw.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) || raw.match(/^#\s+(.+)$/m);
+            const priorityMatch = raw.match(/\*\*Priorit[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/priorité:\s*(.+)/i);
+            const title = titleMatch ? titleMatch[1].trim() : file.name;
+            const priority = priorityMatch ? priorityMatch[1].trim() : "?";
+            return `- [${priority}] ${title}`;
+          } catch { return null; }
+        })
+      );
+      const snippets = snippetResults.filter((s): s is string => s !== null);
       if (snippets.length > 0) {
         ouroborosSummary = `\n\n## OUROBOROS — ${totalPending} PROPOSALS PENDING\n\nLes 5 plus récentes :\n${snippets.join("\n")}\n\nUtilise le tool ouroboros_proposals pour lire les détails ou voir plus de proposals. Mentionne-les naturellement quand elles sont pertinentes à la conversation — ne les ignore pas.`;
       }
