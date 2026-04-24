@@ -467,6 +467,43 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
       const userCommitMsg = String((action.params as Record<string, unknown>).commit_message || "");
       validateCreateFileContent(content);
 
+      // TypeScript pre-commit validation for .ts/.tsx files
+      if (path.endsWith(".ts") || path.endsWith(".tsx")) {
+        try {
+          const { execSync } = await import("child_process");
+          const fs = await import("fs/promises");
+          const fullPath = `/app/${path}`;
+
+          let original: string | null = null;
+          try {
+            original = await fs.readFile(fullPath, "utf-8");
+          } catch { /* new file */ }
+
+          const dir = fullPath.split("/").slice(0, -1).join("/");
+          await fs.mkdir(dir, { recursive: true }).catch(() => {});
+          await fs.writeFile(fullPath, content, "utf-8");
+
+          try {
+            execSync("npx tsc --noEmit 2>&1", { cwd: "/app", timeout: 30_000 });
+          } catch (tscErr) {
+            const output = (tscErr as { stdout?: string }).stdout || "";
+            const errors = output.split("\n").filter((l: string) => l.includes("error TS")).slice(0, 10);
+            if (original !== null) await fs.writeFile(fullPath, original, "utf-8");
+            else await fs.unlink(fullPath).catch(() => {});
+            throw new Error(`TypeScript compilation failed — file NOT committed:\n${errors.join("\n")}`);
+          } finally {
+            if (original !== null) await fs.writeFile(fullPath, original, "utf-8");
+            else await fs.unlink(fullPath).catch(() => {});
+          }
+        } catch (err) {
+          if ((err as Error).message.includes("TypeScript compilation failed")) {
+            throw err;
+          }
+          // tsc not found or timeout — log but don't block
+          console.warn("[action-executor] TypeScript check skipped:", err);
+        }
+      }
+
       const existing = await ghRead(path).catch(() => null);
       const finalCommitMsg =
         userCommitMsg && userCommitMsg.length < 200
