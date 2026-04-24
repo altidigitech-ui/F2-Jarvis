@@ -58,6 +58,7 @@
 |Date|Post original (résumé + auteur)|Commentaire R|
 |----|------------------------------|-------------|
 |    |                              |             |
+| 24/04/2026 | 13:29 | @aryan_sinh — reply 3, post beta StoreMD, closing 'curious to see how it plays out once you have those first 10 in' | will do. once the first 10 are in we'll post a real update here — how the onboarding played out, what held people back, what surprised us. appreciate you following along. |  |  |
 
 -----
 
