@@ -400,6 +400,15 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.flushHeaders();
 
+  // Keepalive — send a ping every 15s to prevent proxy timeout during long tool calls
+  const keepaliveInterval = setInterval(() => {
+    try {
+      writeEvent(res, { type: "ping" });
+    } catch {
+      clearInterval(keepaliveInterval);
+    }
+  }, 15_000);
+
   const claudePath = await resolveClaudeBinary();
 
   const prompt = allImages.length > 0
@@ -499,6 +508,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
         .catch(() => {});
     }
 
+    clearInterval(keepaliveInterval);
     res.end();
   } catch (err) {
     const errMsg = err instanceof Error ? err.message : String(err);
@@ -513,11 +523,13 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
           /* ignore */
         }
       }
+      clearInterval(keepaliveInterval);
       res.end();
       return;
     }
     console.error("[/chat]", err);
     writeEvent(res, { type: "error", message: errMsg });
+    clearInterval(keepaliveInterval);
     res.end();
   }
 }
