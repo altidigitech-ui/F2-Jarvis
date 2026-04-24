@@ -58,11 +58,15 @@ export async function ghWrite(
       branch: BRANCH,
     }),
   });
+
+  const responseBody = (await res.json().catch(() => ({}))) as Record<string, unknown>;
+
   if (!res.ok) {
-    const err = (await res.json()) as { message?: string };
-    throw new Error(`GitHub write failed: ${err.message || res.status}`);
+    throw new Error(`GitHub write failed: ${(responseBody as { message?: string }).message || res.status}`);
   }
-  cacheInvalidate(filePath);
+
+  const newSha = (responseBody as { content?: { sha?: string } })?.content?.sha || sha;
+  cacheSet(filePath, content, newSha);
 }
 
 export async function ghUpdate(
