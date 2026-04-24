@@ -590,3 +590,24 @@ F2 cross-engage sur post F 13h
 ```
 Romain cross-engage sur post F 18h30
 ```
+
+
+**Reply R publiée (24/04/2026 14:00:45 CEST) :**
+
+```
+A8 ✅ — "34/100 is the median. the P10 stores we've scanned are in the high teens."
+```
+
+
+**Reply R publiée (24/04/2026 14:00:45 CEST) :**
+
+```
+B1 ✅ — "Pro pipeline is up and running, onboarding is instant. 10 spots, that's it for this round. DM romain or me, either works"
+```
+
+
+**Reply R publiée (24/04/2026 14:00:45 CEST) :**
+
+```
+B2 ✅ — "onboarding is me, day 14 call is me, slack during the 30 days is me. not a form, not a ticket system, not a bot."
+```
