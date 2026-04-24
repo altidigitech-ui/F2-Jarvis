@@ -531,3 +531,41 @@ Cocher au fur et à mesure :
 ---
 
 *Tracker R S6 final fusionné 21/04/2026. Couche A : replies rédigées selon canon §17 BATCH-SEMAINE-6.md + voix R VOIX.md + ANTI-IA.md. Couche B : replies rédigées selon ton founder enthousiaste validé 21/04 + BIBLE v2.1 §3 + ANTI-IA.md. Posts Couche B source : `BATCH-ADDITIONNEL-MER-VEN-S6.md` (ou section Couche B de `batch-semaine-6-final.md`).*
+
+
+**Reply R publiée (24/04/2026 19:48:15 CEST) :**
+
+```
+the math gets worse when you add the conversion tax from the speed loss apps create on top of the direct billing. merchant loses $189/mo direct + 15-20% conversion drop on mobile. so what's the real ROI of not scanning on a $40k/mo store?
+```
+
+
+**Reply R publiée (24/04/2026 19:48:15 CEST) :**
+
+```
+68 scans in one week, 52 with confirmed ghost billing. that's a 76% hit rate on the top finding alone. the stat that's starting to emerge: stores under 2 years old = 45% hit rate. stores over 5 years = 91%. the "leak grows with store age" pattern is holding across the sample.
+```
+
+
+**Reply R publiée (24/04/2026 19:48:15 CEST) :**
+
+```
+fab ran Pro scans on a few stores this week.
+
+every single DM after: "how did I not know this."
+
+free catches the surface. Pro finds the ugly layer. ghost apps, silent billing leaks, stuff that's been running for months with nobody noticing.
+
+DM the URL if you want a scan.
+```
+
+
+**Reply R publiée (24/04/2026 19:48:15 CEST) :**
+
+```
+week made. mix of solo merchants, DTC brands, and 2 agencies bringing multiple clients through.
+
+the agency angle was the unexpected one. one agency alone put 7 of their stores through in 48h.
+
+S7 we open more. this week we focus on the 10
+```
