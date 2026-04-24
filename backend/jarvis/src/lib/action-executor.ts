@@ -257,6 +257,134 @@ export function applyTransform(
 }
 
 /**
+ * After the primary action is committed, apply side-effects to other files.
+ * Each side-effect is a separate commit (best-effort, non-blocking).
+ */
+async function applySideEffects(
+  actionType: string,
+  params: Record<string, unknown>,
+  persona: Persona
+): Promise<void> {
+  const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
+
+  try {
+    switch (actionType) {
+
+      case "mark_published": {
+        const title = String(params.title || "");
+        const platform = title.toLowerCase().includes("linkedin") ? "LinkedIn" : "Twitter";
+        await ghUpdate(
+          `${persona}/progress-semaine.md`,
+          (md) => appendProgressEvent(
+            md,
+            `${platform} post publié — "${title.slice(0, 50)}"`,
+            platform,
+            `Post publié ${time}`,
+            "Monitorer impressions + replies"
+          ),
+          `[JARVIS] ${persona}: progress — published "${title.slice(0, 30)}"`
+        ).catch(() => {});
+        break;
+      }
+
+      case "mark_cross_published": {
+        const post = String(params.post || "");
+        const crossLogPath = `${persona}/engagement/cross-execution-log.md`;
+        await ghUpdate(
+          crossLogPath,
+          (md) => {
+            const lines = md.split("\n");
+            for (let i = 0; i < lines.length; i++) {
+              if (lines[i].includes("|") && lines[i].toLowerCase().includes(post.toLowerCase().slice(0, 30))) {
+                lines[i] = lines[i]
+                  .replace(/⏳[^|]*/g, `✅ Fait`)
+                  .replace(/—\|/g, `${time}|`);
+              }
+            }
+            return lines.join("\n");
+          },
+          `[JARVIS] ${persona}: cross-execution-log — ${post.slice(0, 30)}`
+        ).catch(() => {});
+
+        await ghUpdate(
+          `${persona}/progress-semaine.md`,
+          (md) => appendProgressEvent(
+            md,
+            `Cross-engagement exécuté — ${post.slice(0, 50)}`,
+            "Cross",
+            `Reply ${time}`,
+            "✅"
+          ),
+          `[JARVIS] ${persona}: progress — cross ${post.slice(0, 30)}`
+        ).catch(() => {});
+        break;
+      }
+
+      case "log_cold":
+      case "batch_cold": {
+        const platform = String(params.platform || "Twitter");
+        const target = String(params.target || "");
+        const count = actionType === "batch_cold"
+          ? ((params.targets as unknown[]) || []).length
+          : 1;
+        await ghUpdate(
+          `${persona}/progress-semaine.md`,
+          (md) => {
+            const lines = md.split("\n");
+            for (let i = 0; i < lines.length; i++) {
+              if (lines[i].toLowerCase().includes("cold outreach envoyé") && lines[i].includes("|")) {
+                const currentMatch = lines[i].match(/\|(\d+)/);
+                if (currentMatch) {
+                  const current = parseInt(currentMatch[1], 10);
+                  lines[i] = lines[i].replace(/\|\d+/, `|${current + count}`);
+                }
+              }
+            }
+            return lines.join("\n");
+          },
+          `[JARVIS] ${persona}: progress — cold count +${count}`
+        ).catch(() => {});
+
+        await ghUpdate(
+          `${persona}/progress-semaine.md`,
+          (md) => appendProgressEvent(
+            md,
+            `Cold ${platform} x${count}${target ? ` (${target.slice(0, 30)})` : ""}`,
+            platform,
+            `Cold outreach ${time}`,
+            "Suivre les réponses"
+          ),
+          `[JARVIS] ${persona}: progress — cold event`
+        ).catch(() => {});
+        break;
+      }
+
+      case "log_engagement": {
+        const platform = String(params.platform || "Twitter");
+        const postSummary = String(params.post || "").slice(0, 50);
+        await ghUpdate(
+          `${persona}/progress-semaine.md`,
+          (md) => appendProgressEvent(
+            md,
+            `Engagement ${platform} — ${postSummary}`,
+            platform,
+            `Commentaire/reply ${time}`,
+            ""
+          ),
+          `[JARVIS] ${persona}: progress — engagement`
+        ).catch(() => {});
+        break;
+      }
+
+      default:
+        break;
+    }
+  } catch (err) {
+    console.warn(`[action-executor] side-effect failed for ${actionType}:`, err);
+  }
+}
+
+/**
  * Executes a pending action: reads the action row, commits the change to the repo,
  * updates status to 'executed', or 'failed' with error message.
  */
@@ -315,6 +443,9 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
         `[JARVIS] ${commitPrefix}: ${previewShort}`
       );
     }
+
+    // Apply side-effects to other files (non-blocking)
+    await applySideEffects(action.action_type, action.params, persona);
 
     const { data: updated, error: updateErr } = await sb
       .from("jarvis_pending_actions")
