@@ -17,13 +17,13 @@
 |A5|Mar 21/04|R LinkedIn 21h — `mardi-21-04-case-study`|21h05|—|❌ Non fait|Retard construction JARVIS J2|
 |A6|Mar 21/04|F2 LinkedIn 21h — `mardi-21-04-launch-week2`|21h05|—|❌ Non fait|Retard construction JARVIS J2|
 |A7|Mer 22/04|R Twitter 13h — `mercredi-22-04-agency-bait`|13h05|15h26|✅ Fait|Reply postée sur @delgado_ro72224|
-|A8|Mer 22/04|F2 Twitter 13h — `mercredi-22-04-social-proof`|13h05|—|❓ Incertain|Non confirmé|
+|A8|Mer 22/04|F2 Twitter 13h — `mercredi-22-04-social-proof`|13h05|~13h05|✅ Fait|Confirmé par Fabrice 24/04|
 |A9|Jeu 23/04|R Twitter 13h — `jeudi-23-04-data-drop`|13h05|~13h05|✅ Fait|Confirmé par Fabrice|
 |A10|Jeu 23/04|F2 Twitter 13h — `jeudi-23-04-invisible-loss`|13h05|~13h05|✅ Fait|Confirmé par Fabrice|
-|A11|Jeu 23/04|R LinkedIn 21h — `jeudi-23-04-agency-angle`|21h05|—|⏳ À faire|LinkedIn Jeu 23/04 schedulé, pas encore publié|
-|A12|Ven 24/04|R Twitter 13h — `vendredi-24-04-social-proof`|13h05|—|⏳ À faire|—|
-|A13|Ven 24/04|F2 Twitter 13h — `vendredi-24-04-week-recap`|13h05|—|⏳ À faire|—|
-|A14|Ven 24/04|R LinkedIn 21h — `vendredi-24-04-week-recap`|21h05|—|⏳ À faire|—|
+|A11|Jeu 23/04|R LinkedIn 21h — `jeudi-23-04-agency-angle`|21h05|~21h05|✅ Fait|Confirmé par Fabrice 24/04|
+|A12|Ven 24/04|R Twitter 13h — `vendredi-24-04-social-proof`|13h05|—|⏳ À confirmer|Cross 13h non confirmé|
+|A13|Ven 24/04|F2 Twitter 13h — `vendredi-24-04-week-recap`|13h05|—|⏳ À confirmer|Cross 13h non confirmé|
+|A14|Ven 24/04|R LinkedIn 21h — `vendredi-24-04-week-recap`|21h05|—|⏳ À faire|Fenêtre 21h ce soir|
 
 ---
 
@@ -31,14 +31,14 @@
 
 |ID|Jour|Post cible|Heure cible|Heure réelle|Statut|Notes|
 |---|---|---|---|---|---|---|
-|B1|Mer 22/04|R Twitter 18h30 — M1 recrutement|18h35|—|❓ Incertain|Non confirmé|
-|B2|Mer 22/04|F2 Twitter 18h30 — Beta studio|18h35|—|❓ Incertain|Non confirmé|
-|B3|Jeu 23/04|R Twitter 18h30 — M2 scan gratuit|18h35|—|⏳ À faire|Post R schedulé 18h30 aujourd'hui|
-|B4|Jeu 23/04|R LinkedIn 21h — Free scan + cold|21h05|—|⏳ À faire|LinkedIn Jeu schedulé|
-|B5|Jeu 23/04|F2 Twitter 18h30 — Scan gratuit séparé|18h35|—|⏳ À faire|Post F2 schedulé 18h30 aujourd'hui|
-|B6|Ven 24/04|R Twitter 18h30 — M5 pipeline recap|18h35|—|⏳ À faire|—|
-|B7|Ven 24/04|F2 Twitter 18h30 — Beta pipeline recap|18h35|—|⏳ À faire|—|
-|B8|Ven 24/04|R LinkedIn 21h — Final beta|21h05|—|⏳ À faire|—|
+|B1|Mer 22/04|R Twitter 18h30 — M1 recrutement|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
+|B2|Mer 22/04|F2 Twitter 18h30 — Beta studio|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
+|B3|Jeu 23/04|R Twitter 18h30 — M2 scan gratuit|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
+|B4|Jeu 23/04|R LinkedIn 21h — Free scan + cold|21h05|~21h05|✅ Fait|Confirmé par Fabrice 24/04|
+|B5|Jeu 23/04|F2 Twitter 18h30 — Scan gratuit séparé|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
+|B6|Ven 24/04|R Twitter 18h30 — M5 pipeline recap|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04 19h28|
+|B7|Ven 24/04|F2 Twitter 18h30 — Beta pipeline recap|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04 19h27|
+|B8|Ven 24/04|R LinkedIn 21h — Final beta|21h05|—|⏳ À faire|Fenêtre 21h ce soir|
 
 ---
 
@@ -46,6 +46,6 @@
 
 | Catégorie | ✅ Fait | ❌ Raté | ❓ Incertain | ⏳ À venir | Total |
 |-----------|--------|--------|------------|-----------|-------|
-| Couche A  | 3      | 6      | 1          | 4         | 14    |
-| Couche B  | 0      | 0      | 2          | 6         | 8     |
-| **Total** | **3**  | **6**  | **3**      | **10**    | **22**|
+| Couche A  | 5      | 6      | 0          | 3         | 14    |
+| Couche B  | 7      | 0      | 0          | 1         | 8     |
+| **Total** | **12** | **6**  | **0**      | **4**     | **22**|
