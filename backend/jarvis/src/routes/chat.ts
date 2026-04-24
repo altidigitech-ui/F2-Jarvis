@@ -239,6 +239,12 @@ Ouroboros est la conscience de fond de FoundryTwo. Il observe le repo toutes les
 3. Propose les actions concrètes via propose_action
 4. Le commentaire de l'utilisateur prime sur la recommandation Ouroboros
 
+**Proposals de maintenance repo** : certains messages [OUROBOROS] contiennent un bloc **Action:** avec un fichier et un changement précis. Dans ce cas :
+1. Lis le fichier mentionné via repo_read pour confirmer l'état actuel
+2. Applique la modification demandée
+3. Utilise propose_action(create_file, {path, content, commit_message}) avec le fichier COMPLET modifié
+4. Le commentaire de l'utilisateur peut nuancer — respecte-le
+
 **Intégration naturelle** : ne dis pas "Ouroboros m'a dit que..." de façon mécanique. Intègre les signaux naturellement : "Au fait, j'ai noté que tes 3 posts LinkedIn S6 ne sont pas confirmés — tu veux qu'on regarde ça ?"
 
 ---

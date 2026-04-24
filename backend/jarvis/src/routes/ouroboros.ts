@@ -410,6 +410,105 @@ export async function ouroborosDiary(req: Request, res: Response): Promise<void>
   }
 }
 
+// POST /ouroboros/purge-duplicates
+export async function ouroborosPurgeDuplicates(req: Request, res: Response): Promise<void> {
+  try {
+    const files = await safeList(PROPOSALS_PENDING);
+    const mdFiles = files.filter(
+      f => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("_") && !f.name.startsWith(".")
+    );
+
+    const proposals: Array<{ filename: string; title: string; subject: string; timestamp: number }> = [];
+
+    for (const file of mdFiles) {
+      const content = await safeRead(`${PROPOSALS_PENDING}/${file.name}`);
+      if (!content) continue;
+
+      const titleMatch =
+        content.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) ||
+        content.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) ||
+        content.match(/^#\s+(.+)$/m);
+      const title = titleMatch ? titleMatch[1].trim() : file.name;
+
+      const epochMatch = file.name.match(/-(\d{13,})\.md$/);
+      const timestamp = epochMatch ? parseInt(epochMatch[1], 10) : 0;
+
+      let subject = title.toLowerCase()
+        .replace(/[\u{1F600}-\u{1F6FF}\u{2600}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{2700}-\u{27BF}❓❌✅⏳🔴🟠🟡🟢⚠️]/gu, "")
+        .replace(/s\d+/g, "").replace(/j\d+/g, "")
+        .replace(/\d+[%€$hk]/g, "").replace(/\d+\/\d+/g, "").replace(/\d+/g, "")
+        .replace(/[—–\-:=()\/\[\].,;!?'"«»]/g, " ")
+        .replace(/\b(le|la|les|du|de|des|un|une|en|à|au|aux|et|ou|non|pas|pour|sur|par|ce|cette|ces|qui|que|est|sont|a|ont)\b/g, " ")
+        .replace(/\b(the|a|an|in|on|at|to|for|of|is|are|not|no|and|or|but|with)\b/g, " ")
+        .replace(/\s+/g, " ").trim();
+
+      proposals.push({ filename: file.name, title, subject, timestamp });
+    }
+
+    const kept: Set<string> = new Set();
+    const purged: Array<{ filename: string; title: string; reason: string }> = [];
+
+    proposals.sort((a, b) => b.timestamp - a.timestamp);
+
+    for (const p of proposals) {
+      const words = new Set(p.subject.split(" ").filter(w => w.length > 2));
+
+      let isDup = false;
+      for (const keptFilename of kept) {
+        const keptProposal = proposals.find(x => x.filename === keptFilename);
+        if (!keptProposal) continue;
+
+        const keptWords = new Set(keptProposal.subject.split(" ").filter(w => w.length > 2));
+        let shared = 0;
+        for (const w of words) {
+          if (keptWords.has(w)) shared++;
+        }
+        const minSize = Math.min(words.size, keptWords.size);
+        if (minSize > 0 && shared / minSize >= 0.5) {
+          isDup = true;
+          purged.push({
+            filename: p.filename,
+            title: p.title,
+            reason: `Duplicate of: ${keptProposal.title}`,
+          });
+          break;
+        }
+      }
+
+      if (!isDup) {
+        kept.add(p.filename);
+      }
+    }
+
+    let movedCount = 0;
+    for (const p of purged) {
+      const file = await safeReadFull(`${PROPOSALS_PENDING}/${p.filename}`);
+      if (!file) continue;
+
+      const content = file.content + `\n\n---\n**Purgé automatiquement** : ${p.reason}\n`;
+      try {
+        await ghCreate(`${PROPOSALS_IGNORED}/${p.filename}`, content, `chore(ouroboros): purge duplicate — ${p.filename}`);
+        await ghDelete(`${PROPOSALS_PENDING}/${p.filename}`, file.sha, `chore(ouroboros): purge duplicate — ${p.filename}`);
+        movedCount++;
+      } catch {
+        // Continue with others
+      }
+    }
+
+    res.json({
+      ok: true,
+      total: proposals.length,
+      kept: kept.size,
+      purged: movedCount,
+      details: purged.map(p => ({ filename: p.filename, title: p.title, reason: p.reason })),
+    });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[/ouroboros/purge-duplicates]", err);
+    res.status(500).json({ error: msg });
+  }
+}
+
 // POST /ouroboros/initialize
 export async function ouroborosInitialize(req: Request, res: Response): Promise<void> {
   try {

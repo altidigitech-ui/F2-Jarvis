@@ -1,6 +1,6 @@
 import { query } from "@anthropic-ai/claude-agent-sdk";
 import { resolveClaudeBinary } from "./claude-binary.js";
-import { ghRead, ghCreateMultiple } from "./github.js";
+import { ghRead, ghList, ghCreateMultiple } from "./github.js";
 import { createJarvisMcpServer } from "../lib/jarvis-tools.js";
 
 const OUROBOROS_SANDBOX_ALLOWED_TOOLS = [
@@ -112,29 +112,73 @@ async function getRecentProposalDecisions(): Promise<string> {
   }
 }
 
-async function getCurrentPendingTitles(): Promise<string[]> {
+interface PendingSummary {
+  title: string;
+  subject: string; // normalized subject for dedup
+}
+
+function extractSubject(title: string): string {
+  let s = title.toLowerCase()
+    .replace(/[\u{1F600}-\u{1F6FF}\u{2600}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{2700}-\u{27BF}❓❌✅⏳🔴🟠🟡🟢⚠️]/gu, "")
+    .replace(/s\d+/g, "") // Remove S6, S7, etc.
+    .replace(/j\d+/g, "") // Remove J4, J3, etc.
+    .replace(/\d+[%€$hk]/g, "") // Remove numbers with units
+    .replace(/\d+\/\d+/g, "") // Remove fractions like 3/70
+    .replace(/\d+/g, "") // Remove remaining numbers
+    .replace(/[—–\-:=()\/\[\].,;!?'"«»]/g, " ") // Punctuation to spaces
+    .replace(/\b(le|la|les|du|de|des|un|une|en|à|au|aux|et|ou|non|pas|pour|sur|par|ce|cette|ces|qui|que|est|sont|a|ont)\b/g, " ")
+    .replace(/\b(the|a|an|in|on|at|to|for|of|is|are|not|no|and|or|but|with)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const words = s.split(" ").filter(w => w.length > 2).sort();
+  return words.join(" ");
+}
+
+function subjectsOverlap(a: string, b: string): boolean {
+  const wordsA = new Set(a.split(" "));
+  const wordsB = new Set(b.split(" "));
+  if (wordsA.size === 0 || wordsB.size === 0) return false;
+
+  let shared = 0;
+  for (const w of wordsA) {
+    if (wordsB.has(w)) shared++;
+  }
+
+  const minSize = Math.min(wordsA.size, wordsB.size);
+  return shared / minSize >= 0.5;
+}
+
+async function getCurrentPendingSummaries(): Promise<PendingSummary[]> {
   try {
-    const { ghList, ghRead: ghReadFile } = await import("./github.js");
     const entries = await ghList("brain/ouroboros/proposals/pending");
     const mdFiles = entries
       .filter((f: { type: string; name: string }) => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("."))
       .sort((a: { name: string }, b: { name: string }) => b.name.localeCompare(a.name))
-      .slice(0, 30);
+      .slice(0, 50);
 
-    const titles: string[] = [];
+    console.log(`[ouroboros-cycle] found ${mdFiles.length} pending proposal files`);
+
+    const summaries: PendingSummary[] = [];
     for (const file of mdFiles) {
       try {
-        const data = await ghReadFile(`brain/ouroboros/proposals/pending/${file.name}`);
+        const data = await ghRead(`brain/ouroboros/proposals/pending/${file.name}`);
         if (!data) continue;
         const titleMatch =
           data.content.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) ||
           data.content.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) ||
           data.content.match(/^#\s+(.+)$/m);
-        if (titleMatch) titles.push(titleMatch[1].trim());
+        if (titleMatch) {
+          const title = titleMatch[1].trim();
+          summaries.push({ title, subject: extractSubject(title) });
+        }
       } catch { /* skip */ }
     }
-    return titles;
-  } catch {
+
+    console.log(`[ouroboros-cycle] extracted ${summaries.length} pending subjects for dedup`);
+    return summaries;
+  } catch (err) {
+    console.error(`[ouroboros-cycle] getCurrentPendingSummaries FAILED:`, err);
     return [];
   }
 }
@@ -174,7 +218,8 @@ export async function runOuroborosCycle(): Promise<void> {
   const identity = await readIdentity();
   const conversationContext = await getRecentConversationSummary();
   const proposalDecisions = await getRecentProposalDecisions();
-  const pendingTitles = await getCurrentPendingTitles();
+  const pendingSummaries = await getCurrentPendingSummaries();
+  const pendingTitles = pendingSummaries.map(s => s.title);
   const date = getCESTDate();
 
   const pendingBlock = pendingTitles.length > 0
@@ -218,6 +263,37 @@ b) **Actions proactives concrètes**, notamment :
 
 La priorité est d'être **utile et actionnable**, pas exhaustif. 0 proposal vaut mieux que 5 proposals génériques.
 
+## MAINTENANCE DU REPO
+
+Tu es aussi le **gardien du repo**. Tu dois vérifier la cohérence entre les fichiers et proposer des corrections concrètes. Types de maintenance :
+
+### Synchronisation des données
+- Si plan-hebdo.md dit ⏳ sur un post mais que progress-semaine.md ou engagement-log.md montre qu'il est fait → proposer la correction du plan-hebdo
+- Si un cold est dans cold-outreach-log.md mais pas compté dans progress-semaine.md → proposer l'ajout
+- Si des analytics (impressions, engagement rate) sont vides dans progress-semaine.md alors que les posts sont publiés depuis plusieurs jours → le signaler
+
+### Cohérence structurelle
+- Si un fichier existe en double (ex: un log à deux endroits) → proposer de supprimer le doublon
+- Si un fichier est vide alors qu'il devrait être rempli (ex: cross-execution-log vide avec des cross faits) → proposer le remplissage
+- Si un fichier référence des données obsolètes (ex: mentions de Leak Detector au lieu de StoreMD) → proposer la correction
+
+### Format des corrections
+Pour les proposals de maintenance, utilise ce format ENRICHI avec un bloc ACTION qui décrit EXACTEMENT ce qu'il faut modifier :
+
+---PROPOSAL---
+**Priorité:** haute
+**Type:** maintenance
+**Titre:** Synchroniser plan-hebdo F : post Twitter jeudi ⏳ → ✅
+**Contexte:** Le plan-hebdo.md montre ⏳ pour le post Twitter jeudi "5 things Shopify dashboard HIDES" mais le progress-semaine.md ligne 19 confirme "✅ Publié 13h00" le 23/04.
+**Recommandation:** Mettre à jour fabrice/plan-hebdo.md : remplacer ⏳ par ✅ Publié 13h00 sur la ligne du jeudi 23/04.
+**Action:**
+- Fichier: fabrice/plan-hebdo.md
+- Modifier: ligne "|Jeu 23/04|...|⏳|" → "|Jeu 23/04|...|✅ Publié 13h00|"
+**Risques si ignoré:** Le dashboard et les compteurs montrent un faux état, l'équipe croit que le post n'est pas fait.
+---END-PROPOSAL---
+
+Le bloc **Action:** est CRITIQUE — il doit contenir le chemin du fichier et le changement précis. Sans ça, JARVIS ne pourra pas exécuter la correction.
+
 ## FORMAT OBLIGATOIRE
 
 Pour chaque proposition, utilise ce bloc exact :
@@ -245,9 +321,25 @@ ${pendingBlock}${conversationContext}${proposalDecisions}`;
 
   const userPrompt = `Cycle Ouroboros du ${date}.
 
-Explore le repo avec tes outils (timeline, compteurs, publications récentes, historique) et analyse l'état du studio FoundryTwo. Produis tes observations structurées.
+## ÉTAPE 1 — EXPLORATION
+Explore le repo avec tes outils. Commence par :
+1. counters_today pour Fabrice et Romain
+2. timeline_today pour les deux personas
+3. repo_read sur fabrice/plan-hebdo.md et romain/plan-hebdo.md
+4. repo_read sur fabrice/progress-semaine.md et romain/progress-semaine.md
+5. recent_history pour les deux personas (7 jours)
 
-Commence par explorer : recent_history pour Fabrice et Romain (7 jours), counters_today pour les deux personas, puis tout autre signal que tu juges pertinent.`;
+## ÉTAPE 2 — VÉRIFICATION DE COHÉRENCE
+Compare les données entre les fichiers :
+- Les statuts dans plan-hebdo matchent-ils les événements dans progress-semaine ?
+- Les cold loggés matchent-ils les compteurs ?
+- Les cross-engagements faits matchent-ils le tracker ?
+- Y a-t-il des fichiers vides qui devraient être remplis ?
+- Y a-t-il des données contradictoires entre deux fichiers ?
+
+## ÉTAPE 3 — PROPOSALS
+Produis tes proposals. PRIORITÉ aux corrections de maintenance (type: maintenance) AVANT les alertes opérationnelles. Maximum 5 proposals au total.
+Si rien à corriger, c'est que le repo est propre — dis-le dans le journal.`;
 
   let fullText = "";
 
@@ -279,7 +371,7 @@ Commence par explorer : recent_history pour Fabrice et Romain (7 jours), counter
   // Collecter les proposals
   const proposalBlocks = [...fullText.matchAll(/---PROPOSAL---([\s\S]*?)---END-PROPOSAL---/g)];
   const timestamp = Date.now();
-  const pendingLower = pendingTitles.map(t => t.toLowerCase());
+  const pendingSubjects = pendingSummaries.map(s => s.subject);
 
   for (const [, body] of proposalBlocks) {
     const titleMatch = body.match(/\*\*Titre:\*\*\s*(.+)/);
@@ -287,12 +379,8 @@ Commence par explorer : recent_history pour Fabrice et Romain (7 jours), counter
     const title = titleMatch ? titleMatch[1].trim() : "Sans titre";
     const priority = priorityMatch ? priorityMatch[1].trim() : "faible";
 
-    // Déduplication : skip si un titre pending contient >60% des mots de ce titre
-    const newWords = title.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-    const isDuplicate = pendingLower.some(existing => {
-      const matchCount = newWords.filter(w => existing.includes(w)).length;
-      return newWords.length > 0 && matchCount / newWords.length > 0.6;
-    });
+    const newSubject = extractSubject(title);
+    const isDuplicate = pendingSubjects.some(existing => subjectsOverlap(newSubject, existing));
 
     if (isDuplicate) {
       console.log(`[ouroboros-cycle] SKIPPED duplicate proposal: "${title}"`);
