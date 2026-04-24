@@ -11,7 +11,7 @@ type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";
 
 type ActionBody = {
   persona: Persona;
-  action: "mark_published" | "log_decision" | "incident_resolved" | "log_cold" | "log_interaction";
+  action: "mark_published" | "mark_cross_published" | "log_decision" | "incident_resolved" | "log_cold" | "log_interaction";
   payload: Record<string, string>;
 };
 
@@ -40,6 +40,16 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
             `[JARVIS] ✅ Cross published: ${title.slice(0, 50)}`,
           );
         }
+        break;
+      }
+      case "mark_cross_published": {
+        const post = payload.post || payload.title || "";
+        const reply = payload.reply || "";
+        await ghUpdate(
+          `${persona}/cross-engagement-tracker.md`,
+          (md) => markCrossPublished(md, post, reply),
+          `[JARVIS] ✅ Cross: ${post.slice(0, 60)}`,
+        );
         break;
       }
       case "log_decision": {

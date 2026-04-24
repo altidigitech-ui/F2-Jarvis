@@ -128,7 +128,8 @@ function TimelineCard({
         emitRepoUpdated({ actionType: "mark_published" });
       }
     } catch {
-      emitSendToChat(`j'ai posté ${item.title}`);
+      // Silently fail — the optimistic UI already shows it as done
+      // The next Ouroboros cycle will detect the inconsistency
     }
   }
 
@@ -205,10 +206,26 @@ function TimelineCard({
             </button>
           ) : (
             <button
-              onClick={() => {
-                onItemDone?.(item.title);
-                emitSendToChat(`cross fait sur ${item.title}`);
+              onClick={async () => {
                 setMenuOpen(false);
+                onItemDone?.(item.title);
+
+                try {
+                  const res = await fetch("/api/action", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      persona,
+                      action: "mark_cross_published",
+                      payload: { post: item.title, reply: "" },
+                    }),
+                  });
+                  if (res.ok) {
+                    emitRepoUpdated({ actionType: "mark_cross_published" });
+                  }
+                } catch {
+                  // Silently fail — the optimistic UI already shows it as done
+                }
               }}
               className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors"
             >
