@@ -69,7 +69,8 @@ function parseFrontmatter(content: string): { meta: Record<string, string>; body
     for (const line of fmMatch[1].split(/\r?\n/)) {
       const colonIdx = line.indexOf(":");
       if (colonIdx > 0) {
-        meta[line.slice(0, colonIdx).trim()] = line.slice(colonIdx + 1).trim();
+        const rawVal = line.slice(colonIdx + 1).trim();
+        meta[line.slice(0, colonIdx).trim()] = rawVal.replace(/^["']|["']$/g, "");
       }
     }
     return { meta, body: fmMatch[2] };
