@@ -576,6 +576,87 @@ The 'preview' field is a human-readable description shown to the user before the
   );
 
   // ---------------------------------------------------------------------------
+  // conversation_search
+  // ---------------------------------------------------------------------------
+  const conversationSearch = tool(
+    "conversation_search",
+    "Search through past conversation messages in the database for the current persona and mode. Use when the user references something discussed before: 'on avait dit quoi sur X ?', 'qu est-ce que j ai dit mardi ?', 'tu te souviens de...', 'la dernière fois on a décidé...'. Returns matching messages with timestamps. For older archived sessions, combine with mempalace_search.",
+    {
+      query: z.string().describe("Search keywords"),
+      days: z.number().int().min(1).max(30).default(7).describe("How many days back to search"),
+      limit: z.number().int().min(1).max(20).default(10).describe("Max results"),
+    },
+    async ({ query, days, limit }) => {
+      try {
+        const { getSupabase } = await import("./supabase.js");
+        const sb = getSupabase();
+
+        const since = new Date();
+        since.setDate(since.getDate() - days);
+
+        const { data: convs } = await sb
+          .from("jarvis_conversations")
+          .select("id")
+          .eq("persona", options.persona)
+          .eq("mode", options.mode);
+
+        if (!convs || convs.length === 0) {
+          return { content: [{ type: "text" as const, text: "No conversations found for this persona/mode." }] };
+        }
+
+        const convIds = (convs as Array<{ id: string }>).map(c => c.id);
+
+        const { data: msgs, error } = await sb
+          .from("jarvis_messages")
+          .select("role, content, created_at")
+          .in("conversation_id", convIds)
+          .gte("created_at", since.toISOString())
+          .order("created_at", { ascending: false })
+          .limit(200);
+
+        if (error || !msgs) {
+          return { content: [{ type: "text" as const, text: `Search error: ${error?.message || "unknown"}` }], isError: true };
+        }
+
+        const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
+        if (words.length === 0) {
+          return { content: [{ type: "text" as const, text: "Query too short — need words with 3+ characters." }] };
+        }
+
+        const results = (msgs as Array<{ role: string; content: string; created_at: string }>)
+          .filter(m => {
+            const lower = m.content.toLowerCase();
+            const matched = words.filter(w => lower.includes(w)).length;
+            return matched >= Math.ceil(words.length / 2);
+          })
+          .slice(0, limit);
+
+        if (results.length === 0) {
+          return { content: [{ type: "text" as const, text: `No messages matching "${query}" in the last ${days} days.` }] };
+        }
+
+        const formatted = results.map((m, i) => {
+          const time = new Date(m.created_at).toLocaleString("fr-FR", {
+            timeZone: "Europe/Paris",
+            day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit",
+          });
+          const snippet = m.content.slice(0, 500) + (m.content.length > 500 ? "…" : "");
+          return `[${i + 1}] [${m.role.toUpperCase()} — ${time}]\n${snippet}`;
+        }).join("\n\n");
+
+        return {
+          content: [{ type: "text" as const, text: `${results.length} messages matching "${query}" (last ${days} days):\n\n${formatted}` }],
+        };
+      } catch (err) {
+        return {
+          content: [{ type: "text" as const, text: `conversation_search error: ${err instanceof Error ? err.message : String(err)}` }],
+          isError: true,
+        };
+      }
+    }
+  );
+
+  // ---------------------------------------------------------------------------
   // ouroboros_proposals
   // ---------------------------------------------------------------------------
   const ouroborosProposals = tool(
@@ -661,6 +742,7 @@ The 'preview' field is a human-readable description shown to the user before the
       proposeAction,
       recentHistory,
       mempalaceSearch,
+      conversationSearch,
       ouroborosProposals,
     ],
   });
@@ -679,6 +761,7 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__propose_action",
   "mcp__jarvis__recent_history",
   "mcp__jarvis__mempalace_search",
+  "mcp__jarvis__conversation_search",
   "mcp__jarvis__ouroboros_proposals",
   "web_search",
 ];

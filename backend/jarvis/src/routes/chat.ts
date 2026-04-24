@@ -88,7 +88,7 @@ function buildSystemPrompt(
       ? `\n---\n\n## Historique récent (${history.length} messages)\n\n${history
           .map(
             (m) =>
-              `[${m.role.toUpperCase()} — ${new Date(m.created_at).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" })}]\n${m.content.slice(0, 1500)}${m.content.length > 1500 ? "…" : ""}`
+              `[${m.role.toUpperCase()} — ${new Date(m.created_at).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" })}]\n${m.content.slice(0, 4000)}${m.content.length > 4000 ? "…" : ""}`
           )
           .join("\n\n")}\n`
       : "";
@@ -313,6 +313,17 @@ texte de la reply
 
 ---
 
+## MÉMOIRE ET CONTEXTE
+
+Tu as 3 niveaux de mémoire :
+1. **Historique immédiat** — les 40 derniers messages de CETTE conversation sont dans ton contexte
+2. **Recherche conversation** — le tool conversation_search cherche dans TOUS les messages de cette persona/mode des 30 derniers jours
+3. **Archives MemPalace** — le tool mempalace_search cherche dans les sessions archivées (conversations compressées par jour)
+
+Quand l'utilisateur fait référence à quelque chose du passé, utilise conversation_search d'abord (données exactes), puis mempalace_search si rien trouvé (archives plus anciennes). Ne dis JAMAIS "je n'ai pas accès aux conversations précédentes" — tu as les outils pour chercher.
+
+---
+
 ## TOOLS À TA DISPOSITION (UTILISE-LES AGRESSIVEMENT)
 
 - repo_read(path) : lis un fichier précis
@@ -324,6 +335,7 @@ texte de la reply
 - propose_action(type, params, preview) : propose une écriture repo
 - recent_history(persona, days) : synthèse récente
 - mempalace_search(query) : archive verbatim des sessions passées. Utilise-le PROACTIVEMENT quand l'utilisateur pose une question qui pourrait avoir été discutée avant ("on avait décidé quoi pour X ?", "qu'est-ce qu'on avait dit sur Y ?"). Les archives journalières sont dans le MemPalace — c'est ta mémoire long terme.
+- conversation_search(query, days, limit) : cherche dans les messages de CETTE conversation (persona + mode). Utilise-le quand l'utilisateur dit "on avait dit quoi sur...", "tu te souviens de...", "la dernière fois...". Combine avec mempalace_search pour une recherche plus large dans les archives.
 - ouroboros_proposals(status, limit) : liste les proposals Ouroboros (pending/accepted/rejected)
 - web_search(query) : cherche sur le web des infos actuelles. Utiliser pour : veille concurrents, tendances e-commerce/Shopify/SaaS, vérifier ce qui se dit sur StoreMD, rechercher des cibles cold, valider une donnée. Toujours utiliser quand l'utilisateur demande quelque chose qui nécessite des infos actuelles hors du repo.
 
@@ -400,7 +412,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       const conv = await loadOrCreateConversation(userId, persona, resolvedMode);
       conversationId = conv.id;
       summary = conv.summary;
-      history = await loadMessages(conversationId, 20);
+      history = await loadMessages(conversationId, 40);
     } catch (err) {
       console.error("[chat] memory load failed, falling back stateless:", err);
       conversationId = null;
@@ -582,9 +594,10 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
 
     // fire-and-forget mempalace ingestion
     if (fullAssistantText && message) {
+      const mempalacePersona = resolvedMode === "f2" ? "f2" : persona;
       import("../lib/queues.js")
         .then(({ mempalaceQueue }) =>
-          mempalaceQueue.add("ingest", { persona, userMessage: message, assistantResponse: fullAssistantText })
+          mempalaceQueue.add("ingest", { persona: mempalacePersona, userMessage: message, assistantResponse: fullAssistantText })
         )
         .catch(() => {});
     }

@@ -1,7 +1,7 @@
 import { ghCreate, ghRead, ghUpdate } from "./github.js";
 import { invalidateMempalaceCache } from "./mempalace.js";
 
-type Persona = "romain" | "fabrice";
+type Persona = "romain" | "fabrice" | "f2";
 
 function getCESTDate(): string {
   return new Date().toLocaleDateString("fr-FR", {
@@ -75,10 +75,15 @@ export async function archiveDailyConversation(
     const todayStr = cestNow.toISOString().slice(0, 10);
     const startOfDay = new Date(`${todayStr}T00:00:00+02:00`);
 
-    const { data: convs, error: convErr } = await sb
-      .from("jarvis_conversations")
-      .select("id, mode")
-      .eq("persona", persona);
+    let query = sb.from("jarvis_conversations").select("id, mode");
+    if (persona === "f2") {
+      // F2 conversations are stored as persona=romain, mode=f2
+      query = query.eq("persona", "romain").eq("mode", "f2");
+    } else {
+      // Normal conversations — exclude f2 mode to avoid mixing
+      query = query.eq("persona", persona).eq("mode", "normal");
+    }
+    const { data: convs, error: convErr } = await query;
 
     if (convErr || !convs || convs.length === 0) return;
 
