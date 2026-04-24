@@ -36,6 +36,42 @@ export async function actionExecuteRoute(req: Request, res: Response): Promise<v
 
     const updated = await executeAction(action_id);
     cacheInvalidateAll();
+
+    // Check if this action came from an Ouroboros proposal and mark it executed
+    try {
+      const { data: convRow } = await sb
+        .from("jarvis_pending_actions")
+        .select("conversation_id")
+        .eq("id", action_id)
+        .single();
+
+      if (convRow) {
+        const { data: recentMsgs } = await sb
+          .from("jarvis_messages")
+          .select("content")
+          .eq("conversation_id", (convRow as { conversation_id: string }).conversation_id)
+          .eq("role", "user")
+          .order("created_at", { ascending: false })
+          .limit(5);
+
+        if (recentMsgs) {
+          for (const msg of recentMsgs as Array<{ content: string }>) {
+            const sourceMatch = msg.content.match(/\[OUROBOROS_SOURCE:([^\]]+)\]/);
+            if (sourceMatch) {
+              const { markProposalExecuted } = await import("../lib/action-executor.js");
+              await markProposalExecuted(
+                sourceMatch[1],
+                (updated as { preview?: string }).preview || (updated as { action_type?: string }).action_type || "action"
+              );
+              break;
+            }
+          }
+        }
+      }
+    } catch {
+      // Non-bloquant
+    }
+
     res.json({ ok: true, action: updated });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

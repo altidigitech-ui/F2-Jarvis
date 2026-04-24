@@ -185,7 +185,11 @@ export function OuroborosProposalsModal({ accentColor, persona, mode, onClose }:
           return next;
         });
         if (action === "accept" && data.chatMessage) {
-          emitAutoSendChat(data.chatMessage);
+          // Inclure le filename de la proposal dans le message pour tracking
+          const trackingMsg = data.proposalFilename
+            ? `${data.chatMessage}\n\n[OUROBOROS_SOURCE:${data.proposalFilename}]`
+            : data.chatMessage;
+          emitAutoSendChat(trackingMsg);
           onClose();
         }
       }

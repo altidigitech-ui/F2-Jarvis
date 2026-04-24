@@ -97,7 +97,9 @@ async function getRecentProposalDecisions(): Promise<string> {
             const title = titleMatch ? titleMatch[1].trim() : file.name;
             const commentMatch = data.content.match(/\*\*Action \w+ par \w+\*\*\s*:\s*(.+)/);
             const comment = commentMatch ? ` — Commentaire: "${commentMatch[1].trim()}"` : "";
-            results.push(`[${status.toUpperCase()}] ${title}${comment}`);
+            const executedMatch = data.content.match(/\*\*Exécuté le ([^*]+)\*\*/);
+            const execNote = executedMatch ? ` ✅ EXÉCUTÉ (${executedMatch[1].trim()})` : "";
+            results.push(`[${status.toUpperCase()}] ${title}${comment}${execNote}`);
           } catch { /* skip */ }
         }
       } catch { /* dir may not exist */ }
@@ -107,6 +109,33 @@ async function getRecentProposalDecisions(): Promise<string> {
     return `\n\n## Décisions récentes sur tes proposals\n\nNe re-propose PAS ces sujets sauf évolution significative :\n${results.join("\n")}\n`;
   } catch {
     return "";
+  }
+}
+
+async function getCurrentPendingTitles(): Promise<string[]> {
+  try {
+    const { ghList, ghRead: ghReadFile } = await import("./github.js");
+    const entries = await ghList("brain/ouroboros/proposals/pending");
+    const mdFiles = entries
+      .filter((f: { type: string; name: string }) => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("."))
+      .sort((a: { name: string }, b: { name: string }) => b.name.localeCompare(a.name))
+      .slice(0, 30);
+
+    const titles: string[] = [];
+    for (const file of mdFiles) {
+      try {
+        const data = await ghReadFile(`brain/ouroboros/proposals/pending/${file.name}`);
+        if (!data) continue;
+        const titleMatch =
+          data.content.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) ||
+          data.content.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) ||
+          data.content.match(/^#\s+(.+)$/m);
+        if (titleMatch) titles.push(titleMatch[1].trim());
+      } catch { /* skip */ }
+    }
+    return titles;
+  } catch {
+    return [];
   }
 }
 
@@ -145,7 +174,12 @@ export async function runOuroborosCycle(): Promise<void> {
   const identity = await readIdentity();
   const conversationContext = await getRecentConversationSummary();
   const proposalDecisions = await getRecentProposalDecisions();
+  const pendingTitles = await getCurrentPendingTitles();
   const date = getCESTDate();
+
+  const pendingBlock = pendingTitles.length > 0
+    ? `\n\n## Proposals DÉJÀ PENDING (${pendingTitles.length})\n\nCes proposals existent déjà et attendent une décision humaine. NE LES RE-CRÉE PAS. Ne propose PAS de variante sur le même sujet sauf si tu as des données NOUVELLES qui changent fondamentalement l'analyse.\n\n${pendingTitles.map(t => `- ${t}`).join("\n")}\n`
+    : "";
 
   const claudePath = await resolveClaudeBinary();
   const backendBase = process.env.RAILWAY_BACKEND_URL || `http://127.0.0.1:${process.env.PORT || 3001}`;
@@ -207,7 +241,7 @@ Pour le journal :
 - Tu utilises les outils de lecture pour explorer
 - Tu n'as pas accès à propose_action — tu génères les proposals dans ta réponse
 - Si rien d'important à signaler, écris une courte entrée de journal et 0 proposals
-${conversationContext}${proposalDecisions}`;
+${pendingBlock}${conversationContext}${proposalDecisions}`;
 
   const userPrompt = `Cycle Ouroboros du ${date}.
 
@@ -245,11 +279,26 @@ Commence par explorer : recent_history pour Fabrice et Romain (7 jours), counter
   // Collecter les proposals
   const proposalBlocks = [...fullText.matchAll(/---PROPOSAL---([\s\S]*?)---END-PROPOSAL---/g)];
   const timestamp = Date.now();
+  const pendingLower = pendingTitles.map(t => t.toLowerCase());
+
   for (const [, body] of proposalBlocks) {
     const titleMatch = body.match(/\*\*Titre:\*\*\s*(.+)/);
     const priorityMatch = body.match(/\*\*Priorité:\*\*\s*(.+)/);
     const title = titleMatch ? titleMatch[1].trim() : "Sans titre";
     const priority = priorityMatch ? priorityMatch[1].trim() : "faible";
+
+    // Déduplication : skip si un titre pending contient >60% des mots de ce titre
+    const newWords = title.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+    const isDuplicate = pendingLower.some(existing => {
+      const matchCount = newWords.filter(w => existing.includes(w)).length;
+      return newWords.length > 0 && matchCount / newWords.length > 0.6;
+    });
+
+    if (isDuplicate) {
+      console.log(`[ouroboros-cycle] SKIPPED duplicate proposal: "${title}"`);
+      continue;
+    }
+
     const safeTitle = title.toLowerCase().replace(/[^a-z0-9]/g, "-").slice(0, 40);
     const filename = `${date}-${safeTitle}-${timestamp}.md`;
 

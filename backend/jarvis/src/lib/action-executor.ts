@@ -347,6 +347,27 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
 }
 
 /**
+ * Marks an accepted Ouroboros proposal as fully executed.
+ * Appends a completion note to the accepted proposal file.
+ */
+export async function markProposalExecuted(proposalFilename: string, actionSummary: string): Promise<void> {
+  const path = `brain/ouroboros/proposals/accepted/${proposalFilename}`;
+  try {
+    const file = await ghRead(path);
+    if (!file) return;
+
+    const now = new Date().toISOString();
+    const updatedContent = file.content + `\n\n---\n**Exécuté le ${now}**\nActions réalisées : ${actionSummary}\n`;
+
+    await ghWrite(path, updatedContent, file.sha, `chore(ouroboros): mark proposal executed — ${proposalFilename}`);
+    console.log(`[action-executor] marked proposal executed: ${proposalFilename}`);
+  } catch (err) {
+    console.warn(`[action-executor] failed to mark proposal executed:`, err);
+    // Non-bloquant — l'action a déjà été exécutée
+  }
+}
+
+/**
  * Marks a pending action as rejected (user said no).
  */
 export async function rejectAction(actionId: string): Promise<void> {

@@ -2,13 +2,20 @@
 import { Worker } from "bullmq";
 import { getRedis } from "./lib/redis.js";
 import { runOuroborosCycle } from "./lib/ouroboros-cycle.js";
-import { ingestToMemPalace } from "./lib/mempalace-ingest.js";
+import { ingestToMemPalace, archiveDailyConversation } from "./lib/mempalace-ingest.js";
 
 new Worker(
   "ouroboros-cycle",
   async (job) => {
     console.log(`[worker] ouroboros cycle ${job.id} started`);
     await runOuroborosCycle();
+    // Archivage journalier — idempotent, safe to run every cycle
+    try {
+      await archiveDailyConversation("fabrice");
+      await archiveDailyConversation("romain");
+    } catch (err) {
+      console.warn("[worker] daily archive failed:", err);
+    }
     console.log(`[worker] ouroboros cycle ${job.id} done`);
   },
   { connection: getRedis(), concurrency: 1 }

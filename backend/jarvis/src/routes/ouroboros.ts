@@ -326,7 +326,13 @@ export async function ouroborosAction(req: Request, res: Response): Promise<void
       chatMessage = `[OUROBOROS] ${title}\n\n${recommendation}${comment ? `\n\nContexte: ${comment}` : ""}\n\nExécute cette recommandation.`;
     }
 
-    res.json({ ok: true, action, proposalId: id, ...(chatMessage !== undefined ? { chatMessage } : {}) });
+    res.json({
+      ok: true,
+      action,
+      proposalId: id,
+      ...(chatMessage !== undefined ? { chatMessage } : {}),
+      ...(action === "accept" ? { proposalFilename: filename } : {}),
+    });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("[/ouroboros/action]", err);
