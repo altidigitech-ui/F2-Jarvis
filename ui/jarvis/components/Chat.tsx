@@ -797,6 +797,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
             );
             continue;
           }
+          if (event.type === "ping") continue; // Keepalive, ignore
           if (event.type === "text" && typeof event.content === "string") {
             fullText += event.content;
             setMessages((prev) =>
