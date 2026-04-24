@@ -11,32 +11,32 @@
 |Lun 20/04|`store-md-money-daily`|My Twitter was suspended 6 days. I scanned 47 stores instead.|✅ Publié|
 |Mar 21/04|`store-md-horror-ghost-apps`|$80k/mo DTC — $2,646 ghost billing 14 months|✅ Publié|
 |Mer 22/04|`store-md-horror-agency-ripoff`|If your agency hasn't mentioned ghost billing, AI readiness...|✅ Publié|
-|Jeu 23/04|`store-md-stats`|Data from 50 scans|📅 Schedulé|
+|Jeu 23/04|`store-md-stats`|Data from 50 scans|❌ Non publié|
 |Ven 24/04|`store-md-testimonial-agency`|Agency DM: $14,200/mo leaks on 8 clients|✅ Publié|
 
 ## 1B. POSTS TWITTER R — COUCHE B (3 posts beta, 18h30 CEST)
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Mer 22/04|`store-md-beta-10-spots`|M1 Recrutement 10 betas|📅 Schedulé|
-|Jeu 23/04|`store-md-scan-cta`|M2 Scan gratuit sur demande|📅 Schedulé|
-|Ven 24/04|aucune|M5 Pipeline conversion recap|📅 Schedulé|
+|Mer 22/04|`store-md-beta-10-spots`|M1 Recrutement 10 betas|❌ Non publié|
+|Jeu 23/04|`store-md-scan-cta`|M2 Scan gratuit sur demande|❌ Non publié|
+|Ven 24/04|aucune|M5 Pipeline conversion recap|❌ Non publié|
 
 ## 2. POSTS LINKEDIN R (EN) — COUCHE A
 
 |Jour|Sujet|Statut|
 |---|---|---|
 |Mar 21/04|Long format: 47 stores scanned, DTC #12 breakdown|✅ Publié|
-|Jeu 23/04|Agency angle: scan your client stores for free|📅 Schedulé|
-|Ven 24/04|Week recap: [X] scans, $[Y] detected, [Z] agencies|📅 Schedulé|
+|Jeu 23/04|Agency angle: scan your client stores for free|❌ Non publié|
+|Ven 24/04|Week recap: [X] scans, $[Y] detected, [Z] agencies|❌ Non publié|
 
 ## 2B. POSTS LINKEDIN R — COUCHE B (3 posts REFAITS beta, 21h00 CEST)
 
 |Jour|Sujet|Statut|
 |---|---|---|
 |Mar 21/04|REFAIT beta recrutement (remplace case study Couche A)|✅ Publié|
-|Jeu 23/04|REFAIT scan gratuit + cold scan (remplace agency angle Couche A)|📅 Schedulé|
-|Ven 24/04|REFAIT Pro teaser + pipeline (remplace week recap Couche A)|📅 Schedulé|
+|Jeu 23/04|REFAIT scan gratuit + cold scan (remplace agency angle Couche A)|❌ Non publié|
+|Ven 24/04|REFAIT Pro teaser + pipeline (remplace week recap Couche A)|❌ Non publié|
 
 ## 3. COLD OUTREACH
 
@@ -67,8 +67,8 @@
 |Lun 20/04|✅ Fait|— (pas de Couche B lundi)|
 |Mar 21/04|✅ Fait|✅ Fait|
 |Mer 22/04|✅ Fait|✅ Fait|
-|Jeu 23/04|✅ Fait|✅ Fait|
-|Ven 24/04|✅ Fait|⏳ B8 LI 21h|
+|Jeu 23/04|❌ Non fait|❌ Non fait|
+|Ven 24/04|❌ Non fait|❌ Non fait|
 
 ## 6. S5 RECAP
 Twitter R : 0 posts (suspension). LinkedIn R : 2 posts, 339 imp (+52%), +15 abonnés. Cold : 6 LinkedIn, 3/4 positifs. MRR externe : $0.
