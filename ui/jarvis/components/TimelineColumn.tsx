@@ -8,9 +8,10 @@ type Props = {
   items: TimelineItem[];
   accentColor: string;
   loading?: boolean;
+  persona?: string;
 };
 
-export function TimelineColumn({ items, accentColor, loading }: Props) {
+export function TimelineColumn({ items, accentColor, loading, persona }: Props) {
   return (
     <aside
       className="w-[260px] flex-none flex flex-col border-r overflow-y-auto"
@@ -32,17 +33,32 @@ export function TimelineColumn({ items, accentColor, loading }: Props) {
           </div>
         )}
         {items.map((item, i) => (
-          <TimelineCard key={i} item={item} accentColor={accentColor} />
+          <TimelineCard key={i} item={item} accentColor={accentColor} persona={persona} />
         ))}
       </div>
     </aside>
   );
 }
 
-function TimelineCard({ item, accentColor }: { item: TimelineItem; accentColor: string }) {
+const publishedByMap: Record<string, string> = { F: "fabrice", R: "romain", F2: "f2" };
+
+function getActionLabel(item: TimelineItem, persona?: string): string {
+  if (item.platform === "OBJECTIF") return "";
+  if (item.platform === "CROSS") return "→ Reply à poster dans les 5 min";
+
+  const isOwnPost = publishedByMap[item.publishedBy] === persona;
+  if (item.status === "done") return "✅ Publié";
+  if (isOwnPost) {
+    return item.time ? `→ Publier à ${item.time}` : "→ À publier";
+  }
+  return `→ Post de ${item.publishedBy} — cross à faire dessus`;
+}
+
+function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; accentColor: string; persona?: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const actionLabel = getActionLabel(item, persona);
   const isDone = item.status === "done";
   const isBlocked = item.status === "blocked";
 
@@ -119,6 +135,11 @@ function TimelineCard({ item, accentColor }: { item: TimelineItem; accentColor: 
       <div className="text-[12px] text-slate-300 leading-snug mb-1.5">
         {item.title}
       </div>
+      {actionLabel && (
+        <div className="text-[10px] font-mono text-amber-500/70 mb-1.5">
+          {actionLabel}
+        </div>
+      )}
       <div className="flex items-center gap-1.5 text-[10px] text-slate-500">
         <span className="font-mono">[{item.platform}]</span>
         {item.publishedBy && <span>· {item.publishedBy}</span>}
