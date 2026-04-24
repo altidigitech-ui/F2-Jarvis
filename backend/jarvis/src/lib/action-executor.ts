@@ -360,6 +360,7 @@ export async function applySideEffects(
         const count = actionType === "batch_cold"
           ? ((params.targets as unknown[]) || []).length
           : 1;
+        cacheInvalidateAll();
         await ghUpdate(
           `${persona}/progress-semaine.md`,
           (md) => {
@@ -379,6 +380,10 @@ export async function applySideEffects(
         ).catch((err) => {
           console.error(`[action-executor] side-effect cold_count failed:`, err instanceof Error ? err.message : err);
         });
+
+        // Wait for SHA to propagate before second write on the same file
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        cacheInvalidateAll();
 
         await ghUpdate(
           `${persona}/progress-semaine.md`,
