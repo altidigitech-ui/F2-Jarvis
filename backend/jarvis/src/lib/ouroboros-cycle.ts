@@ -146,7 +146,7 @@ function subjectsOverlap(a: string, b: string): boolean {
   }
 
   const minSize = Math.min(wordsA.size, wordsB.size);
-  return shared / minSize >= 0.5;
+  return shared / minSize >= 0.35;
 }
 
 async function getCurrentPendingSummaries(): Promise<PendingSummary[]> {
@@ -317,6 +317,8 @@ Pour le journal :
 - Tu utilises les outils de lecture pour explorer
 - Tu n'as pas accès à propose_action — tu génères les proposals dans ta réponse
 - Si rien d'important à signaler, écris une courte entrée de journal et 0 proposals
+- Maximum 3 proposals par cycle. Si tu as plus de 3 observations, garde les 3 plus critiques.
+- Ne re-propose JAMAIS un sujet déjà couvert dans les proposals PENDING listées plus haut. Pas de variante, pas de reformulation. Si le sujet existe déjà, passe.
 ${pendingBlock}${conversationContext}${proposalDecisions}`;
 
   const userPrompt = `Cycle Ouroboros du ${date}.
