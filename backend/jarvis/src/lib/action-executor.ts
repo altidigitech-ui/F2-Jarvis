@@ -511,9 +511,10 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
   }
 
   const persona = action.jarvis_conversations.persona;
+  const effectivePersona = (action.params._persona_prefix as Persona) || persona;
 
   try {
-    const { path, commitPrefix } = resolveFilePath(action.action_type, persona, action.params);
+    const { path, commitPrefix } = resolveFilePath(action.action_type, effectivePersona, action.params);
     const previewShort = action.preview.slice(0, 60).replace(/\n/g, " ");
 
     if (action.action_type === "create_file") {
@@ -584,7 +585,7 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
     cacheInvalidateAll();
 
     // Apply side-effects to other files (non-blocking)
-    await applySideEffects(action.action_type, action.params, persona);
+    await applySideEffects(action.action_type, action.params, effectivePersona);
 
     const { data: updated, error: updateErr } = await sb
       .from("jarvis_pending_actions")
