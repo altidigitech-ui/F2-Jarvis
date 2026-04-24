@@ -557,7 +557,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             <button onClick={() => setMobilePanel(null)} className="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} />
+            <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} persona={persona} />
           </div>
         </div>
       )}
@@ -699,8 +699,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           />
         </aside>
 
-        <div className="hidden md:block">
-          <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} />
+        <div className="hidden md:flex h-full overflow-hidden">
+          <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} persona={persona} />
         </div>
 
         {/* Centre — flex-1 */}
