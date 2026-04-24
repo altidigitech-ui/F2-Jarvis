@@ -59,6 +59,7 @@
 |----|------------------------------|-------------|
 |    |                              |             |
 | 24/04/2026 | 13:29 | @aryan_sinh — reply 3, post beta StoreMD, closing 'curious to see how it plays out once you have those first 10 in' | will do. once the first 10 are in we'll post a real update here — how the onboarding played out, what held people back, what surprised us. appreciate you following along. |  |  |
+| 24/04/2026 | 13:30 | @andreiRS — Who is ChatGPT recommending to your customers instead of you? (free run for 20 indie SaaS founders) | LLM surface area pattern Shopify side. Structured data = 3x more cited. StoreMD tracks per-LLM AI readiness scoring (GPTBot, Claude-Web, PerplexityBot). Gap between good product and zero LLM representation is real. |  |  |
 
 -----
 
