@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { executeAction, resolveFilePath, applyTransform } from "../lib/action-executor.js";
+import { executeAction, resolveFilePath, applyTransform, applySideEffects } from "../lib/action-executor.js";
 import { getSupabase } from "../lib/supabase.js";
 import { ghUpdate } from "../lib/github.js";
 import { cacheInvalidateAll } from "../lib/cache.js";
@@ -100,6 +100,19 @@ export async function actionExecuteBatchRoute(req: Request, res: Response): Prom
           `[JARVIS] batch(${group.length}) ${filename}: ${previews.slice(0, 80)}`
         );
         normalExecutedIds.push(...group.map((a) => a.id));
+
+        // Apply side-effects for each action in the group (non-blocking)
+        for (const action of group) {
+          try {
+            await applySideEffects(
+              action.action_type,
+              action.params,
+              action.jarvis_conversations.persona
+            );
+          } catch (err) {
+            console.error(`[batch] side-effect failed for ${action.id}:`, err);
+          }
+        }
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
         for (const action of group) failedById.set(action.id, msg);
