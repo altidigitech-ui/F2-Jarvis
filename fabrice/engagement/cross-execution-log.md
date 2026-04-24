@@ -38,7 +38,7 @@
 |B5|Jeu 23/04|F2 Twitter 18h30 — Scan gratuit séparé|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
 |B6|Ven 24/04|R Twitter 18h30 — M5 pipeline recap|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04 19h28|
 |B7|Ven 24/04|F2 Twitter 18h30 — Beta pipeline recap|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04 19h27|
-|B8|Ven 24/04|R LinkedIn 21h — Final beta|21h05|—|⏳ À faire|Fenêtre 21h ce soir|
+|B8|Ven 24/04|R LinkedIn 21h — Final beta|21h05|~21:56|✅ Fait|Cross B8 — R LinkedIn Couche B Pro teaser + pipeli||
 
 ---
 
