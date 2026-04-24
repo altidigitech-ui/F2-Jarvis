@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { TimelineItem } from "../lib/context-types";
-import { emitSendToChat } from "@/lib/jarvisEvents";
+import { emitSendToChat, emitRepoUpdated } from "@/lib/jarvisEvents";
 
 type Props = {
   items: TimelineItem[];
@@ -42,25 +42,26 @@ export function TimelineColumn({ items, accentColor, loading, persona }: Props) 
 
 const publishedByMap: Record<string, string> = { F: "fabrice", R: "romain", F2: "f2" };
 
-function getActionLabel(item: TimelineItem, persona?: string): string {
-  if (item.platform === "OBJECTIF") return "";
-  if (item.platform === "CROSS") return "→ Reply à poster dans les 5 min";
-
-  const isOwnPost = publishedByMap[item.publishedBy] === persona;
-  if (item.status === "done") return "✅ Publié";
-  if (isOwnPost) {
-    return item.time ? `→ Publier à ${item.time}` : "→ À publier";
-  }
-  return `→ Post de ${item.publishedBy} — cross à faire dessus`;
-}
-
 function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; accentColor: string; persona?: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [localDone, setLocalDone] = useState(false);
 
-  const actionLabel = getActionLabel(item, persona);
-  const isDone = item.status === "done";
-  const isBlocked = item.status === "blocked";
+  const isOwnPost =
+    publishedByMap[item.publishedBy] === persona ||
+    (item.publishedBy === "F2" && persona === "romain");
+
+  const effectiveStatus = localDone ? "done" : item.status;
+  const isDone = effectiveStatus === "done";
+  const isBlocked = !isDone && item.status === "blocked";
+
+  const actionLabel = (() => {
+    if (item.platform === "OBJECTIF") return "";
+    if (item.platform === "CROSS") return "→ Reply à poster dans les 5 min";
+    if (isDone) return "✅ Publié";
+    if (isOwnPost) return item.time ? `→ Publier à ${item.time}` : "→ À publier";
+    return `→ Post de ${item.publishedBy} — cross à faire dessus`;
+  })();
 
   const tag = isDone
     ? { text: "PUBLIÉ", color: accentColor, bg: `${accentColor}18` }
@@ -91,9 +92,29 @@ function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; acce
     setMenuOpen(false);
   }
 
-  function markPublished() {
-    emitSendToChat(`j'ai posté ${item.title}`);
+  async function markPublished() {
     setMenuOpen(false);
+    setLocalDone(true);
+
+    try {
+      const res = await fetch("/api/action", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          persona,
+          action: "mark_published",
+          payload: { title: item.title },
+        }),
+      });
+      if (res.ok) {
+        emitRepoUpdated({ actionType: "mark_published" });
+      } else {
+        setLocalDone(false);
+      }
+    } catch {
+      setLocalDone(false);
+      emitSendToChat(`j'ai posté ${item.title}`);
+    }
   }
 
   function adjust() {
@@ -160,12 +181,24 @@ function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; acce
           >
             {copied ? "✓ Copié" : "Copier titre"}
           </button>
-          <button
-            onClick={markPublished}
-            className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors"
-          >
-            Marquer publié
-          </button>
+          {isOwnPost ? (
+            <button
+              onClick={markPublished}
+              className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors"
+            >
+              Marquer publié
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                emitSendToChat(`cross fait sur ${item.title}`);
+                setMenuOpen(false);
+              }}
+              className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors"
+            >
+              Cross fait
+            </button>
+          )}
           <button
             onClick={adjust}
             className="w-full text-left px-3 py-1.5 text-[11px] font-mono text-slate-300 hover:bg-white/5 transition-colors"
