@@ -575,6 +575,79 @@ The 'preview' field is a human-readable description shown to the user before the
     }
   );
 
+  // ---------------------------------------------------------------------------
+  // ouroboros_proposals
+  // ---------------------------------------------------------------------------
+  const ouroborosProposals = tool(
+    "ouroboros_proposals",
+    "List pending Ouroboros proposals (the background consciousness of FoundryTwo). Returns the most recent proposals with title, priority, and preview. Use this when the user asks about Ouroboros, pending recommendations, what the system has noticed, or when you need context about what Ouroboros is tracking. Also use proactively when relevant to the conversation (e.g., user asks about LinkedIn status and there's a pending proposal about LinkedIn).",
+    {
+      status: z.enum(["pending", "accepted", "rejected"]).default("pending").describe("Which proposals to list"),
+      limit: z.number().int().min(1).max(20).default(10).describe("Max proposals to return"),
+    },
+    async ({ status, limit }) => {
+      try {
+        const dirMap: Record<string, string> = {
+          pending: "brain/ouroboros/proposals/pending",
+          accepted: "brain/ouroboros/proposals/accepted",
+          rejected: "brain/ouroboros/proposals/rejected",
+        };
+        const dir = dirMap[status];
+        const entries = await ghList(dir);
+        const mdFiles = entries
+          .filter((f) => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("_") && !f.name.startsWith("."))
+          .sort((a, b) => b.name.localeCompare(a.name))
+          .slice(0, limit);
+
+        if (mdFiles.length === 0) {
+          return {
+            content: [{ type: "text" as const, text: `Aucune proposal ${status} trouvée.` }],
+          };
+        }
+
+        const summaries: string[] = [];
+        for (const file of mdFiles) {
+          try {
+            const fileData = await ghRead(`${dir}/${file.name}`);
+            if (!fileData) continue;
+            const raw = fileData.content;
+            const titleMatch = raw.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) || raw.match(/^#\s+(.+)$/m);
+            const priorityMatch = raw.match(/\*\*Priorit[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/priorité:\s*(.+)/i);
+            const recommMatch = raw.match(/\*\*Recommandation[^*]*\*\*\s*:\s*([\s\S]*?)(?=\*\*Risques|\*\*Action|\n---|$)/i);
+            const contextMatch = raw.match(/\*\*Contexte[^*]*\*\*\s*:\s*([\s\S]*?)(?=\*\*Recomm|\*\*Action|\n---|$)/i);
+            const tsMatch = raw.match(/timestamp:\s*"?([^"\n]+)"?/);
+            const epochMatch = file.name.match(/-(\d{13,})\.md$/);
+            const ts = tsMatch ? tsMatch[1] : (epochMatch ? new Date(parseInt(epochMatch[1], 10)).toISOString() : "");
+
+            const title = titleMatch ? titleMatch[1].trim() : file.name;
+            const priority = priorityMatch ? priorityMatch[1].trim() : "medium";
+            const recommendation = recommMatch ? recommMatch[1].trim().slice(0, 200) : "";
+            const context = contextMatch ? contextMatch[1].trim().slice(0, 200) : "";
+
+            summaries.push(`[${priority.toUpperCase()}] ${title}${ts ? ` (${ts})` : ""}\n  Contexte: ${context || "(aucun)"}\n  Recommandation: ${recommendation || "(aucune)"}\n  Fichier: ${file.name}`);
+          } catch {
+            // skip unreadable files
+          }
+        }
+
+        return {
+          content: [{
+            type: "text" as const,
+            text: `Proposals Ouroboros (${status}) — ${summaries.length} résultats :\n\n${summaries.join("\n\n")}`,
+          }],
+        };
+      } catch (err) {
+        return {
+          content: [{
+            type: "text" as const,
+            text: `ouroboros_proposals error: ${err instanceof Error ? err.message : String(err)}`,
+          }],
+          isError: true,
+        };
+      }
+    }
+  );
+
   return createSdkMcpServer({
     name: "jarvis",
     version: "1.0.0",
@@ -588,6 +661,7 @@ The 'preview' field is a human-readable description shown to the user before the
       proposeAction,
       recentHistory,
       mempalaceSearch,
+      ouroborosProposals,
     ],
   });
 }
@@ -605,5 +679,6 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__propose_action",
   "mcp__jarvis__recent_history",
   "mcp__jarvis__mempalace_search",
+  "mcp__jarvis__ouroboros_proposals",
   "web_search",
 ];
