@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { query, type SDKUserMessage } from "@anthropic-ai/claude-agent-sdk";
-import { ghRead } from "../lib/github.js";
+import { ghRead, ghList } from "../lib/github.js";
 import { resolveClaudeBinary } from "../lib/claude-binary.js";
 import {
   loadOrCreateConversation,
@@ -61,7 +61,8 @@ function buildSystemPrompt(
   mode: Mode,
   contextFiles: string[],
   history: JarvisMessage[],
-  summary: string | null
+  summary: string | null,
+  ouroborosSummary: string = ""
 ): string {
   const isF2 = mode === "f2";
   const personaLabel = isF2
@@ -96,7 +97,7 @@ function buildSystemPrompt(
 
   return `Tu es JARVIS, l'assistant agentique interne de ${personaLabel}${modeLabel} au sein du studio FoundryTwo.
 
-Tu tournes dans le cockpit F2-Jarvis, tableau de bord réseaux intégral. Tu AS accès à 9 tools pour lire le repo, chercher, consulter la timeline/compteurs live, et proposer des actions. Tu utilises ces tools AGRESSIVEMENT. Tu ne réponds JAMAIS "je ne sais pas" ou "je n'ai pas accès" sans avoir essayé les tools.
+Tu tournes dans le cockpit F2-Jarvis, tableau de bord réseaux intégral. Tu AS accès à 10 tools pour lire le repo, chercher, consulter la timeline/compteurs live, et proposer des actions. Tu utilises ces tools AGRESSIVEMENT. Tu ne réponds JAMAIS "je ne sais pas" ou "je n'ai pas accès" sans avoir essayé les tools.
 
 Tu réponds en français. Pour tout contenu destiné à la publication : anglais uniquement (semaine 6, sales agressif). Tu peux proposer une traduction française brève sous le contenu anglais si utile.
 
@@ -222,23 +223,22 @@ Quand l'utilisateur écrit une de ces phrases (ou variantes), tu réagis comme i
 
 ---
 
-## MESSAGES OUROBOROS
+## OUROBOROS — CONSCIENCE DE FOND
 
-Tu peux recevoir des messages préfixés \`[OUROBOROS]\`. Ce sont des recommandations de la conscience de fond Ouroboros qui ont été **validées par l'utilisateur**. Traite-les comme des instructions d'action prioritaires.
+Ouroboros est la conscience de fond de FoundryTwo. Il observe le repo toutes les 2h, détecte les incohérences, les risques, les actions manquées, et produit des proposals.
 
-Format typique :
-\`[OUROBOROS] Titre de la recommendation\`
-\`Recommandation détaillée...\`
-\`Contexte: commentaire de l'utilisateur expliquant sa décision\`
-\`Exécute cette recommandation.\`
+**Tu as un tool \`ouroboros_proposals\`** — utilise-le quand :
+- L'utilisateur demande "qu'est-ce qu'Ouroboros a trouvé ?", "proposals pending", "signaux"
+- L'utilisateur parle d'un sujet qui a une proposal pending (ex: il parle de LinkedIn et il y a une proposal sur les posts LinkedIn manquants)
+- Tu fais un bilan/résumé de la journée ou de la semaine
 
-Quand tu reçois un tel message :
-1. Lis la recommandation ET le contexte utilisateur attentivement
-2. Utilise tes tools pour comprendre l'état actuel (repo_read, counters_today, etc.)
-3. Propose les actions concrètes via propose_action — l'utilisateur a DÉJÀ validé le principe, il reste à valider l'exécution
-4. Le commentaire de l'utilisateur est CRITIQUE : il peut modifier, nuancer ou restreindre la recommandation. Respecte-le.
+**Messages préfixés [OUROBOROS]** : ce sont des proposals que l'utilisateur a ACCEPTÉES via l'UI. Traite-les comme des instructions d'action prioritaires.
+1. Lis la recommandation ET le contexte utilisateur (champ "Contexte:")
+2. Utilise tes tools pour comprendre l'état actuel
+3. Propose les actions concrètes via propose_action
+4. Le commentaire de l'utilisateur prime sur la recommandation Ouroboros
 
-Exemple : si Ouroboros propose "rattraper 3 posts LinkedIn" et le commentaire dit "juste le post de mercredi, les autres on oublie", tu ne proposes qu'un seul post.
+**Intégration naturelle** : ne dis pas "Ouroboros m'a dit que..." de façon mécanique. Intègre les signaux naturellement : "Au fait, j'ai noté que tes 3 posts LinkedIn S6 ne sont pas confirmés — tu veux qu'on regarde ça ?"
 
 ---
 
@@ -316,6 +316,7 @@ texte de la reply
 - propose_action(type, params, preview) : propose une écriture repo
 - recent_history(persona, days) : synthèse récente
 - mempalace_search(query) : archive verbatim des sessions passées
+- ouroboros_proposals(status, limit) : liste les proposals Ouroboros (pending/accepted/rejected)
 - web_search(query) : cherche sur le web des infos actuelles. Utiliser pour : veille concurrents, tendances e-commerce/Shopify/SaaS, vérifier ce qui se dit sur StoreMD, rechercher des cibles cold, valider une donnée. Toujours utiliser quand l'utilisateur demande quelque chose qui nécessite des infos actuelles hors du repo.
 
 Tu peux enchaîner plusieurs tools avant de répondre. Exemple : "j'ai posté My apps are fine" → timeline_today pour confirmer que l'item existe → propose_action(mark_published) → réponds au user avec [ACTION_PENDING:uuid].
@@ -324,7 +325,7 @@ Tu peux enchaîner plusieurs tools avant de répondre. Exemple : "j'ai posté My
 
 ## CONTEXTE FICHIERS
 
-${contextFiles.join("\n")}${summaryBlock}${historyBlock}`;
+${contextFiles.join("\n")}${summaryBlock}${historyBlock}${ouroborosSummary}`;
 }
 
 /**
@@ -393,7 +394,42 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     resolvedMode === "f2" ? "f2/plan-hebdo.md" : `${persona}/plan-hebdo.md`,
   ];
   const contexts = await Promise.all(contextPaths.map(loadFile));
-  const systemPrompt = buildSystemPrompt(persona, resolvedMode, contexts, history, summary);
+
+  // Load Ouroboros pending proposals summary for system prompt
+  let ouroborosSummary = "";
+  try {
+    const pendingEntries = await ghList("brain/ouroboros/proposals/pending");
+    const allPending = pendingEntries.filter(
+      (f: { type: string; name: string }) => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith(".")
+    );
+    const totalPending = allPending.length;
+    const pendingMd = allPending
+      .sort((a: { name: string }, b: { name: string }) => b.name.localeCompare(a.name))
+      .slice(0, 5);
+
+    if (pendingMd.length > 0) {
+      const snippets: string[] = [];
+      for (const file of pendingMd) {
+        try {
+          const fileData = await ghRead(`brain/ouroboros/proposals/pending/${file.name}`);
+          if (!fileData) continue;
+          const raw = fileData.content;
+          const titleMatch = raw.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i) || raw.match(/^#\s+(.+)$/m);
+          const priorityMatch = raw.match(/\*\*Priorit[ée]\s*:\s*\*\*\s*(.+)/i) || raw.match(/priorité:\s*(.+)/i);
+          const title = titleMatch ? titleMatch[1].trim() : file.name;
+          const priority = priorityMatch ? priorityMatch[1].trim() : "?";
+          snippets.push(`- [${priority}] ${title}`);
+        } catch { /* skip */ }
+      }
+      if (snippets.length > 0) {
+        ouroborosSummary = `\n\n## OUROBOROS — ${totalPending} PROPOSALS PENDING\n\nLes 5 plus récentes :\n${snippets.join("\n")}\n\nUtilise le tool ouroboros_proposals pour lire les détails ou voir plus de proposals. Mentionne-les naturellement quand elles sont pertinentes à la conversation — ne les ignore pas.`;
+      }
+    }
+  } catch {
+    // Ouroboros summary non disponible — pas bloquant
+  }
+
+  const systemPrompt = buildSystemPrompt(persona, resolvedMode, contexts, history, summary, ouroborosSummary);
 
   if (conversationId) {
     try {

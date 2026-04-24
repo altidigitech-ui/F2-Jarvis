@@ -42,6 +42,74 @@ async function readIdentity(): Promise<string> {
   }
 }
 
+async function getRecentConversationSummary(): Promise<string> {
+  try {
+    const { getSupabase } = await import("./supabase.js");
+    const sb = getSupabase();
+
+    const { data, error } = await sb
+      .from("jarvis_messages")
+      .select("role, content, created_at")
+      .order("created_at", { ascending: false })
+      .limit(10);
+
+    if (error || !data || data.length === 0) return "";
+
+    const messages = (data as Array<{ role: string; content: string; created_at: string }>)
+      .reverse()
+      .map(m => {
+        const time = new Date(m.created_at).toLocaleTimeString("fr-FR", {
+          timeZone: "Europe/Paris",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+        const snippet = m.content.slice(0, 300) + (m.content.length > 300 ? "…" : "");
+        return `[${m.role.toUpperCase()} ${time}] ${snippet}`;
+      })
+      .join("\n");
+
+    return `\n\n## Dernières interactions JARVIS (chat)\n\n${messages}\n`;
+  } catch {
+    return "";
+  }
+}
+
+async function getRecentProposalDecisions(): Promise<string> {
+  try {
+    const { ghList, ghRead: ghReadFile } = await import("./github.js");
+
+    const results: string[] = [];
+
+    for (const status of ["accepted", "rejected"] as const) {
+      const dir = `brain/ouroboros/proposals/${status}`;
+      try {
+        const entries = await ghList(dir);
+        const recentMd = entries
+          .filter((f: { type: string; name: string }) => f.type === "file" && f.name.endsWith(".md") && !f.name.startsWith("."))
+          .sort((a: { name: string }, b: { name: string }) => b.name.localeCompare(a.name))
+          .slice(0, 3);
+
+        for (const file of recentMd) {
+          try {
+            const data = await ghReadFile(`${dir}/${file.name}`);
+            if (!data) continue;
+            const titleMatch = data.content.match(/\*\*Titr[ée]\s*:\s*\*\*\s*(.+)/i) || data.content.match(/\*\*Titr[ée]\*\*\s*:\s*(.+)/i);
+            const title = titleMatch ? titleMatch[1].trim() : file.name;
+            const commentMatch = data.content.match(/\*\*Action \w+ par \w+\*\*\s*:\s*(.+)/);
+            const comment = commentMatch ? ` — Commentaire: "${commentMatch[1].trim()}"` : "";
+            results.push(`[${status.toUpperCase()}] ${title}${comment}`);
+          } catch { /* skip */ }
+        }
+      } catch { /* dir may not exist */ }
+    }
+
+    if (results.length === 0) return "";
+    return `\n\n## Décisions récentes sur tes proposals\n\nNe re-propose PAS ces sujets sauf évolution significative :\n${results.join("\n")}\n`;
+  } catch {
+    return "";
+  }
+}
+
 async function getState(): Promise<Record<string, unknown>> {
   try {
     const f = await ghRead("brain/ouroboros/state.json");
@@ -75,6 +143,8 @@ export async function runOuroborosCycle(): Promise<void> {
 
   const state = await getState();
   const identity = await readIdentity();
+  const conversationContext = await getRecentConversationSummary();
+  const proposalDecisions = await getRecentProposalDecisions();
   const date = getCESTDate();
 
   const claudePath = await resolveClaudeBinary();
@@ -137,7 +207,7 @@ Pour le journal :
 - Tu utilises les outils de lecture pour explorer
 - Tu n'as pas accès à propose_action — tu génères les proposals dans ta réponse
 - Si rien d'important à signaler, écris une courte entrée de journal et 0 proposals
-`;
+${conversationContext}${proposalDecisions}`;
 
   const userPrompt = `Cycle Ouroboros du ${date}.
 
@@ -187,6 +257,7 @@ Commence par explorer : recent_history pour Fabrice et Romain (7 jours), counter
       path: `brain/ouroboros/proposals/pending/${filename}`,
       content: `---
 date: "${date}"
+timestamp: "${new Date().toISOString()}"
 auteur: Ouroboros
 priorité: ${priority}
 statut: pending

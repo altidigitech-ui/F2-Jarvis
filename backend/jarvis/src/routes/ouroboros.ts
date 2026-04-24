@@ -114,6 +114,16 @@ function extractPriority(meta: Record<string, string>, body: string): string {
   return bodyMatch ? bodyMatch[1].trim() : "medium";
 }
 
+function extractTimestampFromFilename(filename: string): string {
+  // Filenames: 2026-04-23-some-title-1776975062108.md
+  // The epoch timestamp is the last numeric segment before .md
+  const match = filename.match(/-(\d{13,})\.md$/);
+  if (match) {
+    return new Date(parseInt(match[1], 10)).toISOString();
+  }
+  return "";
+}
+
 function parseProposal(filename: string, content: string): ProposalMeta {
   const { meta, body } = parseFrontmatter(content);
   const id = meta.id || filename.replace(/\.md$/, "");
@@ -129,7 +139,7 @@ function parseProposal(filename: string, content: string): ProposalMeta {
     wing: meta.wing || "f2-core",
     title,
     preview,
-    timestamp: meta.timestamp || meta.date || "",
+    timestamp: meta.timestamp || extractTimestampFromFilename(filename) || meta.date || "",
     cycle: meta.cycle || "",
     fullContent: content,
   };
