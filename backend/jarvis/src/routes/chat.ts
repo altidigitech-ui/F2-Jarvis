@@ -62,7 +62,8 @@ function buildSystemPrompt(
   contextFiles: string[],
   history: JarvisMessage[],
   summary: string | null,
-  ouroborosSummary: string = ""
+  ouroborosSummary: string = "",
+  mempalaceContext: string = ""
 ): string {
   const isF2 = mode === "f2";
   const personaLabel = isF2
@@ -315,7 +316,7 @@ texte de la reply
 - counters_today(persona, mode) : état live des compteurs
 - propose_action(type, params, preview) : propose une écriture repo
 - recent_history(persona, days) : synthèse récente
-- mempalace_search(query) : archive verbatim des sessions passées
+- mempalace_search(query) : archive verbatim des sessions passées. Utilise-le PROACTIVEMENT quand l'utilisateur pose une question qui pourrait avoir été discutée avant ("on avait décidé quoi pour X ?", "qu'est-ce qu'on avait dit sur Y ?"). Les archives journalières sont dans le MemPalace — c'est ta mémoire long terme.
 - ouroboros_proposals(status, limit) : liste les proposals Ouroboros (pending/accepted/rejected)
 - web_search(query) : cherche sur le web des infos actuelles. Utiliser pour : veille concurrents, tendances e-commerce/Shopify/SaaS, vérifier ce qui se dit sur StoreMD, rechercher des cibles cold, valider une donnée. Toujours utiliser quand l'utilisateur demande quelque chose qui nécessite des infos actuelles hors du repo.
 
@@ -325,7 +326,7 @@ Tu peux enchaîner plusieurs tools avant de répondre. Exemple : "j'ai posté My
 
 ## CONTEXTE FICHIERS
 
-${contextFiles.join("\n")}${summaryBlock}${historyBlock}${ouroborosSummary}`;
+${contextFiles.join("\n")}${summaryBlock}${historyBlock}${ouroborosSummary}${mempalaceContext}`;
 }
 
 /**
@@ -429,7 +430,25 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     // Ouroboros summary non disponible — pas bloquant
   }
 
-  const systemPrompt = buildSystemPrompt(persona, resolvedMode, contexts, history, summary, ouroborosSummary);
+  // Load recent MemPalace drawers for context
+  let mempalaceContext = "";
+  try {
+    const { searchDrawers } = await import("../lib/mempalace.js");
+    const dailyResults = await searchDrawers(`daily-archive ${persona}`, { wing: persona, limit: 3 });
+
+    if (dailyResults.length > 0) {
+      const snippets = dailyResults.map(d => {
+        const dateStr = d.date || d.filename;
+        const preview = d.content.slice(0, 300) + (d.content.length > 300 ? "…" : "");
+        return `[${dateStr}] ${preview}`;
+      });
+      mempalaceContext = `\n\n## MÉMOIRE RÉCENTE (MemPalace)\n\nDernières sessions archivées pour ${persona} :\n${snippets.join("\n\n")}\n\nUtilise le tool mempalace_search pour chercher des informations plus anciennes ou spécifiques.`;
+    }
+  } catch {
+    // MemPalace non disponible — pas bloquant
+  }
+
+  const systemPrompt = buildSystemPrompt(persona, resolvedMode, contexts, history, summary, ouroborosSummary, mempalaceContext);
 
   if (conversationId) {
     try {
