@@ -7,6 +7,7 @@ import { ContentCard } from "./jarvis/ContentCard";
 import { TagLine } from "./jarvis/TagLine";
 import { parseJarvisMarkers } from "@/lib/parseJarvisMarkers";
 import { onSendToChat, onAutoSendChat, emitRepoUpdated } from "@/lib/jarvisEvents";
+import { MarkdownRenderer } from "./jarvis/MarkdownRenderer";
 
 type Persona = "romain" | "fabrice";
 type Mode = "normal" | "f2";
@@ -1060,10 +1061,10 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 </div>
 
                 {/* Bubble */}
-                <div className={`max-w-[75%] ${msg.role === "user" ? "items-end" : "items-start"} flex flex-col gap-1`}>
+                <div className={`${msg.role === "user" ? "max-w-[75%] items-end" : "max-w-[90%] items-start"} flex flex-col gap-1`}>
                   <div
-                    className={`px-4 py-3 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
-                      msg.role === "user" ? "rounded-tr-sm" : "glass rounded-tl-sm"
+                    className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
+                      msg.role === "user" ? "whitespace-pre-wrap rounded-tr-sm" : "glass rounded-tl-sm"
                     }`}
                     style={
                       msg.role === "user"
@@ -1106,7 +1107,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                             const parsed = parseJarvisMarkers(msg.content);
                             return (
                               <>
-                                <span>{parsed.cleanText}</span>
+                                <MarkdownRenderer content={parsed.cleanText} accentColor={colors.primary} />
                                 {msg.content === "" && isStreaming && (
                                   <span
                                     className="inline-block w-1 h-3 ml-0.5 animate-pulse"
