@@ -94,6 +94,40 @@ function validateCreateFilePath(path: string): void {
   }
 }
 
+const PATCH_FILE_ALLOWED_PREFIXES = [
+  ...CREATE_FILE_ALLOWED_PREFIXES,
+  "backend/jarvis/src/",
+  "ui/jarvis/",
+  ".claude/skills/",
+];
+
+function validatePatchFilePath(path: string): void {
+  if (!path || typeof path !== "string") {
+    throw new Error("patch_file: path is required");
+  }
+  if (path.includes("..") || path.startsWith("/") || path.includes("\\")) {
+    throw new Error(`patch_file: illegal path "${path}" (no traversal, no absolute, no backslash)`);
+  }
+  const lastDot = path.lastIndexOf(".");
+  if (lastDot < 0) {
+    throw new Error(`patch_file: path "${path}" has no extension`);
+  }
+  const ext = path.slice(lastDot).toLowerCase();
+  const patchAllowedExts = new Set([...CREATE_FILE_ALLOWED_EXTENSIONS, ".ts", ".tsx"]);
+  if (!patchAllowedExts.has(ext)) {
+    throw new Error(
+      `patch_file: extension "${ext}" not allowed. Allowed: ${[...patchAllowedExts].join(", ")}`
+    );
+  }
+  const hasPrefix = PATCH_FILE_ALLOWED_PREFIXES.some((p) => path.startsWith(p));
+  const hasRootPattern = CREATE_FILE_ALLOWED_ROOT_PATTERNS.some((re) => re.test(path));
+  if (!hasPrefix && !hasRootPattern) {
+    throw new Error(
+      `patch_file: path "${path}" not allowed. Must start with one of: ${PATCH_FILE_ALLOWED_PREFIXES.join(", ")}`
+    );
+  }
+}
+
 function validateCreateFileContent(content: string): void {
   if (typeof content !== "string") {
     throw new Error("create_file: content must be a string");
@@ -154,6 +188,11 @@ export function resolveFilePath(
         path,
         commitPrefix: `create`,
       };
+    }
+    case "patch_file": {
+      const path = String(_params.path || "");
+      validatePatchFilePath(path);
+      return { path, commitPrefix: "patch" };
     }
     default:
       throw new Error(`Unknown action_type: ${actionType}`);
@@ -294,6 +333,33 @@ export function applyTransform(
         String(params.rationale || ""),
         params.result ? String(params.result) : "En cours"
       );
+
+    case "patch_file": {
+      const patches = (params.patches as Array<{ search: string; replace: string }>) || [];
+      let result = md;
+      const applied: string[] = [];
+      const failed: string[] = [];
+
+      for (const patch of patches) {
+        if (!patch.search || result.includes(patch.search)) {
+          if (patch.search) {
+            result = result.replace(patch.search, patch.replace);
+            applied.push(patch.search.slice(0, 40));
+          }
+        } else {
+          failed.push(patch.search.slice(0, 40));
+        }
+      }
+
+      if (failed.length > 0) {
+        console.warn(`[action-executor] patch_file: ${failed.length} patches not found:`, failed);
+      }
+      if (applied.length === 0 && patches.length > 0) {
+        console.error(`[action-executor] patch_file: NO patches applied out of ${patches.length}`);
+      }
+
+      return result;
+    }
 
     default:
       throw new Error(`Unknown action_type: ${actionType}`);

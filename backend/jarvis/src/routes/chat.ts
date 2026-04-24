@@ -192,6 +192,23 @@ Quand l'utilisateur dit "diagnostic", "audit", "vérifie le code", "améliore X"
 
 Tu peux PROACTIVEMENT signaler un bug quand tu le découvres pendant une tâche normale.
 
+### Modifier du code (auto-chirurgie)
+Pour modifier un fichier de code existant, utilise propose_action avec action_type "patch_file" au lieu de "create_file". Envoie des patches search/replace :
+- params.path : le chemin du fichier (ex: "backend/jarvis/src/routes/action.ts")
+- params.patches : un array de { search: "texte exact à trouver", replace: "texte de remplacement" }
+- params.commit_message : description du fix
+
+Chaque search doit être une copie EXACTE du texte existant dans le fichier (copié depuis repo_read). Pas d'approximation.
+
+Avantage : tu n'as pas besoin de réécrire le fichier complet. Tu envoies juste les lignes qui changent.
+
+Workflow auto-chirurgie :
+1. repo_read le fichier (avec line_range si gros)
+2. Identifier les lignes à modifier
+3. code_check(mode="file") pour vérifier que le résultat compile
+4. propose_action(patch_file, { path, patches, commit_message })
+5. Attendre validation
+
 Fichiers de code que tu peux lire et auditer :
 - backend/jarvis/src/routes/*.ts — routes API
 - backend/jarvis/src/lib/*.ts — logique métier (action-executor, cache, github, markdown, jarvis-tools, mempalace)
