@@ -9,9 +9,10 @@ type Props = {
   accentColor: string;
   loading?: boolean;
   persona?: string;
+  onItemDone?: (title: string) => void;
 };
 
-export function TimelineColumn({ items, accentColor, loading, persona }: Props) {
+export function TimelineColumn({ items, accentColor, loading, persona, onItemDone }: Props) {
   return (
     <aside
       className="w-[260px] flex-none flex flex-col border-r overflow-y-auto"
@@ -32,8 +33,14 @@ export function TimelineColumn({ items, accentColor, loading, persona }: Props) 
             Aucun post planifié aujourd'hui
           </div>
         )}
-        {items.map((item, i) => (
-          <TimelineCard key={i} item={item} accentColor={accentColor} persona={persona} />
+        {items.map((item) => (
+          <TimelineCard
+            key={`${item.title}-${item.time}-${item.publishedBy}`}
+            item={item}
+            accentColor={accentColor}
+            persona={persona}
+            onItemDone={onItemDone}
+          />
         ))}
       </div>
     </aside>
@@ -42,22 +49,33 @@ export function TimelineColumn({ items, accentColor, loading, persona }: Props) 
 
 const publishedByMap: Record<string, string> = { F: "fabrice", R: "romain", F2: "f2" };
 
-function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; accentColor: string; persona?: string }) {
+function TimelineCard({
+  item,
+  accentColor,
+  persona,
+  onItemDone,
+}: {
+  item: TimelineItem;
+  accentColor: string;
+  persona?: string;
+  onItemDone?: (title: string) => void;
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [localDone, setLocalDone] = useState(false);
 
   const isOwnPost =
     publishedByMap[item.publishedBy] === persona ||
     (item.publishedBy === "F2" && persona === "romain");
 
-  const effectiveStatus = localDone ? "done" : item.status;
-  const isDone = effectiveStatus === "done";
+  const isDone = item.status === "done";
   const isBlocked = !isDone && item.status === "blocked";
 
   const actionLabel = (() => {
     if (item.platform === "OBJECTIF") return "";
-    if (item.platform === "CROSS") return "→ Reply à poster dans les 5 min";
+    if (item.platform === "CROSS") {
+      if (isDone) return "✅ Cross fait";
+      return "→ Reply à poster dans les 5 min";
+    }
     if (isDone) return "✅ Publié";
     if (isOwnPost) return item.time ? `→ Publier à ${item.time}` : "→ À publier";
     return `→ Post de ${item.publishedBy} — cross à faire dessus`;
@@ -94,7 +112,7 @@ function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; acce
 
   async function markPublished() {
     setMenuOpen(false);
-    setLocalDone(true);
+    onItemDone?.(item.title);
 
     try {
       const res = await fetch("/api/action", {
@@ -108,11 +126,8 @@ function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; acce
       });
       if (res.ok) {
         emitRepoUpdated({ actionType: "mark_published" });
-      } else {
-        setLocalDone(false);
       }
     } catch {
-      setLocalDone(false);
       emitSendToChat(`j'ai posté ${item.title}`);
     }
   }
@@ -191,6 +206,7 @@ function TimelineCard({ item, accentColor, persona }: { item: TimelineItem; acce
           ) : (
             <button
               onClick={() => {
+                onItemDone?.(item.title);
                 emitSendToChat(`cross fait sur ${item.title}`);
                 setMenuOpen(false);
               }}

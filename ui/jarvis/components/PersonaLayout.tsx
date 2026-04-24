@@ -337,6 +337,47 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const [mobilePanel, setMobilePanel] = useState<MobilePanel>(null);
   const pendingOpsRef = useRef(0);
 
+  const todayKey = new Date().toISOString().slice(0, 10);
+  const doneItemsKey = `jarvis_done_${persona}_${f2Mode ? "f2" : "normal"}_${todayKey}`;
+
+  const [doneItems, setDoneItems] = useState<Set<string>>(() => {
+    if (typeof window === "undefined") return new Set();
+    try {
+      const stored = window.localStorage.getItem(doneItemsKey);
+      return stored ? new Set(JSON.parse(stored) as string[]) : new Set();
+    } catch {
+      return new Set();
+    }
+  });
+
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(doneItemsKey);
+      setDoneItems(stored ? new Set(JSON.parse(stored) as string[]) : new Set());
+    } catch {
+      setDoneItems(new Set());
+    }
+  }, [doneItemsKey]);
+
+  useEffect(() => {
+    if (doneItems.size > 0) {
+      try {
+        window.localStorage.setItem(doneItemsKey, JSON.stringify([...doneItems]));
+      } catch {
+        /* quota or private mode */
+      }
+    }
+  }, [doneItems, doneItemsKey]);
+
+  const markTimelineItemDone = useCallback((itemTitle: string) => {
+    setDoneItems((prev) => {
+      if (prev.has(itemTitle)) return prev;
+      const next = new Set(prev);
+      next.add(itemTitle);
+      return next;
+    });
+  }, []);
+
   // Restore f2Mode from localStorage (client-only)
   useEffect(() => {
     try {
@@ -417,7 +458,10 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   }, [fetchContext]);
 
   const { counters, alerts } = ctx;
-  const timeline = f2Mode ? ctx.weekPlanningF2 : ctx.timeline;
+  const rawTimeline = f2Mode ? ctx.weekPlanningF2 : ctx.timeline;
+  const timeline = rawTimeline.map((item) =>
+    doneItems.has(item.title) ? { ...item, status: "done" as const } : item
+  );
 
   const filePaths = f2Mode
     ? {
@@ -566,7 +610,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             <button onClick={() => setMobilePanel(null)} className="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} persona={persona} />
+            <TimelineColumn
+              items={timeline}
+              accentColor={accentColor}
+              loading={loading}
+              persona={persona}
+              onItemDone={markTimelineItemDone}
+            />
           </div>
         </div>
       )}
@@ -711,7 +761,13 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         </aside>
 
         <div className="hidden md:flex h-full overflow-hidden">
-          <TimelineColumn items={timeline} accentColor={accentColor} loading={loading} persona={persona} />
+          <TimelineColumn
+            items={timeline}
+            accentColor={accentColor}
+            loading={loading}
+            persona={persona}
+            onItemDone={markTimelineItemDone}
+          />
         </div>
 
         {/* Centre — flex-1 */}
