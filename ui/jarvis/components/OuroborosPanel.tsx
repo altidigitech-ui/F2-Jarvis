@@ -55,6 +55,7 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
   const [triggerConfirm, setTriggerConfirm] = useState(false);
   const [actionLoading, setActionLoading] = useState(false);
   const [initLoading, setInitLoading] = useState(false);
+  const [purgeLoading, setPurgeLoading] = useState(false);
 
   const fetchStatus = useCallback(async () => {
     try {
@@ -356,6 +357,30 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                   </button>
                 </div>
               )}
+
+              <button
+                onClick={async () => {
+                  if (!confirm("Purger les proposals redondantes ? Les doublons seront déplacés dans ignored/.")) return;
+                  setPurgeLoading(true);
+                  try {
+                    const res = await fetch("/api/ouroboros/purge-duplicates", { method: "POST" });
+                    const data = await res.json();
+                    if (data.ok) {
+                      alert(`Purgé ${data.purged} doublons sur ${data.total} proposals. ${data.kept} conservées.`);
+                      await fetchStatus();
+                    }
+                  } catch {
+                    alert("Erreur lors de la purge");
+                  } finally {
+                    setPurgeLoading(false);
+                  }
+                }}
+                disabled={purgeLoading}
+                className="w-full text-[12px] font-mono py-2 rounded transition-all text-slate-500 hover:text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed min-h-[32px]"
+                style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                {purgeLoading ? "Purge…" : "Purger les doublons"}
+              </button>
 
               <button
                 onClick={() => setShowDiary(true)}

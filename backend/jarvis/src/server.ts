@@ -35,6 +35,7 @@ import {
   ouroborosKillSwitch,
   ouroborosDiary,
   ouroborosInitialize,
+  ouroborosPurgeDuplicates,
 } from "./routes/ouroboros.js";
 
 const app = express();
@@ -98,6 +99,7 @@ app.post("/ouroboros/trigger", ouroborosTrigger);
 app.post("/ouroboros/kill-switch", ouroborosKillSwitch);
 app.get("/ouroboros/diary", ouroborosDiary);
 app.post("/ouroboros/initialize", ouroborosInitialize);
+app.post("/ouroboros/purge-duplicates", ouroborosPurgeDuplicates);
 
 app.listen(PORT, () => {
   console.log(`JARVIS backend on port ${PORT}`);
