@@ -367,15 +367,17 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
   let mempalaceContext = "";
   try {
     const { searchDrawers } = await import("../lib/mempalace.js");
-    const dailyResults = await searchDrawers(`daily-archive ${persona}`, { wing: persona, limit: 3 });
+    const mempalaceWing = resolvedMode === "f2" ? "f2" : persona;
+    const dailyResults = await searchDrawers(`daily-archive ${mempalaceWing}`, { wing: mempalaceWing, limit: 3 });
 
     if (dailyResults.length > 0) {
+      const mempalaceLabel = resolvedMode === "f2" ? "F2 (@foundrytwo)" : persona;
       const snippets = dailyResults.map(d => {
         const dateStr = d.date || d.filename;
         const preview = d.content.slice(0, 300) + (d.content.length > 300 ? "…" : "");
         return `[${dateStr}] ${preview}`;
       });
-      mempalaceContext = `\n\n## MÉMOIRE RÉCENTE (MemPalace)\n\nDernières sessions archivées pour ${persona} :\n${snippets.join("\n\n")}\n\nUtilise le tool mempalace_search pour chercher des informations plus anciennes ou spécifiques.`;
+      mempalaceContext = `\n\n## MÉMOIRE RÉCENTE (MemPalace)\n\nDernières sessions archivées pour ${mempalaceLabel} :\n${snippets.join("\n\n")}\n\nUtilise le tool mempalace_search pour chercher des informations plus anciennes ou spécifiques.`;
     }
   } catch {
     // MemPalace non disponible — pas bloquant

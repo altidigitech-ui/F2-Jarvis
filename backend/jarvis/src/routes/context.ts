@@ -339,27 +339,40 @@ function parseF2Planning(f2PlanHebdo: string, publishedBy: string): TimelineItem
 export async function contextRoute(req: Request, res: Response): Promise<void> {
   const persona = (req.query.persona as string || "romain") as "romain" | "fabrice";
   const mode = req.query.mode as string || "normal";
+  const isF2 = mode === "f2";
+  // In F2 mode, the "active" files come from f2/, not romain/
+  const activePrefix = isF2 ? "f2" : persona;
 
   const { day: today, dayName, weekday } = getToday();
 
   const otherPersona = persona === "fabrice" ? "romain" : "fabrice";
   const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo, crossExecutionLog, otherPlanHebdo] =
     await Promise.all([
-      readRepo(`${persona}/plan-hebdo.md`),
-      readRepo(`${persona}/cold/cold-outreach-log.md`),
-      readRepo(`${persona}/engagement/engagement-log.md`),
-      readRepo(`${persona}/cross-engagement-tracker.md`),
-      readRepo(`${persona}/progress-semaine.md`),
+      readRepo(`${activePrefix}/plan-hebdo.md`),
+      readRepo(`${activePrefix}/cold/cold-outreach-log.md`),
+      readRepo(`${activePrefix}/engagement/engagement-log.md`),
+      readRepo(`${activePrefix}/cross-engagement-tracker.md`),
+      readRepo(`${activePrefix}/progress-semaine.md`),
       readRepo("f2/plan-hebdo.md"),
-      readRepo(`${persona}/engagement/cross-execution-log.md`),
-      readRepo(`${otherPersona}/plan-hebdo.md`),
+      readRepo(`${activePrefix}/engagement/cross-execution-log.md`),
+      isF2
+        ? readRepo(`fabrice/plan-hebdo.md`)
+        : readRepo(`${otherPersona}/plan-hebdo.md`),
     ]);
 
-  const publishedBy = persona === "romain" ? "R" : "F";
+  const publishedBy = isF2 ? "F2" : (persona === "romain" ? "R" : "F");
   const timelinePosts = parseTimeline(planHebdo, today, dayName, publishedBy);
-  const otherPublishedBy = persona === "fabrice" ? "R" : "F";
-  const otherTimelinePosts = parseTimeline(otherPlanHebdo, today, dayName, otherPublishedBy);
-  const f2TimelinePosts = parseTimeline(f2PlanHebdo, today, dayName, "F2");
+  let otherTimelinePosts: TimelineItem[];
+  if (isF2) {
+    const fabricePosts = parseTimeline(otherPlanHebdo, today, dayName, "F");
+    const romainPlanHebdo = await readRepo("romain/plan-hebdo.md");
+    const romainPosts = parseTimeline(romainPlanHebdo, today, dayName, "R");
+    otherTimelinePosts = [...fabricePosts, ...romainPosts];
+  } else {
+    const otherPublishedBy = persona === "fabrice" ? "R" : "F";
+    otherTimelinePosts = parseTimeline(otherPlanHebdo, today, dayName, otherPublishedBy);
+  }
+  const f2TimelinePosts = isF2 ? [] : parseTimeline(f2PlanHebdo, today, dayName, "F2");
   const cold = countTodayAny(coldLog, today);
   const twEng = countTodayInSection(engagementLog, "TWITTER", today);
   const liCom = countTodayInSection(engagementLog, "LINKEDIN", today);
