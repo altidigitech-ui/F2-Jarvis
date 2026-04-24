@@ -124,6 +124,16 @@ function countTodayAny(content: string, today: string): number {
   return tableRows(content).filter((r) => r[0]?.includes(today)).length;
 }
 
+function countCrossFromExecutionLog(executionLog: string, today: string): number {
+  if (!executionLog) return 0;
+  const rows = tableRows(executionLog);
+  return rows.filter(r => {
+    const dayCell = r[1] || "";
+    const statusCell = r[5] || r[4] || "";
+    return dayCell.includes(today) && statusCell.includes("✅");
+  }).length;
+}
+
 function countCrossToday(crossTracker: string, today: string, weekday: string): number {
   if (!crossTracker) return 0;
   const sec = section(crossTracker, `${weekday} ${today}`) || section(crossTracker, today);
@@ -290,7 +300,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
 
   const { day: today, dayName, weekday } = getToday();
 
-  const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo] =
+  const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo, crossExecutionLog] =
     await Promise.all([
       readRepo(`${persona}/plan-hebdo.md`),
       readRepo(`${persona}/cold/cold-outreach-log.md`),
@@ -298,6 +308,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
       readRepo(`${persona}/cross-engagement-tracker.md`),
       readRepo(`${persona}/progress-semaine.md`),
       mode === "f2" ? readRepo("f2/plan-hebdo.md") : Promise.resolve(""),
+      readRepo(`${persona}/engagement/cross-execution-log.md`),
     ]);
 
   const publishedBy = persona === "romain" ? "R" : "F";
@@ -314,7 +325,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
     countTodayInSection(engagementLog, "INDIEHA", today);
   const ph = countTodayInSection(engagementLog, "PH", today);
   const ihPh = ih + ph;
-  const cross = countCrossToday(crossTracker, today, weekday);
+  const cross = countCrossFromExecutionLog(crossExecutionLog, today) || countCrossToday(crossTracker, today, weekday);
   const counters: CounterData = {
     cold,
     repliesIn: 0,
