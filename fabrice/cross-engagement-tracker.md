@@ -646,3 +646,10 @@ B5 ✅ — Reply F Twitter 18h35 (public scan day 1 / beta Pro = layer on top)
 ```
 B7 — reply F sur post F2 Twitter Couche B (day 14 feedback loop, Pro opens public after)
 ```
+
+
+**Reply R publiée (24/04/2026 19:30:26 CEST) :**
+
+```
+Cross B6 — F reply sur R Twitter Couche B
+```
