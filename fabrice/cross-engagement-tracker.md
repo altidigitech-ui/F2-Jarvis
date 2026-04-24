@@ -611,3 +611,31 @@ B1 ✅ — "Pro pipeline is up and running, onboarding is instant. 10 spots, tha
 ```
 B2 ✅ — "onboarding is me, day 14 call is me, slack during the 30 days is me. not a form, not a ticket system, not a bot."
 ```
+
+
+**Reply R publiée (24/04/2026 14:03:35 CEST) :**
+
+```
+A11 ✅ — Reply F LinkedIn 21h05 (builder story / APIs ghost billing + AI readiness + app impact)
+```
+
+
+**Reply R publiée (24/04/2026 14:03:35 CEST) :**
+
+```
+B3 ✅ — Reply F Twitter 18h35 (même deal, R prend la moitié / je prends la moitié)
+```
+
+
+**Reply R publiée (24/04/2026 14:03:35 CEST) :**
+
+```
+B4 ✅ — Reply F LinkedIn 21h05 (confirming from the build side — infra Pro chaude, flip the switch same session)
+```
+
+
+**Reply R publiée (24/04/2026 14:03:35 CEST) :**
+
+```
+B5 ✅ — Reply F Twitter 18h35 (public scan day 1 / beta Pro = layer on top)
+```
