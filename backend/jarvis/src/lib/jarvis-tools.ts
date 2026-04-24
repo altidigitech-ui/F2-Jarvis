@@ -25,7 +25,7 @@ export function createJarvisMcpServer(options: {
   // ---------------------------------------------------------------------------
   const repoRead = tool(
     "repo_read",
-    "Read a file from the F2-Jarvis repo. Path is relative to the repo root (e.g. 'fabrice/plan-hebdo.md', 'ANTI-IA.md'). Use this when you need the exact content of a specific file: plan-hebdo, progress-semaine, logs, publication examples, context files, system prompts, VOIX.md. Don't use for directory listing — use the search tool for discovery. For large files (>40K chars), use offset or line_range to read specific parts.",
+    "Read a file from the F2-Jarvis repo. Path is relative to the repo root (e.g. 'fabrice/plan-hebdo.md', 'ANTI-IA.md'). Use this when you need the exact content of a specific file: plan-hebdo, progress-semaine, logs, publication examples, context files, system prompts, VOIX.md. Don't use for directory listing — use the search tool for discovery. For large files (>40K chars), use offset or line_range to read specific parts. If the file does not exist, the tool returns 'File not found' — do NOT retry, move on to the next task.",
     {
       path: z.string().describe("Path relative to repo root"),
       offset: z.number().int().min(0).optional().describe("Start reading from this character offset (for large files)"),
