@@ -3,7 +3,7 @@ import { ghUpdate } from "../lib/github.js";
 import { cacheInvalidateAll } from "../lib/cache.js";
 import {
   appendDecision, appendProgressEvent, resolveProgressEvent,
-  appendColdLog, appendEngagementLog, markPlanPublished, markCrossPublished,
+  appendColdLog, appendEngagementLog, markPlanPublished,
 } from "../lib/markdown.js";
 
 type Persona = "romain" | "fabrice";
@@ -44,47 +44,46 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
       }
       case "mark_cross_published": {
         const post = payload.post || payload.title || "";
+        const crossId = payload.cross_id || "";
         const reply = payload.reply || "";
         const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
 
-        // Primary: cross-execution-log with ID matching
         await ghUpdate(
           `${persona}/engagement/cross-execution-log.md`,
           (md) => {
             const lines = md.split("\n");
+            let matched = false;
             for (let i = 0; i < lines.length; i++) {
               const line = lines[i];
               if (!line.startsWith("|") || line.startsWith("|---") || line.startsWith("|ID")) continue;
               const cells = line.split("|").map(c => c.trim());
-              const cellId = cells[1] || "";
-              const cellPost = cells[3] || "";
-              const postLower = post.toLowerCase();
-              if (
-                cellId.toLowerCase() === postLower ||
-                (postLower.length > 5 && cellPost.toLowerCase().includes(postLower.slice(0, 25))) ||
-                cellPost.toLowerCase().includes(postLower)
-              ) {
+              const cellId = (cells[1] || "").trim();
+              const cellPost = (cells[3] || "").toLowerCase();
+
+              const idMatch = crossId && cellId.toLowerCase() === crossId.toLowerCase();
+              const postAsId = /^[AB]\d{1,2}$/i.test(post) && cellId.toLowerCase() === post.toLowerCase();
+              const postWords = post.toLowerCase().split(/\s+/).filter((w: string) => w.length > 3);
+              const contentMatch = !idMatch && !postAsId && postWords.length > 0 &&
+                postWords.filter((w: string) => cellPost.includes(w)).length >= Math.ceil(postWords.length * 0.4);
+
+              if (idMatch || postAsId || contentMatch) {
                 if (cells.length >= 7) {
                   cells[5] = cells[5] === "—" ? `~${time}` : cells[5];
                   cells[6] = "✅ Fait";
-                  if (cells.length >= 8) cells[7] = `Confirmé ${time}`;
+                  if (cells.length >= 8) cells[7] = reply ? reply.slice(0, 50) : `Confirmé ${time}`;
                   lines[i] = "|" + cells.slice(1).join("|") + "|";
+                  matched = true;
+                  break;
                 }
               }
+            }
+            if (!matched) {
+              console.warn(`[action] mark_cross_published: no match for cross_id="${crossId}" post="${post}"`);
             }
             return lines.join("\n");
           },
           `[JARVIS] ✅ Cross: ${post.slice(0, 60)}`,
         );
-
-        // Side-effect: tracker
-        await ghUpdate(
-          `${persona}/cross-engagement-tracker.md`,
-          (md) => markCrossPublished(md, post, reply),
-          `[JARVIS] ✅ Cross tracker: ${post.slice(0, 50)}`,
-        ).catch((err) => {
-          console.error(`[action-executor] side-effect mark_cross tracker failed:`, err instanceof Error ? err.message : err);
-        });
 
         break;
       }

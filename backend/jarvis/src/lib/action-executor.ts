@@ -1,12 +1,12 @@
 import { getSupabase } from "./supabase.js";
 import { ghCreate, ghRead, ghUpdate, ghWrite } from "./github.js";
+import { cacheInvalidateAll } from "./cache.js";
 import {
   appendColdLog,
   appendColdQueue,
   appendDecision,
   appendEngagementLog,
   appendProgressEvent,
-  markCrossPublished,
   markPlanPublished,
   resolveProgressEvent,
   updateColdReply,
@@ -239,6 +239,7 @@ export function applyTransform(
 
     case "mark_cross_published": {
       const post = String(params.post || "");
+      const crossId = String(params.cross_id || "");
       const reply = String(params.reply || "");
       const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
 
@@ -250,32 +251,34 @@ export function applyTransform(
         if (!line.startsWith("|") || line.startsWith("|---") || line.startsWith("|ID")) continue;
 
         const cells = line.split("|").map(c => c.trim());
-        // cells[0] = "", cells[1] = ID (B6, A12), cells[2] = Jour, cells[3] = Post cible, ...
-        const cellId = cells[1] || "";
-        const cellPost = cells[3] || "";
+        const cellId = (cells[1] || "").trim();
+        const cellPost = (cells[3] || "").toLowerCase();
 
-        const postLower = post.toLowerCase();
-        const matchById = cellId.toLowerCase() === postLower;
-        const matchByContent = postLower.length > 5 && cellPost.toLowerCase().includes(postLower.slice(0, 25));
-        const matchByPartial = cellPost.toLowerCase().includes(postLower) || postLower.includes(cellPost.toLowerCase().slice(0, 20));
+        // Priority 1: match by explicit cross_id (B6, A12)
+        const idMatch = crossId && cellId.toLowerCase() === crossId.toLowerCase();
+        // Priority 2: match by ID if post looks like an ID (B6, A12)
+        const postAsId = /^[AB]\d{1,2}$/i.test(post) && cellId.toLowerCase() === post.toLowerCase();
+        // Priority 3: match by content — check if cellPost contains key words from post
+        const postWords = post.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+        const contentMatch = !idMatch && !postAsId && postWords.length > 0 &&
+          postWords.filter(w => cellPost.includes(w)).length >= Math.ceil(postWords.length * 0.4);
 
-        if (matchById || matchByContent || matchByPartial) {
+        if (idMatch || postAsId || contentMatch) {
           if (cells.length >= 7) {
             cells[5] = cells[5] === "—" ? `~${time}` : cells[5];
-            cells[6] = `✅ Fait`;
-            if (cells.length >= 8 && reply) {
-              cells[7] = reply.slice(0, 50);
-            } else if (cells.length >= 8) {
-              cells[7] = `Confirmé ${time}`;
+            cells[6] = "✅ Fait";
+            if (cells.length >= 8) {
+              cells[7] = reply ? reply.slice(0, 50) : `Confirmé ${time}`;
             }
             lines[i] = "|" + cells.slice(1).join("|") + "|";
             matched = true;
+            break;
           }
         }
       }
 
       if (!matched) {
-        console.warn(`[action-executor] mark_cross_published: no match for "${post}" in cross-execution-log`);
+        console.warn(`[action-executor] mark_cross_published: no match for cross_id="${crossId}" post="${post}"`);
       }
 
       return lines.join("\n");
@@ -301,7 +304,7 @@ export function applyTransform(
  * After the primary action is committed, apply side-effects to other files.
  * Each side-effect is a separate commit (best-effort, non-blocking).
  */
-async function applySideEffects(
+export async function applySideEffects(
   actionType: string,
   params: Record<string, unknown>,
   persona: Persona
@@ -332,18 +335,8 @@ async function applySideEffects(
 
       case "mark_cross_published": {
         const post = String(params.post || "");
-        const reply = String(params.reply || "");
 
-        // Side-effect 1: update cross-engagement-tracker.md
-        await ghUpdate(
-          `${persona}/cross-engagement-tracker.md`,
-          (md) => markCrossPublished(md, post, reply),
-          `[JARVIS] ${persona}: tracker — ${post.slice(0, 30)}`
-        ).catch((err) => {
-          console.error(`[action-executor] side-effect mark_cross tracker failed:`, err instanceof Error ? err.message : err);
-        });
-
-        // Side-effect 2: log in progress-semaine.md
+        // Seul side-effect : log in progress-semaine.md
         await ghUpdate(
           `${persona}/progress-semaine.md`,
           (md) => appendProgressEvent(
@@ -489,6 +482,9 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
         `[JARVIS] ${commitPrefix}: ${previewShort}`
       );
     }
+
+    // Invalidate cache BEFORE side-effects so they read fresh data
+    cacheInvalidateAll();
 
     // Apply side-effects to other files (non-blocking)
     await applySideEffects(action.action_type, action.params, persona);
