@@ -66,8 +66,8 @@
 |---|---|---|
 |Lun 20/04|✅ Fait|— (pas de Couche B lundi)|
 |Mar 21/04|✅ Fait|✅ Fait|
-|Mer 22/04|✅ Fait|⏳ À faire (Couche B publie plus tard)|
-|Jeu 23/04|⏳|⏳|
+|Mer 22/04|✅ Fait|✅ Fait|
+|Jeu 23/04|✅ Fait|✅ Fait|
 |Ven 24/04|✅ Fait|⏳ B8 LI 21h|
 
 ## 6. S5 RECAP
