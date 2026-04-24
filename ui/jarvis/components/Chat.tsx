@@ -1361,7 +1361,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
               </button>
             ) : (
               <button
-                onClick={send}
+                onClick={() => send()}
                 disabled={!canSend}
                 className="flex-none w-7 h-7 rounded-lg flex items-center justify-center transition-all"
                 style={{
