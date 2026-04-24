@@ -657,6 +657,98 @@ The 'preview' field is a human-readable description shown to the user before the
   );
 
   // ---------------------------------------------------------------------------
+  // code_check — typecheck TypeScript files
+  // ---------------------------------------------------------------------------
+  const codeCheck = tool(
+    "code_check",
+    "Run TypeScript type checking on the backend codebase. Use BEFORE proposing a create_file on any .ts or .tsx file. Returns compilation errors if any. Can also check a specific file content without committing it.",
+    {
+      mode: z.enum(["full", "file"]).default("full").describe("'full' runs tsc --noEmit on the whole project. 'file' checks a specific file content."),
+      filePath: z.string().optional().describe("For mode 'file': the path of the file to check (e.g. 'backend/jarvis/src/routes/action.ts')"),
+      fileContent: z.string().optional().describe("For mode 'file': the new content to validate before committing"),
+    },
+    async ({ mode, filePath, fileContent }) => {
+      try {
+        const { execSync } = await import("child_process");
+
+        if (mode === "full") {
+          try {
+            const output = execSync("npx tsc --noEmit 2>&1", {
+              cwd: "/app",
+              timeout: 30_000,
+              encoding: "utf-8",
+            });
+            return {
+              content: [{ type: "text" as const, text: `✅ TypeScript check passed. No errors.\n${output.slice(0, 500)}` }],
+            };
+          } catch (err) {
+            const error = err as { stdout?: string; stderr?: string };
+            const output = (error.stdout || "") + (error.stderr || "");
+            const errors = output.split("\n").filter(l => l.includes("error TS"));
+            return {
+              content: [{
+                type: "text" as const,
+                text: `❌ TypeScript check failed — ${errors.length} error(s):\n\n${errors.slice(0, 20).join("\n")}\n\n${errors.length > 20 ? `... and ${errors.length - 20} more` : ""}`,
+              }],
+            };
+          }
+        } else if (mode === "file" && filePath && fileContent) {
+          const fs = await import("fs/promises");
+          const fullPath = filePath.startsWith("/app/") ? filePath : `/app/${filePath}`;
+
+          let original: string | null = null;
+          try {
+            original = await fs.readFile(fullPath, "utf-8");
+          } catch {
+            // new file
+          }
+
+          await fs.writeFile(fullPath, fileContent, "utf-8");
+
+          try {
+            execSync("npx tsc --noEmit 2>&1", {
+              cwd: "/app",
+              timeout: 30_000,
+              encoding: "utf-8",
+            });
+            return {
+              content: [{ type: "text" as const, text: `✅ File "${filePath}" compiles. No errors.` }],
+            };
+          } catch (err) {
+            const error = err as { stdout?: string; stderr?: string };
+            const output = (error.stdout || "") + (error.stderr || "");
+            const errors = output.split("\n").filter(l => l.includes("error TS"));
+            return {
+              content: [{
+                type: "text" as const,
+                text: `❌ File "${filePath}" has TypeScript errors:\n\n${errors.slice(0, 20).join("\n")}`,
+              }],
+            };
+          } finally {
+            if (original !== null) {
+              await fs.writeFile(fullPath, original, "utf-8");
+            } else {
+              await fs.unlink(fullPath).catch(() => {});
+            }
+          }
+        }
+
+        return {
+          content: [{ type: "text" as const, text: "Invalid mode or missing parameters." }],
+        };
+      } catch (err) {
+        return {
+          content: [{
+            type: "text" as const,
+            text: `code_check error: ${err instanceof Error ? err.message : String(err)}`,
+          }],
+          isError: true,
+        };
+      }
+    }
+  );
+
+  // ---------------------------------------------------------------------------
   // ouroboros_proposals
   // ---------------------------------------------------------------------------
   const ouroborosProposals = tool(
@@ -743,6 +835,7 @@ The 'preview' field is a human-readable description shown to the user before the
       recentHistory,
       mempalaceSearch,
       conversationSearch,
+      codeCheck,
       ouroborosProposals,
     ],
   });
@@ -762,6 +855,7 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__recent_history",
   "mcp__jarvis__mempalace_search",
   "mcp__jarvis__conversation_search",
+  "mcp__jarvis__code_check",
   "mcp__jarvis__ouroboros_proposals",
   "web_search",
 ];
