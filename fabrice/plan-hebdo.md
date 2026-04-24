@@ -10,7 +10,7 @@
 |Mar 21/04|`store-md-tier-apps-danger`|14 apps = 8.8s total bloat|✅ Publié 13h42|
 |Mer 22/04|`store-md-before-after-billing`|🧵 THREAD $40k/mo 72h case study|⏳|
 |Jeu 23/04|`store-md-list-hidden`|5 things Shopify dashboard HIDES|✅ Publié 13h00|
-|Ven 24/04|`store-md-money-visitors`|$189/mo × 12 = $2,268/year|⏳|
+|Ven 24/04|`store-md-money-visitors`|$189/mo × 12 = $2,268/year|✅ Publié 13h00|
 |Sam 25/04|`store-md-horror-slow-store`|Scan volume this week|⏳|
 |Dim 26/04|`store-md-before-after-ai`|🧵 THREAD AI invisibility technique|⏳|
 
@@ -20,15 +20,15 @@
 |---|---|---|---|
 |Mer 22/04|`store-md-beta-10-spots`|M1 Beta builder angle|⏳|
 |Jeu 23/04|`store-md-scan-demo-agency`|M2+M3 Scan gratuit + cold scan|⏳|
-|Ven 24/04|`store-md-beta-progress`|M4 Pro findings teaser|⏳|
+|Ven 24/04|`store-md-beta-progress`|M4 Pro findings teaser|✅ Publié 18h30|
 
 ## 2. POSTS LINKEDIN F (EN)
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 21/04|Deep dive: ghost billing detection 60s|⏳|
-|Mer 22/04|Deep dive: Shopify invisible to ChatGPT|⏳|
-|Jeu 23/04|Social proof: agency $22k in 2 days|⏳|
+|Mar 21/04|Deep dive: ghost billing detection 60s|✅ Publié|
+|Mer 22/04|Deep dive: Shopify invisible to ChatGPT|✅ Publié|
+|Jeu 23/04|Social proof: agency $22k in 2 days|✅ Publié|
 
 ## 2B. POSTS LINKEDIN F — COUCHE B (2 posts beta, 21h00 CEST)
 
