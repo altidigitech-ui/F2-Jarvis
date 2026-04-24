@@ -639,3 +639,10 @@ B4 ✅ — Reply F LinkedIn 21h05 (confirming from the build side — infra Pro 
 ```
 B5 ✅ — Reply F Twitter 18h35 (public scan day 1 / beta Pro = layer on top)
 ```
+
+
+**Reply R publiée (24/04/2026 19:28:10 CEST) :**
+
+```
+B7 — reply F sur post F2 Twitter Couche B (day 14 feedback loop, Pro opens public after)
+```
