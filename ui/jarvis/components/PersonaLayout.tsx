@@ -57,9 +57,10 @@ interface PersonaTargets {
 }
 
 // Fallback targets used when the /targets fetch fails
-const TARGETS_FALLBACK: Record<"romain" | "fabrice", PersonaTargets> = {
-  romain:  { cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 2, ph: 5, ih: 5, ihPh: 5,  engTarget: 30, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK","IH","PH"], hasIhPh: true,  hasPh: true,  hasIh: true  },
-  fabrice: { cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 2, ph: 0, ih: 0, ihPh: 0, engTarget: 30, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"],             hasIhPh: false, hasPh: false, hasIh: false },
+const TARGETS_FALLBACK: Record<string, PersonaTargets> = {
+  romain:  { cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 4, ph: 0, ih: 0, ihPh: 0, engTarget: 48, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"], hasIhPh: false, hasPh: false, hasIh: false },
+  fabrice: { cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 4, ph: 0, ih: 0, ihPh: 0, engTarget: 58, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"], hasIhPh: false, hasPh: false, hasIh: false },
+  f2:      { cold: 0,  twEng: 10, liCom: 10, reddit: 0, facebook: 0, cross: 4, ph: 0, ih: 10, ihPh: 10, engTarget: 34, platforms: ["TWITTER","LINKEDIN","IH"],               hasIhPh: true,  hasPh: false, hasIh: true  },
 };
 
 const EMPTY_CONTEXT: ContextData = {
@@ -392,13 +393,16 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
     fetch("/api/config/targets")
       .then((r) => r.ok ? r.json() : null)
       .then((data) => {
-        if (data && data[persona]) {
-          setTargets(data[persona] as PersonaTargets);
+        if (data) {
+          const targetKey = f2Mode ? "f2" : persona;
+          if (data[targetKey]) {
+            setTargets(data[targetKey] as PersonaTargets);
+          }
           setWeekNumber(data.weekNumber ?? 1);
         }
       })
       .catch(() => { /* keep fallback */ });
-  }, [persona]);
+  }, [persona, f2Mode]);
 
   const setF2Mode = useCallback((val: boolean) => {
     setF2ModeState(val);
