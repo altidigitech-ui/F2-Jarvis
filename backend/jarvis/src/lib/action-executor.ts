@@ -142,7 +142,7 @@ export function resolveFilePath(
       return { path: `${persona}/progress-semaine.md`, commitPrefix: `${persona}: progress` };
     case "mark_cross_published":
       return {
-        path: `${persona}/cross-engagement-tracker.md`,
+        path: `${persona}/engagement/cross-execution-log.md`,
         commitPrefix: `${persona}: cross published`,
       };
     case "log_decision":
@@ -237,8 +237,49 @@ export function applyTransform(
         String(params.action || "")
       );
 
-    case "mark_cross_published":
-      return markCrossPublished(md, String(params.post || ""), String(params.reply || ""));
+    case "mark_cross_published": {
+      const post = String(params.post || "");
+      const reply = String(params.reply || "");
+      const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
+
+      const lines = md.split("\n");
+      let matched = false;
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (!line.startsWith("|") || line.startsWith("|---") || line.startsWith("|ID")) continue;
+
+        const cells = line.split("|").map(c => c.trim());
+        // cells[0] = "", cells[1] = ID (B6, A12), cells[2] = Jour, cells[3] = Post cible, ...
+        const cellId = cells[1] || "";
+        const cellPost = cells[3] || "";
+
+        const postLower = post.toLowerCase();
+        const matchById = cellId.toLowerCase() === postLower;
+        const matchByContent = postLower.length > 5 && cellPost.toLowerCase().includes(postLower.slice(0, 25));
+        const matchByPartial = cellPost.toLowerCase().includes(postLower) || postLower.includes(cellPost.toLowerCase().slice(0, 20));
+
+        if (matchById || matchByContent || matchByPartial) {
+          if (cells.length >= 7) {
+            cells[5] = cells[5] === "—" ? `~${time}` : cells[5];
+            cells[6] = `✅ Fait`;
+            if (cells.length >= 8 && reply) {
+              cells[7] = reply.slice(0, 50);
+            } else if (cells.length >= 8) {
+              cells[7] = `Confirmé ${time}`;
+            }
+            lines[i] = "|" + cells.slice(1).join("|") + "|";
+            matched = true;
+          }
+        }
+      }
+
+      if (!matched) {
+        console.warn(`[action-executor] mark_cross_published: no match for "${post}" in cross-execution-log`);
+      }
+
+      return lines.join("\n");
+    }
 
     case "resolve_alert":
       return resolveProgressEvent(md, String(params.keyword || ""));
@@ -283,29 +324,26 @@ async function applySideEffects(
             "Monitorer impressions + replies"
           ),
           `[JARVIS] ${persona}: progress — published "${title.slice(0, 30)}"`
-        ).catch(() => {});
+        ).catch((err) => {
+          console.error(`[action-executor] side-effect mark_published failed:`, err instanceof Error ? err.message : err);
+        });
         break;
       }
 
       case "mark_cross_published": {
         const post = String(params.post || "");
-        const crossLogPath = `${persona}/engagement/cross-execution-log.md`;
-        await ghUpdate(
-          crossLogPath,
-          (md) => {
-            const lines = md.split("\n");
-            for (let i = 0; i < lines.length; i++) {
-              if (lines[i].includes("|") && lines[i].toLowerCase().includes(post.toLowerCase().slice(0, 30))) {
-                lines[i] = lines[i]
-                  .replace(/⏳[^|]*/g, `✅ Fait`)
-                  .replace(/—\|/g, `${time}|`);
-              }
-            }
-            return lines.join("\n");
-          },
-          `[JARVIS] ${persona}: cross-execution-log — ${post.slice(0, 30)}`
-        ).catch(() => {});
+        const reply = String(params.reply || "");
 
+        // Side-effect 1: update cross-engagement-tracker.md
+        await ghUpdate(
+          `${persona}/cross-engagement-tracker.md`,
+          (md) => markCrossPublished(md, post, reply),
+          `[JARVIS] ${persona}: tracker — ${post.slice(0, 30)}`
+        ).catch((err) => {
+          console.error(`[action-executor] side-effect mark_cross tracker failed:`, err instanceof Error ? err.message : err);
+        });
+
+        // Side-effect 2: log in progress-semaine.md
         await ghUpdate(
           `${persona}/progress-semaine.md`,
           (md) => appendProgressEvent(
@@ -316,7 +354,9 @@ async function applySideEffects(
             "✅"
           ),
           `[JARVIS] ${persona}: progress — cross ${post.slice(0, 30)}`
-        ).catch(() => {});
+        ).catch((err) => {
+          console.error(`[action-executor] side-effect mark_cross progress failed:`, err instanceof Error ? err.message : err);
+        });
         break;
       }
 
@@ -343,7 +383,9 @@ async function applySideEffects(
             return lines.join("\n");
           },
           `[JARVIS] ${persona}: progress — cold count +${count}`
-        ).catch(() => {});
+        ).catch((err) => {
+          console.error(`[action-executor] side-effect cold_count failed:`, err instanceof Error ? err.message : err);
+        });
 
         await ghUpdate(
           `${persona}/progress-semaine.md`,
@@ -355,7 +397,9 @@ async function applySideEffects(
             "Suivre les réponses"
           ),
           `[JARVIS] ${persona}: progress — cold event`
-        ).catch(() => {});
+        ).catch((err) => {
+          console.error(`[action-executor] side-effect cold_event failed:`, err instanceof Error ? err.message : err);
+        });
         break;
       }
 
@@ -372,7 +416,9 @@ async function applySideEffects(
             ""
           ),
           `[JARVIS] ${persona}: progress — engagement`
-        ).catch(() => {});
+        ).catch((err) => {
+          console.error(`[action-executor] side-effect log_engagement failed:`, err instanceof Error ? err.message : err);
+        });
         break;
       }
 

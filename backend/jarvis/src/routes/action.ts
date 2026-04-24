@@ -45,11 +45,47 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
       case "mark_cross_published": {
         const post = payload.post || payload.title || "";
         const reply = payload.reply || "";
+        const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
+
+        // Primary: cross-execution-log with ID matching
+        await ghUpdate(
+          `${persona}/engagement/cross-execution-log.md`,
+          (md) => {
+            const lines = md.split("\n");
+            for (let i = 0; i < lines.length; i++) {
+              const line = lines[i];
+              if (!line.startsWith("|") || line.startsWith("|---") || line.startsWith("|ID")) continue;
+              const cells = line.split("|").map(c => c.trim());
+              const cellId = cells[1] || "";
+              const cellPost = cells[3] || "";
+              const postLower = post.toLowerCase();
+              if (
+                cellId.toLowerCase() === postLower ||
+                (postLower.length > 5 && cellPost.toLowerCase().includes(postLower.slice(0, 25))) ||
+                cellPost.toLowerCase().includes(postLower)
+              ) {
+                if (cells.length >= 7) {
+                  cells[5] = cells[5] === "—" ? `~${time}` : cells[5];
+                  cells[6] = "✅ Fait";
+                  if (cells.length >= 8) cells[7] = `Confirmé ${time}`;
+                  lines[i] = "|" + cells.slice(1).join("|") + "|";
+                }
+              }
+            }
+            return lines.join("\n");
+          },
+          `[JARVIS] ✅ Cross: ${post.slice(0, 60)}`,
+        );
+
+        // Side-effect: tracker
         await ghUpdate(
           `${persona}/cross-engagement-tracker.md`,
           (md) => markCrossPublished(md, post, reply),
-          `[JARVIS] ✅ Cross: ${post.slice(0, 60)}`,
-        );
+          `[JARVIS] ✅ Cross tracker: ${post.slice(0, 50)}`,
+        ).catch((err) => {
+          console.error(`[action-executor] side-effect mark_cross tracker failed:`, err instanceof Error ? err.message : err);
+        });
+
         break;
       }
       case "log_decision": {
