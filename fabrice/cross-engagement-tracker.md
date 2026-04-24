@@ -667,3 +667,10 @@ F reply cross B8 ✅ — Ven 24/04
 ```
 B8 — F reply sur R LinkedIn Couche B Ven 24/04 — confirmé fait ~20h09
 ```
+
+
+**Reply R publiée (24/04/2026 20:35:04 CEST) :**
+
+```
+B8 — Reply F sur R LinkedIn Couche B vendredi 24/04 ~20h09
+```
