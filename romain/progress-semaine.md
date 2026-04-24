@@ -15,6 +15,8 @@
 |23/04|Twitter engagement (compte R) — 3 replies feed (session 2)|Twitter (compte R)|Engagement|3 replies : @andrejtumo 15-30K (bundle fix AOV cold traffic), @kamil_sattar 10K+ (Shopping segmentation by margin), @oluwadamil50842 (structure beats traffic, social proof placement). Mix Tier 1 + Tier 2.|
 |23/04|LinkedIn engagement (compte R) — 5 commentaires feed|LinkedIn (compte R)|Engagement|5 commentaires : Matthew Hapgood (Shopify conversion rate ignored for months), Shabeer Shah (page speed 5.8s silent killer, ghost billing question), Raajan Chauhan (real ROAS after returns/refunds/chargebacks), Malcolm S. (chargeback compounding $15 dispute + $60 fee), Daniel Jordi (agency 150K burned on salesperson without system).|
 |23/04|Reddit warming (compte R) — 20+ upvotes + 5 commentaires|Reddit (compte R)|Engagement|~20 upvotes r/shopify + r/ecommerce. 3 commentaires r/AskReddit EN (stopped caring about working for others, toxic situation discipline/work/faith, Fear and Loathing in Las Vegas). 2 commentaires mid-size : r/Entrepreneur u/username48378645 (pricing plans feedback), r/ecommerce u/ExuberantPeddler (page speed Shopify vs Google). Phase 4 warming J+18.|
+|25/04|Posts non publiés S6 J4-J5 (Jeu+Ven Couche A+B)|Twitter/LinkedIn|⚠️ Non publié|8 posts non publiés : Twitter Couche A Jeu 23/04, Couche B Mer/Jeu/Ven, LinkedIn Couche A Jeu/Ven, LinkedIn Couche B Jeu/Ven. Posts à évaluer pour intégration S7 si angle encore pertinent.|
+|25/04|Cross-engagement non exécuté J4-J5 S6|Cross R↔F↔F2|⚠️ Non exécuté|8 crosses non faits (Jeu+Ven, Couche A+B). Compteur final S6 : 10✅ / 8❌ sur 18 prévus. Plan crosses S7 à ajuster pour rattraper la dynamique.|
 
 -----
 
