@@ -19,6 +19,7 @@
 |23/04||@kamil_sattar 10K+ — Huel +45% revenue Shopping segmentation|Segmenting Shopping campaigns by margin instead of just category is where most brands leave money on the table. No point bidding the same on a 70% margin product and a 20% margin one.|||
 |23/04||@oluwadamil50842 — same product better structure = more sales CRO|Structure beats traffic every time. The stores I talk to always want more visitors but their page loses half of them above the fold. Social proof placement and a clear price anchor do more than doubling the ad budget.|||
 | 24/04/2026 | 15:20 | https://x.com/Jumia_Group/status/2047651225168945396 — localized e-com Africa / mobile-first model | payment method is where imported playbooks fail hardest. missing the dominant local payment rail kills 30%+ of checkout completions before the product even matters. trust signals don't transfer either. what closes a sale in Lagos isn't what closes in LA. |  |  |
+| 24/04/2026 | 15:31 | https://x.com/ashvinmelwani/status/2047659265175744782 — @ashvinmelwani (Shopify reporting off) | Triple Whale still accurate on my end. Shopify dashboard's been off for a few hours, doesn't seem like actual data loss. |  |  |
 
 -----
 
