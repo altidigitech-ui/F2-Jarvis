@@ -47,7 +47,7 @@ app.use(cors({
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type", "X-JARVIS-AUTH", "X-USER-ID"],
 }));
-app.use(express.json({ limit: "10mb" }));
+app.use(express.json({ limit: "25mb" }));
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 app.use((req: any, res: any, next: any) => {
