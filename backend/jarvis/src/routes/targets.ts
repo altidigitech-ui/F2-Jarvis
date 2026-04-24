@@ -27,9 +27,10 @@ export interface TargetsResponse {
   batchFile: string;
   fabrice: PersonaTargets;
   romain: PersonaTargets;
+  f2: PersonaTargets;
 }
 
-const DEFAULTS: Record<"fabrice" | "romain", PersonaTargets> = {
+const DEFAULTS: Record<"fabrice" | "romain" | "f2", PersonaTargets> = {
   fabrice: {
     cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 4,
     ph: 0, ih: 0, ihPh: 0, engTarget: 30,
@@ -38,15 +39,22 @@ const DEFAULTS: Record<"fabrice" | "romain", PersonaTargets> = {
   },
   romain: {
     cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 4,
-    ph: 5, ih: 5, ihPh: 5, engTarget: 30,
-    platforms: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "IH", "PH"],
-    hasIhPh: true, hasPh: true, hasIh: true,
+    ph: 0, ih: 0, ihPh: 0, engTarget: 48,
+    platforms: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK"],
+    hasIhPh: false, hasPh: false, hasIh: false,
+  },
+  f2: {
+    cold: 0, twEng: 10, liCom: 10, reddit: 0, facebook: 0, cross: 4,
+    ph: 0, ih: 10, ihPh: 10, engTarget: 34,
+    platforms: ["TWITTER", "LINKEDIN", "IH"],
+    hasIhPh: true, hasPh: false, hasIh: true,
   },
 };
 
-function parseBatch(md: string): { fabrice: Partial<PersonaTargets>; romain: Partial<PersonaTargets> } {
+function parseBatch(md: string): { fabrice: Partial<PersonaTargets>; romain: Partial<PersonaTargets>; f2: Partial<PersonaTargets> } {
   const fabrice: Partial<PersonaTargets> = {};
   const romain: Partial<PersonaTargets> = {};
+  const f2: Partial<PersonaTargets> = {};
 
   const fPlatforms = new Set<string>();
   const rPlatforms = new Set<string>();
@@ -135,7 +143,7 @@ function parseBatch(md: string): { fabrice: Partial<PersonaTargets>; romain: Par
   if (fPlatforms.size > 0) fabrice.platforms = Array.from(fPlatforms);
   if (rPlatforms.size > 0) romain.platforms  = Array.from(rPlatforms);
 
-  return { fabrice, romain };
+  return { fabrice, romain, f2 };
 }
 
 function buildPersonaTargets(base: PersonaTargets, overrides: Partial<PersonaTargets>): PersonaTargets {
@@ -198,7 +206,7 @@ export async function targetsRoute(_req: Request, res: Response): Promise<void> 
       }
     }
 
-    let overrides: { fabrice: Partial<PersonaTargets>; romain: Partial<PersonaTargets> } = { fabrice: {}, romain: {} };
+    let overrides: { fabrice: Partial<PersonaTargets>; romain: Partial<PersonaTargets>; f2: Partial<PersonaTargets> } = { fabrice: {}, romain: {}, f2: {} };
     if (batchContent) {
       try {
         overrides = parseBatch(batchContent);
@@ -212,6 +220,7 @@ export async function targetsRoute(_req: Request, res: Response): Promise<void> 
       batchFile,
       fabrice: buildPersonaTargets(DEFAULTS.fabrice, overrides.fabrice),
       romain: buildPersonaTargets(DEFAULTS.romain, overrides.romain),
+      f2: buildPersonaTargets(DEFAULTS.f2, overrides.f2),
     };
 
     _cache = { weekNumber, data: response, expiresAt: Date.now() + 30 * 60 * 1000 };
@@ -225,6 +234,7 @@ export async function targetsRoute(_req: Request, res: Response): Promise<void> 
       batchFile: `BATCH-SEMAINE-${weekNumber}.md`,
       fabrice: DEFAULTS.fabrice,
       romain: DEFAULTS.romain,
+      f2: DEFAULTS.f2,
     });
   }
 }
