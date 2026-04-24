@@ -6,7 +6,7 @@ import { ActionCard } from "./jarvis/ActionCard";
 import { ContentCard } from "./jarvis/ContentCard";
 import { TagLine } from "./jarvis/TagLine";
 import { parseJarvisMarkers } from "@/lib/parseJarvisMarkers";
-import { onSendToChat, emitRepoUpdated } from "@/lib/jarvisEvents";
+import { onSendToChat, onAutoSendChat, emitRepoUpdated } from "@/lib/jarvisEvents";
 
 type Persona = "romain" | "fabrice";
 type Mode = "normal" | "f2";
@@ -486,6 +486,14 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     return unsubscribe;
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = onAutoSendChat((text) => {
+      send(text);
+    });
+    return unsubscribe;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [persona, mode, messages, isStreaming]);
+
   // Load persisted history on mount and when persona/mode changes
   useEffect(() => {
     let cancelled = false;
@@ -670,8 +678,8 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     }
   }, []);
 
-  const send = async () => {
-    const text = input.trim();
+  const send = async (overrideText?: string) => {
+    const text = (overrideText || input).trim();
     if ((!text && !pendingImage) || isStreaming) return;
 
     if (text.startsWith("/search ") || text.startsWith("/wing ")) {
