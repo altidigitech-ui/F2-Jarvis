@@ -365,12 +365,14 @@ export function OuroborosPanel({ accentColor, persona }: Props) {
                   try {
                     const res = await fetch("/api/ouroboros/purge-duplicates", { method: "POST" });
                     const data = await res.json();
-                    if (data.ok) {
+                    if (!res.ok) {
+                      alert(`Erreur purge (${res.status}): ${data.error || "unknown"}`);
+                    } else if (data.ok) {
                       alert(`Purgé ${data.purged} doublons sur ${data.total} proposals. ${data.kept} conservées.`);
                       await fetchStatus();
                     }
-                  } catch {
-                    alert("Erreur lors de la purge");
+                  } catch (err) {
+                    alert(`Erreur lors de la purge: ${err instanceof Error ? err.message : String(err)}`);
                   } finally {
                     setPurgeLoading(false);
                   }

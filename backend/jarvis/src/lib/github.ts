@@ -225,47 +225,54 @@ export async function ghDelete(
 export async function ghDeleteMultiple(
   paths: string[],
   commitMessage: string
-): Promise<void> {
-  if (paths.length === 0) return;
+): Promise<{ deleted: number; failed: number }> {
+  if (paths.length === 0) return { deleted: 0, failed: 0 };
 
   const hdrs = headers();
 
   const refRes = await fetch(apiUrl(`git/ref/heads/${BRANCH}`), { headers: hdrs });
-  if (!refRes.ok) throw new Error(`GitHub get ref failed: ${refRes.status} ${await refRes.text()}`);
+  if (!refRes.ok) {
+    const body = await refRes.text();
+    console.error(`[ghDeleteMultiple] get ref failed ${refRes.status}:`, body);
+    throw new Error(`GitHub get ref failed: ${refRes.status} ${body}`);
+  }
   const refData = (await refRes.json()) as { object: { sha: string } };
   const latestCommitSha = refData.object.sha;
 
   const commitRes = await fetch(apiUrl(`git/commits/${latestCommitSha}`), { headers: hdrs });
-  if (!commitRes.ok) throw new Error(`GitHub get commit failed: ${commitRes.status} ${await commitRes.text()}`);
+  if (!commitRes.ok) {
+    const body = await commitRes.text();
+    console.error(`[ghDeleteMultiple] get commit failed ${commitRes.status}:`, body);
+    throw new Error(`GitHub get commit failed: ${commitRes.status} ${body}`);
+  }
   const commitData = (await commitRes.json()) as { tree: { sha: string } };
   const treeSha = commitData.tree.sha;
+
+  const treeNodes: Array<{ path: string; mode: string; type: string; sha: string | null }> =
+    paths.map((p) => ({ path: p, mode: "100644", type: "blob", sha: null }));
 
   const treeRes = await fetch(apiUrl(`git/trees`), {
     method: "POST",
     headers: hdrs,
-    body: JSON.stringify({
-      base_tree: treeSha,
-      tree: paths.map((p) => ({
-        path: p,
-        mode: "100644",
-        type: "blob",
-        sha: null,
-      })),
-    }),
+    body: JSON.stringify({ base_tree: treeSha, tree: treeNodes }),
   });
-  if (!treeRes.ok) throw new Error(`GitHub create tree failed: ${treeRes.status} ${await treeRes.text()}`);
+  if (!treeRes.ok) {
+    const body = await treeRes.text();
+    console.error(`[ghDeleteMultiple] create tree failed ${treeRes.status}:`, body);
+    throw new Error(`GitHub create tree failed: ${treeRes.status} ${body}`);
+  }
   const treeData = (await treeRes.json()) as { sha: string };
 
   const newCommitRes = await fetch(apiUrl(`git/commits`), {
     method: "POST",
     headers: hdrs,
-    body: JSON.stringify({
-      message: commitMessage,
-      tree: treeData.sha,
-      parents: [latestCommitSha],
-    }),
+    body: JSON.stringify({ message: commitMessage, tree: treeData.sha, parents: [latestCommitSha] }),
   });
-  if (!newCommitRes.ok) throw new Error(`GitHub create commit failed: ${newCommitRes.status} ${await newCommitRes.text()}`);
+  if (!newCommitRes.ok) {
+    const body = await newCommitRes.text();
+    console.error(`[ghDeleteMultiple] create commit failed ${newCommitRes.status}:`, body);
+    throw new Error(`GitHub create commit failed: ${newCommitRes.status} ${body}`);
+  }
   const newCommitData = (await newCommitRes.json()) as { sha: string };
 
   const updateRefRes = await fetch(apiUrl(`git/refs/heads/${BRANCH}`), {
@@ -273,9 +280,15 @@ export async function ghDeleteMultiple(
     headers: hdrs,
     body: JSON.stringify({ sha: newCommitData.sha }),
   });
-  if (!updateRefRes.ok) throw new Error(`GitHub update ref failed: ${updateRefRes.status} ${await updateRefRes.text()}`);
+  if (!updateRefRes.ok) {
+    const body = await updateRefRes.text();
+    console.error(`[ghDeleteMultiple] update ref failed ${updateRefRes.status}:`, body);
+    throw new Error(`GitHub update ref failed: ${updateRefRes.status} ${body}`);
+  }
 
   for (const p of paths) {
     cacheInvalidate(p);
   }
+
+  return { deleted: paths.length, failed: 0 };
 }
