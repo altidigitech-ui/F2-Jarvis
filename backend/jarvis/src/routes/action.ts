@@ -11,7 +11,7 @@ type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";
 
 type ActionBody = {
   persona: Persona;
-  action: "mark_published" | "mark_cross_published" | "log_decision" | "incident_resolved" | "log_cold" | "log_interaction";
+  action: "mark_published" | "mark_cross_published" | "log_decision" | "incident_resolved" | "log_cold" | "log_interaction" | "patch_file";
   payload: Record<string, string>;
 };
 
@@ -128,6 +128,24 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
             `[JARVIS] 📋 Event: ${payload.event.slice(0, 50)}`,
           );
         }
+        break;
+      }
+      case "patch_file": {
+        const filePath = payload.path || "";
+        const patches = JSON.parse(payload.patches || "[]") as Array<{ search: string; replace: string }>;
+        await ghUpdate(
+          filePath,
+          (md) => {
+            let result = md;
+            for (const patch of patches) {
+              if (patch.search && result.includes(patch.search)) {
+                result = result.replace(patch.search, patch.replace);
+              }
+            }
+            return result;
+          },
+          `[JARVIS] patch: ${filePath.split("/").pop()}`,
+        );
         break;
       }
       default:

@@ -25,9 +25,13 @@ export function createJarvisMcpServer(options: {
   // ---------------------------------------------------------------------------
   const repoRead = tool(
     "repo_read",
-    "Read a file from the F2-Jarvis repo. Path is relative to the repo root (e.g. 'fabrice/plan-hebdo.md', 'ANTI-IA.md'). Use this when you need the exact content of a specific file: plan-hebdo, progress-semaine, logs, publication examples, context files, system prompts, VOIX.md. Don't use for directory listing — use the search tool for discovery.",
-    { path: z.string().describe("Path relative to repo root") },
-    async ({ path }) => {
+    "Read a file from the F2-Jarvis repo. Path is relative to the repo root (e.g. 'fabrice/plan-hebdo.md', 'ANTI-IA.md'). Use this when you need the exact content of a specific file: plan-hebdo, progress-semaine, logs, publication examples, context files, system prompts, VOIX.md. Don't use for directory listing — use the search tool for discovery. For large files (>40K chars), use offset or line_range to read specific parts.",
+    {
+      path: z.string().describe("Path relative to repo root"),
+      offset: z.number().int().min(0).optional().describe("Start reading from this character offset (for large files)"),
+      line_range: z.string().optional().describe("Read specific lines, e.g. '100-200' or '250-end'. More precise than offset for code files."),
+    },
+    async ({ path, offset, line_range }) => {
       try {
         const file = await ghRead(path);
         if (!file) {
@@ -36,11 +40,41 @@ export function createJarvisMcpServer(options: {
             isError: true,
           };
         }
+
+        let output = file.content;
+        const totalChars = file.content.length;
+        const totalLines = file.content.split("\n").length;
+
+        if (line_range) {
+          const lines = file.content.split("\n");
+          const [startStr, endStr] = line_range.split("-");
+          const start = Math.max(0, parseInt(startStr, 10) - 1);
+          const end = endStr === "end" ? lines.length : Math.min(lines.length, parseInt(endStr, 10));
+          output = lines.slice(start, end).map((l, i) => `${start + i + 1}: ${l}`).join("\n");
+          return {
+            content: [{
+              type: "text" as const,
+              text: `File: ${path} (lines ${start + 1}-${end} of ${totalLines}, ${totalChars} total chars)\n\n${output}`,
+            }],
+          };
+        }
+
+        if (offset && offset > 0) {
+          output = file.content.slice(offset, offset + 40000);
+          return {
+            content: [{
+              type: "text" as const,
+              text: `File: ${path} (offset ${offset}-${offset + output.length} of ${totalChars} chars)\n\n${output}`,
+            }],
+          };
+        }
+
+        const truncated = totalChars > 40000;
         return {
           content: [
             {
               type: "text" as const,
-              text: `File: ${path}\nSize: ${file.content.length} chars\n\n${file.content.slice(0, 20000)}${file.content.length > 20000 ? "\n\n[... truncated, file is larger ...]" : ""}`,
+              text: `File: ${path}\nSize: ${totalChars} chars, ${totalLines} lines${truncated ? " [TRUNCATED — use line_range or offset to read the rest]" : ""}\n\n${output.slice(0, 40000)}${truncated ? "\n\n[... truncated at 40000 chars ...]" : ""}`,
             },
           ],
         };
@@ -49,7 +83,7 @@ export function createJarvisMcpServer(options: {
           content: [
             {
               type: "text" as const,
-              text: `Error reading ${path}: ${err instanceof Error ? err.message : String(err)}`,
+              text: `repo_read error: ${err instanceof Error ? err.message : String(err)}`,
             },
           ],
           isError: true,
@@ -403,6 +437,8 @@ export function createJarvisMcpServer(options: {
   and safer). The file is committed to main branch with message prefix
   "[JARVIS] {commit_message or 'create {path}'}". Git keeps full history.
 
+- patch_file: Apply search & replace patches to an existing file. params: { path: string, patches: [{ search: "exact text to find", replace: "replacement text" }], commit_message: string }. Use this instead of create_file when you only need to change specific parts of a large file. Each patch.search MUST be an exact match of the existing text (copied verbatim from repo_read). Allowed paths: same as create_file PLUS backend/jarvis/src/, ui/jarvis/, .claude/skills/. Allowed extensions: .md .txt .json .yml .yaml .csv .ts .tsx.
+
 The 'preview' field is a human-readable description shown to the user before they validate. Keep it under 400 chars.`,
     {
       action_type: z
@@ -418,6 +454,7 @@ The 'preview' field is a human-readable description shown to the user before the
           "resolve_alert",
           "log_decision",
           "create_file",
+          "patch_file",
         ])
         .describe("Type of action"),
       params: z.record(z.unknown()).describe("Parameters for the action"),
