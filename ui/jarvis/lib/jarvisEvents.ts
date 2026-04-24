@@ -76,3 +76,24 @@ export function onSendToChat(handler: (text: string) => void): () => void {
   window.addEventListener(JARVIS_SEND_TO_CHAT, listener);
   return () => window.removeEventListener(JARVIS_SEND_TO_CHAT, listener);
 }
+
+export const JARVIS_AUTO_SEND_CHAT = "jarvis:auto-send-chat";
+
+export type AutoSendChatDetail = { text: string };
+
+export function emitAutoSendChat(text: string): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(
+    new CustomEvent<AutoSendChatDetail>(JARVIS_AUTO_SEND_CHAT, { detail: { text } })
+  );
+}
+
+export function onAutoSendChat(handler: (text: string) => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  const listener = (e: Event) => {
+    const ce = e as CustomEvent<AutoSendChatDetail>;
+    if (ce.detail?.text) handler(ce.detail.text);
+  };
+  window.addEventListener(JARVIS_AUTO_SEND_CHAT, listener);
+  return () => window.removeEventListener(JARVIS_AUTO_SEND_CHAT, listener);
+}
