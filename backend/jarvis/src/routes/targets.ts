@@ -149,17 +149,23 @@ function buildPersonaTargets(base: PersonaTargets, overrides: Partial<PersonaTar
   const hasIhPh = hasIh || hasPh;
   const ih = hasIh ? (overrides.ih ?? base.ih) : 0;
   const ph = hasPh ? (overrides.ph ?? base.ph) : 0;
+  const cold = overrides.cold ?? base.cold;
+  const twEng = overrides.twEng ?? base.twEng;
+  const liCom = overrides.liCom ?? base.liCom;
+  const reddit = overrides.reddit ?? base.reddit;
+  const facebook = overrides.facebook ?? base.facebook;
+  const cross = Math.max(base.cross, overrides.cross ?? base.cross);
   return {
-    cold: overrides.cold ?? base.cold,
-    twEng: overrides.twEng ?? base.twEng,
-    liCom: overrides.liCom ?? base.liCom,
-    reddit: overrides.reddit ?? base.reddit,
-    facebook: overrides.facebook ?? base.facebook,
-    cross: Math.max(base.cross, overrides.cross ?? base.cross),
+    cold,
+    twEng,
+    liCom,
+    reddit,
+    facebook,
+    cross,
     ph,
     ih,
     ihPh: ih + ph,
-    engTarget: overrides.engTarget ?? base.engTarget,
+    engTarget: cold + twEng + liCom + reddit + facebook + ih + ph + cross,
     platforms,
     hasIhPh,
     hasPh,
