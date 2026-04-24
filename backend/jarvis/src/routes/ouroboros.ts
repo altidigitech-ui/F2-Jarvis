@@ -448,36 +448,38 @@ export async function ouroborosPurgeDuplicates(req: Request, res: Response): Pro
     const kept: Set<string> = new Set();
     const purged: Array<{ filename: string; title: string; reason: string }> = [];
 
-    proposals.sort((a, b) => b.timestamp - a.timestamp);
+    const now = Date.now();
+    const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
 
+    // Phase 1: purge everything older than 24h
+    const recent = [];
     for (const p of proposals) {
-      const words = new Set(p.subject.split(" ").filter(w => w.length > 2));
+      if (now - p.timestamp > TWENTY_FOUR_HOURS) {
+        purged.push({ filename: p.filename, title: p.title, reason: "Older than 24h" });
+      } else {
+        recent.push(p);
+      }
+    }
 
+    // Phase 2: dedup among recent proposals (keep newest)
+    recent.sort((a, b) => b.timestamp - a.timestamp);
+    for (const p of recent) {
+      const words = new Set(p.subject.split(" ").filter(w => w.length > 2));
       let isDup = false;
       for (const keptFilename of kept) {
-        const keptProposal = proposals.find(x => x.filename === keptFilename);
+        const keptProposal = recent.find(x => x.filename === keptFilename);
         if (!keptProposal) continue;
-
         const keptWords = new Set(keptProposal.subject.split(" ").filter(w => w.length > 2));
         let shared = 0;
-        for (const w of words) {
-          if (keptWords.has(w)) shared++;
-        }
+        for (const w of words) { if (keptWords.has(w)) shared++; }
         const minSize = Math.min(words.size, keptWords.size);
-        if (minSize > 0 && shared / minSize >= 0.5) {
+        if (minSize > 0 && shared / minSize >= 0.35) {
           isDup = true;
-          purged.push({
-            filename: p.filename,
-            title: p.title,
-            reason: `Duplicate of: ${keptProposal.title}`,
-          });
+          purged.push({ filename: p.filename, title: p.title, reason: `Duplicate of: ${keptProposal.title}` });
           break;
         }
       }
-
-      if (!isDup) {
-        kept.add(p.filename);
-      }
+      if (!isDup) kept.add(p.filename);
     }
 
     const pathsToDelete = purged
