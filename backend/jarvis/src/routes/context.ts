@@ -88,6 +88,12 @@ function parseTimeline(planHebdo: string, today: string, dayName: string, publis
   let match;
   while ((match = sectionRegex.exec(planHebdo)) !== null) {
     const title = match[1];
+    const sectionTimeMatch = title.match(/(\d{1,2})h(\d{2})/);
+    const sectionTime = sectionTimeMatch
+      ? `${sectionTimeMatch[1].padStart(2, "0")}:${sectionTimeMatch[2]}`
+      : "13:00";
+    const coucheMatch = title.match(/COUCHE\s+([AB])/i);
+    const coucheLabel = coucheMatch ? `[${coucheMatch[1]}] ` : "";
     const startIdx = match.index + match[0].length;
     const nextMatch = /^##\s/m.exec(planHebdo.slice(startIdx));
     const endIdx = nextMatch ? startIdx + nextMatch.index : planHebdo.length;
@@ -103,8 +109,8 @@ function parseTimeline(planHebdo: string, today: string, dayName: string, publis
       const statusCell = row[row.length - 1] || "";
       const timeMatch = statusCell.match(/(\d{1,2})h/);
       items.push({
-        time: timeMatch ? `${timeMatch[1].padStart(2, "0")}:00` : "",
-        title: subject || row[1],
+        time: timeMatch ? `${timeMatch[1].padStart(2, "0")}:00` : sectionTime,
+        title: `${coucheLabel}${subject || row[1]}`,
         platform: platformOf(title),
         status: statusOf(statusCell),
         publishedBy,
@@ -222,6 +228,42 @@ function parseObjectiveItems(
   return items;
 }
 
+function parseCrossItemsFromLog(
+  crossExecutionLog: string,
+  today: string,
+  publishedBy: string,
+): TimelineItem[] {
+  if (!crossExecutionLog) return [];
+  const items: TimelineItem[] = [];
+  const rows = tableRows(crossExecutionLog);
+  for (const row of rows) {
+    if (row.length < 5) continue;
+    const ref = (row[0] || "").trim();
+    const dayCell = (row[1] || "").trim();
+    const post = (row[2] || "").trim();
+    const heureCible = (row[3] || "").trim();
+    const statusCell = (row[5] || row[4] || "").trim();
+
+    if (!dayCell.includes(today)) continue;
+    if (!ref || /^ref$/i.test(ref)) continue;
+
+    const done = statusCell.includes("✅");
+    const hourMatch = heureCible.match(/(\d{1,2})h(\d{2})?/);
+    const timeStr = hourMatch
+      ? `${hourMatch[1].padStart(2, "0")}:${hourMatch[2] || "00"}`
+      : "";
+
+    items.push({
+      time: timeStr,
+      title: `Cross ${ref} — ${post.slice(0, 50)}`,
+      platform: "CROSS",
+      status: done ? "done" : "todo",
+      publishedBy,
+    });
+  }
+  return items;
+}
+
 function parseCrossItemsToday(
   crossTracker: string,
   today: string,
@@ -300,19 +342,24 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
 
   const { day: today, dayName, weekday } = getToday();
 
-  const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo, crossExecutionLog] =
+  const otherPersona = persona === "fabrice" ? "romain" : "fabrice";
+  const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo, crossExecutionLog, otherPlanHebdo] =
     await Promise.all([
       readRepo(`${persona}/plan-hebdo.md`),
       readRepo(`${persona}/cold/cold-outreach-log.md`),
       readRepo(`${persona}/engagement/engagement-log.md`),
       readRepo(`${persona}/cross-engagement-tracker.md`),
       readRepo(`${persona}/progress-semaine.md`),
-      mode === "f2" ? readRepo("f2/plan-hebdo.md") : Promise.resolve(""),
+      readRepo("f2/plan-hebdo.md"),
       readRepo(`${persona}/engagement/cross-execution-log.md`),
+      readRepo(`${otherPersona}/plan-hebdo.md`),
     ]);
 
   const publishedBy = persona === "romain" ? "R" : "F";
   const timelinePosts = parseTimeline(planHebdo, today, dayName, publishedBy);
+  const otherPublishedBy = persona === "fabrice" ? "R" : "F";
+  const otherTimelinePosts = parseTimeline(otherPlanHebdo, today, dayName, otherPublishedBy);
+  const f2TimelinePosts = parseTimeline(f2PlanHebdo, today, dayName, "F2");
   const cold = countTodayAny(coldLog, today);
   const twEng = countTodayInSection(engagementLog, "TWITTER", today);
   const liCom = countTodayInSection(engagementLog, "LINKEDIN", today);
@@ -341,8 +388,22 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   };
 
   const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, reddit, facebook, ihPh: ih + ph, cross }, publishedBy);
-  const crossItems = parseCrossItemsToday(crossTracker, today, weekday, publishedBy);
-  const timeline = [...timelinePosts, ...crossItems, ...objectives];
+  const crossItemsFromLog = parseCrossItemsFromLog(crossExecutionLog, today, publishedBy);
+  const crossItems = crossItemsFromLog.length > 0
+    ? crossItemsFromLog
+    : parseCrossItemsToday(crossTracker, today, weekday, publishedBy);
+
+  const timeline = [
+    ...timelinePosts,
+    ...otherTimelinePosts,
+    ...f2TimelinePosts,
+    ...crossItems,
+    ...objectives,
+  ].sort((a, b) => {
+    if (a.platform === "OBJECTIF" && b.platform !== "OBJECTIF") return 1;
+    if (b.platform === "OBJECTIF" && a.platform !== "OBJECTIF") return -1;
+    return (a.time || "99:99").localeCompare(b.time || "99:99");
+  });
 
   const alerts = parseAlerts(progressSemaine);
   const weekPlanningF2 = mode === "f2" ? parseF2Planning(f2PlanHebdo, "F2") : [];
