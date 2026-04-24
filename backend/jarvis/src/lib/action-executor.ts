@@ -426,10 +426,10 @@ export async function applySideEffects(
         const count = actionType === "batch_cold"
           ? ((params.targets as unknown[]) || []).length
           : 1;
-        cacheInvalidateAll();
         await ghUpdate(
           `${persona}/progress-semaine.md`,
           (md) => {
+            // Step 1: increment counter
             const lines = md.split("\n");
             for (let i = 0; i < lines.length; i++) {
               if (lines[i].toLowerCase().includes("cold outreach envoyé") && lines[i].includes("|")) {
@@ -440,29 +440,18 @@ export async function applySideEffects(
                 }
               }
             }
-            return lines.join("\n");
+            // Step 2: append event — single write, zero SHA conflict
+            return appendProgressEvent(
+              lines.join("\n"),
+              `Cold ${platform} x${count}${target ? ` (${target.slice(0, 30)})` : ""}`,
+              platform,
+              `Cold outreach ${time}`,
+              "Suivre les réponses"
+            );
           },
-          `[JARVIS] ${persona}: progress — cold count +${count}`
+          `[JARVIS] ${persona}: progress — cold +${count}`
         ).catch((err) => {
-          console.error(`[action-executor] side-effect cold_count failed:`, err instanceof Error ? err.message : err);
-        });
-
-        // Wait for SHA to propagate before second write on the same file
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        cacheInvalidateAll();
-
-        await ghUpdate(
-          `${persona}/progress-semaine.md`,
-          (md) => appendProgressEvent(
-            md,
-            `Cold ${platform} x${count}${target ? ` (${target.slice(0, 30)})` : ""}`,
-            platform,
-            `Cold outreach ${time}`,
-            "Suivre les réponses"
-          ),
-          `[JARVIS] ${persona}: progress — cold event`
-        ).catch((err) => {
-          console.error(`[action-executor] side-effect cold_event failed:`, err instanceof Error ? err.message : err);
+          console.error(`[action-executor] side-effect cold failed:`, err instanceof Error ? err.message : err);
         });
         break;
       }
