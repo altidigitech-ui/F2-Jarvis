@@ -160,3 +160,44 @@ export function updateColdReply(
   }
   return lines.join("\n");
 }
+
+/**
+ * Append a row to an analytics section of progress-semaine.md.
+ * The caller builds the row array matching the table columns.
+ * sectionTitle defaults to "ANALYTICS" — matches both "ANALYTICS" and "ANALYTICS TWITTER".
+ */
+export function appendAnalyticsRow(
+  markdown: string,
+  row: string[],
+  sectionTitle = "ANALYTICS"
+): string {
+  return appendTableRow(markdown, sectionTitle, row);
+}
+
+/**
+ * Increment a named counter in the ## COMPTEURS COURANTS section.
+ * Finds the row whose first column contains `metricName` (case-insensitive)
+ * and increments the numeric value in the second column by `increment`.
+ */
+export function incrementCurrentCounter(markdown: string, metricName: string, increment = 1): string {
+  const lines = markdown.split("\n");
+  let inSection = false;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!inSection && line.includes("COMPTEURS COURANTS")) { inSection = true; continue; }
+    if (inSection && /^##\s/.test(line)) break;
+    if (inSection && /^\|/.test(line.trim()) && line.toLowerCase().includes(metricName.toLowerCase())) {
+      const cells = line.split("|");
+      for (let j = 1; j < cells.length - 1; j++) {
+        const trimmed = cells[j].trim();
+        if (/^\d+$/.test(trimmed)) {
+          cells[j] = ` ${parseInt(trimmed, 10) + increment} `;
+          lines[i] = cells.join("|");
+          break;
+        }
+      }
+      break;
+    }
+  }
+  return lines.join("\n");
+}
