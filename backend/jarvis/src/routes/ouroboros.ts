@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ghRead, ghList, ghMoveFile, ghDeleteMultiple, GitHubDirEntry } from "../lib/github.js";
+import { ghRead, ghList, ghMoveFile, ghDeleteMultiple, ghCreate, ghDelete, GitHubDirEntry } from "../lib/github.js";
 
 const STATE_PATH = "brain/ouroboros/state.json";
 const DIARY_PATH = "brain/ouroboros/diary";
