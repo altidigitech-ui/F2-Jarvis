@@ -341,11 +341,13 @@ export function applyTransform(
       const failed: string[] = [];
 
       for (const patch of patches) {
-        if (!patch.search || result.includes(patch.search)) {
-          if (patch.search) {
-            result = result.replace(patch.search, patch.replace);
-            applied.push(patch.search.slice(0, 40));
-          }
+        if (!patch.search) {
+          // Empty search = full overwrite (used for new file creation)
+          result = patch.replace;
+          applied.push("(create/overwrite)");
+        } else if (result.includes(patch.search)) {
+          result = result.replace(patch.search, patch.replace);
+          applied.push(patch.search.slice(0, 40));
         } else {
           failed.push(patch.search.slice(0, 40));
         }
@@ -571,6 +573,19 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
         await ghWrite(path, content, existing.sha, finalCommitMsg);
       } else {
         await ghCreate(path, content, finalCommitMsg);
+      }
+    } else if (action.action_type === "patch_file") {
+      const userCommitMsg = String((action.params as Record<string, unknown>).commit_message || "");
+      const finalMsg = userCommitMsg && userCommitMsg.length < 200
+        ? `[JARVIS] ${userCommitMsg}`
+        : `[JARVIS] ${commitPrefix}: ${previewShort}`;
+      const existingFile = await ghRead(path).catch(() => null);
+      const currentContent = existingFile?.content ?? "";
+      const newContent = applyTransform("patch_file", action.params, currentContent);
+      if (existingFile) {
+        if (newContent !== currentContent) await ghWrite(path, newContent, existingFile.sha, finalMsg);
+      } else {
+        await ghCreate(path, newContent, finalMsg);
       }
     } else {
       // Existing generic path: apply transform on top of current file content
