@@ -296,3 +296,49 @@ export async function ghDeleteMultiple(
 
   return { deleted: paths.length, failed: 0 };
 }
+
+export async function ghReadExternal(
+  owner: string,
+  repo: string,
+  filePath: string,
+  branch = "main"
+): Promise<{ content: string; sha: string } | null> {
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) throw new Error("GITHUB_TOKEN not set");
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}?ref=${branch}`;
+  const res = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/vnd.github.v3+json",
+    },
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`ghReadExternal failed: ${res.status} ${await res.text()}`);
+  const data = (await res.json()) as { content: string; sha: string };
+  return {
+    content: Buffer.from(data.content, "base64").toString("utf-8"),
+    sha: data.sha,
+  };
+}
+
+export async function ghListExternal(
+  owner: string,
+  repo: string,
+  dirPath = "",
+  branch = "main"
+): Promise<GitHubDirEntry[]> {
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) throw new Error("GITHUB_TOKEN not set");
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${dirPath}?ref=${branch}`;
+  const res = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/vnd.github.v3+json",
+    },
+  });
+  if (res.status === 404) return [];
+  if (!res.ok) throw new Error(`ghListExternal failed: ${res.status} ${await res.text()}`);
+  const data = await res.json();
+  if (!Array.isArray(data)) return [];
+  return data as GitHubDirEntry[];
+}
