@@ -1,5 +1,5 @@
 import { getSupabase } from "./supabase.js";
-import { ghCreate, ghRead, ghUpdate, ghWrite } from "./github.js";
+import { ghCreate, ghDelete, ghRead, ghUpdate, ghWrite } from "./github.js";
 import { cacheInvalidateAll } from "./cache.js";
 import {
   appendAnalyticsRow,
@@ -205,6 +205,16 @@ export function resolveFilePath(
       const path = String(_params.path || "");
       validatePatchFilePath(path);
       return { path, commitPrefix: "patch" };
+    }
+    case "move_file": {
+      const fromPath = String(_params.from || "");
+      validateCreateFilePath(fromPath);
+      return { path: fromPath, commitPrefix: "move" };
+    }
+    case "delete_file": {
+      const delPath = String(_params.path || "");
+      validateCreateFilePath(delPath);
+      return { path: delPath, commitPrefix: "delete" };
     }
     default:
       throw new Error(`Unknown action_type: ${actionType}`);
@@ -596,6 +606,28 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
       } else {
         await ghCreate(path, newContent, finalMsg);
       }
+    } else if (action.action_type === "move_file") {
+      const fromPath = String(action.params.from || "");
+      const toPath = String(action.params.to || "");
+      validateCreateFilePath(fromPath);
+      validateCreateFilePath(toPath);
+      const moveMsg = `[JARVIS] ${String(action.params.commit_message || `move ${fromPath} → ${toPath}`).slice(0, 180)}`;
+      const sourceFile = await ghRead(fromPath);
+      if (!sourceFile) throw new Error(`move_file: source not found: ${fromPath}`);
+      const destFile = await ghRead(toPath).catch(() => null);
+      if (destFile) {
+        await ghWrite(toPath, sourceFile.content, destFile.sha, moveMsg);
+      } else {
+        await ghCreate(toPath, sourceFile.content, moveMsg);
+      }
+      await ghDelete(fromPath, sourceFile.sha, moveMsg);
+    } else if (action.action_type === "delete_file") {
+      const delPath = String(action.params.path || "");
+      validateCreateFilePath(delPath);
+      const delMsg = `[JARVIS] ${String(action.params.commit_message || `delete ${delPath}`).slice(0, 180)}`;
+      const fileToDelete = await ghRead(delPath);
+      if (!fileToDelete) throw new Error(`delete_file: file not found: ${delPath}`);
+      await ghDelete(delPath, fileToDelete.sha, delMsg);
     } else {
       // Existing generic path: apply transform on top of current file content
       await ghUpdate(
