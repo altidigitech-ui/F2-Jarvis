@@ -63,6 +63,8 @@ const CREATE_FILE_ALLOWED_ROOT_PATTERNS: RegExp[] = [
   /^HANDOFF(-[\w-]+)?\.md$/,
   /^CHANGELOG(-[\w-]+)?\.md$/,
   /^REVUE-[\w-]+\.md$/,
+  /^ARCH\.md$/,
+  /^README\.md$/,
 ];
 
 function validateCreateFilePath(path: string): void {
