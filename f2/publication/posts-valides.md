@@ -1,39 +1,40 @@
-# POSTS VALIDÉS F2 — Semaine 6 (20/04 → 26/04/2026)
+# POSTS VALIDÉS F2 — Semaine 7 (27/04 → 03/05/2026)
 
-**Batch généré :** 20/04/2026
-**Mode :** Sales agressif DOUBLE-COUCHE
-**Langue publication :** Anglais uniquement
+**Batch généré :** 25/04/2026  
+**Mode :** Sales agressif DOUBLE-COUCHE (Couche A sales + Couche B beta "No Install")  
+**Langue publication :** Anglais uniquement  
 **Géré par :** R
 
-## COUCHE A — Twitter F2 (5 posts) — 13h00 CEST
+## COUCHE A — Twitter F2 (5 posts) — 15h00 CEST
 
-- [ ] Lun 20/04 13h — Relaunch 52 scans — `twitter/semaine-6/lundi-20-04-relaunch.md`
-- [ ] Mar 21/04 13h — Feature spotlight — `twitter/semaine-6/mardi-21-04-feature-spotlight.md`
-- [ ] Mer 22/04 13h — Social proof 34/100 — `twitter/semaine-6/mercredi-22-04-social-proof.md`
-- [ ] Jeu 23/04 13h — Invisible loss — `twitter/semaine-6/jeudi-23-04-invisible-loss.md`
-- [ ] Ven 24/04 13h — Week recap — `twitter/semaine-6/vendredi-24-04-week-recap.md`
+- [ ] Lun 27/04 15h — 68 stores / $12,400 — studio scan recap
+- [ ] Mar 28/04 15h — 94% ghost billing — Shopify/Stripe don't sync
+- [ ] Mer 29/04 15h — 3 things Shopify analytics won't show you
+- [ ] Jeu 30/04 15h — Free agency scans — drop any .myshopify.com URL
+- [ ] Ven 01/05 15h — 42% of stores invisible to AI search — no error
 
-## COUCHE A — LinkedIn F2 (1 post) — 21h00 CEST
+## COUCHE B — Twitter F2 (3 posts beta) — 20h00 CEST (mer→ven)
 
-- [ ] Mar 21/04 21h — Launch week 2 — `linkedin/semaine-6/mardi-21-04-launch-week2.md`
+- [ ] Mer 29/04 20h — B1 — OAuth wall discovery (51/0 — no install)
+- [ ] Jeu 30/04 20h — B2 — Beta update: 6/6 ghost billing, 4 spots left
+- [ ] Ven 01/05 20h — B3 — Beta week wrap: 8 scans / $1,624 leaks
 
-## COUCHE A — IH F2 (1 post) — 09h00 CEST
+## IH F2 (1 post) — 17h15 CEST
 
-- [ ] Mer 22/04 09h — Honest retro (Couche A reformulé) — `ih/semaine-6/mercredi-22-04-honest-retro.md`
+- [ ] Jeu 30/04 17h15 — Build-in-public: OAuth wall (51 starts / 0 completes — honnête)
 
-## COUCHE B — Twitter F2 (3 posts beta) — 18h30 CEST (mer-ven)
-
-- [ ] Mer 22/04 18h30 — Beta studio — `twitter/semaine-6/mercredi-22-04-beta-studio.md`
-- [ ] Jeu 23/04 18h30 — Free scan separate — `twitter/semaine-6/jeudi-23-04-free-scan-separate.md`
-- [ ] Ven 24/04 18h30 — Beta pipeline — `twitter/semaine-6/vendredi-24-04-beta-pipeline.md`
-
-## COUCHE B — IH F2 (1 post REFAIT beta) — 09h00 CEST
-
-- [ ] Mer 22/04 09h — IH beta announce (REFAIT beta) — `ih/semaine-6/mercredi-22-04-ih-retro.md`
-
-## Règles
+## Règles de publication S7
 
 1. Anglais uniquement
-2. Twitter : POST + REPLY séparés (URL en reply)
-3. Cross-engagement F2 : F2 reçoit, ne reply pas proactivement
-4. Couche A = 13h00 / Couche B = 18h30
+2. Twitter : POST sans URL + REPLY avec URL `storemd.vercel.app` en reply séparé
+3. Cross-engagement F2 : F2 reçoit des crosses de F et R. Ce log trackera les replies F2 proactives si elles ont lieu.
+4. Couche A = 15h00 / Couche B = 20h00 (écart min 3h)
+5. IH = 17h15 jeudi uniquement
+6. Vidéos Couche A = recyclées S6. Couche B B2+B3 = aucune vidéo.
+
+## Bilan publications S7
+
+- Twitter Couche A : 0/5 ✅
+- Twitter Couche B : 0/3 ✅
+- IH : 0/1 ✅
+- **Total : 0/9 posts publiés**
