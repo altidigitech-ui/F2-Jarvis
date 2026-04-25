@@ -501,6 +501,10 @@ export function createJarvisMcpServer(options: {
 
 - patch_file: Apply search & replace patches to an existing file. params: { path: string, patches: [{ search: "exact text to find", replace: "replacement text" }], commit_message: string }. Use this instead of create_file when you only need to change specific parts of a large file. Each patch.search MUST be an exact match of the existing text (copied verbatim from repo_read). Allowed paths: same as create_file PLUS backend/jarvis/src/, ui/jarvis/, .claude/skills/. Allowed extensions: .md .txt .json .yml .yaml .csv .ts .tsx.
 
+- move_file: Move/rename a file within the repo. params: { from: string, to: string, commit_message?: string }. Both paths must be in allowed prefixes. Atomic: creates destination then deletes source.
+
+- delete_file: Permanently delete a file. params: { path: string, commit_message?: string }. Path must be in allowed prefixes. File remains in git history.
+
 The 'preview' field is a human-readable description shown to the user before they validate. Keep it under 400 chars.`,
     {
       action_type: z
@@ -518,6 +522,8 @@ The 'preview' field is a human-readable description shown to the user before the
           "log_analytics",
           "create_file",
           "patch_file",
+          "move_file",
+          "delete_file",
         ])
         .describe("Type of action"),
       params: z.record(z.unknown()).describe("Parameters for the action"),
@@ -701,8 +707,7 @@ The 'preview' field is a human-readable description shown to the user before the
         const { data: convs } = await sb
           .from("jarvis_conversations")
           .select("id")
-          .eq("persona", options.persona)
-          .eq("mode", options.mode);
+          .eq("persona", options.persona);
 
         if (!convs || convs.length === 0) {
           return { content: [{ type: "text" as const, text: "No conversations found for this persona/mode." }] };
@@ -1074,7 +1079,7 @@ The 'preview' field is a human-readable description shown to the user before the
             "anthropic-version": "2023-06-01",
           },
           body: JSON.stringify({
-            model: "claude-sonnet-4-20250514",
+            model: "claude-haiku-4-5",
             max_tokens: 2048,
             tools: [{ type: "web_search_20250305", name: "web_search" }],
             messages: [{ role: "user", content: query }],
