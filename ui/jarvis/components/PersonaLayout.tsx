@@ -472,14 +472,14 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const filePaths = f2Mode
     ? {
         planHebdo: "f2/plan-hebdo.md",
-        postsBatch: "BATCH-SEMAINE-6.md",
+        postsBatch: `BATCH-SEMAINE-${weekNumber}.md`,
         crossEng: `${persona}/cross-engagement-tracker.md`,
         cold: `${persona}/cold/cold-outreach-log.md`,
         progress: "f2/progress-semaine.md",
       }
     : {
         planHebdo: `${persona}/plan-hebdo.md`,
-        postsBatch: "BATCH-SEMAINE-6.md",
+        postsBatch: `BATCH-SEMAINE-${weekNumber}.md`,
         crossEng: `${persona}/cross-engagement-tracker.md`,
         cold: `${persona}/cold/cold-outreach-log.md`,
         progress: `${persona}/progress-semaine.md`,
