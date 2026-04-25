@@ -109,6 +109,61 @@ async function processImageFile(file: File): Promise<ImageAttachment | null> {
   });
 }
 
+async function processZipFile(file: File): Promise<FileAttachment[]> {
+  const TEXT_EXTS = [".ts", ".tsx", ".js", ".jsx", ".json", ".md", ".txt", ".csv", ".yml", ".yaml", ".toml", ".html", ".css", ".env"];
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      try {
+        const bytes = new Uint8Array(e.target?.result as ArrayBuffer);
+        const files: FileAttachment[] = [];
+        let offset = 0;
+        while (offset < bytes.length - 4) {
+          if (bytes[offset] !== 0x50 || bytes[offset+1] !== 0x4b || bytes[offset+2] !== 0x03 || bytes[offset+3] !== 0x04) break;
+          const compression = bytes[offset+8] | (bytes[offset+9] << 8);
+          const compressedSize = bytes[offset+18] | (bytes[offset+19] << 8) | (bytes[offset+20] << 16) | (bytes[offset+21] << 24);
+          const fileNameLength = bytes[offset+26] | (bytes[offset+27] << 8);
+          const extraFieldLength = bytes[offset+28] | (bytes[offset+29] << 8);
+          const fileName = new TextDecoder().decode(bytes.slice(offset+30, offset+30+fileNameLength));
+          const dataOffset = offset + 30 + fileNameLength + extraFieldLength;
+          const compressedData = bytes.slice(dataOffset, dataOffset + compressedSize);
+          offset = dataOffset + compressedSize;
+          if (fileName.endsWith("/")) continue;
+          if (fileName.includes("node_modules/") || fileName.includes(".next/") || fileName.includes(".git/")) continue;
+          if (files.length >= 80) continue;
+          if (!TEXT_EXTS.some(ext => fileName.toLowerCase().endsWith(ext))) continue;
+          try {
+            let content = "";
+            if (compression === 0) {
+              content = new TextDecoder("utf-8", { fatal: false }).decode(compressedData);
+            } else if (compression === 8) {
+              const ds = new DecompressionStream("deflate-raw");
+              const writer = ds.writable.getWriter();
+              const r2 = ds.readable.getReader();
+              writer.write(compressedData);
+              writer.close();
+              const chunks: Uint8Array[] = [];
+              let done = false;
+              while (!done) { const { value, done: d } = await r2.read(); if (value) chunks.push(value); done = d; }
+              const total = chunks.reduce((s, c) => s + c.length, 0);
+              if (total > 300 * 1024) continue;
+              const merged = new Uint8Array(total);
+              let pos = 0;
+              for (const c of chunks) { merged.set(c, pos); pos += c.length; }
+              content = new TextDecoder("utf-8", { fatal: false }).decode(merged);
+            } else continue;
+            const shortName = fileName.includes("/") ? fileName.split("/").slice(1).join("/") : fileName;
+            files.push({ name: shortName || fileName, content });
+          } catch { /* skip */ }
+        }
+        resolve(files);
+      } catch { resolve([]); }
+    };
+    reader.onerror = () => resolve([]);
+    reader.readAsArrayBuffer(file);
+  });
+}
+
 type ActionFormProps = {
   action: ActionType;
   persona: Persona;
@@ -589,21 +644,21 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const handleDrop = useCallback(async (e: React.DragEvent) => {
     e.preventDefault();
     setIsDraggingOver(false);
-    const imageFiles = Array.from(e.dataTransfer.files).filter((f) => f.type.startsWith("image/"));
-    for (const file of imageFiles) {
-      await attachImage(file);
-    }
-    const textFiles = Array.from(e.dataTransfer.files).filter((f) =>
-      !f.type.startsWith("image/") && (
-        f.type.startsWith("text/") ||
-        f.name.endsWith(".md") || f.name.endsWith(".txt") || f.name.endsWith(".csv") ||
-        f.name.endsWith(".json") || f.name.endsWith(".yml") || f.name.endsWith(".yaml") ||
-        f.type === "application/json"
-      )
-    );
-    for (const file of textFiles) {
-      const content = await file.text();
-      setPendingFiles(prev => [...prev, { name: file.name, content }]);
+    for (const file of Array.from(e.dataTransfer.files)) {
+      if (file.type.startsWith("image/")) {
+        await attachImage(file);
+      } else if (file.name.endsWith(".zip")) {
+        const extracted = await processZipFile(file);
+        if (extracted.length > 0) setPendingFiles(prev => [...prev, ...extracted]);
+      } else if (
+        file.type.startsWith("text/") ||
+        file.name.endsWith(".md") || file.name.endsWith(".txt") || file.name.endsWith(".csv") ||
+        file.name.endsWith(".json") || file.name.endsWith(".yml") || file.name.endsWith(".yaml") ||
+        file.type === "application/json"
+      ) {
+        const content = await file.text();
+        setPendingFiles(prev => [...prev, { name: file.name, content }]);
+      }
     }
   }, [attachImage]);
 
@@ -1006,7 +1061,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 style={{ color: colors.primary, opacity: 0.8 }}
               />
               <p className="text-sm font-mono" style={{ color: colors.primary }}>
-                Drop your screenshot here
+                Drop image, .zip or text file here
               </p>
             </div>
           </div>
@@ -1437,13 +1492,16 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
             ref={fileInputRef}
             type="file"
             multiple
-            accept="image/png,image/jpeg,image/webp,image/gif,.md,.txt,.csv,.json,.yml,.yaml,.pdf"
+            accept="image/png,image/jpeg,image/webp,image/gif,.md,.txt,.csv,.json,.yml,.yaml,.pdf,.zip"
             className="hidden"
             onChange={async (e) => {
               const files = Array.from(e.target.files || []);
               for (const file of files) {
                 if (file.type.startsWith("image/")) {
                   await attachImage(file);
+                } else if (file.name.endsWith(".zip")) {
+                  const extracted = await processZipFile(file);
+                  if (extracted.length > 0) setPendingFiles(prev => [...prev, ...extracted]);
                 } else {
                   const content = await file.text();
                   setPendingFiles(prev => [...prev, { name: file.name, content }]);
