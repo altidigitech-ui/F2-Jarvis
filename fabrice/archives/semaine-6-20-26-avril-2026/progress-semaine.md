@@ -50,10 +50,10 @@
 
 |Métrique                       |Début semaine|Fin semaine|Delta|
 |-------------------------------|-------------|-----------|-----|
-|Followers Twitter F            |             |           |     |
+|Followers Twitter F            |—            |29         |—    |
 |Following Twitter F            |             |           |     |
-|Connexions LinkedIn F          |             |           |     |
-|Abonnés LinkedIn F             |             |           |     |
+|Connexions LinkedIn F          |6            |13         |+7   |
+|Abonnés LinkedIn F             |—            |—          |—    |
 |Signups StoreMD (free)         |0            |1          |+1 (storemdtesttt — test externe)|
 |Signups StoreMD (paid)         |0            |1          |+1 (altidigitech agency — self-test confirmé)|
 |MRR                            |€0           |€199       |+€199 (1 sub agency — MRR externe réel = €0)|
