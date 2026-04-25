@@ -543,7 +543,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       prompt,
       options: {
         systemPrompt,
-        maxTurns: 50,
+        maxTurns: 80,
         mcpServers: { jarvis: mcpServer },
         allowedTools: JARVIS_ALLOWED_TOOLS,
         permissionMode: "dontAsk",
