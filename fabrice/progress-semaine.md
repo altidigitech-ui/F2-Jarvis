@@ -31,9 +31,9 @@
 
 |Métrique                       |Début semaine|Fin semaine|Delta|
 |-------------------------------|-------------|-----------|-----|
-|Followers Twitter F            |             |           |     |
+|Followers Twitter F            |29           |           |     |
 |Following Twitter F            |             |           |     |
-|Connexions LinkedIn F          |             |           |     |
+|Connexions LinkedIn F          |13           |           |     |
 |Abonnés LinkedIn F             |             |           |     |
 |Signups StoreMD (free)         |1            |           |     |
 |Signups StoreMD (paid)         |1 (agency self-test)|    |     |
