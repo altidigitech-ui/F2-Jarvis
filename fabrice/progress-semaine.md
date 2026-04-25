@@ -28,6 +28,7 @@
 |24/04|Cross B6 + B7 exécutés — R + F2 Twitter 18h30|Twitter|Replies Couche B sur posts R et F2 vendredi 18h35|✅|
 |24/04|Cross B8 exécuté — R LinkedIn Couche B Pro teaser + pipeline|LinkedIn|Reply F sur post R LinkedIn vendredi ~20h09|✅|
 | 25/04/2026 | Twitter post publié — "store-md-horror-slow-store" | Twitter | Post publié 18:55 | Monitorer impressions + replies |
+|25/04|Dashboard admin StoreMD analysé — MRR €199 (1 sub agency, self-test probable), 141 visits/30j, 51 install starts → **0 completes**. Mur technique : auth Shopify OAuth casse la conversion avant install.|StoreMD|Analyse admin|Priorité S7 : scan proactif sans auth OR fix install flow|
 
 -----
 
@@ -53,9 +54,9 @@
 |Following Twitter F            |             |           |     |
 |Connexions LinkedIn F          |             |           |     |
 |Abonnés LinkedIn F             |             |           |     |
-|Signups StoreMD (free)         |             |           |     |
-|Signups StoreMD (paid)         |             |           |     |
-|MRR                            |             |           |     |
+|Signups StoreMD (free)         |0            |1          |+1 (storemdtesttt — test externe)|
+|Signups StoreMD (paid)         |0            |1          |+1 (altidigitech agency — à qualifier si self-test)|
+|MRR                            |€0           |€199       |+€199 (1 sub agency — MRR externe réel probablement €0)|
 |Cold outreach envoyés (semaine)|3 (à J4)     |9          |+6   |
 |Réponses positives cold        |0            |0          |=    |
 
@@ -68,3 +69,6 @@
 - Reddit signal organique : u/ungodlygirl ghost billing / Apple Pay = 24 upvotes. Meilleur signal de la semaine, valide l'angle ghost billing pour cold.
 - Cross-engagement J3 exécuté dans les 5 min (A9 + A10). Signal 150x Twitter activé pour post jeudi 13h.
 - S6 = semaine de construction système (JARVIS, cross-tracker, infra) autant que semaine sales. Cold quasi nul (3 envoyés sur 70 cibles). À corriger impérativement S7.
+- StoreMD funnel S6 (30j) : 141 visits → 57 CTA clicks (40% CTR ✅) → 51 install starts (89% ✅) → **0 install completes** (0% ❌). Mur = Shopify OAuth. Aucun merchant externe n'a finalisé l'installation. Twitter = 1er canal social (16 visits). UTM "audit" = meilleure campagne (32 visits). 0 conversion depuis tous les canaux sociaux.
+- MRR €199 à qualifier : altidigitech@gmail.com sur plan agency. Si self-test, MRR externe réel = €0. Ne pas utiliser comme canon public.
+- Priorité S7 : contournement du mur install via scan proactif manuel (F scanne → envoie résultats → merchant n'installe rien) OR correction technique du flow OAuth.
