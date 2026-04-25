@@ -43,8 +43,8 @@
 
 |Métrique                   |Valeur|
 |---------------------------|------|
-|Total envoyés              |      |
-|Réponses reçues            |      |
-|Taux de réponse            |      |
-|Vertical principal ciblé   |      |
-|Meilleur cold de la semaine|      |
+|Total envoyés              |9 (replies Twitter, 0 DM)|
+|Réponses reçues            |0 (tous ⏳)|
+|Taux de réponse            |0%|
+|Vertical principal ciblé   |ecom (7/9)|
+|Meilleur cold de la semaine|@sierrachristian — DTC $44K rev / $10K Meta spend, angle ghost billing|
