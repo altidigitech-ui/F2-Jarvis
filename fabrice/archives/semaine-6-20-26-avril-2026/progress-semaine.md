@@ -57,7 +57,7 @@
 |Signups StoreMD (free)         |0            |1          |+1 (storemdtesttt — test externe)|
 |Signups StoreMD (paid)         |0            |1          |+1 (altidigitech agency — self-test confirmé)|
 |MRR                            |€0           |€199       |+€199 (1 sub agency — MRR externe réel = €0)|
-|Cold outreach envoyés (semaine)|0            |9          |+9 (9 replies Twitter, 0 DM)|
+|Cold outreach envoyés (semaine)|0            |9          |+9 (7 replies/queued + 2 DM Twitter)|
 |Réponses positives cold        |0            |0          |=    |
 
 -----
