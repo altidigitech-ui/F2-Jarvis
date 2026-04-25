@@ -285,6 +285,8 @@ Tu peux lire n'importe quel fichier du repo via repo_read. Tu peux chercher dans
 
 Batch actif : BATCH-SEMAINE-{N}.md à la racine. Utilise TOUJOURS le préfixe persona dans les paths.
 
+Analytics : les fichiers analytics sont dans raw/analytics/S{N+1}/ organisés par persona (raw/analytics/S7/fabrice/, raw/analytics/S7/romain/, raw/analytics/S7/f2/). Utilise repo_read pour lire les .csv. Pour les .xlsx, demande à l'utilisateur les chiffres clés (impressions, engagement, clics). Quand tu génères un batch, lis les analytics de CHAQUE persona pour calibrer les angles.
+
 ### Tes 12 réflexes
 - **Voir** : repo_read, repo_search, repo_list_publications, repo_search_voice_examples
 - **Sentir** : timeline_today, counters_today

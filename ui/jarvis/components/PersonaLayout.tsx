@@ -695,7 +695,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               onOpenProgress={() => { setOpenFilePath(filePaths.progress); setMobilePanel(null); }}
               onOpenPrompts={() => { setPromptsOpen(true); setMobilePanel(null); }}
             />
-            <BatchCard accentColor={accentColor} />
+            <BatchCard accentColor={accentColor} persona={persona} mode={mode} />
             <OuroborosPanel accentColor={accentColor} persona={persona} />
           </div>
           <div className="flex-1" />
@@ -911,7 +911,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
 
           {/* Batch S{N+1} card */}
-          <BatchCard accentColor={accentColor} />
+          <BatchCard accentColor={accentColor} persona={persona} mode={mode} />
 
           {/* Ouroboros panel */}
           <OuroborosPanel accentColor={accentColor} persona={persona} />
