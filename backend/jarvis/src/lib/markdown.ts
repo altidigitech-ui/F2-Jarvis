@@ -72,6 +72,7 @@ export function appendEngagementLog(markdown: string, platform: "TWITTER" | "LIN
   return appendTableRow(markdown, platform, [cestDate(), time, postSummary, reply, "", ""]);
 }
 
+/** @deprecated — never called externally. Logic fully handled in action-executor.ts applyTransform (mark_cross_published case). Remove in next cleanup. */
 export function markCrossPublished(markdown: string, postSummary: string, replyContent: string): string {
   const lines = markdown.split("\n");
   for (let i = 0; i < lines.length; i++) {
@@ -190,8 +191,10 @@ export function incrementCurrentCounter(markdown: string, metricName: string, in
       const cells = line.split("|");
       for (let j = 1; j < cells.length - 1; j++) {
         const trimmed = cells[j].trim();
-        if (/^\d+$/.test(trimmed)) {
-          cells[j] = ` ${parseInt(trimmed, 10) + increment} `;
+        const numMatch = trimmed.match(/^(\d+)(?:\s*\/\s*(\d+))?$/);
+        if (numMatch) {
+          const newVal = parseInt(numMatch[1], 10) + increment;
+          cells[j] = numMatch[2] ? ` ${newVal} / ${numMatch[2]} ` : ` ${newVal} `;
           lines[i] = cells.join("|");
           break;
         }
