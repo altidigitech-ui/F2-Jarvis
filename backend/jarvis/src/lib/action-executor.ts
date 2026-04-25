@@ -65,6 +65,12 @@ const CREATE_FILE_ALLOWED_ROOT_PATTERNS: RegExp[] = [
   /^REVUE-[\w-]+\.md$/,
   /^ARCH\.md$/,
   /^README\.md$/,
+  /^ENTRYPOINT\.md$/,
+  /^AUDIT\.md$/,
+  /^JARVIS([-\w]+)?\.md$/,
+  /^TEMPLATE-[\w-]+\.md$/,
+  /^ANTI-IA\.md$/,
+  /^VISUELS\.md$/,
 ];
 
 function validateCreateFilePath(path: string): void {
