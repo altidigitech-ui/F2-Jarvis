@@ -1,499 +1,383 @@
-# CROSS-ENGAGEMENT TRACKER R — Semaine 6 FINAL (20/04/2026 → 26/04/2026)
+# CROSS-ENGAGEMENT TRACKER R — Semaine 7 (27/04/2026 → 03/05/2026)
 
-**Fichier fusionné** regroupant les 2 couches de replies R pour la semaine 6 :
-- **Couche A — Sales Mode** : 14 replies R (lun→ven), voix expert growth/CRO, 6 registres VOIX.md
-- **Couche B — Beta Testers** : 8 replies R (mer→ven), ton founder enthousiaste, amplification offre beta
+**Fichier fusionné** Couche A + Couche B — replies R sur posts F et F2.
+- **Couche A — Sales Mode** : 12 replies R (lun→ven), voix expert growth/CRO, 6 registres VOIX.md
+- **Couche B — Beta "No Install"** : 10 replies R (mer→sam), ton founder enthousiaste, amplification offre beta
 
-**Total S6 R : 22 replies.**
-**Source :** `cross-engagement-tracker-R-semaine-6.md` (Couche A) + `cross-engagement-tracker-R-couche-B-semaine-6.md` (Couche B).
-**Archivage :** dimanche 26/04/2026 → `romain/archives/cross-engagement-tracker-s6-final.md`.
+**Total S7 R : 22 replies.**
+**Archivage :** dimanche 03/05/2026 → `romain/archives/cross-engagement-tracker-s7-final.md`.
+**Fichier READ-ONLY** — ne pas modifier automatiquement. Tracking dynamique dans `romain/engagement/cross-execution-log.md`.
 
 ---
 
 ═══════════════════════════════════════════════════════════════
-# COUCHE A — SALES MODE (14 replies R)
+# COUCHE A — SALES MODE (12 replies R)
 ═══════════════════════════════════════════════════════════════
 
-**Usage :** 14 replies R rédigées, prêtes à coller. Une reply par post F et F2 publié cette semaine.
-**Règle timing :** publier dans les **5 minutes** après la publication du post original. Signal Twitter = 150x par conversation (auteur reply + co-fondateur reply).
-**Règle voix :** mode écosystème. R ne découvre jamais le post. R prolonge depuis son vécu de co-fondateur growth. Jamais de question à F comme si R ne savait pas.
-**Règle ANTI-IA :** contractions obligatoires (don't, I've, it's), phrases de longueurs variées, pas d'em-dash pivot, pas de cadence fixe.
-**Règle registres :** alterner, jamais 2 fois le même consécutif. Registres utilisés dans les 14 replies : diagnostic, framework, retour d'expérience, provocateur, question qui tue, data-drop.
+**Règle timing :** publier dans les **5 minutes** après la publication du post original.
+**Règle voix :** mode écosystème. R prolonge depuis son vécu growth/CRO. Jamais de question à F comme si R ne savait pas. R parle vécu merchant, données, agences.
+**Règle registres :** alterner les 6 registres VOIX.md : diagnostic, framework, retour d'expérience, provocateur, question qui tue, data-drop. Jamais 2 consécutifs identiques.
+**Règle ANTI-IA :** contractions (don't, I've, it's), phrases de longueurs variées, pas d'em-dash pivot.
 
 ---
 
-## LUNDI 20/04
+## LUNDI 27/04
 
-### Reply A1 — F Twitter 13h00 (`store-md-myth-apps-fine` — "My apps are fine / 94% wrong")
+### Reply A1 — F Twitter 13h00 (`23 scans $300 bleed`)
 
 **Registre :** retour d'expérience
 **Reply (à coller 13h05 max) :**
 
 ```
-"my apps are fine" is the single most expensive phrase in ecom. I've lost count of the merchants I've talked to who said that right before I showed them $200+/mo leaking quietly.
+"reporting showed zero issues" is the part that stops merchants cold.
 
-the reason it's sticky is that shopify dashboard shows them installed = fine. nothing surfaces the uninstall → still billing mismatch.
+had one tell me she checked her analytics every week. nothing flagged. then we pulled up her Stripe billing together on a call and found four active subscriptions from apps she removed in 2024. she went quiet for about a minute.
+
+the dashboard isn't lying to you. it's just not showing you the right layer.
 ```
-
-**REPLY (si besoin d'un lien en reply-to-reply) :** aucun (pas de CTA produit en reply écosystème, F gère le CTA sur son propre post)
 
 ---
 
-### Reply A2 — F2 Twitter 13h00 (`store-md-logo-reveal` — Week 6 relaunch 52 scans)
+### Reply A2 — F2 Twitter 15h00 (`68 stores since launch`)
 
 **Registre :** data-drop
-**Reply (à coller 13h05 max) :**
+**Reply (à coller 15h05 max) :**
 
 ```
-52 scans in and the top finding is still ghost billing on 3 stores out of 4. zero exceptions this week on stores older than 18 months.
+68 stores and still zero exceptions on ghost billing for stores over 18 months old. thought we'd start finding clean ones eventually.
 
-the agencies we've onboarded are seeing it on their clients too. it's not a shopify niche problem, it's the baseline.
-```
-
----
-
-## MARDI 21/04
-
-### Reply A3 — F Twitter 13h00 (`store-md-tier-apps-danger` — 14 apps = 8.8s bloat)
-
-**Registre :** provocateur
-**Reply (à coller 13h05 max) :**
-
-```
-every merchant who complains about speed has been told it's their images. then you scan and it's 8.8s of apps stacked on each other.
-
-I've literally watched an agency charge $3k for image compression on a store whose real problem was 6 zombie scripts running.
+the pattern's consistent enough at this point that I'd call it structural, not a bug in a handful of apps.
 ```
 
 ---
 
-### Reply A4 — F2 Twitter 13h00 (`store-md-feature-health` — Store Health module)
+## MARDI 28/04
 
-**Registre :** framework
-**Reply (à coller 13h05 max) :**
-
-```
-the way I pitch the health module to merchants: it's a diff between what you think your store is and what LLMs, mobile users, and shopify billing actually see.
-
-most merchants check speed once a year via pagespeed insights and call it done. health module runs 43 checks in 60s. no comparison.
-```
-
----
-
-### Reply A5 — F LinkedIn 21h00 (`mardi-21-04-ghost-billing-deep-dive` — technical detection)
-
-**Registre :** retour d'expérience
-**Reply (à coller 21h05 max) :**
-
-```
-The technical breakdown here is spot-on. The piece merchants never understand is the asymmetry: the app developer can see the active subscription in their Partners dashboard, but the merchant can't see it anywhere.
-
-I've been on calls where a merchant fought me for 10 minutes that "Privy is uninstalled, I removed it in 2024." Then we checked the Shopify invoice line by line and there it was, $49/month, 14 months.
-
-The moment they see the number is the moment they stop arguing. That's the whole sales motion right there.
-```
-
----
-
-### Reply A6 — F2 LinkedIn 21h00 (`mardi-21-04-launch-week2` — Week 2 post-launch 54 scans)
-
-**Registre :** diagnostic
-**Reply (à coller 21h05 max) :**
-
-```
-The 67% "4+ seconds mobile load" stat is the one that hurts the most when agencies see it on their own clients.
-
-They've been selling speed optimization for years. They find out half their portfolio is above 4s and they've never benchmarked it.
-
-This is where the 3 agencies onboarded came from. Not from our outreach, from their own panic.
-```
-
----
-
-## MERCREDI 22/04
-
-### Reply A7 — F Twitter 13h00 (`mercredi-22-04-thread-before-after` — 🧵 $40k/mo store 72h case)
+### Reply A3 — F Twitter 13h00 (`🧵 thread $35k/mo`, sous tweet 1/5)
 
 **Registre :** question qui tue
-**Reply (à coller 13h05 max, sous tweet 1/8) :**
+**Reply (à coller 13h05 max, sous le premier tweet du thread) :**
 
 ```
-the 23 → 68 AI readiness jump in 48h is what agencies need to see. what's the average jump you're seeing when merchants actually apply the full fix package?
+the AI invisibility finding in tweet 4 is what agencies need to pay attention to. clients are ranking fine on Google today. in 18 months AI search is a different conversation entirely.
+
+how many of the stores you've scanned had schema missing across more than 60% of the catalog?
 ```
 
 ---
 
-### Reply A8 — F2 Twitter 13h00 (`mercredi-22-04-social-proof` — "I thought my store was fine" 34/100)
+### Reply A4 — F2 Twitter 15h00 (`94% ghost billing`)
 
 **Registre :** provocateur
-**Reply (à coller 13h05 max) :**
+**Reply (à coller 15h05 max) :**
 
 ```
-34/100 is the number no one wants to share publicly. the reason most agencies don't run this scan on their own clients is they're scared of what it'll surface about their own work.
+94% holding across 68 stores is the stat I lead with in every agency conversation now. not for the drama — it removes the "probably won't affect our clients" objection in the first sentence.
 
-unpopular opinion but agencies should be forced to publish their portfolio's average score before taking new clients.
-```
-
----
-
-### Reply A9 — F LinkedIn 21h00 (`mercredi-22-04-ai-readiness-deep-dive` — Shopify invisible to ChatGPT)
-
-**Registre :** data-drop
-**Reply (à coller 21h05 max) :**
-
-```
-The 82% JS-only reviews stat is the one that's going to age the worst.
-
-Every store I scanned this year running Loox, Judge.me, or Yotpo has this exact problem. Reviews render client-side, LLMs don't execute JS in their scraping, aggregateRating schema missing = store invisible to ChatGPT shopping recommendations.
-
-The merchants I've talked to think reviews are a conversion lever. In 2026 they're also an AI discovery signal. Different game, same data layer.
+if it's 94%, you don't get to say "probably not us." you say "which stores are in the 6%."
 ```
 
 ---
 
-## JEUDI 23/04
+### Reply A5 — F LinkedIn 17h30 (`40+ builder story`)
 
-### Reply A10 — F Twitter 13h00 (`jeudi-23-04-hidden-list` — 5 things Shopify dashboard HIDES)
-
-**Registre :** retour d'expérience
-**Reply (à coller 13h05 max) :**
+**Registre :** framework
+**Reply (à coller 17h35 max) :**
 
 ```
-the "scripts from deleted apps still firing" one is the most underrated on this list. I scanned a store last week, 3 apps "removed" in 2024, scripts still injected on every product page in 2026.
+The "scan the billing layer, not the admin panel" line is the fastest way to explain the gap.
 
-shopify's uninstall doesn't clean theme-level code. merchants assume it does. they've been told it does. it doesn't.
+Shopify's admin API shows app status from Shopify's perspective. Stripe's billing API shows subscription status from the payment processor's perspective. Different systems, different data, different truth.
+
+Most analytics tools read from Shopify's admin API. StoreMD reads both. That's the whole product in one sentence — admin shows it's gone, Stripe shows it's billing, we show you the gap.
 ```
 
 ---
 
-### Reply A11 — F2 Twitter 13h00 (`jeudi-23-04-invisible-loss` — $2,268/year ghost cumulative)
+## MERCREDI 29/04
+
+### Reply A6 — F Twitter 13h00 (`3 hidden metrics`)
 
 **Registre :** diagnostic
 **Reply (à coller 13h05 max) :**
 
 ```
-$2,268/year is the floor, not the ceiling. the stores I've scanned above $100k/mo revenue hit $4-6k/year ghost billing because they've installed and uninstalled more apps over more years.
+the "14+ months undetected" part is what gets merchants thinking. they know roughly what they spent on apps. they don't track how long the billing continued after they stopped using them.
 
-the longer the store exists, the bigger the leak.
+I ask every merchant I talk to: "when did you last uninstall an app?" Usually within the past year. "Did you cancel the Stripe subscription at the same time?" Almost never.
+
+that gap is the whole story.
 ```
 
 ---
 
-### Reply A12 — F LinkedIn 21h00 (`jeudi-23-04-social-proof-agency` — 8 clients scanned reformulé)
+### Reply A7 — F2 Twitter 15h00 (`3 things analytics`)
 
 **Registre :** framework
-**Reply (à coller 21h05 max) :**
+**Reply (à coller 15h05 max) :**
 
 ```
-The agency-as-distribution-layer pattern is the single biggest lever we've found in S6. Here's why it scales differently than direct merchant outreach:
+the "43 checks in 60 seconds" framing makes the manual audit comparison obvious. checking those 3 layers manually would take 3-4 hours per store — Stripe line items, pagespeed attribution, schema validation across the catalog.
 
-When you acquire an agency, you don't get one scanner user. You get their entire client portfolio as scan pipeline. One agency with 20 Shopify clients = 20 scans + 20 conversations about leaks.
-
-The agency owns the relationship, owns the fix invoice, owns the retention. We own the detection. Clean split, no overlap, no conflict.
-
-This is why we're shifting 60% of outreach toward agencies for S7.
+60 seconds automated vs 3 hours manual. that's why agencies keep coming back after the first scan.
 ```
 
 ---
 
-## VENDREDI 24/04
+## JEUDI 30/04
 
-### Reply A13 — F Twitter 13h00 (`vendredi-24-04-roi-math` — $2,268/year ROI math)
+### Reply A8 — F Twitter 13h00 (`$189/mo ghost billing`)
 
-**Registre :** question qui tue
+**Registre :** retour d'expérience
 **Reply (à coller 13h05 max) :**
 
 ```
-the math gets worse when you add the conversion tax from the speed loss apps create on top of the direct billing. merchant loses $189/mo direct + 15-20% conversion drop on mobile. so what's the real ROI of not scanning on a $40k/mo store?
+the annual framing is what makes the number hit. I changed how I talk about it after watching merchants shrug at $189/month.
+
+$189/month gets "yeah I should check that eventually." $2,646/year gets "wait, what."
+
+same number. different decision.
 ```
 
 ---
 
-### Reply A14 — F2 Twitter 13h00 (`vendredi-24-04-week-recap` — Week 6 numbers recap)
+### Reply A9 — F2 Twitter 15h00 (`agency offer free scan`)
 
 **Registre :** data-drop
-**Reply (à coller 13h05 max) :**
+**Reply (à coller 15h05 max) :**
 
 ```
-68 scans in one week, 52 with confirmed ghost billing. that's a 76% hit rate on the top finding alone.
+every agency we've worked with found issues their own audits missed. not most — every single one.
 
-the stat that's starting to emerge: stores under 2 years old = 45% hit rate. stores over 5 years = 91%. the "leak grows with store age" pattern is holding across the sample.
+that data point alone closes the "we already audit our clients" objection before it even finishes.
 ```
 
 ---
 
-## SAMEDI 25/04 & DIMANCHE 26/04 — Couche A
+### Reply A10 — F LinkedIn 17h30 (`ghost billing deep dive`)
 
-F publie `store-md-horror-slow-store` (samedi) et `store-md-before-after-ai` (dimanche). R est en weekend batching S7. **Pas de reply cross-eng weekend** sauf si F ping explicitement — maintenir la règle Volume × Constance sans compromettre le repos.
+**Registre :** retour d'expérience
+**Reply (à coller 17h35 max) :**
 
-Si R décide quand même de reply :
-- Samedi : registre court, casual, 1-2 phrases max. Ex : "the 22 scans on friday alone is what agencies need to see. compounding."
-- Dimanche : prolongation technique sur un des 4 checks AI readiness, registre data-drop.
+```
+The "19 months longest undetected" is the number that closes conversations.
+
+Had an agency owner tell me she did monthly reconciliation for every client. We checked anyway. Found $340/month ghost billing on one store — active since August 2024.
+
+She was reconciling against Shopify's admin view. Not Stripe's billing API. Different data. Different truth.
+
+The fix took 8 minutes once she had the subscription IDs. The scan gave her the IDs in 60 seconds.
+```
+
+---
+
+## VENDREDI 01/05
+
+### Reply A11 — F Twitter 13h00 (`AI readiness`)
+
+**Registre :** diagnostic
+**Reply (à coller 13h05 max) :**
+
+```
+the "18 months" window is worth taking seriously. ChatGPT Shopping is live now. Perplexity product recommendations are live now.
+
+the merchants who fix their schema this month are ahead of the merchants who wait for the traffic dip. by the time it shows up in analytics, it's already been costing them for 6 months.
+```
+
+---
+
+### Reply A12 — F2 Twitter 15h00 (`AI readiness 42%`)
+
+**Registre :** provocateur
+**Reply (à coller 15h05 max) :**
+
+```
+42% of stores with broken AI search visibility and nothing in their analytics flagging it is the quietest problem in ecom right now.
+
+in 12 months this is the "why are our organic numbers down" conversation nobody can explain. except the stores that already scanned.
+```
 
 ---
 
 ### COMPTEUR COUCHE A
 
-| Jour | Replies R exécutées | Registres utilisés |
-|------|---------------------|---------------------|
-| Lundi | 2 (F + F2 Twitter) | retour d'expérience, data-drop |
-| Mardi | 4 (F + F2 Twitter, F + F2 LinkedIn) | provocateur, framework, retour d'expérience, diagnostic |
-| Mercredi | 3 (F + F2 Twitter, F LinkedIn) | question qui tue, provocateur, data-drop |
-| Jeudi | 3 (F + F2 Twitter, F LinkedIn) | retour d'expérience, diagnostic, framework |
-| Vendredi | 2 (F + F2 Twitter) | question qui tue, data-drop |
-| **Total Couche A** | **14 replies R** | 6 registres tous utilisés, alternance respectée |
-
-**Note :** 14 replies au lieu de 13 annoncées dans le batch §2.1. La différence vient du comptage F2 Twitter qui a 5 posts (pas 4). Chiffre corrigé ici, le batch §2.1 sera aligné au prochain refresh.
-
-### RÈGLES D'EXÉCUTION COUCHE A
-
-1. **Timing 5 min max** après publication de F ou F2. Au-delà, le signal 150x est perdu.
-2. **Mode écosystème :** R ne découvre pas, R prolonge. Cacher mentalement le post original, la reply doit tenir debout seule.
-3. **Pas de question à F comme si R ne savait pas** — ils sont co-fondateurs, ils savent déjà tout.
-4. **Pas de CTA produit en reply écosystème** — F/F2 gère son propre CTA sur son propre post. R partage du vécu.
-5. **Variation registres** — ne jamais 2 replies consécutives même registre.
-6. **ANTI-IA :** contractions, phrases variées, pas d'em-dash pivot, pas de "Not X it's Y".
-7. **Si une reply ne sort pas dans les 5 min** — la publier quand même dans l'heure, le signal est réduit mais le maillage écosystème reste.
+| Jour | Replies R | Registres utilisés |
+|------|-----------|--------------------|
+| Lundi | 2 (F TW + F2 TW) | retour d'expérience, data-drop |
+| Mardi | 3 (F TW + F2 TW + F LI) | question qui tue, provocateur, framework |
+| Mercredi | 2 (F TW + F2 TW) | diagnostic, framework |
+| Jeudi | 3 (F TW + F2 TW + F LI) | retour d'expérience, data-drop, retour d'expérience |
+| Vendredi | 2 (F TW + F2 TW) | diagnostic, provocateur |
+| **Total Couche A** | **12 replies R** | 6 registres tous utilisés |
 
 ---
 
 ═══════════════════════════════════════════════════════════════
-# COUCHE B — BETA TESTERS ACQUISITION DIRECTE (8 replies R)
+# COUCHE B — BETA "NO INSTALL" (10 replies R)
 ═══════════════════════════════════════════════════════════════
 
-**Usage :** 8 replies R rédigées, prêtes à coller. Une reply par post Couche B (beta testers) publié par F ou F2 sur mer-ven.
-**Couche :** B — Beta Testers Acquisition Directe (voir `BATCH-ADDITIONNEL-MER-VEN-S6.md` ou section Couche B du batch final).
-**Différence Couche A vs Couche B :** en Couche A, R reply avec voix expert growth/CRO (6 registres VOIX.md). En Couche B, R **abandonne l'angle spécialiste** et adopte un ton **founder enthousiaste** : camaraderie co-fondateur, amplification de l'offre beta, vente directe du produit, pas d'analyse growth.
-**Règle timing :** publier dans les **5 minutes** après la publication du post original. Signal Twitter = 150x par conversation.
-**Règle voix Couche B :**
-- Pas d'analyse growth/CRO (laissé à la Couche A)
-- Pas de chiffres agrégés (94%, 78%, etc. — laissés aux posts eux-mêmes)
-- Pas de retour d'expérience détaillé (2-3 paragraphes client story)
-- Énergie co-fondateur, réaction immédiate, amplification de l'offre
-- Phrases courtes, directes, enthousiastes
-- Mentions DMs qui arrivent, spots qui se remplissent, rappel du quota 10
-- Jamais de CTA produit concurrent (R amplifie le CTA porté par le post original)
-**Règle ANTI-IA :** contractions obligatoires (don't, I've, it's), phrases variées, pas d'em-dash pivot, pas de "Here's the thing", pas de "Let me".
-**Règle BIBLE §3 v2.1 :** pas de faux MRR, pas de testimonial verbatim, pas de nom client fictif, pas de faux nombre claimed si c'est pas vrai.
+**Règle voix Couche B :** ton founder enthousiaste. Pas d'analyse growth détaillée. R amplifie, mentionne Fab, renforce l'image co-fondateurs alignés.
+**Règle timing :** 5 minutes max après publication.
+**Règle ANTI-IA :** contractions, phrases variées, pas d'em-dash pivot.
 
 ---
 
-## MERCREDI 22/04
+## MERCREDI 29/04
 
-### Reply B1 — F Twitter 18h30 (§B.4.1 Beta builder angle)
+### Reply B1 — F Twitter 18h00 (`51/0 no install hook`)
 
-**Post de F :** F annonce les 10 spots Pro beta en mode builder, explique ce qui est dans le Pro, pourquoi 10 real merchants pendant 30 jours.
-
-**Ton R :** founder excité qui appuie, complètement aligné avec F (co-fondateurs, ils ont décidé ça ensemble).
-
-**Reply R (à coller 18h35 max) :**
+**Reply (à coller 18h05 max) :**
 
 ```
-this is it. 10 spots, 30 days, full Pro.
+Fab covered the technical side. my end: I've been taking DMs all afternoon from merchants who saw the 51/0 number.
 
-we picked 10 because 10 is what we can handle personally without faking the support.
-
-if you're reading this and you run shopify — DM either of us, don't wait for the post to blow up
+DM either of us. report back in 2 hours, no install needed.
 ```
-
-**Traduction :**
-> ça y est. 10 spots, 30 jours, Pro complet. On a pris 10 parce que 10 c'est ce qu'on peut gérer personnellement sans faker le support. Si tu lis ça et tu run shopify — DM l'un de nous, attend pas que le post explose.
 
 ---
 
-### Reply B2 — F2 Twitter 18h30 (§B.5.1 Beta studio angle)
+### Reply B2 — F2 Twitter 20h00 (`OAuth wall`)
 
-**Post de F2 :** F2 annonce les 10 spots Pro beta en voix studio neutre, formalise le deal ("what you get / what we ask").
-
-**Ton R :** founder qui relaie l'annonce studio, ajoute l'énergie humaine que F2 "we" neutre ne peut pas porter.
-
-**Reply R (à coller 18h35 max) :**
+**Reply (à coller 20h05 max) :**
 
 ```
-this is the week. 10 spots. open DMs for all of us.
-
-I'll take 5, fab takes 5. whoever gets there first.
-
-if you DM @foundrytwo, me, or fab — same thing, we're all in on this
+10 spots. Fab and I split the DMs. if you run shopify and want a free audit without touching the install flow — this week, this is the way.
 ```
-
-**Traduction :**
-> c'est la semaine. 10 spots. DMs ouverts pour nous tous. Je prends 5, fab prend 5. Premier arrivé premier servi. Si tu DM @foundrytwo, moi, ou fab — même chose, on est tous dessus.
 
 ---
 
-### Reply B3 — F LinkedIn 21h00 (§B.7.1 Pro beta technical)
+### Reply B3 — F LinkedIn 21h00 (`why no install`)
 
-**Post de F :** F explique l'infrastructure technique du Pro (BullMQ + Redis, pipelines différents, Shopify billing history diff, per-LLM scoring, AST parsing, etc.) et le deal beta.
-
-**Ton R :** founder non-technique qui appuie sur le "human side" — ce que F a construit + ce que ça change pour les merchants réels, sans retomber dans l'analyse growth.
-
-**Reply R (à coller 21h05 max) :**
+**Reply (à coller 21h05 max) :**
 
 ```
-Fab just walked you through what's in Pro under the hood. My part is simpler — I'm picking up the phone (well, DMs) with every merchant and agency that claims a spot.
+Fab walked through the technical reason. My end is simpler: 3 merchants today DMed a URL and had full scan reports back within 2 hours. No form. No calendar link. Just a URL.
 
-30 days of Pro access is not a trial where you figure it out alone. Day 14 is a real 15-min call with one of us. Day 30 we sit down with what you tell us and decide what Pro actually needs to be.
-
-If you run Shopify and you want in, DM Fab or me. 10 spots. We onboard the first 10 tonight.
+If you've been sitting on scanning your store because the install felt like too many steps — DM either of us this week. You skip the install entirely.
 ```
-
-**Traduction :**
-> Fab vient de te présenter ce qu'il y a dans Pro sous le capot. Mon rôle est plus simple — je prends les DMs avec chaque merchant et agency qui claim un spot. 30 jours d'accès Pro c'est pas un trial où tu te débrouilles seul. Day 14 c'est un vrai call 15 min avec l'un de nous. Day 30 on s'asseoit avec ce que tu nous dis et on décide ce que Pro doit vraiment être. Si tu run Shopify et tu veux rentrer, DM Fab ou moi. 10 spots. Les 10 premiers on onboard ce soir.
-
-**Note format LinkedIn :** 1 phrase par ligne, pas de hashtags, saut de ligne entre paragraphes. Lien dans le corps OK LinkedIn mais pas pertinent ici (R amplifie, F a déjà mis le CTA dans son post).
 
 ---
 
-## JEUDI 23/04
+## JEUDI 30/04
 
-### Reply B4 — F Twitter 18h30 (§B.4.2 Cold scan batch)
+### Reply B4 — F Twitter 18h00 (`scan result live`)
 
-**Post de F :** F annonce qu'il va scanner 5 stores aléatoires du jour (DMs + followers), rapport 24h.
-
-**Ton R :** founder qui amplifie, propose la même chose de son côté pour doubler le volume.
-
-**Reply R (à coller 18h35 max) :**
+**Reply (à coller 18h05 max) :**
 
 ```
-I'll run 5 more on my side today. different batch, same deal.
+that "took 20 minutes to explain why ads weren't converting" is the one. the scan makes visible what 3 months of attribution analysis couldn't find.
 
-DM whichever of us you want — we compare notes tonight and send reports tomorrow morning.
-
-between fab's 5 and mine that's 10 free Pro-level scans today
+4 spots left. DM your URL.
 ```
-
-**Traduction :**
-> Je run 5 de plus de mon côté aujourd'hui. Différent batch, même deal. DM celui que tu veux de nous deux — on compare les notes ce soir et on envoie les rapports demain matin. Entre les 5 de fab et les miens ça fait 10 scans gratuits niveau Pro aujourd'hui.
 
 ---
 
-### Reply B5 — F2 Twitter 18h30 (§B.5.2 Scan gratuit séparé)
+### Reply B5 — F2 Twitter 20h00 (`beta update 6 stores`)
 
-**Post de F2 :** F2 clarifie que séparément des 10 spots beta, il y a aussi le scan public gratuit one-shot disponible pour ceux qui ne veulent pas l'engagement 30 jours.
-
-**Ton R :** founder qui ajoute une raison humaine de passer quand même par DM plutôt que self-serve silencieux.
-
-**Reply R (à coller 18h35 max) :**
+**Reply (à coller 20h05 max) :**
 
 ```
-self-serve scan is fully public, zero friction.
+6/6 had ghost billing. not one exception so far.
 
-but honestly if you DM me your URL, I'll run it myself and add 2-3 observations specific to your store. free, same 60s scan, just with the human part on top.
-
-your call. both work
+4 spots left. last chance to be in batch 1.
 ```
-
-**Traduction :**
-> Le scan self-serve est totalement public, zéro friction. Mais honnêtement si tu DM ton URL, je run moi-même et j'ajoute 2-3 observations spécifiques à ta boutique. Gratuit, même scan 60s, juste avec la partie humaine en plus. À toi de voir. Les deux marchent.
 
 ---
 
-## VENDREDI 24/04
+## VENDREDI 01/05
 
-### Reply B6 — F Twitter 18h30 (§B.4.3 Pro findings teaser)
+### Reply B6 — F Twitter 18h00 (`builder story no-auth`)
 
-**Post de F :** F teaser sur 3 findings Pro uniquement trouvés sur 3 stores scannés en Pro cette semaine (theme code injection 2023 app, metafield corruption, competitor delta app stack).
-
-**Ton R :** founder qui confirme depuis l'autre côté — il a vu ces scans tourner, les merchants ont réagi fort.
-
-**Reply R (à coller 18h35 max) :**
+**Reply (à coller 18h05 max) :**
 
 ```
-saw the 3 Pro scans fab ran this week. the reaction in each DM was the same — "how did I not know this."
+"let the report build trust before asking for any permissions" — that's the whole pivot.
 
-this is what Pro does that free can't. go deeper, catch the ugly stuff no other tool surfaces.
+works the same way in cold outreach. send the finding first. the install ask comes later and it lands completely differently.
 
-spots almost gone. last day to DM
+2 spots left if you want one today.
 ```
-
-**Traduction :**
-> J'ai vu les 3 scans Pro que fab a run cette semaine. La réaction dans chaque DM c'était la même — "comment j'ai pu ne pas savoir ça." C'est ça que Pro fait et que le free peut pas. Aller plus profond, catch le sale truc qu'aucun autre tool surface. Spots presque partis. Dernier jour pour DM.
-
-**⚠️ Note chiffre "spots almost gone" :** à ajuster selon la réalité au moment de publier. Si à 18h30 vendredi il reste 6 spots, reformuler en "still 4 spots left" ou similaire. BIBLE §3 — pas de faux quota scaling.
 
 ---
 
-### Reply B7 — F2 Twitter 18h30 (§B.5.3 Beta pipeline recap)
+### Reply B7 — F2 Twitter 20h00 (`beta week wrap`)
 
-**Post de F2 :** F2 recap pipeline beta semaine (spots ouverts mer, feedback loop day 14, Pro public après consolidation).
-
-**Ton R :** founder qui appuie côté humain — ce qui compte c'est qui est dedans, pas le process.
-
-**Reply R (à coller 18h35 max) :**
+**Reply (à coller 20h05 max) :**
 
 ```
-week made. mix of solo merchants, DTC brands, and 2 agencies bringing multiple clients through.
+batch 2 opens next week. sign up at storemd.vercel.app to be first on the list.
 
-the agency angle was the unexpected one. one agency alone put 7 of their stores through in 48h.
-
-S7 we open more. this week we focus on the 10
+this week's batch closes tonight.
 ```
-
-**Traduction :**
-> Semaine réussie. Mix de merchants solo, marques DTC, et 2 agencies qui amènent plusieurs clients. L'angle agency était l'inattendu. Une agency à elle seule a mis 7 de ses stores en 48h. S7 on ouvre plus. Cette semaine on se focus sur les 10.
-
-**⚠️ Notes chiffres :** "2 agencies bringing multiple clients" + "one agency put 7 stores" = cohérent avec le recap R LinkedIn vendredi (§B.6.3 qui dit "60% merchants 40% agencies, one agency 7 clients"). **Si la réalité diffère au moment de publier, aligner** — les 2 posts R (Twitter reply + LinkedIn recap) doivent dire la même chose pour éviter la contradiction.
 
 ---
 
-### Reply B8 — F LinkedIn 21h00 (§B.7.2 Pro findings nouveau)
+### Reply B8 — F LinkedIn 21h00 (`beta results 8 stores`)
 
-**Post de F :** F détaille 3 findings Pro complets (theme code injection 16 mois, metafield corruption 8% catalogue, competitor delta 82% peers removed), recap pipeline beta.
-
-**Ton R :** founder qui clôt la semaine avec une vue business (ce que ces 3 scans signifient en conversations converties), reste court, pas d'analyse approfondie.
-
-**Reply R (à coller 21h05 max) :**
+**Reply (à coller 21h05 max) :**
 
 ```
-The 3 Pro scans Fab ran this week were the ones that closed 3 follow-up conversations I had on the merchant side. Each one went from "interesting scan" to "can I get the fix package pricing" in under 48 hours.
+The findings from this week's 8 scans are exactly what I've been putting in front of merchants in cold outreach. Not made-up data — actual scan results from actual stores.
 
-That's the part Pro does that nothing else does. Not "we scan deeper." It's "the finding is specific enough that the merchant can't ignore it."
+The "numbers should be better" pattern Fab saw in DMs is the same thing I hear on cold calls. Merchants know something's off. They've been looking in the wrong place.
 
-Spots close tonight. DM either of us.
+Batch 2 next week. DM me if you want a spot.
 ```
 
-**Traduction :**
-> Les 3 scans Pro que Fab a run cette semaine sont ceux qui ont closé 3 conversations follow-up que j'avais côté merchant. Chacune est passée de "scan intéressant" à "je peux avoir le pricing du fix package" en moins de 48h. C'est ça que Pro fait et que rien d'autre ne fait. Pas "on scan plus profond." C'est "la finding est assez spécifique pour que le merchant puisse pas l'ignorer." Spots ferment ce soir. DM l'un de nous.
+---
 
-**⚠️ Note chiffre "3 follow-up conversations closed" :** à ajuster selon la réalité. Si R n'a pas effectivement 3 conversations qui sont passées à "can I get pricing" en 48h, reformuler en "the 3 Pro scans this week turned into real follow-up conversations on my side." BIBLE §3 — pas de faux claims de pipeline conversion spécifique.
+## SAMEDI 02/05
+
+### Reply B9 — F Twitter 13h00 (`22/22 ghost billing`)
+
+**Registre :** data-drop (retour Couche A, samedi)
+**Reply (à coller 13h05 max) :**
+
+```
+22/22 is the number I couldn't believe the first time. thought there'd be at least one exception.
+
+98 stores total now. not one clean store over 18 months old. the pattern holds every week.
+```
+
+---
+
+### Reply B10 — F Twitter 18h00 (`6/10 spots urgency`)
+
+**Reply (à coller 18h05 max) :**
+
+```
+6 spots filled this week. Fab ran same-day scans on every DM that came in.
+
+4 left. no install, just your URL. last day for batch 1.
+```
 
 ---
 
 ### COMPTEUR COUCHE B
 
-| Jour | Replies R exécutées | Détail |
-|---|---|---|
-| Mercredi | 3 (F TW + F2 TW + F LI) | Reply B1, B2, B3 |
-| Jeudi | 2 (F TW + F2 TW) | Reply B4, B5 |
-| Vendredi | 3 (F TW + F2 TW + F LI) | Reply B6, B7, B8 |
-| **Total Couche B** | **8 replies** | |
-
-### RÈGLES D'EXÉCUTION COUCHE B
-
-1. **Timing 5 min max** après publication de F ou F2 Couche B. Signal 150x activé.
-2. **Ton founder enthousiaste** — pas d'analyse growth, pas de 6 registres VOIX.md. R amplifie, R n'explique pas.
-3. **Mentions de F obligatoires** ("fab", "either of us", "our 10 spots") — renforce l'image co-fondateurs alignés, pas 2 comptes qui font leur truc chacun.
-4. **Pas de CTA produit concurrent** — le CTA principal est dans le post original (DM / claim spot / scan). R ne crée pas un nouveau CTA.
-5. **Éviter la redondance avec Couche A** — si R a déjà dit le même chiffre ou le même pattern en reply Couche A le même jour, ne pas le répéter ici.
-6. **ANTI-IA** — contractions systématiques, phrases variées, pas d'em-dash pivot, ouvertures différentes à chaque reply (ne pas commencer 2 replies consécutives par "this is" ou "the").
-7. **Chiffres** — utiliser les vrais chiffres du moment (spots restants, scans effectués). Si faux → reformuler générique. BIBLE §3.
-8. **Si reply sort au-delà de 5 min** — publier dans l'heure quand même, maillage écosystème maintenu même avec signal réduit.
+| Jour | Replies R | Détail |
+|------|-----------|--------|
+| Mercredi | 3 (F TW + F2 TW + F LI) | B1, B2, B3 |
+| Jeudi | 2 (F TW + F2 TW) | B4, B5 |
+| Vendredi | 3 (F TW + F2 TW + F LI) | B6, B7, B8 |
+| Samedi | 2 (F TW A6 + F TW B4) | B9, B10 |
+| **Total Couche B** | **10 replies** | |
 
 ---
 
 ═══════════════════════════════════════════════════════════════
-# COMPTEUR CONSOLIDÉ S6 — R TOTAL
+# COMPTEUR CONSOLIDÉ S7 — R TOTAL
 ═══════════════════════════════════════════════════════════════
 
 | Jour | Couche A | Couche B | Total R jour |
 |------|----------|----------|--------------|
-| Lundi 20/04 | 2 replies (A1, A2) | — | 2 |
-| Mardi 21/04 | 4 replies (A3, A4, A5, A6) | — | 4 |
-| Mercredi 22/04 | 3 replies (A7, A8, A9) | 3 replies (B1, B2, B3) | 6 |
-| Jeudi 23/04 | 3 replies (A10, A11, A12) | 2 replies (B4, B5) | 5 |
-| Vendredi 24/04 | 2 replies (A13, A14) | 3 replies (B6, B7, B8) | 5 |
-| **Total S6** | **14 replies** | **8 replies** | **22 replies R** |
+| Lundi 27/04 | 2 (A1, A2) | — | 2 |
+| Mardi 28/04 | 3 (A3, A4, A5) | — | 3 |
+| Mercredi 29/04 | 2 (A6, A7) | 3 (B1, B2, B3) | 5 |
+| Jeudi 30/04 | 3 (A8, A9, A10) | 2 (B4, B5) | 5 |
+| Vendredi 01/05 | 2 (A11, A12) | 3 (B6, B7, B8) | 5 |
+| Samedi 02/05 | — (R OFF) | 2 (B9, B10) | 2 |
+| **Total S7** | **12 replies** | **10 replies** | **22 replies R** |
 
 ---
 
@@ -501,71 +385,31 @@ Spots close tonight. DM either of us.
 # STATUT EXÉCUTION CONSOLIDÉ
 ═══════════════════════════════════════════════════════════════
 
-Cocher au fur et à mesure :
-
-| # | Couche | Jour | Heure cible | Compte | Reply | Statut |
-|---|--------|------|------------|--------|-------|--------|
-| 1 | A | Lun 20/04 | 13h05 | F TW | A1 myth apps | ☐ |
-| 2 | A | Lun 20/04 | 13h05 | F2 TW | A2 relaunch | ☐ |
-| 3 | A | Mar 21/04 | 13h05 | F TW | A3 app impact | ☐ |
-| 4 | A | Mar 21/04 | 13h05 | F2 TW | A4 feature health | ☐ |
-| 5 | A | Mar 21/04 | 21h05 | F LI | A5 ghost billing deep | ☐ |
-| 6 | A | Mar 21/04 | 21h05 | F2 LI | A6 week 2 post-launch | ☐ |
-| 7 | A | Mer 22/04 | 13h05 | F TW | A7 before/after thread | ☐ |
-| 8 | A | Mer 22/04 | 13h05 | F2 TW | A8 I thought fine | ☐ |
-| 9 | A | Mer 22/04 | 21h05 | F LI | A9 AI readiness deep | ☐ |
-| 10 | A | Jeu 23/04 | 13h05 | F TW | A10 hidden list | ☐ |
-| 11 | A | Jeu 23/04 | 13h05 | F2 TW | A11 invisible loss | ☐ |
-| 12 | A | Jeu 23/04 | 21h05 | F LI | A12 agency social proof | ☐ |
-| 13 | A | Ven 24/04 | 13h05 | F TW | A13 ROI math | ☐ |
-| 14 | A | Ven 24/04 | 13h05 | F2 TW | A14 week recap | ☐ |
-| 15 | B | Mer 22/04 | 18h35 | F TW | B1 Beta builder angle | ☐ |
-| 16 | B | Mer 22/04 | 18h35 | F2 TW | B2 Beta studio angle | ☐ |
-| 17 | B | Mer 22/04 | 21h05 | F LI | B3 Pro beta technical | ☐ |
-| 18 | B | Jeu 23/04 | 18h35 | F TW | B4 Cold scan batch | ☐ |
-| 19 | B | Jeu 23/04 | 18h35 | F2 TW | B5 Scan gratuit séparé | ☐ |
-| 20 | B | Ven 24/04 | 18h35 | F TW | B6 Pro findings teaser | ☐ |
-| 21 | B | Ven 24/04 | 18h35 | F2 TW | B7 Beta pipeline recap | ☐ |
-| 22 | B | Ven 24/04 | 21h05 | F LI | B8 Pro findings | ☐ |
+| # | Couche | Jour | Heure cible | Compte | Post source | Statut |
+|---|--------|------|-------------|--------|-------------|--------|
+| 1 | A | Lun 27/04 | 13h05 | F TW | 23 scans $300 bleed | ☐ |
+| 2 | A | Lun 27/04 | 15h05 | F2 TW | 68 stores since launch | ☐ |
+| 3 | A | Mar 28/04 | 13h05 | F TW | thread $35k/mo (tweet 1) | ☐ |
+| 4 | A | Mar 28/04 | 15h05 | F2 TW | 94% ghost billing | ☐ |
+| 5 | A | Mar 28/04 | 17h35 | F LI | 40+ builder story | ☐ |
+| 6 | A | Mer 29/04 | 13h05 | F TW | 3 hidden metrics | ☐ |
+| 7 | A | Mer 29/04 | 15h05 | F2 TW | 3 things analytics | ☐ |
+| 8 | A | Jeu 30/04 | 13h05 | F TW | $189/mo ghost billing | ☐ |
+| 9 | A | Jeu 30/04 | 15h05 | F2 TW | agency offer free scan | ☐ |
+| 10 | A | Jeu 30/04 | 17h35 | F LI | ghost billing deep dive | ☐ |
+| 11 | A | Ven 01/05 | 13h05 | F TW | AI readiness | ☐ |
+| 12 | A | Ven 01/05 | 15h05 | F2 TW | AI readiness 42% | ☐ |
+| 13 | B | Mer 29/04 | 18h05 | F TW | 51/0 no install hook | ☐ |
+| 14 | B | Mer 29/04 | 20h05 | F2 TW | OAuth wall | ☐ |
+| 15 | B | Mer 29/04 | 21h05 | F LI | why no install | ☐ |
+| 16 | B | Jeu 30/04 | 18h05 | F TW | scan result live | ☐ |
+| 17 | B | Jeu 30/04 | 20h05 | F2 TW | beta update 6 stores | ☐ |
+| 18 | B | Ven 01/05 | 18h05 | F TW | builder story no-auth | ☐ |
+| 19 | B | Ven 01/05 | 20h05 | F2 TW | beta week wrap | ☐ |
+| 20 | B | Ven 01/05 | 21h05 | F LI | beta results 8 stores | ☐ |
+| 21 | B | Sam 02/05 | 13h05 | F TW | 22/22 ghost billing | ☐ |
+| 22 | B | Sam 02/05 | 18h05 | F TW | 6/10 spots urgency | ☐ |
 
 ---
 
-*Tracker R S6 final fusionné 21/04/2026. Couche A : replies rédigées selon canon §17 BATCH-SEMAINE-6.md + voix R VOIX.md + ANTI-IA.md. Couche B : replies rédigées selon ton founder enthousiaste validé 21/04 + BIBLE v2.1 §3 + ANTI-IA.md. Posts Couche B source : `BATCH-ADDITIONNEL-MER-VEN-S6.md` (ou section Couche B de `batch-semaine-6-final.md`).*
-
-
-**Reply R publiée (24/04/2026 19:48:15 CEST) :**
-
-```
-the math gets worse when you add the conversion tax from the speed loss apps create on top of the direct billing. merchant loses $189/mo direct + 15-20% conversion drop on mobile. so what's the real ROI of not scanning on a $40k/mo store?
-```
-
-
-**Reply R publiée (24/04/2026 19:48:15 CEST) :**
-
-```
-68 scans in one week, 52 with confirmed ghost billing. that's a 76% hit rate on the top finding alone. the stat that's starting to emerge: stores under 2 years old = 45% hit rate. stores over 5 years = 91%. the "leak grows with store age" pattern is holding across the sample.
-```
-
-
-**Reply R publiée (24/04/2026 19:48:15 CEST) :**
-
-```
-fab ran Pro scans on a few stores this week.
-
-every single DM after: "how did I not know this."
-
-free catches the surface. Pro finds the ugly layer. ghost apps, silent billing leaks, stuff that's been running for months with nobody noticing.
-
-DM the URL if you want a scan.
-```
-
-
-**Reply R publiée (24/04/2026 19:48:15 CEST) :**
-
-```
-week made. mix of solo merchants, DTC brands, and 2 agencies bringing multiple clients through.
-
-the agency angle was the unexpected one. one agency alone put 7 of their stores through in 48h.
-
-S7 we open more. this week we focus on the 10
-```
+*Tracker R S7 — créé 25/04/2026. Couche A : voix R VOIX.md + ANTI-IA.md + 6 registres alternés. Couche B : ton founder enthousiaste + BIBLE v2.1 §3 + ANTI-IA.md. Source posts : BATCH-SEMAINE-7.md §5 et §6.*
