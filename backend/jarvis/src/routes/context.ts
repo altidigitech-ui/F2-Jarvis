@@ -220,7 +220,9 @@ function parseObjectiveItems(
     });
   }
 
-  const engTotalTarget = 30;
+  const engSection = section(planHebdo, "ENGAGEMENT");
+  const engTargetMatch = engSection ? engSection.match(/(\d+)\s*interactions?\/jour/i) : null;
+  const engTotalTarget = engTargetMatch ? parseInt(engTargetMatch[1], 10) : 30;
   const engDone = counters.twEng + counters.liCom + counters.reddit + counters.facebook + counters.ihPh;
   items.push({
     time: "",
