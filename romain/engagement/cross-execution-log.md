@@ -1,48 +1,51 @@
-# CROSS-EXECUTION LOG R — Semaine 6
+# CROSS-EXECUTION LOG R — Semaine 7
 
 **Usage :** Suivi d'exécution des replies cross-engagement rédigées dans `romain/cross-engagement-tracker.md`.
 **Règle :** 1 ligne par reply après exécution ou constat de non-exécution.
 **Timing obligatoire :** dans les 5 min après publication du post original.
-**Mis à jour :** 25/04/2026
 
 ---
 
-## COUCHE A — SUIVI D'EXÉCUTION
+## COUCHE A — SUIVI D'EXÉCUTION (12 replies R)
 
 |ID|Jour|Post cible|Heure cible|Heure réelle|Statut|Notes|
 |---|---|---|---|---|---|---|
-|A1|Lun 20/04|F Twitter 13h — store-md-myth-apps-fine|13h05|✓|✅ Fait|Cross Lun Couche A|
-|A2|Lun 20/04|F2 Twitter 13h|13h05|✓|✅ Fait|Cross Lun Couche A|
-|A3|Mar 21/04|F Twitter 13h — store-md-tier-apps-danger|13h05|✓|✅ Fait|Cross Mar Couche A|
-|A4|Mar 21/04|F2 Twitter 13h|13h05|✓|✅ Fait|Cross Mar Couche A|
-|A5|Mer 22/04|F Twitter 13h — store-md-before-after-billing|13h05|✓|✅ Fait|Cross Mer Couche A|
-|A6|Mer 22/04|F2 Twitter 13h|13h05|✓|✅ Fait|Cross Mer Couche A|
-|A7|Jeu 23/04|F Twitter 13h — store-md-list-hidden|13h05|—|❌ Raté|Non exécuté J4|
-|A8|Jeu 23/04|F2 Twitter 13h|13h05|—|❌ Raté|Non exécuté J4|
-|A9|Ven 24/04|F Twitter 13h — store-md-money-visitors|13h05|—|❌ Raté|Non exécuté J5|
-|A10|Ven 24/04|F2 Twitter 13h|13h05|—|❌ Raté|Non exécuté J5|
+|A1|Lun 27/04|F Twitter 13h — 23 scans $300 bleed|13h05|—|⏳|À faire|
+|A2|Lun 27/04|F2 Twitter 15h — 68 stores since launch|15h05|—|⏳|À faire|
+|A3|Mar 28/04|F Twitter 13h — thread $35k/mo (tweet 1)|13h05|—|⏳|À faire|
+|A4|Mar 28/04|F2 Twitter 15h — 94% ghost billing|15h05|—|⏳|À faire|
+|A5|Mar 28/04|F LinkedIn 17h30 — 40+ builder story|17h35|—|⏳|À faire|
+|A6|Mer 29/04|F Twitter 13h — 3 hidden metrics|13h05|—|⏳|À faire|
+|A7|Mer 29/04|F2 Twitter 15h — 3 things analytics|15h05|—|⏳|À faire|
+|A8|Jeu 30/04|F Twitter 13h — $189/mo ghost billing|13h05|—|⏳|À faire|
+|A9|Jeu 30/04|F2 Twitter 15h — agency offer free scan|15h05|—|⏳|À faire|
+|A10|Jeu 30/04|F LinkedIn 17h30 — ghost billing deep dive|17h35|—|⏳|À faire|
+|A11|Ven 01/05|F Twitter 13h — AI readiness|13h05|—|⏳|À faire|
+|A12|Ven 01/05|F2 Twitter 15h — AI readiness 42%|15h05|—|⏳|À faire|
 
 ---
 
-## COUCHE B — SUIVI D'EXÉCUTION
+## COUCHE B — SUIVI D'EXÉCUTION (10 replies R)
 
 |ID|Jour|Post cible|Heure cible|Heure réelle|Statut|Notes|
 |---|---|---|---|---|---|---|
-|B1|Mar 21/04|F Twitter 18h30 Couche B Mar|18h35|✓|✅ Fait|Cross Mar Couche B|
-|B2|Mar 21/04|F2 Twitter 18h30 Couche B Mar|18h35|✓|✅ Fait|Cross Mar Couche B|
-|B3|Mer 22/04|F Twitter 18h30 Couche B Mer|18h35|✓|✅ Fait|Cross Mer Couche B|
-|B4|Mer 22/04|F2 Twitter 18h30 Couche B Mer|18h35|✓|✅ Fait|Cross Mer Couche B|
-|B5|Jeu 23/04|F Twitter 18h30 Couche B Jeu|18h35|—|❌ Raté|Non exécuté J4|
-|B6|Jeu 23/04|F2 Twitter 18h30 Couche B Jeu|18h35|—|❌ Raté|Non exécuté J4|
-|B7|Ven 24/04|F Twitter 18h30 Couche B Ven|18h35|—|❌ Raté|Non exécuté J5|
-|B8|Ven 24/04|F LI 21h Couche B Ven|21h05|—|❌ Raté|Non exécuté J5|
+|B1|Mer 29/04|F Twitter 18h — 51/0 no install hook|18h05|—|⏳|À faire|
+|B2|Mer 29/04|F2 Twitter 20h — OAuth wall|20h05|—|⏳|À faire|
+|B3|Mer 29/04|F LinkedIn 21h — why no install|21h05|—|⏳|À faire|
+|B4|Jeu 30/04|F Twitter 18h — scan result live|18h05|—|⏳|À faire|
+|B5|Jeu 30/04|F2 Twitter 20h — beta update 6 stores|20h05|—|⏳|À faire|
+|B6|Ven 01/05|F Twitter 18h — builder story no-auth|18h05|—|⏳|À faire|
+|B7|Ven 01/05|F2 Twitter 20h — beta week wrap|20h05|—|⏳|À faire|
+|B8|Ven 01/05|F LinkedIn 21h — beta results 8 stores|21h05|—|⏳|À faire|
+|B9|Sam 02/05|F Twitter 13h — 22/22 ghost billing|13h05|—|⏳|À faire|
+|B10|Sam 02/05|F Twitter 18h — 6/10 spots urgency|18h05|—|⏳|À faire|
 
 ---
 
-## COMPTEUR S6
+## COMPTEUR S7
 
-| Catégorie | ✅ Fait | ❌ Raté | ⏳ À venir | Total |
+| Catégorie | ✅ Fait | ❌ Raté | ⏳ À faire | Total |
 |-----------|--------|--------|-----------|-------|
-| Couche A  | 6      | 4      | 0         | 10    |
-| Couche B  | 4      | 4      | 0         | 8     |
-| **Total** | **10** | **8**  | **0**     | **18**|
+| Couche A  | 0      | 0      | 12        | 12    |
+| Couche B  | 0      | 0      | 10        | 10    |
+| **Total** | **0**  | **0**  | **22**    | **22**|
