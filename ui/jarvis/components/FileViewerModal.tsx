@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo, useCallback, useRef, type ReactNode } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef, type ReactNode, type ReactElement } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -211,6 +211,31 @@ function CodeBlock({ children }: { children: ReactNode }) {
   );
 }
 
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="flex-none px-1.5 py-0.5 rounded text-[10px] font-mono transition-all opacity-0 group-hover:opacity-100"
+      style={{
+        background: copied ? "rgba(0,255,180,0.15)" : "rgba(255,255,255,0.05)",
+        color: copied ? "#00ffb4" : "#94a3b8",
+        border: "1px solid rgba(255,255,255,0.1)",
+      }}
+    >
+      {copied ? "✓" : "📋"}
+    </button>
+  );
+}
+
 function MarkdownRenderer({
   content,
   accentColor,
@@ -409,18 +434,54 @@ function MarkdownRenderer({
               {children}
             </th>
           ),
-          td: ({ children }) => (
-            <td
-              style={{
-                padding: "7px 10px",
-                color: "#cbd5e1",
-                borderRight: "1px solid rgba(255,255,255,0.05)",
-                verticalAlign: "top",
-              }}
-            >
-              {children}
-            </td>
-          ),
+          td: ({ children }) => {
+            function extractText(node: ReactNode): string {
+              if (typeof node === "string") return node;
+              if (typeof node === "number") return String(node);
+              if (Array.isArray(node)) return node.map(extractText).join("");
+              if (node && typeof node === "object" && "props" in node) {
+                return extractText((node as ReactElement).props.children);
+              }
+              return "";
+            }
+
+            const fullText = extractText(children).trim();
+            const isUrl = fullText.startsWith("https://") || fullText.startsWith("http://");
+
+            if (isUrl) {
+              return (
+                <td
+                  className="group relative"
+                  style={{
+                    padding: "7px 10px",
+                    color: "#cbd5e1",
+                    borderRight: "1px solid rgba(255,255,255,0.05)",
+                    verticalAlign: "top",
+                  }}
+                >
+                  <div className="flex items-start gap-2">
+                    <span className="flex-1 break-all font-mono text-[11px]" style={{ color: accentColor }}>
+                      {children}
+                    </span>
+                    <CopyButton text={fullText} />
+                  </div>
+                </td>
+              );
+            }
+
+            return (
+              <td
+                style={{
+                  padding: "7px 10px",
+                  color: "#cbd5e1",
+                  borderRight: "1px solid rgba(255,255,255,0.05)",
+                  verticalAlign: "top",
+                }}
+              >
+                {children}
+              </td>
+            );
+          },
         }}
       >
         {content}
