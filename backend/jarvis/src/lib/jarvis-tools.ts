@@ -1,6 +1,6 @@
 import { tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
-import { ghRead, ghList, ghReadExternal, ghListExternal } from "./github.js";
+import { ghRead, ghList, ghReadExternal, ghListExternal, ghReadRaw } from "./github.js";
 import { readZipFile, listZipFiles, getZipMeta } from "./zip-store.js";
 import { getSupabase } from "./supabase.js";
 import { searchDrawers } from "./mempalace.js";
@@ -26,7 +26,7 @@ export function createJarvisMcpServer(options: {
   // ---------------------------------------------------------------------------
   const repoRead = tool(
     "repo_read",
-    "Read a file from the F2-Jarvis repo. Path is relative to the repo root (e.g. 'fabrice/plan-hebdo.md', 'ANTI-IA.md'). Use this when you need the exact content of a specific file: plan-hebdo, progress-semaine, logs, publication examples, context files, system prompts, VOIX.md. Don't use for directory listing — use the search tool for discovery. For large files (>40K chars), use offset or line_range to read specific parts. If the file does not exist, the tool returns 'File not found' — do NOT retry, move on to the next task.",
+    "Read a file or list a directory from the F2-Jarvis repo. If the path is a directory, returns the list of files with sizes. If the path is a file, returns its content. For binary files (.xlsx, .png, etc.), use read_xlsx instead. For large files (>40K chars), use line_range (e.g. '1-100') or offset. If a file does not exist, returns 'File not found' — do NOT retry, move on.",
     {
       path: z.string().describe("Path relative to repo root"),
       offset: z.number().int().min(0).optional().describe("Start reading from this character offset (for large files)"),
@@ -34,6 +34,26 @@ export function createJarvisMcpServer(options: {
     },
     async ({ path, offset, line_range }) => {
       try {
+        // === TRY DIRECTORY LISTING FIRST ===
+        try {
+          const entries = await ghList(path);
+          if (entries && entries.length > 0) {
+            const listing = entries
+              .map((e: { name: string; type: string; size?: number }) =>
+                `${e.type === "dir" ? "📁" : "📄"} ${e.name}${e.size ? ` (${Math.round(e.size / 1024)}KB)` : ""}`
+              )
+              .join("\n");
+            return {
+              content: [{
+                type: "text" as const,
+                text: `📂 Directory: ${path}\n${entries.length} entries:\n\n${listing}\n\nUse repo_read("${path}/filename") to read a specific file.`,
+              }],
+            };
+          }
+        } catch {
+          // Not a directory — fall through to file read
+        }
+
         const file = await ghRead(path);
         if (!file) {
           return {
@@ -169,6 +189,45 @@ export function createJarvisMcpServer(options: {
           ],
           isError: true,
         };
+      }
+    }
+  );
+
+  // ---------------------------------------------------------------------------
+  // repo_tree — full directory tree
+  // ---------------------------------------------------------------------------
+  const repoTree = tool(
+    "repo_tree",
+    "Get the full directory tree of the repo (or a subdirectory) up to 3 levels deep. Much faster than doing multiple repo_read on directories. Use this to understand the structure before reading specific files.",
+    {
+      path: z.string().default("").describe("Root path (empty = repo root)"),
+      depth: z.number().int().min(1).max(4).default(3).describe("Max depth"),
+    },
+    async ({ path: rootPath, depth }) => {
+      try {
+        const tree: string[] = [];
+        async function walk(dir: string, level: number, prefix: string) {
+          if (level > depth) return;
+          try {
+            const entries = await ghList(dir);
+            for (const e of entries) {
+              if (["node_modules", ".git", "dist", ".next"].includes(e.name)) continue;
+              tree.push(`${prefix}${e.type === "dir" ? "📁" : "📄"} ${e.name}`);
+              if (e.type === "dir" && level < depth) {
+                await walk(dir ? `${dir}/${e.name}` : e.name, level + 1, prefix + "  ");
+              }
+            }
+          } catch { /* skip */ }
+        }
+        await walk(rootPath, 1, "");
+        return {
+          content: [{
+            type: "text" as const,
+            text: `🌳 Tree${rootPath ? ` (${rootPath})` : ""} — depth ${depth}:\n\n${tree.join("\n") || "(empty)"}`,
+          }],
+        };
+      } catch (err) {
+        return { content: [{ type: "text" as const, text: `repo_tree error: ${err instanceof Error ? err.message : String(err)}` }], isError: true };
       }
     }
   );
@@ -953,12 +1012,93 @@ The 'preview' field is a human-readable description shown to the user before the
     }
   );
 
+  // ---------------------------------------------------------------------------
+  // read_xlsx — parse Excel files from the repo
+  // ---------------------------------------------------------------------------
+  const readXlsx = tool(
+    "read_xlsx",
+    "Parse an Excel (.xlsx) file from the repo and return its content as CSV text. Use for analytics files in raw/analytics/. Returns the first sheet as CSV by default.",
+    {
+      path: z.string().describe("Path to the .xlsx file"),
+      sheet: z.string().optional().describe("Sheet name (default: first sheet)"),
+      max_rows: z.number().int().min(1).max(500).default(100).describe("Max rows to return"),
+    },
+    async ({ path, sheet, max_rows }) => {
+      try {
+        const file = await ghReadRaw(path);
+        if (!file) {
+          return { content: [{ type: "text" as const, text: `File not found: ${path}` }], isError: true };
+        }
+        const XLSX = await import("xlsx");
+        const buffer = Buffer.from(file.base64, "base64");
+        const workbook = XLSX.read(buffer, { type: "buffer" });
+        const sheetName = sheet || workbook.SheetNames[0];
+        const ws = workbook.Sheets[sheetName];
+        if (!ws) {
+          return { content: [{ type: "text" as const, text: `Sheet "${sheetName}" not found. Available: ${workbook.SheetNames.join(", ")}` }] };
+        }
+        const csv = XLSX.utils.sheet_to_csv(ws);
+        const rows = csv.split("\n");
+        const truncated = rows.length > max_rows;
+        return {
+          content: [{
+            type: "text" as const,
+            text: `📊 ${path} — ${sheetName} (${rows.length} rows${truncated ? `, first ${max_rows}` : ""})\n\n${rows.slice(0, max_rows).join("\n")}`,
+          }],
+        };
+      } catch (err) {
+        return { content: [{ type: "text" as const, text: `read_xlsx error: ${err instanceof Error ? err.message : String(err)}` }], isError: true };
+      }
+    }
+  );
+
+  // ---------------------------------------------------------------------------
+  // web_search — search the web
+  // ---------------------------------------------------------------------------
+  const webSearch = tool(
+    "web_search",
+    "Search the web for current information. Use for: competitor research, trending topics, cold target research, fact-checking, news. Keep queries short (2-6 words).",
+    {
+      query: z.string().describe("Search query (2-6 words)"),
+    },
+    async ({ query }) => {
+      try {
+        const res = await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": process.env.ANTHROPIC_API_KEY || "",
+            "anthropic-version": "2023-06-01",
+          },
+          body: JSON.stringify({
+            model: "claude-sonnet-4-20250514",
+            max_tokens: 2048,
+            tools: [{ type: "web_search_20250305", name: "web_search" }],
+            messages: [{ role: "user", content: query }],
+          }),
+        });
+        if (!res.ok) {
+          const errText = await res.text();
+          return { content: [{ type: "text" as const, text: `web_search HTTP ${res.status}: ${errText.slice(0, 200)}` }], isError: true };
+        }
+        const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
+        const texts = (data.content || []).filter(b => b.type === "text" && b.text).map(b => b.text!);
+        return {
+          content: [{ type: "text" as const, text: texts.join("\n\n") || "No results found." }],
+        };
+      } catch (err) {
+        return { content: [{ type: "text" as const, text: `web_search error: ${err instanceof Error ? err.message : String(err)}` }], isError: true };
+      }
+    }
+  );
+
   return createSdkMcpServer({
     name: "jarvis",
     version: "1.0.0",
     tools: [
       repoRead,
       repoSearch,
+      repoTree,
       repoListPublications,
       repoSearchVoiceExamples,
       timelineToday,
@@ -972,6 +1112,8 @@ The 'preview' field is a human-readable description shown to the user before the
       githubExplore,
       readFromZip,
       listZip,
+      readXlsx,
+      webSearch,
     ],
   });
 }
@@ -982,6 +1124,7 @@ The 'preview' field is a human-readable description shown to the user before the
 export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__repo_read",
   "mcp__jarvis__repo_search",
+  "mcp__jarvis__repo_tree",
   "mcp__jarvis__repo_list_publications",
   "mcp__jarvis__repo_search_voice_examples",
   "mcp__jarvis__timeline_today",
@@ -995,4 +1138,6 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__github_explore",
   "mcp__jarvis__read_from_zip",
   "mcp__jarvis__list_zip",
+  "mcp__jarvis__read_xlsx",
+  "mcp__jarvis__web_search",
 ];

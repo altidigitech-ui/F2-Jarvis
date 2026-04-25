@@ -397,3 +397,13 @@ export async function ghListExternal(
   if (!Array.isArray(data)) return [];
   return data as GitHubDirEntry[];
 }
+
+export async function ghReadRaw(filePath: string): Promise<{ base64: string; sha: string } | null> {
+  const cached = cacheGet(filePath);
+  if (cached) return { base64: Buffer.from(cached.content).toString("base64"), sha: cached.sha };
+  const res = await fetch(apiUrl(`contents/${filePath}?ref=${BRANCH}`), { headers: headers() });
+  if (!res.ok) return null;
+  const data = (await res.json()) as { content?: string; sha?: string };
+  if (!data.content || !data.sha) return null;
+  return { base64: data.content.replace(/\n/g, ""), sha: data.sha };
+}
