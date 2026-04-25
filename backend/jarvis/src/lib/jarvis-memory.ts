@@ -121,3 +121,66 @@ export function estimateTokens(text: string): number {
 export function sumMessageTokens(msgs: JarvisMessage[]): number {
   return msgs.reduce((acc, m) => acc + estimateTokens(m.content), 0);
 }
+
+/**
+ * Compresses a conversation when it grows too long.
+ * Summarizes the oldest messages (all except the last 20) using Haiku.
+ * Stores result in the `summary` column — used in the next session's system prompt.
+ * Non-blocking: safe to call fire-and-forget.
+ */
+export async function compressConversationIfNeeded(
+  conversationId: string,
+  messageCount: number
+): Promise<void> {
+  // Trigger at 30 messages, then every 10 after that
+  if (messageCount < 30 || messageCount % 10 !== 0) return;
+
+  const sb = getSupabase();
+  try {
+    const toSummarize = messageCount - 20;
+    const { data: oldMsgs } = await sb
+      .from("jarvis_messages")
+      .select("role, content")
+      .eq("conversation_id", conversationId)
+      .order("created_at", { ascending: true })
+      .limit(toSummarize);
+
+    if (!oldMsgs || oldMsgs.length < 5) return;
+
+    const transcript = (oldMsgs as Array<{ role: string; content: string }>)
+      .map(m => `[${m.role.toUpperCase()}]: ${m.content.slice(0, 400)}`)
+      .join("\n\n");
+
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": process.env.ANTHROPIC_API_KEY || "",
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: "claude-haiku-4-5",
+        max_tokens: 1024,
+        messages: [{
+          role: "user",
+          content: `Résume cette conversation FoundryTwo en 5-8 bullets clairs (français). Capture : décisions prises, actions validées, publications, cold envoyés, contexte clé. Format : "- [sujet] : [info clé]"\n\n${transcript}`,
+        }],
+      }),
+    });
+
+    if (!res.ok) return;
+
+    const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
+    const summary = (data.content || []).filter(b => b.type === "text" && b.text).map(b => b.text!).join("\n");
+
+    if (summary) {
+      await sb.from("jarvis_conversations").update({
+        summary,
+        summary_tokens: estimateTokens(summary),
+      }).eq("id", conversationId);
+      console.log(`[jarvis-memory] compressed conv ${conversationId} (${messageCount} msgs → summary)`);
+    }
+  } catch (err) {
+    console.warn("[jarvis-memory] compressConversationIfNeeded failed:", err);
+  }
+}
