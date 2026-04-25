@@ -39,9 +39,9 @@ const DEFAULTS: Record<"fabrice" | "romain" | "f2", PersonaTargets> = {
   },
   romain: {
     cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 4,
-    ph: 0, ih: 0, ihPh: 0, engTarget: 48,
-    platforms: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK"],
-    hasIhPh: false, hasPh: false, hasIh: false,
+    ph: 6, ih: 0, ihPh: 6, engTarget: 48,
+    platforms: ["TWITTER", "LINKEDIN", "REDDIT", "FACEBOOK", "PH"],
+    hasIhPh: true, hasPh: true, hasIh: false,
   },
   f2: {
     cold: 0, twEng: 10, liCom: 10, reddit: 0, facebook: 0, cross: 4,
@@ -80,7 +80,7 @@ function parseBatch(md: string): { fabrice: Partial<PersonaTargets>; romain: Par
       if (title.includes("LINKEDIN"))           { if (inFab || (!inRom && !inF2)) fPlatforms.add("LINKEDIN"); if (inRom || (!inFab && !inF2)) rPlatforms.add("LINKEDIN"); }
       if (title.includes("REDDIT"))             { if (inFab || (!inRom && !inF2)) fPlatforms.add("REDDIT");   if (inRom || (!inFab && !inF2)) rPlatforms.add("REDDIT"); }
       if (title.includes("FACEBOOK") || title.includes("FB")) { if (inFab || (!inRom && !inF2)) fPlatforms.add("FACEBOOK"); if (inRom || (!inFab && !inF2)) rPlatforms.add("FACEBOOK"); }
-      if (title.includes("IH") || title.includes("INDIEHACKER")) { if (inRom || (!inFab && !inF2)) rPlatforms.add("IH"); }
+      if (title.includes("IH") || title.includes("INDIEHACKER")) { if (inRom) rPlatforms.add("IH"); }
       if (title.includes("PH") || title.includes("PRODUCTHUNT")) { if (inFab || (!inRom && !inF2)) fPlatforms.add("PH"); if (inRom || (!inFab && !inF2)) rPlatforms.add("PH"); }
       continue;
     }
