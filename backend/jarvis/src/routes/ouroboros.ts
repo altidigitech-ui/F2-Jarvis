@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ghRead, ghList, ghCreate, ghDelete, ghDeleteMultiple, GitHubDirEntry } from "../lib/github.js";
+import { ghRead, ghList, ghMoveFile, ghDeleteMultiple, GitHubDirEntry } from "../lib/github.js";
 
 const STATE_PATH = "brain/ouroboros/state.json";
 const DIARY_PATH = "brain/ouroboros/diary";
@@ -307,8 +307,7 @@ export async function ouroborosAction(req: Request, res: Response): Promise<void
     const by = persona ? ` by ${persona}` : "";
     const commitMsg = `chore(ouroboros): ${action} proposal ${id}${by}`;
 
-    await ghCreate(`${dest}/${filename}`, content, commitMsg);
-    await ghDelete(`${PROPOSALS_PENDING}/${filename}`, file.sha, commitMsg);
+    await ghMoveFile(`${PROPOSALS_PENDING}/${filename}`, `${dest}/${filename}`, content, commitMsg);
 
     let chatMessage: string | undefined;
     if (action === "accept") {
