@@ -42,7 +42,7 @@
 
 |Métrique                   |Valeur|
 |---------------------------|------|
-|Total envoyés              |9 (replies Twitter, 0 DM)|
+|Total envoyés              |9 (7 replies/queued Twitter + 2 DM Twitter)|
 |Réponses reçues            |0 (tous ⏳)|
 |Taux de réponse            |0%|
 |Vertical principal ciblé   |ecom (7/9)|
