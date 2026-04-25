@@ -1,6 +1,6 @@
 import { tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
-import { ghRead, ghList } from "./github.js";
+import { ghRead, ghList, ghReadExternal, ghListExternal } from "./github.js";
 import { getSupabase } from "./supabase.js";
 import { searchDrawers } from "./mempalace.js";
 
@@ -862,6 +862,52 @@ The 'preview' field is a human-readable description shown to the user before the
     }
   );
 
+  // ---------------------------------------------------------------------------
+  // github_explore — browse & read any repo in the org
+  // ---------------------------------------------------------------------------
+  const githubExplore = tool(
+    "github_explore",
+    "Browse and read files from any GitHub repo in the altidigitech-ui org (e.g. STOREMD). Use action='list' to browse a directory, action='read' to get file content. Useful for auditing external repos like StoreMD without needing a ZIP.",
+    {
+      action: z.enum(["list", "read"]).describe("'list' to browse a directory, 'read' to get file content"),
+      owner: z.string().default("altidigitech-ui").describe("GitHub org or user (default: altidigitech-ui)"),
+      repo: z.string().describe("Repository name (e.g. 'STOREMD')"),
+      path: z.string().default("").describe("File or directory path within the repo (empty = root)"),
+      branch: z.string().default("main").describe("Branch name (default: main)"),
+    },
+    async ({ action, owner, repo, path, branch }) => {
+      try {
+        if (action === "list") {
+          const entries = await ghListExternal(owner, repo, path, branch);
+          if (entries.length === 0) {
+            return { content: [{ type: "text" as const, text: `Empty or not found: ${owner}/${repo}/${path}` }] };
+          }
+          const formatted = entries
+            .map(e => `${e.type === "dir" ? "📁" : "📄"} ${e.path} (${e.type}${e.type === "file" ? `, ${e.size}b` : ""})`)
+            .join("\n");
+          return { content: [{ type: "text" as const, text: `Contents of ${owner}/${repo}/${path || "(root)"}:\n\n${formatted}` }] };
+        } else {
+          const file = await ghReadExternal(owner, repo, path, branch);
+          if (!file) {
+            return { content: [{ type: "text" as const, text: `File not found: ${owner}/${repo}/${path}` }], isError: true };
+          }
+          const truncated = file.content.length > 40000;
+          return {
+            content: [{
+              type: "text" as const,
+              text: `File: ${owner}/${repo}/${path}\nSize: ${file.content.length} chars${truncated ? " [TRUNCATED]" : ""}\n\n${file.content.slice(0, 40000)}`,
+            }],
+          };
+        }
+      } catch (err) {
+        return {
+          content: [{ type: "text" as const, text: `github_explore error: ${err instanceof Error ? err.message : String(err)}` }],
+          isError: true,
+        };
+      }
+    }
+  );
+
   return createSdkMcpServer({
     name: "jarvis",
     version: "1.0.0",
@@ -878,6 +924,7 @@ The 'preview' field is a human-readable description shown to the user before the
       conversationSearch,
       codeCheck,
       ouroborosProposals,
+      githubExplore,
     ],
   });
 }
@@ -898,4 +945,5 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__conversation_search",
   "mcp__jarvis__code_check",
   "mcp__jarvis__ouroboros_proposals",
+  "mcp__jarvis__github_explore",
 ];
