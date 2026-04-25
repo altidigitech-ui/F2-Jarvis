@@ -35,14 +35,14 @@
 |-------------------------------|-------------|-----------|-----|
 |Followers Twitter R            |             |           |     |
 |Abonnés LinkedIn R             |             |           |     |
-|Cold outreach envoyés (semaine)|             |           |     |
-|Réponses positives cold        |             |           |     |
-|Agencies onboardées            |             |           |     |
+|Cold outreach envoyés (semaine)|0            |0/50       |=0   |
+|Réponses positives cold        |0            |0          |=    |
+|Agencies onboardées            |0            |0/5        |=0   |
 
 -----
 
 ## INSIGHTS ET PATTERNS
 
--
--
--
+- Engagement fort J4 (23/04 : 8 replies Twitter + 5 commentaires LinkedIn + Reddit) malgré zéro posts publiés ce jour → signal : l'engagement peut être décorrélé des publications sur les semaines contraintes.
+- PH karma farming x2 sessions (22+23/04 — 10 upvotes + 2 commentaires) → karma farming a un délai d'effet >1 semaine, à continuer S7 pour préparer le lancement F2.
+- Cold S6 = 0/50 mais infrastructure complète opérationnelle : StoreMD URL-only validé, templates R-01/R-02/R-03 créés, CTA "drop your URL, free scan 60s" prêt. S7 est la vraie semaine de départ cold R.
