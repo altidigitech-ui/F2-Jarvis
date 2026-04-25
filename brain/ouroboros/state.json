@@ -3,9 +3,9 @@
   "initializedAt": "2026-04-20T12:07:50.189Z",
   "lastCycle": {
     "date": "2026-04-25",
-    "timestamp": "2026-04-25T08:13:24.238Z"
+    "timestamp": "2026-04-25T10:13:22.567Z"
   },
   "budgetUsed": 0,
   "budgetCap": 10,
-  "totalCycles": 26
+  "totalCycles": 27
 }
