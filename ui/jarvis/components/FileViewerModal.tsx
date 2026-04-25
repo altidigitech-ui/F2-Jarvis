@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo, useCallback, useRef, type ReactNode, type ReactElement } from "react";
+import React, { useState, useEffect, useMemo, useCallback, useRef, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -440,7 +440,7 @@ function MarkdownRenderer({
               if (typeof node === "number") return String(node);
               if (Array.isArray(node)) return node.map(extractText).join("");
               if (node && typeof node === "object" && "props" in node) {
-                return extractText((node as ReactElement).props.children);
+                return extractText((node as React.ReactElement<{ children?: ReactNode }>).props.children);
               }
               return "";
             }
