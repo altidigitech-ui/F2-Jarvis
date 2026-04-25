@@ -27,6 +27,7 @@ import { targetsRoute } from "./routes/targets.js";
 import { promptsRoute } from "./routes/prompts.js";
 import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
 import { batchStatusRoute, batchUploadRoute } from "./routes/batch.js";
+import { uploadZipRoute } from "./routes/upload-zip.js";
 import {
   ouroborosStatus,
   ouroborosProposals,
@@ -92,6 +93,7 @@ app.get("/prompts", promptsRoute);
 app.post("/action/execute-batch", actionExecuteBatchRoute);
 app.get("/batch/status", batchStatusRoute);
 app.post("/batch/upload", batchUploadRoute);
+app.post("/upload-zip", uploadZipRoute);
 
 app.get("/ouroboros/status", ouroborosStatus);
 app.get("/ouroboros/proposals", ouroborosProposals);
