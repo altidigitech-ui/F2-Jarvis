@@ -25,8 +25,8 @@
 
 |Métrique                       |Début semaine|Fin semaine|Delta|
 |-------------------------------|-------------|-----------|-----|
-|Followers Twitter R            |             |           |     |
-|Abonnés LinkedIn R             |             |           |     |
+|Followers Twitter R            |24           |           |     |
+|Abonnés LinkedIn R             |135          |           |     |
 |Cold outreach envoyés (semaine)|0            |           |     |
 |Réponses positives cold        |0            |           |     |
 |Agencies onboardées            |0            |           |     |
