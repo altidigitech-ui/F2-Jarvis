@@ -14,6 +14,7 @@ type QuickAccessSidebarProps = {
   onOpenProgress: () => void;
   onOpenToday?: () => void;
   onOpenPrompts?: () => void;
+  onOpenUtmLinks?: () => void;
 };
 
 const ICONS = {
@@ -24,6 +25,7 @@ const ICONS = {
   cold: "📩",
   progress: "📊",
   prompts: "📋",
+  utm: "🔗",
 };
 
 export function QuickAccessSidebar({
@@ -36,6 +38,7 @@ export function QuickAccessSidebar({
   onOpenProgress,
   onOpenToday,
   onOpenPrompts,
+  onOpenUtmLinks,
 }: QuickAccessSidebarProps) {
   const [active, setActive] = useState<string>("today");
 
@@ -54,6 +57,7 @@ export function QuickAccessSidebar({
     { id: "cold", label: "Cold outreach", icon: ICONS.cold, onClick: onOpenColdOutreach },
     { id: "progress", label: "Progress semaine", icon: ICONS.progress, onClick: onOpenProgress },
     { id: "prompts", label: "Prompts", icon: ICONS.prompts, onClick: onOpenPrompts ?? (() => {}) },
+    { id: "utm", label: "Liens UTM", icon: ICONS.utm, onClick: onOpenUtmLinks ?? (() => {}) },
   ];
 
   return (

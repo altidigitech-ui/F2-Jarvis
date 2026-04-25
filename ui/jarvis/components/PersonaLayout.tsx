@@ -467,6 +467,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
     doneItems.has(item.title) ? { ...item, status: "done" as const } : item
   );
 
+  const utmPath = "tracking/utm/StoreMD/UTM_TRACKING_LINKS.md";
+
   const filePaths = f2Mode
     ? {
         planHebdo: "f2/plan-hebdo.md",
@@ -694,6 +696,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               onOpenColdOutreach={() => { setOpenFilePath(filePaths.cold); setMobilePanel(null); }}
               onOpenProgress={() => { setOpenFilePath(filePaths.progress); setMobilePanel(null); }}
               onOpenPrompts={() => { setPromptsOpen(true); setMobilePanel(null); }}
+              onOpenUtmLinks={() => { setOpenFilePath(utmPath); setMobilePanel(null); }}
             />
             <BatchCard accentColor={accentColor} persona={persona} mode={mode} />
             <OuroborosPanel accentColor={accentColor} persona={persona} />
@@ -761,6 +764,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             onOpenColdOutreach={() => setOpenFilePath(filePaths.cold)}
             onOpenProgress={() => setOpenFilePath(filePaths.progress)}
             onOpenPrompts={() => setPromptsOpen(true)}
+            onOpenUtmLinks={() => setOpenFilePath(utmPath)}
           />
         </aside>
 
