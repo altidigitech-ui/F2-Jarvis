@@ -1,60 +1,56 @@
-# PLAN HEBDO F2 — Semaine du 20/04/2026 au 26/04/2026
+# PLAN HEBDO F2 — Semaine du 27/04/2026 au 03/05/2026
 
-**Contexte :** SEMAINE 6 — POST-LAUNCH SCALE. Sales agressif **DOUBLE-COUCHE** (Couche A sales + Couche B beta testers mer-ven). **Anglais uniquement.** Focus agencies distribution layer.
+**Contexte :** SEMAINE 7 — DOUBLE-COUCHE Sales + Beta "No Install". Canon S7 : 90 stores / $15,600 cumul. **Anglais uniquement.**
 
-## 1. POSTS TWITTER F2
-
-|Jour|Vidéo|Sujet|Statut|
-|---|---|---|---|
-|Lun 20/04|`store-md-logo-reveal`|Week 6 numbers: [X] scans, [Y] leaks, [W] agencies|✅ Publié|
-|Mar 21/04|`store-md-feature-health`|Store Health module detail|✅ Publié|
-|Mer 22/04|`store-md-testimonial-founder`|"I thought my store was fine" — scored 34/100|✅ Publié|
-|Jeu 23/04|`store-md-money-ghost-cumulative`|3 ghost apps × $189 × 12 = $2,268/year|📅 Schedulé|
-|Ven 24/04|`store-md-stats`|Week 6 real numbers|📅 Schedulé|
-
-## 1B. POSTS TWITTER F2 — COUCHE B (3 posts beta, 18h30 CEST)
+## 1. POSTS TWITTER F2 — COUCHE A (15h00 CEST)
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Mer 22/04|`store-md-beta-10-spots`|M1 Beta studio angle|📅 Schedulé|
-|Jeu 23/04|`store-md-scan-cta`|M2 Free scan separate|📅 Schedulé|
-|Ven 24/04|`store-md-beta-progress`|M5 Beta pipeline recap|📅 Schedulé|
+|Lun 27/04|`store-md-myth-apps-fine`|68 stores / $12,400 — studio scan recap|⏳|
+|Mar 28/04|`store-md-horror-ghost-apps`|94% ghost billing — Shopify/Stripe don't sync|⏳|
+|Mer 29/04|`store-md-list-hidden`|3 things Shopify analytics won't show you|⏳|
+|Jeu 30/04|`store-md-stats`|Free agency scans — drop any .myshopify.com URL|⏳|
+|Ven 01/05|`store-md-before-after-ai`|42% of stores invisible to AI search — no error|⏳|
 
-## 2. LINKEDIN COMPANY F2 + IH
+## 1B. POSTS TWITTER F2 — COUCHE B (20h00 CEST, mer-ven)
+
+|Jour|Vidéo|Sujet|Statut|
+|---|---|---|---|
+|Mer 29/04|`store-md-beta-10-spots`|B1 — OAuth wall discovery (51/0 — no install)|⏳|
+|Jeu 30/04|aucune|B2 — Beta update: 6/6 ghost billing, 4 spots left|⏳|
+|Ven 01/05|aucune|B3 — Beta week wrap: 8 scans / $1,624 leaks|⏳|
+
+## 2. IH F2
 
 |Jour|Plateforme|Sujet|Statut|
 |---|---|---|---|
-|Mar 21/04|LinkedIn Company (EN)|Week 2 post-launch honest numbers|📅 Schedulé|
-|Mer 22/04|IH (EN)|Post-launch retro week 1→2 + feedback (Couche A reformulé)|✅ Publié|
-
-## 2B. IH F2 — COUCHE B (1 post REFAIT, 09h00 CEST)
-
-|Jour|Plateforme|Sujet|Statut|
-|---|---|---|---|
-|Mer 22/04|IH (EN)|REFAIT honest retro → angle beta testers (remplace Couche A)|✅ Publié|
+|Jeu 30/04 17h15|IH (EN)|Build-in-public: OAuth wall (51 starts / 0 completes — honnête)|⏳|
 
 ## 3. OBJECTIFS SEMAINE
 
 |Objectif|Target|
 |---|---|
-|Scans gratuits|**50 min**|
-|Installs externes|**5 min** (vs 0 S5)|
-|Agencies onboardées|**10**|
-|MRR externe|**$200 min** (vs $0 S5)|
+|Scans beta manuels|**10 min**|
+|Agencies contactées|**10**|
+|IH upvotes|**15 min**|
 
-## 4. S5 RECAP
-Twitter F2 : 5 posts, 133 imp (plateau), ER 24.1% (vs 13.6%). LinkedIn Company : 1 post, 12 imp. IH : 1 post launch flop + 14 comments (x2.8). MRR : $0. Installs : 0.
+## 4. CROSS-ENGAGEMENT F2→R+F
 
-## 5. AGENCY ONBOARDING (PRIORITÉ S6)
+|Jour|Cross Couche A (15h05)|Cross Couche B (20h05)|
+|---|---|---|
+|Lun 27/04|⏳|— (pas de Couche B lundi)|
+|Mar 28/04|⏳|— (pas de Couche B mardi)|
+|Mer 29/04|⏳|⏳|
+|Jeu 30/04|⏳|⏳|
+|Ven 01/05|⏳|⏳|
+|Sam 02/05|— (pas de post F2 samedi)|— (pas de Couche B F2 samedi)|
+|Dim 03/05|— (OFF)|— (OFF)|
 
-- R cible 15 agency owners cold LinkedIn DM
-- F cible 5 agency owners cold Twitter + 10 LinkedIn DM
-- F2 pousse 3 posts qui parlent aux agencies
-- LinkedIn F jeudi 23/04 = pitch agencies direct
-- Tracker : `f2/agencies-onboarded-S6.md`
+## 5. S6 RECAP
+Twitter F2 : 5 posts, 164 imp. Best : Jeu 23/04 à 63 imp. IH : 1 post Mer 22/04. MRR : 0€ externe. Installs : 0 (51 starts / 0 completes OAuth — base du pivot Couche B S7).
 
 ## 6. PRIORITÉS
-1. Demand creation agressive EN uniquement
-2. Case studies publiables (3 merchants qui partagent chiffres)
-3. Funnel scan → paid (5 installs minimum)
-4. Prochain produit : ProfitPilot (après scale StoreMD confirmé)
+1. Transparence OAuth = angle IH + Couche B — crédibilité build-in-public
+2. Agency layer : amplifier les scans gratuits (Jeu + F2 A4)
+3. IH Jeu 30/04 = post build-in-public honnête sur le mur OAuth
+4. F2 = relais cohérent des posts F et R (signal studio unifié)
