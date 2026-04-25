@@ -44,9 +44,9 @@ const DEFAULTS: Record<"fabrice" | "romain" | "f2", PersonaTargets> = {
     hasIhPh: true, hasPh: true, hasIh: false,
   },
   f2: {
-    cold: 0, twEng: 10, liCom: 10, reddit: 0, facebook: 0, cross: 4,
-    ph: 0, ih: 10, ihPh: 10, engTarget: 34,
-    platforms: ["TWITTER", "LINKEDIN", "IH"],
+    cold: 0, twEng: 0, liCom: 0, reddit: 0, facebook: 0, cross: 0,
+    ph: 0, ih: 10, ihPh: 10, engTarget: 10,
+    platforms: ["IH"],
     hasIhPh: true, hasPh: false, hasIh: true,
   },
 };
