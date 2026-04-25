@@ -27,6 +27,7 @@
 |24/04|Cross A8 + B1 + B2 rétroactifs confirmés — mer 22/04|Twitter|F2 Twitter 13h + R Twitter 18h30 + F2 Twitter 18h30 mercredi|✅ confirmés par Fabrice 24/04|
 |24/04|Cross B6 + B7 exécutés — R + F2 Twitter 18h30|Twitter|Replies Couche B sur posts R et F2 vendredi 18h35|✅|
 |24/04|Cross B8 exécuté — R LinkedIn Couche B Pro teaser + pipeline|LinkedIn|Reply F sur post R LinkedIn vendredi ~20h09|✅|
+| 25/04/2026 | Twitter post publié — "store-md-horror-slow-store" | Twitter | Post publié 18:55 | Monitorer impressions + replies |
 
 -----
 
