@@ -334,16 +334,17 @@ function writeEvent(res: Response, event: Record<string, unknown>): void {
 }
 
 export async function chatRoute(req: Request, res: Response): Promise<void> {
-  const { persona, mode, message, image, images, files } = req.body as {
+  const { persona, mode, message, image, images, files, zip } = req.body as {
     persona: Persona;
     mode?: Mode;
     message: string;
     image?: ImagePayload;
     images?: ImagePayload[];
     files?: Array<{ name: string; content: string }>;
+    zip?: { zip_id: string; filename: string; file_count: number };
   };
 
-  if (!persona || (!message && !image && !images?.length && !files?.length)) {
+  if (!persona || (!message && !image && !images?.length && !files?.length && !zip)) {
     res.status(400).json({ error: "Missing persona or message" });
     return;
   }
@@ -372,6 +373,9 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       `[Fichier joint: ${f.name}]\n\`\`\`\n${f.content.slice(0, 50000)}\n\`\`\``
     ).join("\n\n");
     enrichedMessage = `${fileBlocks}\n\n${enrichedMessage || "Analyse ces fichiers."}`;
+  }
+  if (zip) {
+    enrichedMessage = `[ZIP joint: "${zip.filename}" — ${zip.file_count} fichiers, zip_id="${zip.zip_id}"]\nUtilise list_zip(zip_id="${zip.zip_id}") pour voir tous les fichiers, puis read_from_zip(zip_id="${zip.zip_id}", path="...") pour lire un fichier spécifique. Le ZIP expire après 2h.\n\n${enrichedMessage || "Analyse ce repo ZIP."}`;
   }
 
   const resolvedMode: Mode = mode === "f2" ? "f2" : "normal";
