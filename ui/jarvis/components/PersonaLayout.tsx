@@ -60,7 +60,7 @@ interface PersonaTargets {
 const TARGETS_FALLBACK: Record<string, PersonaTargets> = {
   romain:  { cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 4, ph: 0, ih: 0, ihPh: 0, engTarget: 48, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"], hasIhPh: false, hasPh: false, hasIh: false },
   fabrice: { cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 4, ph: 0, ih: 0, ihPh: 0, engTarget: 58, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"], hasIhPh: false, hasPh: false, hasIh: false },
-  f2:      { cold: 0,  twEng: 10, liCom: 10, reddit: 0, facebook: 0, cross: 4, ph: 0, ih: 10, ihPh: 10, engTarget: 34, platforms: ["TWITTER","LINKEDIN","IH"],               hasIhPh: true,  hasPh: false, hasIh: true  },
+  f2:      { cold: 0,  twEng: 0,  liCom: 0,  reddit: 0, facebook: 0, cross: 0, ph: 0, ih: 10, ihPh: 10, engTarget: 10, platforms: ["IH"],                              hasIhPh: true,  hasPh: false, hasIh: true  },
 };
 
 const EMPTY_CONTEXT: ContextData = {
@@ -637,7 +637,9 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
           <div className="flex-1 overflow-y-auto p-4">
             <div className="grid grid-cols-2 gap-2">
-              <CounterTile label="Cold" value={counters.cold} target={targets.cold} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              {targets.cold > 0 && (
+                <CounterTile label="Cold" value={counters.cold} target={targets.cold} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
               {targets.platforms.includes("TWITTER") && (
                 <CounterTile label="TW eng." value={counters.twEng} target={targets.twEng} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
@@ -650,7 +652,9 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               {targets.hasIhPh && (
                 <CounterTile label="IH + PH" value={counters.ihPh} target={targets.ihPh} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
-              <CounterTile label="Cross" value={counters.cross} target={targets.cross} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              {targets.cross > 0 && (
+                <CounterTile label="Cross" value={counters.cross} target={targets.cross} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
               <CounterTile label="Total" value={counters.total} target={targets.engTarget} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
             </div>
           </div>
@@ -805,6 +809,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               Compteurs du jour
             </div>
             <div className="grid grid-cols-2 gap-1.5">
+              {targets.cold > 0 && (
               <CounterTile
                 label="Cold"
                 value={counters.cold}
@@ -812,6 +817,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.cold)}
               />
+              )}
               {targets.platforms.includes("TWITTER") && (
                 <CounterTile
                   label="TW eng."
@@ -875,6 +881,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
                   onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
                 />
               )}
+              {targets.cross > 0 && (
               <CounterTile
                 label="Cross"
                 value={counters.cross}
@@ -882,6 +889,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.crossEng)}
               />
+              )}
               <CounterTile
                 label="Total"
                 value={counters.total}
