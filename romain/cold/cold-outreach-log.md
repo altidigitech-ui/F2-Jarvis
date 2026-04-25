@@ -1,8 +1,8 @@
-# COLD OUTREACH LOG R — Semaine du 20/04/2026 au 26/04/2026
+# COLD OUTREACH LOG R — Semaine du 27/04/2026 au 03/05/2026
 
-**Usage :** Log de chaque cold outreach envoyé par R. 1 ligne par outreach. Rempli en temps réel après chaque envoi. Archivé le dimanche 26/04/2026.
-**Volume minimum :** 10/jour (Twitter + LinkedIn).
-**Contexte :** SEMAINE 6 — SALES AGRESSIF. Scale LinkedIn 50/semaine. Focus agencies (15 owners cold LinkedIn DM).
+**Usage :** Log de chaque cold outreach envoyé par R. 1 ligne par outreach. Rempli en temps réel après chaque envoi. Archivé le dimanche 03/05/2026.
+**Volume minimum :** 10/jour (LinkedIn DM).
+**Contexte :** SEMAINE 7 — 50 cold/semaine. Focus agencies + ecom. CTA (EN) : "Drop your URL, free scan 60s, I'll send the report". Templates : `romain/cold/COLD-TEMPLATES-S7.md`.
 
 -----
 
