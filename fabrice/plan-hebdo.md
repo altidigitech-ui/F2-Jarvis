@@ -34,8 +34,8 @@
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mer 22/04|REFAIT AI readiness → angle beta builder technique (remplace Couche A)|⏳|
-|Ven 24/04|NOUVEAU Pro findings + pipeline beta|⏳|
+|Mer 22/04|REFAIT AI readiness → angle beta builder technique (remplace Couche A)|✅ Publié 21h00|
+|Ven 24/04|NOUVEAU Pro findings + pipeline beta|✅ Publié 21h00|
 
 ## 3. COLD OUTREACH
 
