@@ -357,7 +357,9 @@ export function applyTransform(
         console.warn(`[action-executor] patch_file: ${failed.length} patches not found:`, failed);
       }
       if (applied.length === 0 && patches.length > 0) {
-        console.error(`[action-executor] patch_file: NO patches applied out of ${patches.length}`);
+        throw new Error(
+          `patch_file: aucun patch appliqué (${patches.length} tentatives). Chaînes non trouvées: ${failed.slice(0, 3).map(s => `"${s}"`).join(', ')}`
+        );
       }
 
       return result;
