@@ -49,6 +49,7 @@
 
 |Métrique                              |Cette semaine|
 |--------------------------------------|-------------|
+|Followers Twitter F2                  |12           |
 |Signups portfolio (tous SaaS, UTM)    |1 (storemdtesttt — test externe)|
 |DMs reçus                             |             |
 |Mentions organiques de F2 par d'autres|             |
