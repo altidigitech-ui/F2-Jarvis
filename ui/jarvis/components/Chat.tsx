@@ -840,7 +840,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         persona,
         mode,
         message: messageToSend,
-        history: messages.map((m) => ({ role: m.role, content: m.content })),
       };
 
       if (imagesToSend.length > 0) {
@@ -932,6 +931,14 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 m.id === assistantId
                   ? { ...m, content: m.content + `\n[Erreur: ${event.message}]` }
                   : m
+              )
+            );
+          } else if (event.type === "end" && event.warning) {
+            const warnMsg = "\n\n⚠️ *Tâche trop longue — réponds 'continue' pour que je reprenne.*";
+            fullText += warnMsg;
+            setMessages((prev) =>
+              prev.map((m) =>
+                m.id === assistantId ? { ...m, content: m.content + warnMsg } : m
               )
             );
           }
