@@ -21,6 +21,12 @@ type ImageAttachment = {
 
 type FileAttachment = { name: string; content: string };
 
+type PendingZip = {
+  zip_id: string;
+  filename: string;
+  file_count: number;
+};
+
 type DrawerResult = {
   wing: string;
   filename: string;
@@ -509,6 +515,8 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   const [lastActionDone, setLastActionDone] = useState(false);
   const [pendingImages, setPendingImages] = useState<ImageAttachment[]>([]);
   const [pendingFiles, setPendingFiles] = useState<FileAttachment[]>([]);
+  const [pendingZip, setPendingZip] = useState<PendingZip | null>(null);
+  const [zipUploading, setZipUploading] = useState(false);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [imageSizeError, setImageSizeError] = useState(false);
@@ -630,6 +638,34 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     if (img) setPendingImages(prev => [...prev, img]);
   }, []);
 
+  const attachZipFile = useCallback(async (file: File) => {
+    setZipUploading(true);
+    setPendingZip(null);
+    try {
+      const base64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const result = e.target?.result as string;
+          resolve(result.split(",")[1]);
+        };
+        reader.onerror = () => reject(new Error("read error"));
+        reader.readAsDataURL(file);
+      });
+      const res = await fetch("/api/upload-zip", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ filename: file.name, data: base64 }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json() as { zip_id: string; count: number; files: string[] };
+      setPendingZip({ zip_id: data.zip_id, filename: file.name, file_count: data.count });
+    } catch (err) {
+      console.error("[Chat] ZIP upload failed:", err);
+    } finally {
+      setZipUploading(false);
+    }
+  }, []);
+
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     if (e.dataTransfer.types.includes("Files")) setIsDraggingOver(true);
@@ -648,8 +684,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       if (file.type.startsWith("image/")) {
         await attachImage(file);
       } else if (file.name.endsWith(".zip")) {
-        const extracted = await processZipFile(file);
-        if (extracted.length > 0) setPendingFiles(prev => [...prev, ...extracted]);
+        await attachZipFile(file);
       } else if (
         file.type.startsWith("text/") ||
         file.name.endsWith(".md") || file.name.endsWith(".txt") || file.name.endsWith(".csv") ||
@@ -660,7 +695,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         setPendingFiles(prev => [...prev, { name: file.name, content }]);
       }
     }
-  }, [attachImage]);
+  }, [attachImage, attachZipFile]);
 
   const handlePaste = useCallback(async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
     const items = Array.from(e.clipboardData.items);
@@ -753,7 +788,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
   const send = async (overrideText?: string) => {
     const text = (overrideText || input).trim();
-    if ((!text && pendingImages.length === 0 && pendingFiles.length === 0 && !fileContext) || isStreaming) return;
+    if ((!text && pendingImages.length === 0 && pendingFiles.length === 0 && !fileContext && !pendingZip) || isStreaming) return;
 
     if (text.startsWith("/search ") || text.startsWith("/wing ")) {
       await sendSearch(text);
@@ -762,6 +797,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
     const imagesToSend = [...pendingImages];
     const filesToSend = [...pendingFiles];
+    const zipToSend = pendingZip;
 
     const userMsg: Message = {
       id: uid(),
@@ -775,6 +811,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     setInput("");
     setPendingImages([]);
     setPendingFiles([]);
+    setPendingZip(null);
     setImageSizeError(false);
     setIsStreaming(true);
     setActiveAction(null);
@@ -811,6 +848,9 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       }
       if (filesToSend.length > 0) {
         body.files = filesToSend;
+      }
+      if (zipToSend) {
+        body.zip = zipToSend;
       }
 
       const controller = new AbortController();
@@ -1002,7 +1042,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     { type: "incident_resolved", label: "🔧 Résolu" },
   ];
 
-  const canSend = !isStreaming && (!!input.trim() || pendingImages.length > 0 || pendingFiles.length > 0 || !!fileContext);
+  const canSend = !isStreaming && !zipUploading && (!!input.trim() || pendingImages.length > 0 || pendingFiles.length > 0 || !!fileContext || !!pendingZip);
 
   return (
     <>
@@ -1366,7 +1406,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
           )}
 
           {/* Attachments preview */}
-          {(pendingImages.length > 0 || pendingFiles.length > 0) && (
+          {(pendingImages.length > 0 || pendingFiles.length > 0 || !!pendingZip || zipUploading) && (
             <div className="flex gap-2 flex-wrap px-0 py-1 mb-2">
               {pendingImages.map((img, i) => (
                 <div key={`img-${i}`} className="relative group">
@@ -1400,6 +1440,23 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                   </button>
                 </div>
               ))}
+              {zipUploading && (
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg" style={{ background: "rgba(251,191,36,0.08)", border: "1px solid rgba(251,191,36,0.2)" }}>
+                  <span className="text-[11px] font-mono" style={{ color: "#f59e0b" }}>⏳ Upload ZIP...</span>
+                </div>
+              )}
+              {pendingZip && (
+                <div className="relative group flex items-center gap-1.5 px-2 py-1 rounded-lg" style={{ background: "rgba(251,191,36,0.08)", border: "1px solid rgba(251,191,36,0.2)" }}>
+                  <span className="text-[11px] font-mono" style={{ color: "#f59e0b" }}>📦 {pendingZip.filename} ({pendingZip.file_count} fichiers)</span>
+                  <button
+                    onClick={() => setPendingZip(null)}
+                    className="text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ color: "#f06464" }}
+                  >
+                    ✕
+                  </button>
+                </div>
+              )}
             </div>
           )}
 
@@ -1424,7 +1481,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
               onKeyDown={handleKeyDown}
               onPaste={handlePaste}
               placeholder={
-                (pendingImages.length > 0 || pendingFiles.length > 0)
+                (pendingImages.length > 0 || pendingFiles.length > 0 || !!pendingZip)
                   ? "Message accompagnant les fichiers… (optionnel)"
                   : "Message JARVIS… (⏎ envoyer · /search query · /wing wing query)"
               }
@@ -1500,8 +1557,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                 if (file.type.startsWith("image/")) {
                   await attachImage(file);
                 } else if (file.name.endsWith(".zip")) {
-                  const extracted = await processZipFile(file);
-                  if (extracted.length > 0) setPendingFiles(prev => [...prev, ...extracted]);
+                  await attachZipFile(file);
                 } else {
                   const content = await file.text();
                   setPendingFiles(prev => [...prev, { name: file.name, content }]);
