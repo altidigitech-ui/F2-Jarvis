@@ -56,8 +56,8 @@
 |Signups StoreMD (free)         |             |           |     |
 |Signups StoreMD (paid)         |             |           |     |
 |MRR                            |             |           |     |
-|Cold outreach envoyés (semaine)|3 (à J4)     |           |     |
-|Réponses positives cold        |0            |           |     |
+|Cold outreach envoyés (semaine)|3 (à J4)     |9          |+6   |
+|Réponses positives cold        |0            |0          |=    |
 
 -----
 
