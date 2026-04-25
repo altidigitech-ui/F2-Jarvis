@@ -1,4 +1,4 @@
-# CROSS-EXECUTION LOG F — Semaine 6
+# CROSS-EXECUTION LOG F — Semaine 7
 
 **Usage :** Suivi d'exécution des replies cross-engagement rédigées dans `fabrice/cross-engagement-tracker.md`.
 **Règle :** 1 ligne par reply après exécution ou constat de non-exécution.
@@ -6,24 +6,22 @@
 
 ---
 
-## COUCHE A — SUIVI D'EXÉCUTION (14 replies F)
+## COUCHE A — SUIVI D'EXÉCUTION (12 replies F)
 
 |ID|Jour|Post cible|Heure cible|Heure réelle|Statut|Notes|
 |---|---|---|---|---|---|---|
-|A1|Lun 20/04|R Twitter 13h — `lundi-20-04-reprise-claim`|13h05|—|❌ Non fait|Retard construction JARVIS J1|
-|A2|Lun 20/04|F2 Twitter 13h — `lundi-20-04-relaunch`|13h05|—|❌ Non fait|Retard construction JARVIS J1|
-|A3|Mar 21/04|R Twitter 13h — `mardi-21-04-horror-story`|13h05|—|❌ Non fait|Retard construction JARVIS J2|
-|A4|Mar 21/04|F2 Twitter 13h — `mardi-21-04-feature-spotlight`|13h05|—|❌ Non fait|Retard construction JARVIS J2|
-|A5|Mar 21/04|R LinkedIn 21h — `mardi-21-04-case-study`|21h05|—|❌ Non fait|Retard construction JARVIS J2|
-|A6|Mar 21/04|F2 LinkedIn 21h — `mardi-21-04-launch-week2`|21h05|—|❌ Non fait|Retard construction JARVIS J2|
-|A7|Mer 22/04|R Twitter 13h — `mercredi-22-04-agency-bait`|13h05|15h26|✅ Fait|Reply postée sur @delgado_ro72224|
-|A8|Mer 22/04|F2 Twitter 13h — `mercredi-22-04-social-proof`|13h05|~13h05|✅ Fait|Confirmé par Fabrice 24/04|
-|A9|Jeu 23/04|R Twitter 13h — `jeudi-23-04-data-drop`|13h05|~13h05|✅ Fait|Confirmé par Fabrice|
-|A10|Jeu 23/04|F2 Twitter 13h — `jeudi-23-04-invisible-loss`|13h05|~13h05|✅ Fait|Confirmé par Fabrice|
-|A11|Jeu 23/04|R LinkedIn 21h — `jeudi-23-04-agency-angle`|21h05|~21h05|✅ Fait|Confirmé par Fabrice 24/04|
-|A12|Ven 24/04|R Twitter 13h — `vendredi-24-04-social-proof`|13h05|—|⏳ À confirmer|Cross 13h non confirmé|
-|A13|Ven 24/04|F2 Twitter 13h — `vendredi-24-04-week-recap`|13h05|—|⏳ À confirmer|Cross 13h non confirmé|
-|A14|Ven 24/04|R LinkedIn 21h — `vendredi-24-04-week-recap`|21h05|—|⏳ À faire|Fenêtre 21h ce soir|
+|A1|Lun 27/04|R Twitter 14h — 68 stores $12,400 cumul|14h05|—|⏳|À faire|
+|A2|Lun 27/04|F2 Twitter 15h — 68 stores since launch|15h05|—|⏳|À faire|
+|A3|Mar 28/04|R Twitter 14h — zombie apps provocateur|14h05|—|⏳|À faire|
+|A4|Mar 28/04|F2 Twitter 15h — 94% ghost billing|15h05|—|⏳|À faire|
+|A5|Mar 28/04|R LinkedIn 17h — $12,400 breakdown|17h05|—|⏳|À faire|
+|A6|Mer 29/04|R Twitter 14h — mobile checkout diagnostic|14h05|—|⏳|À faire|
+|A7|Mer 29/04|F2 Twitter 15h — 3 things analytics|15h05|—|⏳|À faire|
+|A8|Jeu 30/04|R Twitter 14h — agency 8 clients $1,400|14h05|—|⏳|À faire|
+|A9|Jeu 30/04|F2 Twitter 15h — agency offer free scan|15h05|—|⏳|À faire|
+|A10|Jeu 30/04|R LinkedIn 17h — agency scan pitch|17h05|—|⏳|À faire|
+|A11|Ven 01/05|R Twitter 14h — week 7 recap 90 stores|14h05|—|⏳|À faire|
+|A12|Ven 01/05|F2 Twitter 15h — AI readiness 42%|15h05|—|⏳|À faire|
 
 ---
 
@@ -31,21 +29,21 @@
 
 |ID|Jour|Post cible|Heure cible|Heure réelle|Statut|Notes|
 |---|---|---|---|---|---|---|
-|B1|Mer 22/04|R Twitter 18h30 — M1 recrutement|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
-|B2|Mer 22/04|F2 Twitter 18h30 — Beta studio|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
-|B3|Jeu 23/04|R Twitter 18h30 — M2 scan gratuit|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
-|B4|Jeu 23/04|R LinkedIn 21h — Free scan + cold|21h05|~21h05|✅ Fait|Confirmé par Fabrice 24/04|
-|B5|Jeu 23/04|F2 Twitter 18h30 — Scan gratuit séparé|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04|
-|B6|Ven 24/04|R Twitter 18h30 — M5 pipeline recap|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04 19h28|
-|B7|Ven 24/04|F2 Twitter 18h30 — Beta pipeline recap|18h35|~18h35|✅ Fait|Confirmé par Fabrice 24/04 19h27|
-|B8|Ven 24/04|R LinkedIn 21h — Final beta|21h05|~21:56|✅ Fait|Cross B8 — R LinkedIn Couche B Pro teaser + pipeli||
+|B1|Mer 29/04|R Twitter 19h — 51/0 beta offer|19h05|—|⏳|À faire|
+|B2|Mer 29/04|F2 Twitter 20h — OAuth wall|20h05|—|⏳|À faire|
+|B3|Mer 29/04|R LinkedIn 20h30 — agency beta no install|20h35|—|⏳|À faire|
+|B4|Jeu 30/04|R Twitter 19h — 4 spots beta results|19h05|—|⏳|À faire|
+|B5|Jeu 30/04|F2 Twitter 20h — beta update 6 stores|20h05|—|⏳|À faire|
+|B6|Ven 01/05|R Twitter 19h — 8 scans recap|19h05|—|⏳|À faire|
+|B7|Ven 01/05|F2 Twitter 20h — beta week wrap|20h05|—|⏳|À faire|
+|B8|Ven 01/05|R LinkedIn 20h30 — agency beta results|20h35|—|⏳|À faire|
 
 ---
 
-## COMPTEUR S6
+## COMPTEUR S7
 
-| Catégorie | ✅ Fait | ❌ Raté | ❓ Incertain | ⏳ À venir | Total |
-|-----------|--------|--------|------------|-----------|-------|
-| Couche A  | 5      | 6      | 0          | 3         | 14    |
-| Couche B  | 7      | 0      | 0          | 1         | 8     |
-| **Total** | **12** | **6**  | **0**      | **4**     | **22**|
+| Catégorie | ✅ Fait | ❌ Raté | ⏳ À faire | Total |
+|-----------|--------|--------|-----------|-------|
+| Couche A  | 0      | 0      | 12        | 12    |
+| Couche B  | 0      | 0      | 8         | 8     |
+| **Total** | **0**  | **0**  | **20**    | **20**|
