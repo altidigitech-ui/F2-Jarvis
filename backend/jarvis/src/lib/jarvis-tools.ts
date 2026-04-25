@@ -484,6 +484,8 @@ export function createJarvisMcpServer(options: {
 - mark_cross_published: { post: string, reply: string }
 - resolve_alert: { keyword: string }
 - log_decision: { decision: string, rationale: string, result?: string }
+- log_analytics: { day: string, impressions: string, eng_rate: string, replies: string, new_follows: string, platform?: string, section?: string }
+  Writes a row to the ANALYTICS section of progress-semaine.md. Use for manual or weekly analytics entry.
 - create_file: { path: string, content: string, commit_message?: string }
   Creates a new file OR overwrites an existing file at \`path\` with \`content\`.
   Allowed paths: prefixes f2/, fabrice/, romain/, strategie/, patterns/,
@@ -513,6 +515,7 @@ The 'preview' field is a human-readable description shown to the user before the
           "mark_cross_published",
           "resolve_alert",
           "log_decision",
+          "log_analytics",
           "create_file",
           "patch_file",
         ])
