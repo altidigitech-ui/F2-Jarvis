@@ -1,7 +1,7 @@
-# CROSS-EXECUTION LOG F2 — Semaine 6
+# CROSS-EXECUTION LOG F2 — Semaine 7
 
 **Usage :** Suivi d'exécution des replies cross-engagement F2.
-**Règle :** 1 ligne par reply après exécution ou constat de non-exécution.
+**Note :** F2 reçoit des crosses de F et R. Ce log trackera si des replies F2 proactives sont exécutées.
 
 ---
 
@@ -12,7 +12,7 @@
 
 ---
 
-## COMPTEUR S6
+## COMPTEUR S7
 
 | Catégorie | ✅ Fait | ❌ Raté | ⏳ À venir | Total |
 |-----------|--------|--------|-----------|-------|
