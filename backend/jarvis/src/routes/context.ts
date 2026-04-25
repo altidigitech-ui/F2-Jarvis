@@ -103,7 +103,12 @@ function parseTimeline(planHebdo: string, today: string, dayName: string, publis
       if (row.length < 2) continue;
       const dayCell = row[0].replace(/\*\*/g, "").toLowerCase();
       const dayAbbr = dayName.slice(0, 3);
-      if (!dayCell.includes(today) && !dayCell.includes(dayName) && !dayCell.includes(dayAbbr)) continue;
+      const datePart = dayCell.match(/\d{2}\/\d{2}/)?.[0];
+      if (datePart) {
+        if (datePart !== today) continue;
+      } else {
+        if (!dayCell.includes(dayName) && !dayCell.includes(dayAbbr)) continue;
+      }
       // 4-col (Jour|Vidéo|Sujet|Statut) → row[2]; 3-col (Jour|Sujet|Statut) → row[1]
       const subject = row.length >= 4 ? (row[2] || row[1]) : row[1];
       const statusCell = row[row.length - 1] || "";
