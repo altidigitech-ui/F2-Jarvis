@@ -2,11 +2,13 @@ import { getSupabase } from "./supabase.js";
 import { ghCreate, ghRead, ghUpdate, ghWrite } from "./github.js";
 import { cacheInvalidateAll } from "./cache.js";
 import {
+  appendAnalyticsRow,
   appendColdLog,
   appendColdQueue,
   appendDecision,
   appendEngagementLog,
   appendProgressEvent,
+  incrementCurrentCounter,
   markPlanPublished,
   resolveProgressEvent,
   updateColdReply,
@@ -187,6 +189,8 @@ export function resolveFilePath(
         path: `${persona}/engagement/cross-execution-log.md`,
         commitPrefix: `${persona}: cross published`,
       };
+    case "log_analytics":
+      return { path: `${persona}/progress-semaine.md`, commitPrefix: `${persona}: analytics` };
     case "log_decision":
       return { path: `tracking/decisions-log.md`, commitPrefix: `decision` };
     case "create_file": {
@@ -334,6 +338,20 @@ export function applyTransform(
     case "resolve_alert":
       return resolveProgressEvent(md, String(params.keyword || ""));
 
+    case "log_analytics": {
+      const day = String(params.day || "");
+      const platform = params.platform ? String(params.platform) : null;
+      const impressions = String(params.impressions || "");
+      const engRate = String(params.eng_rate || "");
+      const replies = String(params.replies || "");
+      const newFollows = String(params.new_follows || "");
+      const section = String(params.section || "ANALYTICS");
+      const row = platform
+        ? [day, platform, impressions, engRate, replies, newFollows]
+        : [day, impressions, engRate, replies, newFollows];
+      return appendAnalyticsRow(md, row, section);
+    }
+
     case "log_decision":
       return appendDecision(
         md,
@@ -441,20 +459,9 @@ export async function applySideEffects(
         await ghUpdate(
           `${persona}/progress-semaine.md`,
           (md) => {
-            // Step 1: increment counter
-            const lines = md.split("\n");
-            for (let i = 0; i < lines.length; i++) {
-              if (lines[i].toLowerCase().includes("cold outreach envoyé") && lines[i].includes("|")) {
-                const currentMatch = lines[i].match(/\|(\d+)/);
-                if (currentMatch) {
-                  const current = parseInt(currentMatch[1], 10);
-                  lines[i] = lines[i].replace(/\|\d+/, `|${current + count}`);
-                }
-              }
-            }
-            // Step 2: append event — single write, zero SHA conflict
+            const updated = incrementCurrentCounter(md, "Cold envoyés", count);
             return appendProgressEvent(
-              lines.join("\n"),
+              updated,
               `Cold ${platform} x${count}${target ? ` (${target.slice(0, 30)})` : ""}`,
               platform,
               `Cold outreach ${time}`,
@@ -469,17 +476,9 @@ export async function applySideEffects(
       }
 
       case "log_engagement": {
-        const platform = String(params.platform || "Twitter");
-        const postSummary = String(params.post || "").slice(0, 50);
         await ghUpdate(
           `${persona}/progress-semaine.md`,
-          (md) => appendProgressEvent(
-            md,
-            `Engagement ${platform} — ${postSummary}`,
-            platform,
-            `Commentaire/reply ${time}`,
-            ""
-          ),
+          (md) => incrementCurrentCounter(md, "Engagements", 1),
           `[JARVIS] ${persona}: progress — engagement`
         ).catch((err) => {
           console.error(`[action-executor] side-effect log_engagement failed:`, err instanceof Error ? err.message : err);
