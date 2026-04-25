@@ -6,6 +6,7 @@ import {
   loadOrCreateConversation,
   loadMessages,
   saveMessage,
+  compressConversationIfNeeded,
   type JarvisMessage,
 } from "../lib/jarvis-memory.js";
 import { createJarvisMcpServer, JARVIS_ALLOWED_TOOLS } from "../lib/jarvis-tools.js";
@@ -605,6 +606,11 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       } catch (err) {
         console.error("[chat] saveMessage assistant failed:", err);
       }
+    }
+
+    // Trigger compression when conversation gets long (fire-and-forget, Haiku, ~0.01€/compression)
+    if (conversationId && history.length >= 29) {
+      compressConversationIfNeeded(conversationId, history.length + 2).catch(() => {});
     }
 
     // fire-and-forget mempalace ingestion
