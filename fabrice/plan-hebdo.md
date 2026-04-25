@@ -11,7 +11,7 @@
 |Mer 22/04|`store-md-before-after-billing`|🧵 THREAD $40k/mo 72h case study|⏳|
 |Jeu 23/04|`store-md-list-hidden`|5 things Shopify dashboard HIDES|✅ Publié 13h00|
 |Ven 24/04|`store-md-money-visitors`|$189/mo × 12 = $2,268/year|✅ Publié 13h00|
-|Sam 25/04|`store-md-horror-slow-store`|Scan volume this week|⏳|
+|Sam 25/04|`store-md-horror-slow-store`|Scan volume this week|✅ Publié 18:55|
 |Dim 26/04|`store-md-before-after-ai`|🧵 THREAD AI invisibility technique|⏳|
 
 ## 1B. POSTS TWITTER F — COUCHE B (3 posts beta, 18h30 CEST)
