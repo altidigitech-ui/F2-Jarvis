@@ -1,8 +1,8 @@
-# PROGRESS SEMAINE F2 — Semaine du 20/04/2026 au 26/04/2026
+# PROGRESS SEMAINE F2 — Semaine du 27/04/2026 au 03/05/2026
 
-**Rempli :** au fil de la semaine (quand quelque chose de notable arrive) + vendredi à la revue.
-**Archivé le :** dimanche 26/04/2026.
-**Règle :** Si noter prend plus de 2 minutes par jour, tu en fais trop. L'analyse détaillée se fait à la revue vendredi.
+**Rempli :** au fil de la semaine + vendredi à la revue.
+**Archivé le :** dimanche 03/05/2026.
+**Règle :** Si noter prend plus de 2 minutes par jour, tu en fais trop.
 
 -----
 
@@ -10,10 +10,7 @@
 
 |Date|Événement|Plateforme|Action prise / à prendre|
 |----|---------|----------|------------------------|
-|22/04|Reply @aryan_sinh sur post beta F2 (question naming StoreMD)|IH (compte F2)|Reply : nom verrouillé, fonctionnel = voulu, app B2B Shopify pas une marque consumer, le rapport fait le travail pas le nom.|
-|22/04|IH engagement (compte F2 @foundrytwo) — 5 commentaires feed|IH (compte F2)|5 commentaires : @kubaklatt (ad URL monitor, blind spot pattern commun), @atomfoundryai (100+ e-commerce stores analyzed, conversion vs traffic), @HarshGarg06 (worst support month, proactive outreach), @PrepProject (where is your time spent, outreach et distribution), @Ridhisha (retention trapped, 530+ app reviews hostage retention pattern). Mix engagement valeur + builder-to-builder.|
-|23/04|IH replies notifications (compte F2 @foundrytwo) — 3 replies|IH (compte F2)|3 replies : @aryan_sinh sur post beta F2 (100% direct outreach, zero organic spread yet, $300/mo ghost billing recall), @atomfoundryai sur "100+ e-commerce stores" (two layers structural + psychological, fix order matters), @kubaklatt sur ad URL monitor (hourly checks 90%+ for v1, don't build v2 before paying users).|
-|23/04|IH engagement (compte F2 @foundrytwo) — 2 commentaires nouveaux|IH (compte F2)|2 commentaires : @Nvsn_ai "2 weeks Reddit beta ghosted" (StoreMD beta design, value before commitment, 10 spots deadline), @AyeshaBuilds "Trust Leaks Free Audits" (trust leaks vs technical leaks complementary, question audit format v1 vs v2).|
+|    |         |          |                        |
 
 -----
 
@@ -31,11 +28,11 @@
 
 |Métrique                                      |Cette semaine|Semaine précédente|Tendance|
 |----------------------------------------------|-------------|------------------|--------|
-|Impressions                                   |             |                  |        |
+|Impressions                                   |             |164               |        |
 |Replies reçues                                |             |                  |        |
 |Replies organiques (hors cross-engagement R↔F)|             |                  |        |
 |Engagement rate                               |             |                  |        |
-|Meilleur post                                 |             |                  |        |
+|Meilleur post                                 |             |Jeu 23/04 — 63 imp|        |
 |Pire post                                     |             |                  |        |
 
 ### IH F2
@@ -73,7 +70,7 @@
 
 |Tâche                                       |Temps réel|
 |--------------------------------------------|----------|
-|Rédaction 5 posts Twitter (projet Claude F2)|          |
+|Rédaction posts Twitter F2                  |          |
 |Rédaction post IH                           |          |
 |Visuels                                     |          |
 |Programmation                               |          |
