@@ -17,6 +17,7 @@
 |23/04|Reddit warming (compte R) — 20+ upvotes + 5 commentaires|Reddit (compte R)|Engagement|~20 upvotes r/shopify + r/ecommerce. 3 commentaires r/AskReddit EN (stopped caring about working for others, toxic situation discipline/work/faith, Fear and Loathing in Las Vegas). 2 commentaires mid-size : r/Entrepreneur u/username48378645 (pricing plans feedback), r/ecommerce u/ExuberantPeddler (page speed Shopify vs Google). Phase 4 warming J+18.|
 |25/04|Posts non publiés S6 J4-J5 (Jeu+Ven Couche A+B)|Twitter/LinkedIn|⚠️ Non publié|8 posts non publiés : Twitter Couche A Jeu 23/04, Couche B Mer/Jeu/Ven, LinkedIn Couche A Jeu/Ven, LinkedIn Couche B Jeu/Ven. Posts à évaluer pour intégration S7 si angle encore pertinent.|
 |25/04|Cross-engagement non exécuté J4-J5 S6|Cross R↔F↔F2|⚠️ Non exécuté|8 crosses non faits (Jeu+Ven, Couche A+B). Compteur final S6 : 10✅ / 8❌ sur 18 prévus. Plan crosses S7 à ajuster pour rattraper la dynamique.|
+|25/04|Cold outreach S6 : 0/50 — semaine setup + décision pivot S7|LinkedIn|📋 Décision|Cold = 0 cette semaine : setup JARVIS + contrainte StoreMD résolue. StoreMD scanne sans install (URL .myshopify.com suffisante). CTA "drop your URL, free scan 60s" opérationnel dès S7. Templates R (R-01 ghost billing, R-02 CRO checkout, R-03 agency) + F (F-01 LinkedIn, F-02 Twitter) créés dans romain/cold/COLD-TEMPLATES-S7.md et fabrice/cold/COLD-TEMPLATES-S7.md. Objectif S7 : 50 cold R + 50 cold F.|
 
 -----
 
