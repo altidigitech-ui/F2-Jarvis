@@ -1,6 +1,7 @@
 import { tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
 import { ghRead, ghList, ghReadExternal, ghListExternal } from "./github.js";
+import { readZipFile, listZipFiles, getZipMeta } from "./zip-store.js";
 import { getSupabase } from "./supabase.js";
 import { searchDrawers } from "./mempalace.js";
 
@@ -908,6 +909,50 @@ The 'preview' field is a human-readable description shown to the user before the
     }
   );
 
+  // ---------------------------------------------------------------------------
+  // read_from_zip — read a specific file from an uploaded ZIP
+  // ---------------------------------------------------------------------------
+  const readFromZip = tool(
+    "read_from_zip",
+    "Read a specific file from a previously uploaded ZIP. Use zip_id from the context '[ZIP joint:...]' marker. Partial path matching supported — 'scanner.ts' will find 'src/lib/scanner.ts'.",
+    {
+      zip_id: z.string().describe("The zip_id from the [ZIP joint:...] context marker"),
+      path: z.string().describe("File path to read. Partial match ok (e.g. 'scanner.ts' or 'src/scanner.ts')"),
+    },
+    async ({ zip_id, path }) => {
+      const content = readZipFile(zip_id, path);
+      if (content === null) {
+        const files = listZipFiles(zip_id);
+        if (!files) {
+          return { content: [{ type: "text" as const, text: `ZIP not found or expired: ${zip_id}. Ask user to re-upload.` }], isError: true };
+        }
+        return { content: [{ type: "text" as const, text: `File "${path}" not found. Available files:\n${files.slice(0, 60).join("\n")}` }] };
+      }
+      return { content: [{ type: "text" as const, text: `File: ${path}\n\n${content.slice(0, 40000)}` }] };
+    }
+  );
+
+  // ---------------------------------------------------------------------------
+  // list_zip — list all files in an uploaded ZIP
+  // ---------------------------------------------------------------------------
+  const listZip = tool(
+    "list_zip",
+    "List all files available in an uploaded ZIP archive. Use zip_id from the context '[ZIP joint:...]' marker.",
+    {
+      zip_id: z.string().describe("The zip_id from the [ZIP joint:...] context marker"),
+      filter: z.string().optional().describe("Optional filter string (e.g. '.ts' for TypeScript files only)"),
+    },
+    async ({ zip_id, filter }) => {
+      const meta = getZipMeta(zip_id);
+      if (!meta) {
+        return { content: [{ type: "text" as const, text: `ZIP not found or expired: ${zip_id}. Ask user to re-upload.` }], isError: true };
+      }
+      let files = listZipFiles(zip_id) ?? [];
+      if (filter) files = files.filter(f => f.includes(filter));
+      return { content: [{ type: "text" as const, text: `ZIP: ${meta.filename} (${meta.count} total files)\n\nFiles${filter ? ` matching "${filter}"` : ""}:\n${files.join("\n")}` }] };
+    }
+  );
+
   return createSdkMcpServer({
     name: "jarvis",
     version: "1.0.0",
@@ -925,6 +970,8 @@ The 'preview' field is a human-readable description shown to the user before the
       codeCheck,
       ouroborosProposals,
       githubExplore,
+      readFromZip,
+      listZip,
     ],
   });
 }
@@ -946,4 +993,6 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__code_check",
   "mcp__jarvis__ouroboros_proposals",
   "mcp__jarvis__github_explore",
+  "mcp__jarvis__read_from_zip",
+  "mcp__jarvis__list_zip",
 ];
