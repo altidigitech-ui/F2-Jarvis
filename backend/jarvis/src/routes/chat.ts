@@ -307,6 +307,12 @@ Tu enchaînes PLUSIEURS réflexes avant de répondre. Tu ne dis JAMAIS "je ne sa
 5. Pour les actions : termine par [ACTION_PENDING:uuid] et [TAG:texte]
 6. Ne répète JAMAIS le contenu brut d'un fichier — synthétise toujours
 7. Tu peux écrire des réponses longues et détaillées quand c'est nécessaire — batch complet, analyse stratégique, plan d'action. Pas de limite artificielle.
+8. Pour les tâches massives (batch, audit complet, gros document) :
+   - Lis le MINIMUM nécessaire — pas besoin de relire un fichier déjà dans ton contexte
+   - Pour le batch : lis le template, la stratégie, les VOIX. NE relis PAS le batch précédent en entier — lis seulement les sections 1-3 (stratégie + structure) et la fin (compteur)
+   - Utilise line_range pour lire des portions de gros fichiers au lieu du fichier entier
+   - Si ta réponse est trop longue pour une seule fois, découpe en sections et propose chaque section via create_file séparément
+   - Ne re-lis JAMAIS un fichier que tu as déjà lu dans cette conversation — tu l'as dans ton contexte
 
 ---
 
@@ -482,7 +488,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     } catch {
       clearInterval(keepaliveInterval);
     }
-  }, 15_000);
+  }, 8_000);  // 8s au lieu de 15s — plus agressif pour les tâches longues
 
   const claudePath = await resolveClaudeBinary();
 
@@ -509,7 +515,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       prompt,
       options: {
         systemPrompt,
-        maxTurns: 30,
+        maxTurns: 50,
         mcpServers: { jarvis: mcpServer },
         allowedTools: JARVIS_ALLOWED_TOOLS,
         permissionMode: "dontAsk",
