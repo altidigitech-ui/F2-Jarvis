@@ -57,7 +57,7 @@
 |Mer 29/04|⏳|⏳|
 |Jeu 30/04|⏳|⏳|
 |Ven 01/05|⏳|⏳|
-|Sam 02/05|⏳|⏳|
+|Sam 02/05|— (R+F2 OFF sam)|— (R+F2 OFF sam)|
 |Dim 03/05|— (OFF)|— (OFF)|
 
 ## 6. S6 RECAP
