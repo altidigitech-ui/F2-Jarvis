@@ -51,5 +51,5 @@
 
 - Engagement fort J4 (23/04 : 8 replies Twitter + 5 commentaires LinkedIn + Reddit) malgré zéro posts publiés ce jour → signal : l'engagement peut être décorrélé des publications sur les semaines contraintes.
 - PH karma farming x2 sessions (22+23/04 — 10 upvotes + 2 commentaires) → karma farming a un délai d'effet >1 semaine, à continuer S7 pour préparer le lancement F2.
-- Cold S6 = 0/50 mais infrastructure complète opérationnelle : StoreMD URL-only validé, templates R-01/R-02/R-03 créés, CTA "drop your URL, free scan 60s" prêt. S7 est la vraie semaine de départ cold R.
+- Cold S6 = 0/50 mais templates R-01/R-02/R-03 créés. **Important :** StoreMD URL-only non validé — la page redirige vers auth Shopify OAuth, scan sans install non fonctionnel (51 starts / 0 completes confirmés dashboard 25/04). CTA "drop your URL" suspendu jusqu'à correction technique. S7 : cold possible uniquement sur les stores scannés manuellement en amont par F ou R.
 - Agency DM post Ven 24/04 = best reach S6 (638 imp). Angle agency = levier principal S7 à amplifier.
