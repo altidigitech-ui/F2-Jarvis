@@ -1,62 +1,70 @@
-# PLAN HEBDO F — Semaine du 20/04/2026 au 26/04/2026
+# PLAN HEBDO F — Semaine du 27/04/2026 au 03/05/2026
 
-**Contexte :** SEMAINE 6 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta testers mer-ven). Scale cold Twitter 50 → 70. **Anglais uniquement.**
+**Contexte :** SEMAINE 7 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta "No Install" mer-sam). Canon S7 : 90 stores / $15,600 cumul. **Anglais uniquement.**
 
-## 1. POSTS TWITTER F
-
-|Jour|Vidéo|Sujet|Statut|
-|---|---|---|---|
-|Lun 20/04|`store-md-myth-apps-fine`|"My apps are fine" — 94% wrong|✅ Publié 13h42|
-|Mar 21/04|`store-md-tier-apps-danger`|14 apps = 8.8s total bloat|✅ Publié 13h42|
-|Mer 22/04|`store-md-before-after-billing`|🧵 THREAD $40k/mo 72h case study|⏳|
-|Jeu 23/04|`store-md-list-hidden`|5 things Shopify dashboard HIDES|✅ Publié 13h00|
-|Ven 24/04|`store-md-money-visitors`|$189/mo × 12 = $2,268/year|✅ Publié 13h00|
-|Sam 25/04|`store-md-horror-slow-store`|Scan volume this week|✅ Publié 18:55|
-|Dim 26/04|`store-md-before-after-ai`|🧵 THREAD AI invisibility technique|⏳|
-
-## 1B. POSTS TWITTER F — COUCHE B (3 posts beta, 18h30 CEST)
+## 1. POSTS TWITTER F — COUCHE A (13h00 CEST)
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Mer 22/04|`store-md-beta-10-spots`|M1 Beta builder angle|⏳|
-|Jeu 23/04|`store-md-scan-demo-agency`|M2+M3 Scan gratuit + cold scan|⏳|
-|Ven 24/04|`store-md-beta-progress`|M4 Pro findings teaser|✅ Publié 18h30|
+|Lun 27/04|`store-md-horror-slow-store`|23 scans / $300/mo bleed — aucun signal dashboard|⏳|
+|Mar 28/04|`store-md-before-after-billing`|🧵 THREAD DTC $35k/mo — 3 issues / 60s|⏳|
+|Mer 29/04|`store-md-list-hidden`|3 things Shopify dashboard won't tell you|⏳|
+|Jeu 30/04|`store-md-money-visitors`|$189/mo × 14 months = $2,646 quietly gone|⏳|
+|Ven 01/05|`store-md-before-after-ai`|Ranks on Google. Invisible on AI search.|⏳|
+|Sam 02/05|`store-md-horror-slow-store`|Week scan summary: 22 stores, 22/22 ghost billing|⏳|
 
-## 2. POSTS LINKEDIN F (EN)
+## 1B. POSTS TWITTER F — COUCHE B (18h00 CEST, mer-sam)
+
+|Jour|Vidéo|Sujet|Statut|
+|---|---|---|---|
+|Mer 29/04|`store-md-beta-10-spots`|B1 — No install hook (51/0 OAuth transparent)|⏳|
+|Jeu 30/04|`store-md-scan-demo-agency`|B2 — Scan result live (ghost billing + checkout + AI)|⏳|
+|Ven 01/05|aucune|B3 — Builder story: why no-auth first|⏳|
+|Sam 02/05|aucune|B4 — Spots urgency (6/10 gone, 4 left)|⏳|
+
+## 2. POSTS LINKEDIN F — COUCHE A (17h30 CEST)
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 21/04|Deep dive: ghost billing detection 60s|✅ Publié|
-|Mer 22/04|Deep dive: Shopify invisible to ChatGPT|✅ Publié|
-|Jeu 23/04|Social proof: agency $22k in 2 days|✅ Publié|
+|Mar 28/04|40+ stores scanned — ghost billing builder story|⏳|
+|Jeu 30/04|Why ghost billing is so hard to find without a scanner|⏳|
 
-## 2B. POSTS LINKEDIN F — COUCHE B (2 posts beta, 21h00 CEST)
+## 2B. POSTS LINKEDIN F — COUCHE B (21h00 CEST)
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mer 22/04|REFAIT AI readiness → angle beta builder technique (remplace Couche A)|✅ Publié 21h00|
-|Ven 24/04|NOUVEAU Pro findings + pipeline beta|✅ Publié 21h00|
+|Mer 29/04|Why I'm doing manual scans instead of asking merchants to install|⏳|
+|Ven 01/05|Manual beta week: what 8 stores actually looked like|⏳|
 
 ## 3. COLD OUTREACH
 
 |Donnée|Objectif|
 |---|---|
-|Replies Twitter/jour|14|
-|Volume Twitter semaine|**70 (scale S5 50→70)**|
-|DM LinkedIn/jour|5|
-|Volume LinkedIn semaine|25|
-|DM Twitter/jour|3|
-|Volume Twitter DM|15|
+|Cold/jour|10 (Twitter DM + LinkedIn DM)|
+|Volume semaine|**50**|
+|Templates|`fabrice/cold/COLD-TEMPLATES-S7.md`|
 
 ## 4. ENGAGEMENT
 
-30 interactions/jour (15 Twitter + 15 LinkedIn) + 14 cold replies + 8 DM = 52 touchpoints/jour.
+30 interactions/jour (15 Twitter + 15 LinkedIn) + cold + cross = 52 touchpoints/jour.
 
-## 5. S5 RECAP
-Twitter F : 6 posts, 1159 imp (+68%), 50 replies (vs 22 S4). LinkedIn F : 2 posts, 396 imp, +13 abonnés (x3.25). Cold : 17, 3 positifs (17.6%). MRR : $0.
+## 5. CROSS-ENGAGEMENT F↔R↔F2
 
-## 6. PRIORITÉS
-1. Sales mode EN uniquement
-2. Scale cold Twitter 50 → 70
-3. Agencies layer focus
-4. ProfitPilot = background, StoreMD priorité 100%
+|Jour|Cross Couche A (13h05)|Cross Couche B (18h05)|
+|---|---|---|
+|Lun 27/04|⏳|— (pas de Couche B lundi)|
+|Mar 28/04|⏳|— (pas de Couche B mardi)|
+|Mer 29/04|⏳|⏳|
+|Jeu 30/04|⏳|⏳|
+|Ven 01/05|⏳|⏳|
+|Sam 02/05|⏳|⏳|
+|Dim 03/05|— (OFF)|— (OFF)|
+
+## 6. S6 RECAP
+Twitter F : 4 posts publiés, 855 imp. Best : Jeu 23/04 "5 things hidden" 273 imp. Thread Mer 22/04 20% ER. LinkedIn F : 4 posts, 376 imp. Cold : 9 replies Twitter, 0 DM, 0 réponses. MRR : 0€ externe.
+
+## 7. PRIORITÉS
+1. Couche B "No Install" = priorité #1 — scan proactif contourne le mur OAuth
+2. Cold : 10/jour templates ready, focus exécution uniquement
+3. Jeu = best day → posts les plus forts positionnés jeudi
+4. Agency layer : amplifier l'angle agency (best reach S6)
