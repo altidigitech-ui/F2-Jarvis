@@ -1,37 +1,47 @@
-# POSTS VALIDÉS R — Semaine 6 (20/04 → 26/04/2026)
+# POSTS VALIDÉS R — Semaine 7 (27/04 → 03/05/2026)
 
-**Batch généré :** 20/04/2026
-**Mode :** Sales agressif DOUBLE-COUCHE
+**Batch généré :** 25/04/2026  
+**Mode :** Sales agressif DOUBLE-COUCHE (Couche A sales + Couche B beta "No Install")  
 **Langue publication :** Anglais uniquement
 
-## COUCHE A — Twitter R (5 posts) — 13h00 CEST
+## COUCHE A — Twitter R (5 posts) — 14h00 CEST
 
-- [ ] Lun 20/04 13h — Reprise claim — `twitter/semaine-6/lundi-20-04-reprise-claim.md`
-- [ ] Mar 21/04 13h — Horror story — `twitter/semaine-6/mardi-21-04-horror-story.md`
-- [ ] Mer 22/04 13h — Agency bait — `twitter/semaine-6/mercredi-22-04-agency-bait.md`
-- [ ] Jeu 23/04 13h — Data drop — `twitter/semaine-6/jeudi-23-04-data-drop.md`
-- [ ] Ven 24/04 13h — Social proof — `twitter/semaine-6/vendredi-24-04-social-proof.md`
+- [ ] Lun 27/04 14h — 68 stores scanned / $12,400 leaks — data-drop
+- [ ] Mar 28/04 14h — Unpopular opinion: you're paying for dead apps
+- [ ] Mer 29/04 14h — Mobile conversion isn't low because of your product
+- [ ] Jeu 30/04 14h — Agency DM: 8 stores scanned, $1,400/mo combined
+- [ ] Ven 01/05 14h — Week 7 scan results: 90 stores / $15,600 cumul
 
-## COUCHE A — LinkedIn R (0 posts Couche A — tous REFAITS en Couche B)
+## COUCHE B — Twitter R (3 posts beta) — 19h00 CEST (mer→ven)
 
-Aucun — les 3 LinkedIn R sont REFAITS avec l'angle beta (voir Couche B ci-dessous).
+- [ ] Mer 29/04 19h — B1 — 51/0 OAuth wall — manual scans, 10 spots
+- [ ] Jeu 30/04 19h — B2 — 4 spots left, beta results (6/6 ghost billing)
+- [ ] Ven 01/05 19h — B3 — 8 scans beta, "numbers should be higher"
 
-## COUCHE B — Twitter R (3 posts beta) — 18h30 CEST (mer-ven)
+## COUCHE A — LinkedIn R (2 posts) — 17h00 CEST
 
-- [ ] Mer 22/04 18h30 — Beta recruitment — `twitter/semaine-6/mercredi-22-04-beta-recruitment.md`
-- [ ] Jeu 23/04 18h30 — Free scan CTA — `twitter/semaine-6/jeudi-23-04-free-scan-cta.md`
-- [ ] Ven 24/04 18h30 — Beta recap — `twitter/semaine-6/vendredi-24-04-beta-recap.md`
+- [ ] Mar 28/04 17h — $12,400 breakdown from 68 scans (long form)
+- [ ] Jeu 30/04 17h — Free agency scans this week — CTA commentaires + DM
 
-## COUCHE B — LinkedIn R (3 posts REFAITS beta) — 21h00 CEST
+## COUCHE B — LinkedIn R (2 posts beta) — 20h30 CEST
 
-- [ ] Mar 21/04 21h — Beta recrutement (REFAIT) — `linkedin/semaine-6/mardi-21-04-case-study.md`
-- [ ] Jeu 23/04 21h — Scan gratuit + cold (REFAIT) — `linkedin/semaine-6/jeudi-23-04-agency-angle.md`
-- [ ] Ven 24/04 21h — Pro teaser + pipeline (REFAIT) — `linkedin/semaine-6/vendredi-24-04-week-recap.md`
+- [ ] Mer 29/04 20h30 — Free multi-store scans for agencies — no install
+- [ ] Ven 01/05 20h30 — Agency beta results: $156/mo avg, 9 months undetected
 
-## Règles de publication S6
+## Règles de publication S7
 
 1. Publier en anglais uniquement
-2. Twitter : POST sans URL + REPLY `storemd.vercel.app` en reply séparé
-3. LinkedIn : URL dans le corps
-4. Cross-engagement — voir `cross-engagement-tracker.md` (22 replies double-couche)
-5. Couche A = 13h00 / Couche B = 18h30
+2. Twitter : format 2-blocs (POST sans URL + REPLY avec URL `storemd.vercel.app`)
+3. LinkedIn : URL dans le corps du post
+4. Cross-engagement obligatoire dans les 5 min — voir `cross-engagement-tracker.md` (22 replies Couche A+B)
+5. Couche A = 14h00 / Couche B = 19h00 (écart min 3h)
+6. Couche B LinkedIn = 20h30 (mer + ven uniquement)
+7. Vidéos Couche A = recyclées S6 (rien à produire). Couche B B3 = aucune vidéo.
+
+## Bilan publications S7
+
+- Twitter Couche A : 0/5 ✅
+- Twitter Couche B : 0/3 ✅
+- LinkedIn Couche A : 0/2 ✅
+- LinkedIn Couche B : 0/2 ✅
+- **Total : 0/12 posts publiés**
