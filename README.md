@@ -51,7 +51,7 @@ F2-Jarvis/
 ├── backend/               ← Backends Jarvis
 │   └── jarvis/            ← Express Railway (vrai cerveau)
 ├── brain/                 ← Couche cognitive : ouroboros/, mempalace/, mem0/
-├── .claude/               ← Config Claude Code : skills/ (16), agents/ (7), commands/ (9), hooks/ (6)
+├── .claude/               ← Config Claude Code : skills/ (17), agents/ (7), commands/ (9), hooks/ (6)
 ├── ops/                   ← Discipline : budget/, monitoring/, kill-switches/
 ├── patterns/              ← Décisions techniques durcies
 ├── tracking/              ← Dashboard hebdo, decisions-log, UTM
@@ -133,7 +133,7 @@ F2-Jarvis/
 
 ---
 
-## État au 21/04/2026
+## État au 26/04/2026
 
 | Dossier | État | Note |
 |---------|------|------|
@@ -151,17 +151,17 @@ F2-Jarvis/
 | `ui/jarvis/` | En prod (Vercel) | |
 | `backend/jarvis/` | En prod (Railway) | |
 | `brain/` | Opérationnel | Ouroboros nocturne, MemPalace actif |
-| `.claude/` | Configuré | 16 skills, 7 agents, 9 commands, 6 hooks |
-| `archives/` | Propre | Cleanup 21/04 exécuté |
+| `.claude/` | Configuré | 17 skills, 7 agents, 9 commands, 6 hooks |
+| `archives/` | Propre | S6 archivé 26/04 (S1-S2-S4-S5-S6 + batches) |
 | TikTok (`f2/tiktok/`, `growth-marketing/tiktok/`) | SUSPENDU | Pipeline vidéo en construction |
 
 ---
 
 ## Phase actuelle
 
-**Semaine 6 (20-26 avril 2026).** StoreMD en scale sales-mode agressif. BATCH hebdo actif : `BATCH-SEMAINE-6.md` (racine).
+**Semaine 7 (27 avril - 03 mai 2026).** StoreMD double-couche : Couche A sales agressif + Couche B beta no-install (pivot OAuth wall, 51 starts / 0 completes). BATCH hebdo actif : `BATCH-SEMAINE-7.md` (racine).
 
-**Prochain lancement produit :** ProfitPilot (fin avril / mai).
+**Prochain lancement produit :** ProfitPilot (mai 2026).
 
 **Objectif août 2026 :** 6 SaaS live, liberté financière atteinte.
 
