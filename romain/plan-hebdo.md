@@ -63,7 +63,7 @@
 |Mer 29/04|⏳|⏳|
 |Jeu 30/04|⏳|⏳|
 |Ven 01/05|⏳|⏳|
-|Sam 02/05|— (pas de post R samedi)|— (pas de Couche B R samedi)|
+|Sam 02/05|⏳ (F A6 13h05)|⏳ (F B4 18h05)|
 |Dim 03/05|— (OFF)|— (OFF)|
 
 ## 6. S6 RECAP
