@@ -21,6 +21,15 @@
 
 -----
 
+## COMPTEURS COURANTS
+
+| Métrique | Valeur |
+|----------|--------|
+| Cold envoyés S7 | 0 |
+| Engagements S7 | 0 |
+
+-----
+
 ## MÉTRIQUES FIN DE SEMAINE
 
 |Métrique                       |Début semaine|Fin semaine|Delta|
