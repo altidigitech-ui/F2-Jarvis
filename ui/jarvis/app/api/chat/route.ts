@@ -25,6 +25,7 @@ export async function POST(req: Request) {
       "X-USER-ID": user?.id || "",
     },
     body: JSON.stringify(body),
+    signal: req.signal, // Forward abort signal — évite de garder Railway actif après refresh
   });
 
   return new Response(response.body, {
