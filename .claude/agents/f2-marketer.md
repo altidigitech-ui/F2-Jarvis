@@ -5,6 +5,8 @@ model: claude-sonnet-4-6
 effort: medium
 memory: project
 color: yellow
+skills:
+  - cognitive-loader
 ---
 
 # Agent f2-marketer
@@ -78,3 +80,10 @@ Exemples :
 - **Semaine de lancement** : 1 post par canal par jour, cadencé
 - **Semaine normale** : 2-3 posts répartis
 - **Semaine crunch tech** : 0-1 post, pas de pression (quality > quantity)
+
+## Contexte cognitif
+
+Pour la rédaction de contenu, charger le profil `creative` via cognitive-loader.
+Pour la stratégie de contenu et le ciblage, charger le profil `strategic`.
+Pour adapter le ton à l'interlocuteur, charger le profil `social`.
+Fichiers pertinents : communication.md, motivation.md, langage.md, creativite.md, empathie.md.

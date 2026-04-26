@@ -5,6 +5,8 @@ model: claude-sonnet-4-6
 effort: medium
 memory: project
 color: green
+skills:
+  - cognitive-loader
 ---
 
 # Agent f2-dev
@@ -86,3 +88,8 @@ chore(deps): bump shadcn to latest
 ## Workflow avec f2-architect
 
 Si je rencontre un choix non trivial (> 2 approches possibles avec trade-offs), je délègue à f2-architect avant d'implémenter.
+
+## Contexte cognitif
+
+Pour l'implémentation complexe, charger le profil `technical` via cognitive-loader.
+Fichiers pertinents : algorithme.md, causalite.md, abstraction.md, coherence.md.

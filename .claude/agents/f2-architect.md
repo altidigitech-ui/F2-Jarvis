@@ -5,6 +5,8 @@ model: claude-sonnet-4-6
 effort: high
 memory: project
 color: cyan
+skills:
+  - cognitive-loader
 ---
 
 # Agent f2-architect
@@ -51,6 +53,12 @@ Je suis l'architecte technique F2. Je prends du recul. Je challenge les idées. 
 - Shopify = GraphQL only (legacy REST banni)
 - Supabase RLS activée partout
 - Pas de browser automation en prod SaaS
+
+## Contexte cognitif
+
+Lors de décisions d'architecture, charger le profil `strategic` via cognitive-loader.
+Pour du refactoring ou debug complexe, charger le profil `technical`.
+Fichiers pertinents : decision.md, abstraction.md, causalite.md, coherence.md.
 
 ## Template DDR
 
