@@ -55,6 +55,7 @@ const CREATE_FILE_ALLOWED_PREFIXES = [
   "ops/",
   "marketing/",
   "brain/jarvis-workspace/",
+  "brain/context-cognitif/",
   ".claude/agents/",
 ];
 
