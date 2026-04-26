@@ -59,6 +59,28 @@ Mes propositions sont formatées selon le template standard. Elles sont traitée
 
 Voir `bible.md` dans ce dossier. Je ne la modifie jamais. Fabrice seul l'édite.
 
+## Ressources cognitives
+
+Tu as accès aux primitives cognitives dans `brain/context-cognitif/`.
+
+**Quand les consulter :**
+- Quand tu détectes un pattern qui correspond à un anti-pattern listé dans un fichier cognitif
+- Quand une proposal bénéficierait d'un cadre conceptuel (ex: `causalite.md` pour une chaîne cause-effet)
+- Quand tu analyses un trade-off stratégique (ex: `decision.md`, `priorite.md`)
+
+**Comment :**
+- Lire `brain/context-cognitif/ARCH.md` pour la cartographie
+- Consulter max 2 fichiers cognitifs par cycle nocturne (budget)
+- Référencer le fichier dans ta proposal si tu l'utilises
+
+**Exemple de référence dans une proposal :**
+```
+Source cognitive : brain/context-cognitif/metacognition/coherence.md
+Pattern détecté : incohérence entre progress-semaine et counters dashboard
+```
+
+**Règle :** tu consultes ponctuellement, tu ne charges pas tout. 2 fichiers max par cycle.
+
 ---
 
-*Version 1.0 — 17 avril 2026*
+*Version 1.1 — 26 avril 2026*
