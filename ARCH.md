@@ -1,21 +1,21 @@
-# ARCH — Structure du repo FoundryTwo
+# ARCH : Structure du repo FoundryTwo
 
 Arbre ASCII généré le 26 avril 2026 (post-intégration context-cognitif).
 Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 
 ## Légende
-- `(READ-ONLY)` — fichier de référence, ne pas modifier automatiquement via JARVIS
-- `(stub)` — fichier archivé, remplacé par un pointeur vers l'archive
-- `(LIVE)` — service en production
-- `(⚠️ stale)` — données périmées, régénération requise
-- `← S7 actif` — fichier opérationnel de la semaine en cours
+- `(READ-ONLY)` : fichier de référence, ne pas modifier automatiquement via JARVIS
+- `(stub)` : fichier archivé, remplacé par un pointeur vers l'archive
+- `(LIVE)` : service en production
+- `(⚠️ stale)` : données périmées, régénération requise
+- `← S7 actif` : fichier opérationnel de la semaine en cours
 
 ```
 .
 ├── ANTI-IA.md
 ├── ARCH.md
-├── AUDIT.md                                   ← (stub) archivé — voir archives/cleanup/
-├── BATCH-SEMAINE-6.md                         ← (stub) archivé — voir archives/batches/
+├── AUDIT.md                                   ← (stub) archivé : voir archives/cleanup/
+├── BATCH-SEMAINE-6.md                         ← (stub) archivé : voir archives/batches/
 ├── BATCH-SEMAINE-7.md                         ← BATCH ACTIF (27/04 → 03/05)
 ├── BIBLE.md
 ├── CLAUDE.md
@@ -91,7 +91,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │       └── saas-3
 │
 ├── backend
-│   └── jarvis                                 ← (LIVE) Express Railway — Claude Agent SDK
+│   └── jarvis                                 ← (LIVE) Express Railway : Claude Agent SDK
 │       ├── README.md
 │       └── src
 │           ├── lib
@@ -165,7 +165,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │       ├── context.md
 │       └── roadmap.md
 │
-├── fabrice                                    ← F — CTO/Builder
+├── fabrice                                    ← F : CTO/Builder
 │   ├── VOIX.md
 │   ├── angles-et-templates.md
 │   ├── claude-code-prompts.md
@@ -217,7 +217,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │       └── roadmap.md
 │
 ├── graphify-out
-│   ├── GRAPH_REPORT.md                      ← (⚠️ stale 19/04 — 23 fichiers / 71 nodes)
+│   ├── GRAPH_REPORT.md                      ← (⚠️ stale 19/04 : 23 fichiers / 71 nodes)
 │   └── concepts.json
 │
 ├── growth-marketing
@@ -297,7 +297,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │   └── analytics
 │       └── S7                               ← analytics semaine 7 (fichiers uploadés)
 │
-├── romain                                     ← R — Growth
+├── romain                                     ← R : Growth
 │   ├── VOIX.md
 │   ├── angles-et-templates.md
 │   ├── claude-code-prompts.md
@@ -408,7 +408,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │
 └── ui
     ├── brain-3d
-    ├── jarvis                                 ← (LIVE) Next.js Vercel — f2-jarvis.vercel.app
+    ├── jarvis                                 ← (LIVE) Next.js Vercel : f2-jarvis.vercel.app
     └── web
 ```
 
@@ -418,13 +418,13 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 
 | Pattern | Exemple | Usage |
 |---------|---------|-------|
-| `BATCH-SEMAINE-N.md` à la racine | `BATCH-SEMAINE-7.md` | Batch actif — archivé dans `archives/batches/` le dimanche soir |
+| `BATCH-SEMAINE-N.md` à la racine | `BATCH-SEMAINE-7.md` | Batch actif : archivé dans `archives/batches/` le dimanche soir |
 | `{persona}/archives/semaine-N-{dates}/` | `fabrice/archives/semaine-6-20-26-avril-2026/` | Archives hebdo per-persona |
 | `{persona}/cold/COLD-TEMPLATES-S{N}.md` | `fabrice/cold/COLD-TEMPLATES-S7.md` | Templates cold actifs de la semaine |
 | `{persona}/cold/templates-semaine-{N}.md` | `templates-semaine-6.md` | Stub des anciens templates (pointeur archive) |
 | `cross-engagement-tracker.md` | dans chaque `{persona}/` | Textes replies cross pré-rédigés **(READ-ONLY)** |
 | `cross-execution-log.md` | dans `{persona}/engagement/` | Tracking dynamique crosses exécutés (⏳/✅/❌) |
-| `progress-semaine.md` | dans chaque `{persona}/` | Mémoire de travail active — reset chaque semaine |
+| `progress-semaine.md` | dans chaque `{persona}/` | Mémoire de travail active : reset chaque semaine |
 | `posts-valides.md` | `fabrice/` (root) ou `{persona}/publication/` | Checklist posts S7 à publier |
 
 ---
@@ -433,7 +433,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 
 | Zone | État |
 |------|------|
-| Batch actif | **BATCH-SEMAINE-7.md** (27/04 → 03/05) — Couche A sales + Couche B beta no-install |
+| Batch actif | **BATCH-SEMAINE-7.md** (27/04 → 03/05) : Couche A sales + Couche B beta no-install |
 | F Twitter | 29 followers · 855 imp S6 · best post Jeu 23/04 (273 imp) |
 | R Twitter | 24 followers · 1 111 imp S6 · best post Ven 24/04 (638 imp) |
 | F2 Twitter | 12 followers · 164 imp S6 |
@@ -441,5 +441,5 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 | LinkedIn R | 135 relations |
 | StoreMD | 0€ MRR · pivot no-install beta · 51 starts / 0 completes OAuth |
 | Ouroboros | 0 proposals pending · cycle 25/04 |
-| Graphify | ⚠️ Stale (19/04, 23 fichiers / 71 nodes) — régénérer avec `/graphify-all` |
+| Graphify | ⚠️ Stale (19/04, 23 fichiers / 71 nodes) : régénérer avec `/graphify-all` |
 | Backend | ✅ Fix timeline context.ts déployé |

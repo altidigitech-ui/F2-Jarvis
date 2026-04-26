@@ -1,7 +1,7 @@
-# Pattern — Chargement de contexte cognitif à la demande
+# Pattern : Chargement de contexte cognitif à la demande
 
 **Capturé le** : 2026-04-26
-**Découvert dans** : F2-Jarvis — intégration système cognitif 77 fichiers
+**Découvert dans** : F2-Jarvis : intégration système cognitif 77 fichiers
 **Auteur** : Fabrice
 **Catégorie** : ops
 
@@ -29,7 +29,7 @@ Analyse profonde : /think <question> (via f2-thinker, profil deep)
 
 ## Pourquoi ça marche
 
-- Le contexte est une ressource finie — chaque token supplémentaire dilue les tokens existants
+- Le contexte est une ressource finie : chaque token supplémentaire dilue les tokens existants
 - Le KV-cache hit rate (métrique clé selon Manus) chute quand le contexte est trop hétérogène
 - La progressive disclosure (Anthropic docs) permet de ne payer que ce qu'on utilise
 - 12% du corpus chargé à chaque session = les 12% les plus pertinents
