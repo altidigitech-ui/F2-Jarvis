@@ -1,17 +1,17 @@
 # PLAN HEBDO F — Semaine du 27/04/2026 au 03/05/2026
 
-**Contexte :** SEMAINE 7 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta "No Install" mer-sam). Canon S7 : 90 stores / $15,600 cumul. **Anglais uniquement.**
+**Contexte :** SEMAINE 7 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta "No Install" mer-sam). Canon S7 : 90 stores audités / $15,600 cumul. **Anglais uniquement.**
 
 ## 1. POSTS TWITTER F — COUCHE A (13h00 CEST)
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 27/04|`store-md-horror-slow-store`|23 scans / $300/mo bleed — aucun signal dashboard|⏳|
+|Lun 27/04|`store-md-horror-slow-store`|23 audits / $300/mo bleed — aucun signal dashboard|⏳|
 |Mar 28/04|`store-md-before-after-billing`|🧵 THREAD DTC $35k/mo — 3 issues / 60s|⏳|
 |Mer 29/04|`store-md-list-hidden`|3 things Shopify dashboard won't tell you|⏳|
 |Jeu 30/04|`store-md-money-visitors`|$189/mo × 14 months = $2,646 quietly gone|⏳|
 |Ven 01/05|`store-md-before-after-ai`|Ranks on Google. Invisible on AI search.|⏳|
-|Sam 02/05|`store-md-horror-slow-store`|Week scan summary: 22 stores, 22/22 ghost billing|⏳|
+|Sam 02/05|`store-md-horror-slow-store`|Week audit summary: 22 stores, 22/22 ghost billing|⏳|
 
 ## 1B. POSTS TWITTER F — COUCHE B (18h00 CEST, mer-sam)
 
