@@ -924,6 +924,53 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             </div>
           </div>
 
+          {/* StoreMD Beta — Install link */}
+          <div className="px-4 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
+            <div className="text-[12px] font-semibold text-slate-500 mb-2 flex items-center gap-1.5">
+              <span>StoreMD Beta</span>
+              <span
+                className="text-[10px] px-1.5 py-0.5 rounded font-mono"
+                style={{ backgroundColor: `${accentColor}22`, color: accentColor }}
+              >
+                {counters.pipelineBetas ?? 0}/10 spots
+              </span>
+            </div>
+            {process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL ? (
+              <div className="space-y-1.5">
+                <div
+                  className="text-[10px] text-slate-400 font-mono truncate cursor-pointer hover:text-white transition-colors"
+                  onClick={() => navigator.clipboard.writeText(process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL!)}
+                  title="Cliquer pour copier"
+                >
+                  {process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL}
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => navigator.clipboard.writeText(process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL!)}
+                    className="text-[11px] text-slate-400 hover:text-white transition-colors"
+                  >
+                    📋 Copier
+                  </button>
+                  <a
+                    href={process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] hover:underline transition-colors"
+                    style={{ color: accentColor }}
+                  >
+                    ↗ Ouvrir
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <div className="text-[11px] text-slate-500">
+                Ajouter{" "}
+                <code className="text-slate-400">NEXT_PUBLIC_STOREMD_INSTALL_URL</code>{" "}
+                dans Vercel
+              </div>
+            )}
+          </div>
+
           {/* Alertes — dismissibles via resolve_alert */}
           <div className="p-4">
             <div className="text-[12px] font-semibold text-slate-500 mb-3">
