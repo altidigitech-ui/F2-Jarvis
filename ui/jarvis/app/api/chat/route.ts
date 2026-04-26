@@ -17,17 +17,34 @@ export async function POST(req: Request) {
   } = await supabase.auth.getUser();
 
   const body = await req.json();
-  const response = await fetch(`${BACKEND}/chat`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "",
-      "X-USER-ID": user?.id || "",
-    },
-    body: JSON.stringify(body),
-    // Pas de signal: req.signal — retirer l'abort forward évite de couper Railway avant saveMessage()
-    // Sans ça : refresh browser → abort → for await interrompu → saveMessage jamais appelé → Supabase vide
-  });
+
+  let response: Response;
+  try {
+    response = await fetch(`${BACKEND}/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "",
+        "X-USER-ID": user?.id || "",
+      },
+      body: JSON.stringify(body),
+      // Pas de signal: req.signal — retirer l'abort forward évite de couper Railway avant saveMessage()
+      // Sans ça : refresh browser → abort → for await interrompu → saveMessage jamais appelé → Supabase vide
+    });
+  } catch (err) {
+    // Railway unreachable (cold start, network error) — return a proper NDJSON error event
+    // so Chat.tsx stream reader gets a clean error event instead of a TypeError
+    const errMsg = err instanceof Error ? err.message : String(err);
+    const errorLine = JSON.stringify({ type: "error", message: `Backend unreachable: ${errMsg}` }) + "\n";
+    return new Response(errorLine, {
+      status: 200,
+      headers: {
+        "Content-Type": "application/x-ndjson; charset=utf-8",
+        "Cache-Control": "no-cache, no-transform",
+        "X-Content-Type-Options": "nosniff",
+      },
+    });
+  }
 
   return new Response(response.body, {
     status: response.status,
