@@ -935,40 +935,37 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
                 {counters.pipelineBetas ?? 0}/10 spots
               </span>
             </div>
-            {process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL ? (
-              <div className="space-y-1.5">
-                <div
-                  className="text-[10px] text-slate-400 font-mono truncate cursor-pointer hover:text-white transition-colors"
-                  onClick={() => navigator.clipboard.writeText(process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL!)}
-                  title="Cliquer pour copier"
-                >
-                  {process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL}
-                </div>
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => navigator.clipboard.writeText(process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL!)}
-                    className="text-[11px] text-slate-400 hover:text-white transition-colors"
+            {(() => {
+              const installUrl = process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL || "https://storemd-api-production.up.railway.app/api/v1/auth/install";
+              return (
+                <div className="space-y-1.5">
+                  <div
+                    className="text-[10px] text-slate-400 font-mono truncate cursor-pointer hover:text-white transition-colors"
+                    onClick={() => navigator.clipboard.writeText(installUrl)}
+                    title="Cliquer pour copier"
                   >
-                    📋 Copier
-                  </button>
-                  <a
-                    href={process.env.NEXT_PUBLIC_STOREMD_INSTALL_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] hover:underline transition-colors"
-                    style={{ color: accentColor }}
-                  >
-                    ↗ Ouvrir
-                  </a>
+                    {installUrl}
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => navigator.clipboard.writeText(installUrl)}
+                      className="text-[11px] text-slate-400 hover:text-white transition-colors"
+                    >
+                      📋 Copier
+                    </button>
+                    <a
+                      href={installUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] hover:underline transition-colors"
+                      style={{ color: accentColor }}
+                    >
+                      ↗ Ouvrir
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <div className="text-[11px] text-slate-500">
-                Ajouter{" "}
-                <code className="text-slate-400">NEXT_PUBLIC_STOREMD_INSTALL_URL</code>{" "}
-                dans Vercel
-              </div>
-            )}
+              );
+            })()}
           </div>
 
           {/* Alertes — dismissibles via resolve_alert */}
