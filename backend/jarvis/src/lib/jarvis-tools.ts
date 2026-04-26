@@ -1100,6 +1100,119 @@ The 'preview' field is a human-readable description shown to the user before the
     }
   );
 
+  // ---------------------------------------------------------------------------
+  // cognitive_load
+  // ---------------------------------------------------------------------------
+  const cognitiveLoad = tool(
+    "cognitive_load",
+    "Load cognitive context files to enrich reasoning quality before complex responses. Call this BEFORE responding to: decisions with trade-offs, deep analysis, emotional/hostile interactions, creative generation, or systematic debugging. Returns concatenated cognitive primitives that shape how you think and reason.",
+    {
+      profile: z.enum(["technical", "creative", "social", "strategic", "debug", "deep", "auto"]).describe("Cognitive profile — technical (architecture/code/infra), creative (content/posts/design), social (emotion/conflict/empathy), strategic (decisions/planning/trade-offs), debug (audit/diagnosis/root-cause), deep (explicit deep analysis, /think), auto (inferred from context)."),
+      context: z.string().optional().describe("Brief description of the task — used when profile is 'auto' to infer the right profile."),
+    },
+    async ({ profile, context }) => {
+      try {
+        const profileFiles: Record<string, string[]> = {
+          technical: [
+            "noyau/conscience.md",
+            "noyau/ame.md",
+            "raisonnement/algorithme.md",
+            "raisonnement/abstraction.md",
+            "metacognition/coherence.md",
+          ],
+          creative: [
+            "noyau/conscience.md",
+            "noyau/ame.md",
+            "noyau/intuition.md",
+            "raisonnement/creativite.md",
+            "raisonnement/analogie.md",
+          ],
+          social: [
+            "noyau/conscience.md",
+            "noyau/ame.md",
+            "social/empathie.md",
+            "social/emotion.md",
+            "social/communication.md",
+          ],
+          strategic: [
+            "noyau/conscience.md",
+            "noyau/ame.md",
+            "decision/decision.md",
+            "decision/intention.md",
+            "metacognition/doute.md",
+          ],
+          debug: [
+            "noyau/conscience.md",
+            "noyau/ame.md",
+            "metacognition/metacognition.md",
+            "raisonnement/causalite.md",
+            "systemes/racine.md",
+          ],
+          deep: [
+            "noyau/conscience.md",
+            "noyau/ame.md",
+            "noyau/intuition.md",
+            "verite/contexte.md",
+            "decision/decision.md",
+            "metacognition/metacognition.md",
+            "metacognition/doute.md",
+            "raisonnement/causalite.md",
+          ],
+        };
+
+        let resolvedProfile = profile;
+        if (profile === "auto") {
+          const ctx = (context || "").toLowerCase();
+          if (/audit|diagnos|bug|pourquoi|post.?mortem|root.?cause/.test(ctx)) {
+            resolvedProfile = "debug";
+          } else if (/d.cision|strat.gi|trade.?off|prioris|planif|pivot/.test(ctx)) {
+            resolvedProfile = "strategic";
+          } else if (/contenu|tweet|post|copyw|visuel|cr.a|batch|voix/.test(ctx)) {
+            resolvedProfile = "creative";
+          } else if (/conflit|frustrat|motion|empathi|hostil/.test(ctx)) {
+            resolvedProfile = "social";
+          } else if (/archit|refactor|debug|code|infra|stack|api/.test(ctx)) {
+            resolvedProfile = "technical";
+          } else {
+            resolvedProfile = "strategic";
+          }
+        }
+
+        const files = profileFiles[resolvedProfile] ?? profileFiles.strategic;
+        const basePath = "brain/context-cognitif/";
+
+        const results = await Promise.all(
+          files.map(async (f) => {
+            try {
+              const file = await ghRead(basePath + f);
+              return file ? `\n\n---\n### ${f}\n\n${file.content}` : null;
+            } catch {
+              return null;
+            }
+          })
+        );
+
+        const loaded = results.filter((r): r is string => r !== null);
+        const header = `🧠 Cognitive context loaded — Profile: **${resolvedProfile}** (${loaded.length}/${files.length} files)\nUse these cognitive primitives to shape your reasoning before responding.\n`;
+
+        return {
+          content: [{
+            type: "text" as const,
+            text: header + loaded.join(""),
+          }],
+        };
+      } catch (err) {
+        return {
+          content: [{
+            type: "text" as const,
+            text: `cognitive_load error: ${err instanceof Error ? err.message : String(err)}`,
+          }],
+          isError: true,
+        };
+      }
+    }
+  );
+
   return createSdkMcpServer({
     name: "jarvis",
     version: "1.0.0",
@@ -1122,6 +1235,7 @@ The 'preview' field is a human-readable description shown to the user before the
       listZip,
       readXlsx,
       webSearch,
+      cognitiveLoad,
     ],
   });
 }
@@ -1148,4 +1262,5 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__list_zip",
   "mcp__jarvis__read_xlsx",
   "mcp__jarvis__web_search",
+  "mcp__jarvis__cognitive_load",
 ];
