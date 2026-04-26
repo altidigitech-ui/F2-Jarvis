@@ -701,7 +701,6 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               accentColor={accentColor}
               weekNumber={weekNumber}
               onOpenToday={() => { setMobilePanel("timeline"); }}
-              onOpenToday={() => { setMobilePanel("timeline"); }}
               onOpenPlanHebdo={() => { setOpenFilePath(filePaths.planHebdo); setMobilePanel(null); }}
               onOpenPostsBatch={() => { setOpenFilePath(filePaths.postsBatch); setMobilePanel(null); }}
               onOpenCrossEngagement={() => { setOpenFilePath(filePaths.crossEng); setMobilePanel(null); }}
@@ -771,7 +770,6 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             accentColor={accentColor}
             weekNumber={weekNumber}
             onOpenToday={() => document.getElementById("jarvis-timeline")?.scrollTo({ top: 0, behavior: "smooth" })}
-            onOpenToday={() => document.getElementById("timeline-scroll-col")?.scrollTo({ top: 0, behavior: "smooth" })}
             onOpenPlanHebdo={() => setOpenFilePath(filePaths.planHebdo)}
             onOpenPostsBatch={() => setOpenFilePath(filePaths.postsBatch)}
             onOpenCrossEngagement={() => setOpenFilePath(filePaths.crossEng)}
