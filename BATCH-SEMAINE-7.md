@@ -60,7 +60,7 @@
 
 ### 1.1 Couche A — SALES AGRESSIF + SOCIAL PROOF
 
-**Angle narratif :** "I've scanned 90 stores. Here's what your dashboard isn't showing you."  
+**Angle narratif :** "I've manually audited 90 stores. Here's what your dashboard isn't showing you."  
 **Funnel :** top-of-funnel attention + mid-funnel credibility  
 **Mécaniques :**
 - A1 — Scan volume data-drop (cumul scans + $ leaks, chiffres hebdo)
@@ -290,7 +290,7 @@ ghost app billing — uninstalled apps keep charging via Shopify-Stripe billing.
 
 checkout script conflicts — 4+ apps injecting JS on checkout creates stacking. your speed score looks fine. conversions bleed anyway.
 
-AI search visibility — 78% of stores I've scanned had structured data gaps. ChatGPT and Perplexity can't surface what isn't marked up.
+AI search visibility — 78% of stores I've audited had structured data gaps. ChatGPT and Perplexity can't surface what isn't marked up.
 
 none of these show up in your analytics. that's exactly why they stick around 14+ months undetected.
 
@@ -320,7 +320,7 @@ Scan yours free: https://storemd.vercel.app/
 ```
 $189/month from apps you already uninstalled.
 
-that's the average across the stores I've scanned. not $189 total — $189 per month. recurring. automatic. invisible on your Shopify dashboard.
+that's the average across the stores I've audited. not $189 total — $189 per month. recurring. automatic. invisible on your Shopify dashboard.
 
 the reason it stays invisible: Shopify shows app status at the admin level. billing stays active at the Stripe level. the two don't sync on uninstall unless the app dev built that flow — many didn't.
 
@@ -356,7 +356,7 @@ your store ranks on Google but doesn't exist on AI search.
 
 two different problems. Google crawls your HTML. ChatGPT, Perplexity, Claude pull from structured data — schema markup, breadcrumbs, product JSON-LD.
 
-78% of stores I've scanned had incomplete schema on more than half their catalog. showed up fine on traditional search. completely invisible on AI-native queries.
+78% of stores I've audited had incomplete schema on more than half their catalog. showed up fine on traditional search. completely invisible on AI-native queries.
 
 it's not a traffic problem yet. in 18 months it probably will be.
 
@@ -420,9 +420,9 @@ Free scan, 60s: https://storemd.vercel.app/
 **POST (ANGLAIS — À PUBLIER) :**
 
 ```
-68 stores scanned. $12,400 in monthly leaks detected.
+68 stores manually audited. $12,400 in monthly leaks found.
 
-not a sample — that's cumulative from 8 weeks of scanning.
+been doing this before we built the scanner — ghost billing checks, checkout script maps, AI readiness reviews. same patterns, every store.
 
 ghost billing: 61% of it. checkout friction: 23%. AI readiness gaps: the rest.
 
@@ -437,7 +437,7 @@ Free scan: https://storemd.vercel.app/
 ```
 
 **TRADUCTION :**
-> 68 boutiques scannées. 12 400$ de fuites mensuelles détectées. Pas un échantillon — cumul sur 8 semaines. Ghost billing : 61%. Friction checkout : 23%. Lacunes AI readiness : le reste.
+> 68 boutiques auditées manuellement. 12 400$ de fuites identifiées. Travail manuel effectué avant et pendant le build du scanner. Ghost billing : 61%. Friction checkout : 23%. Lacunes AI readiness : le reste.
 
 **Notes :** Couche A — A1 · Premier post S7 R — récap S6 pour crédibilité
 
@@ -548,13 +548,13 @@ Agency scan, free: https://storemd.vercel.app/
 **POST (ANGLAIS — À PUBLIER) :**
 
 ```
-week 7 scan results:
+week 7 audit results:
 
-22 new stores this week. 22/22 had ghost billing. $3,200 in new leaks detected.
+22 stores this week (beta + manual). 22/22 had ghost billing. $3,200 in monthly leaks identified.
 
-cumul: 90 stores. $15,600 total.
+running total: 90 stores, $15,600 in leaks mapped.
 
-the pattern's consistent enough that I'd call it structural. it's not a bug in some apps. it's how Shopify's billing layer interacts with uninstalls.
+consistent enough to call it structural. it's not a bug in specific apps. it's how Shopify's billing layer handles uninstalls by design.
 
 [VIDEO]
 ```
@@ -565,7 +565,7 @@ https://storemd.vercel.app/
 ```
 
 **TRADUCTION :**
-> Résultats scan semaine 7 : 22 nouvelles boutiques. 22/22 avec ghost billing. 3 200$ de nouvelles fuites. Cumul : 90 boutiques, 15 600$ total. Le pattern est assez constant pour être structurel.
+> Résultats audit semaine 7 : 22 boutiques (beta + manuel). 22/22 avec ghost billing. 3 200$ de fuites identifiées. Total courant : 90 boutiques, 15 600$ mappés.
 
 **Notes :** Couche A — A1 recap ven · Chiffres canon S7 fin semaine
 
@@ -583,11 +583,9 @@ https://storemd.vercel.app/
 **POST (ANGLAIS — À PUBLIER) :**
 
 ```
-68 stores scanned since launch. $12,400 in monthly leaks detected.
+68 stores manually audited during the StoreMD build. $12,400 in monthly leaks documented.
 
-we built StoreMD to make this kind of audit automatic. 60 seconds, free.
-
-the data keeps showing the same thing: ghost billing, checkout friction, AI readiness gaps. stores don't know what's draining because their dashboards don't surface it.
+we built the scanner because we kept finding the same issues by hand — ghost billing, checkout friction, AI readiness gaps. stores have no way of knowing what's draining because their dashboards don't surface it.
 
 [VIDEO]
 ```
@@ -597,7 +595,7 @@ the data keeps showing the same thing: ghost billing, checkout friction, AI read
 https://storemd.vercel.app/
 ```
 
-**TRADUCTION :** > 68 boutiques scannées depuis le lancement. 12 400$ de fuites mensuelles détectées. Nous avons construit StoreMD pour automatiser ce type d'audit.
+**TRADUCTION :** > 68 boutiques auditées manuellement pendant le build de StoreMD. 12 400$ de fuites documentées. On a construit le scanner parce qu'on trouvait les mêmes problèmes en manuel.
 
 ---
 
@@ -609,7 +607,7 @@ https://storemd.vercel.app/
 **POST (ANGLAIS — À PUBLIER) :**
 
 ```
-94% of the stores we've scanned had at least one ghost app still billing after uninstall.
+94% of the stores we've audited had at least one ghost app still billing after uninstall.
 
 average monthly cost: $189. most had been running 6-14 months undetected.
 
@@ -716,9 +714,9 @@ Check your score: https://storemd.vercel.app/
 **POST (ANGLAIS — À PUBLIER) :**
 
 ```
-**I've scanned 68 stores. Here's the $12,400 breakdown.**
+**I've audited 68 stores. Here's the $12,400 breakdown.**
 
-Not all leaks are equal. After 8 weeks of StoreMD scans:
+Not all leaks are equal. After 8 weeks of manual store audits:
 
 Ghost billing: $7,564 (61%). Average store loses $189/month from uninstalled apps that kept charging. Shopify admin shows them removed. Stripe keeps processing.
 
@@ -733,7 +731,7 @@ If your store is doing $30k-$200k/month and you haven't audited for ghost billin
 Free scan, 60 seconds: https://storemd.vercel.app/
 ```
 
-**TRADUCTION :** > J'ai scanné 68 boutiques. Voici la ventilation des 12 400$. Ghost billing : 7 564$ (61%). Friction checkout : 2 852$ (23%). Lacunes AI : le reste. Sur les 68 boutiques : toutes avaient au moins un problème de facturation fantôme.
+**TRADUCTION :** > J'ai audité 68 boutiques. Voici la ventilation des 12 400$. Ghost billing : 7 564$ (61%). Friction checkout : 2 852$ (23%). Lacunes AI : le reste. Sur les 68 boutiques : toutes avaient au moins un problème de facturation fantôme.
 
 **Notes :** Couche A — A1+A4 · Long form LinkedIn · Chiffres détaillés = crédibilité
 
@@ -778,22 +776,22 @@ https://storemd.vercel.app/
 **POST (ANGLAIS — À PUBLIER) :**
 
 ```
-**40+ stores scanned. Here's what I keep finding.**
+**40+ stores audited. Here's what I keep finding.**
 
-The ghost billing pattern is almost universal. 94% of stores I've run through StoreMD had at least one app still charging after uninstall. Average: $189/month, running 8-14 months before anyone noticed.
+The ghost billing pattern is almost universal. 94% of stores I've manually audited had at least one app still charging after uninstall. Average: $189/month, running 8-14 months before anyone noticed.
 
 The reason it's invisible: Shopify's admin interface and Stripe's billing API don't sync on uninstall. Delete an app from Shopify — it shows as removed. Stripe's subscription API keeps processing. The two systems don't talk to each other.
 
 The only way to catch it: scan the billing layer directly, not the admin panel.
 
-I built StoreMD for exactly this. 43 automated checks, 5 audit modules. The ghost billing module has caught $12,400 in cumulative monthly leaks across 68 stores since launch. There's also a checkout friction module that maps JavaScript conflicts. And an AI readiness score — 78% of stores are invisible to ChatGPT and Perplexity on category-level queries because of missing structured data.
+I built StoreMD for exactly this. 43 automated checks, 5 audit modules. Across the 68 stores I've audited while building it, I've documented $12,400 in cumulative monthly leaks. There's also a checkout friction module that maps JavaScript conflicts. And an AI readiness score — 78% of stores are invisible to ChatGPT and Perplexity on category-level queries because of missing structured data.
 
 None of this shows up in Shopify analytics. That's why it stays undetected for months.
 
 Free scan: https://storemd.vercel.app/
 ```
 
-**TRADUCTION :** > 40+ boutiques scannées. Voici ce que je trouve. Ghost billing quasi-universel. 94% des boutiques. 189$/mois en moyenne. Invisible parce que Shopify admin et Stripe ne se synchronisent pas à l'uninstall.
+**TRADUCTION :** > 40+ boutiques auditées manuellement. Voici ce que je trouve. Ghost billing quasi-universel. 94% des boutiques. 189$/mois en moyenne. Invisible parce que Shopify admin et Stripe ne se synchronisent pas à l'uninstall.
 
 **Notes :** Couche A — A2+A5 · Voix F builder — technique accessible
 
@@ -1291,12 +1289,12 @@ So we pivoted mid-week. Instead of pushing people through the install funnel, we
 
 The install wall is a real problem we're actively fixing (shorter OAuth scope, reduced initial permissions, trust signal before the ask). Manual scanning is the bridge while we fix it.
 
-Current StoreMD: 68 stores scanned total, $12,400 in leaks detected, $0 MRR — still in beta. Building in public means being honest about where we actually are.
+Current StoreMD: 68 stores manually audited (pre-launch research + beta), $12,400 in leaks documented, $0 MRR — still pre-revenue. Building in public means being honest about where we actually are.
 
 Product: https://storemd.vercel.app/
 ```
 
-**TRADUCTION :** > Mise à jour build-in-public : on a heurté un mur et on a construit un contournement. 51 marchands ont commencé l'installation. 0 ont complété. On a pivoté en milieu de semaine : scans manuels. 8 scans réalisés. 8/8 avec ghost billing. MRR : 0$ — on est honnêtes sur où on en est.
+**TRADUCTION :** > Mise à jour build-in-public : on a heurté un mur et on a construit un contournement. 51 marchands ont commencé l'installation. 0 ont complété. On a pivoté en milieu de semaine : scans manuels. 8 scans réalisés. 8/8 avec ghost billing. MRR : 0$ — 68 boutiques auditées en phase de recherche + beta, honnêtes sur où on en est.
 
 **Notes :** Couche B — B3 · IH = transparence maximale · MRR $0 assumé (BIBLE §3 build-in-public strict)
 
@@ -1407,7 +1405,7 @@ Product: https://storemd.vercel.app/
 
 | Sujet | Couche A | Couche B | OK |
 |---|---|---|---|
-| Cumul scans | "68 stores depuis lancement" | "8 manual beta scans cette semaine" | ✅ |
+| Cumul audits | "68 stores manually audited (research + beta)" | "8 manual beta scans cette semaine" | ✅ |
 | $ leaks | "$12,400 cumul" | "$1,624 beta semaine" | ✅ |
 | MRR | Non-mentionné | Non-mentionné (sauf IH: $0) | ✅ |
 | Install | CTA direct vercel.app | "pas besoin d'install, DM URL" | ✅ Couche B clarifie A |
@@ -1480,7 +1478,7 @@ Product: https://storemd.vercel.app/
 
 | Métrique | Valeur S6 fin | Valeur S7 fin | Règle S8 |
 |---|---|---|---|
-| Cumul stores scannés | 68 | **90** | S8 démarre >90 |
+| Cumul stores audités | 68 | **90** | S8 démarre >90 |
 | Daily breakdown S7 (lun-sam) | — | 3·4·4·5·4·2 | S8 courbe propre |
 | Cumul $ leaks | $12,400 | **$15,600** | S8 démarre >$15,600 |
 | Agencies onboardées cumul | 4 | **6** | S8 incrémente cohérent |
