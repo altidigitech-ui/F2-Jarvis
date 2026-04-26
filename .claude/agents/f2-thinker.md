@@ -1,4 +1,3 @@
-> **Phase 3 corrigée post-audit.** Tous les paths sont lowercase, profils harmonisés (6 + all), em-dashes nettoyés.
 ---
 name: f2-thinker
 description: >
