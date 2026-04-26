@@ -353,8 +353,10 @@ function parsePipelineBetas(pipelineContent: string): number {
   if (!pipelineContent) return 0;
   const sec = section(pipelineContent, "BETA SPOTS");
   return tableRows(sec).filter((r) => {
+    const spotCell = (r[0] || "").trim();
+    if (/^spot$/i.test(spotCell)) return false; // skip header row
     const dateCell = (r[3] || "").trim();
-    return dateCell !== "" && dateCell !== "—" && dateCell !== "-";
+    return /\d/.test(dateCell); // a real date contains at least one digit
   }).length;
 }
 
