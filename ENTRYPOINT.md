@@ -63,6 +63,14 @@ Points essentiels :
 - Cadence : 2 SaaS/mois sur 3 verticales
 - Validation explicite avant toute modif de contenu opérationnel
 
+### 5. Il y a UN système cognitif : `brain/context-cognitif/ARCH.md`
+
+77 fichiers de contexte cognitif en 10 couches. L'agent les charge à la demande via `/cognition load <profil>` (6 profils : technical, creative, social, strategic, debug, deep). Ne jamais charger tout le système — budget : 5000 tokens/session, 5 fichiers max.
+
+Commande d'analyse profonde : `/think <question>` (utilise le subagent f2-thinker).
+
+Cartographie complète : `brain/context-cognitif/ARCH.md`.
+
 ---
 
 ## Architecture du repo en 2 minutes
@@ -166,6 +174,7 @@ Si vous tombez sur ces éléments en lisant d'anciens documents, ils sont **obso
 5. Consulter `BATCH-SEMAINE-N.md` pour savoir ce qui se joue cette semaine
 6. Si batch double-couche actif : lire `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` (les RULES PARTIE 1 s'appliquent à TOUT batch, même simple)
 7. Stratégie de conversion mid-funnel (beta testers, cold scan proactif) : `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md`
+8. Si la tâche est complexe (décision, diagnostic, analyse profonde) : `/cognition load <profil>` ou `/think <question>`
 
 **Si vous êtes R ou F ouvrant votre journée :**
 1. Ouvrir l'app web F2-Jarvis → dashboard persona

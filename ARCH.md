@@ -1,6 +1,6 @@
 # ARCH — Structure du repo FoundryTwo
 
-Arbre ASCII généré le 26 avril 2026 (S7 — post-archivage S6, audit structurel complet).
+Arbre ASCII généré le 26 avril 2026 (post-intégration context-cognitif).
 Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_modules, archives.
 
 ## Légende
@@ -30,15 +30,16 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │
 ├── .claude
 │   ├── README.md
-│   ├── agents                                 ← 7 agents spécialisés
+│   ├── agents                                 ← 8 agents spécialisés
 │   │   ├── f2-architect.md
 │   │   ├── f2-auditor.md
 │   │   ├── f2-designer.md
 │   │   ├── f2-dev.md
 │   │   ├── f2-librarian.md
 │   │   ├── f2-marketer.md
-│   │   └── f2-accountant.md
-│   ├── commands                               ← 9 slash commands
+│   │   ├── f2-accountant.md
+│   │   └── f2-thinker.md
+│   ├── commands                               ← 11 slash commands
 │   │   ├── morning.md
 │   │   ├── status.md
 │   │   ├── launch.md
@@ -47,14 +48,18 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │   │   ├── budget.md
 │   │   ├── review-proposals.md
 │   │   ├── jarvis.md
-│   │   └── handoff.md
-│   ├── hooks                                  ← 6 hooks auto
+│   │   ├── handoff.md
+│   │   ├── cognition.md
+│   │   └── think.md
+│   ├── hooks                                  ← 8 hooks auto
 │   │   ├── budget-check.sh
 │   │   ├── mempalace-save.sh
 │   │   ├── post-commit-graphify.sh
 │   │   ├── pre-tool-use-graphify.sh
 │   │   ├── precompact-save.sh
-│   │   └── session-stop-handoff.sh
+│   │   ├── precompact-save-cognitive.sh
+│   │   ├── session-stop-handoff.sh
+│   │   └── session-stop-cognitive.sh
 │   ├── hooks-config.json
 │   ├── settings.json
 │   └── skills                                 ← 17 skills (3 always-on + 14 on-demand)
@@ -94,6 +99,22 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │
 ├── brain
 │   ├── README.md
+│   ├── context-cognitif
+│   │   ├── ARCH.md
+│   │   ├── claude.md
+│   │   ├── apprentissage
+│   │   ├── capacite
+│   │   ├── constantes
+│   │   ├── decision
+│   │   ├── emergence
+│   │   ├── equation
+│   │   ├── memoire
+│   │   ├── metacognition
+│   │   ├── noyau
+│   │   ├── raisonnement
+│   │   ├── social
+│   │   ├── systemes
+│   │   └── verite
 │   ├── jarvis-workspace
 │   ├── mem0
 │   ├── mempalace

@@ -34,7 +34,7 @@ Ce repo s'appelle **F2-Jarvis**. C'est l'OS du studio **FoundryTwo**.
 - **F** — Fabrice Gangi, CTO/builder, full-time. Ouvre `fabrice/` et utilise Claude Code pour l'infra.
 - **Claude Code** — assistant interactif que F utilise en terminal (plan Max 5x). Il lit ce CLAUDE.md et BIBLE.md à chaque session, charge les skills always-on, et exécute les slash commands.
 - **Ouroboros** — conscience de fond bridée, 1 cycle/nuit, read-only repo, propose dans `brain/ouroboros/proposals/`.
-- **7 agents spécialisés** — f2-architect, f2-dev, f2-designer, f2-marketer, f2-auditor, f2-librarian, f2-accountant.
+- **8 agents spécialisés** — f2-architect, f2-dev, f2-designer, f2-marketer, f2-auditor, f2-librarian, f2-accountant, f2-thinker.
 
 **Stratégie :** 2 SaaS/mois sur 3 verticals (e-commerce, agences/freelancers, content creators). Méthode distribution-first. Pivot stratégique du 03/04/2026 a unifié les anciens repos FT (brand) + CDV (distri) + F2-Jarvis (infra).
 
@@ -94,7 +94,7 @@ F2-Jarvis/
 ├── TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md  ← Rules batch + template double-couche
 │
 │  ─── INFRASTRUCTURE AI (F2-Jarvis) ───
-├── .claude/                  ← Config Claude Code : skills/ (16), agents/ (7), commands/ (9), hooks/ (6)
+├── .claude/                  ← Config Claude Code : skills/ (17), agents/ (8), commands/ (11), hooks/ (8)
 ├── brain/                    ← Mémoire persistante : ouroboros/ (bridé), mempalace/ (verbatim), mem0/ (facts)
 ├── ops/                      ← Discipline : budget/, monitoring/, kill-switches/
 ├── patterns/                 ← Patterns techniques décisionnels (7 entrées)
@@ -165,7 +165,7 @@ F2-Jarvis/
 
 Quand F demande du UI : activer dans l'ordre `ui-ux-pro-max` → `frontend-design` → `shadcn-ui` → `web-interface-guidelines` + `web-accessibility`.
 
-### Agents spécialisés (`.claude/agents/`, 7 total)
+### Agents spécialisés (`.claude/agents/`, 8 total)
 
 À déléguer via la Task tool pour isoler le contexte.
 
@@ -178,8 +178,9 @@ Quand F demande du UI : activer dans l'ordre `ui-ux-pro-max` → `frontend-desig
 | `f2-auditor` | Post-mortem, audit fin de cycle | Sonnet |
 | `f2-librarian` | Retrieval dans le repo | Haiku |
 | `f2-accountant` | Budget, tokens, coûts | Haiku |
+| `f2-thinker` | Analyse profonde, décisions stratégiques (profil deep) | Sonnet |
 
-### Slash commands (`.claude/commands/`, 9 total)
+### Slash commands (`.claude/commands/`, 11 total)
 
 - `/morning` — brief du jour (état SaaS, décisions en attente, posts à publier, 3 priorités)
 - `/status` — état complet F2 (plus long que /morning)
@@ -190,10 +191,12 @@ Quand F demande du UI : activer dans l'ordre `ui-ux-pro-max` → `frontend-desig
 - `/review-proposals` — valide/rejette les propositions Ouroboros
 - `/jarvis` — meta-commandes (status système, reload skills)
 - `/handoff` — écrit HANDOFF.md pour session suivante
+- `/cognition` — gestion du contexte cognitif (load, status, reset)
+- `/think <question>` — analyse profonde via f2-thinker (profil deep)
 
-### Hooks (`.claude/hooks/`, 6 total)
+### Hooks (`.claude/hooks/`, 8 total)
 
-`budget-check.sh`, `mempalace-save.sh` (session save auto), `post-commit-graphify.sh`, `pre-tool-use-graphify.sh`, `precompact-save.sh`, `session-stop-handoff.sh`.
+`budget-check.sh`, `mempalace-save.sh` (session save auto), `post-commit-graphify.sh`, `pre-tool-use-graphify.sh`, `precompact-save.sh`, `precompact-save-cognitive.sh` (état cognitif pré-compaction), `session-stop-handoff.sh`, `session-stop-cognitive.sh` (état cognitif fin de session).
 
 ### Brain — mémoire persistante (`brain/`)
 
@@ -211,6 +214,18 @@ Quand F demande du UI : activer dans l'ordre `ui-ux-pro-max` → `frontend-desig
 ### Kill-switches (`ops/kill-switches/`)
 
 `ouroboros.flag`, `graphify.flag`, `mempalace.flag`, `global.flag`. Auto-activés par `f2-accountant` si budget dérive (90 % → ouroboros, 100 % → global).
+
+### Context Cognitif — `brain/context-cognitif/`
+
+77 primitives cognitives organisées en 10 couches concentriques. Elles définissent COMMENT l'agent pense, pas CE QU'IL fait.
+
+- **Chargement :** skill `cognitive-loader` (on-demand). Budget : 5000 tokens/session, 5 fichiers max.
+- **Profils :** `technical`, `creative`, `social`, `strategic`, `debug`, `deep`.
+- **Commandes :** `/cognition` (gestion du contexte cognitif), `/think` (analyse profonde via f2-thinker).
+- **Subagent :** `f2-thinker` — moteur de réflexion profonde (Sonnet, mémoire projet, profil deep).
+- **Cartographie :** `brain/context-cognitif/ARCH.md`
+- **Hooks :** PreCompact + Stop sauvegardent l'état cognitif dans `.usage-logs/`.
+- **Règle :** les cognitifs informent le raisonnement. Ils ne remplacent jamais `BIBLE.md`, `CLAUDE.md` ou `ANTI-IA.md`. En cas de contradiction → les fichiers supérieurs priment.
 
 ---
 
