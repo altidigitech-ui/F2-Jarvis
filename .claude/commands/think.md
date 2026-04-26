@@ -12,7 +12,7 @@ allowed-tools:
   - Glob
 ---
 
-# /think — Analyse profonde
+# /think : Analyse profonde
 
 ## Usage
 
@@ -32,15 +32,29 @@ allowed-tools:
    (skills: [cognitive-loader] dans son frontmatter).
 
 3. **Recevoir le résumé structuré** :
-   f2-thinker retourne toujours le format :
+   f2-thinker retourne toujours le format exact suivant :
    ```
-   DIAGNOSTIC — ...
-   ANGLE 1 — ...
-   ANGLE 2 — ...
-   ANGLE 3 — ...
-   RISQUES — ...
-   RECOMMANDATION — Confiance : XX%
-   DOUTE — ...
+   DIAGNOSTIC (3 lignes max)
+   Ce que je comprends du problème.
+
+   ANGLE 1 : [nom] (2 lignes)
+   Perspective #1.
+
+   ANGLE 2 : [nom] (2 lignes)
+   Perspective #2.
+
+   ANGLE 3 : [nom] (2 lignes)
+   Perspective #3.
+
+   RISQUES (liste courte)
+   - Risque 1
+   - Risque 2
+
+   RECOMMANDATION : Confiance : [XX]%
+   Action claire et directe.
+
+   DOUTE
+   Ce que je ne sais pas et qui pourrait changer cette recommandation.
    ```
 
 4. **Transmettre à l'utilisateur** tel quel, sans reformuler.
@@ -49,7 +63,7 @@ allowed-tools:
 
 ```
 /think Est-ce qu'on devrait pivoter StoreMD vers un modèle freemium ?
-/think Pourquoi nos cold outreach ne convertissent pas — diagnostic systémique
+/think Pourquoi nos cold outreach ne convertissent pas, diagnostic systémique
 /think Trade-off : ajouter ProfitPilot maintenant vs consolider StoreMD d'abord
 /think Analyse du pattern d'échec sur les beta testers S6
 ```

@@ -10,15 +10,15 @@ allowed-tools:
   - Grep
 ---
 
-# /cognition — Gestion du contexte cognitif
+# /cognition : Gestion du contexte cognitif
 
 ## Usage
 
-- `/cognition` — affiche l'état actuel (fichiers chargés + budget)
-- `/cognition load <profil>` — charge un profil cognitif
-- `/cognition budget` — détail du budget tokens
-- `/cognition map` — affiche le graphe de dépendances
-- `/cognition reset` — remet le budget à zéro
+- `/cognition` : affiche l'état actuel (fichiers chargés + budget)
+- `/cognition load <profil>` : charge un profil cognitif
+- `/cognition budget` : détail du budget tokens
+- `/cognition map` : affiche le graphe de dépendances
+- `/cognition reset` : remet le budget à zéro
 
 ## Comportement par sous-commande
 
@@ -92,4 +92,4 @@ allowed-tools:
 - Ne jamais charger un profil si le budget est dépassé (sauf reset d'abord)
 - Le profil `deep` ne peut être chargé que sur demande explicite de F
 - Si un profil est déjà chargé et qu'on en charge un autre, les tokens s'additionnent
-- Cette commande ne modifie aucun fichier opérationnel — elle est hors validation BIBLE.md §3
+- Cette commande ne modifie aucun fichier opérationnel, hors validation BIBLE.md §3
