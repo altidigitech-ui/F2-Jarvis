@@ -41,9 +41,9 @@
 |Métrique                       |Début semaine|Fin semaine|Delta|
 |-------------------------------|-------------|-----------|-----|
 |Followers Twitter F            |29           |           |     |
-|Following Twitter F            |             |           |     |
+|Following Twitter F            |76           |           |     |
 |Connexions LinkedIn F          |13           |           |     |
-|Abonnés LinkedIn F             |             |           |     |
+|Abonnés LinkedIn F             |22           |           |     |
 |Signups StoreMD (free)         |1            |           |     |
 |Signups StoreMD (paid)         |1 (agency self-test)|    |     |
 |MRR externe réel               |€0           |           |     |
