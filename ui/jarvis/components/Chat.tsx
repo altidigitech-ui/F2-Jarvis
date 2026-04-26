@@ -561,6 +561,16 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [persona, mode, messages, isStreaming]);
 
+  // Abort in-flight stream when persona or mode changes (or component unmounts)
+  useEffect(() => {
+    return () => {
+      if (abortRef.current) {
+        abortRef.current.abort();
+        abortRef.current = null;
+      }
+    };
+  }, [persona, mode]);
+
   // Load persisted history on mount and when persona/mode changes
   useEffect(() => {
     let cancelled = false;
@@ -969,7 +979,12 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         setMessages((prev) =>
           prev.map((m) =>
             m.id === assistantId
-              ? { ...m, content: m.content || `[Erreur: ${errMsg}]` }
+              ? {
+                  ...m,
+                  content: m.content
+                    ? m.content + `\n\n⚠️ *Connexion interrompue — ${errMsg}. Renvoyez le message pour réessayer.*`
+                    : `[Erreur: ${errMsg}]`,
+                }
               : m
           )
         );
