@@ -12,8 +12,8 @@
 
 Ce repo contient :
 
-1. **F2-Jarvis** — infrastructure automatisation d'un studio SaaS indie (app web agentique + Claude Code setup + couche mémoire)
-2. **FoundryTwo** — le contenu opérationnel dudit studio : stratégie, produits, marketing, distribution
+1. **F2-Jarvis** : infrastructure automatisation d'un studio SaaS indie (app web agentique + Claude Code setup + couche mémoire)
+2. **FoundryTwo** : le contenu opérationnel dudit studio : stratégie, produits, marketing, distribution
 
 Deux co-fondateurs full-time : **Romain (R, Growth)** et **Fabrice (F, CTO/Builder)**. Objectif : 6 SaaS en 3 verticales d'ici juin 2026, liberté financière août 2026.
 
@@ -38,15 +38,15 @@ Portfolio officiel : **6 SaaS sur 3 verticales**.
 | 5 | CreatorSuite | Creators | M3 juin | Backlog |
 | 6 | LeadQuiz | E-com + Coaches | M3 juin | Backlog |
 
-**Ignorer toute autre mention de produits dans d'anciens documents.** Si un doc parle de Leak Detector, SpeedAudit, InventoryPulse, ChargebackDefender, etc. — ce sont des traces d'itérations passées, pas le portfolio actif.
+**Ignorer toute autre mention de produits dans d'anciens documents.** Si un doc parle de Leak Detector, SpeedAudit, InventoryPulse, ChargebackDefender, etc. : ce sont des traces d'itérations passées, pas le portfolio actif.
 
 ### 3. Il y a UN principe qui prime sur tout : `ANTI-IA.md` (règle #0)
 
 Aucun contenu publié ne doit échouer un détecteur IA (GPTZero, ZeroGPT, Originality). Ban Reddit/LinkedIn/Facebook = compte grillé = semaines de travail perdues.
 
 Résumé :
-- Pas d'em-dash (—) comme pivot de phrase
-- Pas de "Not X — it's Y"
+- Pas d'em-dash ( : ) comme pivot de phrase
+- Pas de "Not X : it's Y"
 - Pas de listes numérotées dans les commentaires publics
 - Varier la structure de phrase
 - Contractions obligatoires en anglais
@@ -65,7 +65,7 @@ Points essentiels :
 
 ### 5. Il y a UN système cognitif : `brain/context-cognitif/ARCH.md`
 
-77 fichiers de contexte cognitif en 10 couches. L'agent les charge à la demande via `/cognition load <profil>` (6 profils : technical, creative, social, strategic, debug, deep). Ne jamais charger tout le système — budget : 5000 tokens/session, 5 fichiers max.
+77 fichiers de contexte cognitif en 10 couches. L'agent les charge à la demande via `/cognition load <profil>` (6 profils : technical, creative, social, strategic, debug, deep). Ne jamais charger tout le système : budget : 5000 tokens/session, 5 fichiers max.
 
 Commande d'analyse profonde : `/think <question>` (utilise le subagent f2-thinker).
 
@@ -79,8 +79,8 @@ Cartographie complète : `brain/context-cognitif/ARCH.md`.
 F2-JARVIS (repo)
 │
 ├── INFRA AUTOMATISATION (dossiers techniques)
-│   ├── ui/jarvis/        → Frontend Next.js (Vercel) — app web R et F
-│   ├── backend/jarvis/   → Backend Express (Railway) — Claude Agent SDK + écritures GitHub
+│   ├── ui/jarvis/        → Frontend Next.js (Vercel) : app web R et F
+│   ├── backend/jarvis/   → Backend Express (Railway) : Claude Agent SDK + écritures GitHub
 │   ├── brain/            → Mémoire : Ouroboros (nocturne), MemPalace (verbatim), mem0 (facts)
 │   ├── .claude/          → Config Claude Code terminal : 16 skills, 7 agents, 9 commands
 │   ├── ops/              → Budget, kill-switches, monitoring
@@ -95,8 +95,8 @@ F2-JARVIS (repo)
     ├── growth-marketing/ → Algos par plateforme (twitter, linkedin, ih, ph, tiktok)
     ├── distribution/     → Reddit + Facebook
     ├── f2/               → Compte studio @foundrytwo (R gère)
-    ├── romain/           → R — full-time growth
-    ├── fabrice/          → F — full-time tech
+    ├── romain/           → R : full-time growth
+    ├── fabrice/          → F : full-time tech
     ├── saas/             → Contextes par SaaS
     ├── la-toile/         → Architecture réseau (Altistone INVISIBLE)
     ├── asset-brand/      → Brand bible, logo, guidelines
@@ -149,7 +149,7 @@ Lundi-Vendredi   → Exécution zéro rédaction (copier-coller depuis batch)
 ```
 
 BATCH actif : `BATCH-SEMAINE-N.md` à la racine du repo. Archivé dimanche soir dans `archives/batches/`.
-Template pour créer un nouveau batch (simple ou double-couche) : `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` — contient les RULES BATCH (PARTIE 1) + le template de structure (PARTIE 2).
+Template pour créer un nouveau batch (simple ou double-couche) : `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` : contient les RULES BATCH (PARTIE 1) + le template de structure (PARTIE 2).
 
 ---
 
@@ -157,10 +157,10 @@ Template pour créer un nouveau batch (simple ou double-couche) : `TEMPLATE-BATC
 
 Si vous tombez sur ces éléments en lisant d'anciens documents, ils sont **obsolètes** :
 
-- Toute mention de **Leak Detector, ChargebackDefender, PriceRadar, ReviewPulse, AdWatcher, BriefForge, ContentFlow, InvoiceGuard, DataMerge, SpeedAudit, InventoryPulse, AdScoreAI, EmailCleanup, ReportFlash, ClipEngine, ThumbnailRank, CaptionDraft** — anciens portfolios. Le vrai portfolio = 6 SaaS listés plus haut.
-- Toute référence à `growth-marketing/{plateforme}/{compte}/...` — arborescence fantôme. Les vrais fichiers sont dans `{personne}/{plateforme}/`.
+- Toute mention de **Leak Detector, ChargebackDefender, PriceRadar, ReviewPulse, AdWatcher, BriefForge, ContentFlow, InvoiceGuard, DataMerge, SpeedAudit, InventoryPulse, AdScoreAI, EmailCleanup, ReportFlash, ClipEngine, ThumbnailRank, CaptionDraft** : anciens portfolios. Le vrai portfolio = 6 SaaS listés plus haut.
+- Toute référence à `growth-marketing/{plateforme}/{compte}/...` : arborescence fantôme. Les vrais fichiers sont dans `{personne}/{plateforme}/`.
 - Toute mention de **"Real numbers, real failures"** ou **"Building in public"** comme positionnement principal. Depuis avril 2026, on est en **sales-mode dominant**. Build-in-public réservé au format vendredi F2 Studio Update.
-- Toute mention de **TikTok actif** comme canal — il est **suspendu** jusqu'à ce que F finisse le pipeline vidéo.
+- Toute mention de **TikTok actif** comme canal : il est **suspendu** jusqu'à ce que F finisse le pipeline vidéo.
 
 ---
 

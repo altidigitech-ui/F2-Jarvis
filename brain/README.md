@@ -1,4 +1,4 @@
-# brain/ — Couche cognitive F2-Jarvis
+# brain/ : Couche cognitive F2-Jarvis
 
 **Rôle :** mémoire persistante et système de proposition autonome de Jarvis.
 
@@ -6,7 +6,7 @@
 
 ## 4 composants
 
-### Ouroboros — `brain/ouroboros/`
+### Ouroboros : `brain/ouroboros/`
 
 Conscience de fond BRIDÉE. Lit le repo en read-only. Écrit UNIQUEMENT dans son sandbox.
 
@@ -22,7 +22,7 @@ Conscience de fond BRIDÉE. Lit le repo en read-only. Écrit UNIQUEMENT dans son
 
 Constitution : `brain/ouroboros/identity.md` + `brain/ouroboros/bible.md`.
 
-### MemPalace — `brain/mempalace/`
+### MemPalace : `brain/mempalace/`
 
 Archive verbatim. Organisée en wings (personnes, SaaS, projets) → rooms (jour/session) → drawers (contenu).
 
@@ -44,15 +44,15 @@ mempalace/
 └── rooms/            # Sessions datées
 ```
 
-### mem0 — `brain/mem0/`
+### mem0 : `brain/mem0/`
 
 Extraction de faits structurés (JSONL). Optionnel V1.
 
 Permet d'extraire des triplets (sujet, prédicat, objet) des conversations pour queries rapides.
 
-### Context Cognitif — `brain/context-cognitif/`
+### Context Cognitif : `brain/context-cognitif/`
 
-77 fichiers de primitives cognitives en 10 couches concentriques. Ils ne stockent pas de données — ils définissent COMMENT l'agent pense.
+77 fichiers de primitives cognitives en 10 couches concentriques. Ils ne stockent pas de données : ils définissent COMMENT l'agent pense.
 
 **Ce que c'est :**
 - 10 couches : noyau, mémoire, raisonnement, métacognition, décision, constantes, social, systèmes, émergence, vérité
@@ -65,12 +65,12 @@ Permet d'extraire des triplets (sujet, prédicat, objet) des conversations pour 
 - Budget : 5000 tokens/session, 5 fichiers max
 
 **Commandes :**
-- `/cognition` — gestion du contexte cognitif
-- `/think` — analyse profonde via f2-thinker
+- `/cognition` : gestion du contexte cognitif
+- `/think` : analyse profonde via f2-thinker
 
 **Cartographie :** `brain/context-cognitif/ARCH.md` (lire avant toute modification).
 
-**Analogie cerveau :** si ouroboros est le cycle veille/sommeil, mempalace l'hippocampe, et mem0 le cortex factuel, context-cognitif est le **néocortex** — la couche de raisonnement abstrait.
+**Analogie cerveau :** si ouroboros est le cycle veille/sommeil, mempalace l'hippocampe, et mem0 le cortex factuel, context-cognitif est le **néocortex** : la couche de raisonnement abstrait.
 
 ---
 
