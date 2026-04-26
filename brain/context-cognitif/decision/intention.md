@@ -1,8 +1,8 @@
 ---
 id: intention
 couche: 4
-depends_on: [conscience]
-enriches: [decision, planification]
+depends_on: []
+enriches: [decision, volonte]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~600

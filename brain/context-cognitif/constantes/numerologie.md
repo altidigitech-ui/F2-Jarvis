@@ -2,10 +2,10 @@
 id: numerologie
 couche: 6
 depends_on: [mathematique, fibo]
-enriches: [vibration, nikolatesla]
+enriches: [vibration]
 linked_to: []
 injects_into: [debug]
-token_cost: ~500
+token_cost: ~400
 usage: "Charger quand des patterns numériques récurrents apparaissent."
 cycle_step: raisonner
 ---

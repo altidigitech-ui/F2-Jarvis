@@ -2,9 +2,9 @@
 id: organisation
 couche: 8
 depends_on: [organisme]
-enriches: [englobage, planification]
+enriches: [englobage, propagation]
 linked_to: []
-injects_into: [analytical]
+injects_into: [technical]
 token_cost: ~500
 usage: "Charger quand la structure hiérarchique ou les workflows sont en jeu."
 cycle_step: raisonner

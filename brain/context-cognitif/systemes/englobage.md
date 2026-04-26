@@ -1,11 +1,11 @@
 ---
 id: englobage
 couche: 8
-depends_on: [organisation]
-enriches: [complexe, propagation]
-linked_to: [emotion, reaction]
-injects_into: [analytical]
-token_cost: ~500
+depends_on: []
+enriches: [organisation, complexite]
+linked_to: []
+injects_into: [technical]
+token_cost: ~600
 usage: "Charger quand des systèmes imbriqués ou conteneurs sont en jeu."
 cycle_step: raisonner
 ---

@@ -2,10 +2,10 @@
 id: mensonge
 couche: 5
 depends_on: [verite]
-enriches: [doute, incertitude]
+enriches: [doute]
 linked_to: []
 injects_into: [debug]
-token_cost: ~600
+token_cost: ~500
 usage: "Charger quand l'agent doit détecter fausseté, manipulation ou hallucination."
 cycle_step: surveiller
 ---

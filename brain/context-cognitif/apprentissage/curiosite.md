@@ -1,8 +1,8 @@
 ---
 id: curiosite
 couche: T
-depends_on: [attention, creativite]
-enriches: [apprentissage, analogie]
+depends_on: [intrinseque]
+enriches: [apprentissage, creativite]
 linked_to: []
 injects_into: [all]
 token_cost: ~400

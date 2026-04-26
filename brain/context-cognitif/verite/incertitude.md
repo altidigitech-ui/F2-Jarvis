@@ -1,8 +1,8 @@
 ---
 id: incertitude
 couche: 5
-depends_on: [doute, mensonge]
-enriches: [decision, priorite, non_resolu]
+depends_on: [doute, verite]
+enriches: [non_resolu]
 linked_to: []
 injects_into: [debug]
 token_cost: ~500

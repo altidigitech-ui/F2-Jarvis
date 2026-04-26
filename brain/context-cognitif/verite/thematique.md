@@ -1,8 +1,8 @@
 ---
 id: thematique
 couche: 5
-depends_on: [contexte, philosophie]
-enriches: [analogie, abstraction]
+depends_on: [philosophie]
+enriches: [contexte]
 linked_to: []
 injects_into: [all]
 token_cost: ~500

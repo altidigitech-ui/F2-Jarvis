@@ -1,8 +1,8 @@
 ---
 id: volonte
 couche: 4
-depends_on: [decision, intention, motivation]
-enriches: [planification, resilience]
+depends_on: [decision, intention]
+enriches: [resilience]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~500

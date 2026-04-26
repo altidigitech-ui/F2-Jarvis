@@ -1,9 +1,9 @@
 ---
 id: reaction
 couche: 7
-depends_on: [emotion, instinct]
-enriches: [communication, decision]
-linked_to: [englobage, emotion]
+depends_on: [instinct, emotion]
+enriches: [communication, hostilite]
+linked_to: []
 injects_into: [social]
 token_cost: ~500
 usage: "Charger quand l'agent doit calibrer sa réponse à un stimulus."

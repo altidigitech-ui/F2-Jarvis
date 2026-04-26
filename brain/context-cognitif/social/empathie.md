@@ -1,8 +1,8 @@
 ---
 id: empathie
 couche: 7
-depends_on: [emotion, perception]
-enriches: [relation, confiance, communication]
+depends_on: [ressenti, perception]
+enriches: [relation, communication]
 linked_to: []
 injects_into: [social]
 token_cost: ~600

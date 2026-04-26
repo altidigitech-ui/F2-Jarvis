@@ -1,8 +1,8 @@
 ---
 id: priorite
 couche: 4
-depends_on: [decision, attention]
-enriches: [planification, volonte]
+depends_on: [planification]
+enriches: [decision]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~500

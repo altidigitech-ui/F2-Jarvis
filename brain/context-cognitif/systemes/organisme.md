@@ -1,13 +1,13 @@
 ---
 id: organisme
 couche: 8
-depends_on: [equilibre]
-enriches: [organisation, resilience]
+depends_on: [englobage]
+enriches: [equilibre, resilience]
 linked_to: []
-injects_into: [analytical]
-token_cost: ~500
+injects_into: [all]
+token_cost: ~700
 usage: "Charger quand le concept d'auto-régulation ou homéostasie est pertinent."
-cycle_step: raisonner
+cycle_step: surveiller
 ---
 
 # Organisme

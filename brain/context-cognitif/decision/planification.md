@@ -1,8 +1,8 @@
 ---
 id: planification
 couche: 4
-depends_on: [decision, causalite, temporalite]
-enriches: [procedurale, algorithme]
+depends_on: [decision, temporalite]
+enriches: [priorite]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~600

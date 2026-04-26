@@ -1,8 +1,8 @@
 ---
 id: hostilite
 couche: 7
-depends_on: [emotion, instinct]
-enriches: [reaction, resilience]
+depends_on: [instinct, reaction]
+enriches: []
 linked_to: []
 injects_into: [social]
 token_cost: ~500

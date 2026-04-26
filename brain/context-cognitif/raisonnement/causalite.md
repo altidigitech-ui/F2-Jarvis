@@ -1,10 +1,10 @@
 ---
 id: causalite
 couche: 2
-depends_on: [mathematique]
-enriches: [planification, decision]
+depends_on: [temporalite, mathematique]
+enriches: [planification, racine]
 linked_to: []
-injects_into: [analytical]
+injects_into: [debug]
 token_cost: ~500
 usage: "Charger quand l'agent doit raisonner cause-effet-conséquence."
 cycle_step: raisonner

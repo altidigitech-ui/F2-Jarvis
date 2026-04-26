@@ -1,8 +1,8 @@
 ---
 id: quantique
 couche: 6
-depends_on: [paradoxe, mathematique]
-enriches: [relativite, incertitude]
+depends_on: [nikolatesla, vibration]
+enriches: [relativite]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~600

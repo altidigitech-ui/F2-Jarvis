@@ -1,13 +1,13 @@
 ---
 id: non_resolu
 couche: T
-depends_on: [doute, incertitude, paradoxe]
-enriches: [creativite, imagination]
+depends_on: [incertitude]
+enriches: [resolu, doute]
 linked_to: []
 injects_into: [debug]
 token_cost: ~500
 usage: "Charger quand l'agent doit approcher un problème sans réponse connue."
-cycle_step: raisonner
+cycle_step: surveiller
 ---
 
 # Non-résolu

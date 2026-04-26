@@ -1,8 +1,8 @@
 ---
 id: motivation
 couche: 7
-depends_on: [emotion, intention]
-enriches: [volonte, relation]
+depends_on: []
+enriches: [intention, intrinseque]
 linked_to: []
 injects_into: [social]
 token_cost: ~500

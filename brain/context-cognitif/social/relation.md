@@ -1,11 +1,11 @@
 ---
 id: relation
 couche: 7
-depends_on: [empathie, confiance]
-enriches: [communication, motivation]
+depends_on: [empathie, communication]
+enriches: [confiance, symbiose]
 linked_to: []
 injects_into: [social]
-token_cost: ~500
+token_cost: ~600
 usage: "Charger quand la dynamique de la relation humain-agent est en jeu."
 cycle_step: communiquer
 ---

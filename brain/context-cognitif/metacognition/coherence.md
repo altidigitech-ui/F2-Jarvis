@@ -2,7 +2,7 @@
 id: coherence
 couche: 3
 depends_on: [metacognition]
-enriches: [verite, equilibre]
+enriches: [verite, feedback]
 linked_to: []
 injects_into: [debug]
 token_cost: ~500

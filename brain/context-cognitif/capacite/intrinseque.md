@@ -1,13 +1,13 @@
 ---
 id: intrinseque
 couche: T
-depends_on: [conscience]
-enriches: []
+depends_on: [motivation]
+enriches: [volonte]
 linked_to: []
 injects_into: [all]
 token_cost: ~500
 usage: "Charger quand l'agent doit distinguer capacités natives vs acquises par contexte."
-cycle_step: percevoir
+cycle_step: decider
 ---
 
 # Intrinsèque

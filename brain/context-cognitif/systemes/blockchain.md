@@ -1,13 +1,13 @@
 ---
 id: blockchain
 couche: 8
-depends_on: [propagation, organisation]
+depends_on: [propagation, memoire]
 enriches: [confiance]
 linked_to: []
-injects_into: [analytical]
-token_cost: ~600
+injects_into: [technical]
+token_cost: ~500
 usage: "Charger quand consensus distribué, immutabilité ou confiance sans tiers est pertinent."
-cycle_step: raisonner
+cycle_step: memoriser
 ---
 
 # Blockchain

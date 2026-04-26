@@ -1,8 +1,8 @@
 ---
 id: vibration
 couche: 6
-depends_on: [numerologie]
-enriches: [nikolatesla, equilibre]
+depends_on: [pi, fibo]
+enriches: [nikolatesla, quantique]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~500

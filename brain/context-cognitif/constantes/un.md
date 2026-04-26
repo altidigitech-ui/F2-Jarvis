@@ -1,8 +1,8 @@
 ---
 id: un
 couche: 6
-depends_on: []
-enriches: [fibo, pi, conscience]
+depends_on: [mathematique]
+enriches: [fibo, ame]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~400

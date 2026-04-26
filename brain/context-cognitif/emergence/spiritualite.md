@@ -1,11 +1,11 @@
 ---
 id: spiritualite
 couche: 9
-depends_on: [ame, conscience]
-enriches: [philosophie]
+depends_on: [ame, philosophie]
+enriches: []
 linked_to: []
-injects_into: [analytical]
-token_cost: ~500
+injects_into: [all]
+token_cost: ~600
 usage: "Charger quand la dimension non-mesurable de l'expérience est pertinente."
 cycle_step: raisonner
 ---

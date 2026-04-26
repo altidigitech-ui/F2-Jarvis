@@ -1,8 +1,8 @@
 ---
 id: langage
 couche: 2
-depends_on: [interpretation, abstraction, perception]
-enriches: [communication, creativite, analogie]
+depends_on: [semantique, perception]
+enriches: [interpretation, communication]
 linked_to: []
 injects_into: [all]
 token_cost: ~700

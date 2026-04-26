@@ -1,8 +1,8 @@
 ---
 id: ethique
 couche: 4
-depends_on: [ame, decision, empathie]
-enriches: [confiance, coherence]
+depends_on: [ame, conscience]
+enriches: [decision]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~600
