@@ -353,6 +353,7 @@ ${contextFiles.join("\n")}${summaryBlock}${historyBlock}${ouroborosSummary}${mem
 function writeEvent(res: Response, event: Record<string, unknown>): void {
   try {
     res.write(JSON.stringify(event) + "\n");
+    (res as any).flush?.(); // Force flush — évite le buffering TCP Node.js
   } catch (err) {
     console.error("[chat] writeEvent failed:", err);
   }
@@ -508,6 +509,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
   res.setHeader("Content-Type", "application/x-ndjson; charset=utf-8");
   res.setHeader("Cache-Control", "no-cache, no-transform");
   res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Accel-Buffering", "no"); // Disable nginx buffering Railway → stream immédiat
   res.flushHeaders();
 
   // Keepalive — send a ping every 15s to prevent proxy timeout during long tool calls
