@@ -52,11 +52,17 @@
     "Stop": [
       {
         "command": ".claude/hooks/session-stop-handoff.sh"
+      },
+      {
+        "command": ".claude/hooks/session-stop-cognitive.sh"
       }
     ],
     "PreCompact": [
       {
         "command": ".claude/hooks/precompact-save.sh"
+      },
+      {
+        "command": ".claude/hooks/precompact-save-cognitive.sh"
       }
     ]
   },
