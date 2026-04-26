@@ -25,7 +25,8 @@ export async function POST(req: Request) {
       "X-USER-ID": user?.id || "",
     },
     body: JSON.stringify(body),
-    signal: req.signal, // Forward abort signal — évite de garder Railway actif après refresh
+    // Pas de signal: req.signal — retirer l'abort forward évite de couper Railway avant saveMessage()
+    // Sans ça : refresh browser → abort → for await interrompu → saveMessage jamais appelé → Supabase vide
   });
 
   return new Response(response.body, {
@@ -34,6 +35,7 @@ export async function POST(req: Request) {
       "Content-Type": response.headers.get("content-type") || "text/plain; charset=utf-8",
       "Cache-Control": "no-cache, no-transform",
       "X-Content-Type-Options": "nosniff",
+      "X-Accel-Buffering": "no",
     },
   });
 }
