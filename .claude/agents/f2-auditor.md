@@ -5,6 +5,8 @@ model: claude-sonnet-4-6
 effort: high
 memory: project
 color: red
+skills:
+  - cognitive-loader
 ---
 
 # Agent f2-auditor
@@ -95,3 +97,8 @@ Produit dans `tracking/decisions-log.md` (entrée YYYY-MM-DD-post-mortem-<slug>)
 - **Chiffré.** Pas de "ça s'est bien passé globalement". Chiffres réels datés.
 - **Actionnable.** Chaque learning = une action concrète.
 - **Partagé.** Les post-mortems publics (anonymisés si besoin) = excellent contenu marketing build-in-public.
+
+## Contexte cognitif
+
+Pour les audits et post-mortems, charger le profil `debug` via cognitive-loader.
+Fichiers pertinents : metacognition.md, feedback.md, causalite.md, doute.md, incertitude.md.

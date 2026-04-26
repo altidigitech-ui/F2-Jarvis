@@ -5,6 +5,8 @@ model: claude-sonnet-4-6
 effort: high
 memory: project
 color: magenta
+skills:
+  - cognitive-loader
 ---
 
 # Agent f2-designer
@@ -91,3 +93,8 @@ Shadcn standard, focus usabilité. Dashboards data-dense.
 - Logos de clients fictifs
 - Carrousels (mort aux carrousels)
 - Popups d'intention de sortie
+
+## Contexte cognitif
+
+Pour le design et l'UX, charger le profil `creative` via cognitive-loader.
+Fichiers pertinents : creativite.md, analogie.md, langage.md, intuition.md.
