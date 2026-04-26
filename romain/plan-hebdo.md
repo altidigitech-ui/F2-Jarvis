@@ -1,17 +1,17 @@
 # PLAN HEBDO R — Semaine du 27/04/2026 au 03/05/2026
 
 **Rempli au batch :** 25/04/2026  
-**Contexte :** SEMAINE 7 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta "No Install" mer-ven). Canon S7 : 90 stores / $15,600 cumul. **Langue publication : anglais uniquement.**
+**Contexte :** SEMAINE 7 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta "No Install" mer-ven). Canon S7 : 90 stores audités / $15,600 cumul. **Langue publication : anglais uniquement.**
 
 ## 1. POSTS TWITTER R — COUCHE A (14h00 CEST)
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 27/04|`store-md-money-daily`|68 stores scanned / $12,400 leaks — data-drop|⏳|
+|Lun 27/04|`store-md-money-daily`|68 stores audited / $12,400 leaks — data-drop|⏳|
 |Mar 28/04|`store-md-horror-ghost-apps`|Unpopular opinion: you're paying for dead apps|⏳|
 |Mer 29/04|`store-md-tier-apps-danger`|Mobile conversion isn't low because of your product|⏳|
 |Jeu 30/04|`store-md-stats`|Agency DM: 8 stores scanned, $1,400/mo combined|⏳|
-|Ven 01/05|`store-md-money-visitors`|Week 7 scan results: 90 stores / $15,600 cumul|⏳|
+|Ven 01/05|`store-md-money-visitors`|Week 7 audit results: 90 stores / $15,600 cumul|⏳|
 
 ## 1B. POSTS TWITTER R — COUCHE B (19h00 CEST, mer-ven)
 
