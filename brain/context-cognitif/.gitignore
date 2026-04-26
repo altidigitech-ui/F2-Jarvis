@@ -1,2 +1,3 @@
 .budget
-.usage-logs/
+.usage-logs/*
+!.usage-logs/.gitkeep
