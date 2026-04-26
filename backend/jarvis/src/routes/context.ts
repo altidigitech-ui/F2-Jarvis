@@ -343,6 +343,30 @@ function parseF2Planning(f2PlanHebdo: string, publishedBy: string): TimelineItem
   return items;
 }
 
+function parsePipelineScansToday(pipelineContent: string, today: string): number {
+  if (!pipelineContent) return 0;
+  const sec = section(pipelineContent, "LOG SCANS PROACTIFS");
+  return tableRows(sec).filter((r) => r[1]?.includes(today)).length;
+}
+
+function parsePipelineBetas(pipelineContent: string): number {
+  if (!pipelineContent) return 0;
+  const sec = section(pipelineContent, "BETA SPOTS");
+  return tableRows(sec).filter((r) => {
+    const dateCell = (r[3] || "").trim();
+    return dateCell !== "" && dateCell !== "—" && dateCell !== "-";
+  }).length;
+}
+
+function parsePipelineConvos(pipelineContent: string): number {
+  if (!pipelineContent) return 0;
+  const sec = section(pipelineContent, "PIPELINE ACTIF");
+  return tableRows(sec).filter((r) => {
+    const full = r.join(" ");
+    return full.includes("💬") || full.includes("🎯") || full.includes("🔄");
+  }).length;
+}
+
 export async function contextRoute(req: Request, res: Response): Promise<void> {
   const persona = (req.query.persona as string || "romain") as "romain" | "fabrice";
   const mode = req.query.mode as string || "normal";
@@ -353,7 +377,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   const { day: today, dayName, weekday } = getToday();
 
   const otherPersona = persona === "fabrice" ? "romain" : "fabrice";
-  const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo, crossExecutionLog, otherPlanHebdo] =
+  const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo, crossExecutionLog, otherPlanHebdo, pipelineConversion] =
     await Promise.all([
       readRepo(`${activePrefix}/plan-hebdo.md`),
       readRepo(`${activePrefix}/cold/cold-outreach-log.md`),
@@ -365,6 +389,9 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
       isF2
         ? readRepo(`fabrice/plan-hebdo.md`)
         : readRepo(`${otherPersona}/plan-hebdo.md`),
+      persona === "fabrice" && !isF2
+        ? readRepo("fabrice/pipeline-conversion.md")
+        : Promise.resolve(""),
     ]);
 
   const publishedBy = isF2 ? "F2" : (persona === "romain" ? "R" : "F");
@@ -393,6 +420,9 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   const ph = countTodayInSection(engagementLog, "PH", today);
   const ihPh = ih + ph;
   const cross = countCrossFromExecutionLog(crossExecutionLog, today) || countCrossToday(crossTracker, today, weekday);
+  const pipelineScans = parsePipelineScansToday(pipelineConversion, today);
+  const pipelineBetas = parsePipelineBetas(pipelineConversion);
+  const pipelineConvos = parsePipelineConvos(pipelineConversion);
   const counters: CounterData = {
     cold,
     repliesIn: 0,
@@ -405,6 +435,9 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
     ph,
     ihPh,
     total: cold + twEng + liCom + reddit + facebook + ihPh + cross,
+    pipelineScans,
+    pipelineBetas,
+    pipelineConvos,
   };
 
   const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, reddit, facebook, ihPh: ih + ph, cross }, publishedBy);
@@ -413,12 +446,33 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
     ? crossItemsFromLog
     : parseCrossItemsToday(crossTracker, today, weekday, publishedBy);
 
+  const pipelineObjectives: TimelineItem[] = [];
+  if (persona === "fabrice" && !isF2 && pipelineConversion) {
+    pipelineObjectives.push({
+      time: "",
+      title: `Scans proactifs: ${pipelineScans}/6 aujourd'hui`,
+      platform: "OBJECTIF",
+      status: pipelineScans >= 6 ? "done" : "todo",
+      publishedBy,
+    });
+    if (pipelineBetas > 0) {
+      pipelineObjectives.push({
+        time: "",
+        title: `Beta spots: ${pipelineBetas}/8 claimed`,
+        platform: "OBJECTIF",
+        status: pipelineBetas >= 8 ? "done" : "todo",
+        publishedBy,
+      });
+    }
+  }
+
   const timeline = [
     ...timelinePosts,
     ...otherTimelinePosts,
     ...f2TimelinePosts,
     ...crossItems,
     ...objectives,
+    ...pipelineObjectives,
   ].sort((a, b) => {
     if (a.platform === "OBJECTIF" && b.platform !== "OBJECTIF") return 1;
     if (b.platform === "OBJECTIF" && a.platform !== "OBJECTIF") return -1;
