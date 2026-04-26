@@ -15,6 +15,7 @@ type Props = {
 export function TimelineColumn({ items, accentColor, loading, persona, onItemDone }: Props) {
   return (
     <aside
+      id="jarvis-timeline"
       className="w-[260px] flex-none flex flex-col border-r overflow-y-auto"
       style={{ borderColor: "rgba(255,255,255,0.05)" }}
     >
