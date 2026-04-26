@@ -6,7 +6,7 @@
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 27/04|`store-md-myth-apps-fine`|68 stores / $12,400 — studio scan recap|⏳|
+|Lun 27/04|`store-md-myth-apps-fine`|68 stores / $12,400 — studio audit recap|⏳|
 |Mar 28/04|`store-md-horror-ghost-apps`|94% ghost billing — Shopify/Stripe don't sync|⏳|
 |Mer 29/04|`store-md-list-hidden`|3 things Shopify analytics won't show you|⏳|
 |Jeu 30/04|`store-md-stats`|Free agency scans — drop any .myshopify.com URL|⏳|
