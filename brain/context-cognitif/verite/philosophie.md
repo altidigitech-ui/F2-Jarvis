@@ -1,8 +1,8 @@
 ---
 id: philosophie
 couche: 5
-depends_on: [verite, contexte]
-enriches: [ethique, thematique]
+depends_on: [conscience, ame]
+enriches: [thematique, spiritualite]
 linked_to: []
 injects_into: [all]
 token_cost: ~600

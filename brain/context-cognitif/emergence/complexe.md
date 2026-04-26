@@ -2,12 +2,12 @@
 id: complexe
 couche: 9
 depends_on: [englobage, propagation]
-enriches: [graine, evolution]
+enriches: [evolution]
 linked_to: []
-injects_into: [analytical]
+injects_into: [strategic]
 token_cost: ~500
 usage: "Charger quand le tout dépasse la somme des parties."
-cycle_z step: raisonner
+cycle_step: raisonner
 ---
 
 # Complexe

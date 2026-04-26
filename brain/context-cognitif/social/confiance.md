@@ -1,8 +1,8 @@
 ---
 id: confiance
 couche: 7
-depends_on: [empathie, coherence]
-enriches: [relation, decision]
+depends_on: [relation, verite]
+enriches: [symbiose]
 linked_to: []
 injects_into: [social]
 token_cost: ~500

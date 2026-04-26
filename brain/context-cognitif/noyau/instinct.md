@@ -2,7 +2,7 @@
 id: instinct
 couche: 0
 depends_on: []
-enriches: [reaction, decision]
+enriches: [reaction, decision, hostilite]
 linked_to: []
 injects_into: [all]
 token_cost: ~400

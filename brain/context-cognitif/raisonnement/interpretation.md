@@ -1,10 +1,10 @@
 ---
 id: interpretation
 couche: 2
-depends_on: [perception, attention, langage]
-enriches: [contexte, empathie]
+depends_on: [perception, analogie]
+enriches: [coherence, verite]
 linked_to: []
-injects_into: [analytical]
+injects_into: [debug]
 token_cost: ~600
 usage: "Charger quand l'agent doit décoder le sens profond d'un message."
 cycle_step: raisonner

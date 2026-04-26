@@ -1,11 +1,11 @@
 ---
 id: communication
 couche: 7
-depends_on: [langage, empathie, emotion]
-enriches: [relation]
+depends_on: [langage, empathie]
+enriches: [relation, propagation]
 linked_to: []
 injects_into: [social]
-token_cost: ~600
+token_cost: ~700
 usage: "Charger quand l'agent doit adapter registre, ton ou rhétorique."
 cycle_step: communiquer
 ---

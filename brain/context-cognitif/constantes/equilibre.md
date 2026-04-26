@@ -1,8 +1,8 @@
 ---
 id: equilibre
 couche: 6
-depends_on: [entropie, organisme]
-enriches: [coherence, resilience, ethique]
+depends_on: [entropie]
+enriches: [resilience]
 linked_to: []
 injects_into: [all]
 token_cost: ~500

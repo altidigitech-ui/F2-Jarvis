@@ -1,7 +1,7 @@
 ---
 id: adaptation
 couche: T
-depends_on: [apprentissage, feedback]
+depends_on: [apprentissage]
 enriches: [resilience, evolution]
 linked_to: []
 injects_into: [all]

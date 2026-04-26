@@ -1,13 +1,13 @@
 ---
 id: verite
 couche: 5
-depends_on: [mathematique]
-enriches: [mensonge, contexte]
+depends_on: [coherence, interpretation]
+enriches: [mensonge, incertitude]
 linked_to: []
-injects_into: [analytical]
-token_cost: ~600
+injects_into: [debug]
+token_cost: ~700
 usage: "Charger quand l'agent doit évaluer ce qui est vérifiable et falsifiable."
-cycle_step: raisonner
+cycle_step: surveiller
 ---
 
 # Vérité

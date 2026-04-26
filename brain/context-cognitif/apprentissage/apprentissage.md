@@ -1,11 +1,11 @@
 ---
 id: apprentissage
 couche: T
-depends_on: [feedback, episodique]
-enriches: [adaptation, procedurale, curiosite]
+depends_on: [episodique, feedback, curiosite]
+enriches: [adaptation]
 linked_to: []
 injects_into: [all]
-token_cost: ~600
+token_cost: ~700
 usage: "Charger quand l'agent doit apprendre de l'expérience."
 cycle_step: apprendre
 ---

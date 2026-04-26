@@ -1,8 +1,8 @@
 ---
 id: decision
 couche: 4
-depends_on: [intention, metacognition]
-enriches: [planification, volonte, resolu]
+depends_on: [intention, doute]
+enriches: [volonte, planification, resolu]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~700

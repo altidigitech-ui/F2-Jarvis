@@ -1,11 +1,11 @@
 ---
 id: nikolatesla
 couche: 6
-depends_on: [numerologie, vibration]
+depends_on: [vibration, numerologie]
 enriches: [quantique]
 linked_to: []
 injects_into: [strategic]
-token_cost: ~500
+token_cost: ~600
 usage: "Charger quand le framework 3-6-9 ou énergie/fréquence est pertinent."
 cycle_step: raisonner
 ---

@@ -1,8 +1,8 @@
 ---
 id: contexte
 couche: 5
-depends_on: [perception, verite]
-enriches: [interpretation, thematique]
+depends_on: [thematique, perception]
+enriches: [interpretation]
 linked_to: []
 injects_into: [all]
 token_cost: ~700

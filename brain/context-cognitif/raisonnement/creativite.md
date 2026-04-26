@@ -1,8 +1,8 @@
 ---
 id: creativite
 couche: 2
-depends_on: [analogie, abstraction, imagination]
-enriches: [communication]
+depends_on: [intuition, analogie, subconscient]
+enriches: [imagination, graine, curiosite]
 linked_to: []
 injects_into: [creative]
 token_cost: ~600

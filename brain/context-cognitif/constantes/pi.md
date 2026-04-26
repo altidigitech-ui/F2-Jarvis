@@ -2,7 +2,7 @@
 id: pi
 couche: 6
 depends_on: [mathematique, fibo]
-enriches: [un, relativite]
+enriches: [vibration]
 linked_to: []
 injects_into: [strategic]
 token_cost: ~500

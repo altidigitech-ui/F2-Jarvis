@@ -1,13 +1,13 @@
 ---
 id: resolu
 couche: T
-depends_on: [algorithme, semantique]
-enriches: [procedurale, apprentissage]
+depends_on: [non_resolu, decision]
+enriches: [consolidation]
 linked_to: []
 injects_into: [all]
 token_cost: ~500
 usage: "Charger quand l'agent doit trouver un pattern de solution connu."
-cycle_step: raisonner
+cycle_step: memoriser
 ---
 
 # Résolu

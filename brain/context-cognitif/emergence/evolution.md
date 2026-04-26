@@ -1,11 +1,11 @@
 ---
 id: evolution
 couche: 9
-depends_on: [complexe, resilience, adaptation]
-enriches: [graine]
+depends_on: [complexe, adaptation, entropie]
+enriches: []
 linked_to: []
-injects_into: [analytical]
-token_cost: ~500
+injects_into: [strategic]
+token_cost: ~600
 usage: "Charger quand le changement directionnel, la sélection ou la mutation est le sujet."
 cycle_step: apprendre
 ---
