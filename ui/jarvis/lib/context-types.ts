@@ -18,6 +18,9 @@ export interface CounterData {
   ph: number;
   ihPh: number;
   total: number;
+  pipelineScans?: number;
+  pipelineBetas?: number;
+  pipelineConvos?: number;
 }
 
 export interface AlertItem {
