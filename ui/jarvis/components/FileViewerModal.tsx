@@ -88,14 +88,13 @@ export function FileViewerModal({ filePath, accentColor, onClose, persona, mode 
       .finally(() => setLoading(false));
   }, [filePath]);
 
+  // NOTE: Section-based filtering removed — BATCH-SEMAINE-N.md groups all personas'
+  // posts inside the same sections (§5 Couche A, §6 Couche B). The old filter
+  // stripped sections 5-6 for Romain, hiding all post content. Show full batch.
   const content = useMemo(() => {
     if (!rawContent) return "";
-    const isBatch = filePath?.toLowerCase().includes("batch-semaine");
-    if (isBatch && persona) {
-      return filterBatchByPersona(rawContent, persona, mode || "normal");
-    }
     return rawContent;
-  }, [rawContent, filePath, persona, mode]);
+  }, [rawContent]);
 
   if (!filePath) return null;
 
