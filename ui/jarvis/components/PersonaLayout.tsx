@@ -655,6 +655,12 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               {targets.cross > 0 && (
                 <CounterTile label="Cross" value={counters.cross} target={targets.cross} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
+              {persona === "fabrice" && mode !== "f2" && (
+                <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
+              {persona === "fabrice" && mode !== "f2" && (
+                <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              )}
               <CounterTile label="Total" value={counters.total} target={targets.engTarget} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
             </div>
           </div>
@@ -889,6 +895,24 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.crossEng)}
               />
+              )}
+              {persona === "fabrice" && mode !== "f2" && (
+                <CounterTile
+                  label="Scans/j"
+                  value={counters.pipelineScans ?? 0}
+                  target={6}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")}
+                />
+              )}
+              {persona === "fabrice" && mode !== "f2" && (
+                <CounterTile
+                  label="Beta spots"
+                  value={counters.pipelineBetas ?? 0}
+                  target={8}
+                  accentColor={accentColor}
+                  onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")}
+                />
               )}
               <CounterTile
                 label="Total"
