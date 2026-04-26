@@ -34,15 +34,15 @@
 |Agencies contactées|**10**|
 |IH upvotes|**15 min**|
 
-## 4. CROSS-ENGAGEMENT F2→R+F
+## 4. CROSS SUR F2 (fait par F et R)
 
 |Jour|Cross Couche A (15h05)|Cross Couche B (20h05)|
 |---|---|---|
-|Lun 27/04|⏳|— (pas de Couche B lundi)|
-|Mar 28/04|⏳|— (pas de Couche B mardi)|
-|Mer 29/04|⏳|⏳|
-|Jeu 30/04|⏳|⏳|
-|Ven 01/05|⏳|⏳|
+|Lun 27/04|— (F et R croisent)|— (pas de Couche B lundi)|
+|Mar 28/04|— (F et R croisent)|— (pas de Couche B mardi)|
+|Mer 29/04|— (F et R croisent)|— (F et R croisent)|
+|Jeu 30/04|— (F et R croisent)|— (F et R croisent)|
+|Ven 01/05|— (F et R croisent)|— (F et R croisent)|
 |Sam 02/05|— (pas de post F2 samedi)|— (pas de Couche B F2 samedi)|
 |Dim 03/05|— (OFF)|— (OFF)|
 
