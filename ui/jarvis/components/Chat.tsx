@@ -839,6 +839,8 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     setMessages((prev) => [...prev, assistantMsg]);
 
     let isResponseTimeout = false;
+    let pingWatchdogId: ReturnType<typeof setTimeout> | null = null;
+    let responseWatchdogId: ReturnType<typeof setTimeout> | null = null;
     try {
       if (fileContext) {
         filesToSend.push({ name: fileContext.name, content: fileContext.content });
