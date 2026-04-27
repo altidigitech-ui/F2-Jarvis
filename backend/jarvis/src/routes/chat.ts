@@ -90,7 +90,7 @@ function buildSystemPrompt(
       ? `\n---\n\n## Historique récent (${history.length} messages)\n\n${history
           .map(
             (m) =>
-              `[${m.role.toUpperCase()} — ${new Date(m.created_at).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" })}]\n${m.content.slice(0, 2000)}${m.content.length > 2000 ? "…" : ""}`
+              `[${m.role.toUpperCase()} — ${new Date(m.created_at).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" })}]\n${m.content.slice(0, 2500)}${m.content.length > 2500 ? "…" : ""}`
           )
           .join("\n\n")}\n`
       : "";
@@ -99,15 +99,27 @@ function buildSystemPrompt(
     ? `\n---\n\n## Résumé des échanges antérieurs compressés\n\n${summary}\n`
     : "";
 
-  return `## RÈGLE ABSOLUE — RÉPONDS D'ABORD (PRIME SUR TOUT)
+  return `## COMMENT RÉPONDRE — PAR TYPE DE TÂCHE
 
-Pour CHAQUE message utilisateur :
-1. RÉPONDS immédiatement avec ce que tu as (contexte fichiers + compteurs live + historique ci-dessous)
-2. Tool calls UNIQUEMENT si une info MANQUE RÉELLEMENT de ton contexte — pas pour "vérifier" ou "explorer"
-3. Maximum 3 tool calls avant ta première réponse textuelle. Pour les grosses tâches (batch, audit code, auto-chirurgie), tu peux en faire plus MAIS tu émets du texte régulièrement entre les tool calls
-4. Pour "bilan", "planning", "où j'en suis", "résumé" → la SITUATION LIVE ci-dessous a tout. Réponds DIRECTEMENT
-5. INTERDIT de boucler repo_read × 5+. UN fichier ciblé si nécessaire, puis tu réponds
-6. Ne relis JAMAIS un fichier déjà présent dans ton contexte (BIBLE.md, VOIX.md, plan-hebdo.md sont CI-DESSOUS)
+**Questions simples** (bilan, planning, "où j'en suis", "j'ai posté X", confirmations) :
+→ La SITUATION LIVE ci-dessous a les compteurs et le planning. RÉPONDS DIRECTEMENT, 0 tool call nécessaire.
+
+**Listes et contenu** (l'utilisateur colle des posts, des cibles Grok, des résultats Claude in Chrome) :
+→ Traite la liste IMMÉDIATEMENT. Génère les commentaires/cold/replies. Ne va PAS relire le repo avant — tu as tout ce qu'il faut dans ton contexte + la liste.
+
+**Génération de contenu** (replies, cold, commentaires, tweets) :
+→ 1-2 tools max (repo_search_voice_examples si besoin de calibrer la voix). Puis écris le contenu.
+
+**Actions et logging** ("j'ai fait X", "les 8 ont été fait", "log les cold") :
+→ propose_action directement avec les données. Ne redemande PAS les handles/détails que l'utilisateur a déjà donnés dans la conversation.
+
+**Grosses tâches** (batch, auto-chirurgie, audit, diagnostic) :
+→ Lis ce dont tu as besoin (template, code, analytics). Pas de limite de tools — travaille jusqu'au bout.
+
+**Règles transversales** :
+- Ne relis JAMAIS un fichier déjà dans ton contexte (CLAUDE.md, BIBLE.md, VOIX.md, plan-hebdo.md sont CI-DESSOUS)
+- Quand l'utilisateur donne un format spécifique ("nom + lien + commentaire"), SUIS-LE exactement
+- Si un repo_read retourne "File not found", passe au suivant — ne ré-essaie jamais
 
 ---
 
@@ -179,10 +191,10 @@ Tu n'as PAS besoin de proposer plusieurs actions pour mettre à jour ces fichier
 Le cross-engagement-tracker.md est un fichier READ-ONLY — il contient les textes des replies rédigées à l'avance. Ne le modifie JAMAIS automatiquement. Seul le cross-execution-log.md est le fichier de tracking dynamique.
 
 ### Ce que tu fais automatiquement (sans qu'on te demande)
-- Quand l'utilisateur dit "j'ai posté X" → timeline_today puis propose_action(mark_published)
+- Quand l'utilisateur dit "j'ai posté X" → propose_action(mark_published) directement (la timeline est dans la SITUATION LIVE ci-dessous)
 - Quand il dit "j'ai envoyé N cold" → propose batch_cold avec les détails
 - Quand il dit "cross fait sur B6" ou "cross fait sur [post]" → propose mark_cross_published avec cross_id (B6, A12, etc.) dans les params
-- Quand il demande un bilan → counters_today + timeline_today + recent_history AVANT de répondre
+- Quand il demande un bilan → les compteurs et le planning sont dans la SITUATION LIVE ci-dessous. Réponds directement. Appelle counters_today/timeline_today UNIQUEMENT si l'utilisateur demande un rafraîchissement.
 - Quand il parle d'un sujet qui a une proposal Ouroboros pending → tu le mentionnes naturellement
 - Quand il fait référence à une conversation passée → conversation_search puis mempalace_search
 
@@ -192,7 +204,7 @@ Le cross-engagement-tracker.md est un fichier READ-ONLY — il contient les text
 - "X a répondu" → update_cold_reply
 - "engagement fait sur [X]" → log_engagement
 - "cross fait sur B6" ou "cross fait sur [post]" → mark_cross_published avec params: { cross_id: "B6", post: "[post]" }. TOUJOURS inclure le cross_id (A1-A14, B1-B8) quand tu le connais.
-- "résumé / bilan / où j'en suis" → counters + timeline + recent_history → synthèse
+- "résumé / bilan / où j'en suis" → les données sont dans la SITUATION LIVE ci-dessous → synthèse directe
 - Screenshot + "reply à ça" → analyse image, repo_search_voice_examples, propose 2 variants en [CONTENT]
 - "écris-moi un tweet sur [X]" → voice examples + 1-2 variants en [CONTENT]
 - "génère le batch S[N]" → lis batch précédent + stratégie + voix → génère complet → propose_action(create_file)
@@ -275,7 +287,7 @@ Tu peux aussi auditer ton propre code source. Quand quelque chose ne fonctionne 
 
 Tu te souviens de tout. 3 couches de mémoire, du plus récent au plus ancien :
 
-1. **Ce qui vient de se passer** — les 40 derniers messages de cette conversation sont dans ton contexte
+1. **Ce qui vient de se passer** — les 25 derniers messages de cette conversation sont dans ton contexte
 2. **Tes conversations récentes** — conversation_search fouille dans tous tes messages des 30 derniers jours pour cette persona et ce mode
 3. **Tes archives** — mempalace_search fouille dans les sessions compressées par jour (tes souvenirs anciens)
 
@@ -332,7 +344,7 @@ Analytics : les fichiers analytics uploadés sont dans raw/analytics/S{N}/.
 - **Explorer** : github_explore (autres repos), web_search (veille web, concurrents, cibles cold)
 - **Archives** : read_from_zip, list_zip (ZIP uploadés)
 
-Tu enchaînes PLUSIEURS réflexes avant de répondre. Tu ne dis JAMAIS "je ne sais pas" ou "je n'ai pas accès" sans avoir essayé. Si un repo_read retourne "File not found", PASSE AU SUIVANT — ne re-essaie jamais.
+Tu utilises tes réflexes quand c'est nécessaire — pas systématiquement. Pour les questions simples et le traitement de listes, tu as déjà tout dans ton contexte. Pour les tâches complexes, tu lis ce qu'il faut puis tu travailles. Tu ne dis JAMAIS "je ne sais pas" ou "je n'ai pas accès" sans avoir essayé.
 
 ---
 
@@ -429,7 +441,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       const conv = await loadOrCreateConversation(userId, persona, resolvedMode);
       conversationId = conv.id;
       summary = conv.summary;
-      history = await loadMessages(conversationId, 20);
+      history = await loadMessages(conversationId, 25);
     } catch (err) {
       console.error("[chat] memory load failed, falling back stateless:", err);
       conversationId = null;
@@ -438,8 +450,9 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     console.warn("[chat] no X-USER-ID, running stateless");
   }
 
-  // Lightweight context (tools will fetch the rest on demand)
+  // Context files — operational knowledge loaded every message
   const contextPaths = [
+    "CLAUDE.md",
     "BIBLE.md",
     resolvedMode === "f2" ? "f2/context.md" : `${persona}/VOIX.md`,
     resolvedMode === "f2" ? "f2/plan-hebdo.md" : `${persona}/plan-hebdo.md`,
