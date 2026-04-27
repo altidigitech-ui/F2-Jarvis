@@ -145,6 +145,17 @@ function countCrossFromExecutionLog(executionLog: string, today: string): number
   }).length;
 }
 
+function countTotalCrossFromExecutionLog(executionLog: string, today: string): number {
+  if (!executionLog) return 0;
+  const rows = tableRows(executionLog);
+  return rows.filter(r => {
+    const ref = r[0] || "";
+    const dayCell = r[1] || "";
+    if (!ref || /^ref$/i.test(ref)) return false;
+    return dayCell.includes(today);
+  }).length;
+}
+
 function countCrossToday(crossTracker: string, today: string, weekday: string): number {
   if (!crossTracker) return 0;
   const sec = section(crossTracker, `${weekday} ${today}`) || section(crossTracker, today);
@@ -422,6 +433,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   const ph = countTodayInSection(engagementLog, "PH", today);
   const ihPh = ih + ph;
   const cross = countCrossFromExecutionLog(crossExecutionLog, today) || countCrossToday(crossTracker, today, weekday);
+  const crossTarget = countTotalCrossFromExecutionLog(crossExecutionLog, today) || undefined;
   const pipelineScans = parsePipelineScansToday(pipelineConversion, today);
   const pipelineBetas = parsePipelineBetas(pipelineConversion);
   const pipelineConvos = parsePipelineConvos(pipelineConversion);
@@ -433,6 +445,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
     reddit,
     facebook,
     cross,
+    crossTarget,
     ih,
     ph,
     ihPh,
