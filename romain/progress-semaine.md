@@ -21,6 +21,7 @@
 | 27/04/2026 | Cold TWITTER x1 (@Philo01) | TWITTER | Cold outreach 18:35 | Suivre les réponses |
 | 27/04/2026 | Cold TWITTER x1 (@stan_peev) | TWITTER | Cold outreach 18:41 | Suivre les réponses |
 | 27/04/2026 | Cold TWITTER x1 (@mstf_tna) | TWITTER | Cold outreach 18:45 | Suivre les réponses |
+| 27/04/2026 | Cold TWITTER x1 (@Ella_biancca) | TWITTER | Cold outreach 18:49 | Suivre les réponses |
 
 -----
 
@@ -36,7 +37,7 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S7 | 3 |
+| Cold envoyés S7 | 4 |
 | Engagements S7 | 27 |
 
 -----
