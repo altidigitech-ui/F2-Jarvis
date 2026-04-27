@@ -57,6 +57,8 @@ Les volumes par canal se somment pour respecter les totaux de §5.
 
 Règle CLAUDE.md §6.4 s'applique.
 
+> **PH — Règle de log engagement :** 1 ligne par action dans l'engagement log. Upvote + commentaire sur le même produit = 2 lignes distinctes. Ne jamais fusionner.
+
 ---
 
 ## 6. Planning indicatif
