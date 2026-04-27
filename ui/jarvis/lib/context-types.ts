@@ -14,6 +14,7 @@ export interface CounterData {
   reddit: number;
   facebook: number;
   cross: number;
+  crossTarget?: number;
   ih: number;
   ph: number;
   ihPh: number;
