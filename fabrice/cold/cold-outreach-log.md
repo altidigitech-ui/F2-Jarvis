@@ -19,6 +19,8 @@
 |Date|Heure|Cible|Vertical|Insight|Type|Réponse|Suite|
 |----|-----|-----|--------|-------|----|-------|-----|
 |    |     |     |        |       |    |       |     |
+| 27/04/2026 | 19:57 | @MEEcom44 | shopify-merchant | posted about apps still charging after trial + uninstall — exact pain point StoreMD solves | DM | ⏳ |  |
+| 27/04/2026 | 19:57 | @0xNinjas | shopify-merchant | active sur billing/apps Shopify, profil cible StoreMD | DM | ⏳ |  |
 
 -----
 
