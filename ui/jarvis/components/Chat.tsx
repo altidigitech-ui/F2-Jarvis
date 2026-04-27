@@ -864,6 +864,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
       const controller = new AbortController();
       abortRef.current = controller;
+      let isResponseTimeout = false;
 
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -886,7 +887,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       // Watchdog 2 — réponse bloquée : 90s sans text/tool_use = Claude figé après tool calls
       let pingWatchdogId: ReturnType<typeof setTimeout> | null = null;
       let responseWatchdogId: ReturnType<typeof setTimeout> | null = null;
-      let isResponseTimeout = false;
       const resetPingWatchdog = () => {
         if (pingWatchdogId) clearTimeout(pingWatchdogId);
         pingWatchdogId = setTimeout(() => controller.abort(), 25_000);
