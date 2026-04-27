@@ -27,7 +27,7 @@
 | 27/04/2026 | Cold LINKEDIN x2 | LINKEDIN | Cold outreach 21:59 | Suivre les réponses |
 | 27/04/2026 | Cold TWITTER x2 (@JustenEcom + @boldikohnken) | TWITTER | Cold outreach 22:26 | Suivre les réponses |
 | 27/04/2026 | Engagement Reddit x8 | REDDIT | 8 replies/upvotes — r/shopify, r/ecommerce | Monitorer réponses |
-| 27/04/2026 | Engagement IH/PH x6 | IH/PH | 5 upvotes PH + 1 commentaire IH | Monitorer réponses |
+| 27/04/2026 | Engagement PH x6 | PH | 5 upvotes + 1 commentaire PH | Monitorer réponses |
 | 27/04/2026 | Demandes de connexion LinkedIn x9 (cold prep) | LINKEDIN | Justin Ledvina, Adison Clark, Andreas Gähwiler, Nicole Pu, Zach Sapiro, Nellie Henningsson, Gianvito Montrone, Chuck Caupain, Tamara Masson — Youri Vaisse déjà en attente | Attendre acceptations → DM |
 | 27/04/2026 | Rejoint 10 groupes Facebook (setup présence) | FACEBOOK | Shopify Dropshipping, E-commerce dropshipping/e-business, Shopify for Beginners, DropShipping/Shopify-France, Entrepreneurs et freelances, Expertos en Shopify, GoHighLevel Agency Owners, Shopify Experts & Newbies, N8N Templates, MARCHAND DE BIENS PARTNERS | Commencer à poster cette semaine |
 
