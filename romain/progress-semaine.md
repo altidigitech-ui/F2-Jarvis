@@ -17,6 +17,7 @@
 | 27/04/2026 | Twitter post publié — "Cross A2 — F2 Twitter 15h — 68 stores since launch" | Twitter | Post publié 18:08 | Monitorer impressions + replies |
 | 27/04/2026 | Twitter post publié — "68 stores audited / $12,400 leaks — data-drop" | Twitter | Post publié 18:14 | Monitorer impressions + replies |
 | 27/04/2026 | Cross-engagement exécuté — F Twitter 13h05 — 23 audits / $300/mo bleed | Cross | Reply 18:14 | ✅ |
+| 27/04/2026 | Cross-engagement exécuté — F2 Twitter 15h05 — 68 stores / $12,400 since launc | Cross | Reply 18:14 | ✅ |
 
 -----
 
