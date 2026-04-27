@@ -16,6 +16,7 @@
 | 27/04/2026 | Cross-engagement exécuté — [A] 68 stores audited / $12,400 leaks — data-drop | Cross | Reply 14:40 | ✅ |
 | 27/04/2026 | Cross-engagement exécuté — F2 Twitter 15h00 — Couche A | Cross | Reply 15:04 | ✅ |
 | 27/04/2026 | Cross-engagement exécuté — [A] 68 stores / $12,400 — studio audit recap | Cross | Reply 17:39 | ✅ |
+| 27/04/2026 | Cold TWITTER x2 | TWITTER | Cold outreach 19:57 | Suivre les réponses |
 
 -----
 
@@ -37,7 +38,7 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S7 | 0 |
+| Cold envoyés S7 | 2 |
 | Engagements S7 | 18 |
 
 -----
