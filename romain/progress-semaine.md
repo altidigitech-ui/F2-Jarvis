@@ -20,6 +20,7 @@
 | 27/04/2026 | Cross-engagement exécuté — F2 Twitter 15h05 — 68 stores / $12,400 since launc | Cross | Reply 18:14 | ✅ |
 | 27/04/2026 | Cold TWITTER x1 (@Philo01) | TWITTER | Cold outreach 18:35 | Suivre les réponses |
 | 27/04/2026 | Cold TWITTER x1 (@stan_peev) | TWITTER | Cold outreach 18:41 | Suivre les réponses |
+| 27/04/2026 | Cold TWITTER x1 (@mstf_tna) | TWITTER | Cold outreach 18:45 | Suivre les réponses |
 
 -----
 
@@ -35,7 +36,7 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S7 | 2 |
+| Cold envoyés S7 | 3 |
 | Engagements S7 | 27 |
 
 -----
