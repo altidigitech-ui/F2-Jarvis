@@ -409,7 +409,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
   let enrichedMessage = message || "";
   if (files && files.length > 0) {
     const fileBlocks = files.map(f =>
-      `[Fichier joint: ${f.name}]\n\`\`\`\n${f.content.slice(0, 50000)}\n\`\`\``
+      `[Fichier joint: ${f.name}]\n\`\`\`\n${f.content.slice(0, 150000)}\n\`\`\``
     ).join("\n\n");
     enrichedMessage = `${fileBlocks}\n\n${enrichedMessage || "Analyse ces fichiers."}`;
   }
