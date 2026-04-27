@@ -19,6 +19,7 @@
 |Date|Heure|Cible|Vertical|Insight|Type|Réponse|Suite|
 |----|-----|-----|--------|-------|----|-------|-----|
 |    |     |     |        |       |    |       |     |
+| 27/04/2026 | 18:35 | @Philo01 | ecom | Se plaint d'apps Shopify mal codées qui font fuir les merchants — angle scripts fantômes + facturation zombie post-désinstallation | DM | ⏳ |  |
 
 -----
 
