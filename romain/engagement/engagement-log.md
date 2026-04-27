@@ -15,6 +15,8 @@
 | 27/04/2026 | 17:38 | @hcaz32000 — support as a product, not a cost center (Shopify app founder) | support as a product is the right framing. the stores I've worked with that treated it as a cost center all had the same pattern. brutal churn, bad reviews, and no second purchase. the ones who invested in proactive support had 2-3x the repeat purchase rate. it compounds faster than any paid channel. |  |  |
 | 27/04/2026 | 17:38 | @TheAwesomeTuvia — behavior-triggered popup / free-to-paid $89.99 conversion | congrats on the $89.99 conversion. behavior-triggered popups are underrated. most people show them too early, before the user has actually seen value. what was the trigger event? time on platform, specific action, usage milestone? that's usually where the gap is for apps that can't crack free-to-paid. |  |  |
 | 27/04/2026 | 17:38 | @hsivar20 — Wishlist Monk launch, wishlist app Shopify free for first 100 stores | wishlist apps are way more underused than they should be. most brands install them and forget about it. never set up the email trigger, never test the reactivation window. the ones that actually convert are the ones where the first email goes out within 48h of the wishlist add. after that the window drops off fast. |  |  |
+| 27/04/2026 | 17:53 | @KalwarSalam — Shopify app review bloqué 4 semaines | 4 weeks is rough. the review queue has been inconsistent for months tbh. one thing that's helped: request a manual review escalation through the Partner dashboard directly instead of waiting on the support queue. |  |  |
+| 27/04/2026 | 17:53 | @DsMatie — The Wide Event Paris, 250 personnes Shopify community | 250 for a Shopify community event is no joke. it's grown fast. what topics are you covering this year? |  |  |
 
 -----
 
