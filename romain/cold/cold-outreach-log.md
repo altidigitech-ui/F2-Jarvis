@@ -20,6 +20,7 @@
 |----|-----|-----|--------|-------|----|-------|-----|
 |    |     |     |        |       |    |       |     |
 | 27/04/2026 | 18:35 | @Philo01 | ecom | Se plaint d'apps Shopify mal codées qui font fuir les merchants — angle scripts fantômes + facturation zombie post-désinstallation | DM | ⏳ |  |
+| 27/04/2026 | 18:41 | @stan_peev | Agency / Shopify Plus Partner | 5 recurring support tickets chez ses clients — apps conflicting, scripts post-uninstall, billing non audité. CTA free scan client URL. | DM | ⏳ |  |
 
 -----
 
