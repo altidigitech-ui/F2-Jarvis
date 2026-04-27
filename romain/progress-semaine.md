@@ -22,6 +22,7 @@
 | 27/04/2026 | Cold TWITTER x1 (@stan_peev) | TWITTER | Cold outreach 18:41 | Suivre les réponses |
 | 27/04/2026 | Cold TWITTER x1 (@mstf_tna) | TWITTER | Cold outreach 18:45 | Suivre les réponses |
 | 27/04/2026 | Cold TWITTER x1 (@Ella_biancca) | TWITTER | Cold outreach 18:49 | Suivre les réponses |
+| 27/04/2026 | Batch LinkedIn comments S7 J1 | LINKEDIN | 6 comments posted — Kaspian Fuad (analytics CVR), Ali Ben-Hariz (chargebacks), Jake M. (salsa/CVR), + 3 autres cibles batch | engagement |
 
 -----
 
