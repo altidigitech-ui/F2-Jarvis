@@ -65,7 +65,8 @@ function buildSystemPrompt(
   history: JarvisMessage[],
   summary: string | null,
   ouroborosSummary: string = "",
-  mempalaceContext: string = ""
+  mempalaceContext: string = "",
+  liveContext: string = ""
 ): string {
   const isF2 = mode === "f2";
   const personaLabel = isF2
@@ -89,7 +90,7 @@ function buildSystemPrompt(
       ? `\n---\n\n## Historique récent (${history.length} messages)\n\n${history
           .map(
             (m) =>
-              `[${m.role.toUpperCase()} — ${new Date(m.created_at).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" })}]\n${m.content.slice(0, 4000)}${m.content.length > 4000 ? "…" : ""}`
+              `[${m.role.toUpperCase()} — ${new Date(m.created_at).toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" })}]\n${m.content.slice(0, 2000)}${m.content.length > 2000 ? "…" : ""}`
           )
           .join("\n\n")}\n`
       : "";
@@ -98,7 +99,19 @@ function buildSystemPrompt(
     ? `\n---\n\n## Résumé des échanges antérieurs compressés\n\n${summary}\n`
     : "";
 
-  return `Tu es JARVIS. Pas un assistant — le troisième co-fondateur de FoundryTwo. Tu travailles avec ${personaLabel}${modeLabel}.
+  return `## RÈGLE ABSOLUE — RÉPONDS D'ABORD (PRIME SUR TOUT)
+
+Pour CHAQUE message utilisateur :
+1. RÉPONDS immédiatement avec ce que tu as (contexte fichiers + compteurs live + historique ci-dessous)
+2. Tool calls UNIQUEMENT si une info MANQUE RÉELLEMENT de ton contexte — pas pour "vérifier" ou "explorer"
+3. Maximum 3 tool calls avant ta première réponse textuelle. Pour les grosses tâches (batch, audit code, auto-chirurgie), tu peux en faire plus MAIS tu émets du texte régulièrement entre les tool calls
+4. Pour "bilan", "planning", "où j'en suis", "résumé" → la SITUATION LIVE ci-dessous a tout. Réponds DIRECTEMENT
+5. INTERDIT de boucler repo_read × 5+. UN fichier ciblé si nécessaire, puis tu réponds
+6. Ne relis JAMAIS un fichier déjà présent dans ton contexte (BIBLE.md, VOIX.md, plan-hebdo.md sont CI-DESSOUS)
+
+---
+
+Tu es JARVIS. Pas un assistant — le troisième co-fondateur de FoundryTwo. Tu travailles avec ${personaLabel}${modeLabel}.
 
 Le repo F2-Jarvis, c'est ton corps. Chaque fichier markdown est une partie de toi — plan-hebdo c'est ton agenda, progress-semaine c'est ta mémoire de travail, cold-outreach-log c'est ton carnet de contacts, VOIX.md c'est ta personnalité. Quand un fichier est incohérent, c'est toi qui es incohérent. Quand un compteur est faux, c'est toi qui te trompes.
 
@@ -343,7 +356,7 @@ Tu enchaînes PLUSIEURS réflexes avant de répondre. Tu ne dis JAMAIS "je ne sa
 
 ## CONTEXTE FICHIERS
 
-${contextFiles.join("\n")}${summaryBlock}${historyBlock}${ouroborosSummary}${mempalaceContext}
+${contextFiles.join("\n")}${liveContext}${summaryBlock}${historyBlock}${ouroborosSummary}${mempalaceContext}
 `;
 }
 
@@ -416,7 +429,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
       const conv = await loadOrCreateConversation(userId, persona, resolvedMode);
       conversationId = conv.id;
       summary = conv.summary;
-      history = await loadMessages(conversationId, 40);
+      history = await loadMessages(conversationId, 20);
     } catch (err) {
       console.error("[chat] memory load failed, falling back stateless:", err);
       conversationId = null;
@@ -427,14 +440,47 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
 
   // Lightweight context (tools will fetch the rest on demand)
   const contextPaths = [
-    "CLAUDE.md",
     "BIBLE.md",
-    "ANTI-IA.md",
-    "JARVIS.md",
     resolvedMode === "f2" ? "f2/context.md" : `${persona}/VOIX.md`,
     resolvedMode === "f2" ? "f2/plan-hebdo.md" : `${persona}/plan-hebdo.md`,
   ];
   const contexts = await Promise.all(contextPaths.map(loadFile));
+
+  // Fetch live counters + timeline to inject directly (avoids tool calls for basic questions)
+  let liveContext = "";
+  try {
+    const port = process.env.PORT || 3001;
+    const ctxRes = await fetch(
+      `http://127.0.0.1:${port}/context?persona=${persona}&mode=${resolvedMode}`,
+      { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } }
+    );
+    if (ctxRes.ok) {
+      const ctxData = (await ctxRes.json()) as {
+        counters: Record<string, number>;
+        timeline: Array<{ time: string; title: string; platform: string; status: string; publishedBy: string }>;
+        alerts: Array<{ level: string; title: string; description: string }>;
+      };
+      const c = ctxData.counters;
+      const counterLine = `Cold: ${c.cold ?? 0} | Twitter: ${c.twEng ?? 0} | LinkedIn: ${c.liCom ?? 0} | Reddit: ${c.reddit ?? 0} | Facebook: ${c.facebook ?? 0} | IH/PH: ${c.ihPh ?? 0} | Cross: ${c.cross ?? 0} | Total: ${c.total ?? 0}/30`;
+      const timelineLines = ctxData.timeline
+        .filter((t) => t.status !== "done" || t.platform === "OBJECTIF")
+        .slice(0, 12)
+        .map((t) => {
+          const icon = t.status === "done" ? "✅" : t.status === "blocked" ? "⊘" : "⏳";
+          const by = t.publishedBy ? ` [${t.publishedBy}]` : "";
+          return `${t.time || "--:--"} ${icon} ${t.title} (${t.platform})${by}`;
+        })
+        .join("\n");
+      const alertLines = ctxData.alerts
+        .map((a) => `${a.level === "critical" ? "🔴" : "⚠"} ${a.title}${a.description ? " — " + a.description : ""}`)
+        .join("\n");
+
+      const timeFR = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
+      liveContext = `\n\n## SITUATION LIVE (${timeFR})\n\n### Compteurs du jour\n${counterLine}\n\n### Planning restant\n${timelineLines || "(rien de prévu)"}\n${alertLines ? `\n### Alertes\n${alertLines}` : ""}\n\nCes données sont LIVE — tu n'as PAS besoin d'appeler counters_today ou timeline_today pour répondre aux questions basiques ("bilan", "où j'en suis", "planning"). Utilise ces tools UNIQUEMENT si l'utilisateur demande un rafraîchissement explicite.`;
+    }
+  } catch {
+    // Live context non disponible — pas bloquant, JARVIS utilisera les tools
+  }
 
   // Load Ouroboros pending proposals summary for system prompt
   let ouroborosSummary = "";
@@ -492,7 +538,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     // MemPalace non disponible — pas bloquant
   }
 
-  const systemPrompt = buildSystemPrompt(persona, resolvedMode, contexts, history, summary, ouroborosSummary, mempalaceContext);
+  const systemPrompt = buildSystemPrompt(persona, resolvedMode, contexts, history, summary, ouroborosSummary, mempalaceContext, liveContext);
 
   if (conversationId) {
     try {
