@@ -7,7 +7,7 @@
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 27/04|`store-md-money-daily`|68 stores audited / $12,400 leaks — data-drop|⏳|
+|Lun 27/04|`store-md-money-daily`|68 stores audited / $12,400 leaks — data-drop|✅ Publié 18:14|
 |Mar 28/04|`store-md-horror-ghost-apps`|Unpopular opinion: you're paying for dead apps|⏳|
 |Mer 29/04|`store-md-tier-apps-danger`|Mobile conversion isn't low because of your product|⏳|
 |Jeu 30/04|`store-md-stats`|Agency DM: 8 stores scanned, $1,400/mo combined|⏳|
