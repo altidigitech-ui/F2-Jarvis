@@ -10,6 +10,7 @@
 |Date|Événement|Plateforme|Activité|Action prise / à prendre|
 |----|---------|----------|--------|------------------------|
 |    |         |          |        |                        |
+| 27/04/2026 | Twitter post publié — "Twitter Couche A Lun 27/04 — 23 audits / $300/mo b" | Twitter | Post publié 14:39 | Monitorer impressions + replies |
 
 -----
 
