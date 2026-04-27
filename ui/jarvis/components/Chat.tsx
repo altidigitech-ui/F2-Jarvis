@@ -179,7 +179,7 @@ type ActionFormProps = {
   onSuccess: () => void;
 };
 
-function ActionForm({ action, persona, accentColor, onClose, onSuccess }: ActionFormProps) {
+function ActionForm({ action, persona, mode, accentColor, onClose, onSuccess }: ActionFormProps) {
   const [fields, setFields] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -194,7 +194,7 @@ function ActionForm({ action, persona, accentColor, onClose, onSuccess }: Action
       const res = await fetch("/api/action", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ persona, action, payload: fields }),
+        body: JSON.stringify({ persona, mode, action, payload: fields }),
       });
       const data = await res.json() as { ok?: boolean; error?: string };
       if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
