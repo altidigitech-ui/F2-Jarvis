@@ -13,6 +13,7 @@
 | 27/04/2026 | Twitter post publié — "Twitter Couche A Lun 27/04 — 23 audits / $300/mo b" | Twitter | Post publié 14:39 | Monitorer impressions + replies |
 | 27/04/2026 | Cross-engagement exécuté — Cross A1 Lun 27/04 — reply sur post Twitter R 14h0 | Cross | Reply 14:39 | ✅ |
 | 27/04/2026 | Twitter post publié — "[A] 23 audits / $300/mo bleed — aucun signal dashb" | Twitter | Post publié 14:39 | Monitorer impressions + replies |
+| 27/04/2026 | Cross-engagement exécuté — [A] 68 stores audited / $12,400 leaks — data-drop | Cross | Reply 14:40 | ✅ |
 
 -----
 
