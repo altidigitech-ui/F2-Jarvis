@@ -885,8 +885,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
       // Watchdog 1 — connexion morte : 25s sans aucun octet reçu (3 pings manqués)
       // Watchdog 2 — réponse bloquée : 90s sans text/tool_use = Claude figé après tool calls
-      let pingWatchdogId: ReturnType<typeof setTimeout> | null = null;
-      let responseWatchdogId: ReturnType<typeof setTimeout> | null = null;
       const resetPingWatchdog = () => {
         if (pingWatchdogId) clearTimeout(pingWatchdogId);
         pingWatchdogId = setTimeout(() => controller.abort(), 25_000);
