@@ -32,4 +32,4 @@ Critères d'exclusion :
 - Pourquoi c'est une opportunité pour @foundrytwo (quel angle, quel insight terrain pertinent)
 - Type d'action recommandée : reply cold outreach / commentaire de valeur / upvote seul
 
-LIVRABLE : une liste structurée des 6 à 8 opportunités trouvées, triées de la plus prioritaire à la moins prioritaire. Aucune action effectuée. Aucun commentaire rédigé.
+LIVRABLE : une liste structurée des 10 opportunités minimum trouvées, triées de la plus prioritaire à la moins prioritaire. Aucune action effectuée. Aucun commentaire rédigé.
