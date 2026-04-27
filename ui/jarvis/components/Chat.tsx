@@ -882,9 +882,26 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       let fullText = "";
       const toolEvents: ToolEvent[] = [];
 
+      // Watchdog 1 — connexion morte : 25s sans aucun octet reçu (3 pings manqués)
+      // Watchdog 2 — réponse bloquée : 90s sans text/tool_use = Claude figé après tool calls
+      let pingWatchdogId: ReturnType<typeof setTimeout> | null = null;
+      let responseWatchdogId: ReturnType<typeof setTimeout> | null = null;
+      let isResponseTimeout = false;
+      const resetPingWatchdog = () => {
+        if (pingWatchdogId) clearTimeout(pingWatchdogId);
+        pingWatchdogId = setTimeout(() => controller.abort(), 25_000);
+      };
+      const resetResponseWatchdog = () => {
+        if (responseWatchdogId) clearTimeout(responseWatchdogId);
+        responseWatchdogId = setTimeout(() => { isResponseTimeout = true; controller.abort(); }, 90_000);
+      };
+      resetPingWatchdog();
+      resetResponseWatchdog();
+
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
+        resetPingWatchdog(); // Tout octet reçu = connexion vivante
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split("\n");
         buffer = lines.pop() || "";
@@ -902,6 +919,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
             continue;
           }
           if (event.type === "ping") continue; // Keepalive, ignore
+          if (event.type === "text" || event.type === "tool_use") resetResponseWatchdog(); // Progrès réel
           if (event.type === "text" && typeof event.content === "string") {
             fullText += event.content;
             setMessages((prev) =>
@@ -974,8 +992,22 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       }
     } catch (err) {
       const errMsg = (err as Error).message;
-      // AbortError = user clicked Stop, no need to show error message
-      if ((err as Error).name !== "AbortError") {
+      if ((err as Error).name === "AbortError" && isResponseTimeout) {
+        // Watchdog réponse : Claude figé après tool calls — 90s sans progrès
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantId
+              ? {
+                  ...m,
+                  content: m.content
+                    ? m.content + `\n\n⏱️ *JARVIS bloqué depuis 90s. Renvoyez le message.*`
+                    : `⏱️ *Délai dépassé — renvoyez le message.*`,
+                }
+              : m
+          )
+        );
+      } else if ((err as Error).name !== "AbortError") {
+        // Erreur réseau réelle
         setMessages((prev) =>
           prev.map((m) =>
             m.id === assistantId
@@ -990,6 +1022,8 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         );
       }
     } finally {
+      if (pingWatchdogId) clearTimeout(pingWatchdogId);
+      if (responseWatchdogId) clearTimeout(responseWatchdogId);
       abortRef.current = null;
       setIsStreaming(false);
       setTimeout(() => {
