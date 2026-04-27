@@ -15,6 +15,7 @@
 | 27/04/2026 | Twitter post publié — "[A] 68 stores audited / $12,400 leaks — data-drop" | Twitter | Post publié 18:08 | Monitorer impressions + replies |
 | 27/04/2026 | Twitter post publié — "[A] 68 stores / $12,400 — studio audit recap" | Twitter | Post publié 18:08 | Monitorer impressions + replies |
 | 27/04/2026 | Twitter post publié — "Cross A2 — F2 Twitter 15h — 68 stores since launch" | Twitter | Post publié 18:08 | Monitorer impressions + replies |
+| 27/04/2026 | Twitter post publié — "68 stores audited / $12,400 leaks — data-drop" | Twitter | Post publié 18:14 | Monitorer impressions + replies |
 
 -----
 
