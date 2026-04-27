@@ -19,6 +19,7 @@
 | 27/04/2026 | Cross-engagement exécuté — F Twitter 13h05 — 23 audits / $300/mo bleed | Cross | Reply 18:14 | ✅ |
 | 27/04/2026 | Cross-engagement exécuté — F2 Twitter 15h05 — 68 stores / $12,400 since launc | Cross | Reply 18:14 | ✅ |
 | 27/04/2026 | Cold TWITTER x1 (@Philo01) | TWITTER | Cold outreach 18:35 | Suivre les réponses |
+| 27/04/2026 | Cold TWITTER x1 (@stan_peev) | TWITTER | Cold outreach 18:41 | Suivre les réponses |
 
 -----
 
@@ -34,7 +35,7 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S7 | 1 |
+| Cold envoyés S7 | 2 |
 | Engagements S7 | 27 |
 
 -----
