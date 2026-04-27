@@ -25,6 +25,14 @@
 |Date|Heure|Post original (résumé + auteur)|Commentaire F|Likes reçus|Replies reçues|
 |----|-----|------------------------------|-------------|-----------|-------------- |
 |    |     |                              |             |           |               |
+| 27/04/2026 | 22:11 | Jenn V. — Shopify merchant (ghost billing exercise) | Most merchants expect 1-2 surprises when they actually do this. What they find is closer to 5-6, and at least a couple from apps they thought were gone months ago. Shopify treats installs and billing subscriptions as two separate systems... |  |  |
+| 27/04/2026 | 22:11 | Matthew Hapgood — Turbo Pixel (cancel app on Sunday) | App installs and billing subscriptions are separate records on Shopify's side. By design, not by accident. Uninstalling kills one. The other just keeps running... |  |  |
+| 27/04/2026 | 22:11 | Nikita G Boopathi — zero-friction checkout social commerce | The zero-friction checkout lift is real but it's downstream of a bigger problem. Stores with 15+ apps inject up to 800ms of extra latency before the Place order button is clickable... |  |  |
+| 27/04/2026 | 22:11 | Jack Lauzon — DTC conversion +34% removing friction | The conversion lift makes sense. Most of what gets labeled a 'checkout problem' is actually a pre-checkout problem... |  |  |
+| 27/04/2026 | 22:11 | Ravi Sharma — Shop Pay checkout guide | Shop Pay lift is real but it's downstream. By the time a buyer clicks Checkout, some stores have already lost them — the checkout render is slow because of third-party JS injected by apps... |  |  |
+| 27/04/2026 | 22:11 | Falko Saft — PUMA hiring ecommerce PM checkout | Makes sense at that scale. The math shifts around $500k–1M/year — cumulative cost of checkout apps (fees + performance drag + dev time managing conflicts) starts competing with owning it internally... |  |  |
+| 27/04/2026 | 22:11 | Vadym-Marko Hruden — 24 apps = 6s load time | The 6s figure is consistent with what StoreMD scans show. Stores with 20+ apps average a 2.3MB JS bundle at checkout vs 340KB for stores under 8 apps — that gap explains 2–3s of mobile latency on its own... |  |  |
+| 27/04/2026 | 22:11 | Arthur Korniyenko — Shopify Plus Partner (post #8) | Engagement sur post Arthur Korniyenko — Shopify Plus Partner |  |  |
 
 -----
 
