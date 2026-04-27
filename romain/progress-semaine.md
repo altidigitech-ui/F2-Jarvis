@@ -12,6 +12,7 @@
 |    |         |          |        |                        |
 | 27/04/2026 | Twitter post publié — "Cross A1 — F Twitter 13h — 23 scans $300 bleed" | Twitter | Post publié 18:08 | Monitorer impressions + replies |
 | 27/04/2026 | Cross-engagement exécuté — [A] 23 audits / $300/mo bleed — aucun signal dashb | Cross | Reply 18:08 | ✅ |
+| 27/04/2026 | Twitter post publié — "[A] 68 stores audited / $12,400 leaks — data-drop" | Twitter | Post publié 18:08 | Monitorer impressions + replies |
 
 -----
 
