@@ -136,6 +136,9 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │   ├── cross-engagement-tracker.md           ← (READ-ONLY) textes cross S7
 │   ├── engagement
 │   │   ├── chrome
+│   │   │   ├── IH-prompt-engagement.md       ← scan feed IH : 10 opportunités/jour
+│   │   │   ├── IH-prompt-notifications.md    ← scan notifications : replies en attente
+│   │   │   └── LINKEDIN-prompt.md
 │   │   ├── cross-execution-log.md            ← log dynamique crosses S7
 │   │   ├── engagement-log.md                 ← S7 actif
 │   │   └── archives
