@@ -462,6 +462,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   }, [fetchContext]);
 
   const { counters, alerts } = ctx;
+  const effectiveCrossTarget = (counters.crossTarget !== undefined && counters.crossTarget > 0) ? counters.crossTarget : targets.cross;
+  const totalTarget = targets.engTarget - targets.cross + effectiveCrossTarget;
   const rawTimeline = f2Mode ? ctx.weekPlanningF2 : ctx.timeline;
   const timeline = rawTimeline.map((item) =>
     doneItems.has(item.title) ? { ...item, status: "done" as const } : item
@@ -662,7 +664,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               {persona === "fabrice" && mode !== "f2" && (
                 <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
-              <CounterTile label="Total" value={counters.total} target={targets.engTarget} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Total" value={counters.total} target={totalTarget} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
             </div>
           </div>
         </div>
@@ -921,7 +923,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               <CounterTile
                 label="Total"
                 value={counters.total}
-                target={targets.engTarget}
+                target={totalTarget}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.progress)}
               />
