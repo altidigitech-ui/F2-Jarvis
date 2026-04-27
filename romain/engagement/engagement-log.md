@@ -59,7 +59,8 @@
 |Date|Heure|Produit|Action|Détail|
 |----|-----|-------|------|------|
 |    |     |       |      |      |
-| 27/04/2026 | 16:53 | Orange Slice — Automate any sales task with AI (YC-backed) | upvote + commentaire | curious how this handles the research layer when you're running outbound across multiple e-com brands at once. do you pull brand-level signals — recent ad spend patterns, new growth/CX hires, post-funding activity — or is it mostly contact-level enrichment? because when you're managing 10-15 stores the prioritization layer matters as much as the messaging itself. |
+| 27/04/2026 | 16:53 | Orange Slice — Automate any sales task with AI (YC-backed) | upvote | |
+| 27/04/2026 | 16:53 | Orange Slice — Automate any sales task with AI (YC-backed) | commentaire | curious how this handles the research layer when you're running outbound across multiple e-com brands at once. do you pull brand-level signals — recent ad spend patterns, new growth/CX hires, post-funding activity — or is it mostly contact-level enrichment? because when you're managing 10-15 stores the prioritization layer matters as much as the messaging itself. |
 | 27/04/2026 | 16:59 | VIDEO AI ME — Create videos with AI actors that sound and look real | upvote | |
 | 27/04/2026 | 16:59 | Jet AI Agents — Build business AI agents in minutes | upvote | |
 | 27/04/2026 | 16:59 | Waitlister — The waitlist software to launch your product | upvote | |
