@@ -57,7 +57,7 @@ function section(markdown: string, title: string): string {
   let active = false;
   const out: string[] = [];
   for (const line of lines) {
-    if (!active && line.includes(title)) { active = true; continue; }
+    if (!active && /^#+\s/.test(line) && line.includes(title)) { active = true; continue; }
     if (active && /^##\s/.test(line)) break;
     if (active) out.push(line);
   }
