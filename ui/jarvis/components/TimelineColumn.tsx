@@ -9,10 +9,11 @@ type Props = {
   accentColor: string;
   loading?: boolean;
   persona?: string;
+  mode?: "normal" | "f2";
   onItemDone?: (title: string) => void;
 };
 
-export function TimelineColumn({ items, accentColor, loading, persona, onItemDone }: Props) {
+export function TimelineColumn({ items, accentColor, loading, persona, mode, onItemDone }: Props) {
   return (
     <aside
       id="jarvis-timeline"
@@ -40,6 +41,7 @@ export function TimelineColumn({ items, accentColor, loading, persona, onItemDon
             item={item}
             accentColor={accentColor}
             persona={persona}
+            mode={mode}
             onItemDone={onItemDone}
           />
         ))}
@@ -54,11 +56,13 @@ function TimelineCard({
   item,
   accentColor,
   persona,
+  mode,
   onItemDone,
 }: {
   item: TimelineItem;
   accentColor: string;
   persona?: string;
+  mode?: "normal" | "f2";
   onItemDone?: (title: string) => void;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -121,6 +125,7 @@ function TimelineCard({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           persona,
+          mode,
           action: "mark_published",
           payload: { title: item.title },
         }),
@@ -217,6 +222,7 @@ function TimelineCard({
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                       persona,
+                      mode,
                       action: "mark_cross_published",
                       payload: { post: item.title, reply: "" },
                     }),

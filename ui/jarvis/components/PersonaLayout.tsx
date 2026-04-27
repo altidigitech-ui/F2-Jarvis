@@ -621,6 +621,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               accentColor={accentColor}
               loading={loading}
               persona={persona}
+              mode={mode as "normal" | "f2"}
               onItemDone={markTimelineItemDone}
             />
           </div>
@@ -786,6 +787,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             accentColor={accentColor}
             loading={loading}
             persona={persona}
+            mode={mode as "normal" | "f2"}
             onItemDone={markTimelineItemDone}
           />
         </div>

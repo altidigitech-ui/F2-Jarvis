@@ -12,13 +12,16 @@ type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";
 
 type ActionBody = {
   persona: Persona;
+  mode?: "normal" | "f2";
   action: "mark_published" | "mark_cross_published" | "log_decision" | "incident_resolved" | "log_cold" | "log_interaction" | "patch_file";
   payload: Record<string, string>;
 };
 
 export async function actionRoute(req: Request, res: Response): Promise<void> {
   const body = req.body as ActionBody;
-  const { persona, action, payload } = body;
+  const { persona, mode, action, payload } = body;
+  // F2 mode → files are in f2/, not romain/
+  const prefix = mode === "f2" ? "f2" : persona;
 
   if (!persona || !action) {
     res.status(400).json({ error: "Missing persona or action" });
@@ -30,12 +33,12 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
       case "mark_published": {
         const title = payload.title || "";
         await ghUpdate(
-          `${persona}/plan-hebdo.md`,
+          `${prefix}/plan-hebdo.md`,
           (md) => markPlanPublished(md, title),
           `[JARVIS] ✅ Published: ${title.slice(0, 60)}`,
         );
         cacheInvalidateAll();
-        await applySideEffects("mark_published", { title }, persona);
+        await applySideEffects("mark_published", { title, _persona_prefix: prefix }, persona);
         break;
       }
       case "mark_cross_published": {
@@ -45,7 +48,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
         const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
 
         await ghUpdate(
-          `${persona}/engagement/cross-execution-log.md`,
+          `${prefix}/engagement/cross-execution-log.md`,
           (md) => {
             const lines = md.split("\n");
             let matched = false;
@@ -82,7 +85,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
         );
 
         cacheInvalidateAll();
-        await applySideEffects("mark_cross_published", { post, cross_id: crossId, reply }, persona);
+        await applySideEffects("mark_cross_published", { post, cross_id: crossId, reply, _persona_prefix: prefix }, persona);
         break;
       }
       case "log_decision": {
@@ -97,7 +100,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
       case "incident_resolved": {
         const keyword = payload.keyword || "";
         await ghUpdate(
-          `${persona}/progress-semaine.md`,
+          `${prefix}/progress-semaine.md`,
           (md) => resolveProgressEvent(md, keyword),
           `[JARVIS] ✅ Resolved: ${keyword.slice(0, 60)}`,
         );
@@ -106,7 +109,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
       case "log_cold": {
         const platform = ((payload.platform || "TWITTER").toUpperCase()) as "TWITTER" | "LINKEDIN";
         await ghUpdate(
-          `${persona}/cold/cold-outreach-log.md`,
+          `${prefix}/cold/cold-outreach-log.md`,
           (md) => appendColdLog(md, platform, payload.target || "", payload.vertical || "", payload.insight || "", payload.type || "DM"),
           `[JARVIS] 📨 Cold: ${payload.target || ""}`,
         );
@@ -118,19 +121,20 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
           insight: payload.insight || "",
           type: payload.type || "DM",
           targets: [{ target: payload.target || "" }],
+          _persona_prefix: prefix,
         }, persona);
         break;
       }
       case "log_interaction": {
         const platform = ((payload.platform || "TWITTER").toUpperCase()) as Platform;
         await ghUpdate(
-          `${persona}/engagement/engagement-log.md`,
+          `${prefix}/engagement/engagement-log.md`,
           (md) => appendEngagementLog(md, platform, payload.post || "", payload.reply || ""),
           `[JARVIS] 💬 Interaction: ${platform}`,
         );
         if (payload.event) {
           await ghUpdate(
-            `${persona}/progress-semaine.md`,
+            `${prefix}/progress-semaine.md`,
             (md) => appendProgressEvent(md, payload.event, platform, payload.activity || "", payload.action_taken || ""),
             `[JARVIS] 📋 Event: ${payload.event.slice(0, 50)}`,
           );
