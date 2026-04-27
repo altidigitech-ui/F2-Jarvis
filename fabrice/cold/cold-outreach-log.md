@@ -27,6 +27,13 @@
 | 27/04/2026 | 23:01 | @stan_peev | shopify-agency | Recurring support tickets performance — ghost billing + leftover snippets + checkout render bloat. | cold-reply | ⏳ |  |
 | 27/04/2026 | 23:01 | @itsbhaveshp | shopify-merchant | PageSpeed testing avant/après mais rate le code qui reste après uninstall. | cold-reply | ⏳ |  |
 | 27/04/2026 | 23:01 | @Mrgunsblazing | shopify-merchant | Graveyard leftover app code — rien dans le dashboard pour le détecter. | cold-reply | ⏳ |  |
+| 27/04/2026 | 23:08 | @0foxShop | shopify-merchant | robots.txt bloquant tous les crawlers + ghost billing — scan envoyé avec 3 screenshots | scan_result | ⏳ |  |
+| 27/04/2026 | 23:08 | @0xNinjas | shopify-merchant | App stack FBT+cart drawer injectant JS massif avant checkout, CR doublé après cleanup | reply | ⏳ |  |
+| 27/04/2026 | 23:08 | @JustenEcom | shopify-merchant | Leftover snippets d'apps désinstallées qui tankent PageSpeed silencieusement | reply | ⏳ |  |
+| 27/04/2026 | 23:08 | @stan_peev | agency | Recurring tickets performance = ghost billing + JS orphelin + checkout render bloat | reply | ⏳ |  |
+| 27/04/2026 | 23:08 | @itsbhaveshp | shopify-merchant | PageSpeed testing avant/après sans détecter le code résiduel post-désinstall | reply | ⏳ |  |
+| 27/04/2026 | 23:08 | @Mrgunsblazing | shopify-merchant | Graveyard de code orphelin qui ralentit silencieusement | reply | ⏳ |  |
+| 27/04/2026 | 23:08 | @Philo01 | shopify-merchant | Cold outreach StoreMD S7 | reply | ⏳ |  |
 
 -----
 
