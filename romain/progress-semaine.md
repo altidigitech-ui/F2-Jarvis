@@ -26,7 +26,7 @@
 | Métrique | Valeur |
 |----------|--------|
 | Cold envoyés S7 | 0 |
-| Engagements S7 | 21 |
+| Engagements S7 | 22 |
 
 -----
 
