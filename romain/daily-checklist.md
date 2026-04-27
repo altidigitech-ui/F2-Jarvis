@@ -78,13 +78,17 @@
 - [ ] Répondre aux dernières replies de la journée
 - [ ] Cross-engagement sur posts F du soir (si F publie sur LinkedIn)
 - [ ] PH : upvoter 1-2 produits + 1 commentaire substantif (2-3 min)
+- [ ] **IH — compte @foundrytwo (voix F2 "we") — 10 actions/jour (replies + engagement combinés)**
+- [ ] IH notifications d'abord : lancer Claude in Chrome avec `f2/engagement/chrome/IH-prompt-notifications.md` — répondre aux replies en attente EN PREMIER (compte dans les 10)
+- [ ] IH engagement : lancer `f2/engagement/chrome/IH-prompt-engagement.md` — compléter jusqu'à 10 actions avec des commentaires de valeur sur des posts d'autres founders
+- [ ] Logger toutes les actions IH dans `f2/engagement/engagement-log.md`
 
 ---
 
-## MERCREDI — ACTION SUPPLÉMENTAIRE
+## MERCREDI — ACTION SUPPLÉMENTAIRE (IH — compte @foundrytwo)
 
-- [ ] Publier le post IH build in public (depuis `f2/publication/posts-valides.md` section IH)
-- [ ] Répondre à chaque commentaire IH dans les 24h
+- [ ] Publier le post IH build in public (depuis `f2/publication/posts-valides.md` section IH) — **compte @foundrytwo, voix F2 "we"**
+- [ ] Répondre à chaque commentaire reçu sur ce post dans les 24h (voix F2)
 
 ---
 
@@ -106,6 +110,7 @@
 | Interactions LinkedIn | 15/jour | 🟡 Important |
 | Cross-engagement F+F2 | Chaque post | 🟡 Important |
 | Réponses aux replies | Toutes, < 2h | 🔴 NON |
+| IH actions (@foundrytwo) | 10/jour (replies + engagement) | 🟡 Important |
 | **Total interactions** | **30/jour minimum** | **🔴 NON** |
 
 ---

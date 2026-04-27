@@ -87,3 +87,13 @@ Pour la rédaction de contenu, charger le profil `creative` via cognitive-loader
 Pour la stratégie de contenu et le ciblage, charger le profil `strategic`.
 Pour adapter le ton à l'interlocuteur, charger le profil `social`.
 Fichiers pertinents : communication.md, motivation.md, langage.md, creativite.md, empathie.md.
+
+## Engagement IH (compte @foundrytwo)
+
+Quand Jarvis reçoit un scan IH (résultats de `f2/engagement/chrome/IH-prompt-engagement.md` ou `IH-prompt-notifications.md`) pour rédiger des commentaires F2 :
+
+1. **Vérifier les doublons** — lire `f2/engagement/engagement-log.md` AVANT de rédiger. Exclure les cibles déjà engagées. Signaler les doublons détectés.
+2. **Lire les données du scan** — utiliser les premières phrases exactes du post (champ 7) ET la question finale (champ 8) pour comprendre le sujet réel. Ne JAMAIS rédiger sur un résumé seul.
+3. **Vérifier l'activité de l'auteur** — lire le champ 10 du scan. Ne pas projeter "agency" = "agency Shopify". Si l'auteur n'est pas dans l'écosystème Shopify/e-com, ne pas forcer un angle StoreMD.
+4. **Pas de CTA/pitch** sauf si l'auteur est explicitement dans l'ICP (Shopify merchant ou agency e-com avec mention explicite dans le post).
+5. **Logger** chaque commentaire posté dans `f2/engagement/engagement-log.md`.
