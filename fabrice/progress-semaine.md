@@ -17,6 +17,7 @@
 | 27/04/2026 | Cross-engagement exécuté — F2 Twitter 15h00 — Couche A | Cross | Reply 15:04 | ✅ |
 | 27/04/2026 | Cross-engagement exécuté — [A] 68 stores / $12,400 — studio audit recap | Cross | Reply 17:39 | ✅ |
 | 27/04/2026 | Cold TWITTER x2 | TWITTER | Cold outreach 19:57 | Suivre les réponses |
+| 27/04/2026 | Twitter post publié — "23 audits / $300/mo bleed — aucun signal dashboard" | Twitter | Post publié 20:59 | Monitorer impressions + replies |
 
 -----
 
