@@ -28,6 +28,9 @@
 |Date|Sub|Post original (résumé + u/author)|Commentaire F|Karma gagné|Notes|
 |----|---|--------------------------------|-------------|-----------|-----|
 |    |   |                                |             |           |     |
+| 27/04/2026 | 18:44 | u/Firm_Ad8062 — Instagram ads or Facebook ads or both? (r/shopify) | Instagram-first pour demo 18-34 femmes home decor, retargeting Facebook ensuite, let Meta optimize at scale |  |  |
+| 27/04/2026 | 18:44 | u/sydoniegeorgia — Archived orders not showing items/products? (r/shopify) | Bug Shopify migration orders archivés — items dissociés après update, workaround via export CSV |  |  |
+| 27/04/2026 | 18:44 | u/According_Situation4 — Products deleted with no deletion history (r/shopify) | Shopify activity log gaps + write_products scope audit + collaborator access angle |  |  |
 
 -----
 
