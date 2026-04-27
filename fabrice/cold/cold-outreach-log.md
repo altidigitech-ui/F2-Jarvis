@@ -29,6 +29,8 @@
 |Date|Heure|Cible|Vertical|Insight|Type|Réponse|Suite|
 |----|-----|-----|--------|-------|----|-------|-----|
 |    |     |     |        |       |    |       |     |
+| 27/04/2026 |  | Raphaël Mille | DTC brand founder | €7M DTC brand Bloon Paris, expansion US en cours, refonte site récente — contexte parfait store health + AI readiness | Queued | ⏳ | Note connexion suggérée : 'Votre thread sur l'expansion US et les enjeux de refonte site était top — des questions sur l'agentic readiness de votre store US ?' |
+| 27/04/2026 |  | Antoine Marchado | DTC / e-com | Profil identifié dans le scan pipeline futur S7 — résultats partiels, à vérifier | Queued | ⏳ | Connexion sans note (quota limité — réserver les 3 notes aux top tier) |
 
 -----
 
