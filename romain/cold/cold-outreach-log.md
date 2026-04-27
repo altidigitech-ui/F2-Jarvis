@@ -33,6 +33,8 @@
 |    |     |     |        |       |    |       |     |
 | 27/04/2026 | 21:37 | Kevin Deyhem | DTC Skincare / Founder | En phase de scaling + hiring actif — angle CVR leak silencieux pendant la croissance | founder | ⏳ |  |
 | 27/04/2026 | 21:37 | Ian Kouwen | Agence Shopify Premier Partner | eCommerce Director Flatline Agency — angle visibilité portfolio marchands | agency | ⏳ |  |
+| 27/04/2026 | 21:59 | @john-springate-48314b3a6 | agence Shopify | Rebond post Shopify Analytics ce matin — gap post-clic vs GA4 | agency | ⏳ |  |
+| 27/04/2026 | 21:59 | @alberthalili | Senior PM Shopify / commerce | Post stores leaving money on the table — angle conversion/funnel | merchant-adjacent | ⏳ |  |
 
 -----
 
