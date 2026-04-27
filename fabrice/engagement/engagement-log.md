@@ -12,6 +12,11 @@
 |Date|Heure|Post original (résumé + @handle)|Reply F|Likes reçus|Replies reçues|
 |----|-----|-------------------------------|-------|-----------|-------------- |
 |    |     |                               |       |           |               |
+| 27/04/2026 | 19:56 | @MEEcom44 — most founders have no idea which apps are still in trial | the trial thing is the obvious one. the sneakier version: apps that you already uninstalled months ago. uninstalling doesn't cancel the subscription. scanned 90+ stores — ghost billing from removed apps shows up in about 85% of them. |  |  |
+| 27/04/2026 | 19:56 | @MEEcom44 — Merchants don't realize uninstalling only removes the app | yeah and most merchants don't find out until they actually go through their billing page line by line. I built a scanner that pulls active Shopify billing subscriptions, compares against what's installed, flags the gaps. 23 stores last week, 20 had at least one charge from an app they'd removed. |  |  |
+| 27/04/2026 | 19:56 | @haryoexpert_01 — free Shopify store audits / friction at checkout | the forced account one kills me every time. I've audited stores losing 30%+ at checkout just from that single friction point. most merchants don't even realize it's on because it's a default Shopify setting they never touched |  |  |
+| 27/04/2026 | 19:56 | @dvlp_studio — 10k visitors mean nothing if your store doesn't convert / friction at checkout | this is underrated. I'd add one more: too many apps injecting JavaScript into the checkout flow on mobile. customers don't see the stack — they just feel the lag between tapping checkout and something actually happening. |  |  |
+| 27/04/2026 | 19:56 | @BeauLondon2 — best subscription app on Shopify? | depends on your volume and how much you need to customize the renewal flow. Recharge is the standard but heavy. Skio is cleaner for DTC brands that want flexibility. Bold is fine for simple setups. what's your product — physical or digital? |  |  |
 
 -----
 
