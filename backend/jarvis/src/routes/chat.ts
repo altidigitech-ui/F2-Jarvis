@@ -431,7 +431,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     "BIBLE.md",
     "ANTI-IA.md",
     "JARVIS.md",
-    `${persona}/VOIX.md`,
+    resolvedMode === "f2" ? "f2/context.md" : `${persona}/VOIX.md`,
     resolvedMode === "f2" ? "f2/plan-hebdo.md" : `${persona}/plan-hebdo.md`,
   ];
   const contexts = await Promise.all(contextPaths.map(loadFile));
