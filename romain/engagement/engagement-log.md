@@ -59,3 +59,4 @@
 |Date|Action|Détail|
 |----|------|------|
 |    |      |      |
+| 27/04/2026 | 16:53 | Orange Slice — Automate any sales task with AI (YC-backed) | curious how this handles the research layer when you're running outbound across multiple e-com brands at once. do you pull brand-level signals — recent ad spend patterns, new growth/CX hires, post-funding activity — or is it mostly contact-level enrichment? because when you're managing 10-15 stores the prioritization layer matters as much as the messaging itself. |  |  |
