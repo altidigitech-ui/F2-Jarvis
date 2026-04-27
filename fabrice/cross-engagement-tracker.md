@@ -365,7 +365,7 @@ Second batch opens next week. DM if you want in.
 | 8 | A | Jeu 30/04 | 14h05 | R TW | agency 8 clients $1,400 | ☐ |
 | 9 | A | Jeu 30/04 | 15h05 | F2 TW | agency offer free scan | ☐ |
 | 10 | A | Jeu 30/04 | 17h05 | R LI | agency scan pitch | ☐ |
-| 11 | A | Ven 01/05 | 14h05 | R TW | week 7 recap 90 stores | ☐ |
+| 11 | A | Ven 01/05 | 14h05 | R TW | week 7 audit results | ☐ |
 | 12 | A | Ven 01/05 | 15h05 | F2 TW | AI readiness 42% | ☐ |
 | 13 | B | Mer 29/04 | 19h05 | R TW | 51/0 beta offer | ☐ |
 | 14 | B | Mer 29/04 | 20h05 | F2 TW | OAuth wall | ☐ |
