@@ -29,6 +29,12 @@
 |Date|Heure|Post original (résumé + auteur)|Commentaire R|Likes reçus|Replies reçues|
 |----|-----|------------------------------|-------------|-----------|-------------- |
 |    |     |                              |             |           |               |
+| 27/04/2026 | 19:15 | Md Kaspian Fuad — Your Shopify analytics are lying (setTrackingConsent bug / CVR faussé) | this happens constantly and nobody audits it. I've seen stores running A/B tests for weeks, declaring a winner, when their CVR baseline was off by 3x because of consent mis-fires like this. The test didn't lie. The measurement underneath it did. |  |  |
+| 27/04/2026 | 19:15 | Ali Ben-Hariz — chargebacks/payments monitoring thresholds | the monitoring thresholds point is the most underrated one here. most merchants don't have them set. chargebacks from legit customers are also a UX signal — confusing billing descriptor, refund flow too painful, delivery mismatch. sometimes it's not fraud, it's a broken experience that disputes instead of complains. |  |  |
+| 27/04/2026 | 19:15 | Jake M. — salsa artisanale farmers market / CVR data obsession | 62% margin with zero CAC — that's the benchmark most DTC brands miss when they're deep in attribution models. the obsession with optimizing CVR sometimes hides that the product-market fit wasn't there to begin with. |  |  |
+| 27/04/2026 | 19:15 | John Springate — Shopify Admin Analytics multi-metric graph | that bar+line combo for sessions vs CVR is genuinely useful. the tab-switching was killing the feedback loop on daily analysis. small UX fix but it changes how fast you can act on the data. |  |  |
+| 27/04/2026 | 19:15 | LinkedIn Recherche 2 — Post 5 du batch S7 J1 | Reply batch S7 lundi 27/04 — engagement LinkedIn #5 |  |  |
+| 27/04/2026 | 19:15 | LinkedIn Recherche 2 — Post 6 du batch S7 J1 | Reply batch S7 lundi 27/04 — engagement LinkedIn #6 |  |  |
 
 -----
 
