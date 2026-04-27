@@ -22,6 +22,7 @@
 | 27/04/2026 | 18:35 | @Philo01 | ecom | Se plaint d'apps Shopify mal codées qui font fuir les merchants — angle scripts fantômes + facturation zombie post-désinstallation | DM | ⏳ |  |
 | 27/04/2026 | 18:41 | @stan_peev | Agency / Shopify Plus Partner | 5 recurring support tickets chez ses clients — apps conflicting, scripts post-uninstall, billing non audité. CTA free scan client URL. | DM | ⏳ |  |
 | 27/04/2026 | 18:45 | @mstf_tna | E-commerce merchant / Shopify | Se plaint que combattre les chargebacks post-expédition est une bataille perdue — angle billing vulnerabilities / apps fantômes | DM | ⏳ |  |
+| 27/04/2026 | 18:49 | @Ella_biancca | E-commerce / Shopify brands | Parle du problème de conversion / trust sur product page. Angle DM : layer technique sous le CRO (ghost apps, scripts fantômes, billing). | DM | ⏳ |  |
 
 -----
 
