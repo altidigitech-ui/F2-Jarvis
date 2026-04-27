@@ -11,6 +11,7 @@
 |----|---------|----------|--------|------------------------|
 |    |         |          |        |                        |
 | 27/04/2026 | Twitter post publié — "Twitter Couche A Lun 27/04 — 23 audits / $300/mo b" | Twitter | Post publié 14:39 | Monitorer impressions + replies |
+| 27/04/2026 | Cross-engagement exécuté — Cross A1 Lun 27/04 — reply sur post Twitter R 14h0 | Cross | Reply 14:39 | ✅ |
 
 -----
 
