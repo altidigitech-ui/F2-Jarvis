@@ -19,6 +19,7 @@
 | 27/04/2026 | Cold TWITTER x2 | TWITTER | Cold outreach 19:57 | Suivre les réponses |
 | 27/04/2026 | Twitter post publié — "23 audits / $300/mo bleed — aucun signal dashboard" | Twitter | Post publié 20:59 | Monitorer impressions + replies |
 | 27/04/2026 | Cold TWITTER x6 | TWITTER | Cold outreach 23:01 | Suivre les réponses |
+| 27/04/2026 | Scan StoreMD proactif | TWITTER | Scan store @0foxShop — 69/100, 2 criticals (robots.txt bloquant + images alt text) | DM envoyé avec résultat |
 
 -----
 
