@@ -838,6 +838,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     };
     setMessages((prev) => [...prev, assistantMsg]);
 
+    let isResponseTimeout = false;
     try {
       if (fileContext) {
         filesToSend.push({ name: fileContext.name, content: fileContext.content });
@@ -864,7 +865,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
       const controller = new AbortController();
       abortRef.current = controller;
-      let isResponseTimeout = false;
 
       const res = await fetch("/api/chat", {
         method: "POST",
