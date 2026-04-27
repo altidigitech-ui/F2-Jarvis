@@ -31,6 +31,8 @@
 |Date|Heure|Cible|Vertical|Insight|Type|Réponse|Suite|
 |----|-----|-----|--------|-------|----|-------|-----|
 |    |     |     |        |       |    |       |     |
+| 27/04/2026 | 21:37 | Kevin Deyhem | DTC Skincare / Founder | En phase de scaling + hiring actif — angle CVR leak silencieux pendant la croissance | founder | ⏳ |  |
+| 27/04/2026 | 21:37 | Ian Kouwen | Agence Shopify Premier Partner | eCommerce Director Flatline Agency — angle visibilité portfolio marchands | agency | ⏳ |  |
 
 -----
 
