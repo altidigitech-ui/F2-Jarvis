@@ -336,7 +336,7 @@ Batch 2 next week. DM me if you want a spot.
 ```
 22/22 is the number I couldn't believe the first time. thought there'd be at least one exception.
 
-98 stores total now. not one clean store over 18 months old. the pattern holds every week.
+90 stores total now. not one clean store over 18 months old. the pattern holds every week.
 ```
 
 ---
