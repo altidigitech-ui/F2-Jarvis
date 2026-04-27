@@ -22,7 +22,7 @@ function appendTableRow(markdown: string, sectionTitle: string, row: string[]): 
   let lastTableRowIdx = -1;
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    if (!inSection && line.includes(sectionTitle)) { inSection = true; continue; }
+    if (!inSection && /^#+\s/.test(line) && line.includes(sectionTitle)) { inSection = true; continue; }
     if (inSection && /^##\s/.test(line)) break;
     if (inSection && /^\|/.test(line.trim())) lastTableRowIdx = i;
   }
