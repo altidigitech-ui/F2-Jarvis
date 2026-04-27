@@ -10,6 +10,7 @@
 |Date|Événement|Plateforme|Activité|Action prise / à prendre|
 |----|---------|----------|--------|------------------------|
 |    |         |          |        |                        |
+| 27/04/2026 | Twitter post publié — "Cross A1 — F Twitter 13h — 23 scans $300 bleed" | Twitter | Post publié 18:08 | Monitorer impressions + replies |
 
 -----
 
