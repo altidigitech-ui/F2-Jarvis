@@ -653,8 +653,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               {targets.hasIhPh && (
                 <CounterTile label="IH + PH" value={counters.ihPh} target={targets.ihPh} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
-              {targets.cross > 0 && (
-                <CounterTile label="Cross" value={counters.cross} target={targets.cross} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              {(targets.cross > 0 || (counters.crossTarget !== undefined && counters.crossTarget > 0)) && (
+                <CounterTile label="Cross" value={counters.cross} target={counters.crossTarget && counters.crossTarget > 0 ? counters.crossTarget : targets.cross} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
               {persona === "fabrice" && mode !== "f2" && (
                 <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
@@ -891,11 +891,11 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
                   onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
                 />
               )}
-              {targets.cross > 0 && (
+              {(targets.cross > 0 || (counters.crossTarget !== undefined && counters.crossTarget > 0)) && (
               <CounterTile
                 label="Cross"
                 value={counters.cross}
-                target={targets.cross}
+                target={counters.crossTarget && counters.crossTarget > 0 ? counters.crossTarget : targets.cross}
                 accentColor={accentColor}
                 onClick={() => setOpenFilePath(filePaths.crossEng)}
               />
