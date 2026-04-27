@@ -10,7 +10,7 @@
 
 |ID|Jour|Post cible|Heure cible|Heure réelle|Statut|Notes|
 |---|---|---|---|---|---|---|
-|A1|Lun 27/04|R Twitter 14h — 68 stores $12,400 cumul|14h05|~14:39|✅ Fait|Confirmé 14:39||
+|A1|Lun 27/04|R Twitter 14h — 68 stores $12,400 cumul|14h05|~14:39|✅ Fait|Confirmé 14:40|||
 |A2|Lun 27/04|F2 Twitter 15h — 68 stores since launch|15h05|—|⏳|À faire|
 |A3|Mar 28/04|R Twitter 14h — zombie apps provocateur|14h05|—|⏳|À faire|
 |A4|Mar 28/04|F2 Twitter 15h — 94% ghost billing|15h05|—|⏳|À faire|
