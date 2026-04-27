@@ -64,3 +64,4 @@
 | 27/04/2026 | 16:59 | VIDEO AI ME — Create videos with AI actors that sound and look real | upvote |  |  |
 | 27/04/2026 | 16:59 | Jet AI Agents — Build business AI agents in minutes | upvote |  |  |
 | 27/04/2026 | 16:59 | Waitlister — The waitlist software to launch your product | upvote |  |  |
+| 27/04/2026 | 17:01 | Epismo Agent Package | upvote |  |  |
