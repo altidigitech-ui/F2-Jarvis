@@ -35,6 +35,8 @@
 | 27/04/2026 | 19:15 | John Springate — Shopify Admin Analytics multi-metric graph | that bar+line combo for sessions vs CVR is genuinely useful. the tab-switching was killing the feedback loop on daily analysis. small UX fix but it changes how fast you can act on the data. |  |  |
 | 27/04/2026 | 19:15 | LinkedIn Recherche 2 — Post 5 du batch S7 J1 | Reply batch S7 lundi 27/04 — engagement LinkedIn #5 |  |  |
 | 27/04/2026 | 19:15 | LinkedIn Recherche 2 — Post 6 du batch S7 J1 | Reply batch S7 lundi 27/04 — engagement LinkedIn #6 |  |  |
+| 27/04/2026 | 19:25 | Olivia Boro — retention layer / unit economics | the unit economics are the real pitch here. if retention goes up 10%, supportable CAC doubles. agencies that get this can outbid competitors on acquisition because they're playing a longer game.  most sell the feature stack. they should be selling the math. |  |  |
+| 27/04/2026 | 19:25 | Campbell Pritchard — podcast ads / host seeding before paid | the 3-week gap before scaling is the part most media buyers skip. they see week 1 ROAS, allocate budget, and wonder why it collapses by month 2 when host novelty wears off.  host seeding before paid is also massively underrated. it's probably responsible for half the lift but it's invisible in the attribution model. doesn't show up in a dashboard, so it doesn't happen. |  |  |
 
 -----
 
