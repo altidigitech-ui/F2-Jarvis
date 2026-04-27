@@ -56,6 +56,8 @@
 
 ## PH
 
+> **Règle de saisie :** 1 ligne par action. Upvote + commentaire sur le même produit = **2 lignes distinctes**. Ne jamais fusionner sur 1 ligne.
+
 |Date|Heure|Produit|Action|Détail|
 |----|-----|-------|------|------|
 |    |     |       |      |      |
