@@ -10,8 +10,8 @@
 
 |ID|Jour|Post cible|Heure cible|Heure réelle|Statut|Notes|
 |---|---|---|---|---|---|---|
-|A1|Lun 27/04|F Twitter 13h — 23 scans $300 bleed|13h05|—|⏳|À faire|
-|A2|Lun 27/04|F2 Twitter 15h — 68 stores since launch|15h05|—|⏳|À faire|
+|A1|Lun 27/04|F Twitter 13h — 23 scans $300 bleed|13h05|~18:14|✅ Fait|Cross Couche A lundi 27/04||
+|A2|Lun 27/04|F2 Twitter 15h — 68 stores since launch|15h05|~18:14|✅ Fait|Cross Couche A2 lundi 27/04||
 |A3|Mar 28/04|F Twitter 13h — thread $35k/mo (tweet 1)|13h05|—|⏳|À faire|
 |A4|Mar 28/04|F2 Twitter 15h — 94% ghost billing|15h05|—|⏳|À faire|
 |A5|Mar 28/04|F LinkedIn 17h30 — 40+ builder story|17h35|—|⏳|À faire|
