@@ -43,6 +43,12 @@
 |Date|Groupe|Post original (résumé + auteur)|Commentaire F|Réactions|Notes|
 |----|------|------------------------------|-------------|---------|-----|
 |    |      |                              |             |         |     |
+| 27/04/2026 | 19:25 | Richard Williamson — looking for supplier for USA/Europe, pet accessories (Shopify DropShipping group) | For pet accessories US/EU: Petdropshipping.com has decent EU warehouse coverage. For US, PawsomeDropshipping and CJ have pet-specific catalogs. The real differentiator is return policy — pet accessory customers return a lot, make sure your supplier handles it. |  |  |
+| 27/04/2026 | 19:25 | Sahil Shaik — need women shapewear supplier (Shopify DropShipping group) | For shapewear: Shapewear Wholesale on 1688 or Chinabrands have solid margins. But sizing inconsistency is the killer — returns destroy profit on this niche. Look for suppliers who offer consistent sizing charts you can publish on your product pages. |  |  |
+| 27/04/2026 | 19:25 | Mohammad Mujtaba — how much money to start dropshipping (Shopify DropShipping group) | Realistically $300-500 to do it properly. Shopify $29/mo, domain $15/yr, ~$200-300 for initial paid ads testing. You can technically start with $100 but you won't have enough ad budget to get meaningful data. The mistake most people make is underfunding the testing phase. |  |  |
+| 27/04/2026 | 19:25 | Arden Blaker — how long to get sales on a new store (Shopify DropShipping group) | Organic only: 4-10 weeks. Paid: sales possible by day 3 if product-market fit is there. Bottleneck is usually store quality and product selection, not time. Slow stores lose warm traffic before checkout loads. |  |  |
+| 27/04/2026 | 19:25 | BraveCranberry953 — looking for shipping service from China to US (Shopify DropShipping group) | 3 options that work now: CJ Logistics, Yunexpress, 4PX. Everything else is 20+ days. CJ integrates directly into most Shopify apps. Pro tip: check tracking update frequency — 3-day gaps generate support tickets even when package is fine. |  |  |
+| 27/04/2026 | 19:25 | Euro Mart — looking for a Shopify Expert (Shopify DropShipping group) | Debugging angle — what specifically do you need help with? Theme customization, app integrations, speed optimization, checkout flows? Each is a different kind of expertise. Giving more context will help you find the right person faster. |  |  |
 
 -----
 
