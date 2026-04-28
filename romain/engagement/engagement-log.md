@@ -71,6 +71,7 @@
 |Date|Post original (résumé + auteur)|Commentaire R|
 |----|------------------------------|-------------|
 |    |                              |             |
+| 28/04/2026 | 13:50 | we-built-a-browser-automation-ai-agent-heres-what-we-learned-about-distribution-that-nobody-talks-about-c230fd559b | Reply à @Chloeally — moat vs operational improvement, speed-of-replication test, domain-locked data (ghost billing Shopify stack) |  |  |
 
 
 -----
