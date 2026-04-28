@@ -24,6 +24,7 @@
 | 28/04/2026 | Twitter post publié — "🧵 THREAD DTC $35k/mo — 3 issues / 60s" | Twitter | Post publié 13:00 | Monitorer impressions + replies |
 | 28/04/2026 | Cross-engagement exécuté — R LinkedIn 17h00 — $12,400 breakdown from 68 scans | Cross | Reply 18:19 | ✅ |
 | 28/04/2026 | Cross-engagement exécuté — R Twitter 14h00 — Unpopular opinion: zombie apps p | Cross | Reply 18:19 | ✅ |
+| 28/04/2026 | Cross-engagement exécuté — F2 Twitter 15h00 — 94% ghost billing — Shopify/Str | Cross | Reply 18:19 | ✅ |
 
 -----
 
