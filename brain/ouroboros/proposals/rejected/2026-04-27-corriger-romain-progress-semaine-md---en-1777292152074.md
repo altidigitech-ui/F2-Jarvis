@@ -15,3 +15,7 @@ statut: pending
 - Fichier: romain/progress-semaine.md
 - Modifier: `| Engagements S7 | 3 |` → `| Engagements S7 | 0 |`
 **Risques si ignoré:** Le dashboard Romain affiche un compteur d'engagement fictif (+3). Toute comparaison S7 vs S6 sera faussée. Le bilan vendredi sera incorrect.
+
+
+---
+**Action reject par romain** : je comprend pas de quoi tu me parle exactement eplique moi mieu.
