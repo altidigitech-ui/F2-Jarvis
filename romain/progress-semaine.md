@@ -39,6 +39,7 @@
 | 28/04/2026 | Twitter post publié — "Mar 28/04 — 94% ghost billing — Shopify/Stripe don" | Twitter | Post publié 17:52 | Monitorer impressions + replies |
 | 28/04/2026 | Twitter post publié — "Mar 28/04 — 94% ghost billing — Shopify/Stripe don" | Twitter | Post publié 17:52 | Monitorer impressions + replies |
 | 28/04/2026 | Twitter post publié — "Jour — Sujet" | Twitter | Post publié 17:52 | Monitorer impressions + replies |
+| 28/04/2026 | Cross-engagement exécuté — [A] 40+ stores scanned — ghost billing builder sto | Cross | Reply 17:55 | ✅ |
 
 -----
 
