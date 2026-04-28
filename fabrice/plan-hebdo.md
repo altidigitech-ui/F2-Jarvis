@@ -6,7 +6,7 @@
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Lun 27/04|`store-md-horror-slow-store`|23 audits / $300/mo bleed — aucun signal dashboard|📅|
+|Lun 27/04|`store-md-horror-slow-store`|23 audits / $300/mo bleed — aucun signal dashboard|✅|
 |Mar 28/04|`store-md-before-after-billing`|🧵 THREAD DTC $35k/mo — 3 issues / 60s|⏳ manuel|
 |Mer 29/04|`store-md-list-hidden`|3 things Shopify dashboard won't tell you|📅|
 |Jeu 30/04|`store-md-money-visitors`|$189/mo × 14 months = $2,646 quietly gone|📅|
@@ -52,7 +52,7 @@
 
 |Jour|Cross Couche A (13h05)|Cross Couche B (18h05)|
 |---|---|---|
-|Lun 27/04|⏳|— (pas de Couche B lundi)|
+|Lun 27/04|✅|— (pas de Couche B lundi)|
 |Mar 28/04|⏳|— (pas de Couche B mardi)|
 |Mer 29/04|⏳|⏳|
 |Jeu 30/04|⏳|⏳|
