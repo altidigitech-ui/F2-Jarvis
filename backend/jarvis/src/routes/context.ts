@@ -132,7 +132,13 @@ function countTodayInSection(content: string, sectionTitle: string, today: strin
 
 function countTodayAny(content: string, today: string): number {
   if (!content) return 0;
-  return tableRows(content).filter((r) => r[0]?.includes(today)).length;
+  const rows = tableRows(content).filter((r) => r[0]?.includes(today));
+  const seen = new Set<string>();
+  for (const r of rows) {
+    const handle = (r[2] || r[1] || "").trim().toLowerCase();
+    if (handle) seen.add(handle);
+  }
+  return seen.size;
 }
 
 function countCrossFromExecutionLog(executionLog: string, today: string): number {
