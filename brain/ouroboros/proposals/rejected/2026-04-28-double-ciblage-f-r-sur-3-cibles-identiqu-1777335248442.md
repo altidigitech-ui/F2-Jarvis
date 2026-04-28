@@ -15,3 +15,7 @@ statut: pending
 - **@JustenEcom** : Romain DM 22h26 (app bloat/load speed), Fabrice cold-reply 23h01 + 23h08
 **Recommandation:** Mettre en place un fichier partagé de cibles déjà contactées (ou une colonne `Déjà ciblé par` dans les cold templates) pour éviter les doublons cross-persona. Court terme : blacklister @Philo01, @stan_peev, @JustenEcom pour le cold F+R cette semaine. Pas de correction de log nécessaire.
 **Risques si ignoré:** Un merchant qui reçoit 2 DMs StoreMD en 24h peut identifier la stratégie coordonnée, signaler les comptes, ou tweeter dessus publiquement. Risque burn de cible + risque réputation.
+
+
+---
+**Action reject par romain** : On va tous changer 
