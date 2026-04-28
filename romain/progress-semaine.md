@@ -30,6 +30,7 @@
 | 27/04/2026 | Engagement PH x6 | PH | 5 upvotes + 1 commentaire PH | Monitorer réponses |
 | 27/04/2026 | Demandes de connexion LinkedIn x9 (cold prep) | LINKEDIN | Justin Ledvina, Adison Clark, Andreas Gähwiler, Nicole Pu, Zach Sapiro, Nellie Henningsson, Gianvito Montrone, Chuck Caupain, Tamara Masson — Youri Vaisse déjà en attente | Attendre acceptations → DM |
 | 27/04/2026 | Rejoint 10 groupes Facebook (setup présence) | FACEBOOK | Shopify Dropshipping, E-commerce dropshipping/e-business, Shopify for Beginners, DropShipping/Shopify-France, Entrepreneurs et freelances, Expertos en Shopify, GoHighLevel Agency Owners, Shopify Experts & Newbies, N8N Templates, MARCHAND DE BIENS PARTNERS | Commencer à poster cette semaine |
+| 28/04/2026 | Twitter post publié — "Lun 27/04 — 68 stores / $12,400 — studio audit rec" | Twitter | Post publié 12:14 | Monitorer impressions + replies |
 
 -----
 
