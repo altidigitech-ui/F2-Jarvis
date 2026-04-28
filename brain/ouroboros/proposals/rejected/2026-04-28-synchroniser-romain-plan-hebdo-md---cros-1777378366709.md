@@ -16,3 +16,7 @@ statut: pending
 - Section: `## 5. CROSS-ENGAGEMENT R↔F↔F2`
 - Modifier: `|Lun 27/04|⏳|— (pas de Couche B lundi)|` → `|Lun 27/04|✅|— (pas de Couche B lundi)|`
 **Risques si ignoré:** Le plan affiche un retard fictif sur le cross du Lundi. Fausse lecture de l'état de la semaine.
+
+
+---
+**Action reject par romain** : J'ai pas compris 
