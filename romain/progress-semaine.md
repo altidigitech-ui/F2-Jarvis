@@ -34,6 +34,7 @@
 | 28/04/2026 | Twitter post publié — "Cross A3 — F Twitter 13h — thread $35k/mo (tweet 1" | Twitter | Post publié 17:12 | Monitorer impressions + replies |
 | 28/04/2026 | Twitter post publié — "[A] Unpopular opinion: you're paying for dead apps" | Twitter | Post publié 17:12 | Monitorer impressions + replies |
 | 28/04/2026 | Twitter post publié — "[A] 94% ghost billing — Shopify/Stripe don't sync" | Twitter | Post publié 17:12 | Monitorer impressions + replies |
+| 28/04/2026 | Twitter post publié — "Cross A4 — F2 Twitter 15h — 94% ghost billing" | Twitter | Post publié 17:12 | Monitorer impressions + replies |
 
 -----
 
