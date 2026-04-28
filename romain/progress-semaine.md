@@ -41,6 +41,7 @@
 | 28/04/2026 | Twitter post publié — "Jour — Sujet" | Twitter | Post publié 17:52 | Monitorer impressions + replies |
 | 28/04/2026 | Cross-engagement exécuté — [A] 40+ stores scanned — ghost billing builder sto | Cross | Reply 17:55 | ✅ |
 | 28/04/2026 | LinkedIn post publié — "Cross A5 — F LinkedIn 17h30 — 40+ builder story" | LinkedIn | Post publié 17:55 | Monitorer impressions + replies |
+| 28/04/2026 | Cross-engagement exécuté — F LinkedIn 17h30 — 40+ builder story | Cross | Reply 17:55 | ✅ |
 
 -----
 
