@@ -25,6 +25,7 @@
 | 28/04/2026 | Cross-engagement exécuté — R LinkedIn 17h00 — $12,400 breakdown from 68 scans | Cross | Reply 18:19 | ✅ |
 | 28/04/2026 | Cross-engagement exécuté — R Twitter 14h00 — Unpopular opinion: zombie apps p | Cross | Reply 18:19 | ✅ |
 | 28/04/2026 | Cross-engagement exécuté — F2 Twitter 15h00 — 94% ghost billing — Shopify/Str | Cross | Reply 18:19 | ✅ |
+| 28/04/2026 | Cross-engagement exécuté — [A] Unpopular opinion: you're paying for dead apps | Cross | Reply 18:35 | ✅ |
 
 -----
 
