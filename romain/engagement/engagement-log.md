@@ -71,6 +71,7 @@
 |Date|Post original (résumé + auteur)|Commentaire R|
 |----|------------------------------|-------------|
 |    |                              |             |
+| 28/04/2026 | 16:27 | TimezonePair — @rodpru — Launched TimezonePair, live clocks + meeting overlap for any two cities (90k pre-rendered pages, page-1 GSC in 3 days) | The 90,000 pre-rendered city-pair pages are a smart programmatic SEO play. Page-1 rankings in 3 days means the query surface has low domain authority competition — city + city + timezone combinations are exactly the long-tail clusters that fully static generation dominates before anyone notices. The embed widget is probably your highest-leverage next move. Every integration on a productivity blog or async team guide is a backlink you don't have to manually chase. That's where free utility traffic starts compounding into authority you can actually use later. What's the plan once authority stacks? Keep it permanently free and use the traffic as a funnel, or is there a monetization layer in mind? |  |  |
 
 
 
