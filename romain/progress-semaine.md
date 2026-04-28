@@ -38,6 +38,7 @@
 | 28/04/2026 | Twitter post publié — "[A] $12,400 breakdown from 68 scans (long form)" | Twitter | Post publié 17:13 | Monitorer impressions + replies |
 | 28/04/2026 | Twitter post publié — "Mar 28/04 — 94% ghost billing — Shopify/Stripe don" | Twitter | Post publié 17:52 | Monitorer impressions + replies |
 | 28/04/2026 | Twitter post publié — "Mar 28/04 — 94% ghost billing — Shopify/Stripe don" | Twitter | Post publié 17:52 | Monitorer impressions + replies |
+| 28/04/2026 | Twitter post publié — "Jour — Sujet" | Twitter | Post publié 17:52 | Monitorer impressions + replies |
 
 -----
 
