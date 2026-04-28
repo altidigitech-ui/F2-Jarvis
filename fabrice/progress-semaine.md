@@ -30,6 +30,7 @@
 | 28/04/2026 | Cross-engagement exécuté — [A] $12,400 breakdown from 68 scans (long form) | Cross | Reply 18:35 | ✅ |
 | 28/04/2026 | Twitter post publié — "[A] 40+ stores scanned — ghost billing builder sto" | Twitter | Post publié 18:36 | Monitorer impressions + replies |
 | 28/04/2026 | Cold TWITTER x1 (@motomadic) | TWITTER | Cold outreach 18:59 | Suivre les réponses |
+| 28/04/2026 | Cold TWITTER x1 (@skullyctzbeard) | TWITTER | Cold outreach 19:04 | Suivre les réponses |
 
 -----
 
@@ -51,7 +52,7 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S7 | 11 |
+| Cold envoyés S7 | 12 |
 | Engagements Twitter S7 | 18 |
 | Scans proactifs S7 | 1 |
 
