@@ -34,6 +34,7 @@
 | 28/04/2026 | Cold TWITTER x1 (@MsPrincessNash) | TWITTER | Cold outreach 19:59 | Suivre les réponses |
 | 28/04/2026 | Cold TWITTER x1 (@the7letter_) | TWITTER | Cold outreach 20:07 | Suivre les réponses |
 | 28/04/2026 | Cold TWITTER x1 (@moudoka1) | TWITTER | Cold outreach 20:19 | Suivre les réponses |
+| 28/04/2026 | Twitter post publié — "40+ stores scanned — ghost billing builder story" | Twitter | Post publié 20:21 | Monitorer impressions + replies |
 
 -----
 
