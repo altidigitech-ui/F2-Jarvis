@@ -18,7 +18,7 @@
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
 |Mer 29/04|`store-md-beta-10-spots`|B1 — No install hook (51/0 OAuth transparent)|📅|
-|Jeu 30/04|`store-md-scan-demo-agency`|B2 — Scan result live (ghost billing + checkout + AI)|📅|
+|Jeu 30/04|`store-md-scan-demo-agency`|B2 — Scan result live URL-only (score + apps + perf → ghost billing hook install)|📅|
 |Ven 01/05|aucune|B3 — Builder story: why no-auth first|📅|
 |Sam 02/05|aucune|B4 — Spots urgency (6/10 gone, 4 left)|📅|
 
