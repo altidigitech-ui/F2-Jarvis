@@ -434,7 +434,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
 
   // Context files — operational knowledge loaded every message
   const contextPaths = [
-    "CLAUDE.md",
+    "CLAUDE-JARVIS.md",
     "BIBLE.md",
     resolvedMode === "f2" ? "f2/context.md" : `${persona}/VOIX.md`,
     resolvedMode === "f2" ? "f2/plan-hebdo.md" : `${persona}/plan-hebdo.md`,
