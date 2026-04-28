@@ -36,6 +36,7 @@
 | 27/04/2026 | 23:08 | @Philo01 | shopify-merchant | Cold outreach StoreMD S7 | reply | ⏳ |  |
 | 28/04/2026 | 18:59 | @motomadic | ecommerce | Boutique Shopify en panne — -75% ventes en 24h, suspect checkout/app conflict. DM envoyé en anglais avec offre scan URL-only sans install. | store_owner | ⏳ |  |
 | 28/04/2026 | 19:04 | @skullyctzbeard | ecommerce | Shopify bug live — Judge Me sync cassé + multiple issues simultanés + orders qui s'accumulent. Angle app conflict cascade. | DM | ⏳ |  |
+| 28/04/2026 | 19:59 | @MsPrincessNash | merchant | Scan proactif awesomegnarlyworld — score 66/100. robots.txt Disallow:/ bloque tous les crawlers, meta description manquante, 5 images sans alt text, og:image absente. DM avec résultats exacts après commentaire sur sa photo. | scan-proactif | ⏳ |  |
 
 -----
 
