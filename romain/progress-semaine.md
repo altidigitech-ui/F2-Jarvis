@@ -60,7 +60,7 @@
 | Métrique | Valeur |
 |----------|--------|
 | Cold envoyés S7 | 10 |
-| Engagements S7 | 93 |
+| Engagements S7 | 94 |
 | LinkedIn connexions envoyées S7 | 9 |
 | Groupes Facebook rejoints S7 | 10 |
 
