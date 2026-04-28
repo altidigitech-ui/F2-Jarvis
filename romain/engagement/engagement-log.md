@@ -99,3 +99,9 @@
 | 27/04/2026 | 16:59 | Jet AI Agents — Build business AI agents in minutes | upvote | |
 | 27/04/2026 | 16:59 | Waitlister — The waitlist software to launch your product | upvote | |
 | 27/04/2026 | 17:01 | Epismo Agent Package | upvote | |
+| 28/04/2026 | 18:14 | The Agentic Sales Agent by Crono — https://www.producthunt.com/products/crono-4 | upvote |  |  |
+| 28/04/2026 | 18:14 | CartGhost — https://www.producthunt.com/products/cartghost | upvote |  |  |
+| 28/04/2026 | 18:14 | CartGhost — https://www.producthunt.com/products/cartghost | WhatsApp for cart recovery is a smart bet. Open rates crush email and SMS on that channel, no debate there. But I'm curious about the European side. Meta's WhatsApp Business API has strict template approval rules, and GDPR consent for transactional messages on WhatsApp sits in a grey zone most merchants don't think about until they get flagged. How are you handling opt-in flows? Integrated into Shopify checkout directly, or does the merchant need a separate consent layer? Also curious about recovery rates. Most email-based solutions I've tested hover around 5-10% on abandoned carts. What are you seeing on WhatsApp specifically? |  |  |
+| 28/04/2026 | 18:14 | Social Fetch — https://www.producthunt.com/products/social-fetch | upvote |  |  |
+| 28/04/2026 | 18:14 | OrcaSheets AI Reports — https://www.producthunt.com/products/orcasheets | upvote |  |  |
+| 28/04/2026 | 18:14 | nRev — https://www.producthunt.com/products/nrev | upvote |  |  |
