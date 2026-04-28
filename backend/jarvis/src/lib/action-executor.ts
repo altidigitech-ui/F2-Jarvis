@@ -14,7 +14,7 @@ import {
   updateColdReply,
 } from "./markdown.js";
 
-type Persona = "fabrice" | "romain";
+type Persona = "fabrice" | "romain" | "f2";
 type Platform = "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH";
 
 // ---------------------------------------------------------------------------
@@ -514,7 +514,7 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
 
   const { data: row, error: readErr } = await sb
     .from("jarvis_pending_actions")
-    .select("*, jarvis_conversations!inner(persona)")
+    .select("*, jarvis_conversations!inner(persona, mode)")
     .eq("id", actionId)
     .single();
 
@@ -522,7 +522,7 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
     throw new Error(`[action-executor] pending not found: ${readErr?.message || actionId}`);
   }
 
-  const action = row as PendingAction & { jarvis_conversations: { persona: Persona } };
+  const action = row as PendingAction & { jarvis_conversations: { persona: Persona; mode?: string } };
 
   if (action.status === "executed") {
     return action;
@@ -533,7 +533,8 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
   }
 
   const persona = action.jarvis_conversations.persona;
-  const effectivePersona = (action.params._persona_prefix as Persona) || persona;
+  const conversationMode = action.jarvis_conversations.mode;
+  const effectivePersona = (action.params._persona_prefix as Persona) || (conversationMode === "f2" ? "f2" : persona);
 
   try {
     const { path, commitPrefix } = resolveFilePath(action.action_type, effectivePersona, action.params);
