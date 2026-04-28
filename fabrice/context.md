@@ -43,10 +43,14 @@ Message central : "le builder qui construit des AI agents pour résoudre des pro
 | **Facebook** | profil perso | FB Groups e-com et creators (YouTube Creators Hub). | 5-8 commentaires/jour |
 | **IndieHackers** | via @foundrytwo | Pas de compte perso F actif sur IH. | — |
 | **ProductHunt** | profil perso F | Karma farming + support launch day F2. | intégré |
+| **TikTok** | @FabGangi (à créer) | Distribution vidéo — série 10 vidéos storefront merchants. Canal cold vidéo. | 1 vidéo/jour (série) |
+| **Instagram** | @FabGangi (à créer) | Repost TikTok + stories storefront. Canal froid visuel. | 1 post/jour (série) |
 
 Les volumes par canal se somment pour respecter les totaux de §5.
 
 > **⚠️ Observation stratégique S7 (28/04/2026) :** L'engagement Twitter et LinkedIn cible en pratique d'autres builders/marketeurs SaaS — pas des merchants e-com. ROI engagement quasi nul. **Stratégie révisée :** Twitter et LinkedIn = présence produit uniquement (posts). L'acquisition merchant passe par Reddit/Facebook (terrain) + cold outreach personnalisé avec scans proactifs. Ne pas investir d'énergie dans les 15 interactions/jour sur ces deux canaux.
+
+> **🎬 Lancement TikTok + Instagram S7 (28/04/2026) :** Série de **10 vidéos** lancée ce soir. Angle : scan proactif live sur des boutiques réelles — on trouve les gens là où ils vendent (TikTok Shop, Instagram Shops, storefronts actifs). Chaque vidéo = 1 boutique scannée en live + résultats + hook cold. Objectif : acquisition merchant directe via DM post-vidéo. Ce canal remplace l'énergie perdue sur l'engagement Twitter/LinkedIn.
 
 ---
 
