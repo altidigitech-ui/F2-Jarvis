@@ -873,29 +873,32 @@ DM me your URL or scan direct: https://storemd.vercel.app/
 **POST (ANGLAIS — À PUBLIER) :**
 
 ```
-this is what a StoreMD report actually shows.
+this is what a StoreMD report looks like without installing anything.
 
-scanned a store this morning:
+scanned a store this morning — just the URL:
 
-ghost billing: 2 apps still active on Stripe, $78/mo combined, 7 months running = $546 unrecovered
-checkout: 11 scripts on page, 3 conflicting on same DOM element, mobile load 4.8s
-AI readiness: schema missing on 63% of products, invisible on category-level AI queries
+score: 62/100
+apps detected: 14 injected scripts, 4 still firing from apps that look uninstalled
+performance: 4.8s mobile load, checkout page 127 render-blocking requests
+AI readiness: schema missing on 63% of products, invisible on category queries
 
-took 60 seconds to generate. took 20 minutes to explain to the merchant why ads weren't converting.
+took 60 seconds.
 
-want yours? DM me the URL. no install needed.
+the part I can't see from the URL alone: whether those 4 ghost scripts are still billing on Stripe. that needs 1-click install access — which I'll ask for after you've seen the report.
+
+DM me your .myshopify.com URL. no install first. report within the hour.
 
 [VIDEO]
 ```
 
 **REPLY :**
 ```
-https://storemd.vercel.app/
+want yours? https://storemd.vercel.app/ — or DM the URL directly.
 ```
 
-**TRADUCTION :** > Voilà ce qu'un rapport StoreMD montre concrètement. Scanné une boutique ce matin : ghost billing 78$/mois / 7 mois = 546$ non récupérés, checkout 4,8s, AI readiness schema absent sur 63% des produits.
+**TRADUCTION :** > Voilà ce qu'un rapport StoreMD montre sans installation. Score 62/100, 14 scripts détectés dont 4 d'apps qui semblent désinstallées, perf 4,8s, schema absent 63%. Ce que le scan URL-only ne voit pas : si ces apps facturent encore sur Stripe — ça, c'est l'étape suivante avec l'install 1-clic, après la confiance.
 
-**Notes :** Couche B — B2 · Chiffres adaptés aux résultats réels du scan si disponibles · Nouveau scenario S7 beta
+**Notes :** Couche B — B2 · Option 2 validée : URL-only = rapport partiel + ghost billing = hook install après confiance · Conforme BIBLE §3 — aucun claim billing sans OAuth
 
 ---
 
@@ -941,9 +944,11 @@ https://storemd.vercel.app/
 ```
 6 of the 10 beta spots went this week.
 
-4 left. each gets a manual scan — full report, ghost billing audit, checkout analysis, AI readiness score.
+4 left. each gets a manual scan — score, app detection, checkout analysis, AI readiness.
 
 no install. no Shopify OAuth. just a .myshopify.com URL in DM.
+
+if the scan flags ghost billing risk, I'll ask for 1-click install to confirm. your call.
 
 under 2 minutes to scan. report back same day.
 ```
