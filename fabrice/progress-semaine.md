@@ -28,6 +28,7 @@
 | 28/04/2026 | Cross-engagement exécuté — [A] Unpopular opinion: you're paying for dead apps | Cross | Reply 18:35 | ✅ |
 | 28/04/2026 | Cross-engagement exécuté — [A] 94% ghost billing — Shopify/Stripe don't sync | Cross | Reply 18:35 | ✅ |
 | 28/04/2026 | Cross-engagement exécuté — [A] $12,400 breakdown from 68 scans (long form) | Cross | Reply 18:35 | ✅ |
+| 28/04/2026 | Twitter post publié — "[A] 40+ stores scanned — ghost billing builder sto" | Twitter | Post publié 18:36 | Monitorer impressions + replies |
 
 -----
 
