@@ -4,7 +4,7 @@ import { getSupabase } from "../lib/supabase.js";
 import { ghUpdate } from "../lib/github.js";
 import { cacheInvalidateAll } from "../lib/cache.js";
 
-type Persona = "fabrice" | "romain";
+type Persona = "fabrice" | "romain" | "f2";
 
 type ActionRow = {
   id: string;
@@ -82,7 +82,8 @@ export async function actionExecuteBatchRoute(req: Request, res: Response): Prom
 
     for (const action of normalActions) {
       try {
-        const { path } = resolveFilePath(action.action_type, action.jarvis_conversations.persona, action.params);
+        const effectivePersona = (action.params._persona_prefix as Persona) || action.jarvis_conversations.persona;
+        const { path } = resolveFilePath(action.action_type, effectivePersona, action.params);
         if (!fileGroups.has(path)) fileGroups.set(path, []);
         fileGroups.get(path)!.push(action);
       } catch (err) {
@@ -104,10 +105,11 @@ export async function actionExecuteBatchRoute(req: Request, res: Response): Prom
         // Apply side-effects for each action in the group (non-blocking)
         for (const action of group) {
           try {
+            const sideEffectPersona = (action.params._persona_prefix as Persona) || action.jarvis_conversations.persona;
             await applySideEffects(
               action.action_type,
               action.params,
-              action.jarvis_conversations.persona
+              sideEffectPersona
             );
           } catch (err) {
             console.error(`[batch] side-effect failed for ${action.id}:`, err);
