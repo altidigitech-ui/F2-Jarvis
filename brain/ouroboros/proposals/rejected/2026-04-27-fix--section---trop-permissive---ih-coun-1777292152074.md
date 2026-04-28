@@ -18,3 +18,7 @@ statut: pending
   - Après : `if (!active && /^#{1,3}\s/.test(line) && line.includes(title)) { active = true; continue; }`
 **Impact:** Le counter IH de F2 reflètera les vrais engagements. Aucun impact sur Fabrice/Romain normal (leurs headers sont propres). Correction de 1 ligne.
 **Risques si ignoré:** Le dashboard F2 affiche `ih: 0` en permanence quelle que soit l'activité IH. Le timeline objectif engagement F2 reste à 0/N indéfiniment. Invisible jusqu'au vendredi où le bilan S7 sera faux.
+
+
+---
+**Action reject par romain** : Ce n'est plus d'actualité, renseigne toi sur le repo.
