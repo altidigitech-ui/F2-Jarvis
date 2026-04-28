@@ -47,7 +47,7 @@
 | Métrique | Valeur |
 |----------|--------|
 | Cold envoyés S7 | 10 |
-| Engagements Twitter S7 | 14 |
+| Engagements Twitter S7 | 15 |
 | Scans proactifs S7 | 1 |
 
 -----
