@@ -55,6 +55,14 @@
 | 27/04/2026 | 16:40 | r/AskReddit — What's the dumbest thing you've ever said at work? | Parlez ouvertement des mes ambitions, grosse erreur. |  |  |
 | 27/04/2026 | 16:40 | r/claude — TTL trop courte Claude Pro / abonnement arnaque | Opus 4.7 is hard xD |  |  |
 | 27/04/2026 | 16:40 | r/AskReddit — What motivated you to go to gym today? | Pas besoin de motivation quand c'est un plaisir ;) |  |  |
+| 28/04/2026 | 18:06 | r/AskReddit — Quel est le livre qui est resté votre préféré ? | L'art de la guerre |  |  |
+| 28/04/2026 | 18:06 | r/HunterXHunter — Les gardes me rendent tellement triste. Ils n'avaient littéralement pas le choix. | Les dessins dans Hunter c'est quelque chose quand même, comme quoi lire un manga et regarder l'animé ça n'a rien à voir. |  |  |
+| 28/04/2026 | 18:06 | r/AskReddit — Quel est votre jeu vidéo préféré ? | The last of us. |  |  |
+| 28/04/2026 | 18:06 | r/Naruto — Who is the best villain in Naruto? | Orochimaru, même si ce n'est plus vraiment un méchant à la fin il est quand même pratiquement immortel. |  |  |
+| 28/04/2026 | 18:06 | r/AskReddit — What do you think is a man's biggest fear? | La vérité |  |  |
+| 28/04/2026 | 18:06 | r/Naruto — I want to rewatch Naruto but remembering how bad the flash backs are is stopping me | Complètement d'accord mais tu as une meilleure solution, il faut le lire c'est la meilleure expérience que tu auras. |  |  |
+| 28/04/2026 | 18:06 | r/discussion — Est-ce la fin de l'IA grand public ? | En même temps avec les performances qu'il a c'est un peu normal, tu rajoutes à ça l'effet de mode autour de l'IA et les prix montent en flèche, il ne faut pas oublier que c'est avant tout un business. |  |  |
+| 28/04/2026 | 18:06 | r/olympiquedemarseille — Quelle ambiance, merci Habib | C'est vrai que prendre quelqu'un à parti qui est arrivé à la mi-saison ça envoie un message fort à ton groupe, tout le monde a envie de le suivre et l'écouter. Il arrive à nous faire regretter De Zerbi. |  |  |
 
 -----
 
