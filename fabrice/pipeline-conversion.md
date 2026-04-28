@@ -64,6 +64,7 @@ Une fois le merchant en beta :
 |---|------|-------------|-----------|--------------------------------------|------------|-----------|--------|
 | 1 | 28/04 | awesomegnarlyworld | awesomegnarlyworld.myshopify.com | 66/100 — robots.txt bloque tout, missing meta desc, missing OG, 5 img alt text | @MsPrincessNash | Twitter | 📤 envoyé |
 | 2 | 28/04 | the7letter | the7letter.com | 64/100 — robots.txt bloque tout, HTML 791KB (app bloat), server 1.5s, 5 img alt text | @the7letter_ | Twitter | 📤 envoyé |
+| 3 | 28/04 | thelunarjeweler | thelunarjeweler.com | 72/100 — robots.txt bloque tout, 2 img alt text, 1 link no text, mixed content HTTP/HTTPS (Instagram), HTML 290KB | @moudoka1 | Twitter | 📤 envoyé |
 
 ---
 
@@ -71,7 +72,7 @@ Une fois le merchant en beta :
 
 | Métrique | Cible S7 | Lun | Mar | Mer | Jeu | Ven | Sam | Total |
 |----------|----------|-----|-----|-----|-----|-----|-----|-------|
-| Scans proactifs envoyés | 30 (6/j) | | | | | | | 0 |
+| Scans proactifs envoyés | 30 (6/j) | | 3 | | | | | 3 |
 | URLs reçues inbound (posts) | 10+ | | | | | | | 0 |
 | Réponses reçues (>20% target) | 6+ | | | | | | | 0 |
 | Conversations actives | 10+ | | | | | | | 0 |
