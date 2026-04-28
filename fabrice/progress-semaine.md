@@ -33,6 +33,7 @@
 | 28/04/2026 | Cold TWITTER x1 (@skullyctzbeard) | TWITTER | Cold outreach 19:04 | Suivre les réponses |
 | 28/04/2026 | Cold TWITTER x1 (@MsPrincessNash) | TWITTER | Cold outreach 19:59 | Suivre les réponses |
 | 28/04/2026 | Cold TWITTER x1 (@the7letter_) | TWITTER | Cold outreach 20:07 | Suivre les réponses |
+| 28/04/2026 | Cold TWITTER x1 (@moudoka1) | TWITTER | Cold outreach 20:19 | Suivre les réponses |
 
 -----
 
@@ -54,7 +55,7 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S7 | 14 |
+| Cold envoyés S7 | 15 |
 | Engagements Twitter S7 | 18 |
 | Scans proactifs S7 | 1 |
 
