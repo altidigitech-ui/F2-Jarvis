@@ -69,6 +69,9 @@ export function appendColdLog(markdown: string, platform: "TWITTER" | "LINKEDIN"
 export function appendEngagementLog(markdown: string, platform: "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH", postSummary: string, reply: string): string {
   const now = new Date();
   const time = now.toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
+  if (platform === "IH") {
+    return appendTableRow(markdown, platform, [cestDate(), postSummary, reply]);
+  }
   return appendTableRow(markdown, platform, [cestDate(), time, postSummary, reply, "", ""]);
 }
 
