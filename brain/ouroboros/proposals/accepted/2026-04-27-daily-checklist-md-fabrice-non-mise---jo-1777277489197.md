@@ -25,3 +25,7 @@ statut: pending
   ```
 - Mettre à jour la date en en-tête : "Dernière mise à jour : 27/04/2026"
 **Risques si ignoré:** Routine S7 incomplète dans le document de référence quotidien → risque d'oubli sur les créneaux Couche B en milieu de semaine quand la charge mentale est haute.
+
+
+---
+**Action accept par romain** : propose moi le fix et detaille moi le beaucoup avant de touché a quoi que ce soit
