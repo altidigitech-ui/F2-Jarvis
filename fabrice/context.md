@@ -46,6 +46,8 @@ Message central : "le builder qui construit des AI agents pour résoudre des pro
 
 Les volumes par canal se somment pour respecter les totaux de §5.
 
+> **⚠️ Observation stratégique S7 (28/04/2026) :** L'engagement Twitter et LinkedIn cible en pratique d'autres builders/marketeurs SaaS — pas des merchants e-com. ROI engagement quasi nul. **Stratégie révisée :** Twitter et LinkedIn = présence produit uniquement (posts). L'acquisition merchant passe par Reddit/Facebook (terrain) + cold outreach personnalisé avec scans proactifs. Ne pas investir d'énergie dans les 15 interactions/jour sur ces deux canaux.
+
 ---
 
 ## 5. Volumes globaux non-négociables
