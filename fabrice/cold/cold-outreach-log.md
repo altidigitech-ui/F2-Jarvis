@@ -38,6 +38,7 @@
 | 28/04/2026 | 19:04 | @skullyctzbeard | ecommerce | Shopify bug live — Judge Me sync cassé + multiple issues simultanés + orders qui s'accumulent. Angle app conflict cascade. | DM | ⏳ |  |
 | 28/04/2026 | 19:59 | @MsPrincessNash | merchant | Scan proactif awesomegnarlyworld — score 66/100. robots.txt Disallow:/ bloque tous les crawlers, meta description manquante, 5 images sans alt text, og:image absente. DM avec résultats exacts après commentaire sur sa photo. | scan-proactif | ⏳ |  |
 | 28/04/2026 | 20:07 | @the7letter_ | ecommerce | Score 64/100 — robots.txt Disallow:/ (Google blind), HTML 791 KB (app bloat), server response 1.5s. DM avec résultats exacts du scan proactif. | proactive_scan | ⏳ |  |
+| 28/04/2026 | 20:19 | @moudoka1 | shopify-merchant-jewelry | Scan proactif thelunarjeweler.com — robots.txt Disallow:/ (invisible Google), page title 4 chars, mixed content HTTP Instagram link, score 72/100, 7 issues. Commentaire posté sur sa publication avant le DM. | scan_proactif | ⏳ |  |
 
 -----
 
