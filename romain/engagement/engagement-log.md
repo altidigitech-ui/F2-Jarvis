@@ -71,7 +71,7 @@
 |Date|Post original (résumé + auteur)|Commentaire R|
 |----|------------------------------|-------------|
 |    |                              |             |
-| 28/04/2026 | 15:17 | I built a tool that detects when websites break visually (before/after screenshots) — @gosreenapi | Premier commentaire — overlap e-com direct : uptime green / revenue drop = exactement le problème StoreMD côté merchant. Corrélation app bloat → visual breaks. Question sur la latence de détection. |  |  |
+
 
 
 
