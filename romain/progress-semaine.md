@@ -32,6 +32,7 @@
 | 27/04/2026 | Rejoint 10 groupes Facebook (setup présence) | FACEBOOK | Shopify Dropshipping, E-commerce dropshipping/e-business, Shopify for Beginners, DropShipping/Shopify-France, Entrepreneurs et freelances, Expertos en Shopify, GoHighLevel Agency Owners, Shopify Experts & Newbies, N8N Templates, MARCHAND DE BIENS PARTNERS | Commencer à poster cette semaine |
 | 28/04/2026 | Twitter post publié — "Lun 27/04 — 68 stores / $12,400 — studio audit rec" | Twitter | Post publié 12:14 | Monitorer impressions + replies |
 | 28/04/2026 | Twitter post publié — "Cross A3 — F Twitter 13h — thread $35k/mo (tweet 1" | Twitter | Post publié 17:12 | Monitorer impressions + replies |
+| 28/04/2026 | Twitter post publié — "[A] Unpopular opinion: you're paying for dead apps" | Twitter | Post publié 17:12 | Monitorer impressions + replies |
 
 -----
 
