@@ -12,9 +12,9 @@
 |---|---|---|---|---|---|---|
 |A1|Lun 27/04|R Twitter 14h — 68 stores $12,400 cumul|14h05|~14:39|✅ Fait|Confirmé 17:39||||
 |A2|Lun 27/04|F2 Twitter 15h — 68 stores since launch|15h05|~15:04|✅ Fait|Cross F sur post F2 Twitter 15h00 fait||
-|A3|Mar 28/04|R Twitter 14h — zombie apps provocateur|14h05|—|⏳|À faire|
-|A4|Mar 28/04|F2 Twitter 15h — 94% ghost billing|15h05|—|⏳|À faire|
-|A5|Mar 28/04|R LinkedIn 17h — $12,400 breakdown|17h05|—|⏳|À faire|
+|A3|Mar 28/04|R Twitter 14h — zombie apps provocateur|14h05|~18:19|✅ Fait|Confirmé 18:19||
+|A4|Mar 28/04|F2 Twitter 15h — 94% ghost billing|15h05|~18:19|✅ Fait|Confirmé 18:19||
+|A5|Mar 28/04|R LinkedIn 17h — $12,400 breakdown|17h05|~18:19|✅ Fait|Confirmé 18:19||
 |A6|Mer 29/04|R Twitter 14h — mobile checkout diagnostic|14h05|—|⏳|À faire|
 |A7|Mer 29/04|F2 Twitter 15h — 3 things analytics|15h05|—|⏳|À faire|
 |A8|Jeu 30/04|R Twitter 14h — agency 8 clients $1,400|14h05|—|⏳|À faire|
