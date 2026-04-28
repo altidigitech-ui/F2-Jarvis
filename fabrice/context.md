@@ -52,6 +52,19 @@ Les volumes par canal se somment pour respecter les totaux de §5.
 
 > **🎬 Lancement TikTok + Instagram S7 (28/04/2026) :** Série de **10 vidéos** lancée ce soir. Angle : scan proactif live sur des boutiques réelles — on trouve les gens là où ils vendent (TikTok Shop, Instagram Shops, storefronts actifs). Chaque vidéo = 1 boutique scannée en live + résultats + hook cold. Objectif : acquisition merchant directe via DM post-vidéo. Ce canal remplace l'énergie perdue sur l'engagement Twitter/LinkedIn.
 
+> **🎯 Pivot acquisition S7 (28/04/2026) — Nouvelle hiérarchie canaux :**
+> Twitter et LinkedIn = **posts programmés + cross-engagement uniquement**. Zéro énergie sur l'engagement actif — l'audience y est composée de builders/SaaS vendors, pas de merchants.
+> 
+> **Canaux d'acquisition actifs (maintenant) :**
+> - **Cold outreach scan proactif** — scanner les boutiques, DM avec résultats réels → taux de réponse le plus élevé
+> - **Facebook Groups** e-com (focus immédiat) — merchants actifs, vraie douleur terrain
+> - **TikTok + Instagram** — série 10 vidéos scan live, aller chercher les gens là où ils vendent
+> 
+> **Canal prioritaire dans ~1 semaine (≈ 05/05/2026) :**
+> - **Reddit** — compte atteint les 30 jours début mai → ouverture r/shopify, r/ecommerce, r/Entrepreneur, r/smallbusiness, r/dropship. Priorité maximale dès ouverture. C'est là que se trouvent les merchants avec des problèmes actifs et une culture communautaire qui valorise les builders honnêtes.
+> 
+> **Objectif global : visibilité + beta testeurs + conversions.** Le volume s'achète sur Reddit/FB/TikTok/IG — pas sur Twitter.
+
 ---
 
 ## 5. Volumes globaux non-négociables
