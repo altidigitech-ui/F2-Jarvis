@@ -62,7 +62,8 @@ Une fois le merchant en beta :
 
 | # | Date | Store scanné | Store URL | Résultats (ghost billing / perf / AI) | DM envoyé à | Plateforme | Réponse |
 |---|------|-------------|-----------|--------------------------------------|------------|-----------|--------|
-|   |      |             |           |                                      |            |           |        |
+| 1 | 28/04 | awesomegnarlyworld | awesomegnarlyworld.myshopify.com | 66/100 — robots.txt bloque tout, missing meta desc, missing OG, 5 img alt text | @MsPrincessNash | Twitter | 📤 envoyé |
+| 2 | 28/04 | the7letter | the7letter.com | 64/100 — robots.txt bloque tout, HTML 791KB (app bloat), server 1.5s, 5 img alt text | @the7letter_ | Twitter | 📤 envoyé |
 
 ---
 
