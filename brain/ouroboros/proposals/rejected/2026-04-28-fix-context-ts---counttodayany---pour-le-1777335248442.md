@@ -29,3 +29,7 @@ function countTodayUniqueCibles(content: string, today: string): number {
 - Remplacer ligne ~316 : `const cold = countTodayAny(coldLog, today);` → `const cold = countTodayUniqueCibles(coldLog, today);`
 **Impact:** Compteur cold interface aligné avec COMPTEURS COURANTS (10 au lieu de 17). Zéro changement sur les logs.
 **Risques si ignoré:** Interface surrépond le cold en permanence. Fabrice croit avoir fait 17 colds à 10h du matin alors qu'il en a fait 10. Biais sur les décisions de volume journalier.
+
+
+---
+**Action reject par romain** : Non le compteur reste comme sa si on n'en fait plus c'est pas grave.
