@@ -72,6 +72,7 @@
 |----|------------------------------|-------------|
 |    |                              |             |
 | 28/04/2026 | 13:14 | @lakshmi — How I lost a $12k/yr customer in 48 hours (trust breakdown thread) | Retained belief is the cleanest way we've seen it described. Most teams invest everything in onboarding and assume the product earns retention on its own after that. It rarely does. The 90-day cliff exists because that's when the initial belief runs out. If nothing surfaced proof during those three months, doubt doesn't announce itself. It just forms quietly, same way the trust breakdown does. The teams that retain longest built a system to make value visible before the user has to look for it. Do you see retained belief form late sometimes — month 4 or 5 — enough to actually pull someone back from the edge? |  |  |
+| 28/04/2026 | 13:19 | https://www.indiehackers.com/post/i-analyzed-100-e-commerce-stores-812ac7e969?commentId=-OquT4fBFl_gI2xQhXvj | Reply @atomfoundryai — hidden limiter / compare notes on real stores / CTA DM. Structural layer fix → decision layer becomes the new limiter. Offered free scan to cross-reference findings. |  |  |
 
 -----
 
