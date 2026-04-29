@@ -1,8 +1,17 @@
 import { NextResponse } from "next/server";
+import { createClient } from "@/lib/supabase/server";
+
+export const runtime = "nodejs";
 
 const BACKEND = process.env.RAILWAY_BACKEND_URL;
 
 export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+  }
+
   const { id } = await params;
   if (!BACKEND) {
     return NextResponse.json({ error: "Not configured" }, { status: 503 });
