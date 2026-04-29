@@ -59,7 +59,7 @@
 |----------|--------|
 | Cold envoyés S7 | 15 |
 | Engagements Twitter S7 | 18 |
-| Scans proactifs S7 | 1 |
+| Scans proactifs S7 | 3 |
 
 -----
 
