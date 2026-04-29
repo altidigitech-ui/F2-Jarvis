@@ -948,11 +948,21 @@ The 'preview' field is a human-readable description shown to the user before the
         if (!res.ok) {
           return { content: [{ type: "text" as const, text: `graphify_search error: HTTP ${res.status}` }], isError: true };
         }
-        const data = await res.json();
+        type GraphifySearchResp = {
+          nodes?: Array<{
+            id: string;
+            label: string;
+            type: string;
+            wing: string;
+            description: string;
+            weight: number;
+          }>;
+        };
+        const data = (await res.json()) as GraphifySearchResp;
         if (!data.nodes || data.nodes.length === 0) {
           return { content: [{ type: "text" as const, text: `Aucun concept trouvé pour "${query}". Le graphe contient peut-être ce sujet sous un autre nom — essaie un synonyme, ou utilise repo_search pour chercher dans les fichiers bruts.` }] };
         }
-        const formatted = data.nodes.slice(0, cappedLimit).map((n: any) =>
+        const formatted = data.nodes.slice(0, cappedLimit).map((n) =>
           `• [${n.wing}/${n.type}] ${n.label} (poids ${n.weight}) — ${n.description.slice(0, 200)}`
         ).join("\n");
         return { content: [{ type: "text" as const, text: `🕸️ Vision graphe — ${data.nodes.length} concepts pour "${query}":\n\n${formatted}` }] };
@@ -980,15 +990,28 @@ The 'preview' field is a human-readable description shown to the user before the
         if (!res.ok) {
           return { content: [{ type: "text" as const, text: `graphify_related error: HTTP ${res.status}` }], isError: true };
         }
-        const data = await res.json();
+        type GraphifyRelatedResp = {
+          nodes?: Array<{
+            id: string;
+            label: string;
+            wing: string;
+            description: string;
+          }>;
+          edges?: Array<{
+            source: string;
+            target: string;
+            relation: string;
+          }>;
+        };
+        const data = (await res.json()) as GraphifyRelatedResp;
         if (!data.nodes || data.nodes.length === 0) {
           return { content: [{ type: "text" as const, text: `Aucun nœud connecté trouvé depuis "${from}". Vérifie l'ID du nœud avec graphify_search.` }] };
         }
-        const nodesText = data.nodes.map((n: any) =>
+        const nodesText = data.nodes.map((n) =>
           `• [${n.wing}] ${n.label} — ${n.description.slice(0, 150)}`
         ).join("\n");
         const edgesText = data.edges && data.edges.length > 0
-          ? `\n\nLiens (${data.edges.length}) :\n${data.edges.slice(0, 15).map((e: any) => `${e.source} → [${e.relation}] → ${e.target}`).join("\n")}`
+          ? `\n\nLiens (${data.edges.length}) :\n${data.edges.slice(0, 15).map((e) => `${e.source} → [${e.relation}] → ${e.target}`).join("\n")}`
           : "";
         return { content: [{ type: "text" as const, text: `🕸️ ${data.nodes.length} concepts liés à "${from}" (depth=${cappedDepth}) :\n\n${nodesText}${edgesText}` }] };
       } catch (err) {
@@ -1016,11 +1039,23 @@ The 'preview' field is a human-readable description shown to the user before the
         if (!res.ok) {
           return { content: [{ type: "text" as const, text: `graphify_node error: HTTP ${res.status}` }], isError: true };
         }
-        const data = await res.json();
+        type GraphifyNodeResp = {
+          node: {
+            id: string;
+            label: string;
+            type: string;
+            wing: string;
+            weight: number;
+            description: string;
+          };
+          inbound?: Array<{ source: string; relation: string }>;
+          outbound?: Array<{ target: string; relation: string }>;
+        };
+        const data = (await res.json()) as GraphifyNodeResp;
         const node = data.node;
         const inbound = (data.inbound || []).slice(0, 8);
         const outbound = (data.outbound || []).slice(0, 8);
-        const text = `🕸️ Concept : **${node.label}** (id: ${node.id})\nType : ${node.type} · Wing : ${node.wing} · Poids : ${node.weight}\n\nDescription :\n${node.description}\n\nVient de (inbound, ${inbound.length}) :\n${inbound.map((e: any) => `← ${e.source} [${e.relation}]`).join("\n") || "  (aucune connexion entrante)"}\n\nMène à (outbound, ${outbound.length}) :\n${outbound.map((e: any) => `→ ${e.target} [${e.relation}]`).join("\n") || "  (aucune connexion sortante)"}`;
+        const text = `🕸️ Concept : **${node.label}** (id: ${node.id})\nType : ${node.type} · Wing : ${node.wing} · Poids : ${node.weight}\n\nDescription :\n${node.description}\n\nVient de (inbound, ${inbound.length}) :\n${inbound.map((e) => `← ${e.source} [${e.relation}]`).join("\n") || "  (aucune connexion entrante)"}\n\nMène à (outbound, ${outbound.length}) :\n${outbound.map((e) => `→ ${e.target} [${e.relation}]`).join("\n") || "  (aucune connexion sortante)"}`;
         return { content: [{ type: "text" as const, text }] };
       } catch (err) {
         return { content: [{ type: "text" as const, text: `graphify_node error: ${err instanceof Error ? err.message : String(err)}` }], isError: true };
