@@ -47,7 +47,7 @@ Tous les launches partent du compte F2 / FoundryTwo (pas comptes perso F ou R). 
 
 ## 3. Product Hunt — protocole launch day
 
-Source détaillée : `../../growth-marketing/ph/algo.md` (381 lignes) + `../../growth-marketing/ph/context.md` (330 lignes) + `../../growth-marketing/strategie/strategie-ph.md` (531 lignes). Synthèse actionnable ci-dessous.
+Source détaillée : `../../growth-marketing/ph/algo.md` (381 lignes) + `../../growth-marketing/ph/context.md` (330 lignes). Synthèse actionnable ci-dessous.
 
 ### 3.1 La règle de base PH 2026
 
@@ -126,7 +126,7 @@ Source détaillée : `../../growth-marketing/ph/algo.md` (381 lignes) + `../../g
 
 ## 4. IndieHackers — protocole launch + milestones
 
-Source détaillée : `../../growth-marketing/ih/algo.md` (280 lignes) + `../../growth-marketing/ih/context.md` (376 lignes) + `../../growth-marketing/strategie/strategie-ih.md` (505 lignes).
+Source détaillée : `../../growth-marketing/ih/algo.md` (280 lignes) + `../../growth-marketing/ih/context.md` (376 lignes).
 
 ### 4.1 La règle de base IH 2026
 
@@ -365,10 +365,8 @@ JARVIS sort un rapport post-launch :
 - `../objectifs.md` — KPIs, jalons (acceptation Shopify, MRR)
 - `../../growth-marketing/ph/algo.md` — **algo PH détaillé (381 lignes)**
 - `../../growth-marketing/ph/context.md` — règles + tactiques PH (330 lignes)
-- `../../growth-marketing/strategie/strategie-ph.md` — stratégie PH historique (531 lignes)
 - `../../growth-marketing/ih/algo.md` — **algo IH détaillé (280 lignes)**
 - `../../growth-marketing/ih/context.md` — règles + tactiques IH (376 lignes)
-- `../../growth-marketing/strategie/strategie-ih.md` — stratégie IH historique (505 lignes)
 - `../../la-toile/la-toile.md` — schéma global, fils F28-F30 (PH + IH)
 - `../../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md` — source UTM officielle (Sections 9 + 10)
 - `../../TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` — règles transverses
