@@ -22,3 +22,7 @@ statut: pending
 - Section 5 CROSS R Lun 27/04 : `⏳` → `✅`
 - Section 5 CROSS R Mar 28/04 : `⏳` → `✅`
 **Risques si ignoré:** Le plan-hebdo affiche 4 actions non faites qui sont en réalité faites. Fausse lecture des taux d'exécution S7 pour Romain.
+
+
+---
+**Action accept par romain** : go
