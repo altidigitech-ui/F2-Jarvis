@@ -131,8 +131,8 @@ Tous les liens UTM sont issus de `../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
 | # | Point d'entrée | Trajectoire | UTM tagué |
 |---|---|---|---|
 | F24 | Cold email merchant outreach | Email avec scan + résultats → CTA lien → site | `utm_source=email&utm_medium=cold&utm_campaign=merchant_outreach&utm_content=cta_main` |
-| F25 | DM Instagram à un merchant identifié | Scan + résultats partagés → lien → site | (à intégrer dans `UTM_TRACKING_LINKS.md` — placement DM Instagram non listé actuellement) |
-| F26 | DM Twitter à un merchant identifié | Scan + résultats partagés → lien → site | (à intégrer dans `UTM_TRACKING_LINKS.md` — placement DM Twitter non listé actuellement) |
+| F25 | DM Instagram à un merchant identifié | Scan + résultats partagés → lien → site | `utm_source=instagram&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
+| F26 | DM Twitter à un merchant identifié | Scan + résultats partagés → lien → site | `utm_source=twitter&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 | F27 | Comment public sur post merchant avec problème | Comment avec mention de la solution + lien → site | Selon plateforme — voir F11/F13/F15 (Reddit) ou F20 (LinkedIn) |
 
 **Note** : si un placement n'est pas listé dans `UTM_TRACKING_LINKS.md`, F l'ajoute d'abord au fichier officiel, puis on utilise. Pas d'invention de UTM en dehors.

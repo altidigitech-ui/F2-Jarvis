@@ -150,7 +150,7 @@ If you want a free scan to identify exactly where it's coming from, I'm building
 | Post original dans groupe Shopify Entrepreneurs / Newbies / etc. | `utm_source=facebook&utm_medium=organic&utm_campaign=group_shopify&utm_content=group_post` |
 | Post original dans groupe Ecommerce Entrepreneurs | `utm_source=facebook&utm_medium=organic&utm_campaign=group_ecommerce&utm_content=group_post` |
 | Commentaire avec lien dans un groupe | Mêmes UTM que le post (même `utm_campaign`) |
-| DM Messenger à un merchant | À ajouter au `UTM_TRACKING_LINKS.md` (placement DM Messenger non listé actuellement) |
+| DM Messenger à un merchant | `utm_source=facebook&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 
 **Règle** : pour tout placement non listé dans le fichier UTM officiel, F l'ajoute d'abord puis on utilise. Pas d'invention.
 

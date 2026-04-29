@@ -171,7 +171,7 @@ Titre : "Building a tool for [problème], looking for 10 beta testers"
 
 [Conditions beta : free, install hors store, feedback en échange]
 
-[Lien UTM pour s'inscrire — F10/F12/F14 selon sub + utm_campaign couche-b-beta à ajouter au fichier UTM officiel]
+[Lien UTM avec utm_campaign=couche_b_beta — voir UTM_TRACKING_LINKS.md]
 
 "Drop a comment with your store URL or DM me if interested."
 ```
@@ -201,7 +201,7 @@ Found these 3 things that might be the root cause :
 Happy to share the full report (free) if useful. Lmk.
 ```
 
-**UTM dans le DM** : à ajouter au `UTM_TRACKING_LINKS.md` (placement DM Reddit non listé actuellement). Pas d'invention.
+**UTM dans le DM** : `utm_source=reddit&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` (cf. UTM_TRACKING_LINKS.md Section 3).
 
 ### 7.3 Règle absolue
 
@@ -241,7 +241,7 @@ Tous depuis `../../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md` Section 3.
 | Commentaire r/ecommerce | `utm_source=reddit&utm_medium=organic&utm_campaign=r_ecommerce&utm_content=comment` |
 | Post original r/entrepreneur | `utm_source=reddit&utm_medium=organic&utm_campaign=r_entrepreneur&utm_content=post` |
 | Commentaire r/entrepreneur | `utm_source=reddit&utm_medium=organic&utm_campaign=r_entrepreneur&utm_content=comment` |
-| DM Reddit | À ajouter au `UTM_TRACKING_LINKS.md` (placement non listé actuellement) |
+| DM Reddit | `utm_source=reddit&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 
 **Règle** : un nouveau subreddit ajouté = nouvelle ligne dans `UTM_TRACKING_LINKS.md` avant utilisation. Pas d'invention.
 
