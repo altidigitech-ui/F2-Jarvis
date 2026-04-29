@@ -931,6 +931,104 @@ The 'preview' field is a human-readable description shown to the user before the
   );
 
   // ---------------------------------------------------------------------------
+  // graphify_search — search the F2-Jarvis concept graph
+  // ---------------------------------------------------------------------------
+  const graphifySearch = tool(
+    "graphify_search",
+    "Search the F2-Jarvis concept graph (your VISION of the repo). Returns nodes (concepts) matching the query, ranked by relevance. Use this when the user mentions a topic and you want to know what already exists in the repo around that concept — principles, products, patterns, strategies, related people. Examples: 'cold outreach' returns the cold strategy concepts; 'StoreMD' returns the product node + its connections. This is your way of 'seeing' the territory before walking on it.",
+    {
+      query: z.string().describe("Concept or keyword to search in the graph (e.g. 'cold outreach', 'StoreMD', 'volume')"),
+      limit: z.number().optional().default(8).describe("Max number of nodes to return (default 8, max 20)"),
+    },
+    async ({ query, limit = 8 }) => {
+      try {
+        const cappedLimit = Math.min(limit, 20);
+        const url = `${backendBase}/graphify/search?q=${encodeURIComponent(query)}&limit=${cappedLimit}`;
+        const res = await fetch(url, { headers: { "X-JARVIS-AUTH": authSecret } });
+        if (!res.ok) {
+          return { content: [{ type: "text" as const, text: `graphify_search error: HTTP ${res.status}` }], isError: true };
+        }
+        const data = await res.json();
+        if (!data.nodes || data.nodes.length === 0) {
+          return { content: [{ type: "text" as const, text: `Aucun concept trouvé pour "${query}". Le graphe contient peut-être ce sujet sous un autre nom — essaie un synonyme, ou utilise repo_search pour chercher dans les fichiers bruts.` }] };
+        }
+        const formatted = data.nodes.slice(0, cappedLimit).map((n: any) =>
+          `• [${n.wing}/${n.type}] ${n.label} (poids ${n.weight}) — ${n.description.slice(0, 200)}`
+        ).join("\n");
+        return { content: [{ type: "text" as const, text: `🕸️ Vision graphe — ${data.nodes.length} concepts pour "${query}":\n\n${formatted}` }] };
+      } catch (err) {
+        return { content: [{ type: "text" as const, text: `graphify_search error: ${err instanceof Error ? err.message : String(err)}` }], isError: true };
+      }
+    }
+  );
+
+  // ---------------------------------------------------------------------------
+  // graphify_related — explore neighborhood of a concept node
+  // ---------------------------------------------------------------------------
+  const graphifyRelated = tool(
+    "graphify_related",
+    "Get concepts directly connected to a given node in the F2-Jarvis graph. Use this AFTER graphify_search to explore a concept's neighborhood — what depends on it, what it influences, what is similar. Example: from='cold-outreach' returns 'volume-constance', 'romain-voice', 'cold-templates', etc. Equivalent to 'follow the threads' in your mental map.",
+    {
+      from: z.string().describe("Source node ID (e.g. 'cold-outreach', 'volume-constance'). Get IDs from graphify_search results."),
+      depth: z.number().optional().default(1).describe("How many hops away to explore (1=direct neighbors, 2=neighbors of neighbors). Default 1, max 3."),
+    },
+    async ({ from, depth = 1 }) => {
+      try {
+        const cappedDepth = Math.min(Math.max(depth, 1), 3);
+        const url = `${backendBase}/graphify/related?from=${encodeURIComponent(from)}&depth=${cappedDepth}`;
+        const res = await fetch(url, { headers: { "X-JARVIS-AUTH": authSecret } });
+        if (!res.ok) {
+          return { content: [{ type: "text" as const, text: `graphify_related error: HTTP ${res.status}` }], isError: true };
+        }
+        const data = await res.json();
+        if (!data.nodes || data.nodes.length === 0) {
+          return { content: [{ type: "text" as const, text: `Aucun nœud connecté trouvé depuis "${from}". Vérifie l'ID du nœud avec graphify_search.` }] };
+        }
+        const nodesText = data.nodes.map((n: any) =>
+          `• [${n.wing}] ${n.label} — ${n.description.slice(0, 150)}`
+        ).join("\n");
+        const edgesText = data.edges && data.edges.length > 0
+          ? `\n\nLiens (${data.edges.length}) :\n${data.edges.slice(0, 15).map((e: any) => `${e.source} → [${e.relation}] → ${e.target}`).join("\n")}`
+          : "";
+        return { content: [{ type: "text" as const, text: `🕸️ ${data.nodes.length} concepts liés à "${from}" (depth=${cappedDepth}) :\n\n${nodesText}${edgesText}` }] };
+      } catch (err) {
+        return { content: [{ type: "text" as const, text: `graphify_related error: ${err instanceof Error ? err.message : String(err)}` }], isError: true };
+      }
+    }
+  );
+
+  // ---------------------------------------------------------------------------
+  // graphify_node — full details of a specific concept node
+  // ---------------------------------------------------------------------------
+  const graphifyNode = tool(
+    "graphify_node",
+    "Get full details of a specific concept node from the F2-Jarvis graph. Returns the node's description, type, wing, weight, and all its outgoing/incoming connections. Use this for deep-dive on a single concept after graphify_search has surfaced it.",
+    {
+      id: z.string().describe("Node ID (e.g. 'distribution-first', 'storemd', 'cold-outreach'). Get IDs from graphify_search."),
+    },
+    async ({ id }) => {
+      try {
+        const url = `${backendBase}/graphify/node/${encodeURIComponent(id)}`;
+        const res = await fetch(url, { headers: { "X-JARVIS-AUTH": authSecret } });
+        if (res.status === 404) {
+          return { content: [{ type: "text" as const, text: `Concept "${id}" introuvable dans le graphe. Utilise graphify_search pour trouver l'ID exact.` }] };
+        }
+        if (!res.ok) {
+          return { content: [{ type: "text" as const, text: `graphify_node error: HTTP ${res.status}` }], isError: true };
+        }
+        const data = await res.json();
+        const node = data.node;
+        const inbound = (data.inbound || []).slice(0, 8);
+        const outbound = (data.outbound || []).slice(0, 8);
+        const text = `🕸️ Concept : **${node.label}** (id: ${node.id})\nType : ${node.type} · Wing : ${node.wing} · Poids : ${node.weight}\n\nDescription :\n${node.description}\n\nVient de (inbound, ${inbound.length}) :\n${inbound.map((e: any) => `← ${e.source} [${e.relation}]`).join("\n") || "  (aucune connexion entrante)"}\n\nMène à (outbound, ${outbound.length}) :\n${outbound.map((e: any) => `→ ${e.target} [${e.relation}]`).join("\n") || "  (aucune connexion sortante)"}`;
+        return { content: [{ type: "text" as const, text }] };
+      } catch (err) {
+        return { content: [{ type: "text" as const, text: `graphify_node error: ${err instanceof Error ? err.message : String(err)}` }], isError: true };
+      }
+    }
+  );
+
+  // ---------------------------------------------------------------------------
   // github_explore — browse & read any repo in the org
   // ---------------------------------------------------------------------------
   const githubExplore = tool(
@@ -1230,6 +1328,9 @@ The 'preview' field is a human-readable description shown to the user before the
       conversationSearch,
       codeCheck,
       ouroborosProposals,
+      graphifySearch,
+      graphifyRelated,
+      graphifyNode,
       githubExplore,
       readFromZip,
       listZip,
@@ -1257,6 +1358,9 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__conversation_search",
   "mcp__jarvis__code_check",
   "mcp__jarvis__ouroboros_proposals",
+  "mcp__jarvis__graphify_search",
+  "mcp__jarvis__graphify_related",
+  "mcp__jarvis__graphify_node",
   "mcp__jarvis__github_explore",
   "mcp__jarvis__read_from_zip",
   "mcp__jarvis__list_zip",
