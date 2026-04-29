@@ -1,9 +1,16 @@
+import { createClient } from "@/lib/supabase/server";
+
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
 const BACKEND = process.env.RAILWAY_BACKEND_URL;
 
 export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return Response.json({ error: "Non authentifié" }, { status: 401 });
+  }
   const { id } = await params;
   if (!BACKEND) return Response.json({ wing: id, drawers: [] });
   try {

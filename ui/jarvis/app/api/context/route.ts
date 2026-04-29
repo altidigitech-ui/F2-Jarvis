@@ -1,9 +1,16 @@
+import { createClient } from "@/lib/supabase/server";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const BACKEND = process.env.RAILWAY_BACKEND_URL;
 
 export async function GET(req: Request) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return Response.json({ error: "Non authentifié" }, { status: 401 });
+  }
   if (!BACKEND) {
     return Response.json({ error: "RAILWAY_BACKEND_URL non configuré" }, { status: 500 });
   }

@@ -1,3 +1,5 @@
+import { createClient } from "@/lib/supabase/server";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
@@ -7,6 +9,11 @@ export async function GET(
   _req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return Response.json({ error: "Non authentifié" }, { status: 401 });
+  }
   if (!BACKEND) return Response.json({ error: "RAILWAY_BACKEND_URL non configuré" }, { status: 500 });
   const { id } = await params;
   const response = await fetch(`${BACKEND}/ouroboros/proposal/${encodeURIComponent(id)}`, { headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" } })

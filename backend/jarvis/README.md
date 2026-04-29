@@ -142,7 +142,9 @@ GITHUB_TOKEN=...                      # PAT avec scope repo
 GITHUB_REPO_OWNER=altidigitech-ui
 GITHUB_REPO_NAME=F2-Jarvis
 SUPABASE_URL=...
-SUPABASE_SERVICE_KEY=...              # Server-side only
+SUPABASE_SERVICE_ROLE_KEY=...         # Server-side only (clé service_role Supabase)
+REDIS_URL=...                         # URL Redis (cache + queue Celery)
+CLAUDE_CODE_EXECUTABLE=...            # Path du binaire claude (auto-détecté en général, override si nécessaire)
 ```
 
 ## Déploiement

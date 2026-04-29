@@ -1,9 +1,19 @@
+import { createClient } from "@/lib/supabase/server";
+
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
 const BACKEND = process.env.RAILWAY_BACKEND_URL;
 
 export async function POST(req: Request) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return new Response(JSON.stringify({ error: "Non authentifié" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
   if (!BACKEND) {
     return new Response(JSON.stringify({ error: "RAILWAY_BACKEND_URL non configuré" }), {
       status: 500,
