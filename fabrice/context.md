@@ -43,14 +43,15 @@ Message central : "le builder qui construit des AI agents pour résoudre des pro
 | **Facebook** | profil perso | FB Groups e-com et creators (YouTube Creators Hub). | 5-8 commentaires/jour |
 | **IndieHackers** | via @foundrytwo | Pas de compte perso F actif sur IH. | — |
 | **ProductHunt** | profil perso F | Karma farming + support launch day F2. | intégré |
-| **TikTok** | @FabGangi (à créer) | Distribution vidéo — série 10 vidéos storefront merchants. Canal cold vidéo. | 1 vidéo/jour (série) |
+| **TikTok** | @FabGangi (à créer) | Distribution vidéo — série scan live storefront merchants. Canal cold vidéo. | 1 vidéo/jour (série) |
 | **Instagram** | @FabGangi (à créer) | Repost TikTok + stories storefront. Canal froid visuel. | 1 post/jour (série) |
+| **Facebook (vidéo)** | profil perso | Repost vidéos scan live dans FB Groups e-com. Double distribution sur audience merchant. | 1 vidéo/jour (série) |
 
 Les volumes par canal se somment pour respecter les totaux de §5.
 
 > **⚠️ Observation stratégique S7 (28/04/2026) :** L'engagement Twitter et LinkedIn cible en pratique d'autres builders/marketeurs SaaS — pas des merchants e-com. ROI engagement quasi nul. **Stratégie révisée :** Twitter et LinkedIn = présence produit uniquement (posts). L'acquisition merchant passe par Reddit/Facebook (terrain) + cold outreach personnalisé avec scans proactifs. Ne pas investir d'énergie dans les 15 interactions/jour sur ces deux canaux.
 
-> **🎬 Lancement TikTok + Instagram S7 (28/04/2026) :** Série de **10 vidéos** lancée ce soir. Angle : scan proactif live sur des boutiques réelles — on trouve les gens là où ils vendent (TikTok Shop, Instagram Shops, storefronts actifs). Chaque vidéo = 1 boutique scannée en live + résultats + hook cold. Objectif : acquisition merchant directe via DM post-vidéo. Ce canal remplace l'énergie perdue sur l'engagement Twitter/LinkedIn.
+> **🎬 Lancement TikTok + Instagram + Facebook vidéo S7 (28/04/2026) :** **12 vidéos prêtes**. Angle : scan proactif live sur des boutiques réelles — on trouve les gens là où ils vendent. Chaque vidéo = 1 boutique scannée en live + résultats + hook cold. Distribution : **TikTok** (canal primaire) + **Instagram** (repost) + **Facebook Groups** (repost dans les groupes e-com). 1 vidéo/jour × 3 plateformes = 12 posts/semaine. Objectif : acquisition merchant directe via DM post-vidéo.
 
 > **🎯 Pivot acquisition S7 (28/04/2026) — Nouvelle hiérarchie canaux :**
 > Twitter et LinkedIn = **posts programmés + cross-engagement uniquement**. Zéro énergie sur l'engagement actif — l'audience y est composée de builders/SaaS vendors, pas de merchants.
@@ -58,7 +59,7 @@ Les volumes par canal se somment pour respecter les totaux de §5.
 > **Canaux d'acquisition actifs (maintenant) :**
 > - **Cold outreach scan proactif** — scanner les boutiques, DM avec résultats réels → taux de réponse le plus élevé
 > - **Facebook Groups** e-com (focus immédiat) — merchants actifs, vraie douleur terrain
-> - **TikTok + Instagram** — série 10 vidéos scan live, aller chercher les gens là où ils vendent
+> - **TikTok + Instagram + Facebook (vidéo)** — 12 vidéos scan live, aller chercher les gens là où ils vendent (1 vidéo/jour × 3 canaux = 12 posts/semaine)
 > 
 > **Canal prioritaire dans ~1 semaine (≈ 05/05/2026) :**
 > - **Reddit** — compte atteint les 30 jours début mai → ouverture r/shopify, r/ecommerce, r/Entrepreneur, r/smallbusiness, r/dropship. Priorité maximale dès ouverture. C'est là que se trouvent les merchants avec des problèmes actifs et une culture communautaire qui valorise les builders honnêtes.
