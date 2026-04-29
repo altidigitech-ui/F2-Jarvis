@@ -1,7 +1,7 @@
 # CONTEXT LINKEDIN — Règles Communes R, F, Page F2
 
 **Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `growth-marketing/context.md` (stratégie globale, piliers, frameworks, phases, personas, volumes)
+**Hérite de :** `marketing/strategie.md` + `marketing/canaux/linkedin.md` (stratégie globale, piliers, frameworks, phases, personas, volumes)
 **S'appuie sur :** `linkedin/algo.md` (mécanique algorithmique, poids, pénalités, formats)
 **Implémenté par :** `linkedin/romain/context.md`, `linkedin/fabrice/context.md`, `linkedin/f2/context.md`
 **Ce fichier contient :** les règles LinkedIn communes aux 3 comptes. Ce qui est propre à un seul compte va dans son dossier.
@@ -44,7 +44,7 @@ La page company FoundryTwo sur LinkedIn est une **vitrine statique** :
 
 ### 2.1 Règle
 
-**Tout le contenu LinkedIn est en anglais.** Cohérent avec la décision "Full anglais" du 10/02/2026 (cf. marketing/context.md §11) et avec Twitter.
+**Tout le contenu LinkedIn est en anglais.** Cohérent avec la décision "Full anglais" du 10/02/2026 (cf. marketing/strategie.md) et avec Twitter.
 
 ### 2.2 Contexte
 
@@ -179,7 +179,7 @@ How many platforms are you distributing to manually right now?"
 | **R** | 15 | Quotidien, lun-ven |
 | **F** | 15 | Quotidien, lun-ven |
 
-Les 15 interactions/jour LinkedIn font partie des 30 interactions quotidiennes totales (split Twitter + LinkedIn). Cf. growth-marketing/context.md §9.
+Les 15 interactions/jour LinkedIn font partie des 30 interactions quotidiennes totales (split Twitter + LinkedIn). Cf. marketing/strategie.md.
 
 **Règle : chaque commentaire est unique.** Jamais de copier-coller, même partiel. L'algo détecte les patterns répétitifs.
 
@@ -303,7 +303,7 @@ R et F publient aux horaires optimaux algo (cf. §6.2). Pas de contrainte horair
 
 ### 6.5 Déplacements & fuseaux horaires
 
-Si R ou F est temporairement dans un fuseau différent, les créneaux sont recalculés selon les règles de growth-marketing/context.md §9.1.
+Si R ou F est temporairement dans un fuseau différent, les créneaux sont recalculés selon les règles de marketing/strategie.md.
 
 ---
 
@@ -439,13 +439,13 @@ Le profil augmente le baseline reach de tout le contenu publié (cf. algo.md §8
 
 ### 9.4 Où regarder
 
-LinkedIn Analytics natif pour les impressions, engagement rate, profile visits, saves. UTM tracking quand applicable (liens en bio). Revue chaque vendredi (cf. growth-marketing/context.md §14).
+LinkedIn Analytics natif pour les impressions, engagement rate, profile visits, saves. UTM tracking quand applicable (liens en bio). Revue chaque vendredi (cf. marketing/strategie.md).
 
 ---
 
 ## 10. ANTI-PATTERNS SPÉCIFIQUES LINKEDIN
 
-Les anti-patterns généraux sont dans growth-marketing/context.md §11. Voici ceux qui sont **spécifiques à LinkedIn** :
+Les anti-patterns généraux sont dans marketing/strategie.md. Voici ceux qui sont **spécifiques à LinkedIn** :
 
 | Interdit | Pourquoi | Alternative |
 |----------|----------|-------------|
@@ -468,8 +468,8 @@ Les anti-patterns généraux sont dans growth-marketing/context.md §11. Voici c
 | Document | Emplacement | Contenu | Statut |
 |----------|-------------|---------|--------|
 | algo.md | growth-marketing/linkedin/ | Mécanique algorithmique, poids, pénalités, formats | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, frameworks, phases, volumes | ✅ |
-| marketing/context.md | marketing/ | Cold outreach, planning R/F, funnel, comptes | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, piliers, frameworks, phases, volumes | ✅ |
+| marketing/strategie.md | marketing/ | Cold outreach, planning R/F, funnel, comptes | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling, bios | ✅ |
 | romain/context.md | romain/linkedin/ | Voix R, contenu growth e-com/agences LinkedIn | ✅ |
 | romain/roadmap.md | romain/linkedin/ | Planning LinkedIn R | ✅ |

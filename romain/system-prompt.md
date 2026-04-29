@@ -425,7 +425,8 @@ Les fichiers suivants sont uploadés dans ce projet :
 |---------|------------------|
 | `romain/twitter/context.md` | Référence de voix R sur Twitter : niveau de provocation, densité des données, ton, règles de format. Ces exemples calibrent la voix — pas les structures à reproduire. |
 | `romain/linkedin/context.md` | Référence de voix R sur LinkedIn, adaptation Twitter → LinkedIn, routine LinkedIn. Ces exemples calibrent la voix — pas les structures à reproduire. |
-| `growth-marketing/context.md` | Framework de provocation, matrice de réponse par type de commentaire, segments personas (merchants, agences, freelancers, creators), règle 80/20. |
+| `marketing/strategie.md` | Stratégie marketing tactique (source de vérité 29/04/2026) : cible merchants Shopify, 3 leviers, comptes, voix. |
+| `marketing/canaux/reddit.md` + `marketing/canaux/twitter.md` + `marketing/canaux/linkedin.md` + `marketing/canaux/facebook.md` | Détails opérationnels par canal : cadences, format, UTM, anti-patterns. |
 
 **Algos plateformes :**
 

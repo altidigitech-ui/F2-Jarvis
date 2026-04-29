@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 04 avril 2026
 **Hérite de :** `linkedin/context.md` (règles LinkedIn communes, engagement à valeur, formats, timing, profil)
-**Hérite de :** `growth-marketing/context.md` (piliers, frameworks provocation/réponse, persona segments, volumes)
+**Hérite de :** `marketing/strategie.md` (piliers, frameworks provocation/réponse, persona segments, volumes)
 **S'appuie sur :** `twitter/romain/context.md` (voix R — à adapter pour LinkedIn)
 **Ce fichier contient :** tout ce qui est propre au profil LinkedIn de Romain — voix LinkedIn, types de contenu, exemples, adaptation Twitter→LinkedIn, workflow.
 
@@ -356,8 +356,8 @@ Chaque post LinkedIn de R doit passer le test : "Si quelqu'un suit R sur Twitter
 |----------|-------------|------|--------|
 | linkedin/context.md | growth-marketing/linkedin/ | Règles communes, engagement à valeur, formats, profil | ✅ |
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
-| marketing/context.md | marketing/ | Cold outreach process, planning R/F | ✅ |
+| marketing/strategie.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
+| marketing/strategie.md | marketing/ | Cold outreach process, planning R/F | ✅ |
 | twitter/romain/context.md | romain/twitter/ | Voix R Twitter (pour contraste et adaptation) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
 | romain/roadmap.md | romain/linkedin/ | Planning LinkedIn R par phase | ✅ |

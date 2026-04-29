@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `twitter/context.md` (règles Twitter communes, cross-engagement, timing, formats)
-**Hérite de :** `growth-marketing/context.md` (piliers, frameworks, phases)
+**Hérite de :** `marketing/strategie.md` (piliers, frameworks, phases)
 **S'appuie sur :** `asset-brand/FOUNDRYTWO-BRAND-BIBLE.md` (identité, palette, storytelling)
 **Ce fichier contient :** tout ce qui est propre au compte @foundrytwo sur Twitter — voix, squelette éditorial, exemples, workflow de rédaction.
 
@@ -322,7 +322,7 @@ Le contenu F2 évolue avec la maturité du portfolio et de la communauté.
 |----------|-------------|--------|
 | twitter/context.md | growth-marketing/twitter/ | ✅ |
 | twitter/algo.md | growth-marketing/twitter/ | ✅ |
-| growth-marketing/context.md | growth-marketing/ | ✅ |
-| marketing/context.md | marketing/ | ✅ |
+| marketing/strategie.md | growth-marketing/ | ✅ |
+| marketing/strategie.md | marketing/ | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | ✅ |
 | f2/roadmap.md | f2/twitter/ | ✅ |

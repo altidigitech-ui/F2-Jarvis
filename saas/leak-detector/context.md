@@ -256,8 +256,8 @@ Faible à ce stade. Le moat technique est limité (Playwright + LLM = reproducti
 | Règle | Source |
 |-------|--------|
 | Zéro faux témoignage, zéro stat inventée | Règle absolue FoundryTwo |
-| Toute communication en anglais | marketing/context.md §9.1 |
-| Ton pro, honnête, data-driven, jamais arrogant | marketing/context.md §2.1 |
+| Toute communication en anglais | marketing/strategie.md |
+| Ton pro, honnête, data-driven, jamais arrogant | marketing/strategie.md |
 
 ### Ce que LD a en propre
 

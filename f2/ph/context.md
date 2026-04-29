@@ -130,7 +130,7 @@ Tout ce qui suit est défini dans le parent `ph/context.md` et ne doit pas être
 |----------|-------------|------|--------|
 | ph/context.md | growth-marketing/ph/ | Stratégie PH, pre-launch, launch day, post-launch, karma, multi-produit | ✅ |
 | ph/algo.md | growth-marketing/ph/ | Mécanique plateforme, points, featuring, timing | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
-| marketing/context.md | marketing/ | Inventaire comptes (R + F PH perso), planning R/F | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
+| marketing/strategie.md | marketing/ | Inventaire comptes (R + F PH perso), planning R/F | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
 | f2/roadmap.md | f2/ph/ | Planning PH par lancement | ✅ |

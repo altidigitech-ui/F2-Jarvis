@@ -251,5 +251,5 @@ become harder than building them?
 | f2/context.md | f2/ih/ | Identité compte, squelette éditorial, qui gère | ✅ |
 | ih/context.md | growth-marketing/ih/ | Voix, contenu, cold outreach, engagement, workflow | ✅ |
 | ih/algo.md | growth-marketing/ih/ | Mécanique plateforme, classement, données | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |

@@ -204,8 +204,8 @@ Court, pertinent, personnalisé, pas de pitch.
 | fabrice/context.md | fabrice/linkedin/ | Voix, contenu, engagement à valeur, exemples, workflow | ✅ |
 | linkedin/context.md | growth-marketing/linkedin/ | Règles communes, engagement à valeur, formats, profil | ✅ |
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
-| marketing/context.md | marketing/ | Planning R/F, funnel | ✅ |
+| marketing/strategie.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
+| marketing/strategie.md | marketing/ | Planning R/F, funnel | ✅ |
 | twitter/fabrice/roadmap.md | fabrice/twitter/ | Planning Twitter F (pour coordination) | ✅ |
 | romain/roadmap.md | romain/linkedin/ | Planning LinkedIn R (pour coordination cross-engagement) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |

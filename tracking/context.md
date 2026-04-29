@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 05 avril 2026
 **Ce fichier contient :** l'infrastructure de tracking (quoi tracker, dans quels outils, conventions UTM, process de revue). Ce fichier est la RÉFÉRENCE CENTRALE pour le suivi des métriques.
-**Ce fichier ne duplique PAS :** les conventions UTM par plateforme (growth-marketing/context.md §13), le process de revue détaillé (growth-marketing/context.md §14), le suivi cold outreach (marketing/context.md §8.6).
+**Ce fichier ne duplique PAS :** les conventions UTM par plateforme (marketing/strategie.md), le process de revue détaillé (marketing/strategie.md), le suivi cold outreach (marketing/strategie.md).
 
 ---
 
@@ -27,7 +27,7 @@
 [domaine-produit]?utm_source=[plateforme]&utm_medium=[type]&utm_campaign=[campagne]
 ```
 
-### 2.2 Table par plateforme (référence : growth-marketing/context.md §13)
+### 2.2 Table par plateforme (référence : marketing/strategie.md)
 
 | Plateforme | utm_source | utm_medium | utm_campaign |
 |-----------|-----------|-----------|-------------|
@@ -51,7 +51,7 @@
 
 ---
 
-## 3. COLONNES DU GROWTH TRACKER (référence : marketing/context.md §8.6)
+## 3. COLONNES DU GROWTH TRACKER (référence : marketing/strategie.md)
 
 | Colonne | Ce qu'elle contient |
 |---------|--------------------|
@@ -87,7 +87,7 @@ La revue vendredi est documentée en détail dans les playbooks (romain/playbook
 | **UTM** | Quels canaux génèrent du trafic, quel utm_medium convertit le mieux | UTM Tracker |
 | **Produit** | Signups totaux, MRR, conversion rate, top pages auditées | Dashboard produit |
 
-### 4.2 Questions clés (référence : growth-marketing/context.md §14)
+### 4.2 Questions clés (référence : marketing/strategie.md)
 
 | Question | Si la réponse est négative |
 |----------|---------------------------|
@@ -113,10 +113,10 @@ Le format UTM et les colonnes du Growth Tracker restent les mêmes pour chaque p
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| growth-marketing/context.md §13 | growth-marketing/ | Table UTM complète par plateforme |
-| growth-marketing/context.md §14 | growth-marketing/ | Process de revue hebdomadaire détaillé |
-| marketing/context.md §8.6 | marketing/ | Colonnes du Growth Tracker, suivi cold outreach |
-| marketing/context.md §9.5 | marketing/ | Règle UTM obligatoire |
+| marketing/strategie.md | growth-marketing/ | Table UTM complète par plateforme |
+| marketing/strategie.md | growth-marketing/ | Process de revue hebdomadaire détaillé |
+| marketing/strategie.md | marketing/ | Colonnes du Growth Tracker, suivi cold outreach |
+| marketing/strategie.md | marketing/ | Règle UTM obligatoire |
 | romain/playbook-semaine.md §1 | romain/ | Revue vendredi R (volet opérationnel) |
 | romain/progress-semaine.md §3 | romain/ | Métriques vendredi R |
 | fabrice/playbook-semaine.md §1 | fabrice/ | Revue vendredi F (volet opérationnel) |

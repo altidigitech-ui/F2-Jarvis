@@ -246,6 +246,6 @@ Points fixes où R et F évaluent la performance F2 et prennent des décisions s
 | f2/context.md | f2/twitter/ | Voix, squelette éditorial, exemples, workflow |
 | twitter/context.md | growth-marketing/twitter/ | Règles communes, cross-engagement, timing, formats |
 | twitter/algo.md | growth-marketing/twitter/ | Mécanique algorithmique |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, phases |
-| marketing/roadmap.md | marketing/ | Roadmap globale multi-canal, milestones business |
-| marketing/context.md | marketing/ | Cold outreach, planning R/F, funnel |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, piliers, phases |
+| marketing/objectifs.md | marketing/ | Roadmap globale multi-canal, milestones business |
+| marketing/strategie.md | marketing/ | Cold outreach, planning R/F, funnel |

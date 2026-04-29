@@ -178,7 +178,7 @@ Quand un SaaS lance, la semaine est différente. Le playbook normal est remplac�
 | **Vendredi (batch)** | Préparer le post de lancement Twitter + Show IH + maker comment PH + emails waitlist + posts LinkedIn |
 | **Samedi** | Finaliser les assets. Tout doit être prêt. |
 | **Dimanche** | Vérification finale. Archivage normal. |
-| **Lundi (launch day)** | Exécution du protocole de lancement (cf. growth-marketing/roadmap.md §2.2 et ph/context.md §4) |
+| **Lundi (launch day)** | Exécution du protocole de lancement (cf. marketing/objectifs.md et ph/context.md §4) |
 | **Mardi-vendredi** | Retour au squelette éditorial normal. Répondre aux derniers commentaires du lancement. Post-launch (export contacts, retour d'expérience). |
 
 ---

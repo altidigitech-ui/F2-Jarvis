@@ -67,7 +67,7 @@ Le cold outreach est rode. Le focus passe a l'optimisation du workflow.
 | 150+ cold outreachs cumules | Fin avril | Si < 150 : probleme de volume de cibles ou de discipline. Elargir les termes de recherche Grok. |
 | 10-20% de taux de reponse aux outreachs | Fin avril | Si < 10% : les replies ne sont pas assez personnalisees ou les insights ne sont pas assez percutants. Revoir les templates. |
 | 30-80 followers R | Fin avril | Croissance liee directement a l'activite d'engagement. Si < 30 : pas assez de replies sur des posts Tier 1-2. |
-| 5-10 replies organiques recues/semaine | Fin avril | Les hot takes ne provoquent pas assez. Augmenter la dose de provocation (cf. growth-marketing/context.md §3.1). |
+| 5-10 replies organiques recues/semaine | Fin avril | Les hot takes ne provoquent pas assez. Augmenter la dose de provocation (cf. marketing/strategie.md). |
 | Batch samedi < 2h (R + F2 combines) | Fin avril | Trop de friction. Optimiser les prompts Claude, preparer les donnees en amont vendredi soir. |
 
 ---
@@ -249,8 +249,8 @@ R est full-time. La repartition des ~3h/jour est flexible — pas d'horaires fix
 | romain/context.md | romain/twitter/ | Voix, angle, cold outreach, engagement, exemples | Done |
 | twitter/context.md | growth-marketing/twitter/ | Regles communes, cross-engagement, timing, formats | Done |
 | twitter/algo.md | growth-marketing/twitter/ | Mecanique algorithmique | Done |
-| growth-marketing/context.md | growth-marketing/ | Piliers, frameworks provocation/reponse, personas | Done |
-| marketing/context.md | marketing/ | Cold outreach process, templates, planning R/F | Done |
+| marketing/strategie.md | growth-marketing/ | Piliers, frameworks provocation/reponse, personas | Done |
+| marketing/strategie.md | marketing/ | Cold outreach process, templates, planning R/F | Done |
 | f2/context.md | f2/twitter/ | Voix F2 (R redige et publie F2) | Done |
 | f2/roadmap.md | f2/twitter/ | Planning F2 (R gere) | Done |
 | fabrice/context.md | fabrice/twitter/ | Voix F (pour coordination cross-engagement) | Done |

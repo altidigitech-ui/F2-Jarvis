@@ -2,8 +2,8 @@
 
 **Derniere mise a jour :** 04 avril 2026
 **Herite de :** `twitter/context.md` (regles Twitter communes, cross-engagement, timing, formats)
-**Herite de :** `growth-marketing/context.md` (piliers, frameworks provocation/reponse, persona segments)
-**S'appuie sur :** `marketing/context.md` (cold outreach process, templates, planning quotidien)
+**Herite de :** `marketing/strategie.md` (piliers, frameworks provocation/reponse, persona segments)
+**S'appuie sur :** `marketing/strategie.md` (cold outreach process, templates, planning quotidien)
 **Ce fichier contient :** tout ce qui est propre au compte @delgado_ro72224 sur Twitter — voix R, angle de contenu, strategie d'engagement, cold outreach Twitter.
 
 ---
@@ -95,7 +95,7 @@ Max 1 par tweet, souvent aucun. Emojis acceptables : (insight), (data), (thread)
 
 ## 4. COLD OUTREACH TWITTER — ANGLE R
 
-Le cold outreach est defini en detail dans marketing/context.md §8. Ici on precise les regles **Twitter-specifiques** pour R.
+Le cold outreach est defini en detail dans marketing/strategie.md. Ici on precise les regles **Twitter-specifiques** pour R.
 
 ### 4.1 Rappel du process
 
@@ -249,7 +249,7 @@ Les formats sont definis dans twitter/context.md §6. Ici on precise le **conten
 
 ### 6.1 Hot Take R (1-2x/semaine)
 
-Angle : opinion tranchee sur un sujet e-com/agencies que les gens ne peuvent pas ignorer. Structure : affirmation brutale → developpement → question ouverte (cf. growth-marketing/context.md §3.2).
+Angle : opinion tranchee sur un sujet e-com/agencies que les gens ne peuvent pas ignorer. Structure : affirmation brutale → developpement → question ouverte (cf. marketing/strategie.md).
 
 ```
 Your Shopify store has 14 apps installed.
@@ -309,7 +309,7 @@ Drop it below. I bet 80% of you don't know.
 
 ### 6.4 Cold outreach public (quotidien — via le process §4)
 
-C'est le format le plus frequent de R. Chaque cold outreach = un tweet public avec des donnees reelles. Les meilleurs cold outreachs sont eux-memes du contenu (cf. marketing/context.md §8.8).
+C'est le format le plus frequent de R. Chaque cold outreach = un tweet public avec des donnees reelles. Les meilleurs cold outreachs sont eux-memes du contenu (cf. marketing/strategie.md).
 
 ### 6.5 Thread R (1x/semaine max)
 
@@ -436,8 +436,8 @@ Zero redaction de posts. Execution uniquement : publier, cross-engagement, repon
 |----------|-------------|------|--------|
 | twitter/context.md | growth-marketing/twitter/ | Regles communes, cross-engagement, timing, formats | Done |
 | twitter/algo.md | growth-marketing/twitter/ | Mecanique algorithmique | Done |
-| growth-marketing/context.md | growth-marketing/ | Piliers, frameworks provocation/reponse, personas | Done |
-| marketing/context.md | marketing/ | Cold outreach process, templates, planning R/F | Done |
+| marketing/strategie.md | growth-marketing/ | Piliers, frameworks provocation/reponse, personas | Done |
+| marketing/strategie.md | marketing/ | Cold outreach process, templates, planning R/F | Done |
 | f2/context.md | f2/twitter/ | Voix F2 (pour contraste avec voix R) | Done |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identite, storytelling, bios | Done |
 | romain/roadmap.md | romain/twitter/ | Planning Twitter R par phase | Done |

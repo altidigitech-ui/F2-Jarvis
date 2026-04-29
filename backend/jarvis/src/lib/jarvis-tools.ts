@@ -490,7 +490,7 @@ export function createJarvisMcpServer(options: {
   Creates a new file OR overwrites an existing file at \`path\` with \`content\`.
   Allowed paths: prefixes f2/, fabrice/, romain/, strategie/, patterns/,
     tracking/, archives/, distribution/, growth-marketing/, saas/, produits/,
-    ops/, marketing/ — OR root files matching BATCH-SEMAINE-N.md,
+    ops/, marketing/, la-toile/ — OR root files matching BATCH-SEMAINE-N.md,
     PLAN-*.md, HANDOFF*.md, CHANGELOG*.md, REVUE-*.md.
   Allowed extensions: .md .txt .json .yml .yaml .csv.
   Max content size: 500 KB. Use this for full batch generation, strategic

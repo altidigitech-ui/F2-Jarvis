@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 04 avril 2026
 **Hérite de :** `saas/context.md` (conventions portefeuille, règles communes, structure sous-dossiers)
-**Se synchronise avec :** `growth-marketing/roadmap.md` (coordination marketing cross-plateforme), `marketing/roadmap.md` (vision semestrielle), `produits/STATUS.md` (source de vérité produits)
+**Se synchronise avec :** `marketing/objectifs.md` (coordination marketing cross-plateforme), `marketing/objectifs.md` (vision semestrielle), `produits/STATUS.md` (source de vérité produits)
 **Ce fichier contient :** le pipeline des SaaS dans le temps — quand chaque produit lance, les dépendances, les actions à chaque lancement, l'évolution du portefeuille.
 
 ---
@@ -158,10 +158,10 @@ Chaque lancement suit le même process. Les actions deviennent plus rapides car 
 |----------|-------------|------|
 | saas/context.md | saas/ | Conventions portefeuille, structure sous-dossiers |
 | saas/leak-detector/context.md | saas/leak-detector/ | Détails produit LD (LIVE) |
-| marketing/context.md §2 | marketing/ | Pipeline SaaS, modèle usine |
-| marketing/roadmap.md | marketing/ | Vision semestrielle, cadence |
-| growth-marketing/roadmap.md | growth-marketing/ | Coordination marketing cross-plateforme par phase |
-| la-toile/context.md | la-toile/ | Architecture de visibilité, nœuds produits |
+| marketing/strategie.md | marketing/ | Pipeline SaaS, modèle usine |
+| marketing/objectifs.md | marketing/ | Vision semestrielle, cadence |
+| marketing/objectifs.md | growth-marketing/ | Coordination marketing cross-plateforme par phase |
+| la-toile/la-toile.md | la-toile/ | Architecture de visibilité, nœuds produits |
 | `produits/STATUS.md` | Racine du repo | **Source de vérité pipeline** (statut de chaque SaaS) |
 | `produits/MUTATIONS.md` | Racine du repo | Mutations LD → StoreMD |
 | `produits/NOUVEAUX.md` | Racine du repo | Specs des 8 nouveaux SaaS |

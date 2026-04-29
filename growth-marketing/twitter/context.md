@@ -1,7 +1,7 @@
 # CONTEXT TWITTER/X — Règles Communes F2, R, F
 
 **Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `growth-marketing/context.md` (stratégie globale, piliers, frameworks, phases)
+**Hérite de :** `marketing/strategie.md` + `marketing/canaux/twitter.md` (stratégie globale, piliers, frameworks, phases)
 **S'appuie sur :** `twitter/algo.md` (mécanique algorithmique, poids, pénalités, boost)
 **Implémenté par :** `twitter/f2/context.md`, `twitter/fabrice/context.md`, `twitter/romain/context.md`
 **Ce fichier contient :** les règles Twitter communes aux 3 comptes. Ce qui est propre à un seul compte va dans son dossier.
@@ -156,7 +156,7 @@ L'algo montre un pic d'engagement le mercredi (cf. algo.md §9.1). Réserver le 
 
 ### 4.5 Déplacements & fuseaux horaires
 
-Si R ou F est temporairement dans un fuseau différent, les créneaux ci-dessus sont recalculés selon les règles définies dans growth-marketing/context.md §9.1. Les ajustements sont documentés dans le dossier personnel de l'associé concerné (romain/ ou fabrice/).
+Si R ou F est temporairement dans un fuseau différent, les créneaux ci-dessus sont recalculés selon les règles définies dans marketing/strategie.md. Les ajustements sont documentés dans le dossier personnel de l'associé concerné (romain/ ou fabrice/).
 
 ---
 
@@ -192,11 +192,11 @@ Total : 30 interactions/j + 10 cold/j + 1+ post/j.
 
 ### 5.3 Comptes Tier — Critères de sélection
 
-Cf. `growth-marketing/context.md` §5.3 pour la définition complète des Tiers, les critères de sélection, et la gestion dynamique des listes.
+Cf. `marketing/strategie.md` §5.3 pour la définition complète des Tiers, les critères de sélection, et la gestion dynamique des listes.
 
 ### 5.4 Comment écrire une reply qui se fait remarquer
 
-Cf. growth-marketing/context.md §5.2 pour les exemples. Sur Twitter spécifiquement :
+Cf. marketing/strategie.md pour les exemples. Sur Twitter spécifiquement :
 
 1. **Tenir en 280 caractères** — une reply longue est souvent coupée. Aller droit au point.
 2. **Ajouter un angle non couvert** par le post original — pas juste valider.
@@ -207,7 +207,7 @@ Cf. growth-marketing/context.md §5.2 pour les exemples. Sur Twitter spécifique
 
 ## 6. FORMATS TWITTER-SPÉCIFIQUES
 
-Les formats de contenu sont définis dans growth-marketing/context.md §7. Ici on précise les **contraintes Twitter** pour chaque format.
+Les formats de contenu sont définis dans marketing/strategie.md. Ici on précise les **contraintes Twitter** pour chaque format.
 
 ### 6.1 Tweet solo (hot take, question ouverte)
 
@@ -313,7 +313,7 @@ Le TweepCred est un score de réputation 0-100. En dessous de 65, seulement 3 tw
 |----------|-------|----------|
 | Impressions/semaine (par compte) | 25K-100K | Distribution For You active. |
 | Replies reçues/semaine (R+F) | 50-100+ | Communauté engagée. |
-| Ratio replies/impressions | > 2% | Métrique nord star (cf. growth-marketing/context.md §1). |
+| Ratio replies/impressions | > 2% | Métrique nord star (cf. marketing/strategie.md). |
 | Followers R | 500-1500 | |
 | Followers F | 500-1500 | |
 | Followers F2 | 300-1000 | |
@@ -322,7 +322,7 @@ Le TweepCred est un score de réputation 0-100. En dessous de 65, seulement 3 tw
 
 ### 8.4 Où regarder
 
-Twitter Analytics (natif) pour impressions, replies, profile visits. UTM tracking dans notre outil de suivi (cf. tracking/) pour les clics produit. Revue chaque vendredi (cf. growth-marketing/context.md §14).
+Twitter Analytics (natif) pour impressions, replies, profile visits. UTM tracking dans notre outil de suivi (cf. tracking/) pour les clics produit. Revue chaque vendredi (cf. marketing/strategie.md).
 
 ---
 
@@ -346,7 +346,7 @@ Twitter Analytics (natif) pour impressions, replies, profile visits. UTM trackin
 
 ## 10. ANTI-PATTERNS SPÉCIFIQUES TWITTER
 
-Les anti-patterns généraux sont dans growth-marketing/context.md §11. Voici ceux qui sont **spécifiques à Twitter** :
+Les anti-patterns généraux sont dans marketing/strategie.md. Voici ceux qui sont **spécifiques à Twitter** :
 
 | Interdit | Pourquoi | Alternative |
 |----------|----------|-------------|
@@ -372,5 +372,5 @@ Les anti-patterns généraux sont dans growth-marketing/context.md §11. Voici c
 | fabrice/roadmap.md | fabrice/twitter/ | Planning Twitter F | ✅ |
 | romain/context.md | romain/twitter/ | Voix R, contenu growth/CRO | ✅ |
 | romain/roadmap.md | romain/twitter/ | Planning Twitter R | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, frameworks, phases | ✅ |
-| marketing/context.md | marketing/ | Cold outreach, planning R/F, funnel, comptes | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, piliers, frameworks, phases | ✅ |
+| marketing/strategie.md | marketing/ | Cold outreach, planning R/F, funnel, comptes | ✅ |

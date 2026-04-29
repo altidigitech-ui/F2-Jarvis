@@ -1,8 +1,8 @@
 # CONTEXT SAAS — Portefeuille produits FoundryTwo
 
 **Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `marketing/context.md` (pipeline §2, funnel §3, comptes §5)
-**Hérite de :** `la-toile/context.md` (architecture de visibilité, nœuds produits)
+**Hérite de :** `marketing/strategie.md` (pipeline §2, funnel §3, comptes §5)
+**Hérite de :** `la-toile/la-toile.md` (architecture de visibilité, nœuds produits)
 **Ce fichier contient :** les conventions du portefeuille SaaS — comment chaque sous-dossier est structuré, ce que chaque fichier contient, les règles communes, le pipeline.
 **Ce fichier ne contient PAS :** les détails de chaque produit (features, pricing, concurrents, données marché = voir `produits/`).
 
@@ -128,8 +128,8 @@ saas/[nom-produit]/
 |----------|-------------|------|
 | saas/context.md | saas/ | Conventions portefeuille, structure sous-dossiers |
 | saas/leak-detector/context.md | saas/leak-detector/ | Détails produit LD (LIVE) |
-| marketing/context.md §2 | marketing/ | Pipeline SaaS, modèle usine |
-| marketing/roadmap.md | marketing/ | Vision semestrielle, cadence |
-| growth-marketing/roadmap.md | growth-marketing/ | Coordination marketing cross-plateforme par phase |
-| la-toile/context.md | la-toile/ | Architecture de visibilité, nœuds produits |
+| marketing/strategie.md | marketing/ | Pipeline SaaS, modèle usine |
+| marketing/objectifs.md | marketing/ | Vision semestrielle, cadence |
+| marketing/objectifs.md | growth-marketing/ | Coordination marketing cross-plateforme par phase |
+| la-toile/la-toile.md | la-toile/ | Architecture de visibilité, nœuds produits |
 | `produits/` | Racine du repo | **Source de vérité produits** (features, pricing, concurrents, données marché) |
