@@ -8,7 +8,7 @@
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
 |Lun 27/04|`store-md-money-daily`|68 stores audited / $12,400 leaks — data-drop|✅ Publié 18:14|
-|Mar 28/04|`store-md-horror-ghost-apps`|Unpopular opinion: you're paying for dead apps|⏳|
+|Mar 28/04|`store-md-horror-ghost-apps`|Unpopular opinion: you're paying for dead apps|✅ Publié|
 |Mer 29/04|`store-md-tier-apps-danger`|Mobile conversion isn't low because of your product|⏳|
 |Jeu 30/04|`store-md-stats`|Agency DM: 8 stores scanned, $1,400/mo combined|⏳|
 |Ven 01/05|`store-md-money-visitors`|Week 7 audit results: 90 stores / $15,600 cumul|⏳|
@@ -25,7 +25,7 @@
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 28/04|$12,400 breakdown from 68 scans (long form)|⏳|
+|Mar 28/04|$12,400 breakdown from 68 scans (long form)|✅ Publié|
 |Jeu 30/04|Free agency scans this week — CTA commentaires + DM|⏳|
 
 ## 2B. POSTS LINKEDIN R — COUCHE B (20h30 CEST)
@@ -58,8 +58,8 @@
 
 |Jour|Cross Couche A (14h05)|Cross Couche B (19h05)|
 |---|---|---|
-|Lun 27/04|⏳|— (pas de Couche B lundi)|
-|Mar 28/04|⏳|— (pas de Couche B mardi)|
+|Lun 27/04|✅|— (pas de Couche B lundi)|
+|Mar 28/04|✅|— (pas de Couche B mardi)|
 |Mer 29/04|⏳|⏳|
 |Jeu 30/04|⏳|⏳|
 |Ven 01/05|⏳|⏳|
