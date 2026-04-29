@@ -2,8 +2,8 @@
 
 **Dernière mise à jour :** 04 avril 2026
 **Hérite de :** `twitter/context.md` (règles Twitter communes, cross-engagement, timing, formats)
-**Hérite de :** `growth-marketing/context.md` (piliers, frameworks, persona segments)
-**S'appuie sur :** `marketing/context.md` (cold outreach process, planning quotidien)
+**Hérite de :** `marketing/strategie.md` (piliers, frameworks, persona segments)
+**S'appuie sur :** `marketing/strategie.md` (cold outreach process, planning quotidien)
 **Ce fichier contient :** tout ce qui est propre au compte @FabGangi sur Twitter — voix F, angle technique accessible, stratégie d'engagement, cold outreach e-com/creators.
 
 ---
@@ -95,7 +95,7 @@ Max 1 par tweet, souvent aucun. Émojis acceptables : 🔨 (build), 🧵 (thread
 
 ## 4. COLD OUTREACH TWITTER — ANGLE F
 
-Le cold outreach F est **complémentaire** à celui de R (cf. marketing/context.md §8). F fait le même volume que R et touche une audience complémentaire : merchants qui galèrent avec la tech + creators qui galèrent avec leurs workflows.
+Le cold outreach F est **complémentaire** à celui de R (cf. marketing/strategie.md). F fait le même volume que R et touche une audience complémentaire : merchants qui galèrent avec la tech + creators qui galèrent avec leurs workflows.
 
 ### 4.1 Rappel du process
 
@@ -443,8 +443,8 @@ F publie son post préparé entre 13h et 14h. Le reste (engagement, cold outreac
 |----------|-------------|------|--------|
 | twitter/context.md | growth-marketing/twitter/ | Règles communes, cross-engagement, timing, formats | ✅ |
 | twitter/algo.md | growth-marketing/twitter/ | Mécanique algorithmique | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas | ✅ |
-| marketing/context.md | marketing/ | Cold outreach process, planning R/F | ✅ |
+| marketing/strategie.md | growth-marketing/ | Piliers, frameworks, personas | ✅ |
+| marketing/strategie.md | marketing/ | Cold outreach process, planning R/F | ✅ |
 | romain/context.md | romain/twitter/ | Voix R (pour contraste avec voix F) | ✅ |
 | f2/context.md | f2/twitter/ | Voix F2 (pour contraste) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling, bios | ✅ |

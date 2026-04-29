@@ -98,6 +98,6 @@ Tout ce qui suit est défini dans le parent `ih/context.md` et ne doit pas être
 |----------|-------------|------|--------|
 | ih/context.md | growth-marketing/ih/ | Voix, contenu, cold outreach, engagement, workflow (parent) | ✅ |
 | ih/algo.md | growth-marketing/ih/ | Mécanique plateforme, classement, formats | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
 | f2/roadmap.md | f2/ih/ | Planning IH par phase | ✅ |

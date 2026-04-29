@@ -4,7 +4,7 @@
 > Si vous débarquez à zéro (humain ou IA), LISEZ CE FICHIER EN PREMIER.
 > Temps de lecture : 10 minutes. Après ça, vous comprenez 90% du système.
 
-**Dernière mise à jour : 21 avril 2026**
+**Dernière mise à jour : 29 avril 2026 (post-grand-nettoyage)**
 
 ---
 
@@ -21,9 +21,11 @@ Deux co-fondateurs full-time : **Romain (R, Growth)** et **Fabrice (F, CTO/Build
 
 ## Les 4 vérités à retenir
 
-### 1. Il y a UNE source de vérité stratégique : `strategie/CONTEXT.md`
+### 1. Sources de vérité stratégiques (deux niveaux)
 
-Tous les autres documents (marketing, growth, per-compte, per-plateforme) en héritent. En cas de contradiction, **`strategie/CONTEXT.md` prime.**
+- **Principes & vision** : `strategie/CONTEXT.md` — Distribution-First Method, complexité = moat, Volume × Constance. Hérite de `BIBLE.md`.
+- **Stratégie marketing tactique** : `marketing/strategie.md` (depuis le 29/04/2026 — grand nettoyage) — cible merchants Shopify, leviers, comptes, voix. **Source de vérité opérationnelle pour tout ce qui touche au marketing**. Hérite de `strategie/CONTEXT.md` pour les principes parents.
+- En cas de contradiction sur une question marketing tactique, **`marketing/strategie.md` prime**. Sur les principes méta (Distribution-First, intégrité, etc.), `BIBLE.md` et `strategie/CONTEXT.md` priment.
 
 ### 2. Il y a UNE source de vérité produits : `produits/STATUS.md`
 
@@ -133,7 +135,7 @@ F2-JARVIS (repo)
 
 **Dossiers :** `strategie/`, `produits/`, `marketing/`, `growth-marketing/`, `f2/`, `romain/`, `fabrice/`, `distribution/`, `la-toile/`, `asset-brand/`, `saas/`.
 
-**Documentation détaillée :** `strategie/CONTEXT.md` + `produits/STATUS.md`.
+**Documentation détaillée :** `strategie/CONTEXT.md` (vision/principes) + `marketing/strategie.md` (tactique marketing) + `produits/STATUS.md` (portfolio).
 
 ---
 
@@ -168,7 +170,7 @@ Si vous tombez sur ces éléments en lisant d'anciens documents, ils sont **obso
 
 **Si vous êtes une IA qui doit aider R ou F sur une tâche :**
 1. Lire `BIBLE.md` + `ANTI-IA.md` (principes)
-2. Lire `strategie/CONTEXT.md` (où on va)
+2. Lire `strategie/CONTEXT.md` (principes) puis `marketing/strategie.md` (tactique marketing depuis 29/04)
 3. Lire `produits/STATUS.md` (ce qu'on a)
 4. Lire `{persona}/VOIX.md` + `{persona}/context.md` selon qui vous aidez
 5. Consulter `BATCH-SEMAINE-N.md` pour savoir ce qui se joue cette semaine

@@ -1,7 +1,7 @@
 # CONTEXT INDIEHACKERS — @foundrytwo
 
 **Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `growth-marketing/context.md` (stratégie globale, piliers, persona segments, matrice cross-plateforme, volumes)
+**Hérite de :** `marketing/strategie.md` + `marketing/canaux/ih.md` (stratégie globale, piliers, persona segments, matrice cross-plateforme, volumes)
 **S'appuie sur :** `ih/algo.md` (mécanique de la plateforme, classement, formats, données)
 **Implémenté par :** `ih/f2/context.md`, `ih/f2/roadmap.md`
 **Ce fichier contient :** les règles IH communes — positionnement, voix, types de contenu, cold outreach, engagement, workflow.
@@ -14,7 +14,7 @@
 
 IndieHackers est le **canal communautaire** de FoundryTwo. Contrairement à Twitter (3 comptes, distribution algorithmique) et LinkedIn (2 profils, engagement à valeur), IH est un **forum** où le contenu de valeur remonte naturellement par les commentaires et les upvotes.
 
-IH est le canal #1 pour le **build in public** (cf. growth-marketing/context.md §8.1). C'est la plateforme où la transparence, les vrais chiffres, et les échecs honnêtes sont le plus valorisés. L'audience IH inclut des builders et entrepreneurs — y compris des merchants, freelancers et creators qui fréquentent IH pour apprendre et acheter des outils.
+IH est le canal #1 pour le **build in public** (cf. marketing/strategie.md). C'est la plateforme où la transparence, les vrais chiffres, et les échecs honnêtes sont le plus valorisés. L'audience IH inclut des builders et entrepreneurs — y compris des merchants, freelancers et creators qui fréquentent IH pour apprendre et acheter des outils.
 
 ### 1.2 Le modèle
 
@@ -74,7 +74,7 @@ Sur Twitter, F2 est un studio neutre et data-driven. Sur LinkedIn, R et F sont d
 
 | Type | Format IH | Fréquence | Source de données |
 |------|-----------|-----------|-------------------|
-| **Build in public update** | Post long : chiffres semaine + ce qu'on a fait + ce qu'on a appris + next steps | 1x/semaine (mercredi, cf. growth-marketing/context.md §8.3) | Growth Tracker, métriques réelles |
+| **Build in public update** | Post long : chiffres semaine + ce qu'on a fait + ce qu'on a appris + next steps | 1x/semaine (mercredi, cf. marketing/strategie.md) | Growth Tracker, métriques réelles |
 | **Success story avec chiffres** | Post long : milestone atteint + le chemin pour y arriver + chiffres détaillés | Quand un milestone est atteint | Données réelles |
 | **Post-mortem / échec** | Post long : ce qui s'est passé + pourquoi + ce qu'on a changé | Quand un échec significatif se produit | Expérience directe |
 | **Ask IH (question)** | Question spécifique à la communauté, issue de nos propres challenges | 1-2x/mois | Questions réelles qu'on se pose |
@@ -241,7 +241,7 @@ Si le temps ne suffit pas pour IH :
 
 | Type | Fréquence | Jour |
 |------|-----------|------|
-| Build in public update | 1x/semaine | Mercredi (cf. growth-marketing/context.md §8.3) |
+| Build in public update | 1x/semaine | Mercredi (cf. marketing/strategie.md) |
 | Ask IH / Question | 1-2x/mois | Jeudi (meilleur jour IH, cf. algo.md §7) |
 | Show IH (lancement) | 1x par lancement de produit | Jour J de chaque produit |
 | Guide actionnable | 1x/mois (quand la matière est là) | Jeudi |
@@ -252,7 +252,7 @@ Si le temps ne suffit pas pour IH :
 | Règle | Pourquoi | Référence |
 |-------|----------|-----------|
 | **Titre ~51 caractères** | Longueur optimale des top posts IH | algo.md §3.1 |
-| **Poster les updates le mercredi, les questions/guides le jeudi** | Jeudi = meilleur jour IH. Mercredi = slot dédié dans le planning cross-plateforme. | algo.md §7, growth-marketing/context.md §8.3 |
+| **Poster les updates le mercredi, les questions/guides le jeudi** | Jeudi = meilleur jour IH. Mercredi = slot dédié dans le planning cross-plateforme. | algo.md §7, marketing/strategie.md |
 | **Éviter le mardi** | 76% des posts du mardi finissent dans le bottom 50 | algo.md §7 |
 | **Chaque post contient des chiffres réels** | Les chiffres MRR/signups génèrent 30-50+ commentaires | algo.md §3.1 |
 | **Répondre à CHAQUE commentaire** | L'algo IH récompense les posts avec le plus de commentaires. Chaque réponse = +1 commentaire. | algo.md §2.1 |
@@ -369,8 +369,8 @@ Même sujet ≠ même post. Chaque plateforme a son format.
 | Document | Emplacement | Rôle | Statut |
 |----------|-------------|------|--------|
 | algo.md | growth-marketing/ih/ | Mécanique plateforme, classement, formats, données | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, piliers, matrice cross-plateforme, allocation temps | ✅ |
-| marketing/context.md | marketing/ | Cold outreach process, templates IH, planning R | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, piliers, matrice cross-plateforme, allocation temps | ✅ |
+| marketing/strategie.md | marketing/ | Cold outreach process, templates IH, planning R | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
 | f2/context.md | f2/ih/ | Configuration compte @foundrytwo IH | ✅ |
 | f2/roadmap.md | f2/ih/ | Planning IH par phase | ✅ |

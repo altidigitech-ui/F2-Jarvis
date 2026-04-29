@@ -232,7 +232,7 @@ Le profil évolue avec les milestones. Chaque mise à jour reflète une donnée 
 | romain/context.md | romain/linkedin/ | Voix, contenu, engagement à valeur, exemples, workflow | ✅ |
 | linkedin/context.md | growth-marketing/linkedin/ | Règles communes, engagement à valeur, formats, profil | ✅ |
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
-| marketing/context.md | marketing/ | Cold outreach process, planning R/F | ✅ |
+| marketing/strategie.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
+| marketing/strategie.md | marketing/ | Cold outreach process, planning R/F | ✅ |
 | twitter/romain/roadmap.md | romain/twitter/ | Planning Twitter R (pour coordination) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |

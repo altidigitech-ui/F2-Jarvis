@@ -1,7 +1,7 @@
 # CONTEXT PRODUCT HUNT — @foundrytwo
 
 **Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `growth-marketing/context.md` (stratégie globale, piliers, matrice cross-plateforme, Build My Community §1.1)
+**Hérite de :** `marketing/strategie.md` + `marketing/canaux/ph.md` (stratégie globale, piliers, matrice cross-plateforme, Build My Community §1.1)
 **S'appuie sur :** `ph/algo.md` (mécanique de la plateforme, système de points, featuring, timing)
 **Implémenté par :** `ph/f2/context.md`, `ph/f2/roadmap.md`
 **Ce fichier contient :** la stratégie Product Hunt commune — positionnement, pre-launch, launch day, post-launch, adaptation multi-produit.
@@ -323,8 +323,8 @@ PH n'a PAS d'allocation quotidienne comme les autres canaux. Le temps est concen
 | Document | Emplacement | Rôle | Statut |
 |----------|-------------|------|--------|
 | algo.md | growth-marketing/ph/ | Mécanique plateforme, points, featuring, timing | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
-| marketing/context.md | marketing/ | Cold outreach process, planning R/F, funnel, comptes | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, matrice cross-plateforme, Build My Community | ✅ |
+| marketing/strategie.md | marketing/ | Cold outreach process, planning R/F, funnel, comptes | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
 | f2/context.md | f2/ph/ | Configuration compte @foundrytwo PH | ✅ |
 | f2/roadmap.md | f2/ph/ | Planning PH par lancement | ✅ |

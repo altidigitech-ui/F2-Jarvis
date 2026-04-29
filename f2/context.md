@@ -52,7 +52,7 @@ R gère @foundrytwo sur toutes les plateformes. Les détails stratégiques et op
 
 ### 3.2 Horaires de publication (CET)
 
-Créneaux définis dans marketing/roadmap.md : 7h30 / 8h00 / 8h15 / 13h30 / 17h / 18h-19h.
+Créneaux définis dans marketing/objectifs.md (source de vérité cadences depuis 29/04/2026). Détails par canal dans marketing/canaux/.
 
 R publie le contenu F2 aux créneaux adaptés à chaque plateforme (golden window Twitter, timing LinkedIn, etc. — définis dans les algo.md respectifs).
 
@@ -121,10 +121,10 @@ Les comptes produits sont des **vitrines statiques** — pas des canaux de publi
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| marketing/context.md | marketing/ | Funnel, rôles par compte, inventaire comptes |
-| marketing/roadmap.md | marketing/ | Squelette éditorial, batch, horaires, cadence |
-| growth-marketing/context.md | growth-marketing/ | Build My Community, 4 piliers, matrice cross-plateforme |
-| growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme, allocation temps |
+| marketing/strategie.md | marketing/ | Stratégie marketing tactique (source de vérité 29/04/2026) — cible, leviers, comptes, voix |
+| marketing/objectifs.md | marketing/ | KPIs, jalons, volumes activité hebdo |
+| marketing/canaux/ | marketing/canaux/ | Détails opérationnels par canal (tiktok, instagram, facebook, reddit, twitter, linkedin, launch-days) |
+| growth-marketing/{tiktok,linkedin,ih,ph,twitter}/algo.md | growth-marketing/ | Référence algorithme par plateforme (gardé dans le repo) |
 | f2/twitter/context.md | f2/twitter/ | Stratégie Twitter F2 |
 | f2/linkedin/context.md | f2/linkedin/ | Stratégie LinkedIn F2 |
 | f2/ih/context.md | f2/ih/ | Stratégie IH F2 |

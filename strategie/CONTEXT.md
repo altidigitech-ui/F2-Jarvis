@@ -1,13 +1,15 @@
 # CONTEXT — Distribution-First Method (V2)
 
-> **SOURCE DE VÉRITÉ PARENT DU REPO.**
-> Ce fichier prime sur tout autre document stratégique en cas de contradiction.
+> **SOURCE DE VÉRITÉ — PRINCIPES & VISION STRATÉGIQUES.**
 > Hérite de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
+> Pour la **stratégie marketing tactique opérationnelle** (cible, canaux, voix, cadences) → voir `marketing/strategie.md` (source de vérité depuis le 29/04/2026 — grand nettoyage).
+> En cas de contradiction tactique marketing, `marketing/strategie.md` prime.
+> En cas de contradiction sur les principes méta (Distribution-First, intégrité données, Volume × Constance), ce fichier prime.
 
-**Source de vérité** pour la stratégie FoundryTwo.
-**Dernière mise à jour :** 21 avril 2026
+**Source de vérité** pour les principes stratégiques FoundryTwo.
+**Dernière mise à jour :** 29 avril 2026 (post-grand-nettoyage marketing)
 **Utilisé par :** F (Fabrice), R (Romain), Claude
-**Statut :** ACTIF — remplace TOUT ce qui précède
+**Statut :** ACTIF — principes parents. Pour le tactique marketing, voir `marketing/strategie.md`.
 
 ---
 
@@ -21,7 +23,7 @@ Résultats Leak Detector après 3 semaines : ~8 signups, 0€ MRR, cible dev qui
 ### Ce qui change
 
 1. **Distribution-first** : on ne build rien sans validation communauté
-2. **Cible non-dev** : e-commerce sellers, agences marketing, freelancers, content creators
+2. **Cible recentrée** : merchants Shopify (depuis le 29/04/2026 — cf. marketing/strategie.md). Le portfolio de produits StoreMD/ProfitPilot/etc. cible primairement les merchants Shopify ; les agences/freelancers/creators sont secondaires (LeadQuiz cible coaches notamment).
 3. **Full-time** : F et R au chômage = 100% dédié
 4. **Pas de limite de build** : Claude Code + IA = la complexité technique est un MOAT, pas un frein
 5. **Volume × Constance** : le moteur de la distribution
@@ -262,7 +264,7 @@ Détails complets dans WARMING-FARMING.md.
 ## 11. CE DOCUMENT REMPLACE
 
 - L'ancien framework de scoring (foundrytwo_saas_research_framework.md) pour les DÉCISIONS PRODUIT
-- Le pipeline PayloadDiff → FicheProduitAI → QuizForge → DevToolsAPI
+- Pour le pipeline produits actuel, voir `produits/STATUS.md` (source de vérité)
 - L'approche build-first
 - La cible dev
 - La limite time-to-market de 4 semaines

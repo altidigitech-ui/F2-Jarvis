@@ -22,7 +22,8 @@ Il vous guide en 10 minutes vers une compréhension globale.
 | `ENTRYPOINT.md` | **Porte d'entrée** — lisez ce fichier en premier |
 | `BIBLE.md` | Principes non-négociables. Fabrice seul l'édite |
 | `ANTI-IA.md` | Règle #0 : anti-détection IA. Prime sur tout contenu généré |
-| `strategie/CONTEXT.md` | Source de vérité stratégique parent |
+| `strategie/CONTEXT.md` | Source de vérité — principes stratégiques (Distribution-First) |
+| `marketing/strategie.md` | Source de vérité — stratégie marketing tactique (depuis 29/04/2026) |
 | `produits/STATUS.md` | Source de vérité portfolio produits |
 | `CLAUDE.md` | Instructions permanentes pour Claude Code (terminal F) |
 
@@ -62,8 +63,8 @@ F2-Jarvis/
 │  ─── FOUNDRYTWO (CONTENU OPÉRATIONNEL) ───
 ├── strategie/             ← Source de vérité stratégique (CONTEXT, PLAYBOOK, WARMING-FARMING, verticals/)
 ├── produits/              ← Source de vérité portfolio (STATUS, MUTATIONS, NOUVEAUX, PRINCIPES-ANTI-CONCURRENTS)
-├── marketing/             ← Marketing macro (funnel, pipeline)
-├── growth-marketing/      ← Algos + context par plateforme (twitter, linkedin, ih, ph, tiktok)
+├── marketing/             ← Stratégie marketing tactique (source de vérité depuis 29/04/2026) — strategie, objectifs, canaux/, contenu/, jarvis/
+├── growth-marketing/      ← Algos plateforme (twitter, linkedin, ih, ph, tiktok) + context résiduel
 ├── distribution/          ← Règles Reddit + Facebook
 │
 ├── f2/                    ← Compte studio @foundrytwo (R gère)
@@ -71,7 +72,7 @@ F2-Jarvis/
 ├── fabrice/               ← F — full-time, angle technique
 │
 ├── saas/                  ← Contexte par SaaS
-├── la-toile/              ← Architecture réseau (Altistone INVISIBLE)
+├── la-toile/              ← Architecture réseau (33 fils UTM) — la-toile.md
 ├── asset-brand/           ← Identité de marque (brand bible, logo, guidelines)
 │
 └── archives/              ← Archives globales (batches, vieilles semaines)
@@ -85,8 +86,9 @@ F2-Jarvis/
 
 1. `ENTRYPOINT.md` (10 min)
 2. `BIBLE.md` (5 min)
-3. `strategie/CONTEXT.md` (15 min)
-4. `produits/STATUS.md` (2 min)
+3. `strategie/CONTEXT.md` (10 min — principes)
+4. `marketing/strategie.md` (10 min — tactique marketing)
+5. `produits/STATUS.md` (2 min)
 
 → Vous comprenez 90% du système.
 
@@ -140,8 +142,8 @@ F2-Jarvis/
 | `strategie/` | Complet, parent | |
 | `produits/` | Complet | StoreMD live depuis 14/04 |
 | `distribution/` | Minimal | À enrichir |
-| `marketing/` | Léger | À enrichir |
-| `growth-marketing/` | Complet | Algos + stratégies par plateforme |
+| `marketing/` | Complet | Source de vérité tactique depuis 29/04/2026 |
+| `growth-marketing/` | Résiduel | Algos plateforme uniquement (stratégies archivées 29/04/2026) |
 | `f2/` | Complet | |
 | `romain/` | Complet | |
 | `fabrice/` | Complet | |
@@ -153,7 +155,7 @@ F2-Jarvis/
 | `brain/` | Opérationnel | Ouroboros nocturne, MemPalace actif |
 | `.claude/` | Configuré | 17 skills, 7 agents, 9 commands, 6 hooks |
 | `archives/` | Propre | S6 archivé 26/04 (S1-S2-S4-S5-S6 + batches) |
-| TikTok (`f2/tiktok/`, `growth-marketing/tiktok/`) | SUSPENDU | Pipeline vidéo en construction |
+| TikTok (compte produit `@storemd`) | ACTIF | Canal #1 acquisition — 6 vidéos/sem (cf. marketing/canaux/tiktok.md) |
 
 ---
 

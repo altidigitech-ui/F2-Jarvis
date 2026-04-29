@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `romain/context.md` (cadre opérationnel, planning, projet Claude, historique LD)
-**Se synchronise avec :** `growth-marketing/roadmap.md` (coordination cross-plateforme)
+**Se synchronise avec :** `marketing/objectifs.md` (coordination cross-plateforme)
 **Cadence cible :** 2 SaaS/mois (répartis sur 3 verticals : e-com, agences, creators).
 
 **Rôle de ce fichier :** La progression de R dans le temps — comment le cold outreach, l'engagement, la publication, et la communauté évoluent phase par phase. Les roadmaps par plateforme (twitter/romain/roadmap.md, linkedin/romain/roadmap.md) couvrent les détails spécifiques à chaque canal. Ce fichier couvre la vue OPÉRATIONNELLE globale de R.
@@ -201,6 +201,6 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Remplacé p
 | romain/cold/claude/context.md | romain/cold/claude/ | Règles cold outreach |
 | romain/engagement/claude/context.md | romain/engagement/claude/ | Règles engagement |
 | romain/publication/claude/context.md | romain/publication/claude/ | Règles publication |
-| growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
+| marketing/objectifs.md | growth-marketing/ | Coordination cross-plateforme |
 | romain/twitter/roadmap.md | romain/twitter/ | Roadmap Twitter R (détails plateforme) |
 | romain/linkedin/roadmap.md | romain/linkedin/ | Roadmap LinkedIn R (détails plateforme) |

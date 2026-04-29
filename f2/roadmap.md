@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 04 avril 2026
 **Hérite de :** `f2/context.md` (cadre opérationnel, cycle hebdomadaire, projet Claude)
-**Se synchronise avec :** `growth-marketing/roadmap.md` (coordination cross-plateforme)
+**Se synchronise avec :** `marketing/objectifs.md` (coordination cross-plateforme)
 **Durée :** Avril → Juin+ 2026 (3 phases mensuelles).
 **Cadence cible :** 2 SaaS/mois.
 
@@ -151,7 +151,7 @@ LD lancé le 16/03/2026. ~8 signups, 0 MRR. En mutation vers StoreMD (diagnostic
 | f2/progress-semaine.md | f2/ | Carnet de bord de cette semaine |
 | f2/publication/context.md | f2/publication/ | Fichier de connaissance projet Claude F2 |
 | f2/publication/prompt.md | f2/publication/ | System prompt projet Claude F2 |
-| growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
+| marketing/objectifs.md | growth-marketing/ | Coordination cross-plateforme |
 | f2/twitter/roadmap.md | f2/twitter/ | Roadmap Twitter F2 (détails plateforme) |
 | f2/ih/roadmap.md | f2/ih/ | Roadmap IH F2 (détails plateforme) |
 | f2/ph/roadmap.md | f2/ph/ | Roadmap PH F2 (détails plateforme) |

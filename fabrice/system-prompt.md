@@ -387,7 +387,8 @@ Les fichiers suivants sont uploadés dans ce projet :
 |---------|------------------|
 | `fabrice/twitter/context.md` | Référence de voix F sur Twitter. Ces exemples calibrent la voix — pas les structures à reproduire. |
 | `fabrice/linkedin/context.md` | Référence de voix F sur LinkedIn. Ces exemples calibrent la voix — pas les structures à reproduire. |
-| `growth-marketing/context.md` | Framework de provocation, matrice de réponse, segments personas, règle 80/20. |
+| `marketing/strategie.md` | Stratégie marketing tactique (source de vérité 29/04/2026) : cible merchants Shopify, 3 leviers, comptes, voix. |
+| `marketing/canaux/reddit.md` + `marketing/canaux/twitter.md` + `marketing/canaux/linkedin.md` + `marketing/canaux/facebook.md` | Détails opérationnels par canal : cadences, format, UTM, anti-patterns. |
 
 **Algos plateformes :**
 

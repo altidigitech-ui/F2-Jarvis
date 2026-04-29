@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 04 avril 2026
 **Hérite de :** `linkedin/context.md` (règles LinkedIn communes, engagement à valeur, formats, timing, profil)
-**Hérite de :** `growth-marketing/context.md` (piliers, frameworks, persona segments, volumes)
+**Hérite de :** `marketing/strategie.md` (piliers, frameworks, persona segments, volumes)
 **S'appuie sur :** `twitter/fabrice/context.md` (voix F — à adapter pour LinkedIn)
 **Ce fichier contient :** tout ce qui est propre au profil LinkedIn de Fabrice — voix LinkedIn, types de contenu, exemples, adaptation Twitter→LinkedIn, workflow.
 
@@ -377,8 +377,8 @@ Chaque post LinkedIn de F doit passer le test : "Si quelqu'un suit F sur Twitter
 |----------|-------------|------|--------|
 | linkedin/context.md | growth-marketing/linkedin/ | Règles communes, engagement à valeur, formats, profil | ✅ |
 | linkedin/algo.md | growth-marketing/linkedin/ | Mécanique algorithmique LinkedIn | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
-| marketing/context.md | marketing/ | Planning R/F, funnel | ✅ |
+| marketing/strategie.md | growth-marketing/ | Piliers, frameworks, personas, volumes | ✅ |
+| marketing/strategie.md | marketing/ | Planning R/F, funnel | ✅ |
 | twitter/fabrice/context.md | fabrice/twitter/ | Voix F Twitter (pour contraste et adaptation) | ✅ |
 | romain/context.md | romain/linkedin/ | Voix R LinkedIn (pour contraste) | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |

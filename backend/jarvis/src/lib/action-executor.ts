@@ -50,6 +50,7 @@ const CREATE_FILE_ALLOWED_PREFIXES = [
   "archives/",
   "distribution/",
   "growth-marketing/",
+  "la-toile/",
   "saas/",
   "produits/",
   "ops/",

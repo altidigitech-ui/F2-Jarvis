@@ -2,7 +2,7 @@
 
 **Dernière mise à jour :** 21 avril 2026
 **Hérite de :** `fabrice/context.md` (cadre opérationnel, planning, projet Claude, historique LD)
-**Se synchronise avec :** `growth-marketing/roadmap.md` (coordination cross-plateforme)
+**Se synchronise avec :** `marketing/objectifs.md` (coordination cross-plateforme)
 **Cadence cible :** 2 SaaS/mois (répartis sur 3 verticals : e-com, agences, creators).
 
 **Rôle de ce fichier :** La progression de F dans le temps — comment le cold outreach technique, l'engagement, la publication, et la communauté évoluent phase par phase. Les roadmaps par plateforme (twitter/fabrice/roadmap.md, linkedin/fabrice/roadmap.md) couvrent les détails spécifiques à chaque canal. Ce fichier couvre la vue OPÉRATIONNELLE globale de F.
@@ -198,6 +198,6 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Remplacé p
 | fabrice/cold/claude/context.md | fabrice/cold/claude/ | Règles cold outreach technique accessible |
 | fabrice/engagement/claude/context.md | fabrice/engagement/claude/ | Règles engagement technique accessible |
 | fabrice/publication/claude/context.md | fabrice/publication/claude/ | Règles publication technique |
-| growth-marketing/roadmap.md | growth-marketing/ | Coordination cross-plateforme |
+| marketing/objectifs.md | growth-marketing/ | Coordination cross-plateforme |
 | fabrice/twitter/roadmap.md | fabrice/twitter/ | Roadmap Twitter F (détails plateforme) |
 | fabrice/linkedin/roadmap.md | fabrice/linkedin/ | Roadmap LinkedIn F (détails plateforme) |

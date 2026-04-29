@@ -204,6 +204,6 @@ Try it free: storemd.tech
 | f2/context.md | f2/ph/ | Identité compte, configuration listing, qui gère | ✅ |
 | ph/context.md | growth-marketing/ph/ | Stratégie PH, pre-launch, launch day, post-launch, karma, multi-produit | ✅ |
 | ph/algo.md | growth-marketing/ph/ | Mécanique plateforme, points, featuring, timing | ✅ |
-| growth-marketing/context.md | growth-marketing/ | Stratégie globale, Build My Community | ✅ |
-| marketing/context.md | marketing/ | Inventaire comptes, pipeline SaaS, planning | ✅ |
+| marketing/strategie.md | growth-marketing/ | Stratégie globale, Build My Community | ✅ |
+| marketing/strategie.md | marketing/ | Inventaire comptes, pipeline SaaS, planning | ✅ |
 | FOUNDRYTWO-BRAND-BIBLE.md | asset-brand/ | Identité, storytelling | ✅ |
