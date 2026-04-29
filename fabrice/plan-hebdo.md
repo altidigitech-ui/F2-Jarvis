@@ -26,7 +26,7 @@
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mar 28/04|40+ stores scanned — ghost billing builder story|📅|
+|Mar 28/04|40+ stores scanned — ghost billing builder story|✅ Publié|
 |Jeu 30/04|Why ghost billing is so hard to find without a scanner|📅|
 
 ## 2B. POSTS LINKEDIN F — COUCHE B (21h00 CEST)
@@ -69,7 +69,7 @@ Reste de la série (V5-V12) → S8.
 |Jour|Cross Couche A (13h05)|Cross Couche B (18h05)|
 |---|---|---|
 |Lun 27/04|✅|— (pas de Couche B lundi)|
-|Mar 28/04|⏳|— (pas de Couche B mardi)|
+|Mar 28/04|✅|— (pas de Couche B mardi)|
 |Mer 29/04|⏳|⏳|
 |Jeu 30/04|⏳|⏳|
 |Ven 01/05|⏳|⏳|
