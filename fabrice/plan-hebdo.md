@@ -36,6 +36,22 @@
 |Mer 29/04|Why I'm doing manual scans instead of asking merchants to install|📅|
 |Ven 01/05|Manual beta week: what 8 stores actually looked like|📅|
 
+## 3B. SÉRIE VIDÉO — TIKTOK + INSTAGRAM + FACEBOOK (12 vidéos prêtes)
+
+**Format :** scan proactif live (boutique réelle) + résultats + hook DM. Distribution simultanée sur 3 canaux.
+**Cadence :** 1 vidéo/jour × 3 plateformes = 3 posts/jour = 12 posts total cette semaine.
+
+|Jour|Vidéo|TikTok|Instagram|Facebook|
+|---|---|---|---|---|
+|Mer 29/04|V1 — scan live (awesomegnarlyworld ou nouvelle cible)|📅|📅|📅|
+|Jeu 30/04|V2 — scan live|📅|📅|📅|
+|Ven 01/05|V3 — scan live|📅|📅|📅|
+|Sam 02/05|V4 — scan live|📅|📅|📅|
+
+Reste de la série (V5-V12) → S8.
+
+---
+
 ## 3. COLD OUTREACH
 
 |Donnée|Objectif|
