@@ -111,7 +111,7 @@ Commentaire de l'autre fondateur sur un post pour amplifier.
 - R poste sur growth → F reply avec angle TECHNIQUE
 - F2 poste → F + R reply chacun avec leur angle
 
-Cf. `../../romain/twitter/cross-replies.md`, `../../fabrice/twitter/cross-replies.md`, `../../romain/linkedin/cross-replies.md`, `../../fabrice/linkedin/cross-replies.md` (et équivalents Reddit, Facebook).
+Cf. `../../romain/reddit/cross-replies.md`, `../../romain/facebook/cross-replies.md`, `../../fabrice/reddit/cross-replies.md`, `../../fabrice/facebook/cross-replies.md` (cross-replies formalisés uniquement pour Reddit et Facebook ; Twitter et LinkedIn voir patterns dans canaux/twitter.md §8 et canaux/linkedin.md §7).
 
 ---
 
@@ -331,8 +331,8 @@ Corps :
 
 - F : `../../fabrice/VOIX.md` §RÈGLE #0 (filtre anti-IA)
 - R : `../../romain/VOIX.md` §RÈGLE #0
-- F2 : `../../f2/VOIX.md` ou équivalent dans `../../asset-brand/FOUNDRYTWO-BRAND-BIBLE.md`
-- @storemd : à formaliser dans `../../produits/storemd/VOIX.md` (à créer si pas encore présent)
+- F2 : voix studio définie dans `../../f2/system-prompt.md` + `../../asset-brand/FOUNDRYTWO-BRAND-BIBLE.md` §1.3 (pas de fichier VOIX dédié)
+- @storemd : voix compte produit définie inline §9.3 ci-dessous (pas de fichier VOIX dédié)
 
 ### 9.3 Règle absolue
 

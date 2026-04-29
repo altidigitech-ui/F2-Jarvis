@@ -164,7 +164,7 @@ Si le post est purement engagement (observation, question, opinion), pas de repl
 | Tweet beta call | "Looking for 10 Shopify merchants to test StoreMD before App Store launch. DM if interested." | @foundrytwo principalement, @FabGangi/@delgado_ro72224 occasionnellement |
 | Thread beta details | Détaille ce que la beta apporte au merchant | @foundrytwo |
 
-**UTM Couche B** : variante `utm_campaign=couche_b_beta` à ajouter au `UTM_TRACKING_LINKS.md`. Pas d'invention.
+**UTM Couche B** : `utm_campaign=couche_b_beta` (cf. UTM_TRACKING_LINKS.md Section 1).
 
 ---
 
@@ -242,7 +242,7 @@ DM if interested.
 | R poste | F reply < 30 min avec angle TECHNIQUE | Idem |
 | F2 poste | F + R reply < 30 min, chacun avec son angle | Double signal d'engagement croisé |
 
-**Format reply cross-engage** : pas un like vide. Une vraie reply qui apporte un angle complémentaire (cf. `../../romain/twitter/cross-replies.md` et `../../fabrice/twitter/cross-replies.md` si existent).
+**Format reply cross-engage** : pas un like vide. Une vraie reply qui apporte un angle complémentaire.
 
 JARVIS aide : F poste → mention dans le chat ("posté @FabGangi") → JARVIS notifie R + propose un angle de reply.
 
@@ -258,7 +258,7 @@ Tous depuis `../../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md` Section 1.
 | Reply après tweet (format 2-blocs) | `utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta` |
 | Thread (lien dans dernier tweet) | `utm_source=twitter&utm_medium=organic&utm_campaign=thread&utm_content=thread_cta` |
 | Post de feature drop | `utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post` |
-| DM Twitter (cold outreach) | À ajouter au `UTM_TRACKING_LINKS.md` (placement non listé) |
+| DM Twitter (cold outreach) | `utm_source=twitter&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 | Ads Twitter | `utm_medium=paid&utm_campaign=ads_traffic` ou `ads_install` (pas activé pour l'instant) |
 
 ---

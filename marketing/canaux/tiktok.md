@@ -72,7 +72,7 @@ Cf. `../objectifs.md` §2 + `../../TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md`.
 | Couche | Angle vidéo | UTM caption | Fréquence sur 6 vidéos/sem |
 |---|---|---|---|
 | **Couche A — Vente directe** | "Voici ce que StoreMD trouve sur cette boutique en 60s." Démo, résultats chiffrés. | F1 — `utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=video_cta` | 4 vidéos/sem |
-| **Couche B — Recrutement beta** | "Beta dispo via lien spécial — install hors store." Urgence + scarcity (10 places). | À ajouter au `UTM_TRACKING_LINKS.md` (placement vidéo couche B) | 2 vidéos/sem (jusqu'à 10 betas atteints) |
+| **Couche B — Recrutement beta** | "Beta dispo via lien spécial — install hors store." Urgence + scarcity (10 places). | `utm_source=tiktok&utm_medium=organic&utm_campaign=couche_b_beta&utm_content=video_cta` | 2 vidéos/sem (jusqu'à 10 betas atteints) |
 
 **Bio TikTok `@storemd`** : F2 — `utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`. Ce lien est permanent dans la bio.
 

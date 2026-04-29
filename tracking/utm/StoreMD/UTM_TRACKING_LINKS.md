@@ -19,6 +19,8 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | Reply (engagement) | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta` |
 | Ads — traffic campaign | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=paid&utm_campaign=ads_traffic&utm_content=ad_variant_a` |
 | Ads — conversion campaign | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=paid&utm_campaign=ads_install&utm_content=ad_variant_a` |
+| Post organique Couche B beta | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=couche_b_beta&utm_content=post_cta` |
+| DM Twitter (cold outreach) | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 
 ---
 
@@ -33,6 +35,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | DM (outreach 1-to-1) | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 | Ads — sponsored content | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=paid&utm_campaign=ads_sponsored&utm_content=ad_variant_a` |
 | Ads — message ads | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=paid&utm_campaign=ads_inmail&utm_content=ad_variant_a` |
+| Post organique Couche B beta | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=couche_b_beta&utm_content=post_cta` |
 
 ---
 
@@ -46,6 +49,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | r/ecommerce — commentaire | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=organic&utm_campaign=r_ecommerce&utm_content=comment` |
 | r/entrepreneur — post | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=organic&utm_campaign=r_entrepreneur&utm_content=post` |
 | r/entrepreneur — commentaire | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=organic&utm_campaign=r_entrepreneur&utm_content=comment` |
+| DM Reddit (cold outreach) | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 
 ---
 
@@ -57,6 +61,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | Vidéo organique | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=video_cta` |
 | Ads — traffic | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=paid&utm_campaign=ads_traffic&utm_content=ad_variant_a` |
 | Ads — conversion | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=paid&utm_campaign=ads_install&utm_content=ad_variant_a` |
+| Vidéo organique Couche B beta | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=organic&utm_campaign=couche_b_beta&utm_content=video_cta` |
 
 ---
 
@@ -81,6 +86,8 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | Reels caption | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=organic&utm_campaign=reels&utm_content=caption_cta` |
 | Ads — feed | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=paid&utm_campaign=ads_feed&utm_content=ad_variant_a` |
 | Ads — stories | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=paid&utm_campaign=ads_stories&utm_content=ad_variant_a` |
+| Reels caption Couche B beta | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=organic&utm_campaign=couche_b_beta&utm_content=caption_cta` |
+| DM Instagram (cold outreach) | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 
 ---
 
@@ -94,6 +101,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | Groupe ecommerce | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=group_ecommerce&utm_content=group_post` |
 | Ads — traffic | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=paid&utm_campaign=ads_traffic&utm_content=ad_variant_a` |
 | Ads — conversion | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=paid&utm_campaign=ads_install&utm_content=ad_variant_a` |
+| DM Messenger (cold outreach) | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 
 ---
 
@@ -164,7 +172,7 @@ Toutes les valeurs sont `lowercase_snake_case`. Pas d'espaces, pas d'accents, pa
 |-----------|------|--------------------|
 | `utm_source` | D'où vient le visiteur (plateforme) | `twitter`, `linkedin`, `reddit`, `tiktok`, `youtube`, `instagram`, `facebook`, `email`, `producthunt`, `shopify_community`, `indiehackers`, `hackernews`, `devto`, `qrcode`, `signature` |
 | `utm_medium` | Type de canal | `bio`, `organic`, `paid`, `newsletter`, `cold`, `partner`, `dm`, `referral`, `offline`, `email` |
-| `utm_campaign` | Initiative / groupe | `profile`, `post`, `thread`, `reply`, `comment`, `article`, `feature_launch`, `ads_traffic`, `ads_install`, `ads_feed`, `ads_stories`, `r_shopify`, `r_ecommerce`, `r_entrepreneur`, `group_shopify`, `group_ecommerce`, `video_description`, `pinned_comment`, `community_post`, `video`, `reels`, `story`, `weekly_digest`, `merchant_outreach`, `agency_outreach`, `partnership`, `launch_day`, `post_launch`, `forum_post`, `milestone`, `show_hn`, `event_conference`, `event_meetup`, `tradeshow`, `sticker`, `founder_signature`, `support_signature`, `team_signature` |
+| `utm_campaign` | Initiative / groupe | `profile`, `post`, `thread`, `reply`, `comment`, `article`, `feature_launch`, `ads_traffic`, `ads_install`, `ads_feed`, `ads_stories`, `r_shopify`, `r_ecommerce`, `r_entrepreneur`, `group_shopify`, `group_ecommerce`, `video_description`, `pinned_comment`, `community_post`, `video`, `reels`, `story`, `weekly_digest`, `merchant_outreach`, `agency_outreach`, `partnership`, `launch_day`, `post_launch`, `forum_post`, `milestone`, `show_hn`, `event_conference`, `event_meetup`, `tradeshow`, `sticker`, `founder_signature`, `support_signature`, `team_signature`, `outreach`, `couche_b_beta` |
 | `utm_content` | Créatif / placement précis (A/B) | `bio_link`, `post`, `post_cta`, `thread_cta`, `reply_cta`, `comment_cta`, `cta_post`, `cta_main`, `featured`, `dm_share`, `story_sticker`, `caption_cta`, `header_cta`, `footer_cta`, `about_link`, `description_link`, `endscreen_cta`, `community_cta`, `ad_variant_a`, `ad_variant_b`, `ph_listing`, `ph_maker_comment`, `ph_gallery`, `hn_post`, `hn_comment`, `article_cta`, `milestone_cta`, `qr_badge`, `qr_flyer`, `qr_booth`, `qr_swag`, `signature_link`, `partner_cta` |
 | `utm_term` | Mot-clé / cible (réservé aux ads paid) | `keyword_<mot>`, `audience_<name>` |
 

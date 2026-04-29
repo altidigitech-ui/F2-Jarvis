@@ -81,7 +81,7 @@ Instagram exploite **4 systèmes distincts** :
 | Couche | Format Insta | UTM tagué | Fréquence |
 |---|---|---|---|
 | **Couche A — Vente directe** | Reel (recyclé TikTok) + caption avec lien | F3 — `utm_source=instagram&utm_medium=organic&utm_campaign=reels&utm_content=caption_cta` | 4 Reels/sem |
-| **Couche B — Recrutement beta** | Reel + Stories sticker urgence | Reel : F3 (variante caption couche-b-beta à ajouter au fichier UTM officiel). Story : F4 — `utm_source=instagram&utm_medium=organic&utm_campaign=story&utm_content=story_sticker` | 2 Reels/sem + 2-3 Stories/sem |
+| **Couche B — Recrutement beta** | Reel + Stories sticker urgence | Reel : F3 (variante : `utm_campaign=couche_b_beta`). Story : F4 — `utm_source=instagram&utm_medium=organic&utm_campaign=story&utm_content=story_sticker` | 2 Reels/sem + 2-3 Stories/sem |
 
 **Bio Instagram `@storemd`** : F5 — `utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`. Lien permanent dans le link-in-bio.
 
@@ -172,9 +172,9 @@ Format engagement fort (saves élevés, dwell time élevé). À utiliser pour :
 |---|---|
 | Bio (link-in-bio) | `utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
 | Reel — caption (Couche A vente) | `utm_source=instagram&utm_medium=organic&utm_campaign=reels&utm_content=caption_cta` |
-| Reel — caption (Couche B beta) | À ajouter au `UTM_TRACKING_LINKS.md` (variante Couche B) |
+| Reel — caption (Couche B beta) | `utm_source=instagram&utm_medium=organic&utm_campaign=couche_b_beta&utm_content=caption_cta` |
 | Story — sticker link | `utm_source=instagram&utm_medium=organic&utm_campaign=story&utm_content=story_sticker` |
-| DM Instagram | À ajouter au `UTM_TRACKING_LINKS.md` (placement DM Insta non listé actuellement) |
+| DM Instagram | `utm_source=instagram&utm_medium=dm&utm_campaign=outreach&utm_content=dm_share` |
 
 **Règle** : pour tout placement non listé dans `UTM_TRACKING_LINKS.md`, F l'ajoute d'abord au fichier officiel puis on utilise. Pas d'invention.
 

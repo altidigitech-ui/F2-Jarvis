@@ -150,7 +150,7 @@ Référence : `../../TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` §2.2.
 | Post beta call | "Looking for 10 Shopify merchants to test StoreMD before App Store launch. Comment or DM if interested." | F + R |
 | Article beta launch | Article qui détaille la beta + conditions + lien d'inscription | F ou R |
 
-**UTM Couche B** : variante `utm_campaign=couche_b_beta` à ajouter au `UTM_TRACKING_LINKS.md`.
+**UTM Couche B** : `utm_campaign=couche_b_beta` (cf. UTM_TRACKING_LINKS.md Section 2).
 
 ---
 
@@ -257,8 +257,6 @@ What's your current chargeback rate, and are you fighting them?
 - Engager une vraie conversation (souvent F ou R va re-commenter le commentaire = thread → signal 5.2× amplification)
 
 JARVIS aide : F poste → mention dans le chat → JARVIS notifie R + propose un angle de commentaire.
-
-Référence : patterns existants dans `../../romain/linkedin/cross-replies.md` et `../../fabrice/linkedin/cross-replies.md` si présents.
 
 ---
 
