@@ -16,3 +16,7 @@ statut: pending
 - Modifier ligne Couche A: `| Couche A  | 2      | 0      | 10        | 12    |` → `| Couche A  | 5      | 0      | 7         | 12    |`
 - Modifier ligne Total: `| **Total** | **2**  | **0**  | **18**    | **20**|` → `| **Total** | **5**  | **0**  | **15**    | **20**|`
 **Risques si ignoré:** Le tableau de bord des crosses sous-comptabilise. Si quelqu'un lit ce fichier pour décider si les crosses sont à jour, il croit qu'il manque 10 alors qu'il en manque 7.
+
+
+---
+**Action reject par romain** : Non il es 0 et c'est normal pck je ne fait rien je fait la stratégie que tu aura bientot dans le repo
