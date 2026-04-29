@@ -1,97 +1,63 @@
-# Coordination — Socle Strategique FoundryTwo
+# La Toile FoundryTwo
 
-> **Ce repo est la source de verite de la societe.** Tout ce qui concerne la strategie, l'organisation, la repartition du travail et la coordination entre F et R est ici. Les autres repos (produits, marketing) s'alignent sur ces documents.
-
-> Derniere mise a jour : 05 avril 2026 — Pivot distribution-first
-
----
-
-## Contenu
-
-| Fichier | Role | Resume |
-|---|---|---|
-| `TOILE-CONTEXT.md` | **Source de verite** | Qu'est-ce que La Toile, pourquoi, les 8 noeuds, les 3 flux de conversion, les 12 commandements, la machine de contenu mutualise |
-| `TOILE-COORDINATION.md` | **Plan operationnel** | Qui fait quoi et quand. Protocole d'amplification, workflow de contenu, dossier batch, formats par plateforme, gestion UTM, incidents |
-| `TOILE-ROADMAP.md` | **Timeline** | Phase par phase. Phase 0 (fondations) → Phase 6 (domination). Template generique par SaaS avec checkpoints |
-| `TOILE-ASSOCIES.md` | **Repartition F + R** | Roles full-time, cycle usine (2 SaaS/mois), 7 domaines de responsabilite, RACI, regles anti-conflit, scaling |
+> Dernière mise à jour : 29 avril 2026
+> Statut : ACTIF — Structure post-nettoyage 29/04/2026
 
 ---
 
-## C'est quoi "La Toile" ?
+## Qu'est-ce que ce dossier
 
-La Toile est l'architecture de visibilite et de conversion de FoundryTwo. Un reseau interconnecte de noeuds (comptes sociaux, sites, produits, email) ou chaque point d'entree mene vers la conversion. Zero cul-de-sac.
+Ce dossier contient **un seul fichier** : `la-toile.md` — le schéma global de l'écosystème FoundryTwo.
 
-**Principe** : 1 evenement source → 8 pieces de contenu distribuees sur toutes les branches.
+C'est le document qui réunit tout : qui poste où, pour quel produit, avec quelle façade, comment les nœuds se renforcent entre eux, et comment tout converge vers les conversions trackées dans le dashboard admin StoreMD.
 
-**Les noeuds** : ALTI (bureau) · F2/FoundryTwo (showroom) · F perso · R perso · Comptes produits · Email/Brevo · Malt · Advocacy
-
-**Les 3 flux** : B2C (self-service Stripe) = B2B (contact humain Henrri) = Freelance (Malt). Egaux.
+**Avant le 29 avril 2026** : le dossier contenait 6 fichiers + un schéma png + un docx (~2 054 lignes) avec 3 sources de vérité contradictoires sur la même toile. Tout a été archivé. Cf. `../archives/2026-04-29_grand-nettoyage/README.md`.
 
 ---
 
-## Modele Usine
+## Le fichier `la-toile.md` — métaphore de la toile d'araignée
 
-F et R sont full-time FoundryTwo. 2 SaaS par mois, répartis sur 3 verticals :
+Une toile d'araignée a un centre, des fils qui rayonnent depuis le centre, et une règle : peu importe où l'insecte se pose, **un fil le ramène vers le centre**. Aucun cul-de-sac. Aucun fil orphelin.
 
-```
-VERTICAL M1 (E-COM)         VERTICAL M2 (AGENCIES)       VERTICAL M3 (CREATORS)
-Avril 2026                   Mai 2026                      Juin 2026
-├── StoreMD (ex LD)          ├── ClientPulse               ├── CreatorSuite
-└── ProfitPilot              └── AdAudit                   └── LeadQuiz
+La Toile FoundryTwo applique exactement ce principe au marketing StoreMD :
 
-F: [===CODE vertical N===]────────[===CODE vertical N+1===]
-R: [===LAUNCH vertical N-1===]────[===LAUNCH vertical N===]
-```
+- **Le centre public** : `storemd.vercel.app` — où on veut que tout prospect arrive.
+- **Le centre interne** : le dashboard admin StoreMD (`/dashboard/admin`) — où on voit qui est arrivé, par quel fil, et qui a converti.
+- **Les nœuds périphériques** : les comptes (TikTok / Insta / FB produit, comptes perso F+R sur Reddit + groupes FB Shopify, comptes façade F+R sur Twitter + LinkedIn, F2/foundrytwo).
+- **Les fils** : 33 chemins concrets détaillés (F1 à F33), chacun avec son UTM tagué qui remonte au dashboard admin.
 
----
-
-## Les Associes
-
-| | F (Fabrice) | R (Romain) |
-|---|---|---|
-| Role | Builder qui automatise problemes business (e-com + creators) | Expert growth e-com & marketing |
-| Statut | Full-time FoundryTwo | Full-time FoundryTwo |
-| Redaction | F redige ses propres posts | R redige R perso + F2 studio |
-| Distribution | 30 interactions + 10 outreach/jour | 30 interactions + 10 outreach/jour |
-
-**Batch** : vendredi soir (reunion) + samedi soir (contenu). Dimanche = repos.
+**Règle non-négociable** : aucun fil cassé. Compte inactif, lien sans UTM, bio orpheline = trou dans la toile = prospects perdus.
 
 ---
 
-## Pipeline 2026
+## Quand mettre à jour `la-toile.md`
 
-| Vertical | Produits | Lancement |
-|---|---|---|
-| M1 E-commerce | StoreMD, ProfitPilot | Avril |
-| M2 Agencies | ClientPulse, ProfitPilot, AdAudit | Mai |
-| M3 Creators | CreatorSuite, LeadQuiz, Wildcard | Juin |
-| — | BIG SaaS #1 | Q3 2026 |
+| Quand | Action |
+|---|---|
+| Nouveau compte ouvert (ex: `@profitpilot` au lancement ProfitPilot) | Ajouter le nœud + ses fils dans `la-toile.md` §3 et §4 |
+| Nouveau placement de lien tagué | Ajouter d'abord la ligne au fichier UTM officiel (`../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`), puis ajouter le fil dans `la-toile.md` §4 |
+| Compte fermé / désactivé | Retirer du schéma + commit avec mention dans le message |
+| Nouveau SaaS dans le pipeline (ClientPulse, AdAudit, etc.) | Mettre à jour §10 (pipeline produits) |
+| Pipeline AI vidéo opérationnel | Mettre à jour §6 (modèle usine) |
 
----
-
-## Dossiers liés (racine du repo)
-
-- `../produits/` — specs produits (STATUS, NOUVEAUX, MUTATIONS)
-- `../strategie/` — strategie, verticals, contexte du pivot, warming-farming
+**Règle** : ce fichier est la vue d'ensemble. Les détails par canal vont dans `../marketing/canaux/*.md`. Pas de duplication.
 
 ---
 
-## Ordre de lecture
+## Lien direct
 
-1. `TOILE-CONTEXT.md` — comprendre le systeme
-2. `TOILE-ASSOCIES.md` — comprendre les roles
-3. `TOILE-COORDINATION.md` — comprendre le quotidien
-4. `TOILE-ROADMAP.md` — comprendre la timeline
+[`la-toile.md`](./la-toile.md) — le schéma global (192 lignes).
 
 ---
 
-## Regles
+## Documents liés
 
-- **Ce repo est intouchable.** Les autres repos s'alignent sur ces documents, pas l'inverse.
-- **Toute decision** est notee dans le canal WhatsApp "F2 — Decisions" avec date + rationale.
-- **Toute modification** de ces fichiers necessite l'accord des deux associes.
-- **Version actuelle** : v4.0 (05 avril 2026 — Pivot distribution-first)
-
----
-
-*FoundryTwo × Alti DigiTech SASU — Sprint 6 mois vers la liberte geographique*
+- `la-toile.md` — le schéma global de l'écosystème
+- `../marketing/README.md` — index du dossier marketing
+- `../marketing/strategie.md` — la stratégie qui produit le schéma
+- `../marketing/objectifs.md` — KPIs, jalons
+- `../marketing/canaux/*.md` — détail opérationnel par canal (les fils en pratique)
+- `../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md` — source de vérité UTM officielle
+- `../archives/2026-04-29_grand-nettoyage/README.md` — historique du nettoyage du 29 avril
+- Dashboard admin StoreMD : `https://storemd.vercel.app/dashboard/admin`
+- JARVIS cockpit : `https://f2-jarvis.vercel.app`
