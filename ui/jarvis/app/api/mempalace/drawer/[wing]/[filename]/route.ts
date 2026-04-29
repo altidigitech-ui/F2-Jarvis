@@ -1,3 +1,5 @@
+import { createClient } from "@/lib/supabase/server";
+
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
@@ -7,6 +9,11 @@ export async function GET(
   _req: Request,
   { params }: { params: Promise<{ wing: string; filename: string }> }
 ) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return Response.json({ error: "Non authentifié" }, { status: 401 });
+  }
   const { wing, filename } = await params;
   if (!BACKEND) return Response.json({ error: "Backend not configured" }, { status: 503 });
   try {

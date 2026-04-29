@@ -107,6 +107,12 @@ RAILWAY_BACKEND_URL         # URL du backend Express Railway
 BACKEND_SHARED_SECRET       # Secret partagé avec backend (header X-JARVIS-AUTH)
 NEXT_PUBLIC_SUPABASE_URL    # Projet Supabase
 NEXT_PUBLIC_SUPABASE_ANON_KEY
+NEXT_PUBLIC_API_URL          # (optionnel) URL publique de l'API si différente de la default
+NEXT_PUBLIC_BASE_PATH        # (optionnel) Base path si l'app est servie sur un sous-chemin
+NEXT_PUBLIC_STOREMD_INSTALL_URL  # URL d'install StoreMD (lien beta)
+NEXT_PUBLIC_VAPID_PUBLIC_KEY # (optionnel) Clé publique Web Push notifications
+NEXT_PUBLIC_ANALYTICS_ID     # (optionnel) ID analytics
+CRON_SECRET                  # Secret pour valider l'auth Bearer du cron Vercel sur /api/commit-batch
 ```
 
 ## Développement local
