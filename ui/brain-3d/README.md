@@ -19,7 +19,7 @@ Visualisation 3D du cerveau F2-JARVIS. Les régions anatomiques correspondent au
 | Cortex préfrontal | `tracking/decisions-log.md` | Décisions stratégiques |
 | Lobe frontal gauche | `strategie/` | Vision, roadmap |
 | Lobe temporal gauche | `marketing/` | Langage, content |
-| Lobe temporal droit | `marketing/brand/` | Créativité, branding |
+| Lobe temporal droit | `asset-brand/` | Brand bible, logos, palette |
 | Lobe pariétal | `ops/` | Coordination, ops |
 | Lobe occipital | `raw/` | Perception, inbox |
 | Cervelet | `patterns/` | Learnings capturés |
