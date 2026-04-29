@@ -33,3 +33,7 @@ statut: pending
 - Mettre à jour le tableau "RÉCAP VOLUMES QUOTIDIENS" : ajouter ligne `| Posts Couche B (mer-sam) | 1 Twitter + 1 LinkedIn/jour | 🔴 NON |`
 
 **Risques si ignoré:** Fabrice aborde J1-J4 Couche B sans workflow formalisé. Risque de rater le créneau 18h ou les cross B dans l'urgence de la journée la plus chargée de S7.
+
+
+---
+**Action accept par romain** : On n'a rien faait car on ce concentre sur la nouvelle stratégie, nike sa mere twitter et linkedin et ph et ih, on sait tromper de monde ce qu'on veut c'est vendre et la plus part de nos client potentiel seront sur tiktok(priorité), facebook et insta (meta) et reddit a moindre mesure c'est surtout pour récupérer ds doulerus, des infos sur les problème reèl des gens
