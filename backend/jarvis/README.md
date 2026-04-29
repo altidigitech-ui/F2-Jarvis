@@ -98,6 +98,19 @@ src/
 
 ---
 
+## Endpoints prêts mais non branchés à l'UI
+
+Ces endpoints sont fonctionnels et accessibles via leurs proxies Next.js,
+mais aucun composant UI ne les appelle actuellement. Ils sont conservés
+pour les futures features :
+
+- `GET /ouroboros/proposal/:id` — détails d'une proposal individuelle (pour vue détaillée future)
+- `GET /graphify/node/:id` — détails d'un nœud du graphe (pour vue zoom future)
+- `GET /graphify/search?q=...` — recherche full-text dans les nœuds du graphe
+- `GET /graphify/related?from=...&depth=N` — nœuds liés à un sujet, pour navigation graphe
+
+---
+
 ## Les 9 tools exposés à Claude Agent
 
 Définis dans `lib/jarvis-tools.ts` et enregistrés comme MCP server à la conf du Claude Agent SDK.
