@@ -991,17 +991,8 @@ The 'preview' field is a human-readable description shown to the user before the
           return { content: [{ type: "text" as const, text: `graphify_related error: HTTP ${res.status}` }], isError: true };
         }
         type GraphifyRelatedResp = {
-          nodes?: Array<{
-            id: string;
-            label: string;
-            wing: string;
-            description: string;
-          }>;
-          edges?: Array<{
-            source: string;
-            target: string;
-            relation: string;
-          }>;
+          nodes?: Array<{ id: string; label: string; wing: string; description: string }>;
+          edges?: Array<{ source: string; target: string; relation: string }>;
         };
         const data = (await res.json()) as GraphifyRelatedResp;
         if (!data.nodes || data.nodes.length === 0) {
@@ -1040,7 +1031,7 @@ The 'preview' field is a human-readable description shown to the user before the
           return { content: [{ type: "text" as const, text: `graphify_node error: HTTP ${res.status}` }], isError: true };
         }
         type GraphifyNodeResp = {
-          node: {
+          node?: {
             id: string;
             label: string;
             type: string;
@@ -1052,6 +1043,9 @@ The 'preview' field is a human-readable description shown to the user before the
           outbound?: Array<{ target: string; relation: string }>;
         };
         const data = (await res.json()) as GraphifyNodeResp;
+        if (!data.node) {
+          return { content: [{ type: "text" as const, text: `Concept "${id}" introuvable (réponse backend incomplète). Utilise graphify_search pour vérifier l'ID.` }] };
+        }
         const node = data.node;
         const inbound = (data.inbound || []).slice(0, 8);
         const outbound = (data.outbound || []).slice(0, 8);
