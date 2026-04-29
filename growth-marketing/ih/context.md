@@ -1,7 +1,7 @@
 # CONTEXT INDIEHACKERS — @foundrytwo
 
 **Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `marketing/strategie.md` + `marketing/canaux/ih.md` (stratégie globale, piliers, persona segments, matrice cross-plateforme, volumes)
+**Hérite de :** `marketing/strategie.md` + `marketing/canaux/launch-days.md` (stratégie globale, piliers, persona segments, matrice cross-plateforme, volumes)
 **S'appuie sur :** `ih/algo.md` (mécanique de la plateforme, classement, formats, données)
 **Implémenté par :** `ih/f2/context.md`, `ih/f2/roadmap.md`
 **Ce fichier contient :** les règles IH communes — positionnement, voix, types de contenu, cold outreach, engagement, workflow.
