@@ -1,7 +1,7 @@
 # CONTEXT PRODUCT HUNT — @foundrytwo
 
 **Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `marketing/strategie.md` + `marketing/canaux/ph.md` (stratégie globale, piliers, matrice cross-plateforme, Build My Community §1.1)
+**Hérite de :** `marketing/strategie.md` + `marketing/canaux/launch-days.md` (stratégie globale, piliers, matrice cross-plateforme, Build My Community §1.1)
 **S'appuie sur :** `ph/algo.md` (mécanique de la plateforme, système de points, featuring, timing)
 **Implémenté par :** `ph/f2/context.md`, `ph/f2/roadmap.md`
 **Ce fichier contient :** la stratégie Product Hunt commune — positionnement, pre-launch, launch day, post-launch, adaptation multi-produit.
