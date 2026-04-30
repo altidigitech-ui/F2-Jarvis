@@ -40,6 +40,7 @@
 | 30/04/2026 | Twitter post publié — "TikTok — V1 StoreMD (Mer 29/04)" | Twitter | Post publié 12:33 | Monitorer impressions + replies |
 | 30/04/2026 | Twitter post publié — "Instagram — V2 StoreMD (Jeu 30/04)" | Twitter | Post publié 12:33 | Monitorer impressions + replies |
 | 30/04/2026 | Twitter post publié — "Twitter B — B1 No install hook / 51 OAuth transpar" | Twitter | Post publié 12:34 | Monitorer impressions + replies |
+| 30/04/2026 | Twitter post publié — "Twitter A — 3 things Shopify dashboard won't tell " | Twitter | Post publié 12:34 | Monitorer impressions + replies |
 
 -----
 
