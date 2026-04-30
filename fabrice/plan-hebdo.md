@@ -8,7 +8,7 @@
 |---|---|---|---|
 |Lun 27/04|`store-md-horror-slow-store`|23 audits / $300/mo bleed — aucun signal dashboard|✅|
 |Mar 28/04|`store-md-before-after-billing`|🧵 THREAD DTC $35k/mo — 3 issues / 60s|✅ Publié 13:00|
-|Mer 29/04|`store-md-list-hidden`|3 things Shopify dashboard won't tell you|📅|
+|Mer 29/04|`store-md-list-hidden`|3 things Shopify dashboard won't tell you|✅ Publié|
 |Jeu 30/04|`store-md-money-visitors`|$189/mo × 14 months = $2,646 quietly gone|📅|
 |Ven 01/05|`store-md-before-after-ai`|Ranks on Google. Invisible on AI search.|📅|
 |Sam 02/05|`store-md-horror-slow-store`|Week audit summary: 22 stores, 22/22 ghost billing|📅|
@@ -17,7 +17,7 @@
 
 |Jour|Vidéo|Sujet|Statut|
 |---|---|---|---|
-|Mer 29/04|`store-md-beta-10-spots`|B1 — No install hook (51/0 OAuth transparent)|📅|
+|Mer 29/04|`store-md-beta-10-spots`|B1 — No install hook (51/0 OAuth transparent)|✅ Publié|
 |Jeu 30/04|`store-md-scan-demo-agency`|B2 — Scan result live URL-only (score + apps + perf → ghost billing hook install)|📅|
 |Ven 01/05|aucune|B3 — Builder story: why no-auth first|📅|
 |Sam 02/05|aucune|B4 — Spots urgency (6/10 gone, 4 left)|📅|
@@ -33,7 +33,7 @@
 
 |Jour|Sujet|Statut|
 |---|---|---|
-|Mer 29/04|Why I'm doing manual scans instead of asking merchants to install|📅|
+|Mer 29/04|Why I'm doing manual scans instead of asking merchants to install|✅ Publié|
 |Ven 01/05|Manual beta week: what 8 stores actually looked like|📅|
 
 ## 3B. SÉRIE VIDÉO — TIKTOK + INSTAGRAM + FACEBOOK (12 vidéos prêtes)
