@@ -37,6 +37,7 @@
 | 28/04/2026 | Twitter post publié — "40+ stores scanned — ghost billing builder story" | Twitter | Post publié 20:21 | Monitorer impressions + replies |
 | 28/04/2026 | Scan proactif | StoreMD | thelunarjeweler.com — score 72/100 — 1 critical (robots.txt Disallow:/), 2 major (alt text, empty link), 4 minor (title court, meta trop long, HTML 290 KB, mixed content HTTP). DM envoyé @moudoka1. | scan_proactif |
 | 30/04/2026 | Twitter post publié — "Instagram — V1 StoreMD (Mer 29/04)" | Twitter | Post publié 12:33 | Monitorer impressions + replies |
+| 30/04/2026 | Twitter post publié — "TikTok — V1 StoreMD (Mer 29/04)" | Twitter | Post publié 12:33 | Monitorer impressions + replies |
 
 -----
 
