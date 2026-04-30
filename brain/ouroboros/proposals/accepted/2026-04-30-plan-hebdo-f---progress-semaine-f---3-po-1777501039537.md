@@ -21,3 +21,7 @@ statut: pending
   - `| 29/04/2026 | Twitter post publié — "[B1] No install hook (51/0 OAuth transparent)" | Twitter | Post publié 18:00 | Monitorer impressions + replies |`
   - `| 29/04/2026 | LinkedIn post publié — "Why I'm doing manual scans instead of asking merchants to install" | LinkedIn | Post publié 21:00 | Monitorer impressions + replies |`
 **Risques si ignoré:** Le plan-hebdo et le progress-semaine montrent J3 entièrement vide alors que des posts ont été publiés. Les compteurs de fin de semaine seront faux. Les cycles Ouroboros suivants verront Mer 29/04 comme non exécuté.
+
+
+---
+**Action accept par romain** : Tous les post batché sont également schédule, donc oui tous les post pour le 27, 28 et 29/04 on était publié
