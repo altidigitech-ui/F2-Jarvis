@@ -18,3 +18,7 @@ statut: pending
 - Si Option A : modifier ligne Mer 29/04 `|📅|📅|📅|` → `|❌ non posté|❌|❌|` + ligne Jeu 30/04 → `|V1 — rattrapage|📅|📅|📅|`
 - Si Option B : modifier Mer 29/04 → `|❌|❌|❌|`, laisser Jeu 30/04 inchangé
 **Risques si ignoré:** Semaine 7 se termine avec 0 post sur TikTok/Instagram/Facebook malgré StoreMD_TikTok_V1.mp4 prête depuis la nuit du 29/04. Canal StoreMD laissé entièrement muet alors que le setup (bio, captions) vient d'être fait.
+
+
+---
+**Action accept par romain** : 2 reel sur insta compte de storemd et 3 video sur tiktok storemd
