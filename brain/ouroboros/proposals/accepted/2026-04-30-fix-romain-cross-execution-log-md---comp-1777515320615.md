@@ -21,3 +21,7 @@ Mais la table elle-même montre 5 entrées confirmées ✅ : A1 (Lun 27/04), A2 
   - `| Couche A  | 0      | 0      | 12        | 12    |` → `| Couche A  | 5      | 0      | 7         | 12    |`
   - `| **Total** | **0**  | **0**  | **22**    | **22**|` → `| **Total** | **5**  | **0**  | **17**    | **22**|`
 **Risques si ignoré:** Le tableau de bord affiche 0% de cross-engagement pour Romain alors qu'il en a fait 5 sur 22. Fausse impression d'inactivité totale. Le suivi S7 est inexact.
+
+
+---
+**Action accept par romain** : tous les post sont schédule et batché
