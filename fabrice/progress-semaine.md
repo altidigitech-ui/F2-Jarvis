@@ -42,6 +42,7 @@
 | 30/04/2026 | Twitter post publié — "Twitter B — B1 No install hook / 51 OAuth transpar" | Twitter | Post publié 12:34 | Monitorer impressions + replies |
 | 30/04/2026 | Twitter post publié — "Twitter A — 3 things Shopify dashboard won't tell " | Twitter | Post publié 12:34 | Monitorer impressions + replies |
 | 30/04/2026 | LinkedIn post publié — "LinkedIn B — Why I'm doing manual scans instead of" | LinkedIn | Post publié 12:34 | Monitorer impressions + replies |
+| 30/04/2026 | Twitter post publié — "TikTok — V2 StoreMD (Jeu 30/04)" | Twitter | Post publié 12:34 | Monitorer impressions + replies |
 
 -----
 
