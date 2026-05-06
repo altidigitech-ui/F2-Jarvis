@@ -1,8 +1,8 @@
 # CONTEXT OPÉRATIONNEL — Romain Delgado (R)
 
-> Cadre opérationnel unifié : brand building (Twitter, LinkedIn, IH, PH) + distribution terrain (Reddit, Facebook).
-> Hérite de `CLAUDE.md` racine et de `strategie/CONTEXT.md`. Pas de duplication.
-> Dernière mise à jour : 19 avril 2026
+> Cadre opérationnel de R. Focus : acquisition client, cold, publication schedulée.
+> Hérite de `BIBLE.md` racine. Pas de duplication.
+> Dernière mise à jour : 02 mai 2026
 
 ---
 
@@ -11,121 +11,151 @@
 | Fait | Détail |
 |------|--------|
 | **Rôle** | Co-fondateur Growth / CRO / Acquisition |
-| **Handles perso** | Twitter @delgado_ro72224 · LinkedIn Romain Delgado · PH profil perso (karma) |
-| **Gère aussi** | Le compte studio @foundrytwo (documenté dans `f2/`) |
-| **Disponibilité** | Full-time, 7-10h/jour. Distribution + coordination F2. Overlap permanent avec F. |
+| **Handles perso** | Twitter @delgado_ro72224 · LinkedIn Romain Delgado · Reddit [username] · Facebook [profil perso] · PH profil perso |
+| **Disponibilité** | Full-time, 7-10h/jour |
 
 ---
 
-## 2. Positionnement
+## 2. Comptes gérés
 
-R se positionne comme **expert growth e-com & marketing** — pas théoricien, pas marketeur généraliste. Son angle couvre deux verticals : **e-commerce** (merchants Shopify) et **agences/freelancers** (marketing, SEO, PPC). Creators = zone de F.
+R et F gèrent ENSEMBLE les comptes StoreMD. Chacun gère ses comptes perso.
 
-Message central : "le gars qui sait comment les merchants et les agences perdent de l'argent et comment l'arrêter." Data-driven. Provocateur mais constructif. Honnête.
-
----
-
-## 3. Voix
-
-**Règle ANTI-IA (voir `../ANTI-IA.md` et `VOIX.md` §RÈGLE #0) prime sur tout.** Chaque commentaire Reddit/Facebook doit passer les détecteurs IA.
-
-6 registres à alterner (diagnostic, framework, retour d'expérience, provocateur, question qui tue, data-drop) — détails dans `VOIX.md`. Jamais deux commentaires consécutifs du même registre.
-
----
-
-## 4. Canaux actifs et répartition
-
-| Canal | Handle | Rôle | Volume type |
-|-------|--------|------|-------------|
-| **Twitter** | @delgado_ro72224 | Cold + engagement + publication. Canal #1. | ~15 interactions/jour + 5 cold |
-| **LinkedIn** | Romain Delgado | Engagement à valeur + publication. Canal #2. | ~15 interactions/jour + 5 cold |
-| **Reddit** | username naturel | Distribution terrain e-com + agences. Warming→distribution. | 8-10 commentaires/jour |
-| **Facebook** | profil perso | FB Groups e-com et marketing. Warming→distribution. | 5-8 commentaires/jour |
-| **IndieHackers** | via @foundrytwo | Cold + engagement communautaire. Pas de compte perso. | intégré |
-| **ProductHunt** | profil perso R | Karma farming (upvotes + commentaires). Support launch day F2. | intégré |
-
-Les volumes par canal se somment pour respecter les totaux de §5.
+| Plateforme | Compte StoreMD | Compte perso R | Géré par |
+|-----------|---------------|---------------|----------|
+| Instagram | ✅ | ❌ | R + F |
+| TikTok | ✅ | ❌ | R + F |
+| Twitter | ✅ | ✅ @delgado_ro72224 | R + F (StoreMD), R (perso) |
+| LinkedIn | ❌ | ✅ Romain Delgado | R (perso) |
+| Facebook | ✅ | ✅ profil perso | R + F (StoreMD), R (perso) |
+| Reddit | ❌ | ✅ | R (perso) |
+| IH | ✅ | ❌ | R + F |
+| PH | ❌ | ✅ | R (perso) |
 
 ---
 
-## 5. Volumes globaux non-négociables
+## 3. Posture : vendeur de produit, pas influenceur
 
-- **30 interactions/jour** (toutes plateformes confondues)
-- **10 cold outreach/jour** (Twitter + LinkedIn)
-- **1 post/jour** — 7/semaine (batch samedi)
-- **Likes/upvotes** : ~10-15/jour distribués
+R est sur les réseaux pour UNE raison : rentrer en contact avec des potentiels clients et vendre le produit actif du studio. Pas de farming, pas d'influence, pas d'engagement forcé, pas de branding personnel.
 
-Règle CLAUDE.md §6.4 s'applique.
+Ce qui compte :
+- Trouver des potentiels clients et les contacter (cold)
+- Faire vivre les réseaux avec du contenu schedulé pour informer sur le produit (publication)
+- Répondre aux commentaires s'il y en a (réponse)
 
-> **PH — Règle de log engagement :** 1 ligne par action dans l'engagement log. Upvote + commentaire sur le même produit = 2 lignes distinctes. Ne jamais fusionner.
+Ce qui ne se fait plus :
+- Engagement proactif sur les posts des autres
+- Interactions forcées pour l'algo
+- Farming de visibilité
+- Personal branding ("mon parcours", "mes learnings")
+- Passer la journée sur les réseaux
 
----
-
-## 6. Planning indicatif
-
-Horaires flexibles, seuls les volumes sont non-négociables.
-
-| Bloc | Focus | Priorité |
-|------|-------|----------|
-| Matin (8h-10h) | Cold Twitter + engagement Twitter | 🔴 critique |
-| 10h-12h | Publication batchée + engagement LinkedIn | 🟡 important |
-| 13h-14h | Cross-engagement R ↔ F ↔ F2 | 🟡 important |
-| 14h-16h | Reddit + Facebook (phase warming/distribution) | 🟡 important |
-| 16h-18h | Réponses aux replies, coordination F, prép contenu | 🟢 flexible |
-| Soir | Compléments si volumes non atteints | 🟢 flexible |
-
-Samedi : batch posts R + F2 (R rédige les deux). Vendredi soir : revue hebdo R+F.
+On ne passe pas la journée sur les réseaux. On schedule les posts, on fait du cold, et on répond s'il y a des commentaires.
 
 ---
 
-## 7. Distribution terrain — phasage 30 jours
+## 4. Ciblage logique par business
 
-J1 = lundi 06/04/2026. Plan complet dans `plan-30-jours.md`.
+Le studio a plusieurs types de business. L'approche change selon le business, mais l'objectif reste le même : trouver des clients.
 
-| Phase | Dates | Focus |
-|-------|-------|-------|
-| **Cold start** | J1-J3 | Setup comptes Reddit/FB. Browse + upvote uniquement. ZÉRO commentaire. |
-| **Premiers commentaires** | J4-J8 | Subs faciles (AskReddit, ELI5). 3-5 commentaires/jour. |
-| **Subs cibles e-com** | J9-J14 | r/shopify, r/ecommerce, FB e-com. Lurk agences (S3). |
-| **Distribution e-com + warming agences** | J15-J22 | r/digital_marketing, r/freelance, r/SEO, r/PPC. Pas de mention produit avant J22. |
-| **Scale** | J23-J30 | Les 3 verticals actifs. Distribution StoreMD + ProfitPilot. |
+### SaaS apps Shopify (StoreMD actuel, futurs SaaS)
 
-**Règle :** aucune mention produit avant J22. La valeur d'abord, toujours.
+**Public :** niche. Merchants qui ont une boutique Shopify. Si tu n'as pas de boutique Shopify, StoreMD ne t'intéresse pas. Un dev, un CEO, un marketeur généraliste, un SaaS builder = pas la cible. C'est un produit niché à Shopify.
+
+**Cold = le cœur.** DM Twitter, connexion+DM LinkedIn, DM Facebook. Trouver des merchants Shopify et les contacter. C'est la priorité absolue.
+
+**Publication = faire vivre les réseaux.** Posts avec vidéo et carrousels schedulés. Informer du produit, montrer les résultats de scans, poser les problèmes que le produit résout.
+
+**Beta actuel :** StoreMD n'est pas sur le Shopify App Store. Les merchants ne peuvent pas le trouver seuls. Le cold est le seul moyen d'acquisition. Quand l'app sera approuvée, le cold reste prioritaire mais le lien public devient possible.
+
+**Quand un 2ème SaaS app Shopify arrive :** même approche. Même type de cible (merchants Shopify). Même mécanique cold. Les hooks et douleurs changent, le process reste identique.
+
+### Boutique (prévue)
+
+**Public :** large. Mode. Plus de niche technique.
+
+**Cold = infaisable.** Le public est trop large, pas de critère de ciblage précis pour du DM.
+
+**Tout repose sur la promo et le volume de visibilité.** Beaucoup d'articles, beaucoup d'animations marketing. Le volume de contenu et la visibilité organique/payante remplacent le cold.
+
+**Approche complètement différente du SaaS.** La boutique ne se vend pas en DM. Elle se vend par le contenu, les promos, et la présence massive.
 
 ---
 
-## 8. Outils
+## 5. Activités par ordre de priorité
+
+### 1. Cold (priorité #1)
+
+Trouver et contacter des potentiels clients. C'est LA priorité. Chaque jour sans cold = perte d'opportunités.
+
+- **Twitter :** DM direct aux merchants Shopify trouvés par Grok
+- **LinkedIn :** demandes de connexion + DM quand accepté
+- **Facebook :** DM direct aux merchants trouvés dans les groupes Shopify
+- **Instagram/TikTok :** DM depuis les comptes StoreMD aux merchants trouvés par Claude Chrome
+
+### 2. Publication (priorité #2)
+
+Batch samedi, schedule en semaine. Posts avec vidéo et carrousels. On ne rédige pas en semaine. On publie ce qui est programmé.
+
+- **Twitter R :** 1 post/jour (7/semaine)
+- **LinkedIn R :** 2 posts/semaine
+- **Reddit R :** 2 posts/semaine (quand débloqué, batché et schedulé au minimum)
+- **Comptes StoreMD :** Instagram, TikTok, Twitter StoreMD, Facebook, IH (géré avec F)
+
+### 3. Réponse (priorité #3)
+
+Si quelqu'un commente un post ou répond à un DM, R répond. C'est tout. Pas d'engagement proactif.
+
+Exception ultra spécifique : si tous les canaux de communication sont bloqués, R peut engager sur un post pertinent. Mais c'est l'exception, pas la règle.
+
+### 4. PH (maintenance)
+
+6 interactions sur Product Hunt. Karma farming minimal.
+
+---
+
+## 6. Volumes
+
+| Activité | Volume | Fréquence |
+|----------|--------|-----------|
+| Cold Twitter | 10 DMs | /jour |
+| Cold LinkedIn | 10 connexions+DMs | /jour |
+| Cold Facebook | 10 DMs | /jour |
+| Publication Twitter R | 1 post | /jour |
+| Publication LinkedIn R | 2 posts | /semaine |
+| Publication Reddit R | 2 posts | /semaine (quand débloqué) |
+| PH | 6 interactions | /jour |
+| Engagement proactif | 0 | - |
+
+Les publications comptes StoreMD (Instagram, TikTok, Twitter StoreMD, Facebook, IH) sont gérées avec F via `saas-app-shopify/storemd/publication/batch-semaine.md`.
+
+---
+
+## 7. Outils
 
 | Outil | Rôle |
 |-------|------|
-| **Claude (projet "Romain")** | Rédaction cold, engagement, publication, replies. Voix R. |
-| **Claude (projet "F2")** | Rédaction posts studio @foundrytwo (R gère aussi). |
-| **Grok** | Détective Twitter : recherche temps réel, cibles cold, tendances. |
-| **F5Bot** | Alertes email sur keywords Reddit (config J1 dans `plan-30-jours.md`). |
-| **Feedly RSS** | Feeds `reddit.com/r/{sub}/rising/.rss` pour les subs cibles. |
+| **Jarvis** (Claude Code + agents dans le repo) | Production opérationnelle. Batch posts, cold volume, logs, mise à jour structure repo. |
+| **Claude** (projet "Romain") | War room stratégique. Réflexion, debriefs, rédaction ponctuelle. |
+| **Grok** | Détective Twitter. Recherche cibles cold, tendances, comptes. |
+| **Claude Chrome** | Recherche read-only. Instagram, TikTok, Facebook, LinkedIn. Trouver des merchants à contacter. |
 
-Règle : **Grok = détective. Claude = rédacteur.** Ne jamais mélanger.
-
----
-
-## 9. Multi-produit
-
-Cadence studio : **2 SaaS/mois**. R s'adapte à chaque lancement (cold, bio, contenu) mais n'est JAMAIS "le gars d'un seul produit". R = expert growth e-com & marketing avec preuves multi-produits.
-
-Chaque nouveau SaaS = nouvelle data terrain qui alimente hot takes et threads. Lancement en communauté chaude (warming Reddit/FB + brand Twitter/LinkedIn accumulé), jamais from scratch.
+Règle : Grok = détective Twitter. Claude Chrome = détective autres plateformes. Jarvis = production. Claude projet = réflexion. Ne pas mélanger.
 
 ---
 
-## 10. Documents de référence
+## 8. Documents de référence
 
 | Document | Rôle |
 |----------|------|
-| `../CLAUDE.md` | Règles transversales du repo |
-| `../strategie/CONTEXT.md` | Stratégie globale, méthode, portefeuille |
+| `VOIX.md` | Voix R, 6 registres, anti-IA, règles par plateforme |
+| `angles-et-templates.md` | Frameworks de contenu par type de post |
+| `planning/` | Plan 30 jours, plan hebdo, playbook, daily checklist |
+| `tracking/` | Suivi comptes, progress, douleurs observées |
+| `cold/` | Cold-logs comptes perso (Twitter, LinkedIn, Facebook) |
+| `publication/` | Batch-semaine comptes perso (Twitter R, LinkedIn R, Reddit R) |
+| `engagement/` | Engagement-logs perso (Reddit, PH) |
+| `../saas-app-shopify/` | Recherche, templates, hashtags, comptes StoreMD |
+| `../saas-app-shopify/storemd/context.md` | Produit actif : features, pricing, hooks, cibles |
+| `../growth-marketing/` | Algos et context par plateforme |
 | `../ANTI-IA.md` | Règle #0 anti-détection |
-| `VOIX.md` | Voix R détaillée, 6 registres, expressions |
-| `plan-30-jours.md` | Plan jour par jour du warming |
-| `angles-et-templates.md` | Frameworks de commentaires par type de post |
-| `reddit/`, `facebook/`, `twitter/`, `linkedin/` | Outputs par canal |
-| `cold/`, `engagement/`, `publication/` | Règles opérationnelles par activité |
-| `system-prompt.md` | System prompt du projet Claude R |
+| `../BIBLE.md` | Principes non-négociables |
