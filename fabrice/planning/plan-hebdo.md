@@ -1,86 +1,107 @@
-# PLAN HEBDO F — Semaine du 27/04/2026 au 03/05/2026
+# PLAN HEBDO F — Semaine du [DATE] au [DATE]
 
-**Contexte :** SEMAINE 7 — SALES AGRESSIF **DOUBLE-COUCHE** (Couche A sales + Couche B beta "No Install" mer-sam). Canon S7 : 90 stores audités / $15,600 cumul. **Anglais uniquement.**
-
-## 1. POSTS TWITTER F — COUCHE A (13h00 CEST)
-
-|Jour|Vidéo|Sujet|Statut|
-|---|---|---|---|
-|Lun 27/04|`store-md-horror-slow-store`|23 audits / $300/mo bleed — aucun signal dashboard|✅|
-|Mar 28/04|`store-md-before-after-billing`|🧵 THREAD DTC $35k/mo — 3 issues / 60s|✅ Publié 13:00|
-|Mer 29/04|`store-md-list-hidden`|3 things Shopify dashboard won't tell you|✅ Publié|
-|Jeu 30/04|`store-md-money-visitors`|$189/mo × 14 months = $2,646 quietly gone|📅|
-|Ven 01/05|`store-md-before-after-ai`|Ranks on Google. Invisible on AI search.|📅|
-|Sam 02/05|`store-md-horror-slow-store`|Week audit summary: 22 stores, 22/22 ghost billing|📅|
-
-## 1B. POSTS TWITTER F — COUCHE B (18h00 CEST, mer-sam)
-
-|Jour|Vidéo|Sujet|Statut|
-|---|---|---|---|
-|Mer 29/04|`store-md-beta-10-spots`|B1 — No install hook (51/0 OAuth transparent)|✅ Publié|
-|Jeu 30/04|`store-md-scan-demo-agency`|B2 — Scan result live URL-only (score + apps + perf → ghost billing hook install)|📅|
-|Ven 01/05|aucune|B3 — Builder story: why no-auth first|📅|
-|Sam 02/05|aucune|B4 — Spots urgency (6/10 gone, 4 left)|📅|
-
-## 2. POSTS LINKEDIN F — COUCHE A (17h30 CEST)
-
-|Jour|Sujet|Statut|
-|---|---|---|
-|Mar 28/04|40+ stores scanned — ghost billing builder story|✅ Publié|
-|Jeu 30/04|Why ghost billing is so hard to find without a scanner|📅|
-
-## 2B. POSTS LINKEDIN F — COUCHE B (21h00 CEST)
-
-|Jour|Sujet|Statut|
-|---|---|---|
-|Mer 29/04|Why I'm doing manual scans instead of asking merchants to install|✅ Publié|
-|Ven 01/05|Manual beta week: what 8 stores actually looked like|📅|
-
-## 3B. SÉRIE VIDÉO — TIKTOK + INSTAGRAM + FACEBOOK (12 vidéos prêtes)
-
-**Format :** scan proactif live (boutique réelle) + résultats + hook DM. Distribution simultanée sur 3 canaux.
-**Cadence :** 1 vidéo/jour × 3 plateformes = 3 posts/jour = 12 posts total cette semaine.
-
-|Jour|Vidéo|TikTok|Instagram|Facebook|
-|---|---|---|---|---|
-|Mer 29/04|V1 — scan live (awesomegnarlyworld ou nouvelle cible)|📅|📅|📅|
-|Jeu 30/04|V2 — scan live|📅|📅|📅|
-|Ven 01/05|V3 — scan live|📅|📅|📅|
-|Sam 02/05|V4 — scan live|📅|📅|📅|
-
-Reste de la série (V5-V12) → S8.
+**Rempli au batch :** [DATE SAMEDI]
+**Objectif :** acquisition beta testers StoreMD. Focus vente produit.
 
 ---
 
-## 3. COLD OUTREACH
+## 1. PUBLICATION — COMPTES PERSO F
 
-|Donnée|Objectif|
-|---|---|
-|Cold/jour|10 (Twitter DM + LinkedIn DM)|
-|Volume semaine|**50**|
-|Templates|`fabrice/cold/COLD-TEMPLATES-S7.md`|
+### Twitter F (@FabGangi) — 1/jour lun-ven, horaire : [HORAIRE]
 
-## 4. ENGAGEMENT
+| Jour | Sujet | Vidéo/Format | Horaire | Statut |
+|------|-------|-------------|---------|--------|
+| Lun | | | | ⏳ |
+| Mar | | | | ⏳ |
+| Mer | | | | ⏳ |
+| Jeu | | | | ⏳ |
+| Ven | | | | ⏳ |
 
-30 interactions/jour (15 Twitter + 15 LinkedIn) + cold + cross = 52 touchpoints/jour.
+### LinkedIn F (Fabrice Gangitano) — 2/sem, horaire : [HORAIRE]
 
-## 5. CROSS-ENGAGEMENT F↔R↔F2
+| Jour | Sujet | Horaire | Statut |
+|------|-------|---------|--------|
+| Mer | | | ⏳ |
+| Ven | | | ⏳ |
 
-|Jour|Cross Couche A (13h05)|Cross Couche B (18h05)|
-|---|---|---|
-|Lun 27/04|✅|— (pas de Couche B lundi)|
-|Mar 28/04|✅|— (pas de Couche B mardi)|
-|Mer 29/04|⏳|⏳|
-|Jeu 30/04|⏳|⏳|
-|Ven 01/05|⏳|⏳|
-|Sam 02/05|— (F n'a rien à crosse — R ne publie pas sam)|— (F n'a rien à crosse — F2 OFF sam)|
-|Dim 03/05|— (OFF)|— (OFF)|
+### Reddit F — [À DÉTERMINER quand débloqué]
 
-## 6. S6 RECAP
-Twitter F : 4 posts publiés, 855 imp. Best : Jeu 23/04 "5 things hidden" 273 imp. Thread Mer 22/04 20% ER. LinkedIn F : 4 posts, 376 imp. Cold : 9 replies Twitter, 0 DM, 0 réponses. MRR : 0€ externe.
+| Jour | Subreddit | Sujet | Statut |
+|------|----------|-------|--------|
+| | | | |
 
-## 7. PRIORITÉS
-1. Couche B "No Install" = priorité #1 — scan proactif contourne le mur OAuth
-2. Cold : 10/jour templates ready, focus exécution uniquement
-3. Jeu = best day → posts les plus forts positionnés jeudi
-4. Agency layer : amplifier l'angle agency (best reach S6)
+---
+
+## 2. PUBLICATION — COMPTES STOREMD (avec R)
+
+Voir `saas-app-shopify/storemd/publication/[batch-semaine.md](http://batch-semaine.md)` pour le détail.
+
+| Plateforme | Fréquence | Statut global |
+|-----------|-----------|--------------|
+| Twitter StoreMD | 1/jour lun-ven | ⏳ |
+| Facebook StoreMD | 1/jour lun-ven | ⏳ |
+| TikTok StoreMD | 1/jour lun-ven (vidéo) | ⏳ |
+| Instagram StoreMD | 1/jour lun-ven (vidéo/carrousel) | ⏳ |
+| IH StoreMD | 1/sem (mercredi) | ⏳ |
+
+---
+
+## 3. COLD — 50 DMs/jour lun-ven
+
+| Ordre | Plateforme | Compte | Volume/jour | Lun | Mar | Mer | Jeu | Ven | Total |
+|-------|-----------|--------|-------------|-----|-----|-----|-----|-----|-------|
+| 1 | TikTok | StoreMD | 10 | | | | | | /50 |
+| 2 | Instagram | StoreMD | 10 | | | | | | /50 |
+| 3 | Facebook | F perso | 10 | | | | | | /50 |
+| 4 | Twitter | F perso | 10 | | | | | | /50 |
+| 5 | LinkedIn | F perso | 10 | | | | | | /50 |
+
+**Templates :** `saas-app-shopify/storemd/cold/[cold-templates.md](http://cold-templates.md)`
+**Cibles :** recherche-logs dans `saas-app-shopify/recherche/cold/`
+
+---
+
+## 4. RÉPONSES
+
+Répondre aux commentaires sur nos posts et aux DMs reçus. Pas d'engagement proactif.
+
+| Type | Volume cette semaine |
+|------|---------------------|
+| Réponses DMs cold | |
+| Réponses commentaires posts | |
+| Beta testers installés cette semaine | |
+
+---
+
+## 5. PH — 6 interactions/jour
+
+| Jour | Upvotes (5) | Commentaire (1) | Statut |
+|------|------------|----------------|--------|
+| Lun | | | ⏳ |
+| Mar | | | ⏳ |
+| Mer | | | ⏳ |
+| Jeu | | | ⏳ |
+| Ven | | | ⏳ |
+
+---
+
+## 6. RECAP SEMAINE PRÉCÉDENTE
+
+| Métrique | Résultat |
+|----------|---------|
+| DMs envoyés total | /250 |
+| Taux réponse moyen | % |
+| Meilleure plateforme cold | |
+| Pire plateforme cold | |
+| Beta testers installés | |
+| Posts publiés F perso | /7 |
+| Posts publiés StoreMD | /25 |
+| Commentaires reçus | |
+
+---
+
+## 7. PRIORITÉS CETTE SEMAINE
+
+1. [À remplir]
+2. [À remplir]
+3. [À remplir]
