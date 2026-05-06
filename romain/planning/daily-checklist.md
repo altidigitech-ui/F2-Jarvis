@@ -1,123 +1,133 @@
 # DAILY CHECKLIST R — Routine quotidienne
 
-**Dernière mise à jour :** 04 avril 2026
-**Usage :** Ouvre ce fichier chaque jour. Suis les étapes dans l'ordre. Coche au fur et à mesure.
+**Dernière mise à jour :** 05/05/2026
+**Usage :** Ouvre ce fichier chaque matin. Suis les étapes dans l'ordre. Coche au fur et à mesure.
 **R est full-time.** Les horaires sont INDICATIFS. Les volumes sont NON NÉGOCIABLES.
-**R gère 2 comptes :** @delgado_ro72224 (perso) + @foundrytwo (studio F2)
-**Fichiers de référence :** `romain/publication/posts-valides.md` (posts R), `f2/publication/posts-valides.md` (posts F2), `romain/cross-engagement-tracker.md` (replies cross-engagement pré-rédigées)
+**Objectif :** acquisition beta testers StoreMD. Focus vente produit.
 
 ---
 
-## BLOC MATIN (8h-10h) — COLD OUTREACH + ENGAGEMENT TWITTER 🔴 NON NÉGOCIABLE
+## BLOC MATIN — COLD (2-3h) 🔴 PRIORITÉ ABSOLUE
 
-### Cold outreach (10 minimum)
+### TikTok — Compte StoreMD (avec F) — 10 DMs
 
-- [ ] Ouvrir Grok → coller le prompt `romain/cold/grok/ECOM-prompt.md` → copier les résultats
-- [ ] (Optionnel) Coller le prompt `romain/cold/grok/AGENCY-prompt.md` pour les cibles agences
-- [ ] Cold outreach #1 : identifier cible + insight terrain → demander la reply au projet Claude R → publier
-- [ ] Cold outreach #2 : idem
-- [ ] Cold outreach #3 : idem
-- [ ] Cold outreach #4 : idem
-- [ ] Cold outreach #5 : idem
-- [ ] Cold outreach #6 : idem
-- [ ] Cold outreach #7 : idem
-- [ ] Cold outreach #8 : idem
-- [ ] Cold outreach #9 : idem
-- [ ] Cold outreach #10 : idem (MINIMUM — ne pas descendre en dessous)
+- [ ] Ouvrir Chrome → lancer le prompt recherche TikTok (`saas-app-shopify/recherche/cold/chrome/tiktok/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] DM #1 : identifier cible + personnaliser DM (voir `saas-app-shopify/storemd/cold/[cold-templates.md](http://cold-templates.md)`)
+- [ ] DM #2
+- [ ] DM #3
+- [ ] DM #4
+- [ ] DM #5
+- [ ] DM #6
+- [ ] DM #7
+- [ ] DM #8
+- [ ] DM #9
+- [ ] DM #10
+- [ ] Logger dans `saas-app-shopify/storemd/cold/[cold-log-tiktok.md](http://cold-log-tiktok.md)`
 
-### Engagement Twitter (15 interactions minimum dans ce bloc)
+### Instagram — Compte StoreMD (avec F) — 10 DMs
 
-- [ ] Ouvrir Grok → coller le prompt `romain/engagement/grok/ECOM-prompt.md` → copier les résultats
-- [ ] Reply engagement #1-#5 : demander la reply au projet Claude R → publier
-- [ ] Reply engagement #6-#10 : idem
-- [ ] Likes : 5+ posts pertinents dans le feed (signal de présence)
+- [ ] Ouvrir Chrome → lancer le prompt recherche Instagram (`saas-app-shopify/recherche/cold/chrome/instagram/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] DM #1 à #10 (personnalisés, voir [cold-templates.md](http://cold-templates.md))
+- [ ] Logger dans `saas-app-shopify/storemd/cold/[cold-log-instagram.md](http://cold-log-instagram.md)`
 
----
+### Facebook — Compte R perso — 10 DMs
 
-## BLOC 10h-12h — PUBLICATION + LINKEDIN 🟡 IMPORTANT
+- [ ] Ouvrir Chrome → lancer le prompt recherche Facebook (`saas-app-shopify/recherche/cold/chrome/facebook/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] DM #1 à #10 (personnalisés, voir [cold-templates.md](http://cold-templates.md) section R)
+- [ ] Logger dans `cold/[cold-log-facebook.md](http://cold-log-facebook.md)`
 
-### Publication Twitter R
+### LinkedIn — Compte R perso — 10 connexions+DMs
 
-- [ ] Publier le post Twitter R du jour (copier depuis posts batchés ou déjà schedulé)
-- [ ] Cross-engagement sur post F du matin (reply + like + RT) — si F a publié
+- [ ] Ouvrir Chrome → lancer le prompt recherche LinkedIn (`saas-app-shopify/recherche/cold/chrome/linkedin/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] Connexion+DM #1 à #10 (personnalisés, voir [cold-templates.md](http://cold-templates.md) section R)
+- [ ] Logger dans `cold/[cold-log-linkedin.md](http://cold-log-linkedin.md)`
 
-### LinkedIn (15 interactions minimum)
+### Twitter — Compte R perso — 10 DMs
 
-- [ ] Publier le post LinkedIn R du jour (si prévu ce jour)
-- [ ] Commentaire de valeur LinkedIn #1 (15+ mots, zéro lien, insight + question)
-- [ ] Commentaire de valeur LinkedIn #2
-- [ ] Commentaire de valeur LinkedIn #3-#5
-- [ ] Likes LinkedIn : 10+ posts pertinents
-- [ ] Répondre aux commentaires reçus sur les posts LinkedIn R précédents
-
----
-
-## BLOC 13h-14h — F2 + CROSS-ENGAGEMENT 🟡 IMPORTANT
-
-- [ ] Publier le post F2 du jour (copier depuis `f2/publication/posts-valides.md` ou déjà schedulé)
-- [ ] Cross-engagement F2 : reply R sur post F2 (depuis `romain/cross-engagement-tracker.md`)
-- [ ] Cross-engagement F2 : reply F2 sur replies reçues (voix F2, projet Claude F2 si besoin)
-- [ ] Répondre aux replies Twitter R du matin
+- [ ] Ouvrir Grok → lancer le prompt recherche Twitter (`saas-app-shopify/recherche/cold/grok/twitter/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] Vérifier chaque handle sur [x.com](http://x.com) (Grok peut halluciner)
+- [ ] DM #1 à #10 (personnalisés, voir [cold-templates.md](http://cold-templates.md) section R)
+- [ ] Logger dans `cold/[cold-log-twitter.md](http://cold-log-twitter.md)`
 
 ---
 
-## BLOC 14h-17h — GESTION 🟢 FLEXIBLE
+## BLOC MIDI — RÉPONSES + PH (30 min) 🟡 IMPORTANT
 
-- [ ] Répondre à TOUTES les nouvelles replies Twitter R (délai max 2h)
-- [ ] Répondre à TOUTES les replies Twitter F2 (depuis @foundrytwo, voix F2)
-- [ ] Répondre aux replies cold outreach (PRIORITAIRE — chaque réponse = début du funnel)
-- [ ] DM de suivi si un cold outreach de la veille n'a pas reçu de réponse (1 seul DM)
-- [ ] Cross-engagement sur posts F de l'après-midi (si F publie)
-- [ ] Coordination avec F, gestion générale, préparation contenu
+### Réponses
 
----
+- [ ] Répondre à TOUS les DMs reçus (merchants qui ont répondu au cold) — délai max 2h
+- [ ] Répondre à TOUS les commentaires sur les posts publiés (R perso + StoreMD)
+- [ ] Si un merchant veut tester → envoyer le lien d'installation beta en DM
 
-## BLOC SOIR — ENGAGEMENT COMPLÉMENTAIRE 🟢 FLEXIBLE
+### Vérifier publications
 
-- [ ] Engagement complémentaire Twitter/LinkedIn si les 30 interactions/jour ne sont pas atteintes
-- [ ] Répondre aux dernières replies de la journée
-- [ ] Cross-engagement sur posts F du soir (si F publie sur LinkedIn)
-- [ ] PH : upvoter 1-2 produits + 1 commentaire substantif (2-3 min)
-- [ ] **IH — compte @foundrytwo (voix F2 "we") — 10 actions/jour (replies + engagement combinés)**
-- [ ] IH notifications d'abord : lancer Claude in Chrome avec `f2/engagement/chrome/IH-prompt-notifications.md` — répondre aux replies en attente EN PREMIER (compte dans les 10)
-- [ ] IH engagement : lancer `f2/engagement/chrome/IH-prompt-engagement.md` — compléter jusqu'à 10 actions avec des commentaires de valeur sur des posts d'autres founders
-- [ ] Logger toutes les actions IH dans `f2/engagement/engagement-log.md`
+- [ ] Vérifier que le post Twitter R du jour est bien publié (schedulé samedi)
+- [ ] Vérifier que le post LinkedIn R est bien publié (si mardi ou jeudi)
+- [ ] Vérifier que les posts StoreMD du jour sont bien publiés (Instagram, TikTok, Twitter StoreMD, Facebook)
+
+### PH — 6 interactions
+
+- [ ] 5 upvotes sur des lancements pertinents
+- [ ] 1 commentaire substantif (voir `saas-app-shopify/recherche/engagement/ph/[prompt-chrome.md](http://prompt-chrome.md)`)
 
 ---
 
-## MERCREDI — ACTION SUPPLÉMENTAIRE (IH — compte @foundrytwo)
+## BLOC APRÈS-MIDI — REDDIT WARMING (30 min-1h) 🟢 SI LE TEMPS
 
-- [ ] Publier le post IH build in public (depuis `f2/publication/posts-valides.md` section IH) — **compte @foundrytwo, voix F2 "we"**
-- [ ] Répondre à chaque commentaire reçu sur ce post dans les 24h (voix F2)
+- [ ] Si le temps le permet après le cold : commenter dans r/shopify, r/ecommerce
+- [ ] Commentaires de valeur, pas de pitch (sauf après J22 en ratio 90/10)
+- [ ] Si pas le temps → skip. Le cold est plus important.
 
 ---
 
-## FIN DE JOURNÉE (30 sec)
+## BLOC SOIR — SUIVI (15 min) 🟢 FLEXIBLE
 
-- [ ] Logger dans `romain/cold/cold-outreach-log.md` (si pas fait en temps réel)
-- [ ] Si événement notable → le noter dans `romain/progress-semaine.md`
-- [ ] Si événement notable F2 → le noter dans `f2/progress-semaine.md`
-- [ ] Marquer le cross-engagement du jour dans `romain/cross-engagement-tracker.md` (✅ + heure)
+- [ ] Répondre aux derniers DMs de la journée
+- [ ] Mettre à jour les cold-logs si pas fait en temps réel
+- [ ] Préparer les cibles du lendemain (Grok, Chrome — recherche-logs)
+- [ ] Si événement notable → noter dans `tracking/[progress.md](http://progress.md)`
 
 ---
 
 ## RÉCAP VOLUMES QUOTIDIENS
 
-| Activité | Volume minimum | Négociable ? |
-|----------|---------------|-------------|
-| Cold outreach | 10/jour | 🔴 NON |
-| Interactions Twitter | 15/jour | 🔴 NON |
-| Interactions LinkedIn | 15/jour | 🟡 Important |
-| Cross-engagement F+F2 | Chaque post | 🟡 Important |
-| Réponses aux replies | Toutes, < 2h | 🔴 NON |
-| IH actions (@foundrytwo) | 10/jour (replies + engagement) | 🟡 Important |
-| **Total interactions** | **30/jour minimum** | **🔴 NON** |
+### Cold
+
+| Activité | Volume | Négociable ? |
+|----------|--------|-------------|
+| Cold TikTok (StoreMD) | 10 DMs/jour | 🔴 NON |
+| Cold Instagram (StoreMD) | 10 DMs/jour | 🔴 NON |
+| Cold Facebook (R perso) | 10 DMs/jour | 🔴 NON |
+| Cold LinkedIn (R perso) | 10 connexions+DMs/jour | 🔴 NON |
+| Cold Twitter (R perso) | 10 DMs/jour | 🔴 NON |
+| **Total cold** | **50 DMs/jour** | **🔴 NON** |
+
+### Publication (schedulé, vérifier que c'est publié)
+
+| Plateforme | Compte | Fréquence |
+|-----------|--------|-----------|
+| Twitter | R perso | 1/jour lun-ven |
+| Twitter | StoreMD | 1/jour lun-ven |
+| LinkedIn | R perso | mardi, jeudi |
+| Facebook | StoreMD | 1/jour lun-ven |
+| TikTok | StoreMD | 1/jour lun-ven (vidéo) |
+| Instagram | StoreMD | 1/jour lun-ven (vidéo/carrousel) |
+| IH | StoreMD | mercredi |
+
+### Autres
+
+| Activité | Volume | Négociable ? |
+|----------|--------|-------------|
+| PH | 6 interactions/jour | 🟡 IMPORTANT |
+| Réponses DMs/commentaires | Toutes, < 2h | 🔴 NON |
+| Reddit warming | Si le temps | 🟢 FLEXIBLE |
+| Engagement proactif | 0 | — |
 
 ---
 
 ## NOTES
 
 - Les cases se réinitialisent chaque jour — ce fichier est un template, pas un log.
-- Les replies cross-engagement sont pré-rédigées dans `romain/cross-engagement-tracker.md` — copier-coller uniquement.
-- Les posts sont pré-rédigés et batchés — copier-coller uniquement.
-- Pour les cold outreach et engagement, venir dans le projet Claude R avec les données.
+- Les posts sont schedulés au batch samedi — en semaine on vérifie qu'ils sont publiés, on ne rédige pas.
+- Les DMs cold sont personnalisés en live — voir [cold-templates.md](http://cold-templates.md) pour les frameworks.
+- Pour les recherches de cibles : Chrome pour Instagram/TikTok/Facebook/LinkedIn, Grok pour Twitter.
