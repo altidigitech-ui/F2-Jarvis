@@ -67,6 +67,14 @@ Résultat : visibilité mais pas de conversion. L'engagement consomme du temps s
 4. **R et F full-time** : 7-10h/jour chacun.
 5. **Volume × Constance** : volumes non-négociables (BIBLE §4).
 
+### Timeline exécution Phase 3
+
+- **S6 (21-27/04)** : prise de conscience. Stratégie repensée, virage full acquisition décidé.
+- **S7 (28/04-04/05)** : test nouvelle approche. Constat qu'une refonte repo plus profonde est nécessaire.
+- **S8 (05-11/05)** : semaine de reconstruction. 0 publication. Refonte complète repo Jarvis.
+- **Lundi 11/05** : go live nouvelle stratégie StoreMD. Cold + publication sur tous les canaux.
+- **Lundi 18/05** (ou 25/05) : lancement boutique høkuno.
+
 ---
 
 ## 4. LE LOOP (s'applique à chaque business SaaS)
@@ -220,6 +228,9 @@ Les métriques spécifiques à chaque business sont dans le dossier du business.
 | 06/05/2026 | BIBLE v3.1 — Jarvis défini, agents multi-business, høkuno ajouté |
 | 06/05/2026 | Stratégie multi-business : chaque business a son dossier, sa voix, sa stratégie |
 | 06/05/2026 | R et F peuvent parler de tous les business — pas de cloisonnement |
+| 07/05/2026 | S8 = semaine reconstruction. 0 publication. Refonte repo Jarvis. |
+| 07/05/2026 | Go live nouvelle stratégie StoreMD : lundi 11/05. |
+| 07/05/2026 | Lancement høkuno prévu lundi 18/05 (possiblement repoussé au 25/05). |
 
 ---
 
