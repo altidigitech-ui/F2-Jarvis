@@ -2,7 +2,10 @@
 
 **Date :** 03 avril 2026
 **Démarrage :** Lundi 06/04/2026
-**Comptes à warmer :** R (Romain), F (Fabrice), F2 (FoundryTwo studio)
+**Statut :** TERMINÉ (J29 au 04/05/2026). Document gardé comme RÉFÉRENCE pour les prochains comptes neufs.
+**Comptes concernés :** R (Romain) perso + F (Fabrice) perso — comptes PERSONNELS Reddit et Facebook.
+**StoreMD n'a PAS de compte Reddit.** StoreMD n'a PAS de warming Facebook (publication uniquement via batch-semaine).
+**Ce fichier NE concerne PAS les comptes produit (StoreMD, futurs SaaS).**
 **Plateformes :** Reddit + Facebook
 **Objectif J+30 :** Comptes opérationnels, crédibles, capables de poster/pitcher sans être flaggés
 
@@ -15,15 +18,12 @@
 **R crée :**
 - 1 compte Reddit personnel (username naturel, pas de mention business — ex : u/romainXXX)
 - Email : Gmail ou Outlook actif depuis longtemps
-- Bio : courte, naturelle, pas de lien, pas de mention FoundryTwo
+- Bio : courte, naturelle, pas de lien, pas de mention studio
 - Avatar : photo réelle ou avatar crédible
 
 **F crée :**
 - 1 compte Reddit personnel (username naturel — ex : u/fabriceXXX)
 - Même règles que R
-
-**F2 :**
-- NE PAS créer de compte Reddit F2 maintenant. Le compte studio viendra à J+30 quand R et F sont établis. Un compte studio neuf sans historique = red flag immédiat.
 
 ### Création des comptes Facebook
 
@@ -36,9 +36,6 @@
 **F crée (ou réactive) :**
 - Même chose que R
 
-**F2 :**
-- NE PAS créer de page/groupe F2 maintenant. Attendre J+14 minimum.
-
 ### Setup tracking
 
 Créer un Google Sheet partagé R+F avec les onglets :
@@ -49,6 +46,8 @@ Créer un Google Sheet partagé R+F avec les onglets :
 ---
 
 ## 1. REDDIT — PLAN JOUR PAR JOUR
+
+Ce plan concerne les comptes PERSO de R et F sur Reddit. Pas de compte produit sur Reddit.
 
 ### Seuils à atteindre
 
@@ -87,7 +86,7 @@ Subs intérêts perso (crédibilité du profil) :
 - F : 3-4 subs liés à ses intérêts perso (idem)
 
 Subs cibles (en LURK — ne pas interagir encore) :
-- r/shopify, r/ecommerce, r/digital_marketing, r/freelance, r/NewTubers, r/youtubers
+- r/shopify, r/ecommerce, r/digital_marketing, r/freelance
 
 ---
 
@@ -120,7 +119,7 @@ Subs cibles (en LURK — ne pas interagir encore) :
 
 | Action | Détail | Volume |
 |--------|--------|--------|
-| Commenter dans subs mid-size cibles | r/ecommerce, r/freelance, r/ContentCreators, r/Entrepreneur | 3-5 commentaires/jour |
+| Commenter dans subs mid-size cibles | r/ecommerce, r/freelance, r/Entrepreneur | 3-5 commentaires/jour |
 | Continuer subs faciles | r/AskReddit, etc. — maintenir l'activité diversifiée | 2-3 commentaires/jour |
 | Réponses DÉTAILLÉES | 3-5 paragraphes, conseils concrets, expérience personnelle | Chaque commentaire dans subs cibles |
 | Premiers sauvegardes | Sauvegarder des posts utiles (signal positif pour l'algo) | 2-3/jour |
@@ -152,11 +151,10 @@ Subs cibles (en LURK — ne pas interagir encore) :
 
 | Action | Détail | Volume |
 |--------|--------|--------|
-| Commenter dans les gros subs cibles | r/shopify (340K), r/digital_marketing (200K), r/NewTubers (579K) | 5-7 commentaires/jour total |
+| Commenter dans les gros subs cibles | r/shopify (340K), r/digital_marketing (200K) | 5-7 commentaires/jour total |
 | Maintenir les subs mid-size | r/ecommerce, r/freelance | 2-3 commentaires/jour |
 | Réduire les subs faciles | r/AskReddit etc. → 1/jour max (le profil doit montrer de l'expertise, pas du casual) | 1/jour |
 | Premier post (J+18 minimum) | Un post TEXT (pas de lien) dans un sub mid-size : une question, un retour d'expérience, un comparatif | 1 post dans la semaine |
-| Cross-engagement R↔F | R reply au commentaire de F avec +valeur (et vice-versa). NATUREL. | 1-2x/jour |
 
 **Format des commentaires qui explosent dans les subs business :**
 - Commencer par "I dealt with this exact issue..." → crédibilité immédiate
@@ -170,24 +168,24 @@ Subs cibles (en LURK — ne pas interagir encore) :
 
 ### PHASE 5 : Opérationnel (J22-J30) — Prêt à distribuer
 
-**Temps : 1h30-2h/jour**
+**Temps : 1h30-2h/jour (SI le temps le permet après le cold quotidien)**
 
 | Action | Détail | Volume |
 |--------|--------|--------|
-| Commenter dans les subs cibles | r/shopify, r/ecommerce, r/digital_marketing, r/NewTubers | 7-10 commentaires/jour |
+| Commenter dans les subs cibles | r/shopify, r/ecommerce, r/digital_marketing | 7-10 commentaires/jour |
 | Poster des threads de valeur | Comparatifs, case studies, retours d'expérience, tips détaillés | 2-3 posts/semaine |
 | Première mention subtile d'outil | "I've been working on something that solves this..." dans un commentaire PERTINENT | 1-2x/semaine max |
-| Offrir des audits/analyses gratuits | "I'll audit your [listing/site/thumbnail] for free — drop your link" | 1 post/semaine |
-| Cold DMs | Aux gens qui ont exprimé la douleur dans des threads récents | 5-10/jour |
-| Cross-engagement R↔F | Systématique sur les posts importants | Quotidien |
+| Offrir des audits/analyses gratuits | "I'll audit your store for free — drop your link" | 1 post/semaine |
+
+**Rappel :** depuis le virage full acquisition (05/05/2026), le cold DM quotidien (80 DMs/jour) est PRIORITAIRE. Le warming Reddit passe en priorité basse — à faire si le temps le permet après le cold. Voir `romain/planning/plan-30-jours.md` et `fabrice/planning/plan-30-jours.md`.
 
 **Objectif J+30 :** 1000+ karma, comptes crédibles, premiers signups via Reddit.
-
-**À J+30 : Créer le compte F2 Reddit** (u/foundrytwo). R et F cross-engagent immédiatement pour bootstrapper le karma du compte studio.
 
 ---
 
 ## 2. FACEBOOK — PLAN JOUR PAR JOUR
+
+Ce plan concerne les comptes PERSO de R et F sur Facebook. La publication StoreMD sur Facebook est gérée séparément dans le batch-semaine.
 
 ### Limites critiques pour un compte neuf
 
@@ -209,7 +207,7 @@ Subs cibles (en LURK — ne pas interagir encore) :
 |------|--------|
 | J1 | Créer le profil. Ajouter photo de profil. Scroller le feed 10 min. Liker 2-3 posts. Ajouter 2-3 amis réels. NE PAS rejoindre de groupe. |
 | J2 | Ajouter cover photo + bio. Liker 3-5 posts. Ajouter 2-3 amis. Rejoindre 1 groupe d'intérêt perso (sport, cuisine, ville). Browser le groupe sans interagir. |
-| J3 | Compléter les infos profil (ville, travail, études). Liker 5 posts. Ajouter 2-3 amis. Rejoindre 1 nouveau groupe (intérêt perso). Poster 1 statut perso simple ("Happy to be back on Facebook!" ou photo perso). |
+| J3 | Compléter les infos profil (ville, travail, études). Liker 5 posts. Ajouter 2-3 amis. Rejoindre 1 nouveau groupe (intérêt perso). Poster 1 statut perso simple (photo perso ou update simple). |
 
 ---
 
@@ -251,14 +249,12 @@ Subs cibles (en LURK — ne pas interagir encore) :
 - Trouver les posts avec des questions sans réponse ou avec des réponses faibles
 - Écrire des commentaires de 3-5 phrases minimum avec des conseils concrets
 - Répondre aux réponses des autres (l'algo récompense les conversations multi-niveaux)
-- Utiliser les réactions (❤️, 😮) en plus des commentaires
+- Utiliser les réactions en plus des commentaires
 
 **Groupes à rejoindre J8-J14 :**
 - Marketing Solved (30K)
 - Superstar SEO (76K)
-- Amazon FBA Sellers (60K)
-- YouTube Creators Hub (50K)
-- 2-3 groupes supplémentaires selon la vertical prioritaire
+- 2-3 groupes supplémentaires liés à l'e-com Shopify
 
 **Objectif J+14 :** Membre actif de 8-10 groupes business. Reconnu par certains membres grâce aux commentaires utiles. Profil crédible.
 
@@ -272,9 +268,8 @@ Subs cibles (en LURK — ne pas interagir encore) :
 |--------|-------------|
 | Commenter dans les groupes | 5-8 commentaires/jour |
 | Premier post dans un groupe | 1 post/2-3 jours (question ouverte ou tip actionable) |
-| Répondre à CHAQUE commentaire sur vos posts | Dans les 2h | 
+| Répondre à CHAQUE commentaire sur vos posts | Dans les 2h |
 | Rejoindre les derniers groupes cibles | 1/jour si nécessaire |
-| Cross-engagement R↔F | R commente les posts de F dans les groupes et vice-versa |
 
 **Types de posts qui marchent dans les FB Groups :**
 - Questions ouvertes : "What's your biggest challenge with [X] right now?"
@@ -291,19 +286,17 @@ Subs cibles (en LURK — ne pas interagir encore) :
 
 ### PHASE 5 : Distribution active (J22-J30)
 
-**Temps : 1h-1h30/jour**
+**Temps : 1h-1h30/jour (SI le temps le permet après le cold quotidien)**
 
 | Action | Volume/jour |
 |--------|-------------|
 | Commenter (valeur) | 8-10/jour |
 | Poster dans les groupes | 1-2 posts/jour (en alternant les groupes) |
 | Utiliser les jours thématiques | Promo Wednesday, IG Monday, etc. — selon les groupes |
-| Offrir des audits/analyses gratuits | 1 post/semaine "Drop your [URL/thumbnail/listing], I'll analyze it free" |
-| DMs aux gens intéressés | 5-10/jour |
-| Cross-engagement R↔F | Systématique |
+| Offrir des audits/analyses gratuits | 1 post/semaine "Drop your URL, I'll analyze it free" |
 | Première mention produit | "I'm building something for this — would love your feedback" | 1x/semaine max |
 
-**À J+21 : Créer la page Facebook FoundryTwo** (pas un groupe — une page). R et F likent la page. La page commence à poster du contenu studio (build in public, milestones).
+**Rappel :** depuis le virage full acquisition (05/05/2026), le cold DM quotidien (80 DMs/jour) est PRIORITAIRE. Le warming Facebook passe en priorité basse — à faire si le temps le permet après le cold. Le cold Facebook (10 DMs/jour aux merchants Shopify trouvés dans les groupes) est géré séparément via `romain/planning/plan-30-jours.md` et les cold-logs.
 
 ---
 
@@ -311,11 +304,11 @@ Subs cibles (en LURK — ne pas interagir encore) :
 
 | Semaine | Reddit R | Reddit F | Facebook R | Facebook F | Statut |
 |---------|----------|----------|-----------|-----------|--------|
-| **S1 (06-12/04)** | Browse + upvote (J1-3) puis commentaires subs faciles (J4-7) | Idem | Setup profil + rejoindre 4 groupes + observer | Idem | 🔴 WARMING |
-| **S2 (13-19/04)** | Commentaires subs mid-size cibles | Idem | Premiers commentaires dans FB Groups business | Idem | 🟡 FARMING |
-| **S3 (20-26/04)** | Entrée subs majeurs + premier post Reddit | Idem | Premiers posts dans FB Groups + cross-engagement | Idem | 🟡 FARMING |
-| **S4 (27/04-03/05)** | Opérationnel : posts valeur + offre audits gratuits + cold DMs | Idem | Opérationnel : posts + audits + DMs + mention subtile produit | Idem | 🟢 OPÉRATIONNEL |
-| **S5 (04-10/05)** | VALIDATION 48h — post "qui veut tester?" | Idem | VALIDATION 48h dans FB Groups | Idem | 🟢 VALIDATION |
+| **S1 (06-12/04)** | Browse + upvote (J1-3) puis commentaires subs faciles (J4-7) | Idem | Setup profil + rejoindre 4 groupes + observer | Idem | ✅ FAIT |
+| **S2 (13-19/04)** | Commentaires subs mid-size cibles | Idem | Premiers commentaires dans FB Groups business | Idem | ✅ FAIT |
+| **S3 (20-26/04)** | Entrée subs majeurs + premier post Reddit | Idem | Premiers posts dans FB Groups | Idem | ✅ FAIT |
+| **S4 (27/04-03/05)** | Opérationnel : posts valeur + offre audits gratuits | Idem | Opérationnel : posts + audits + mention subtile produit | Idem | ✅ FAIT |
+| **S5+ (05/05+)** | Warming = priorité basse. Cold DM = priorité absolue. Continuer Reddit si le temps le permet. | Idem | Warming = priorité basse. Cold DM Facebook = priorité absolue. | Idem | 🔴 VIRAGE FULL ACQUISITION |
 
 ---
 
@@ -329,7 +322,7 @@ Subs cibles (en LURK — ne pas interagir encore) :
 | Poster un thread avant J18 | Commentaires uniquement jusqu'à J15-18 |
 | Mentionner un produit/outil/lien avant J22 | Pure valeur pendant 3 semaines |
 | Même IP pour R et F si même réseau WiFi | Utiliser des connexions séparées (mobile data pour l'un, WiFi pour l'autre) |
-| Voter mutuellement de manière systématique | Cross-engagement via commentaires de valeur, pas upvotes systématiques |
+| Voter mutuellement de manière systématique | Pas de vote manipulation entre comptes R et F |
 | Rejoindre 20 subs le même jour | Étaler sur 3-5 jours |
 | Commentaires de 1-2 mots ("Great!", "Thanks!") | Commentaires de 2-4 phrases minimum |
 | Copier-coller des réponses | Chaque commentaire unique et contextuel |
@@ -351,42 +344,31 @@ Subs cibles (en LURK — ne pas interagir encore) :
 
 ## 5. IMPACT SUR LE CALENDRIER GLOBAL
 
-Le warming décale la validation de ~3 semaines par rapport au plan initial :
+Le warming a décalé la distribution de ~3 semaines. C'est fait. Les comptes sont opérationnels.
 
-| Étape | Plan initial | Plan avec warming |
-|-------|-------------|-------------------|
-| Début infiltration | 06/04 | 06/04 (le warming EST l'infiltration) |
-| Premiers commentaires subs cibles | 06/04 | 13/04 (J+7) |
-| Premiers posts dans subs cibles | 13/04 | 22/04 (J+16) |
-| Validation 48h (post "qui veut tester?") | 20/04 | 04/05 (J+28) |
-| Produit prêt pour distribution | — | 05/05 (F build en 2-5j dans un projet séparé) |
-| Produit live | mi-mai | fin mai - début juin |
-
-Le warming N'EST PAS du temps perdu. Pendant ces 3-4 semaines, R et F distribuent. En parallèle, F build les premiers produits (StoreMD, ProfitPilot) dans des projets Claude séparés. Les deux avancent simultanément.
+| Étape | Date réelle | Statut |
+|-------|------------|--------|
+| Début warming | 06/04/2026 | ✅ |
+| Premiers commentaires subs cibles | 13/04/2026 | ✅ |
+| Premiers posts dans subs cibles | 22/04/2026 | ✅ |
+| Comptes opérationnels | 04/05/2026 | ✅ |
+| Virage full acquisition (cold DM prioritaire) | 05/05/2026 | 🔴 EN COURS |
 
 ---
 
-## 6. CHECKLIST WEEKEND 04-05 AVRIL
+## 6. CHECKLIST WEEKEND 04-05 AVRIL — ✅ FAIT
 
-### Samedi 04/04
-
-- [ ] R crée son compte Reddit (username, email, avatar, bio)
-- [ ] F crée son compte Reddit (username, email, avatar, bio)
-- [ ] R crée/réactive son profil Facebook (photo, cover, bio partielle)
-- [ ] F crée/réactive son profil Facebook (photo, cover, bio partielle)
-- [ ] Créer le Google Sheet de tracking partagé (3 onglets)
-- [ ] R s'abonne à 15-20 subs Reddit (mix perso + mainstream + cibles en lurk)
-- [ ] F s'abonne à 15-20 subs Reddit (idem)
-
-### Dimanche 05/04
-
-- [ ] R browse Reddit 20 min + upvote 5-10 posts
-- [ ] F browse Reddit 20 min + upvote 5-10 posts
-- [ ] R ajoute 2-3 amis FB + like 3-5 posts
-- [ ] F ajoute 2-3 amis FB + like 3-5 posts
-- [ ] Relire le PLAYBOOK-DISTRIBUTION ensemble
-- [ ] Caler les horaires quotidiens pour la semaine 1
-- [ ] Définir qui lead quelle vertical (R = ecom + marketing, F = creators + ecom)
+- [x] R crée son compte Reddit
+- [x] F crée son compte Reddit
+- [x] R crée/réactive son profil Facebook
+- [x] F crée/réactive son profil Facebook
+- [x] Créer le Google Sheet de tracking partagé
+- [x] R s'abonne à 15-20 subs Reddit
+- [x] F s'abonne à 15-20 subs Reddit
+- [x] R browse Reddit 20 min + upvote
+- [x] F browse Reddit 20 min + upvote
+- [x] R ajoute amis FB + like posts
+- [x] F ajoute amis FB + like posts
 
 ---
 
@@ -395,3 +377,12 @@ Le warming N'EST PAS du temps perdu. Pendant ces 3-4 semaines, R et F distribuen
 ### J4 (09/04/2026) — Facebook Groups vs Reddit pour le mining de douleurs
 
 Les groupes Facebook Shopify (dropshipping surtout) sont composés à ~90% de spam, promo d'apps, "hire me", et questions ultra-débutantes. Les douleurs techniques profondes (speed, SEO, listings, migrations, monitoring) sont quasi absentes. Reddit est 10x plus riche pour le mining de douleurs. **Décision : Facebook reste dans le plan distribution uniquement pour warming/farming et présence communautaire. Le mining de douleurs se fait exclusivement sur Reddit.**
+
+---
+
+## 8. RÉUTILISATION POUR LES PROCHAINS COMPTES
+
+Ce document sert de référence si on doit créer de nouveaux comptes (pour un nouveau produit, pour un nouveau fondateur, etc.). Le process jour par jour, les seuils karma, les limites comptes neufs Facebook, et les règles de sécurité s'appliquent tels quels. Adapter :
+- Les subs cibles (selon le vertical du nouveau produit)
+- Les groupes Facebook (selon le vertical)
+- Les angles de commentaires (selon la voix du nouveau compte)
