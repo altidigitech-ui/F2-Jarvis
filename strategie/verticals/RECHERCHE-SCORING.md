@@ -1,5 +1,7 @@
 # RECHERCHE VERTICALS & COMMUNAUTÉS — Scoring Distribution-First
 
+> **Note mai 2026 :** ce document est une recherche historique (avril 2026). La stratégie a évolué. Focus actuel : e-com Shopify uniquement, cold DM direct (plus d'infiltration communautaire). Voir `strategie/CONTEXT.md` §3.
+
 **Date :** 03 avril 2026
 **Objectif :** Identifier les 3 verticals prioritaires pour l'infiltration à partir du 06/04/2026
 **Méthode :** Recherche web approfondie → Mapping communautés → Scoring /35 + bonus distribution
@@ -12,9 +14,9 @@
 
 | Rang | Vertical | Score total | Verdict |
 |------|----------|-------------|---------|
-| 🥇 | **E-commerce sellers (Shopify/Amazon)** | 33/41 | 🟢 GO — Infiltration immédiate |
-| 🥈 | **Marketing agencies & freelancers** | 31/41 | 🟢 GO — Infiltration immédiate |
-| 🥉 | **Content creators (YouTube/TikTok)** | 28/41 | 🟢 GO — Infiltration immédiate |
+| 🥇 | **E-commerce sellers (Shopify/Amazon)** | 33/41 | 🟢 ACTIF — Focus Shopify, cold DM |
+| 🥈 | **Marketing agencies & freelancers** | 31/41 | 🟡 BACKLOG |
+| 🥉 | **Content creators (YouTube/TikTok)** | 28/41 | 🟡 BACKLOG |
 | 4 | Coaches & course creators | 25/41 | 🟡 BACKLOG — Communautés plus fragmentées |
 | 5 | Restaurants & food business | 22/41 | 🟡 BACKLOG — Communautés moins actives en ligne |
 | 6 | Real estate agents | 20/41 | 🟠 BACKLOG — Marché local, acquisition offline |
@@ -288,6 +290,8 @@
 ---
 
 ## PLAN D'ACTION LUNDI 06/04/2026
+
+> **Note :** ce plan a été exécuté en avril 2026. L'approche a évolué vers cold DM direct (mai 2026). Voir `strategie/CONTEXT.md` §3 et `strategie/PLAYBOOK-DISTRIBUTION.md`.
 
 ### Répartition F + R sur les 3 verticals GO
 
