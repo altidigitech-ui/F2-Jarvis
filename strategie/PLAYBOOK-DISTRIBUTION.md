@@ -1,185 +1,215 @@
-# PLAYBOOK DISTRIBUTION — Règles d'engagement communautés
+# PLAYBOOK DISTRIBUTION — Cheat sheet opérationnelle
 
-**Date :** 03 avril 2026
-**Utilisé par :** R (Romain), F (Fabrice)
+> Hérite de : `[BIBLE.md](http://BIBLE.md)` + `strategie/[CONTEXT.md](http://CONTEXT.md)`
+> Ce fichier = QUOI FAIRE AUJOURD'HUI. Pour le détail par plateforme → `marketing/canaux/[plateforme]/[context.md](http://context.md)`.
+> Mis à jour quand un nouveau business est live.
+
+**Dernière mise à jour :** 06 mai 2026
+**Business live :** StoreMD (SaaS Shopify)
+**Business en préparation :** høkuno (boutique Shopify), ProfitPilot (SaaS Shopify)
 
 ---
 
-## 0. RÈGLES ALGORITHMES
+## 1. STRATÉGIE GLOBALE
+
+### SaaS (StoreMD, ProfitPilot quand live)
+Cold DM = moteur d'acquisition. On identifie les cibles, on scanne, on contacte. La publication maintient la visibilité mais ne génère pas directement les clients.
+
+### Boutique (høkuno quand live)
+PAS de cold depuis les comptes perso. Le marketing est centré sur le produit (les t-shirts). Publication omniprésente 7/7, recyclage cross-plateforme. R et F peuvent republier et partager les liens de la boutique depuis leurs comptes perso, mais pas de démarchage direct.
+
+### Quand un nouveau business arrive
+Cf. §8 — Checklist d'intégration.
+
+---
+
+## 2. MAPPING COMPTES — TOUT L'ÉCOSYSTÈME
+
+### Comptes perso R et F
+
+| Compte | Plateformes | StoreMD | ProfitPilot (futur) | høkuno (futur) |
+|--------|------------|---------|--------------------|--------------------|
+| **R perso** | Twitter, LinkedIn, Facebook | Cold + publication | Cold + publication (même modèle) | Republication + partage lien. PAS de cold. |
+| **F perso** | Twitter, LinkedIn, Facebook | Cold + publication | Cold + publication | Republication + partage lien. PAS de cold. |
+| **R perso** | Reddit | Warming/karma, pas de cold | Idem | — (pas pertinent mode) |
+| **R perso** | PH | Karma farming 6/jour | Idem | — |
+| **F perso** | Reddit, PH | Idem R | Idem | — |
+
+### Comptes produit (1 par business)
+
+| Compte | Plateformes | Rôle | Qui gère |
+|--------|------------|------|----------|
+| **StoreMD** | TikTok, Instagram, Twitter, Facebook, IH | Cold (TikTok + Instagram) + publication 1/jour lun-ven | R + F partagé |
+| **ProfitPilot** (à créer) | TikTok, Instagram, Twitter, Facebook, IH | Cold + publication (calqué sur StoreMD) | R + F partagé |
+| **høkuno** (à créer) | Instagram, TikTok, Pinterest (à confirmer) | Publication 1/jour 7/7, recyclage cross-plateforme | R + F partagé |
+
+---
+
+## 3. PRIORITÉS COLD — ORDRE STRICT (SaaS uniquement)
+
+Cold = SaaS seulement. høkuno = pas de cold.
+
+### StoreMD (actif)
+
+| Ordre | Plateforme | Compte | Volume/jour | Recherche via |
+|-------|-----------|--------|-------------|---------------|
+| 1 | TikTok | StoreMD | 10 (partagés R+F) | Chrome |
+| 2 | Instagram | StoreMD | 10 (partagés R+F) | Chrome |
+| 3 | Facebook | R perso + F perso | 10 chacun | Chrome |
+| 4 | LinkedIn | R perso + F perso | 10 chacun | Chrome |
+| 5 | Twitter | R perso + F perso | 10 chacun | Grok |
+| **Total** | | | **80/jour** | |
+
+### ProfitPilot (quand live)
+Même structure, même ordre, comptes ProfitPilot au lieu de StoreMD pour TikTok/Instagram. Volumes à calibrer.
+
+---
+
+## 4. PUBLICATION — CALENDRIER
+
+### StoreMD (actif)
+
+| Compte | Fréquence | Jours |
+|--------|-----------|-------|
+| StoreMD TikTok | 1/jour | Lun-ven |
+| StoreMD Instagram | 1/jour (recyclé TikTok) | Lun-ven |
+| StoreMD Facebook | 1/jour (recyclé TikTok) | Lun-ven |
+| StoreMD Twitter | 1/jour | Lun-ven |
+| StoreMD IH | 1/semaine | Mercredi |
+| R perso Twitter | 1/jour | Lun-ven |
+| R perso LinkedIn | 2/semaine | Mardi, jeudi |
+| F perso Twitter | 1/jour | Lun-ven |
+| F perso LinkedIn | 2/semaine | Mercredi, vendredi |
+
+Tout est batché le samedi. En semaine on ne rédige pas.
+
+### høkuno (quand live)
+
+| Compte | Fréquence | Jours |
+|--------|-----------|-------|
+| høkuno (tous canaux) | 1/jour | 7/7 |
+| R perso | Republication | Quand pertinent |
+| F perso | Republication | Quand pertinent |
+
+Source vidéo/photo → recyclé sur tous les canaux (même logique que TikTok → Reels → Facebook pour StoreMD).
+
+### ProfitPilot (quand live)
+Calqué sur StoreMD.
+
+---
+
+## 5. RÈGLES PAR PLATEFORME — RÉSUMÉ
+
+Pour le détail complet → `marketing/canaux/[plateforme]/[context.md](http://context.md)`
+
+### Twitter
+- Lien JAMAIS dans le corps du tweet. Format 2-blocs (post + reply avec lien). -1700% reach sinon.
+- Reply engagée par l'auteur = 150x un like. Répondre à TOUT.
+- Premium obligatoire (8$/mois) sur tous les comptes actifs.
+- 0 hashtag.
+
+### LinkedIn
+- Lien JAMAIS dans le corps du post. -45 à -60% reach. Lien en Featured bio.
+- Commentaire substantif 15+ mots = signal #1. Thread 3-5 replies = 5.2x amplification.
+- 0 hashtag (ou 1-3 max niche).
+- Golden hour : 60 premières minutes critiques.
+
+### Facebook
+- Engagement dans les groupes Shopify (R+F perso) = partie du pipeline cold. Règle 80/20.
+- Scan boutique AVANT le cold DM Messenger. Vrais résultats.
+- Lien performent mieux en commentaire qu'en corps de post.
+- 2-3 hashtags max.
+
+### TikTok
+- Canal acquisition #1 pour StoreMD.
+- Hook dans les 3 premières secondes ou la vidéo meurt.
+- 0 hashtag. Keywords dans caption/audio/overlay.
+- Audio original > sound trending.
+- Poster nativement (+20-50% distribution vs scheduler).
+
+### Instagram
+- Recyclage TikTok (re-export sans watermark, 12-24h après).
+- 5 hashtags max niche.
+- Reels = format roi pour la discovery.
+- Stories = engagement followers existants.
 
 ### Reddit
+- PAS de cold. PAS d'automatisation. Tout manuellement.
+- Règle 90/10 (90% valeur, 10% mention produit max).
+- Karma farming 3 phases (4-6 semaines avant toute mention).
+- Priorité basse. Si le temps le permet après le cold.
 
-- **Les 60 premières minutes décident tout.** 15 upvotes + 8 commentaires en 1h > 40 upvotes + 0 commentaire. L'engagement précoce est le signal #1.
-- **Comptes anciens avec karma pèsent plus.** Un commentaire d'un compte à 5000 karma vaut plus qu'un compte à 50 karma.
-- **Timing optimal :** 8h30-10h EST (14h30-16h FR) et 13h-14h EST (19h-20h FR). Ce sont les pics d'activité sur les subs business US.
-- **500+ karma avant de pitcher.** Commentaires d'abord, posts ensuite. Zéro mention produit avant 500 karma.
-- **Trier par "Rising"** pour les commentaires. Les posts en montée = plus de visibilité pour vos réponses. Pas "Hot" (trop tard), pas "New" (trop risqué).
+### IndieHackers
+- 1 post/semaine mercredi. Focus produit.
+- Show IH pour les lancements.
+- Répondre à tous les commentaires sur nos posts.
 
-### Facebook Groups
-
-- **Commentaires longs > likes.** L'algo FB récompense les conversations, pas les réactions passives.
-- **Saves et shares = signaux les plus puissants.** Un post sauvegardé vaut 10 likes.
-- **Posts sans liens externes performent mieux.** Les liens tuent la portée. Si lien nécessaire → en commentaire.
-- **80/20 rule :** 80% valeur pure, 20% mention produit (et seulement après J+22).
-- **Poster ET répondre = critique.** Ne pas poster et disparaître. Répondre à CHAQUE commentaire dans les 2h.
-- **1-2 groupes/jour pour un compte neuf.** Ne pas rejoindre 10 groupes le jour 1.
-
----
-
-## 1. COORDINATION DES 3 COMPTES — La Toile
-
-### Rôles distincts
-
-| Compte | Angle | Ton | Ce qu'il fait |
-|--------|-------|-----|--------------|
-| **R** (Romain) | Growth, conversion, acquisition, pricing | Pratico-pratique, data-driven | Dit "I". Angle growth. |
-| **F** (Fabrice) | Technique, automatisation, stack, workflow | Expert tech accessible | Dit "I". Angle tech. |
-| **F2** (FoundryTwo) | Studio, build in public, produit | Professionnel mais humain | Dit "we". JAMAIS de cold outreach. |
-
-### Cross-engagement
-
-- R et F ont des angles DIFFÉRENTS — ne jamais poster la même chose.
-- Cross-engagement dans les **15 min** du post de l'autre. R commente le post de F avec +valeur (et vice-versa).
-- Le cross-engagement = commentaires de VALEUR, pas des upvotes systématiques.
-- F2 ne fait **JAMAIS** de cold outreach. F2 = présence studio, pas prospection.
-- Ne **JAMAIS** mentionner F2 ou le produit dans les 2 premières semaines.
+### Product Hunt
+- Canal de LANCEMENT, pas de publication continue.
+- Karma farming quotidien (5 upvotes + 1 commentaire/jour).
+- Pre-launch 4-8 semaines. Launch day = journée entière.
+- Jamais demander des upvotes. Demander des visites et commentaires.
 
 ---
 
-## 2. ROUTINE QUOTIDIENNE PAR VERTICAL
+## 6. RÉPONSES — RÈGLES UNIVERSELLES
 
-### E-commerce (R lead + F support)
-
-| Heure FR | Action | Qui |
-|----------|--------|-----|
-| 14h30 | Scan r/shopify + r/ecommerce "Rising" — répondre aux 3-5 meilleurs posts | R + F |
-| 15h00 | Commenter dans Shopify Entrepreneurs FB | R |
-| 16h00 | Post de valeur dans 1 sub Reddit OU 1 FB Group | R ou F (alterner) |
-| 19h00 | 2e session Reddit — répondre aux réponses + nouveaux posts Rising | R + F |
-| 19h30 | Cold DMs (phase distrib uniquement) | R |
-
-### Agences/Freelancers (R lead)
-
-| Heure FR | Action | Qui |
-|----------|--------|-----|
-| 15h30 | Scan r/digital_marketing + r/freelance "Rising" | R |
-| 16h30 | Commenter dans Digital Distillery FB | R |
-| 20h00 | Cold DMs agences (phase distrib) | R |
-
-### Content Creators (F lead)
-
-| Heure FR | Action | Qui |
-|----------|--------|-----|
-| 15h00 | Scan r/NewTubers + r/youtubers "Rising" | F |
-| 16h00 | Commenter dans YouTube Creators Hub FB | F |
-| 19h30 | Post de valeur ou réponses | F |
+- Répondre à TOUS les DMs et commentaires sur nos posts. Délai max 2h.
+- 0 engagement proactif. On ne commente PAS les posts des autres (sauf Facebook groupes Shopify = pipeline cold).
+- Twitter : reply auteur = 150x like. Non-négociable.
+- DM d'un merchant intéressé → scanner sa boutique, envoyer les vrais résultats, donner le lien beta.
+- Ton adapté au compte (voix R, voix F, ou voix produit).
 
 ---
 
-## 3. MÉTRIQUES DE SUIVI QUOTIDIEN
+## 7. ANTI-PATTERNS UNIVERSELS
 
-| Métrique | R minimum/jour | F minimum/jour | Tracking |
-|----------|---------------|---------------|----------|
-| Commentaires communautés | 30 | 15 | Google Sheet |
-| Posts de valeur | 1 (7/sem) | 1 (5/sem) | Google Sheet |
-| Cold DMs (phase distrib) | 20 | 10 | Google Sheet |
-| Douleurs documentées | 3 | 2 | Onglet "Douleurs Observées" |
-| Cross-engagements R↔F | 2 | 2 | — |
-
-### Seuils d'alerte hebdo
-
-| Métrique | Seuil | Action |
-|----------|-------|--------|
-| Interactions totales < 200/semaine | Insuffisant | Augmenter le volume ou changer les subs/groupes |
-| Cold outreach < 100/semaine (phase distrib) | Insuffisant | Revoir le ciblage |
-| Taux réponse cold < 3% | Faible | Revoir le message ou la cible |
-| 0 douleur documentée en 3 jours | Problème | Changer de communautés |
-
----
-
-## 4. ANTI-PATTERNS — Ne pas faire
-
-| Anti-pattern | Pourquoi c'est un problème | Quoi faire à la place |
-|-------------|--------------------------|----------------------|
-| Poster et disparaître | L'algo pénalise. Les gens arrêtent de répondre. | Répondre à CHAQUE commentaire dans les 2h |
-| Pitcher avant 500 karma | Ban ou shadowban garanti | Pure valeur pendant 3 semaines minimum |
-| Copier-coller le même post dans 3 groupes | FB détecte le duplicate content | Adapter chaque post au ton du groupe |
-| Lien externe dans le corps du post FB | Portée divisée par 5-10x | Lien en commentaire uniquement |
-| Cross-upvote systématique R↔F | Reddit détecte le vote manipulation | Cross-engagement via COMMENTAIRES de valeur |
-| Commentaires de 1-2 mots | Zero valeur, zero karma, looks like spam | Minimum 2-4 phrases, conseil concret |
-| Rejoindre 10 groupes FB le jour 1 | Restriction de compte | 1-2 groupes/jour, progressivement |
-| Mentionner F2 dans les 2 premières semaines | Grille la couverture | F2 arrive quand R et F sont établis |
-| Poster aux mauvais horaires | Portée faible | 14h30-16h FR ou 19h-20h FR (pics US) |
-| Actions en rafale | Détection bot | Espacer les actions de quelques minutes |
+| Interdit | S'applique à |
+|----------|-------------|
+| Lien dans corps tweet | Twitter |
+| Lien dans corps post LinkedIn | LinkedIn |
+| Hashtags excessifs (>5 Insta, >3 Facebook, >0 Twitter/TikTok) | Tous |
+| Engagement bait ("comment YES", "like and share") | Tous |
+| Watermark d'autre plateforme | TikTok, Instagram, Facebook |
+| Inventer des chiffres / résultats | Tous (BIBLE §3) |
+| Mentionner Altistone / la toile | Tous (BIBLE §2) |
+| Cibler des devs / SaaS builders | Tous (BIBLE §5) |
+| Em-dash, "Here's the thing", "Not X — it's Y" | Tous (ANTI-IA) |
+| Formes longues anglais ("do not" au lieu de "don't") | Tous |
+| Personal branding / influence | Tous |
+| Cold DM pour la boutique depuis comptes perso | høkuno |
+| Mélanger les voix entre business | Tous |
 
 ---
 
-## 5. OUTILS DE VEILLE — Trouver les posts qui valent le coup
+## 8. INTÉGRER UN NOUVEAU BUSINESS — CHECKLIST
 
-### F5Bot (gratuit) — Alertes keywords Reddit
-- URL : f5bot.com
-- Créer un compte par personne
-- Setup à J1 (inclus dans le plan 30 jours)
+Quand un nouveau business est prêt à être live :
 
-Keywords R :
-"shopify conversion", "store not converting", "low sales shopify", "chargeback shopify", "shopify slow", "facebook ads ecommerce", "best tool ecommerce", "freelancer reporting", "client report agency", "marketing freelancer tools"
-
-Keywords F :
-"shopify speed", "shopify slow loading", "store performance", "automate shopify", "youtube thumbnail", "repurpose video", "content workflow automation", "too many tools creator"
-
-- Flag "only-reddit" sur chaque keyword
-- Alerte par email — check 2x/jour (matin + après-midi)
-- Quand un post pertinent arrive → ouvrir → commenter si < 6h (fenêtre d'engagement Reddit)
-
-### RSS Feeds (gratuit via Feedly)
-Ajouter ces feeds dans Feedly :
-- reddit.com/r/shopify/rising/.rss
-- reddit.com/r/ecommerce/rising/.rss
-- reddit.com/r/digital_marketing/rising/.rss (R)
-- reddit.com/r/NewTubers/rising/.rss (F)
-
-Les posts en "Rising" = meilleur ratio visibilité/compétition. Commenter un post Rising dans les 60 premières minutes = maximum de visibilité.
-
-### Critères pour commenter un post (ne pas commenter n'importe quoi)
-- Le post a 2-15 commentaires (assez de traction, pas encore noyé)
-- Le post est dans les 6 dernières heures (au-delà c'est trop tard)
-- Le post pose un PROBLÈME que R ou F peut résoudre
-- Le post N'A PAS déjà une réponse parfaite (il y a de la place pour ajouter de la valeur)
-- Le post est dans un sub e-com (M1) ou agences/creators (M2-M3 selon le split)
-
-### Workflow quotidien
-1. Ouvrir Feedly → scanner les posts Rising (2 min)
-2. Check email F5Bot → voir les alertes keywords (1 min)
-3. Ouvrir les 3-5 meilleurs posts
-4. Pour chaque post : copier le titre + 2 lignes de contexte → coller à Claude → Claude génère le commentaire avec le framework adapté (voir angles-et-templates.md) et la voix (voir VOIX.md) → 30 sec par commentaire
-5. Relire, ajuster 2-3 mots si nécessaire → poster → 1 min par commentaire
-6. Total : 15-20 min pour 5 commentaires de qualité
+1. Créer son dossier dans le repo (ex: `boutique/hokuno/`, `saas-app-shopify/profitpilot/`)
+2. Créer le [context.md](http://context.md) du business (stratégie spécifique, cible, canaux)
+3. Créer la VOIX produit (fichier [VOIX.md](http://VOIX.md) dans le dossier)
+4. Créer les comptes sociaux du business
+5. Définir : cold ou pas cold ? Si SaaS = cold. Si boutique = pas de cold.
+6. Définir les canaux prioritaires et la cadence publication
+7. Mettre à jour ce playbook (§2 mapping, §3 priorités cold si applicable, §4 calendrier)
+8. Mettre à jour la BIBLE §7 si nécessaire
+9. Créer les cold-logs et recherche-logs si cold applicable
+10. Briefer les agents Jarvis (le dossier du business suffit — agents business-agnostic BIBLE §13)
 
 ---
 
-## 6. PATTERN DOUBLE-COUCHE + BETA TESTERS (validé S6)
+## 9. DOCUMENTS DE RÉFÉRENCE
 
-### Quand activer le double-couche
-
-Utiliser quand 2 stratégies parallèles sont décidées pour la même semaine et que les audiences sont assez grandes pour absorber 2× les posts sans saturation. Couche A = continuation (volume habituel, angle principal). Couche B = activation directe (quota, cold scan, beta). Jamais 2 couches avec le même objectif funnel.
-
-### Références
-
-- Template complet + rules batch : `TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md` (racine repo)
-- Stratégie de référence S6 : `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md`
-- Cross-engagement : les trackers `{persona}/cross-engagement-tracker.md` doivent inclure les replies des 2 couches (Couche A + Couche B séparées, compteurs consolidés en bas)
-
-### Mécaniques beta à réactiver
-
-1. Recrutement beta testers (quota réel, pas de fake scarcity)
-2. Analyses gratuites sur demande (DM/comment → rapport)
-3. Cold scan proactif (5 stores/jour/personne, DM non-sollicité avec rapport)
-4. Test Pro ciblé (2-3 stores stratégiques, scan complet)
-5. Prospection conversion J0/J7/J14/J30
-
-### Règles de cohabitation A + B
-
-- Créneaux horaires séparés (écart min 3h sur le même compte)
-- Pas de mélange mécaniques : chaque post = 1 couche
-- Chiffres locked canon §17 partagé entre les 2 couches
-- Cross-engagement 2× le volume (1 reply set par couche)
+| Document | Chemin |
+|----------|--------|
+| BIBLE | `[BIBLE.md](http://BIBLE.md)` |
+| ANTI-IA | `[ANTI-IA.md](http://ANTI-IA.md)` |
+| Stratégie globale | `strategie/[CONTEXT.md](http://CONTEXT.md)` |
+| Warming Reddit/Facebook | `strategie/[WARMING-FARMING.md](http://WARMING-FARMING.md)` |
+| Context par plateforme | `marketing/canaux/[plateforme]/[context.md](http://context.md)` |
+| Algo par plateforme | `marketing/canaux/[plateforme]/[algo.md](http://algo.md)` |
+| Voix R | `romain/[VOIX.md](http://VOIX.md)` |
+| Voix F | `fabrice/[VOIX.md](http://VOIX.md)` |
+| Cold templates StoreMD | `saas-app-shopify/storemd/cold/[cold-templates.md](http://cold-templates.md)` |
+| Context StoreMD | `saas-app-shopify/storemd/[context.md](http://context.md)` |
