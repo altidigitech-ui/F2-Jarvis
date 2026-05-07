@@ -2,7 +2,7 @@
 
 **Score total : 28/41 — 🟢 GO (attention pricing)**
 **Date :** 03 avril 2026
-**Statut :** Infiltration à partir du 06/04/2026
+**Statut :** BACKLOG — pas d'actualité. Activée quand le vertical e-com Shopify sera stabilisé (clients payants, MRR récurrent).
 
 ---
 
@@ -111,7 +111,7 @@
 
 ---
 
-## 4. TOP 3 OPPORTUNITÉS SaaS POUR FOUNDRYTWO
+## 4. TOP 3 OPPORTUNITÉS SaaS
 
 ### Opportunité #1 : All-in-one content repurposer
 - **Douleur** : 4-6h/épisode en repurposing manuel
@@ -139,25 +139,9 @@
 
 ---
 
-## 5. PLAN D'INFILTRATION CONTENT CREATORS
+## 5. STRATÉGIE D'ACQUISITION (quand activée)
 
-### Semaine 1 (06-12 avril)
-**F (lead — angle technique/builder) :**
-- Rejoindre r/NewTubers, r/youtubers, r/ContentCreators
-- Répondre à 5-10 questions/jour (angle : tips production, workflow, outils)
-- Observer : quels outils sont mentionnés, quelles plaintes reviennent
-- Documenter les douleurs
-
-**R (support) :**
-- Rejoindre r/NewTubers, YouTube Creators Hub FB
-- Répondre à 3-5 questions/jour (angle : growth, stratégie contenu)
-- Observer les discussions sur la monétisation et le repurposing
-
-### Semaine 2 (13-19 avril)
-- Poster "Upload your YouTube video link, I'll create 5 social posts from it for free" dans r/NewTubers
-- OU "Share your latest thumbnail, I'll score it and suggest improvements" dans r/youtubers
-- Mesurer l'intérêt (replies, DMs, demandes)
-- Décision vendredi 18/04
+Quand cette vertical sera activée, l'approche sera cold DM direct aux creators (pas infiltration communautaire). Voir `strategie/PLAYBOOK-DISTRIBUTION.md` §8 pour la checklist d'intégration d'un nouveau business. L'agent marketer de Jarvis consultera le dossier dédié du produit CreatorSuite.
 
 ---
 
