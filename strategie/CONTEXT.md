@@ -1,314 +1,254 @@
-# CONTEXT — Distribution-First Method (V2)
+# CONTEXT STRATÉGIQUE — Vision globale
 
-> **SOURCE DE VÉRITÉ — PRINCIPES & VISION STRATÉGIQUES.**
-> Hérite de `BIBLE.md` (principes non-négociables) et `ANTI-IA.md` (règle #0).
-> Pour la **stratégie marketing tactique opérationnelle** (cible, canaux, voix, cadences) → voir `marketing/strategie.md` (source de vérité depuis le 29/04/2026 — grand nettoyage).
-> En cas de contradiction tactique marketing, `marketing/strategie.md` prime.
-> En cas de contradiction sur les principes méta (Distribution-First, intégrité données, Volume × Constance), ce fichier prime.
+> **SOURCE DE VÉRITÉ — PRINCIPES & VISION.**
+> Hérite de `[BIBLE.md](http://BIBLE.md)` (principes non-négociables) et `[ANTI-IA.md](http://ANTI-IA.md)` (règle #0).
+> Ce fichier pose la stratégie GLOBALE. La stratégie spécifique de chaque business est dans son dossier dédié.
 
-**Source de vérité** pour les principes stratégiques FoundryTwo.
-**Dernière mise à jour :** 29 avril 2026 (post-grand-nettoyage marketing)
-**Utilisé par :** F (Fabrice), R (Romain), Claude
-**Statut :** ACTIF — principes parents. Pour le tactique marketing, voir `marketing/strategie.md`.
+**Dernière mise à jour :** 06 mai 2026 (BIBLE v3.1, multi-business, suppression FoundryTwo)
+**Utilisé par :** R (Romain), F (Fabrice), Jarvis (tous les agents)
+**Statut :** ACTIF — principes parents.
 
 ---
 
-## 1. POURQUOI CE PIVOT
+## 1. QUI SOMMES-NOUS
 
-### Ce qui n'a pas marché
+R (Romain Delgado) et F (Fabrice Gangitano) construisent et vendent des produits digitaux. Pas un studio, pas une marque corporate, pas des influenceurs. Deux fondateurs qui lancent des business et les poussent jusqu'à ce qu'ils génèrent du revenu.
 
-Approche précédente : trouver une idée → coder → chercher où vendre.
-Résultats Leak Detector après 3 semaines : ~8 signups, 0€ MRR, cible dev qui DIY tout.
-
-### Ce qui change
-
-1. **Distribution-first** : on ne build rien sans validation communauté
-2. **Cible recentrée** : merchants Shopify (depuis le 29/04/2026 — cf. marketing/strategie.md). Le portfolio de produits StoreMD/ProfitPilot/etc. cible primairement les merchants Shopify ; les agences/freelancers/creators sont secondaires (LeadQuiz cible coaches notamment).
-3. **Full-time** : F et R au chômage = 100% dédié
-4. **Pas de limite de build** : Claude Code + IA = la complexité technique est un MOAT, pas un frein
-5. **Volume × Constance** : le moteur de la distribution
+R et F sont les humains derrière les produits. Leurs comptes perso servent à prouver qu'il y a des vraies personnes derrière chaque business. On ne fait PAS de personal branding — on pousse la marque ou le produit, jamais la personne.
 
 ---
 
-## 2. LE LOOP
+## 2. MULTI-BUSINESS — COMMENT ÇA S'ORGANISE
+
+### Chaque business est indépendant
+
+Chaque business a :
+- Son propre dossier dans le repo (ex: `saas-app-shopify/storemd/`, `boutique/hokuno/`)
+- Ses propres comptes sociaux
+- Sa propre voix produit (fichier VOIX dédié)
+- Sa propre stratégie de communication (dans son dossier)
+- Ses propres métriques et cold-logs
+
+### R et F ne sont PAS cloisonnés
+
+R et F peuvent parler de TOUS les business depuis leurs comptes perso. R peut republier un post de høkuno. F peut republier un post de StoreMD. Rien ne les empêche de mentionner ou promouvoir n'importe quel business depuis leurs comptes perso. Ils restent focus produit — ils poussent la marque, pas eux-mêmes.
+
+### SaaS ≠ Boutique
+
+Vendre un SaaS et vendre des vêtements sont deux métiers complètement différents :
+
+| | SaaS (StoreMD) | Boutique (høkuno) |
+|---|---|---|
+| **Acquisition** | Cold DM avec scan personnalisé | Marketing produit mode, pas de cold |
+| **Cible** | Merchants Shopify (B2B) | Acheteurs de mode (B2C) |
+| **Conversion** | Scan gratuit → beta → payant | Panier → commande |
+| **Canaux prioritaires** | TikTok, Instagram, Facebook, LinkedIn, Twitter | Instagram, TikTok, Pinterest (à définir) |
+| **Voix** | Technique/business, ton neutre produit | Lifestyle/mode (à définir) |
+| **Cold** | 80 DMs/jour (BIBLE §4) | 0 cold DM |
+
+La stratégie détaillée de chaque business est dans son dossier. Ce fichier ne rentre PAS dans le détail.
+
+---
+
+## 3. POURQUOI ON EN EST LÀ
+
+### Phase 1 — mars 2026
+Approche : trouver une idée → coder → chercher où vendre.
+Résultat : Leak Detector après 3 semaines = ~8 signups, 0€ MRR, cible dev qui DIY tout.
+
+### Phase 2 — avril 2026
+Approche : distribution-first, build in public, engagement proactif.
+Résultat : visibilité mais pas de conversion. L'engagement consomme du temps sans convertir. La cible "communauté builders/devs" n'achète pas nos produits Shopify. Erreur de ciblage.
+
+### Phase 3 — mai 2026 (actuelle)
+1. **Full acquisition** : cold DMs aux clients potentiels directement. Plus d'engagement proactif.
+2. **Cible recentrée** : ciblage logique par produit (BIBLE §5). Merchants Shopify pour StoreMD, acheteurs mode pour høkuno.
+3. **Multi-business** : chaque business a son dossier, sa voix, sa stratégie. Jarvis gère tout.
+4. **R et F full-time** : 7-10h/jour chacun.
+5. **Volume × Constance** : volumes non-négociables (BIBLE §4).
+
+---
+
+## 4. LE LOOP (s'applique à chaque business SaaS)
 
 ```
-COMMUNAUTÉ → DOULEUR → VALIDATION → BUILD → DISTRIBUTION (VOLUME × CONSTANCE) → REPEAT
+CIBLE LOGIQUE → COLD DM → CONVERSATION → BETA TEST → FEEDBACK → AMÉLIORATION → SCALE
 ```
 
-Chaque produit naît d'une communauté. Chaque décision est filtrée par ce loop.
+Le cold DM personnalisé est le moteur d'acquisition pour les SaaS. La publication maintient la visibilité mais ne génère pas directement les clients. Pour la boutique, le loop sera différent (marketing produit, pas cold).
 
 ---
 
-## 3. PRINCIPES FONDAMENTAUX
+## 5. PRINCIPES FONDAMENTAUX
 
 ### La complexité = le moat
-
-Avec Claude Code et les agents IA, tout est codable. La question n'est pas "est-ce qu'on peut le construire ?" mais "est-ce que le problème vaut assez cher pour justifier un produit complexe ?". Plus c'est dur à reproduire, moins il y a de concurrence. On ne cherche pas les quick wins faciles — on cherche les problèmes à 10K$/an que personne ne résout bien.
+Avec Claude Code et les agents IA, tout est codable. Plus c'est dur à reproduire, moins il y a de concurrence. On cherche les problèmes que personne ne résout bien.
 
 ### Volume × Constance = non-négociable
+Volumes actuels pour StoreMD (BIBLE §4) :
 
-| Métrique | F minimum/jour | R minimum/jour |
-|----------|---------------|---------------|
-| Interactions communautés | 30 | 30 |
-| Cold outreach (phase distrib) | 10 | 20 |
-| Posts contenu | 1 (5/sem) | 1 (7/sem) |
+| Métrique | Volume |
+|----------|--------|
+| Cold DMs StoreMD (TikTok + Instagram, partagés R+F) | 20/jour |
+| Cold DMs perso R (Twitter + LinkedIn + Facebook) | 30/jour |
+| Cold DMs perso F (Twitter + LinkedIn + Facebook) | 30/jour |
+| Total cold | 80/jour |
+| Publication | Schedulée (batch samedi) |
+| Engagement proactif | 0 |
+| PH karma farming | 6 interactions/jour |
+| Réponses DMs/commentaires | Toutes, < 2h |
 
-En dessous → le loop ne tourne pas assez vite.
+Les volumes seront adaptés quand de nouveaux business seront actifs.
 
 ### Chaque SaaS = un AGENT, pas un outil
-
-Un outil, tu l'ouvres, tu fais un truc, tu fermes. Un agent travaille pour toi même quand tu n'es pas devant l'écran. Chaque SaaS FoundryTwo a un cerveau LLM (Claude API) qui DÉTECTE (webhooks, cron jobs), ANALYSE (interprète, compare, diagnostique), AGIT (notification push + recommandation 1-clic), et APPREND (feedback loop → amélioration continue).
+Un outil, tu l'ouvres, tu fais un truc, tu fermes. Un agent travaille pour toi même quand tu n'es pas devant l'écran. Chaque SaaS a un cerveau LLM (Claude API) qui DÉTECTE (webhooks, cron jobs), ANALYSE (interprète, compare, diagnostique), AGIT (notification push + recommandation 1-clic), et APPREND (feedback loop → amélioration continue).
 
 Le moat : un outil tu le quittes en 5 minutes. Un agent calibré sur TES données depuis 6 mois, tu ne le quittes plus jamais.
 
 ### PWA sur tout
-
-Chaque SaaS est une Progressive Web App (Next.js + service worker + manifest.json). Installable Android (Chrome) + iOS (écran d'accueil). Notifications push. Offline pour les rapports. Même code que le web — zéro app native, zéro maintenance double.
-
-### La Toile = avantage structurel
-
-3 comptes (R, F, F2) = 3 portes d'entrée, 1 destination. Le cross-engagement R↔F amplifie la visibilité de chaque interaction. Un solo founder a 1 voix. On en a 3.
+Chaque SaaS est une Progressive Web App (Next.js + service worker + manifest.json). Installable Android + iOS. Notifications push. Offline pour les rapports. Même code que le web.
 
 ---
 
-## 4. L'ÉQUIPE
+## 6. R ET F — PRÉSENCE SOCIALE
 
 | | Romain (R) | Fabrice (F) |
 |---|---|---|
 | **Rôle** | Growth/Distribution lead | CTO/Builder + Distribution |
-| **Temps/jour** | 7-10h | 7-10h |
-| **Dans ce repo** | Distribution full-time | Distribution full-time |
-| **Angle communautés** | Growth, conversion, acquisition, pricing | Technique, automatisation, stack, workflow |
-| **Comptes** | @delgado_ro72224 (perso) | @FabGangi (perso) |
-| **Studio** | Gère @foundrytwo | — |
+| **Angle** | Business, vente, conversion | Technique accessible pour les clients |
+| **Comptes perso** | @delgado_ro72224 (Twitter), Romain Delgado (LinkedIn), profil perso (Facebook, Reddit, PH) | @FabGangi (Twitter), Fabrice Gangitano (LinkedIn), profil perso (Facebook, Reddit, PH) |
+| **Peut parler de** | Tous les business | Tous les business |
+| **Personal branding** | NON — on pousse le produit | NON — on pousse le produit |
+
+R et F ont un pouvoir de validation égal (BIBLE §10). Pas de hiérarchie.
+
+Les comptes perso servent à :
+- Cold DM (pour les SaaS uniquement, pas pour la boutique)
+- Publier du contenu focus produit (pour n'importe quel business)
+- Republier du contenu des comptes produit
+- Prouver qu'il y a des humains derrière les business
 
 ---
 
-## 5. VERTICALS CIBLES & SPLIT
+## 7. BUSINESS ACTIFS ET PRÉVUS
 
-### Stratégie de split
+### Focus actuel
 
-| Vertical | Warming (solo) | Distribution (duo) | Lead warming |
-|----------|---------------|-------------------|-------------|
-| **E-commerce** (base commune) | R+F ensemble dès J1 | R+F ensemble | R+F |
-| **Agences/Freelancers** | R solo dès S3 (J15) | R lead + F rejoint M2 | R |
-| **Content Creators** | F solo dès S3 (J15) | F lead + R rejoint M2 | F |
+| Business | Type | Statut | Dossier repo | Priorité |
+|----------|------|--------|-------------|----------|
+| **StoreMD** | SaaS Shopify (scan santé store) | Post-launch, acquisition beta testers | `saas-app-shopify/storemd/` | PRIORITÉ ABSOLUE |
+| **høkuno** | Boutique Shopify (marque mode) | Planifié | `boutique/hokuno/` (à créer) | SUIT STOREMD |
+| **ProfitPilot** | SaaS Shopify (santé financière) | Prévu | `saas-app-shopify/profitpilot/` (à créer) | SUIT HOKUNO |
 
-Principe : le warming se fait en solo (vitesse), la distribution se fait en duo (densité + cross-engagement).
+høkuno servira aussi de terrain de test pour ProfitPilot — R et F seront leurs propres premiers beta testers.
 
-### Timeline par mois
+### Backlog
 
-| Mois | R | F |
-|------|---|---|
-| **Mois 1 (avril)** | 80% e-com warming + 20% lurk agences (dès S3) | 80% e-com warming + 20% lurk creators (dès S3) |
-| **Mois 2 (mai)** | 40% distribution e-com + 60% agences (warming→distrib) | 40% distribution e-com + 60% creators (warming→distrib) |
-| **Mois 3 (juin)** | Scale ce qui marche. R+F dans les 3 verticals. | Scale ce qui marche. R+F dans les 3 verticals. |
+| Business | Type | Statut |
+|----------|------|--------|
+| ClientPulse | SaaS Agences/Freelancers | Backlog |
+| AdAudit | SaaS Agences | Backlog |
+| CreatorSuite | SaaS Creators | Backlog |
+| LeadQuiz | SaaS E-com + Coaches | Backlog |
 
-### Communautés par vertical
-
-**E-commerce (base commune R+F) :**
-- Reddit : r/shopify (340K), r/ecommerce (100K), r/FulfillmentByAmazon (50K)
-- Facebook : Shopify Entrepreneurs (100K), Shopify Newbies (100K), Ecommerce Entrepreneurs (50K)
-
-**Agences/Freelancers (R lead, F rejoint M2) :**
-- Reddit : r/digital_marketing (200K), r/freelance (200K), r/SEO (200K), r/PPC (50K)
-- Facebook : Digital Distillery (148K), Superstar SEO (76K), Marketing Solved (30K)
-
-**Content Creators (F lead, R rejoint M2) :**
-- Reddit : r/NewTubers (579K), r/youtubers (262K), r/ContentCreators, r/podcasting (100K)
-- Facebook : YouTube Creators Hub (50K)
-
-### Verticals BACKLOG
-Coaches/course creators (25/41), restaurants (22/41), real estate (20/41).
-
----
-
-## 6. PORTEFEUILLE PRODUITS
-
-### 6.1 Portefeuille actuel (6 SaaS, post-fusion 08/04/2026)
-
-| Produit | Features | Modules | Cible | Score | Mois |
-|---------|----------|---------|-------|-------|------|
-| **StoreMD** — Médecin IA permanent (incl. module Listings ex-ListingLab) | 43 | 5 (Health+Listings+Agentic+Compliance+Browser) | E-commerce | 38/41 | Mois 1 |
-| **ProfitPilot** — Santé financière complète (incl. module Anti-Fraude ex-ChargebackShield) | 41 | 4 (Profit+Anti-Fraude+Intelligence+Tarifs) | E-commerce | 39/41 | Mois 1 |
-| **ClientPulse** — Hub IA du freelancer (prospect→propose→deliver→report→bill→retain) | 6 modules | 6 | Agences/Freelancers | 36/41 | Mois 2 |
-| **AdAudit** — Audit publicitaire IA (Meta + Google Ads) | 10 | — | Agences | 30/41 | Mois 2 |
-| **CreatorSuite** — Studio IA tout-en-un (transcribe→repurpose→clip→thumbnail→schedule→analytics) | 14 | — | Creators | 31/41 | Mois 3 |
-| **LeadQuiz** — Quiz lead gen connecté catalogue (incl. 5 features concurrence) | 12 | 2 (Core+Concurrence) | E-com + Coaches | 30/41 | Mois 3 |
-
-### 6.2 SaaS KILL
+### Historique KILL
 
 | Produit | Raison |
 |---------|--------|
 | PayloadDiff | Cible dev = contraire à la stratégie |
 | DevToolsAPI | Idem |
-| Leak Detector (tel quel) | Remplacé par StoreMD |
-| FicheProduitAI (tel quel) | Fusionné dans StoreMD (module Listings) |
+| Leak Detector | Remplacé par StoreMD |
+| FicheProduitAI | Fusionné dans StoreMD (module Listings) |
 | QuizForge SCORM | Remplacé par LeadQuiz |
-| ListingLab (autonome) | Fusionné dans StoreMD (module Listings) — 08/04/2026 |
-| ChargebackShield (autonome) | Fusionné dans ProfitPilot (module Anti-Fraude) — 08/04/2026 |
+| ListingLab | Fusionné dans StoreMD (module Listings) — 08/04/2026 |
+| ChargebackShield | Fusionné dans ProfitPilot (module Anti-Fraude) — 08/04/2026 |
 
 ---
 
-## 7. CADENCE PRODUITS — 6 SaaS en 3 mois
-
-### Plan 3 mois
-
-| Mois | Produits (F build) | Vertical | Distribution |
-|------|-------------------|----------|-------------|
-| **Mois 1 (avril)** | StoreMD (43 features, 5 modules incl. Listings), ProfitPilot (41 features, 4 modules incl. Anti-Fraude) | E-commerce | R+F ensemble dans e-com |
-| **Mois 2 (mai)** | ClientPulse, AdAudit | Agences + E-com | R lead agences, F lead creators. Les deux distribuent e-com. |
-| **Mois 3 (juin)** | CreatorSuite, LeadQuiz (12 features), [wildcard] | Creators + Cross-sell | R+F dans les 3 verticals. Scale ce qui marche. |
-
-### Cycle par produit
-Le build se fait dans des projets Claude séparés. Ce repo ne gère que la distribution.
-
-| Étape | Durée | Responsable |
-|-------|-------|-------------|
-| Build | 2-5 jours | F (projet Claude dédié) |
-| Distribution + validation | 1-2 semaines | R + F (ce repo) |
-| Décision GO/KILL | 48h test | R + F |
-| Scale ou next | Continu | R + F |
-
-### Objectifs
-- Mois 1 : 3 SaaS live, audience e-com chaude, warming secondaire lancé
-- Mois 2 : 6 SaaS live, 2 verticals actives, premiers MRR
-- Mois 3 : 6 SaaS live, 3 verticals actives, identification du winner
-
-### Suivi
-Le statut de chaque produit est dans produits/STATUS.md.
-Quand F finit un build → il met à jour STATUS.md → R commence la distribution.
-
----
-
-## 8. CONTRAINTES HARD (inchangées)
+## 8. CONTRAINTES
 
 | Contrainte | Seuil |
 |------------|-------|
-| Budget total | ≤ 200€ par SaaS pour lancer |
+| Budget total | ≤ 200€ par produit pour lancer |
 | Revenue M1 | > 0€ réaliste |
-| Stack | FastAPI + Next.js 14 + Supabase + Stripe + Claude API |
+| Stack SaaS | FastAPI + Next.js 14 + Supabase + Stripe + Claude API |
 | Automatisable | ≥ 90% sans intervention humaine |
 | Légal clean | Pas de données réglementées |
-
-### Contraintes distribution-first
-
-| Contrainte | Seuil |
-|------------|-------|
-| Cible NON-dev | Obligatoire |
+| Ciblage logique | Obligatoire (BIBLE §5) |
 | Communauté active identifiée | ≥ 1 communauté > 5K membres actifs |
 | Willingness-to-pay prouvée | Les gens paient déjà pour des solutions |
 | Validation 48h | 10+ signups avant tout build |
 
-### Contraintes RETIRÉES
-| Ancienne contrainte | Pourquoi retirée |
-|--------------------|-----------------|
-| Time-to-market ≤ 4 semaines | Claude Code = build en 2-5 jours. Plus de limite. |
-| 1 SaaS/mois | Cadence accélérée : 2 SaaS/mois. Le search algorithm est 2x plus rapide. |
-
 ---
 
-## 9. WARMING & FARMING
+## 9. MÉTRIQUES GLOBALES
 
-Comptes Reddit et Facebook partent de ZÉRO. Plan 30 jours :
+Les métriques spécifiques à chaque business sont dans le dossier du business. Ici les métriques transversales.
 
-| Phase | Jours | Reddit | Facebook |
-|-------|-------|--------|----------|
-| Cold start | J1-J3 | Browse + upvote. ZERO commentaire. | Setup profil. 1-2 groupes perso. |
-| Premiers commentaires | J4-J8 | 3-5 comments/jour subs faciles (r/AskReddit, etc.) | Liker + commenter amis. 1 groupe business/jour. |
-| Subs mid-size | J9-J14 | Comments subs cibles (r/ecommerce, r/freelance). Objectif 200-300 karma. | Premiers commentaires dans FB Groups business. |
-| Subs majeurs | J15-J21 | Comments r/shopify, r/digital_marketing. Premier post. 500+ karma. | Premiers posts dans FB Groups. Cross-engagement R↔F. |
-| Opérationnel | J22-J30 | Posts valeur + audits gratuits + cold DMs. 1000+ karma. | Posts + audits + DMs + mention subtile produit. |
-
-Détails complets dans WARMING-FARMING.md.
-
----
-
-## 10. MÉTRIQUES
-
-### Phase warming (S1-S3)
-
-| Métrique | Seuil /semaine |
-|----------|---------------|
-| Interactions communautés (R+F) | 200+ |
-| Douleurs documentées | 10+ |
-| Karma Reddit (progression) | +150/semaine |
-
-### Phase validation (S4)
-
-| Métrique | Seuil GO |
-|----------|----------|
-| Signups en 48h | ≥ 10 |
-| "Combien ça coûte ?" spontané | ≥ 2 |
-
-### Phase distribution (S5+)
-
-| Métrique | Seuil /semaine |
-|----------|---------------|
-| Cold outreach (R+F) | 150+ |
-| Signups | 20+ |
-| Trial → Paid | > 5% |
-
-### Décision KILL vs CONTINUE
+### Décision KILL vs CONTINUE (s'applique à tout produit)
 
 | Signal | Action |
 |--------|--------|
-| 0 signups après 2 semaines de distribution active | KILL le produit |
-| > 5 clients payants à M1 | CONTINUE + volume |
-| MRR > 500€ à M2 | INVEST |
+| 0 beta testers après 2 semaines de cold actif | Revoir la stratégie cold ou le produit |
+| > 5 beta testers installés | CONTINUE + volume |
+| Premiers clients payants | SCALE |
+| MRR > 500€ | INVEST |
 | MRR > 2000€ + croissance > 20%/mois | DOUBLE DOWN |
 
 ---
 
-## 11. CE DOCUMENT REMPLACE
+## 10. DÉCISIONS PRISES
 
-- L'ancien framework de scoring (foundrytwo_saas_research_framework.md) pour les DÉCISIONS PRODUIT
-- Pour le pipeline produits actuel, voir `produits/STATUS.md` (source de vérité)
+| Date | Décision |
+|------|----------|
+| 03/04/2026 | Pivot distribution-first (3 semaines LD : 0€ MRR) |
+| 03/04/2026 | Abandon cible dev |
+| 03/04/2026 | Volume × Constance non-négociable |
+| 03/04/2026 | Full-time R + F |
+| 03/04/2026 | Validation 48h obligatoire |
+| 03/04/2026 | Complexité = moat |
+| 03/04/2026 | KILL PayloadDiff + DevToolsAPI |
+| 03/04/2026 | LD → StoreMD, FPA → ListingLab, QF → LeadQuiz |
+| 03/04/2026 | Nouveaux produits : ClientPulse, ChargebackShield, ProfitPilot |
+| 08/04/2026 | Fusion 9→6 SaaS : ListingLab→StoreMD, ChargebackShield→ProfitPilot |
+| 14/04/2026 | Lancement StoreMD |
+| 05/05/2026 | Virage full acquisition — cold DM uniquement |
+| 05/05/2026 | Suppression voix F2 / FoundryTwo comme identité |
+| 05/05/2026 | 0 engagement proactif |
+| 05/05/2026 | Comptes produit par business (pas de compte studio) |
+| 05/05/2026 | Cross-engagement supprimé |
+| 06/05/2026 | BIBLE v3.1 — Jarvis défini, agents multi-business, høkuno ajouté |
+| 06/05/2026 | Stratégie multi-business : chaque business a son dossier, sa voix, sa stratégie |
+| 06/05/2026 | R et F peuvent parler de tous les business — pas de cloisonnement |
+
+---
+
+## 11. OÙ TROUVER QUOI
+
+| Quoi | Où |
+|------|-----|
+| Principes non-négociables | `[BIBLE.md](http://BIBLE.md)` |
+| Anti-IA | `[ANTI-IA.md](http://ANTI-IA.md)` |
+| Stratégie StoreMD | `saas-app-shopify/storemd/[context.md](http://context.md)` |
+| Stratégie høkuno | `boutique/hokuno/` (à créer) |
+| Canaux par plateforme | `marketing/canaux/[plateforme]/[context.md](http://context.md)` |
+| Playbook distribution | `strategie/[PLAYBOOK-DISTRIBUTION.md](http://PLAYBOOK-DISTRIBUTION.md)` |
+| Warming Reddit/Facebook | `strategie/[WARMING-FARMING.md](http://WARMING-FARMING.md)` |
+| Verticals | `strategie/verticals/` |
+| Voix R | `romain/[VOIX.md](http://VOIX.md)` |
+| Voix F | `fabrice/[VOIX.md](http://VOIX.md)` |
+| Voix StoreMD | `saas-app-shopify/storemd/[VOIX.md](http://VOIX.md)` (à créer) |
+
+---
+
+## 12. CE DOCUMENT REMPLACE
+
+- L'ancien framework de scoring (reste utilisable pour évaluer de nouvelles idées)
 - L'approche build-first
 - La cible dev
-- La limite time-to-market de 4 semaines
-- La cadence 1 SaaS/mois (remplacée par 2 SaaS/mois)
+- L'approche engagement proactif / build in public
+- La stratégie 3 verticals simultanés
+- La cadence 2 SaaS/mois comme objectif
+- Le cross-engagement R↔F↔F2
+- FoundryTwo comme identité studio
 - Le suivi du build dans ce repo (le build est dans des projets Claude séparés)
-
-Le framework de scoring /35 reste utilisable pour évaluer de nouvelles idées, mais les contraintes distribution-first et le scoring bonus distribution (+6 max) s'ajoutent obligatoirement.
-
----
-
-## 12. DÉCISIONS PRISES
-
-| Date | Décision | Rationale |
-|------|----------|-----------|
-| 03/04/2026 | Pivot distribution-first | 3 semaines LD : 0€ MRR |
-| 03/04/2026 | Abandon cible dev | Pire marché pour bootstrap |
-| 03/04/2026 | Volume × Constance non-négociable | Delta 10x entre plan et exécution sur LD |
-| 03/04/2026 | Full-time F + R | Chômage = runway limité, temps illimité |
-| 03/04/2026 | Validation 48h obligatoire | Plus jamais de build sans preuve de demande |
-| 03/04/2026 | Complexité = moat | Claude Code = pas de limite. On build ce qui est DUR. |
-| 03/04/2026 | KILL PayloadDiff + DevToolsAPI | Cible dev = hors stratégie |
-| 03/04/2026 | LD → StoreMD, FPA → ListingLab, QF → LeadQuiz | Mutations profondes, pas des pivots cosmétiques |
-| 03/04/2026 | Nouveaux produits : ClientPulse (36), ChargebackShield (35), ProfitPilot (33) | Problèmes à 10-25K$/an, moat data, scoring top |
-| 03/04/2026 | Cadence 2 SaaS/mois | Claude Code = build en 2-5j. La distribution est le bottleneck. |
-| 03/04/2026 | Ce repo = distribution uniquement | Le build se fait dans des projets Claude séparés |
-| 08/04/2026 | Fusion 9→6 SaaS : ListingLab→StoreMD, ChargebackShield→ProfitPilot | Anti-app-bloat, plus de valeur par produit, 96 features Shopify totales |
-| 21/04/2026 | Ajout couche beta testers mid-S6 | Sales agressif produisait attention sans conversion. Beta + cold scan = pipeline de conversations actives |
-| 21/04/2026 | Système batch double-couche validé | 2 stratégies parallèles sur même semaine, template + rules consolidés |
-
----
-
-## 13. MÉCANISME DE CONVERSION MID-FUNNEL (validé S6)
-
-### Pattern : Beta Testers + Cold Scan Proactif
-
-Stratégie de conversion mid-funnel testée et validée semaine 6 (20-26/04/2026). Superpose une couche d'acquisition directe sur le sales mode existant.
-
-5 mécaniques :
-1. Recrutement beta testers — 10 accès Pro, quota réel, premier arrivé premier servi
-2. Analyses gratuites sur demande — DM + comment, rapport commenté par R/F
-3. Cold scan proactif — 5 stores/jour/personne, rapport envoyé en DM non-sollicité
-4. Test Pro ciblé — 2-3 stores stratégiques/jour, scan Pro complet
-5. Prospection conversion beta → client — cadence J0/J7/J14/J30
-
-Détail complet : `strategie/STRATEGIE-MID-S6-BETA-TESTERS.md`
-
-Ce pattern est réutilisable sur tout SaaS du portfolio (pas spécifique StoreMD). Il peut être activé/désactivé par semaine via le système de batch double-couche (`TEMPLATE-BATCH-DOUBLE-COUCHE-AVEC-RULES.md`).
