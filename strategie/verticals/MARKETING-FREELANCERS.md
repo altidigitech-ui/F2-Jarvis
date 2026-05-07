@@ -2,7 +2,7 @@
 
 **Score total : 31/41 — 🟢 GO**
 **Date :** 03 avril 2026
-**Statut :** Infiltration à partir du 06/04/2026
+**Statut :** BACKLOG — pas d'actualité. Activée quand le vertical e-com Shopify sera stabilisé (clients payants, MRR récurrent).
 
 ---
 
@@ -98,7 +98,7 @@
 | LinkedIn Sales Navigator | 80-130$/mois | Prospection LinkedIn |
 | Hunter.io | Free-99$/mois | Email finder |
 
-**Opportunité** : Pas un nouvel outil de cold email — plutôt un outil qui IDENTIFIE les prospects qualifiés. Ex : "montre-moi les sites web dans [niche] qui ont un mauvais SEO/conversion" → la prospection se fait en apportant de la valeur (audit gratuit), pas en spammant. StoreMD (ex Leak Detector, muté en avril 2026) est parti dans cette direction pour les merchants Shopify. Le même concept appliqué aux agences = beaucoup plus vendable.
+**Opportunité** : Pas un nouvel outil de cold email — plutôt un outil qui IDENTIFIE les prospects qualifiés. Ex : "montre-moi les sites web dans [niche] qui ont un mauvais SEO/conversion" → la prospection se fait en apportant de la valeur (audit gratuit), pas en spammant. StoreMD est parti dans cette direction pour les merchants Shopify. Le même concept appliqué aux agences = beaucoup plus vendable.
 
 ### 🟡 Douleur 3 : Content creation at scale (multi-clients)
 
@@ -134,7 +134,7 @@
 
 ---
 
-## 4. TOP 3 OPPORTUNITÉS SaaS POUR FOUNDRYTWO
+## 4. TOP 3 OPPORTUNITÉS SaaS
 
 ### Opportunité #1 : Reporting IA pour freelancers/petites agences
 - **Douleur** : 5-10h/semaine en rapports manuels
@@ -162,22 +162,6 @@
 
 ---
 
-## 5. PLAN D'INFILTRATION MARKETING/FREELANCERS
+## 5. STRATÉGIE D'ACQUISITION (quand activée)
 
-### Semaine 1 (06-12 avril)
-**R (lead) :**
-- Rejoindre r/digital_marketing, r/freelance, Digital Distillery FB, Marketing Solved FB
-- Lire les 50 derniers posts populaires
-- Répondre à 5-10 questions/jour (angle : growth tactics, pricing advice, tools comparison)
-- Documenter les douleurs + outils mentionnés
-
-**F (support) :**
-- Rejoindre r/SEO, r/marketing
-- Répondre à 3-5 questions/jour (angle : "voici comment j'automatise X")
-- Observer quels outils sont critiqués et pourquoi
-
-### Semaine 2 (13-19 avril)
-- Poster "I'll create a free marketing report for your client" dans 2-3 communautés
-- OU poster "I'll audit your website for free" (même approche que StoreMD appliquée à la cible agence)
-- Mesurer l'intérêt
-- Décision vendredi 18/04
+Quand cette vertical sera activée, l'approche sera cold DM direct aux freelancers et agences (pas infiltration communautaire). Voir `strategie/PLAYBOOK-DISTRIBUTION.md` §8 pour la checklist d'intégration d'un nouveau business. L'agent marketer de Jarvis consultera le dossier dédié du produit (ClientPulse ou AdAudit).
