@@ -1,26 +1,53 @@
 # COMPTES & GROUPES — Fabrice
+
+> Comptes perso de F et communautés rejointes. Mis à jour manuellement.
+> Dernière mise à jour : 07/05/2026
+
+---
+
 ## Reddit
-| Sub | Date | Status | Notes |
-|-----|------|--------|-------|
-| r/AskReddit | 06/04 | Rejoint | Sub karma facile |
-| r/explainlikeimfive | 06/04 | Rejoint | Sub karma facile |
-| r/CasualConversation | 06/04 | Rejoint | Sub karma facile |
-| r/mildlyinteresting | 06/04 | Rejoint | Sub karma facile |
-| r/todayilearned | 06/04 | Rejoint | Sub karma facile |
-| r/LifeProTips | 06/04 | Rejoint | Sub karma facile |
-| r/shopify | 06/04 | Rejoint | Sub cible — lurk only J1-J7 |
-| r/ecommerce | 06/04 | Rejoint | Sub cible — lurk only J1-J7 |
-| r/Entrepreneur | 06/04 | Rejoint | Lurk |
-| r/SaaS | 06/04 | Rejoint | Lurk |
-| r/webdev | 06/04 | Rejoint | Lurk |
+
+| Handle/Sub | Statut | Date | Restrictions | Notes |
+|-----------|--------|------|-------------|-------|
+| r/AskReddit | ✅ Rejoint | 06/04 | — | Sub karma facile |
+| r/explainlikeimfive | ✅ Rejoint | 06/04 | — | Sub karma facile |
+| r/CasualConversation | ✅ Rejoint | 06/04 | — | Sub karma facile |
+| r/mildlyinteresting | ✅ Rejoint | 06/04 | — | Sub karma facile |
+| r/todayilearned | ✅ Rejoint | 06/04 | — | Sub karma facile |
+| r/LifeProTips | ✅ Rejoint | 06/04 | — | Sub karma facile |
+| r/shopify | ✅ Rejoint | 06/04 | LURK ONLY J1-J7 | Sub cible |
+| r/ecommerce | ✅ Rejoint | 06/04 | LURK ONLY J1-J7 | Sub cible |
+| r/Entrepreneur | ✅ Rejoint | 06/04 | LURK ONLY | Lurk |
+| r/SaaS | ✅ Rejoint | 06/04 | LURK ONLY | Lurk |
+| r/webdev | ✅ Rejoint | 06/04 | LURK ONLY | Lurk |
+
 ## Facebook
-| Groupe | Date | Status | Notes |
-|--------|------|--------|-------|
-| Compte perso | 06/04 | Actif | Compte perso existant réutilisé — historique long, amis réels, publications passées. Nouveau compte banni par Facebook. Bio mise à jour. Publications passées limitées en visibilité. |
-| Shopify Entrepreneurs | 07/04 | Rejoint | Groupe cible principal — HeyCarson/Jonathan Kennedy ~116K membres |
-| Shopify Newbies & Beginners | 07/04 | Rejoint | Groupe cible débutants |
-| eCommerce Entrepreneurs | 07/04 | Rejoint | Groupe cible — Richard Lazazzera / A Better Lemonade Stand |
-| Shopify Dropshipping Community | 07/04 | Rejoint | 147K — bonus, pas prioritaire |
-| Shopify Dropshipping (165K) | 07/04 | Rejoint | Bonus, pas prioritaire |
-| Shopify Dropshipping for Entrepreneurs | 07/04 | Rejoint | 107K — bonus, pas prioritaire |
-| Global Shopify Entrepreneurs | 07/04 | Rejoint | 34K — bonus |
+
+| Handle/Groupe | Statut | Date | Restrictions | Notes |
+|--------------|--------|------|-------------|-------|
+| Compte perso | Actif | 06/04 | — | Compte existant réutilisé — historique long, amis réels. Nouveau compte banni par Facebook. |
+| Shopify Entrepreneurs | ✅ Rejoint | 07/04 | — | Groupe cible principal — HeyCarson/Jonathan Kennedy ~116K |
+| Shopify Newbies & Beginners | ✅ Rejoint | 07/04 | — | Groupe cible débutants |
+| eCommerce Entrepreneurs | ✅ Rejoint | 07/04 | — | Richard Lazazzera / A Better Lemonade Stand |
+| Shopify Dropshipping Community | ✅ Rejoint | 07/04 | — | 147K — bonus, pas prioritaire |
+| Shopify Dropshipping (165K) | ✅ Rejoint | 07/04 | — | Bonus, pas prioritaire |
+| Shopify Dropshipping for Entrepreneurs | ✅ Rejoint | 07/04 | — | 107K — bonus |
+| Global Shopify Entrepreneurs | ✅ Rejoint | 07/04 | — | 34K — bonus |
+
+## Twitter
+
+| Handle | Statut | Date | Restrictions | Notes |
+|--------|--------|------|-------------|-------|
+| @FabGangi | Actif | | | |
+
+## LinkedIn
+
+| Handle | Statut | Date | Restrictions | Notes |
+|--------|--------|------|-------------|-------|
+| Fabrice Gangitano | Actif | | | |
+
+## Product Hunt
+
+| Handle | Statut | Date | Restrictions | Notes |
+|--------|--------|------|-------------|-------|
+| | | | | |
