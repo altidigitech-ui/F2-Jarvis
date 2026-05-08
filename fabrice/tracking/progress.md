@@ -1,62 +1,23 @@
-# PROGRESS SEMAINE F — Semaine du 27/04/2026 au 03/05/2026
+# PROGRESS SEMAINE F — Semaine du 11/05/2026 au 17/05/2026
 
-**Usage :** Rempli au fil de l'eau. Chaque événement notable = une ligne. Archivé le dimanche 03/05/2026.
-**Contexte :** SEMAINE 7 — SALES AGRESSIF DOUBLE-COUCHE (Couche A sales + Couche B beta "No Install" mer-sam). Canon S7 : 90 stores / $15,600 cumul. **Anglais uniquement.**
+**Usage :** Rempli au fil de l'eau. Chaque événement notable = une ligne. Toutes les informations renseignées dans ce document doivent contenir date et heure.
+**Contexte :** SEMAINE 9 — Lancement nouvelle stratégie. Cold 80 DMs/jour (TikTok 10, Instagram 10, Facebook 10, LinkedIn 10, Twitter 10 perso F + partagé StoreMD TikTok/Instagram). Publication schedulée batch samedi. 0 engagement proactif. **Anglais uniquement.**
 
 -----
 
 ## ÉVÉNEMENTS NOTABLES DE LA SEMAINE
 
-|Date|Événement|Plateforme|Activité|Action prise / à prendre|
-|----|---------|----------|--------|------------------------|
-|    |         |          |        |                        |
-| 27/04/2026 | Twitter post publié — "Twitter Couche A Lun 27/04 — 23 audits / $300/mo b" | Twitter | Post publié 14:39 | Monitorer impressions + replies |
-| 27/04/2026 | Cross-engagement exécuté — Cross A1 Lun 27/04 — reply sur post Twitter R 14h0 | Cross | Reply 14:39 | ✅ |
-| 27/04/2026 | Twitter post publié — "[A] 23 audits / $300/mo bleed — aucun signal dashb" | Twitter | Post publié 14:39 | Monitorer impressions + replies |
-| 27/04/2026 | Cross-engagement exécuté — [A] 68 stores audited / $12,400 leaks — data-drop | Cross | Reply 14:40 | ✅ |
-| 27/04/2026 | Cross-engagement exécuté — F2 Twitter 15h00 — Couche A | Cross | Reply 15:04 | ✅ |
-| 27/04/2026 | Cross-engagement exécuté — [A] 68 stores / $12,400 — studio audit recap | Cross | Reply 17:39 | ✅ |
-| 27/04/2026 | Cold TWITTER x2 | TWITTER | Cold outreach 19:57 | Suivre les réponses |
-| 27/04/2026 | Twitter post publié — "23 audits / $300/mo bleed — aucun signal dashboard" | Twitter | Post publié 20:59 | Monitorer impressions + replies |
-| 27/04/2026 | Cold TWITTER x6 | TWITTER | Cold outreach 23:01 | Suivre les réponses |
-| 27/04/2026 | Scan StoreMD proactif | TWITTER | Scan store @0foxShop — 69/100, 2 criticals (robots.txt bloquant + images alt text) | DM envoyé avec résultat |
-| 27/04/2026 | Cold TWITTER x7 | TWITTER | Cold outreach 23:08 | Suivre les réponses |
-| 28/04/2026 | Twitter post publié — "🧵 THREAD DTC $35k/mo — 3 issues / 60s" | Twitter | Post publié 13:00 | Monitorer impressions + replies |
-| 28/04/2026 | Cross-engagement exécuté — R LinkedIn 17h00 — $12,400 breakdown from 68 scans | Cross | Reply 18:19 | ✅ |
-| 28/04/2026 | Cross-engagement exécuté — R Twitter 14h00 — Unpopular opinion: zombie apps p | Cross | Reply 18:19 | ✅ |
-| 28/04/2026 | Cross-engagement exécuté — F2 Twitter 15h00 — 94% ghost billing — Shopify/Str | Cross | Reply 18:19 | ✅ |
-| 28/04/2026 | Cross-engagement exécuté — [A] Unpopular opinion: you're paying for dead apps | Cross | Reply 18:35 | ✅ |
-| 28/04/2026 | Cross-engagement exécuté — [A] 94% ghost billing — Shopify/Stripe don't sync | Cross | Reply 18:35 | ✅ |
-| 28/04/2026 | Cross-engagement exécuté — [A] $12,400 breakdown from 68 scans (long form) | Cross | Reply 18:35 | ✅ |
-| 28/04/2026 | Twitter post publié — "[A] 40+ stores scanned — ghost billing builder sto" | Twitter | Post publié 18:36 | Monitorer impressions + replies |
-| 28/04/2026 | Cold TWITTER x1 (@motomadic) | TWITTER | Cold outreach 18:59 | Suivre les réponses |
-| 28/04/2026 | Cold TWITTER x1 (@skullyctzbeard) | TWITTER | Cold outreach 19:04 | Suivre les réponses |
-| 28/04/2026 | Cold TWITTER x1 (@MsPrincessNash) | TWITTER | Cold outreach 19:59 | Suivre les réponses |
-| 28/04/2026 | Cold TWITTER x1 (@the7letter_) | TWITTER | Cold outreach 20:07 | Suivre les réponses |
-| 28/04/2026 | Cold TWITTER x1 (@moudoka1) | TWITTER | Cold outreach 20:19 | Suivre les réponses |
-| 28/04/2026 | Twitter post publié — "40+ stores scanned — ghost billing builder story" | Twitter | Post publié 20:21 | Monitorer impressions + replies |
-| 28/04/2026 | Scan proactif | StoreMD | thelunarjeweler.com — score 72/100 — 1 critical (robots.txt Disallow:/), 2 major (alt text, empty link), 4 minor (title court, meta trop long, HTML 290 KB, mixed content HTTP). DM envoyé @moudoka1. | scan_proactif |
-| 30/04/2026 | Twitter post publié — "Instagram — V1 StoreMD (Mer 29/04)" | Twitter | Post publié 12:33 | Monitorer impressions + replies |
-| 30/04/2026 | Twitter post publié — "TikTok — V1 StoreMD (Mer 29/04)" | Twitter | Post publié 12:33 | Monitorer impressions + replies |
-| 30/04/2026 | Twitter post publié — "Instagram — V2 StoreMD (Jeu 30/04)" | Twitter | Post publié 12:33 | Monitorer impressions + replies |
-| 30/04/2026 | Twitter post publié — "Twitter B — B1 No install hook / 51 OAuth transpar" | Twitter | Post publié 12:34 | Monitorer impressions + replies |
-| 30/04/2026 | Twitter post publié — "Twitter A — 3 things Shopify dashboard won't tell " | Twitter | Post publié 12:34 | Monitorer impressions + replies |
-| 30/04/2026 | LinkedIn post publié — "LinkedIn B — Why I'm doing manual scans instead of" | LinkedIn | Post publié 12:34 | Monitorer impressions + replies |
-| 30/04/2026 | Twitter post publié — "TikTok — V2 StoreMD (Jeu 30/04)" | Twitter | Post publié 12:34 | Monitorer impressions + replies |
+|Date|Heure|Événement|Plateforme|Activité|Action prise / à prendre|
+|----|-----|---------|----------|--------|------------------------|
+|    |     |         |          |        |                        |
 
 -----
 
-## ANALYTICS TWITTER
+## ANALYTICS
 
-|Jour|Impressions|Engagement rate|Replies|New follows|
-|----|-----------|---------------|-------|----------|
-|Lun 27/04|           |               |       |           |
-|Mar 28/04|           |               |       |           |
-|Mer 29/04|           |               |       |           |
-|Jeu 30/04|           |               |       |           |
-|Ven 01/05|           |               |       |           |
-|Sam 02/05|           |               |       |           |
-|Dim 03/05|           |               |       |           |
+|Jour|Plateforme|Impressions|Engagement rate|Replies|New follows|
+|----|----------|-----------|---------------|-------|----------|
+|    |          |           |               |       |          |
 
 -----
 
@@ -64,9 +25,16 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S7 | 15 |
-| Engagements Twitter S7 | 18 |
-| Scans proactifs S7 | 3 |
+| Cold envoyés S9 | 0 |
+| Cold Twitter F | 0 |
+| Cold LinkedIn F | 0 |
+| Cold Facebook F | 0 |
+| Cold StoreMD TikTok (partagé) | 0 |
+| Cold StoreMD Instagram (partagé) | 0 |
+| Réponses reçues S9 | 0 |
+| Scans proactifs S9 | 0 |
+| Posts publiés F perso S9 | 0 |
+| Posts publiés StoreMD S9 | 0 |
 
 -----
 
@@ -74,15 +42,13 @@
 
 |Métrique                       |Début semaine|Fin semaine|Delta|
 |-------------------------------|-------------|-----------|-----|
-|Followers Twitter F            |29           |           |     |
-|Following Twitter F            |76           |           |     |
-|Connexions LinkedIn F          |13           |           |     |
-|Abonnés LinkedIn F             |22           |           |     |
-|Signups StoreMD (free)         |1            |           |     |
-|Signups StoreMD (paid)         |1 (agency self-test)|    |     |
-|MRR externe réel               |€0           |           |     |
+|Followers Twitter F            |             |           |     |
+|Abonnés LinkedIn F             |             |           |     |
+|Karma Reddit F                 |             |           |     |
 |Cold outreach envoyés (semaine)|0            |           |     |
 |Réponses positives cold        |0            |           |     |
+|Beta testers installés         |             |           |     |
+|MRR externe réel               |€0           |           |     |
 
 -----
 
