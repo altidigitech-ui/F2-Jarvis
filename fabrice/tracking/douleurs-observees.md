@@ -1,4 +1,11 @@
 # DOULEURS OBSERVÉES — Fabrice
+
+> Observations terrain par plateforme. Chaque douleur observée = une ligne avec date et source.
+
+---
+
+## Reddit
+
 | # | Date | Communauté | Verbatim | Catégorie | Potentiel SaaS |
 |---|------|-----------|----------|-----------|---------------|
 | 1 | 06/04 | r/shopify | "Google Shopping listings STILL showing up despite noindex + paywall" | SEO / indexation | Moyen |
@@ -23,9 +30,6 @@
 | 20 | 09/04 | r/shopify | "All About Us pages suddenly 404, no idea why" (10 comments) | Monitoring / alertes | Fort — StoreMD angle |
 | 21 | 09/04 | r/shopify | "900 hours figuring out Shopify UI" (71 comments) | UX / complexité plateforme | Moyen |
 | 22 | 09/04 | r/shopify | Etsy→Shopify variants management — même douleur que J1, pattern confirmé | Migration / variantes | Moyen — récurrent |
-| 23 | 09/04 | FB Shopify Dropshipping | "when you look at your analytics, do you know what to do next, or does it feel overwhelming?" | Monitoring / data overwhelm | Fort — StoreMD angle |
-| 24 | 09/04 | FB Shopify Dropshipping | "Too much data, no idea what to do with it / Low traffic low conversions / Managing inventory" | Monitoring / confusion | Fort — StoreMD angle |
-| 25 | 09/04 | FB Shopify Dropshipping | "Which app are you using to track your orders and sales? Measure growth?" (6 likes, 13 comments) | Apps / tracking | Moyen |
 | 26 | 17/04 | r/shopify | "Starting a store and EVERYTHING is a subscription, profits = subscriptions" (88 upvotes, 110 comments) | App overload / coûts | Fort — StoreMD angle |
 | 27 | 17/04 | r/shopify | "Meta integration godawful, deduplication errors, low event coverage" (10 upvotes, 16 comments) | Intégrations / Meta | Moyen |
 | 28 | 17/04 | r/shopify | "CSV export ruins barcodes — Excel scientific notation" (10 comments) | Data / migration | Moyen |
@@ -34,3 +38,35 @@
 | 31 | 17/04 | r/shopify | "EU company selling US, banks flag charges, losing orders silently" (6 upvotes, 15 comments) | Conversion invisible | Fort — StoreMD angle |
 | 32 | 17/04 | r/shopify | "Orders from ChatGPT channel — anyone received one?" (11 upvotes) | Nouveau canal | Moyen |
 | 33 | 17/04 | r/shopify | "Buy with Shop button forces app registration" (5 upvotes) | Checkout / conversion | Moyen |
+
+## Facebook
+
+| # | Date | Communauté | Verbatim | Catégorie | Potentiel SaaS |
+|---|------|-----------|----------|-----------|---------------|
+| 23 | 09/04 | FB Shopify Dropshipping | "when you look at your analytics, do you know what to do next, or does it feel overwhelming?" | Monitoring / data overwhelm | Fort — StoreMD angle |
+| 24 | 09/04 | FB Shopify Dropshipping | "Too much data, no idea what to do with it / Low traffic low conversions / Managing inventory" | Monitoring / confusion | Fort — StoreMD angle |
+| 25 | 09/04 | FB Shopify Dropshipping | "Which app are you using to track your orders and sales? Measure growth?" (6 likes, 13 comments) | Apps / tracking | Moyen |
+
+## Twitter
+
+| # | Date | Source | Verbatim | Catégorie | Potentiel SaaS |
+|---|------|-------|----------|-----------|---------------|
+|   |      |       |          |           |               |
+
+## LinkedIn
+
+| # | Date | Source | Verbatim | Catégorie | Potentiel SaaS |
+|---|------|-------|----------|-----------|---------------|
+|   |      |       |          |           |               |
+
+## TikTok
+
+| # | Date | Source | Verbatim | Catégorie | Potentiel SaaS |
+|---|------|-------|----------|-----------|---------------|
+|   |      |       |          |           |               |
+
+## Instagram
+
+| # | Date | Source | Verbatim | Catégorie | Potentiel SaaS |
+|---|------|-------|----------|-----------|---------------|
+|   |      |       |          |           |               |
