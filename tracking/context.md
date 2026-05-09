@@ -1,125 +1,166 @@
-# CONTEXT TRACKING — Infrastructure de suivi FoundryTwo
+# CONTEXT TRACKING — Infrastructure de suivi
 
-**Dernière mise à jour :** 05 avril 2026
-**Ce fichier contient :** l'infrastructure de tracking (quoi tracker, dans quels outils, conventions UTM, process de revue). Ce fichier est la RÉFÉRENCE CENTRALE pour le suivi des métriques.
-**Ce fichier ne duplique PAS :** les conventions UTM par plateforme (marketing/strategie.md), le process de revue détaillé (marketing/strategie.md), le suivi cold outreach (marketing/strategie.md).
-
----
-
-## 1. OUTILS DE TRACKING
-
-| Outil | Emplacement | Ce qu'il contient | Fréquence de mise à jour |
-|-------|-------------|-------------------|-------------------------|
-| **FoundryTwo-Growth-Tracker.xlsx** | `tracking/` | Suivi global : cold outreach (date, plateforme, URL, score, lien post, réaction, client payant), signups, MRR, conversion | Quotidien (cold outreach) + vendredi (métriques globales) |
-| **UTM-Tracking-FoundryTwo.xlsx** | `tracking/utm/leak-detector/` | Liens UTM par plateforme et campagne pour LD | À chaque nouveau lien créé |
-| **Twitter Analytics** | twitter.com/analytics | Impressions, engagement rate, profile visits, followers, top tweets | Vendredi à la revue |
-| **LinkedIn Analytics** | linkedin.com (section analytics) | Impressions, commentaires, profile visits, connexions | Vendredi à la revue |
-| **IH Dashboard** | indiehackers.com | Views, comments, upvotes sur les posts @foundrytwo | Vendredi à la revue |
-| **PH Dashboard** | producthunt.com | Upvotes, comments, ranking par lancement | Jour J + J+1 + vendredi |
+> Ce dossier contient les données de suivi TRANSVERSALES — pas spécifiques à un business ou une personne.
+> Les données spécifiques vivent dans les dossiers des personnes (romain/, fabrice/) et des business (saas-app-shopify/storemd/).
+> Hérite de : `../BIBLE.md`, `../strategie/CONTEXT.md`
+> Dernière mise à jour : 08/05/2026
 
 ---
 
-## 2. CONVENTIONS UTM
+## 1. CE QUE CE DOSSIER CONTIENT
 
-### 2.1 Format standard
+| Fichier | Rôle |
+|---------|------|
+| `context.md` | CE FICHIER — porte d'entrée, infrastructure de tracking |
+| `suivi-comptes.md` | Carte d'identité de TOUS les comptes (R, F, business) |
+| `dashboard-hebdo.md` | Métriques consolidées de la semaine |
+| `decisions-log.md` | Log historique des décisions stratégiques |
+| `batch-log.md` | Log des cycles automatiques Jarvis |
+| `utm/` | Liens UTM par business (1 dossier par business) |
+
+---
+
+## 2. OÙ VIVENT LES DONNÉES — CARTE COMPLÈTE
+
+### Tracking central (ce dossier)
+
+| Type de donnée | Fichier | Fréquence de mise à jour |
+|---------------|---------|-------------------------|
+| Comptes écosystème | `suivi-comptes.md` | Quand un compte est créé/modifié |
+| Dashboard hebdo | `dashboard-hebdo.md` | Fin de semaine |
+| Décisions | `decisions-log.md` | À chaque décision stratégique |
+| UTM StoreMD | `utm/StoreMD/UTM_TRACKING_LINKS.md` | À chaque nouveau lien créé |
+
+### Tracking par personne
+
+| Type de donnée | Romain | Fabrice |
+|---------------|--------|--------|
+| Progress terrain | `romain/tracking/progress.md` | `fabrice/tracking/progress.md` |
+| Comptes et groupes rejoints | `romain/tracking/comptes-groupes.md` | `fabrice/tracking/comptes-groupes.md` |
+| Douleurs observées | `romain/tracking/douleurs-observees.md` | `fabrice/tracking/douleurs-observees.md` |
+| Cold-logs Twitter | `romain/cold/cold-log-twitter.md` | `fabrice/cold/cold-log-twitter.md` |
+| Cold-logs LinkedIn | `romain/cold/cold-log-linkedin.md` | `fabrice/cold/cold-log-linkedin.md` |
+| Cold-logs Facebook | `romain/cold/cold-log-facebook.md` | `fabrice/cold/cold-log-facebook.md` |
+| Engagement Reddit | `romain/engagement/reddit/engagement-log.md` | `fabrice/engagement/reddit/engagement-log.md` |
+| Engagement PH | `romain/engagement/ph/engagement-log.md` | `fabrice/engagement/ph/engagement-log.md` |
+
+### Tracking par business
+
+Les données trackées dépendent du type de business. SaaS = cold-logs, pipeline-conversion, scans. Boutique = commandes, panier, revenue, trafic. Les fichiers spécifiques vivent dans le dossier du business.
+
+**SaaS (StoreMD, ProfitPilot quand live)**
+
+| Type de donnée | StoreMD | Futur SaaS |
+|---------------|---------|------------|
+| Cold-logs Instagram | `saas-app-shopify/storemd/cold/cold-log-instagram.md` | `[dossier business]/cold/cold-log-[plateforme].md` |
+| Cold-logs TikTok | `saas-app-shopify/storemd/cold/cold-log-tiktok.md` | Idem |
+| Pipeline conversion | `saas-app-shopify/storemd/pipeline-conversion.md` | `[dossier business]/pipeline-conversion.md` |
+| Batch dispatch | `saas-app-shopify/storemd/publication/batch-semaine.md` | `[dossier business]/publication/batch-semaine.md` |
+
+**Boutique (høkuno quand live)**
+
+| Type de donnée | høkuno | Futur boutique |
+|---------------|--------|---------------|
+| Commandes / panier / revenue | `boutique/hokuno/tracking/` (à créer) | `[dossier business]/tracking/` |
+| Publication (7/7) | `boutique/hokuno/publication/batch-semaine.md` (à créer) | `[dossier business]/publication/batch-semaine.md` |
+| Pas de cold-logs | — | — |
+| Pas de pipeline-conversion | — | — |
+
+### Batch centralisé
+
+| Type de donnée | Fichier |
+|---------------|---------|
+| Batch central (tous les posts, tous les comptes) | `marketing/contenu/batch-semaine/batch-semaine.md` |
+| Template batch (mode d'emploi) | `marketing/contenu/batch-semaine/batch-template.md` |
+| Dispatch R | `romain/publication/batch-semaine.md` |
+| Dispatch F | `fabrice/publication/batch-semaine.md` |
+| Dispatch StoreMD | `saas-app-shopify/storemd/publication/batch-semaine.md` |
+
+---
+
+## 3. CONVENTIONS UTM
+
+### Format standard
 
 ```
-[domaine-produit]?utm_source=[plateforme]&utm_medium=[type]&utm_campaign=[campagne]
+[domaine-produit]?utm_source=[plateforme]&utm_medium=[type]&utm_campaign=[campagne]&utm_content=[detail]
 ```
 
-### 2.2 Table par plateforme (référence : marketing/strategie.md)
+### Organisation
 
-| Plateforme | utm_source | utm_medium | utm_campaign |
-|-----------|-----------|-----------|-------------|
-| Twitter cold outreach | twitter | coldoutreach | postlaunch |
-| Twitter contenu organique | twitter | organic | postlaunch |
-| LinkedIn | linkedin | organic | postlaunch |
-| Reddit cold outreach | reddit | coldoutreach | postlaunch |
-| Reddit contenu | reddit | organic | postlaunch |
-| IH cold outreach | indiehackers | coldoutreach | postlaunch |
-| IH contenu | indiehackers | organic | postlaunch |
-| Product Hunt | producthunt | launch | ph-launch |
+- 1 dossier utm/ par business : `utm/StoreMD/`, `utm/hokuno/` (quand créé), `utm/profitpilot/` (quand créé)
+- Chaque dossier contient le fichier UTM complet du business
+- Référence actuelle : `utm/StoreMD/UTM_TRACKING_LINKS.md`
 
-### 2.3 Règles UTM
+### Règles
 
-| Règle | Détail |
-|-------|--------|
-| **Chaque lien publié = UTM obligatoire** | Aucun lien nu. Même les liens en reply sous un cold outreach. |
-| **1 fichier UTM par SaaS** | LD dans `tracking/utm/leak-detector/`. PD dans `tracking/utm/saas-2/`. Etc. |
-| **utm_campaign évolue par phase** | `prelaunch` avant le lancement, `postlaunch` après, `ph-launch` pour PH. |
-| **Revue chaque vendredi** | Quels canaux génèrent du trafic ? Quels utm_medium convertissent ? |
+- Chaque lien publié = UTM obligatoire. Aucun lien nu.
+- UTM différent selon le type : bio, cold, publication, reply
+- UTM différent selon la plateforme
+- Voir le fichier UTM du business concerné pour les liens exacts
 
 ---
 
-## 3. COLONNES DU GROWTH TRACKER (référence : marketing/strategie.md)
+## 4. PROCESS DE REVUE — FIN DE SEMAINE
 
-| Colonne | Ce qu'elle contient |
-|---------|--------------------|
-| **Date** | Date de l'outreach ou de l'action |
-| **Plateforme** | Twitter, Reddit, IH, LinkedIn, PH |
-| **Compte** | R, F, ou F2 |
-| **Vertical** | E-com / Agences / Creators |
-| **Insight partagé** | L'insight terrain partagé dans le cold outreach |
-| **Lien du post/tweet** | L'URL du post public contenant l'outreach |
-| **Réponse envoyée** | Oui/Non — la cible a-t-elle répondu ? |
-| **Réaction** | Positive / Négative / Ignorée |
-| **Click UTM** | Oui/Non — la cible a-t-elle cliqué sur le lien ? |
-| **Signup** | Oui/Non — la cible s'est-elle inscrite ? |
-| **Client payant** | Oui/Non — la cible a-t-elle payé ? |
+R et F revoient les données de la semaine :
 
----
+### Données à collecter
 
-## 4. PROCESS DE REVUE (vendredi soir, R + F)
+**SaaS (StoreMD) :**
 
-La revue vendredi est documentée en détail dans les playbooks (romain/playbook-semaine.md §1, fabrice/playbook-semaine.md §1, f2/playbook-semaine.md §1). Ce qui suit est le volet TRACKING de la revue.
+| Source | Ce qu'on regarde |
+|--------|-----------------|
+| Cold-logs (romain/cold/, fabrice/cold/, storemd/cold/) | Combien envoyés, taux réponse par plateforme |
+| Pipeline-conversion (saas-app-shopify/storemd/) | Conversations actives, beta spots claimed, conversions |
+| Progress.md (romain/tracking/, fabrice/tracking/) | Observations terrain, insights, patterns |
+| Analytics plateformes (Twitter, LinkedIn, TikTok, Instagram) | Impressions, engagement rate, followers, meilleur/pire post |
+| Dashboard produit (StoreMD admin) | Installs, scans, MRR |
 
-### 4.1 Données à relever
+**Boutique (høkuno quand live) :**
 
-| Catégorie | Métriques | Source |
-|-----------|----------|--------|
-| **Cold outreach** | Outreachs réalisés, taux de réponse, clicks UTM, signups, clients payants, taux de conversion | Growth Tracker |
-| **Twitter R** | Impressions, replies, engagement rate, profile visits, followers, meilleur/pire post | Twitter Analytics |
-| **Twitter F** | Idem | Twitter Analytics |
-| **Twitter F2** | Idem | Twitter Analytics |
-| **LinkedIn R** | Impressions, commentaires, profile visits, connexions | LinkedIn Analytics |
-| **LinkedIn F** | Idem | LinkedIn Analytics |
-| **IH** | Views, comments, upvotes | IH Dashboard |
-| **UTM** | Quels canaux génèrent du trafic, quel utm_medium convertit le mieux | UTM Tracker |
-| **Produit** | Signups totaux, MRR, conversion rate, top pages auditées | Dashboard produit |
+| Source | Ce qu'on regarde |
+|--------|-----------------|
+| Shopify admin (høkuno) | Commandes, panier moyen, revenue, trafic, taux conversion |
+| Analytics plateformes (Instagram, TikTok, Pinterest) | Impressions, engagement, followers, meilleur/pire post |
+| Progress.md (romain/tracking/, fabrice/tracking/) | Observations terrain |
+| Pas de cold-logs | — |
 
-### 4.2 Questions clés (référence : marketing/strategie.md)
+### Où consolider
 
-| Question | Si la réponse est négative |
-|----------|---------------------------|
-| Le cold outreach convertit ? (clicks → signups → clients) | Revoir les templates, le CTA, la page de destination |
-| Quel canal convertit le mieux en signups ? | Réallouer le temps vers le canal le plus performant |
-| Le temps investi hors Twitter est rentable ? | Si IH/Reddit ne convertit pas → réduire et réallouer à Twitter |
-| Les métriques de la semaine sont meilleures que la semaine précédente ? | Identifier ce qui a changé. Corriger. |
+- Métriques chiffrées → `dashboard-hebdo.md` (ce dossier)
+- Décisions prises → `decisions-log.md` (ce dossier)
+- Observations terrain → `progress.md` (par personne)
+
+### Questions clés
+
+| Question | Si négatif |
+|----------|-----------|
+| Combien de cold envoyés vs objectif (80/jour) ? | Identifier le blocage par plateforme |
+| Quel taux de réponse par plateforme ? | Réallouer le volume vers les plateformes qui convertissent |
+| Combien de beta spots pris cette semaine ? | Revoir les hooks, les templates, la qualification |
+| Quels posts ont le mieux marché ? | Reproduire le format/angle qui fonctionne |
+| Quels posts ont floppé ? | Comprendre pourquoi, ne pas reproduire |
 
 ---
 
-## 5. SCALABILITÉ — MULTI-PRODUIT
+## 5. SCALABILITÉ
 
-| Événement | Impact sur le tracking |
-|-----------|----------------------|
-| **Lancement de chaque nouveau SaaS** | Créer `tracking/utm/[nom-saas]/UTM-Tracking-[NomSaaS].xlsx`. Ajouter les colonnes du nouveau SaaS au Growth Tracker. Les UTM utilisent le domaine du SaaS concerné. |
-| **3+ produits** | Le Growth Tracker a une vue PORTEFEUILLE (MRR total, signups totaux) en plus des vues par produit. |
+Quand un nouveau business arrive :
 
-Le format UTM et les colonnes du Growth Tracker restent les mêmes pour chaque produit. Seuls le domaine et le fichier UTM changent.
+1. Créer `utm/[business]/` avec le fichier UTM du business
+2. Ajouter une section dans `dashboard-hebdo.md` pour les métriques du business
+3. Les données spécifiques vivent dans le dossier du business
+4. Le process de revue reste le même — on ajoute juste les sources du nouveau business
 
----
+### Ce qui change selon le type de business
 
-## 6. DOCUMENTS DE RÉFÉRENCE
+| | SaaS | Boutique |
+|---|------|---------|
+| Cold-logs | Oui (dans le dossier du business) | Non |
+| Pipeline-conversion | Oui (scan → beta → payant) | Non (panier → commande) |
+| Publication | Lun-ven | 7/7 |
+| Métriques clés | DMs envoyés, taux réponse, installs, MRR | Commandes, panier moyen, revenue, trafic |
+| Comptes perso R+F | Cold + publication | Republication + partage lien uniquement |
 
-| Document | Emplacement | Rôle |
-|----------|-------------|------|
-| marketing/strategie.md | growth-marketing/ | Table UTM complète par plateforme |
-| marketing/strategie.md | growth-marketing/ | Process de revue hebdomadaire détaillé |
-| marketing/strategie.md | marketing/ | Colonnes du Growth Tracker, suivi cold outreach |
-| marketing/strategie.md | marketing/ | Règle UTM obligatoire |
-| romain/playbook-semaine.md §1 | romain/ | Revue vendredi R (volet opérationnel) |
-| romain/progress-semaine.md §3 | romain/ | Métriques vendredi R |
-| fabrice/playbook-semaine.md §1 | fabrice/ | Revue vendredi F (volet opérationnel) |
-| fabrice/progress-semaine.md §3 | fabrice/ | Métriques vendredi F |
-| f2/playbook-semaine.md §1 | f2/ | Revue vendredi F2 (volet opérationnel) |
-| f2/progress-semaine.md §3 | f2/ | Métriques vendredi F2 |
+Le reste de l'infrastructure ne change pas.
