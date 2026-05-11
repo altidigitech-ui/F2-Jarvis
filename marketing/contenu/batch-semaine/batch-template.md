@@ -227,18 +227,25 @@ Chaque post dans le batch DOIT suivre ce format exact. C'est ce qui permet le co
 
 ### 4.3 UTM
 
-Chaque lien publié = UTM obligatoire. Référence : `tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
+Chaque lien publié = UTM obligatoire. **Ne JAMAIS écrire un lien de mémoire** — toujours copier-coller depuis la source de vérité : `tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
 
-| Type | UTM |
-|------|-----|
-| TikTok bio | `utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
-| TikTok vidéo CTA | `utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=video_cta` |
-| Instagram bio | `utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
-| Instagram post | `utm_source=instagram&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
-| Twitter bio | `utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
-| Twitter reply | `utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta` |
-| Facebook post | `utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
-| IH post | `utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
+Format URL obligatoire : `https://storemd.vercel.app/?utm_source=...` (avec `https://` et `/` avant `?`)
+
+| Placement | UTM complet |
+|-----------|------------|
+| Twitter — post organique (lien en self-reply) | `utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post` |
+| Twitter — reply engagement (tweet de quelqu'un d'autre) | `utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta` |
+| Twitter — thread | `utm_source=twitter&utm_medium=organic&utm_campaign=thread&utm_content=thread_cta` |
+| Twitter — bio | `utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
+| LinkedIn — post organique (lien en commentaire) | `utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post` |
+| LinkedIn — article | `utm_source=linkedin&utm_medium=organic&utm_campaign=article&utm_content=article_cta` |
+| TikTok — bio | `utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
+| TikTok — vidéo CTA | `utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=video_cta` |
+| Instagram — bio | `utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
+| Facebook — post page StoreMD | `utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
+| IH — post | `utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
+
+Pour tout autre placement (DM cold, ads, bio par compte), consulter le fichier UTM de référence.
 
 ### 4.4 ANTI-IA (obligatoire)
 
@@ -371,7 +378,7 @@ Donc en RÉDACTION réelle :
 
 ---
 
-## 8. SCALABILITÉ
+## 9. SCALABILITÉ
 
 Quand un nouveau business arrive (høkuno, ProfitPilot) :
 1. Ajouter ses horaires dans §1
@@ -383,32 +390,14 @@ Quand un nouveau business arrive (høkuno, ProfitPilot) :
 
 ---
 
-## Règle UTM — OBLIGATOIRE
+## 8. CHECKLIST VALIDATION UTM — AVANT LIVRAISON DU BATCH
 
-**Ne JAMAIS écrire un lien UTM de mémoire.** Toujours copier-coller depuis la source de vérité :
+Vérifier CHAQUE lien UTM du batch avant de soumettre à R pour validation :
 
-`tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
+1. Le lien existe à l'identique dans `tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
+2. Format URL : `https://storemd.vercel.app/?utm_source=...` (avec `https://` et `/` avant `?`)
+3. Twitter posts organiques = `feature_launch` / `post` — PAS `reply` (réservé à l'engagement sur les tweets des autres)
+4. LinkedIn posts organiques = `post` / `cta_post` — PAS `post_cta`
+5. En cas de doute → ouvrir le fichier UTM de référence et chercher le placement exact
 
-### Checklist avant validation du batch :
-
-1. Chaque lien UTM du batch existe à l'identique dans le fichier UTM de référence
-2. Format URL : toujours `https://storemd.vercel.app/?utm_source=...` (avec `https://` et `/` avant `?`)
-3. Twitter posts organiques = `utm_campaign=feature_launch&utm_content=post` — NE PAS utiliser `reply` qui est réservé aux replies d'engagement sur les tweets des autres
-4. LinkedIn posts organiques = `utm_campaign=post&utm_content=cta_post` — attention à l'ordre `cta_post` pas `post_cta`
-5. En cas de doute sur quel lien utiliser, ouvrir le fichier UTM et chercher le placement exact (bio, post, reply, DM, etc.)
-
-### Mapping rapide — quel UTM pour quel placement :
-
-| Placement | UTM campaign | UTM content |
-|-----------|-------------|-------------|
-| Twitter — post organique (lien en self-reply) | `feature_launch` | `post` |
-| Twitter — reply engagement chez quelqu'un d'autre | `reply` | `reply_cta` |
-| Twitter — thread | `thread` | `thread_cta` |
-| LinkedIn — post organique (lien en commentaire) | `post` | `cta_post` |
-| LinkedIn — article | `article` | `article_cta` |
-| TikTok — caption (lien en bio) | `profile` | `bio_link` |
-| Instagram — caption (lien en bio) | `profile` | `bio_link` |
-| Facebook — post page StoreMD | `post` | `post_cta` |
-| IH — post | `post` | `post_cta` |
-
-Pour tout autre placement, consulter le fichier UTM de référence.
+Le mapping complet est en section 4.3.
