@@ -9,7 +9,7 @@
 
 |Date|Heure|Événement|Plateforme|Activité|Action prise / à prendre|
 |----|-----|---------|----------|--------|------------------------|
-|    |     |         |          |        |                        |
+| 11/05 | 17:15 | PH karma farming : 5 upvotes + 1 comment (Connector.wtf) | Product Hunt | Engagement | Session Chrome scan + log |
 
 -----
 
