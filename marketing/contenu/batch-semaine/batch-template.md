@@ -380,3 +380,35 @@ Quand un nouveau business arrive (høkuno, ProfitPilot) :
 4. Ajouter une section dans le batch central
 5. Créer un fichier dispatch dans le dossier du business
 6. Le format du post (§3) et les règles (§4) restent les mêmes
+
+---
+
+## Règle UTM — OBLIGATOIRE
+
+**Ne JAMAIS écrire un lien UTM de mémoire.** Toujours copier-coller depuis la source de vérité :
+
+`tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
+
+### Checklist avant validation du batch :
+
+1. Chaque lien UTM du batch existe à l'identique dans le fichier UTM de référence
+2. Format URL : toujours `https://storemd.vercel.app/?utm_source=...` (avec `https://` et `/` avant `?`)
+3. Twitter posts organiques = `utm_campaign=feature_launch&utm_content=post` — NE PAS utiliser `reply` qui est réservé aux replies d'engagement sur les tweets des autres
+4. LinkedIn posts organiques = `utm_campaign=post&utm_content=cta_post` — attention à l'ordre `cta_post` pas `post_cta`
+5. En cas de doute sur quel lien utiliser, ouvrir le fichier UTM et chercher le placement exact (bio, post, reply, DM, etc.)
+
+### Mapping rapide — quel UTM pour quel placement :
+
+| Placement | UTM campaign | UTM content |
+|-----------|-------------|-------------|
+| Twitter — post organique (lien en self-reply) | `feature_launch` | `post` |
+| Twitter — reply engagement chez quelqu'un d'autre | `reply` | `reply_cta` |
+| Twitter — thread | `thread` | `thread_cta` |
+| LinkedIn — post organique (lien en commentaire) | `post` | `cta_post` |
+| LinkedIn — article | `article` | `article_cta` |
+| TikTok — caption (lien en bio) | `profile` | `bio_link` |
+| Instagram — caption (lien en bio) | `profile` | `bio_link` |
+| Facebook — post page StoreMD | `post` | `post_cta` |
+| IH — post | `post` | `post_cta` |
+
+Pour tout autre placement, consulter le fichier UTM de référence.

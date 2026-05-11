@@ -17,7 +17,7 @@
 **Cohérence jour :** la vidéo TikTok du jour montre les 5 modules et 43 features. Ce tweet explique POURQUOI 43 features en termes simples. La vidéo V1 attachée montre le problème des 14+ apps.
 **Douleur :** app bloat / store health
 **Hook ref :** context StoreMD §6 — "Le store moyen a 14 apps = 2.8-7s de load time en plus"
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ⏳
 
 **TEXTE :**
@@ -31,7 +31,7 @@ Built a scan that checks 43 things in 60s to find exactly what's dragging you do
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -56,7 +56,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Cohérence jour :** même thème que F — 43 features. Ce tweet parle de ce que ça COÛTE. La vidéo V1 montre l'argent perdu au quotidien.
 **Douleur :** app bloat / perte de revenus
 **Hook ref :** context StoreMD §6 — "Un store à $15K/mois avec 4s au lieu de 2s perd $2,100/mois"
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -70,7 +70,7 @@ Most store owners don't even know their load time. They've got 14 apps running a
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -93,7 +93,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** vidéo produit
 **Ce que la vidéo montre :** Les 5 modules (Store Health, Listings, AI Commerce Ready, Compliance, Browser Automation) avec le chiffre 43 comme hook. CTA "Free beta. Link in bio."
 **Douleur :** domination produit — tout en 1 app
-**UTM bio :** `storemd.vercel.app?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -120,7 +120,7 @@ Free beta in bio.
 **Registre :** feature produit (ton neutre produit)
 **Cohérence jour :** 43 features. Le produit parle de lui-même. Pas de "I", pas de "we".
 **Douleur :** domination produit
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -136,7 +136,7 @@ Free beta access open.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -161,7 +161,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Vidéo/Carrousel :** V1 — "43 Features. One App. Nobody Comes Close." (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #shopifystore #ecommerce #storeoptimization #shopifytips
-**UTM bio :** `storemd.vercel.app?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -196,7 +196,7 @@ Free beta access open. Link in bio.
 **Vidéo/Carrousel :** V1 — "43 Features. One App. Nobody Comes Close." (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #ecommerce #shopifystore
-**UTM :** `storemd.vercel.app?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **CAPTION :**
@@ -237,7 +237,7 @@ Free beta access open.
 **Cohérence jour :** le carrousel TikTok montre le process beta. Ce tweet explique techniquement ce qui se passe quand tu installes (scan auto, résultats en 60s). La vidéo V1 montre les 10 spots beta.
 **Douleur :** onboarding / process
 **Hook ref :** context StoreMD §4 — workflow d'installation
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -253,7 +253,7 @@ You get a score and a ranked list of every problem found. No guessing.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -280,7 +280,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Cohérence jour :** process beta. Ce tweet parle de pourquoi tester maintenant (10 spots, gratuit, résultats vrais). La vidéo V1 montre les 10 spots beta.
 **Douleur :** urgence beta
 **Hook ref :** context StoreMD §4 + pipeline-conversion beta spots
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -294,7 +294,7 @@ DM me your .myshopify.com URL. I'll send you the install link and you'll have yo
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -318,7 +318,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** carrousel éducatif
 **Ce que le carrousel montre :** Les 5 étapes pour devenir beta testeur. Prompt : `PROMPT_CAROUSSEL_1.md`
 **Douleur :** friction onboarding — montrer que c'est simple
-**UTM bio :** `storemd.vercel.app?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -344,7 +344,7 @@ DM "BETA" → get the install link → authorize on Shopify → scan runs automa
 **Vidéo/Carrousel :** `store-md-beta-10-spots` (V1 — recyclé, même vidéo que R et F du jour)
 **Registre :** feature produit (ton neutre)
 **Cohérence jour :** beta process. Le scan prend 60 secondes. Ton neutre.
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -358,7 +358,7 @@ Ranked problems. Step-by-step fixes. No cost.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -380,7 +380,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** retour d'expérience (angle business)
 **Cohérence jour :** beta testers. Post long qui développe pourquoi on cherche des beta testers, ce qu'ils reçoivent, le process. Données du context StoreMD §4 + §5.
 **Douleur :** merchants Shopify qui ne savent pas que leur store a des problèmes cachés
-**UTM :** lien en commentaire — `storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** lien en commentaire — `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -404,7 +404,7 @@ I'll send the install link and you'll have your report in under 2 minutes.
 
 **REPLY (commentaire avec lien) :**
 ```
-storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
 **TRADUCTION :**
@@ -437,7 +437,7 @@ storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_
 **Vidéo/Carrousel :** Carrousel "Comment devenir beta testeur StoreMD" — 7 slides (recyclé TikTok, format 1080×1350 4:5)
 **Registre :** carrousel éducatif (recyclé)
 **Hashtags :** #shopify #shopifystore #ecommerce #shopifyaudit #storeoptimization
-**UTM bio :** `storemd.vercel.app?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -472,7 +472,7 @@ Link in bio.
 **Vidéo/Carrousel :** Carrousel "Comment devenir beta testeur StoreMD" — 7 slides (recyclé TikTok)
 **Registre :** carrousel éducatif (recyclé)
 **Hashtags :** #shopify #ecommerce #shopifystore
-**UTM :** `storemd.vercel.app?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **CAPTION :**
@@ -522,7 +522,7 @@ Step 5: Get your full report with every issue ranked and every fix explained
 **Cohérence jour :** la vidéo TikTok V13 montre un vrai scan en action. Ce tweet explique techniquement ce que le scan détecte. La vidéo V1 montre une démo scan agency.
 **Douleur :** monitoring / problèmes invisibles
 **Hook ref :** context StoreMD §2 — modules Store Health + Browser Automation
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -536,7 +536,7 @@ The scan takes 60 seconds. You get every issue with a priority tag and a fix.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -561,7 +561,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Cohérence jour :** scan en action. Ce tweet montre les résultats business d'un scan sur 8 stores. La vidéo V1 montre les stats.
 **Douleur :** problèmes invisibles / perte de revenus silencieuse
 **Hook ref :** context StoreMD §6 — ghost billing
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -577,7 +577,7 @@ That's why continuous scanning exists.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -603,7 +603,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** vidéo produit (screen recording natif)
 **Ce que la vidéo montre :** Screen recording de l'app en train de scanner un vrai store. 18 apps détectées, 3 inutilisées. Privy facture $29/mo après désinstallation. 42 images sans alt text. CTA Beta offer.
 **Douleur :** preuve + transparence
-**UTM bio :** `storemd.vercel.app?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -629,7 +629,7 @@ Every issue ranked. Every fix ready. 60 seconds.
 **Vidéo/Carrousel :** V13 — "Watch a Real Scan. Sound On." (recyclé TikTok du jour)
 **Registre :** résultat scan (ton neutre)
 **Cohérence jour :** scan en action. Ton neutre, le résultat parle.
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -645,7 +645,7 @@ Beta access open.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -668,7 +668,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Vidéo/Carrousel :** aucun (texte long-form)
 **Registre :** retour d'expérience focus produit
 **Cohérence jour :** scan en action. Post IH qui montre ce que le scan trouve vraiment (données réelles context StoreMD §15 métriques canon).
-**UTM :** `storemd.vercel.app?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **TEXTE :**
@@ -726,7 +726,7 @@ If you run a Shopify store, DM me your .myshopify.com URL and I'll send the inst
 **Registre :** feature produit (angle technique accessible)
 **Cohérence jour :** scan en action. Post long qui explique comment le scan fonctionne techniquement (browser automation, 43 checks, 60 secondes) sans jargon dev. La vidéo V1 montre la démo scan.
 **Douleur :** problèmes invisibles que seul un scan automatisé détecte
-**UTM :** lien en commentaire — `storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** lien en commentaire — `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -750,7 +750,7 @@ DM me your .myshopify.com URL if you want in.
 
 **REPLY (commentaire avec lien) :**
 ```
-storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
 **TRADUCTION :**
@@ -783,7 +783,7 @@ storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_
 **Vidéo/Carrousel :** V13 — "Watch a Real Scan. Sound On." (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #shopifystore #ecommerce #shopifyaudit #storehealth
-**UTM bio :** `storemd.vercel.app?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -818,7 +818,7 @@ Link in bio for free beta access.
 **Vidéo/Carrousel :** V13 — "Watch a Real Scan. Sound On." (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #ecommerce #shopifystore
-**UTM :** `storemd.vercel.app?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **CAPTION :**
@@ -861,7 +861,7 @@ Free beta access open. 10 spots left.
 **Cohérence jour :** la vidéo TikTok V3 montre les 4 features exclusives. Ce tweet explique techniquement pourquoi l'AI Commerce Scanner n'existe nulle part ailleurs. La vidéo V1 montre le before/after AI readiness.
 **Douleur :** concurrents ne font que la surface
 **Hook ref :** context StoreMD §7 — "Aucun concurrent ne combine"
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -877,7 +877,7 @@ That's one of 4 features we built that literally don't exist anywhere else.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -904,7 +904,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Cohérence jour :** 4 features exclusives. Ce tweet parle de l'avantage concurrentiel pour le merchant. La vidéo V1 montre les apps dangereuses par tier.
 **Douleur :** les outils existants ne détectent pas tout
 **Hook ref :** context StoreMD §7 — concurrents vs StoreMD
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -918,7 +918,7 @@ StoreMD does all 4. Nobody else combines them. That's the whole point.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -942,7 +942,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** vidéo produit
 **Ce que la vidéo montre :** Les 4 features exclusives (AI Commerce Scanner, Visual Store Test, Real Customer Simulation, Live Accessibility Test). CTA "Join the beta → Link in bio."
 **Douleur :** exclusivité + statut
-**UTM bio :** `storemd.vercel.app?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -972,7 +972,7 @@ Beta access in bio.
 **Vidéo/Carrousel :** V3 — "4 Features Nobody Has" (recyclé TikTok du jour)
 **Registre :** feature produit (ton neutre)
 **Cohérence jour :** 4 features exclusives. Ton neutre.
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -989,7 +989,7 @@ All included in one scan. 60 seconds.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -1014,7 +1014,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** feature produit (angle business)
 **Cohérence jour :** 4 features exclusives. Post long qui développe pourquoi ces 4 features changent la donne pour un merchant. Données context StoreMD §7 + §8 moat.
 **Douleur :** les outils actuels ne couvrent pas tout
-**UTM :** lien en commentaire — `storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** lien en commentaire — `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -1040,7 +1040,7 @@ DM me your .myshopify.com URL.
 
 **REPLY (commentaire avec lien) :**
 ```
-storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
 **TRADUCTION :**
@@ -1075,7 +1075,7 @@ storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_
 **Vidéo/Carrousel :** V3 — "4 Features Nobody Has" (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #shopifystore #ecommerce #shopifytools #storeaudit
-**UTM bio :** `storemd.vercel.app?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1110,7 +1110,7 @@ Free beta access. Link in bio.
 **Vidéo/Carrousel :** V3 — "4 Features Nobody Has" (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #ecommerce #shopifytools
-**UTM :** `storemd.vercel.app?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1155,7 +1155,7 @@ All in one scan. 60 seconds. Free beta access open.
 **Cohérence jour :** la vidéo TikTok V4 oppose agent vs rapport statique. Ce tweet explique techniquement pourquoi un agent attrape ce qu'un PDF rate. La vidéo V1 montre les ghost apps.
 **Douleur :** outils passifs vs agent actif
 **Hook ref :** context StoreMD §7 — "StoreScan = 9 scanners passifs, rapport PDF"
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -1169,7 +1169,7 @@ StoreMD doesn't send reports. It runs as an agent inside your store. It catches 
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -1194,7 +1194,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Cohérence jour :** agent vs rapport. Ce tweet parle du ROI agent continu vs audit one-shot. La vidéo V1 montre le coût réel.
 **Douleur :** agences audit $500-$2000 one-shot vs $39/mois continu
 **Hook ref :** context StoreMD §7 — "Agences audit = one-shot. StoreMD = monitoring continu à $39/mois"
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -1208,7 +1208,7 @@ $39/month vs $2000 once. And the $39 never stops watching.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -1232,7 +1232,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** vidéo produit
 **Ce que la vidéo montre :** Opposition agent vs rapport. Code fantôme détecté → supprimé en 1 clic. CTA beta.
 **Douleur :** agent actif vs outil passif
-**UTM bio :** `storemd.vercel.app?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1258,7 +1258,7 @@ Agent, not audit. 60 seconds. Link in bio.
 **Vidéo/Carrousel :** V4 — "We Don't Send Reports. We Fix Your Store." (recyclé TikTok du jour)
 **Registre :** feature produit (ton neutre)
 **Cohérence jour :** agent vs rapport. Ton neutre.
-**UTM :** `storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -1274,7 +1274,7 @@ Beta access open.
 
 **REPLY :**
 ```
-storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
@@ -1298,7 +1298,7 @@ storemd.vercel.app?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_
 **Registre :** feature produit (angle technique accessible)
 **Cohérence jour :** agent vs rapport. Post long qui explique comment l'agent fonctionne vs un scanner passif. Browser automation, scan comme un vrai utilisateur. La vidéo V1 montre les ghost apps.
 **Douleur :** les rapports PDF ne détectent pas les vrais problèmes
-**UTM :** lien en commentaire — `storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** lien en commentaire — `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 **Statut :** ✅
 
 **TEXTE :**
@@ -1324,7 +1324,7 @@ DM me your .myshopify.com URL.
 
 **REPLY (commentaire avec lien) :**
 ```
-storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=post_cta
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
 **TRADUCTION :**
@@ -1359,7 +1359,7 @@ storemd.vercel.app?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_
 **Vidéo/Carrousel :** V4 — "We Don't Send Reports. We Fix Your Store." (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #shopifystore #ecommerce #shopifyaudit #storespeed
-**UTM bio :** `storemd.vercel.app?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1394,7 +1394,7 @@ Agent, not audit. Free beta in bio.
 **Vidéo/Carrousel :** V4 — "We Don't Send Reports. We Fix Your Store." (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #ecommerce #shopifystore
-**UTM :** `storemd.vercel.app?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1436,7 +1436,7 @@ Free beta access open. 10 spots left.
 **Registre :** carrousel éducatif
 **Ce que le carrousel montre :** Ce que le merchant perd s'il ne scanne pas. Chiffres des hooks.
 **Douleur :** perte de revenus silencieuse
-**UTM bio :** `storemd.vercel.app?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1466,7 +1466,7 @@ Link in bio.
 **Vidéo/Carrousel :** Carrousel "Gains Potentiels" — 6 slides : Speed Tax / App Bloat / Time Tax / What Nobody Scans / Solution (recyclé TikTok, format 1080×1350 4:5 — à régénérer)
 **Registre :** carrousel éducatif (recyclé)
 **Hashtags :** #shopify #shopifystore #ecommerce #conversionrate #shopifytips
-**UTM bio :** `storemd.vercel.app?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1503,7 +1503,7 @@ StoreMD scans all of it in 60 seconds. Free beta access in bio.
 **Vidéo/Carrousel :** Carrousel "Gains Potentiels" — 6 slides (recyclé TikTok)
 **Registre :** carrousel éducatif (recyclé)
 **Hashtags :** #shopify #ecommerce #shopifystore
-**UTM :** `storemd.vercel.app?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1545,7 +1545,7 @@ StoreMD checks all 5 in one scan. 60 seconds. Free beta access open.
 **Registre :** vidéo produit
 **Ce que la vidéo montre :** 3 patterns tirés de 530+ reviews des apps concurrentes. Social proof technique. CTA beta.
 **Douleur :** les apps actuelles ont des problèmes documentés
-**UTM bio :** `storemd.vercel.app?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1571,7 +1571,7 @@ StoreMD was built to catch all three. 60 seconds. Link in bio.
 **Vidéo/Carrousel :** V5 — "Built From 530+ Reviews of Your Current Apps" (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #shopifystore #ecommerce #shopifyapps #storeaudit
-**UTM bio :** `storemd.vercel.app?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 **Statut :** ✅
 
 **CAPTION :**
@@ -1608,7 +1608,7 @@ StoreMD detects all three. One scan. 60 seconds. Free beta in bio.
 **Vidéo/Carrousel :** V5 — "Built From 530+ Reviews of Your Current Apps" (recyclé TikTok, re-export sans watermark)
 **Registre :** vidéo produit (recyclé)
 **Hashtags :** #shopify #ecommerce #shopifyapps
-**UTM :** `storemd.vercel.app?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 **Statut :** ✅
 
 **CAPTION :**
