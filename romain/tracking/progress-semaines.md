@@ -11,6 +11,9 @@
 |----|-----|---------|----------|--------|------------------------|
 | 11/05 | 17:15 | PH karma farming : 5 upvotes + 1 comment (Connector.wtf) | Product Hunt | Engagement | Session Chrome scan + log |
 | 12/05 | 13:30 | PH karma farming : 5 upvotes + 1 comment (HeyNews) | Product Hunt | Engagement | Session Chrome scan + log |
+| 12/05 | 13:00 | Recherche cold : 5 sessions Chrome/Grok (Twitter 5, LinkedIn 10, TikTok 20, Instagram 20, Facebook 15 = 70 prospects loggés) | Multi-plateforme | Cold | Logs remplis dans recherche-log 5 plateformes |
+| 12/05 | 19:15 | Batch terminé, schedulé mar-dim (posts lundi annulés) | Multi-plateforme | Publication | Retard rattrapé |
+| 12/05 | 19:15 | StoreMD app refusée Shopify, en cours de réparation, demande relancée | StoreMD | Produit | Bloquant cold résolu une fois app acceptée |
 
 -----
 
@@ -53,6 +56,7 @@
 
 ## INSIGHTS ET PATTERNS
 
--
--
--
+- 0 cold S9 mardi soir — retard batch + blocage app StoreMD
+- Posts lundi annulés, publication démarre mardi
+- Objectif mercredi : rattraper quota cold
+- App StoreMD refusée = frein distribution, relance en cours
