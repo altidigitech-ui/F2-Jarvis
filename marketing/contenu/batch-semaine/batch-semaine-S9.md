@@ -330,10 +330,7 @@ You get a complete health report with every problem ranked by priority and a fix
 I get real feedback to make the product better before public launch.
 
 If you've got a Shopify store and you want to know what's going on under the hood, DM me your .myshopify.com URL.
-```
 
-**REPLY (commentaire avec lien) :**
-```
 https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
@@ -599,10 +596,7 @@ Every problem gets a priority tag. Critical, major, minor. And every problem com
 The app isn't on the Shopify App Store yet. Looking for store owners who want to try the full scan for free 🧪
 
 DM me your .myshopify.com URL.
-```
 
-**REPLY (commentaire avec lien) :**
-```
 https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
@@ -833,10 +827,7 @@ No other tool combines all four.
 We're in beta. Free full scan for merchants who want to try it.
 
 DM me your .myshopify.com URL.
-```
 
-**REPLY (commentaire avec lien) :**
-```
 https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
@@ -1058,10 +1049,7 @@ New app installed? It checks the impact. App uninstalled? It flags the leftover 
 An audit tells you what was wrong last week. An agent tells you what's wrong right now.
 
 We're in beta. DM me your .myshopify.com URL 🧪
-```
 
-**REPLY (commentaire avec lien) :**
-```
 https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
