@@ -14,6 +14,7 @@
 | 12/05 | 13:00 | Recherche cold : 5 sessions Chrome/Grok (Twitter 5, LinkedIn 10, TikTok 20, Instagram 20, Facebook 15 = 70 prospects loggés) | Multi-plateforme | Cold | Logs remplis dans recherche-log 5 plateformes |
 | 12/05 | 19:15 | Batch terminé, schedulé mar-dim (posts lundi annulés) | Multi-plateforme | Publication | Retard rattrapé |
 | 12/05 | 19:15 | StoreMD app refusée Shopify, en cours de réparation, demande relancée | StoreMD | Produit | Bloquant cold résolu une fois app acceptée |
+| 12/05 | 23:45 | Tous les posts schedulés mar-dim sauf ceux avec liens UTM non valides (tri à faire mercredi). TODO créé : carrousels hors 9:16, vidéos StoreMD, implémentation Jarvis, cold à lancer (red flag), liens UTM bio <80 car. TikTok/Instagram/Facebook (double flag) | Multi-plateforme | Publication + Ops | Tri UTM mercredi matin avant publication |
 
 -----
 
