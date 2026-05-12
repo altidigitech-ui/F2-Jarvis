@@ -268,6 +268,59 @@ Chaque post du batch suit EXACTEMENT ce format. Rien de plus, rien de moins.
 
 **Traduction :** traduction française obligatoire après chaque texte, pour validation par R avant publication.
 
+### 3.3 Exemples de mise en forme — À REPRODUIRE
+
+Le fichier `batch-semaine-S9.md` (batch S9 corrigé) est le modèle de référence. Chaque batch doit reproduire le même niveau de mise en forme.
+
+❌ NE PAS FAIRE :
+
+43 features. 5 modules. 60 seconds 🔍 Speed issues, ghost billing, dead code, broken listings, AI readiness. Problems ranked by priority. Fixes included. Free beta access open.
+
+✅ FAIRE :
+
+43 features. 5 modules. 60 seconds 🔍
+
+Speed issues, ghost billing, dead code, broken listings, AI readiness.
+
+Problems ranked by priority. Fixes included.
+
+Free beta access open.
+
+---
+
+❌ NE PAS FAIRE :
+
+43 checks across 5 modules. Speed, billing, SEO, AI readiness, accessibility 🔍 One scan. 60 seconds. Every problem ranked by priority. Free beta in bio.
+
+✅ FAIRE :
+
+43 checks across 5 modules.
+
+Speed
+billing
+SEO
+AI readiness
+accessibility 🔍
+
+One scan. 60 seconds.
+Every problem ranked by priority.
+
+Free beta in bio.
+
+---
+
+Règles extraites de ces exemples :
+
+- Chaque changement d'idée = saut de ligne
+- Chaque bloc logique séparé par une ligne vide
+- Chiffres clés ou features listés = chacun sur sa propre ligne, sans tirets ni puces
+- Emoji sur le dernier élément d'un bloc, pas au milieu
+- Deux phrases courtes complémentaires = groupées sur le même bloc
+- CTA toujours isolé sur sa propre ligne en bas du post
+- Pas de pavé. Si ça ressemble à un paragraphe, c'est mal formaté.
+
+Ne touche à rien d'autre dans le fichier.
+
 ---
 
 ## 4. PRODUIRE — Règles de rédaction
