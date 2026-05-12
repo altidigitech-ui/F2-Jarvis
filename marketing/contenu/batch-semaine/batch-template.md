@@ -7,6 +7,40 @@
 
 ---
 
+## 0. RED LINES — À LIRE EN PREMIER
+
+Ces règles sont NON-NÉGOCIABLES. Un post qui en viole une = post bloqué.
+
+**Zéro donnée inventée.** Pas de faux nombre de scans, pas de faux montants, pas de faux clients, pas de faux résultats de scan. Si le chiffre n'est pas dans le context StoreMD §6 (hooks sourcés) ou dans `tracking/metrics/storemd-admin.md` (métriques produit), il n'existe pas.
+
+**Zéro feature vendue qui n'est pas live.** Décrire ce que le produit fait MAINTENANT en production. Pas ce qu'il fera un jour.
+
+**Zéro "real scan" / "real store" / "real numbers" sur du contenu fictif.** Si le scan n'a pas vraiment eu lieu et n'est pas documenté dans l'admin, ne pas écrire "real".
+
+**Marketing ≠ mensonge.** Tu peux et tu dois vendre fort. Exemples :
+
+- ✅ "Privy facture $29/mois après désinstall" → vrai, 40+ reviews le confirment
+- ✅ "Chaque app inutile ajoute 200-500ms" → vrai, sourcé MUTATIONS.md
+- ✅ "3 apps fantômes = 600ms-1.5s de load time gaspillé" → calcul basé sur des données réelles
+- ❌ "Scanné 8 stores pour une agence, trouvé $1,400 de ghost billing" → fiction présentée comme un fait vécu
+- ❌ "68 stores scannés, $12,400 de leaks" → faux chiffres présentés comme "real numbers"
+
+La règle : chaque chiffre doit pouvoir être retracé jusqu'à une source (reviews, research, admin dashboard, MUTATIONS.md). Si tu ne peux pas pointer la source, tu ne publies pas le chiffre. Être subtil c'est combiner des données réelles pour créer un impact marketing. Mentir c'est inventer des résultats.
+
+---
+
+## 0.1 STYLE OBLIGATOIRE
+
+**Emojis :** minimum 1 par post, maximum 3. Positionnés en fin de ligne ou en tête de bloc. Jamais en milieu de phrase.
+
+**Variété de structure :** interdiction de faire 5 posts consécutifs avec le même rythme (problème → feature → CTA). Alterner les angles d'attaque : data-drop, question, comparaison, démonstration, provocation.
+
+**Hashtags :** copier-coller UNIQUEMENT depuis `saas-app-shopify/hashtags.md`. Ne JAMAIS inventer de hashtags. Si un hashtag n'est pas dans le fichier, il n'est pas utilisé.
+
+**Pas de listes numérotées** dans les posts Facebook et Reddit (pattern IA détectable, ANTI-IA.md).
+
+---
+
 ## 1. HORAIRES FIXÉS
 
 Ces horaires ne changent pas sauf décision explicite de R ou F.
@@ -158,6 +192,14 @@ Demander à R et F AVANT de produire :
 | VISUELS | `../../VISUELS.md` | Algo type de post → visuel + templates prompts |
 | Voix R | `romain/VOIX.md` | Registres, expressions, anti-patterns R |
 | Voix F | `fabrice/VOIX.md` | Registres, expressions, anti-patterns F |
+
+### Métriques à jour (OBLIGATOIRE avant de rédiger)
+
+- Métriques produit : ouvrir `/dashboard/admin` et mettre à jour `tracking/metrics/storemd-admin.md`
+- Métriques réseaux sociaux : collecter les stats de chaque plateforme et mettre à jour `tracking/metrics/[plateforme].md`
+- Context StoreMD §6 hooks : vérifier que les chiffres utilisés dans les posts sont dans le tableau hooks avec leur source
+
+Sans ces mises à jour, ne pas commencer la rédaction du batch.
 
 ---
 
@@ -390,7 +432,7 @@ Quand un nouveau business arrive (høkuno, ProfitPilot) :
 
 ---
 
-## 8. CHECKLIST VALIDATION UTM — AVANT LIVRAISON DU BATCH
+## 8. CHECKLIST VALIDATION — AVANT LIVRAISON DU BATCH
 
 Vérifier CHAQUE lien UTM du batch avant de soumettre à R pour validation :
 
@@ -400,4 +442,14 @@ Vérifier CHAQUE lien UTM du batch avant de soumettre à R pour validation :
 4. LinkedIn posts organiques = `post` / `cta_post` — PAS `post_cta`
 5. En cas de doute → ouvrir le fichier UTM de référence et chercher le placement exact
 
-Le mapping complet est en section 4.3.
+**Contenu :**
+
+6. Chaque chiffre cité dans un post existe dans le repo avec une source traçable (§6 hooks, MUTATIONS.md, tracking/metrics/)
+7. Chaque feature décrite est live en production actuellement
+8. Au moins 1 emoji par post, max 3
+9. Hashtags copiés depuis `saas-app-shopify/hashtags.md` (aucun hashtag inventé)
+10. Au moins 3 structures d'attaque différentes dans le batch (pas 5x le même rythme)
+11. Aucun post ne contient "real scan" / "real store" / "real numbers" sans scan réel documenté dans l'admin
+12. Aucune donnée inventée (scans, montants, clients, résultats) — voir section 0 RED LINES
+
+Le mapping UTM complet reste en section 4.3.
