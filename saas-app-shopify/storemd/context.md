@@ -101,7 +101,7 @@ Pas de boutique Shopify = pas dans le scope = jamais un beta tester = jamais un 
 | **App bloat** | Le store moyen a 14 apps = 2.8-7s de load time en plus | 6-10 apps = +2-3 secondes, chaque app = +200-500ms |
 | **Ghost billing** | Des apps désinstallées continuent de facturer | Privy : 40+ reviews confirmant la facturation fantôme post-désinstallation |
 | **Code résiduel** | Les apps laissent du code mort après désinstallation | Avada, PageFly, Shogun, Privy : 380+ reviews confirmant |
-| **Perte de revenus** | Un store à $15K/mois avec 4s au lieu de 2s perd $2,100/mois | $25,200/an de perte |
+| **Perte de revenus** | Chaque app inutile ajoute 200-500ms de load time. Entre ghost billing, app bloat et subscriptions oubliées, un store 10-30K$/mois perd $3,000-8,000/an en coûts invisibles | Privy facture $29/mois après désinstall (40+ reviews). 3 apps inutiles = 600ms-1.5s de load time en plus. Source MUTATIONS.md (APPWRK 2026, Market Clarity, Reddit) |
 | **Bot traffic** | Les faux profils faussent les métriques et gâchent les audiences Google Ads | Cas Reddit : 3 millions de hits bots en 30 jours sur 2 pages |
 | **Listings** | 80% des produits génèrent 0 trafic | Thread Reddit : "I have 500 products, 80% get zero traffic" |
 | **IA readiness** | Les crawlers IA accèdent aux blogs mais PAS aux pages produits | Les stores sont invisibles pour ChatGPT Shopping et Perplexity |
@@ -114,7 +114,7 @@ Pas de boutique Shopify = pas dans le scope = jamais un beta tester = jamais un 
 |-----------|---------------------|
 | StoreScan ($9.99-$49.99, 0 reviews) | 9 scanners passifs, rapport PDF. StoreMD = agent continu 24/7. |
 | Speed optimizers (TinyIMG, Thunder) | Compriment les images. Ne diagnostiquent pas POURQUOI le store est lent. |
-| Overlays accessibilité (accessiBe) | Widget cosmétique par-dessus le code. StoreMD fixe au niveau du code. |
+| Overlays accessibilité (accessiBe) | Widget cosmétique par-dessus le code. StoreMD diagnostique au niveau du code et donne les corrections à appliquer. |
 | Agences audit ($500-$2000) | One-shot. StoreMD = monitoring continu à $39/mois. |
 
 Aucun concurrent ne combine : App Impact Scanner + Ghost Billing + Bot Filter + Agentic Readiness + Browser Automation dans un seul produit.
@@ -220,18 +220,15 @@ Batch central : `../../marketing/contenu/batch-semaine/batch-semaine.md`
 
 ### UTM publication
 
-| Plateforme | UTM |
-|-----------|-----|
-| TikTok bio | `utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
-| TikTok vidéo | `utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=video_cta` |
-| Instagram bio | `utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
-| Instagram post | `utm_source=instagram&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
-| Twitter bio | `utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
-| Twitter reply (2-blocs) | `utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta` |
-| Facebook post | `utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
-| IH post | `utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
+Source de vérité unique : `../../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
 
-Référence complète : `../../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
+Ne JAMAIS copier un UTM de mémoire. Toujours ouvrir le fichier UTM et copier-coller le lien exact pour le placement concerné (bio, post, reply, DM, ads, etc.).
+
+### Hashtags
+
+Source de vérité unique : `../hashtags.md`
+
+Ne JAMAIS inventer de hashtags. Toujours copier-coller depuis le fichier hashtags.
 
 ### Détail par plateforme
 
@@ -310,13 +307,16 @@ Les résultats de recherche vont dans `../recherche/cold/[outil]/[plateforme]/re
 
 ## 15. MÉTRIQUES CANON
 
-> Les chiffres ci-dessous sont les derniers validés. NE PAS inventer de nouveaux chiffres. Demander à R pour mise à jour.
+> NE PAS inventer de chiffres. NE PAS utiliser de métriques dans les posts si les fichiers ci-dessous ne sont pas à jour.
 
-**Semaine 6 (dernière mise à jour) :**
-- Scans cumulés : 47 → 68
-- Leaks détectés : $9,840 → $12,400
-- Agences : 3 → 4
-- Daily scan breakdown : 8/11/14/13/22
+**Métriques produit (admin dashboard) :**
+`../../tracking/metrics/storemd-admin.md`
+→ Source : page admin StoreMD (`/dashboard/admin`)
+→ Mise à jour : chaque samedi par R avant le batch
+
+**Métriques réseaux sociaux :**
+`../../tracking/metrics/[plateforme].md`
+→ Mise à jour : chaque samedi par R avant le batch
 
 ---
 
