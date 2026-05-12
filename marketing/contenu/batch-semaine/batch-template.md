@@ -264,7 +264,9 @@ Chaque post du batch suit EXACTEMENT ce format. Rien de plus, rien de moins.
 
 **CTA :** toujours sur sa propre ligne en fin de post.
 
-**Règle 2-blocs (Twitter, LinkedIn) :** le texte dans un bloc, le lien reply/commentaire dans un bloc séparé.
+**Règle 2-blocs (Twitter UNIQUEMENT) :** le texte dans un bloc, le lien reply dans un bloc séparé. Le lien n'est JAMAIS dans le corps du tweet.
+
+**LinkedIn, Facebook, TikTok, Instagram, IH :** le lien UTM est intégré en fin de post, dans le texte. Pas de bloc séparé, pas de commentaire séparé.
 
 **Traduction :** traduction française obligatoire après chaque texte, pour validation par R avant publication.
 
