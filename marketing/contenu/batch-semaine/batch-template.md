@@ -205,44 +205,68 @@ Sans ces mises à jour, ne pas commencer la rédaction du batch.
 
 ## 3. FORMAT D'UN POST
 
-Chaque post dans le batch DOIT suivre ce format exact. C'est ce qui permet le copier-coller rapide en semaine.
+### 3.1 Header (metadata)
 
-```markdown
----
+Chaque post du batch suit EXACTEMENT ce format. Rien de plus, rien de moins.
 
-#### [ID] — [COMPTE] — [PLATEFORME] — [JOUR DATE] [HORAIRE]
+**Twitter (pas de hashtags) :**
 
-**Vidéo/Carrousel :** `[nom exact du fichier ou "aucun"]`
-**Registre :** [type selon VISUELS.md §1 : feature produit / pain point / résultat scan / data drop / question / tip / carrousel / vidéo produit]
-**Statut :** ⏳
+#### ID — Compte (@handle) — Twitter — Jour JJ/MM HHhMM
 
-**TEXTE (ANGLAIS — À PUBLIER) :**
-```
-[Le texte exact à copier-coller. Prêt à publier tel quel.]
-```
+**Vidéo :** nom exact de l'asset (ou rien si texte seul)
+**UTM :** `lien complet copié depuis tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
 
-**REPLY (si lien) :**
-```
-[Lien UTM en reply — format 2-blocs pour Twitter. Lien en commentaire pour LinkedIn/Facebook. Rien si pas de lien.]
-```
+**Instagram (hashtags + UTM bio) :**
 
-**TRADUCTION (FRANÇAIS — POUR VALIDATION R) :**
-> [Traduction française du post pour que R valide le sens avant publication]
+#### ID — StoreMD — Instagram — Jour JJ/MM HHhMM
 
-**Notes :**
-- Douleur : [quelle douleur de context.md §6]
-- Hook : [quel hook utilisé]
-- Prompt vidéo : [référence au prompt dans le fichier vidéo si applicable]
-- UTM : [le lien UTM complet utilisé, ref tracking/utm/StoreMD/]
-```
+**Vidéo :** nom exact de l'asset (+ format si recyclé : re-export sans watermark, 1080×1350)
+**Hashtags :** copiés depuis `saas-app-shopify/hashtags.md`
+**UTM bio :** `lien complet copié depuis tracking/utm/`
 
-### Règles du format
+**TikTok (pas de hashtags, UTM bio) :**
 
-- Le TEXTE est en anglais, prêt à copier-coller. AUCUNE modification en semaine.
-- Le lien n'est JAMAIS dans le corps du texte pour Twitter et LinkedIn. Toujours en REPLY ou commentaire.
-- La TRADUCTION est pour validation uniquement — on ne la publie pas.
-- Chaque post a son ID unique : `[COMPTE]-[PLATEFORME]-[SEMAINE]-[NUMÉRO]` (ex: STOREMD-TW-S9-01)
-- Les posts sont regroupés par COMPTE dans le batch, pas par jour.
+#### ID — StoreMD — TikTok — Jour JJ/MM HHhMM
+
+**Vidéo :** nom exact de l'asset (ou **Carrousel :** nom exact + nombre de slides + fichier prompt)
+**UTM bio :** `lien complet copié depuis tracking/utm/`
+
+**Facebook (hashtags + UTM post) :**
+
+#### ID — StoreMD — Facebook — Jour JJ/MM HHhMM
+
+**Vidéo :** nom exact de l'asset (+ format si recyclé)
+**Hashtags :** copiés depuis `saas-app-shopify/hashtags.md`
+**UTM :** `lien complet copié depuis tracking/utm/`
+
+**LinkedIn (pas de hashtags) :**
+
+#### ID — Compte (Prénom Nom) — LinkedIn — Jour JJ/MM HHhMM
+
+**Vidéo :** nom exact de l'asset (ou rien si texte seul)
+**UTM :** `lien complet copié depuis tracking/utm/`
+
+**IH (pas de hashtags) :**
+
+#### ID — StoreMD — IndieHackers — Jour JJ/MM HHhMM
+
+**UTM :** `lien complet copié depuis tracking/utm/`
+
+**NE PAS ajouter :** Registre, Douleur, Cohérence jour, Hook ref, Statut, Notes, ou tout autre champ. Le header est minimal. Le texte parle de lui-même.
+
+### 3.2 Format du texte
+
+**Sauts de ligne :** aller à la ligne à chaque changement d'idée. Pas de pavé. Ligne vide entre chaque bloc logique.
+
+**Emojis :** minimum 1 par post, maximum 3. En fin de ligne ou en fin de bloc. Jamais en milieu de phrase.
+
+**Emphase :** majuscule sur UN mot pour insister (ex: "And that's ONE app"). Jamais de phrases entièrement en majuscules.
+
+**CTA :** toujours sur sa propre ligne en fin de post.
+
+**Règle 2-blocs (Twitter, LinkedIn) :** le texte dans un bloc, le lien reply/commentaire dans un bloc séparé.
+
+**Traduction :** traduction française obligatoire après chaque texte, pour validation par R avant publication.
 
 ---
 
