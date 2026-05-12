@@ -14,7 +14,7 @@
 
 #### STOREMD-TW-F-S9-01 — Fabrice (@FabGangi) — Twitter — Lun 11/05 13h00
 
-**Vidéo :** store-md-horror-slow-store (V1)
+**Vidéo :** V1-08_browser_simulation.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -42,7 +42,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TW-R-S9-01 — Romain (@delgado_ro72224) — Twitter — Lun 11/05 14h00
 
-**Vidéo :** store-md-money-daily (V1)
+**Vidéo :** V1-11_ghost_billing_pov.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -74,7 +74,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TK-S9-01 — StoreMD — TikTok — Lun 11/05 14h00
 
-**Vidéo :** V1 "43 Features. One App. Nobody Comes Close."
+**Vidéo :** V1-01_43features_domination.mp4
 **UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **CAPTION :**
@@ -97,7 +97,7 @@ Free beta in bio.
 
 #### STOREMD-TW-SM-S9-01 — StoreMD (@StoreMd_off) — Twitter — Lun 11/05 15h00
 
-**Vidéo :** V1 "43 Features" recyclé TikTok
+**Vidéo :** V1-10_43features_full_list.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -129,7 +129,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-IG-S9-01 — StoreMD — Instagram — Lun 11/05 18h00
 
-**Vidéo :** V1 "43 Features" recyclé TikTok (re-export sans watermark, 1080×1350)
+**Vidéo :** V1-01_43features_domination.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
 **Hashtags :** `#shopifystore` `#ecommercetips` `#smallbusinessowner` `#shopifytips` `#onlinestore`
 **UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
@@ -157,7 +157,7 @@ Free beta access open. Link in bio 👆
 
 #### STOREMD-FB-S9-01 — StoreMD — Facebook — Lun 11/05 18h30
 
-**Vidéo :** V1 "43 Features" recyclé TikTok (re-export sans watermark)
+**Vidéo :** V1-01_43features_domination.mp4 recyclé TikTok (re-export sans watermark)
 **Hashtags :** `#shopify` `#ecommerce` `#smallbusiness`
 **UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
@@ -189,7 +189,7 @@ Free beta access open.
 
 #### STOREMD-TW-F-S9-02 — Fabrice (@FabGangi) — Twitter — Mar 12/05 13h00
 
-**Vidéo :** store-md-beta-10-spots (V1)
+**Vidéo :** V1-21_demo_scan_mobile.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -217,7 +217,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TW-R-S9-02 — Romain (@delgado_ro72224) — Twitter — Mar 12/05 14h00
 
-**Vidéo :** store-md-beta-10-spots (V1)
+**Vidéo :** V1-02_reverse_engineered.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -272,7 +272,7 @@ Link in bio.
 
 #### STOREMD-TW-SM-S9-02 — StoreMD (@StoreMd_off) — Twitter — Mar 12/05 15h00
 
-**Vidéo :** store-md-beta-10-spots (V1) recyclé
+**Vidéo :** V1-23_beta_10_spots.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -308,7 +308,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-LI-R-S9-01 — Romain (Romain Delgado) — LinkedIn — Mar 12/05 15h30
 
-**Vidéo :** store-md-beta-10-spots (V1)
+**Vidéo :** V1-05_530reviews.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 
 **TEXTE :**
@@ -416,7 +416,7 @@ Free beta access open.
 
 #### STOREMD-TW-F-S9-03 — Fabrice (@FabGangi) — Twitter — Mer 13/05 13h00
 
-**Vidéo :** store-md-scan-demo-agency (V1)
+**Vidéo :** V1-22_demo_scan_desktop.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -444,6 +444,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TW-R-S9-03 — Romain (@delgado_ro72224) — Twitter — Mer 13/05 14h00
 
+**Vidéo :** V1-06_kill_list.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -475,7 +476,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TK-S9-03 — StoreMD — TikTok — Mer 13/05 14h00
 
-**Vidéo :** V11 "POV: An App Has Been Charging You 8 Months After Uninstall"
+**Vidéo :** V1-11_ghost_billing_pov.mp4
 **UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **CAPTION :**
@@ -500,7 +501,7 @@ StoreMD finds them in 60 seconds. Link in bio.
 
 #### STOREMD-TW-SM-S9-03 — StoreMD (@StoreMd_off) — Twitter — Mer 13/05 15h00
 
-**Vidéo :** V11 "POV: Ghost Billing" recyclé TikTok
+**Vidéo :** V1-05_530reviews.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -580,7 +581,7 @@ If you run a Shopify store, DM me your .myshopify.com URL and I'll send the inst
 
 #### STOREMD-LI-F-S9-01 — Fabrice (Fabrice Gangitano) — LinkedIn — Mer 13/05 18h00
 
-**Vidéo :** store-md-scan-demo-agency (V1)
+**Vidéo :** V1-08_browser_simulation.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 
 **TEXTE :**
@@ -624,7 +625,7 @@ https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=
 
 #### STOREMD-IG-S9-03 — StoreMD — Instagram — Mer 13/05 18h00
 
-**Vidéo :** V11 "POV: Ghost Billing" recyclé TikTok (re-export sans watermark, 1080×1350)
+**Vidéo :** V1-11_ghost_billing_pov.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
 **Hashtags :** `#shopifyexperts` `#ecommercebusiness` `#shopifymarketing` `#packingorders` `#smallbusiness`
 **UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
@@ -654,7 +655,7 @@ Link in bio for free beta access 👆
 
 #### STOREMD-FB-S9-03 — StoreMD — Facebook — Mer 13/05 18h30
 
-**Vidéo :** V11 "POV: Ghost Billing" recyclé TikTok (re-export sans watermark)
+**Vidéo :** V1-11_ghost_billing_pov.mp4 recyclé TikTok (re-export sans watermark)
 **Hashtags :** `#shopifytips` `#ecommercebusiness` `#entrepreneur`
 **UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
@@ -686,7 +687,7 @@ StoreMD checks for ghost billing, dead code, and 41 other things in 60 seconds. 
 
 #### STOREMD-TW-F-S9-04 — Fabrice (@FabGangi) — Twitter — Jeu 14/05 13h00
 
-**Vidéo :** store-md-before-after-ai (V1)
+**Vidéo :** V1-12_agentic_pov.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -714,6 +715,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TW-R-S9-04 — Romain (@delgado_ro72224) — Twitter — Jeu 14/05 14h00
 
+**Vidéo :** V1-01_43features_domination.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -745,7 +747,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TK-S9-04 — StoreMD — TikTok — Jeu 14/05 14h00
 
-**Vidéo :** V3 "4 Features Nobody Has"
+**Vidéo :** V1-03_4features_exclusives.mp4
 **UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **CAPTION :**
@@ -775,7 +777,7 @@ Beta access in bio.
 
 #### STOREMD-TW-SM-S9-04 — StoreMD (@StoreMd_off) — Twitter — Jeu 14/05 15h00
 
-**Vidéo :** V3 "4 Features" recyclé TikTok
+**Vidéo :** V1-07_invisible_chatgpt.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -809,6 +811,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-LI-R-S9-02 — Romain (Romain Delgado) — LinkedIn — Jeu 14/05 18h00
 
+**Vidéo :** V1-10_43features_full_list.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 
 **TEXTE :**
@@ -860,7 +863,7 @@ https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=
 
 #### STOREMD-IG-S9-04 — StoreMD — Instagram — Jeu 14/05 18h00
 
-**Vidéo :** V3 "4 Features" recyclé TikTok (re-export sans watermark, 1080×1350)
+**Vidéo :** V1-03_4features_exclusives.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
 **Hashtags :** `#shopifystore` `#ecommercetips` `#smallbusinessowner` `#shopifytips` `#onlinestore`
 **UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
@@ -888,7 +891,7 @@ Free beta access. Link in bio 👆
 
 #### STOREMD-FB-S9-04 — StoreMD — Facebook — Jeu 14/05 18h30
 
-**Vidéo :** V3 "4 Features" recyclé TikTok (re-export sans watermark)
+**Vidéo :** V1-03_4features_exclusives.mp4 recyclé TikTok (re-export sans watermark)
 **Hashtags :** `#shopifybusiness` `#packingorders` `#shopifyseller`
 **UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
@@ -920,7 +923,7 @@ All in one scan. 60 seconds. Free beta access open.
 
 #### STOREMD-TW-F-S9-05 — Fabrice (@FabGangi) — Twitter — Ven 15/05 13h00
 
-**Vidéo :** store-md-horror-ghost-apps (V1)
+**Vidéo :** V1-04_agent_vs_report.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -948,6 +951,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TW-R-S9-05 — Romain (@delgado_ro72224) — Twitter — Ven 15/05 14h00
 
+**Vidéo :** V1-02_reverse_engineered.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -975,7 +979,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-TK-S9-05 — StoreMD — TikTok — Ven 15/05 14h00
 
-**Vidéo :** V4 "We Don't Send Reports. We Fix Your Store."
+**Vidéo :** V1-09_oneclick_fix.mp4
 **UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **CAPTION :**
@@ -1002,7 +1006,7 @@ Agent, not audit. 60 seconds. Link in bio.
 
 #### STOREMD-TW-SM-S9-05 — StoreMD (@StoreMd_off) — Twitter — Ven 15/05 15h00
 
-**Vidéo :** V4 "We Don't Send Reports" recyclé TikTok
+**Vidéo :** V1-06_kill_list.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TEXTE :**
@@ -1034,6 +1038,7 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 #### STOREMD-LI-F-S9-02 — Fabrice (Fabrice Gangitano) — LinkedIn — Ven 15/05 15h30
 
+**Vidéo :** V1-11_ghost_billing_pov.mp4
 **UTM :** `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 
 **TEXTE :**
@@ -1081,7 +1086,7 @@ https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=
 
 #### STOREMD-IG-S9-05 — StoreMD — Instagram — Ven 15/05 18h00
 
-**Vidéo :** V4 "We Don't Send Reports" recyclé TikTok (re-export sans watermark, 1080×1350)
+**Vidéo :** V1-09_oneclick_fix.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
 **Hashtags :** `#shopifybusiness` `#ecommercestore` `#shopifyseller` `#shopsmall` `#shopifyapps`
 **UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
@@ -1109,7 +1114,7 @@ Free beta in bio 👆
 
 #### STOREMD-FB-S9-05 — StoreMD — Facebook — Ven 15/05 18h30
 
-**Vidéo :** V4 "We Don't Send Reports" recyclé TikTok (re-export sans watermark)
+**Vidéo :** V1-09_oneclick_fix.mp4 recyclé TikTok (re-export sans watermark)
 **Hashtags :** `#shopify` `#ecommerce` `#smallbusiness`
 **UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
@@ -1228,7 +1233,7 @@ StoreMD checks all of it in 60 seconds. Free beta access open.
 
 #### STOREMD-TK-S9-07 — StoreMD — TikTok — Dim 17/05 14h00
 
-**Vidéo :** V5 "Built From 530+ Reviews of Your Current Apps"
+**Vidéo :** V1-05_530reviews.mp4
 **UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **CAPTION :**
@@ -1255,7 +1260,7 @@ StoreMD catches all three. 60 seconds. Link in bio.
 
 #### STOREMD-IG-S9-07 — StoreMD — Instagram — Dim 17/05 18h00
 
-**Vidéo :** V5 "530+ Reviews" recyclé TikTok (re-export sans watermark, 1080×1350)
+**Vidéo :** V1-05_530reviews.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
 **Hashtags :** `#shopifystore` `#ecommercetips` `#smallbusinessowner` `#shopifytips` `#onlinestore`
 **UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
@@ -1283,7 +1288,7 @@ Free beta in bio 👆
 
 #### STOREMD-FB-S9-07 — StoreMD — Facebook — Dim 17/05 18h30
 
-**Vidéo :** V5 "530+ Reviews" recyclé TikTok (re-export sans watermark)
+**Vidéo :** V1-05_530reviews.mp4 recyclé TikTok (re-export sans watermark)
 **Hashtags :** `#shopifytips` `#ecommercebusiness` `#entrepreneur`
 **UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
