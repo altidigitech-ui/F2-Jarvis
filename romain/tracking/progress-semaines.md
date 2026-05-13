@@ -16,6 +16,9 @@
 | 12/05 | 19:15 | StoreMD app refusée Shopify, en cours de réparation, demande relancée | StoreMD | Produit | Bloquant cold résolu une fois app acceptée |
 | 12/05 | 23:45 | Tous les posts schedulés mar-dim sauf ceux avec liens UTM non valides (tri à faire mercredi). TODO créé : carrousels hors 9:16, vidéos StoreMD, implémentation Jarvis, cold à lancer (red flag), liens UTM bio <80 car. TikTok/Instagram/Facebook (double flag) | Multi-plateforme | Publication + Ops | Tri UTM mercredi matin avant publication |
 | 12/05 | 23:50 | Posts lundi et mardi non postés. Départ publication à partir du 13/05, tous les posts sont schedulés | Multi-plateforme | Publication | Décalage J+2 sur le planning initial |
+| 13/05 | 18:42 | 28 posts schedulés du 13/05 au 17/05 pour tous les comptes : Twitter (R, F, StoreMD) ✅, TikTok (TikTok Studio) ✅, Facebook (page StoreMD) ✅, LinkedIn (R, F) ✅. Instagram en manuel jour par jour (scheduling impossible). IH publié manuellement. | Multi-plateforme | Publication | Lundi et mardi non postés (décalage J+2) |
+| 13/05 | 18:42 | Profils mis à jour : bio Twitter StoreMD ✅, bannière Twitter StoreMD ✅, bio Instagram StoreMD ✅, lien UTM Instagram ✅, bio page Facebook StoreMD ✅, profil IH changé de FoundryTwo à StoreMD ✅ | Multi-plateforme | Profils | Reste : bios Facebook Alti, Twitter R/F liens UTM, LinkedIn R/F liens UTM |
+| 13/05 | 18:42 | Batch S9 intégralement refondu : UTM corrigés, données inventées supprimées, mapping vidéo V1 post par post, formatting vertical, emojis, RED LINES dans batch template | Multi-plateforme | Publication | Nouveau standard batch en place |
 
 -----
 
