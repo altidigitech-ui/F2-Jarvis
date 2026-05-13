@@ -15,6 +15,7 @@
 | 12/05 | 19:15 | Batch terminé, schedulé mar-dim (posts lundi annulés) | Multi-plateforme | Publication | Retard rattrapé |
 | 12/05 | 19:15 | StoreMD app refusée Shopify, en cours de réparation, demande relancée | StoreMD | Produit | Bloquant cold résolu une fois app acceptée |
 | 12/05 | 23:45 | Tous les posts schedulés mar-dim sauf ceux avec liens UTM non valides (tri à faire mercredi). TODO créé : carrousels hors 9:16, vidéos StoreMD, implémentation Jarvis, cold à lancer (red flag), liens UTM bio <80 car. TikTok/Instagram/Facebook (double flag) | Multi-plateforme | Publication + Ops | Tri UTM mercredi matin avant publication |
+| 12/05 | 23:50 | Posts lundi et mardi non postés. Départ publication à partir du 13/05, tous les posts sont schedulés | Multi-plateforme | Publication | Décalage J+2 sur le planning initial |
 
 -----
 
