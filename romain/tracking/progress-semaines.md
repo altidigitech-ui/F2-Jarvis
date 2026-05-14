@@ -19,6 +19,8 @@
 | 13/05 | 18:42 | 28 posts schedulés du 13/05 au 17/05 pour tous les comptes : Twitter (R, F, StoreMD) ✅, TikTok (TikTok Studio) ✅, Facebook (page StoreMD) ✅, LinkedIn (R, F) ✅. Instagram en manuel jour par jour (scheduling impossible). IH publié manuellement. | Multi-plateforme | Publication | Lundi et mardi non postés (décalage J+2) |
 | 13/05 | 18:42 | Profils mis à jour : bio Twitter StoreMD ✅, bannière Twitter StoreMD ✅, bio Instagram StoreMD ✅, lien UTM Instagram ✅, bio page Facebook StoreMD ✅, profil IH changé de FoundryTwo à StoreMD ✅ | Multi-plateforme | Profils | Reste : bios Facebook Alti, Twitter R/F liens UTM, LinkedIn R/F liens UTM |
 | 13/05 | 18:42 | Batch S9 intégralement refondu : UTM corrigés, données inventées supprimées, mapping vidéo V1 post par post, formatting vertical, emojis, RED LINES dans batch template | Multi-plateforme | Publication | Nouveau standard batch en place |
+| 14/05 | 21:00 | Décision UTM prise. FoundryTwo page vitrines + liens UTM par plateforme en cours de mise en place | Multi-plateforme | Ops | En cours |
+| 14/05 | 21:00 | 23 vidéos V1 du mapping toutes opérationnelles et utilisables (V1-01 à V1-23) | StoreMD | Vidéos | Mapping à jour |
 
 -----
 
