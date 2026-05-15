@@ -15,7 +15,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 |-----------|------|
 | Bio — R (@delgado_ro72224) | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain` |
 | Bio — F (@FabGangi) | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice` |
-| Bio — StoreMD | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_storemd` |
+| Bio — StoreMD (@StoreMd_off) | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_storemd` |
 | Post organique (feature drop) | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post` |
 | Thread | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=thread&utm_content=thread_cta` |
 | Reply (engagement) | `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=reply&utm_content=reply_cta` |
@@ -30,8 +30,8 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 
 | Placement | Lien |
 |-----------|------|
-| Bio (Featured) — R | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain` |
-| Bio (Featured) — F | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice` |
+| Bio (Featured) — R (Romain Delgado) | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain` |
+| Bio (Featured) — F (Fabrice Gangitano) | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice` |
 | Post organique | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post` |
 | Article LinkedIn | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=article&utm_content=article_cta` |
 | Commentaire | `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=comment&utm_content=comment_cta` |
@@ -60,7 +60,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 
 | Placement | Lien |
 |-----------|------|
-| Bio | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
+| Bio — StoreMD (@storeemd) | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
 | Vidéo organique | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=video_cta` |
 | Ads — traffic | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=paid&utm_campaign=ads_traffic&utm_content=ad_variant_a` |
 | Ads — conversion | `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=paid&utm_campaign=ads_install&utm_content=ad_variant_a` |
@@ -85,7 +85,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 
 | Placement | Lien |
 |-----------|------|
-| Bio (link-in-bio) | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
+| Bio — StoreMD (@storemd_off) | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
 | Story (sticker link) | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=organic&utm_campaign=story&utm_content=story_sticker` |
 | Reels caption | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=organic&utm_campaign=reels&utm_content=caption_cta` |
 | Ads — feed | `https://storemd.vercel.app/?utm_source=instagram&utm_medium=paid&utm_campaign=ads_feed&utm_content=ad_variant_a` |
@@ -99,7 +99,9 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 
 | Placement | Lien |
 |-----------|------|
-| Page (about / link) | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link` |
+| Profil AltiDigiTech — R (bio) | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=profile&utm_content=bio_altidigitech` |
+| Profil Oni Zuka — F (bio) | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=profile&utm_content=bio_onizuka` |
+| Page StoreMD (Storemd) | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link` |
 | Post organique | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
 | Groupe Shopify merchants | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=group_shopify&utm_content=group_post` |
 | Groupe ecommerce | `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=group_ecommerce&utm_content=group_post` |
@@ -126,7 +128,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | Placement | Lien |
 |-----------|------|
 | Bio — R (romain_delgado) | `https://storemd.vercel.app/?utm_source=producthunt&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain` |
-| Bio — F (Fabrice) | `https://storemd.vercel.app/?utm_source=producthunt&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice` |
+| Bio — F (@fabrice_gangitano) | `https://storemd.vercel.app/?utm_source=producthunt&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice` |
 | Launch day — page Product Hunt | `https://storemd.vercel.app/?utm_source=producthunt&utm_medium=referral&utm_campaign=launch_day&utm_content=ph_listing` |
 | Launch day — first comment (maker) | `https://storemd.vercel.app/?utm_source=producthunt&utm_medium=referral&utm_campaign=launch_day&utm_content=ph_maker_comment` |
 | Post-launch — gallery | `https://storemd.vercel.app/?utm_source=producthunt&utm_medium=referral&utm_campaign=post_launch&utm_content=ph_gallery` |
@@ -138,7 +140,7 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 | Placement | Lien |
 |-----------|------|
 | Shopify Community (forums) | `https://storemd.vercel.app/?utm_source=shopify_community&utm_medium=organic&utm_campaign=forum_post&utm_content=post_cta` |
-| IndieHackers — bio | `https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
+| IndieHackers — bio (StoreMD) | `https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=bio&utm_campaign=profile&utm_content=bio_link` |
 | IndieHackers — post | `https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta` |
 | IndieHackers — milestone | `https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=milestone&utm_content=milestone_cta` |
 | Hacker News — Show HN | `https://storemd.vercel.app/?utm_source=hackernews&utm_medium=organic&utm_campaign=show_hn&utm_content=hn_post` |
@@ -190,7 +192,7 @@ Toutes les valeurs sont `lowercase_snake_case`. Pas d'espaces, pas d'accents, pa
 | `utm_source` | D'où vient le visiteur (plateforme) | `twitter`, `linkedin`, `reddit`, `tiktok`, `youtube`, `instagram`, `facebook`, `email`, `producthunt`, `shopify_community`, `shopify_appstore`, `indiehackers`, `hackernews`, `devto`, `qrcode`, `signature` |
 | `utm_medium` | Type de canal | `bio`, `organic`, `paid`, `newsletter`, `cold`, `partner`, `dm`, `referral`, `offline`, `email` |
 | `utm_campaign` | Initiative / groupe | `profile`, `post`, `thread`, `reply`, `comment`, `article`, `feature_launch`, `ads_traffic`, `ads_install`, `ads_feed`, `ads_stories`, `r_shopify`, `r_ecommerce`, `r_entrepreneur`, `group_shopify`, `group_ecommerce`, `video_description`, `pinned_comment`, `community_post`, `video`, `reels`, `story`, `weekly_digest`, `merchant_outreach`, `agency_outreach`, `partnership`, `launch_day`, `post_launch`, `forum_post`, `milestone`, `show_hn`, `event_conference`, `event_meetup`, `tradeshow`, `sticker`, `founder_signature`, `support_signature`, `team_signature`, `outreach`, `couche_b_beta` |
-| `utm_content` | Créatif / placement précis (A/B) | `bio_link`, `bio_romain`, `bio_fabrice`, `bio_storemd`, `post`, `post_cta`, `thread_cta`, `reply_cta`, `comment_cta`, `cta_post`, `cta_main`, `featured`, `dm_share`, `story_sticker`, `caption_cta`, `header_cta`, `footer_cta`, `about_link`, `description_link`, `endscreen_cta`, `community_cta`, `ad_variant_a`, `ad_variant_b`, `ph_listing`, `ph_maker_comment`, `ph_gallery`, `hn_post`, `hn_comment`, `article_cta`, `milestone_cta`, `qr_badge`, `qr_flyer`, `qr_booth`, `qr_swag`, `signature_link`, `partner_cta`, `listing_cta`, `demo_link`, `gallery_link` |
+| `utm_content` | Créatif / placement précis (A/B) | `bio_link`, `bio_romain`, `bio_fabrice`, `bio_storemd`, `bio_altidigitech`, `bio_onizuka`, `post`, `post_cta`, `thread_cta`, `reply_cta`, `comment_cta`, `cta_post`, `cta_main`, `featured`, `dm_share`, `story_sticker`, `caption_cta`, `header_cta`, `footer_cta`, `about_link`, `description_link`, `endscreen_cta`, `community_cta`, `ad_variant_a`, `ad_variant_b`, `ph_listing`, `ph_maker_comment`, `ph_gallery`, `hn_post`, `hn_comment`, `article_cta`, `milestone_cta`, `qr_badge`, `qr_flyer`, `qr_booth`, `qr_swag`, `signature_link`, `partner_cta`, `listing_cta`, `demo_link`, `gallery_link` |
 | `utm_term` | Mot-clé / cible (réservé aux ads paid) | `keyword_<mot>`, `audience_<name>` |
 
 ### Règles
