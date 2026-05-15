@@ -11,11 +11,11 @@
 
 | Plateforme | Handle | Statut | Restrictions | Sert quels business | UTM bio | Notes |
 |-----------|--------|--------|-------------|--------------------|---------| ------|
-| Twitter | @delgado_ro72224 | Actif | Premium obligatoire (8$/mois) | StoreMD (cold + publication), tous futurs SaaS | À compléter | |
-| LinkedIn | Romain Delgado | Actif | Commercial Use Limit (~250-350 recherches/mois). Google X-Ray en fallback. 3 notes personnalisées/mois (gratuit). | StoreMD (cold + publication), tous futurs SaaS | À compléter | |
-| Facebook | À compléter | Actif | — | StoreMD (cold groupes + republication), høkuno (republication) | — | Compte perso existant réutilisé |
+| Twitter | @delgado_ro72224 | Actif | Premium obligatoire (8$/mois) | StoreMD (cold + publication), tous futurs SaaS | https://storemd.vercel.app/?utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain | |
+| LinkedIn | Romain Delgado | Actif | Commercial Use Limit (~250-350 recherches/mois). Google X-Ray en fallback. 3 notes personnalisées/mois (gratuit). | StoreMD (cold + publication), tous futurs SaaS | https://storemd.vercel.app/?utm_source=linkedin&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain | |
+| Facebook | Alti DigiTech | Actif | — | StoreMD (cold groupes + republication), høkuno (republication) | À créer dans le fichier UTM | Compte perso existant réutilisé |
 | Reddit | À compléter | Actif | Pas de cold. Warming/karma uniquement. | Warming général | — | 13 subs rejoints (voir romain/tracking/comptes-groupes.md) |
-| PH | @romain_delgado | Actif | Pas de cold. Karma farming 6/jour. | Karma + futurs lancements | — | |
+| PH | @romain_delgado | Actif | Pas de cold. Karma farming 6/jour. | Karma + futurs lancements | https://storemd.vercel.app/?utm_source=producthunt&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain | |
 
 ---
 
@@ -23,11 +23,11 @@
 
 | Plateforme | Handle | Statut | Restrictions | Sert quels business | UTM bio | Notes |
 |-----------|--------|--------|-------------|--------------------|---------| ------|
-| Twitter | @FabGangi | Actif | Premium obligatoire (8$/mois) | StoreMD (cold + publication), tous futurs SaaS | À compléter | |
-| LinkedIn | Fabrice Gangitano | Actif | Commercial Use Limit. 3 notes personnalisées/mois (gratuit). | StoreMD (cold + publication), tous futurs SaaS | À compléter | |
+| Twitter | @FabGangi | Actif | Premium obligatoire (8$/mois) | StoreMD (cold + publication), tous futurs SaaS | https://storemd.vercel.app/?utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice | |
+| LinkedIn | Fabrice Gangitano | Actif | Commercial Use Limit. 3 notes personnalisées/mois (gratuit). | StoreMD (cold + publication), tous futurs SaaS | https://storemd.vercel.app/?utm_source=linkedin&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice | |
 | Facebook | À compléter | Actif | — | StoreMD (cold groupes + republication), høkuno (republication) | — | Compte perso existant réutilisé. Nouveau compte banni par Facebook. |
 | Reddit | À compléter | Actif | Pas de cold. Warming/karma uniquement. | Warming général | — | 11 subs rejoints (voir fabrice/tracking/comptes-groupes.md) |
-| PH | À compléter | Actif | Pas de cold. Karma farming 6/jour. | Karma + futurs lancements | — | |
+| PH | À compléter | Actif | Pas de cold. Karma farming 6/jour. | Karma + futurs lancements | https://storemd.vercel.app/?utm_source=producthunt&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice | |
 
 ---
 
@@ -35,11 +35,11 @@
 
 | Plateforme | Handle | Statut | Géré par | Cold | Publication | UTM bio | Notes |
 |-----------|--------|--------|---------|------|------------|---------|-------|
-| TikTok | À compléter | Actif | R + F partagé | 10 DMs/jour | 1/jour lun-ven (vidéo source) | À compléter | Business Account |
-| Instagram | À compléter | Actif | R + F partagé | 10 DMs/jour | 1/jour lun-ven (recyclé TikTok) | À compléter | |
-| Twitter | À compléter | Actif | R + F partagé | Non | 1/jour lun-ven | À compléter | Premium obligatoire |
-| Facebook | À compléter | Actif | R + F partagé | Non | 1/jour lun-ven (recyclé TikTok) | À compléter | Page ou profil |
-| IH | À compléter | Actif | R + F partagé | Non | 1/sem mercredi | — | |
+| TikTok | @storeemd | Actif | R + F partagé | 10 DMs/jour | 1/jour lun-ven (vidéo source) | https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link | Business Account |
+| Instagram | @storemd_off | Actif | R + F partagé | 10 DMs/jour | 1/jour lun-ven (recyclé TikTok) | https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link | |
+| Twitter | @StoreMd_off | Actif | R + F partagé | Non | 1/jour lun-ven | https://storemd.vercel.app/?utm_source=twitter&utm_medium=bio&utm_campaign=profile&utm_content=bio_storemd | Premium obligatoire |
+| Facebook | Storemd (Page, sous compte Meta AltiDigiTech) | Actif | R + F partagé | Non | 1/jour lun-ven (recyclé TikTok) | https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link | Page ou profil |
+| IH | StoreMD | Actif | R + F partagé | Non | 1/sem mercredi | https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=bio&utm_campaign=profile&utm_content=bio_link | |
 
 ---
 
