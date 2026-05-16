@@ -46,6 +46,8 @@ Les events `page_view` et `install_start` capturés par `backend/app/api/routes/
 
 | Placement | Lien |
 |-----------|------|
+| Bio — R (u/Decent-Amphibian-581) | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=bio&utm_campaign=profile&utm_content=bio_romain` |
+| Bio — F (u/Flimsy_Exercise43) | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=bio&utm_campaign=profile&utm_content=bio_fabrice` |
 | r/shopify — post | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=organic&utm_campaign=r_shopify&utm_content=post` |
 | r/shopify — commentaire | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=organic&utm_campaign=r_shopify&utm_content=comment` |
 | r/ecommerce — post | `https://storemd.vercel.app/?utm_source=reddit&utm_medium=organic&utm_campaign=r_ecommerce&utm_content=post` |
