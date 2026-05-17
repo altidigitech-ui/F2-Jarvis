@@ -394,36 +394,47 @@ Si un post a une vidéo associée :
 - Statistiques agrégées e-com OK (marges marketing)
 - Scénarios illustratifs OK (pas de noms réels)
 
-### 4.7 Sélection des vidéos
+### 4.7 Sélection des vidéos — modèle TikTok-first
 
-Chaque jour de la semaine a un THÈME. Le thème est défini par la vidéo/carrousel TikTok StoreMD du jour. Tous les posts du jour doivent être cohérents avec ce thème.
+UNE vidéo TikTok par jour est la source unique du jour. TOUS les comptes du jour la recyclent. Seuls les textes diffèrent entre plateformes. IH est la seule exception (texte long-form sans vidéo).
 
-**Process de sélection :**
+**Process de sélection (1 vidéo par jour) :**
 
-1. Choisir la vidéo TikTok StoreMD du jour EN PREMIER — c'est elle qui définit le thème
-2. Lire le PROMPT complet de la vidéo dans le fichier source (V2 ou V3) pour comprendre ce qu'elle montre
-3. Choisir une vidéo V1 pour le tweet F — cohérente avec le thème, angle technique
-4. Choisir une vidéo V1 pour le tweet R — cohérente avec le thème, angle business
-5. La vidéo V1 de F et R PEUT être la même si c'est cohérent (angles différents, même sujet)
-6. La vidéo StoreMD Twitter PEUT recycler la même vidéo que TikTok si c'est cohérent (même compte StoreMD)
-7. Instagram et Facebook recyclent TOUJOURS la vidéo/carrousel TikTok du jour (re-export sans watermark)
+1. Choisir la vidéo TikTok StoreMD du jour EN PREMIER — c'est elle qui définit le thème ET alimente tous les comptes du jour
+2. Lire le PROMPT complet de la vidéo dans le fichier source (`asset-brand/storemd/videos/V1/MAPPING_VIDEOS_V1.md` ou les fichiers de prompts détaillés) pour comprendre ce qu'elle montre
+3. La même vidéo est recyclée sur : Instagram StoreMD, Facebook StoreMD, Twitter StoreMD, Twitter R perso, Twitter F perso, LinkedIn R perso (si jour LinkedIn R), LinkedIn F perso (si jour LinkedIn F)
+4. IH (compte FoundryTwo, mercredi uniquement) ne reçoit PAS de vidéo — texte long-form + screenshot optionnel
+5. Ne JAMAIS choisir une vidéo différente pour F, R ou Twitter StoreMD — le modèle est TikTok-first strict
+6. Préparer les exports nécessaires : 1080×1920 master (TikTok/TW/FB/LinkedIn), 1080×1350 pour Instagram si Reel adaptation requise, tous sans watermark
 
 **Règles de nommage dans le batch :**
 
-- V1 : toujours le nom exact `store-md-[nom]` (ex: `store-md-horror-slow-store`)
-- V2 : toujours `VIDÉO N — "Titre complet"` + chemin fichier source (ex: `VIDÉO 1 — "43 Features. One App. Nobody Comes Close."`)
-- V3 : idem format V2 (ex: `VIDÉO 13 — "Watch a Real Scan. Sound On."`)
-- Carrousels : nom du dossier + nombre de slides (ex: `Carrousel "Gains Potentiels" — 6 slides`)
-- Recyclage : toujours préciser "(recyclé TikTok, re-export sans watermark)"
-- Ne JAMAIS écrire "aucun (texte seul)" si une vidéo V1 cohérente avec le thème existe
+- Vidéo V1 : nom exact du fichier (ex: `V1-01_43features_domination.mp4`)
+- Carrousels : nom du dossier + nombre de slides + fichier prompt (ex: `Carrousel "Gains Potentiels" — 6 slides, PROMPT_CAROUSSEL_3.md`)
+- Recyclage : préciser "(recyclé TikTok, re-export sans watermark)" sur chaque post qui n'est pas le post TikTok source
+- Mention de la vidéo source : la même vidéo apparaît sur tous les posts du jour, avec la même référence
 
 **Cohérence texte/vidéo :**
 
 - Le texte du post doit COLLER avec ce que la vidéo montre
-- Si la vidéo montre du ghost billing, le texte parle de ghost billing
-- Si la vidéo montre une démo scan, le texte parle du scan
+- Si la vidéo montre du ghost billing, tous les textes du jour parlent de ghost billing (chacun avec son angle/voix)
+- Si la vidéo montre une démo scan, tous les textes parlent du scan
 - Ne jamais écrire un texte qui contredit ou ignore ce que la vidéo montre
-- Le prompt de la vidéo est noté dans le champ "Notes" de chaque post
+- Le prompt de la vidéo est noté dans le champ "Notes" de chaque post (référence unique pour les 6-8 posts du jour)
+
+**Adaptation texte par compte :**
+
+| Compte | Adaptation du texte |
+|--------|---------------------|
+| TikTok StoreMD | Caption native source |
+| Instagram StoreMD | Caption identique TikTok (100%) |
+| Facebook StoreMD | Caption identique TikTok (100%) |
+| Twitter StoreMD | 100-280 car., format 2-blocs si lien, ton neutre produit |
+| Twitter R perso | 100-280 car., voix R "I", angle business/growth |
+| Twitter F perso | 100-280 car., voix F "I", angle technique accessible |
+| LinkedIn R perso | 800-1300 car., 1 phrase/ligne, voix R |
+| LinkedIn F perso | 800-1300 car., 1 phrase/ligne, voix F |
+| IH FoundryTwo | Long-form, focus produit, transparent, pas de vidéo |
 
 ---
 
@@ -474,28 +485,36 @@ Cette étape sera automatisée via la commande `/archivage` (Phase 6).
 | StoreMD | Instagram | 7/7 | 7 |
 | StoreMD | Facebook | 7/7 | 7 |
 | StoreMD | Twitter | Lun-ven | 5 |
-| StoreMD | IH | Mercredi | 1 |
+| FoundryTwo | IH | Mercredi | 1 |
 | R perso | Twitter | Lun-ven | 5 |
 | R perso | LinkedIn | Mar + jeu | 2 |
 | F perso | Twitter | Lun-ven | 5 |
 | F perso | LinkedIn | Mer + ven | 2 |
 | **TOTAL** | | | **41** |
 
-### Recyclage
+### Recyclage — modèle TikTok-first
 
-- TikTok = source vidéo
-- Instagram = recyclé TikTok (re-export sans watermark, même jour à 18h)
-- Facebook = recyclé TikTok (même jour à 18h30)
-- Twitter StoreMD = texte seul (pas de recyclage vidéo)
-- IH = texte long-form (pas de recyclage vidéo)
+UNE vidéo TikTok par jour alimente TOUS les comptes du jour. Seuls les textes diffèrent.
 
-Donc en RÉDACTION réelle :
-- 7 vidéos/captions TikTok (recyclées sur Insta + FB = 21 posts pour 7 rédactions)
-- 5 tweets StoreMD
-- 1 post IH
-- 5 tweets R + 2 LinkedIn R
-- 5 tweets F + 2 LinkedIn F
-- **Total rédaction : 27 posts uniques pour 41 publications**
+- TikTok StoreMD = source vidéo (1 vidéo/jour)
+- Instagram StoreMD = vidéo + caption identiques TikTok (recyclage 100%)
+- Facebook StoreMD = vidéo + caption identiques TikTok (recyclage 100%)
+- Twitter StoreMD = vidéo TikTok recyclée + texte adapté Twitter
+- Twitter R perso = vidéo TikTok recyclée + texte voix R adapté
+- Twitter F perso = vidéo TikTok recyclée + texte voix F adapté
+- LinkedIn R perso = vidéo TikTok recyclée + texte long-form voix R
+- LinkedIn F perso = vidéo TikTok recyclée + texte long-form voix F
+- IH FoundryTwo = pas de vidéo, texte long-form focus produit + screenshot optionnel
+
+### Stats rédaction réelle
+
+- 7 vidéos uniques produites/sélectionnées (1/jour, source TikTok)
+- 7 captions TikTok (sources, dupliquées identiques sur IG + FB)
+- 5 tweets StoreMD (lun-ven)
+- 1 post IH FoundryTwo (mercredi)
+- 5 tweets R perso (lun-ven) + 2 LinkedIn R (mar + jeu)
+- 5 tweets F perso (lun-ven) + 2 LinkedIn F (mer + ven)
+- **Total rédaction : 27 textes uniques pour 41 publications**
 
 ---
 
