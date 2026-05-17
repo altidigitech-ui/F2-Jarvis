@@ -187,19 +187,42 @@ Pour fréquence, horaires précis et règles de recyclage détaillées, voir `..
 
 ## 11. PUBLICATION — COMPTES STOREMD
 
-### Source et recyclage
+### Source et recyclage — modèle TikTok-first
 
-TikTok = source de contenu vidéo. Chaque vidéo est recyclée :
-1. Créer le contenu natif TikTok (Remotion ou CapCut)
-2. Exporter fichier master : 1080x1920, 9:16, MP4, aucun watermark
-3. Poster sur TikTok nativement (pas via scheduler)
-4. Poster sur Instagram Reels 12-24h après (re-export, pas download avec watermark)
-5. Poster sur Facebook Reels (idem)
-6. Posts Twitter et IH = texte (pas de recyclage vidéo)
+TikTok est la source unique du contenu vidéo. UNE vidéo TikTok par jour alimente TOUS les comptes du jour. Seuls les textes diffèrent entre plateformes pour respecter les contraintes de format et de voix.
+
+Production amont (samedi) :
+1. Créer le contenu natif TikTok (Remotion, CapCut, ou recyclage du catalogue `asset-brand/storemd/videos/V1/`)
+2. Exporter le fichier master : 1080×1920, 9:16, MP4, aucun watermark, aucune incrustation autre plateforme
+3. Re-exporter une version 1080×1350 (4:5) pour Instagram si nécessaire
+
+Recyclage par compte (mapping S10) :
+
+| Compte | Vidéo | Texte |
+|--------|-------|-------|
+| TikTok StoreMD | Vidéo source du jour | Caption native (source) |
+| Instagram StoreMD | Vidéo source identique | Caption identique TikTok (recyclage 100%) |
+| Facebook StoreMD | Vidéo source identique | Caption identique TikTok (recyclage 100%) |
+| Twitter StoreMD | Vidéo source recyclée | Texte adapté Twitter (100-280 car., format 2-blocs si lien) |
+| Twitter R perso | Vidéo source recyclée | Texte voix R adapté ("I", angle business/growth) |
+| Twitter F perso | Vidéo source recyclée | Texte voix F adapté ("I", angle technique accessible) |
+| LinkedIn R perso (mar+jeu) | Vidéo source recyclée | Texte long-form voix R (800-1300 car., 1 phrase/ligne) |
+| LinkedIn F perso (mer+ven) | Vidéo source recyclée | Texte long-form voix F |
+| IH FoundryTwo (mer) | PAS de vidéo | Texte long-form focus produit + screenshot optionnel |
+
+Stats hebdo : 7 vidéos uniques alimentent 41 publications. Travail de rédaction = 27 textes uniques (les captions IG et FB dupliquent celle de TikTok).
+
+Règles de cohérence :
+- Le texte d'un post doit COLLER avec ce que la vidéo montre. Si la vidéo parle de ghost billing, le texte parle de ghost billing.
+- Le prompt source de chaque vidéo est noté dans le champ "Notes" du post au batch (ref : `asset-brand/storemd/videos/V1/MAPPING_VIDEOS_V1.md`).
+- Le recyclage Instagram/Facebook = vidéo + caption strictement identiques à TikTok. Pas d'adaptation.
+- Le recyclage Twitter (StoreMD/R/F) et LinkedIn (R/F) = même vidéo, texte adapté par compte selon contraintes plateforme et voix.
+- IH ne reçoit pas la vidéo (format texte produit long-form), peut intégrer un screenshot du site ou du dashboard si pertinent.
 
 Tout est batché le samedi et schedulé. En semaine on ne rédige pas.
 Template batch : `publication/batch-semaine.md`
 Batch central : `../../marketing/contenu/batch-semaine/batch-semaine.md`
+Règles complètes recyclage + sélection vidéo : `../../marketing/contenu/batch-semaine/batch-template.md` §4.7 + §7.
 
 ### Cadence
 
