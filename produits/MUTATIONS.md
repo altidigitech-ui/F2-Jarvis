@@ -94,7 +94,7 @@ Total : 380+ reviews de 4 concurrents confirment que StoreMD résout un problèm
 - **Bots blacklistent les domaines email :** les emails d'abandon envoyés aux bots marquent le domaine comme spam
 - **1 seconde de délai = -7% conversion** (Google). 3 secondes = 40% des visiteurs partent.
 
-Market Clarity recommande un pricing de $149-199/mois pour le bot blocking et $199/mois pour le diagnostic conversion. Notre pricing ($39-249/mois) inclut TOUT dans un seul produit.
+Market Clarity recommande un pricing de $149-199/mois pour le bot blocking et $199/mois pour le diagnostic conversion. Notre pricing ($29-199/mois) inclut TOUT dans un seul produit.
 
 ### Module Listings (ex-ListingLab — 14 features fusionnées)
 
@@ -161,7 +161,7 @@ Source : patterns OpenClaw (browser automation via CDP). Implémenté avec Playw
 | StoreScan (0 reviews, $9.99-49.99) | 9 scanners passifs, rapport PDF | Agent continu 24/7, App Impact, Bot Filter, Ghost Billing, Agentic Readiness, Browser Automation |
 | Clawly (0 reviews) | Framework IA généraliste | 43 features pré-configurées, zéro setup |
 | Speed optimizers (TinyIMG, Thunder) | Compression images, defer scripts | Diagnostique le POURQUOI. "C'est Privy qui injecte 340KB." |
-| Agences audit ($500-$2000) | Rapport one-shot PDF | Monitoring continu pour $39/mois |
+| Agences audit ($500-$2000) | Rapport one-shot PDF | Monitoring continu pour $29/mois |
 | Overlays accessibilité (Isonomy, accessiBe) | Widget par-dessus le code | Détecte et fixe au niveau du code, monitoring continu |
 
 ---

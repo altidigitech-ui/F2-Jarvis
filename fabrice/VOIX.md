@@ -156,7 +156,7 @@ Longueur : 1-3 phrases.
 
 ### 5. Le comparatif
 Comparer des approches pour le merchant, pas des stacks pour le dev.
-"agency audit = $2K for a PDF one-shot. you read it once and forget. automated scan = $39/month, checks everything continuously and alerts you when something breaks."
+"agency audit = $2K for a PDF one-shot. you read it once and forget. automated scan = $29/month, checks everything continuously and alerts you when something breaks."
 Longueur : 3-5 phrases.
 
 ### 6. Le myth-buster
