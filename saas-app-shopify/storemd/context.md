@@ -175,11 +175,13 @@ La transition est fluide. On ne cherche pas deux types de personnes. On cherche 
 
 | Plateforme | Compte | Fréquence |
 |-----------|--------|-----------|
-| TikTok | StoreMD | 1/jour lun-ven |
-| Instagram | StoreMD (recyclé TikTok) | 1/jour lun-ven |
+| TikTok | StoreMD | 7/7 |
+| Instagram | StoreMD (recyclé TikTok) | 7/7 |
+| Facebook | StoreMD (recyclé TikTok) | 7/7 |
 | Twitter | StoreMD | 1/jour lun-ven |
-| Facebook | StoreMD (recyclé TikTok) | 1/jour lun-ven |
-| IH | StoreMD | 1/sem mercredi |
+| IH | FoundryTwo | 1/sem mercredi |
+
+Pour fréquence, horaires précis et règles de recyclage détaillées, voir `../../marketing/contenu/batch-semaine/batch-template.md` §1 (horaires fixés) + §7 (recyclage).
 
 ---
 
@@ -203,11 +205,13 @@ Batch central : `../../marketing/contenu/batch-semaine/batch-semaine.md`
 
 | Plateforme | Compte | Fréquence | Format principal |
 |-----------|--------|-----------|-----------------|
-| TikTok | StoreMD | 1/jour lun-ven | Vidéo 15-45s |
-| Instagram | StoreMD | 1/jour lun-ven | Reel recyclé TikTok + carrousel occasionnel |
-| Facebook | StoreMD | 1/jour lun-ven | Reel recyclé TikTok |
-| Twitter | StoreMD | 1/jour lun-ven | Texte (format 2-blocs si lien) |
-| IH | StoreMD | 1/sem mercredi | Texte focus produit |
+| TikTok | StoreMD | 7/7 | Vidéo 15-45s (source unique du jour) |
+| Instagram | StoreMD | 7/7 | Reel recyclé TikTok identique (vidéo + caption) |
+| Facebook | StoreMD | 7/7 | Reel recyclé TikTok identique (vidéo + caption) |
+| Twitter | StoreMD | 1/jour lun-ven | Vidéo TikTok recyclée + texte adapté (format 2-blocs si lien) |
+| IH | FoundryTwo | 1/sem mercredi | Texte long-form focus produit + screenshot optionnel |
+
+Source de vérité fréquence + horaires + règles recyclage : `../../marketing/contenu/batch-semaine/batch-template.md` §1 + §7.
 
 ### Ton et règles
 
