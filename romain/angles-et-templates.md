@@ -30,7 +30,7 @@ FRAMEWORK : Réponse immédiate. DM direct avec le lien. Pas de blabla. Chaque s
 "DMing you the link right now"
 
 **"Combien ça coûte ?" / "What's the pricing?"**
-FRAMEWORK : Donner les tiers rapidement. Free = 1 audit. Starter = $39/mois. Pro = $99/mois. Agency = $249/mois. Proposer de DM pour un scan gratuit avant de décider.
+FRAMEWORK : Donner les tiers rapidement. Free = 1 audit. Starter = $29/mois. Pro = $79/mois. Agency = $199/mois. Proposer de DM pour un scan gratuit avant de décider.
 "free scan first, then $39/mo if you want it running continuously. sending you a DM"
 
 **Question sur une feature spécifique**
