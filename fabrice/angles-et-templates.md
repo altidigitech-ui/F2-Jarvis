@@ -30,7 +30,7 @@ FRAMEWORK : Identique à R. Réponse immédiate. DM direct avec le lien.
 "DMing you the link right now"
 
 **"Combien ça coûte ?" / "What's the pricing?"**
-FRAMEWORK : Identique à R. Free = 1 audit. Starter = $39/mois. Pro = $99/mois. Agency = $249/mois. Proposer un scan gratuit avant de décider.
+FRAMEWORK : Identique à R. Free = 1 audit. Starter = $29/mois. Pro = $79/mois. Agency = $199/mois. Proposer un scan gratuit avant de décider.
 
 **Question sur une feature spécifique**
 FRAMEWORK : Répondre avec ce que le produit détecte et COMMENT ça aide le merchant. Pas le code derrière. "the ghost billing detector checks your billing page against your installed apps. if there's a mismatch you're paying for something you don't use."

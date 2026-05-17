@@ -162,13 +162,13 @@ Pour chaque post de la semaine, Claude applique l'algo et produit un bloc sous l
 TikTok = source de contenu vidéo. Chaque vidéo est recyclée :
 
 1. Créer le contenu natif TikTok (Remotion / Claude Design / Higgsfield / CapCut)
-2. Exporter fichier master : 1080x1920, 9:16, MP4, aucun watermark
-3. Poster sur TikTok nativement (pas via scheduler, +20-50% distribution)
-4. Poster sur Instagram Reels 12-24h après (re-export, pas download avec watermark TikTok)
-5. Poster sur Facebook Reels (idem)
-6. Posts Twitter et IH = texte seul (pas de recyclage vidéo)
+2. Exporter fichier master : 1080×1920, 9:16, MP4, aucun watermark, aucune incrustation autre plateforme
+3. Re-exporter une version 1080×1350 (4:5) pour Instagram si Reel adaptation requise
+4. Poster sur TikTok nativement (pas via scheduler, +20-50% distribution)
+5. Recycler la vidéo sur TOUS les comptes du jour : Instagram + Facebook (vidéo + caption identiques TikTok), Twitter StoreMD + Twitter R/F perso (vidéo + texte adapté), LinkedIn R/F (vidéo + texte long-form). UNE vidéo TikTok par jour alimente tous les comptes du jour.
+6. IH (compte FoundryTwo, mercredi) = pas de vidéo, texte long-form + screenshot optionnel
 
-Ce pipeline s'applique à StoreMD (lun-ven) et høkuno (7/7) avec des contenus différents.
+Ce pipeline s'applique à StoreMD (TT/IG/FB en 7/7, TW StoreMD lun-ven, IH mercredi) et høkuno (cadence à définir lors du lancement) avec des contenus différents par business.
 
 ---
 

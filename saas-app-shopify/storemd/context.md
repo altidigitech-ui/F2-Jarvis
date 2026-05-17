@@ -75,7 +75,7 @@ Pas de boutique Shopify = pas dans le scope = jamais un beta tester = jamais un 
 | Merchant solo / petite équipe | 6-14 apps installées, pas de dev interne, besoin d'audit automatisé |
 | Merchant $10-500K/an CA | Assez gros pour avoir des problèmes d'apps, assez petit pour ne pas avoir d'agence |
 | Merchant $500K+/an CA | Stack apps complexe, ghost billing probable, budget pour Pro/Agency |
-| Agency owner Shopify | Gère 5-50+ stores, besoin multi-stores, plan Agency $249/mois |
+| Agency owner Shopify | Gère 5-50+ stores, besoin multi-stores, plan Agency $199/mois |
 
 ### Hors scope (NE PAS contacter)
 
