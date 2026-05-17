@@ -115,7 +115,7 @@ Pas de boutique Shopify = pas dans le scope = jamais un beta tester = jamais un 
 | StoreScan ($9.99-$49.99, 0 reviews) | 9 scanners passifs, rapport PDF. StoreMD = agent continu 24/7. |
 | Speed optimizers (TinyIMG, Thunder) | Compriment les images. Ne diagnostiquent pas POURQUOI le store est lent. |
 | Overlays accessibilité (accessiBe) | Widget cosmétique par-dessus le code. StoreMD diagnostique au niveau du code et donne les corrections à appliquer. |
-| Agences audit ($500-$2000) | One-shot. StoreMD = monitoring continu à $39/mois. |
+| Agences audit ($500-$2000) | One-shot. StoreMD = monitoring continu à $29/mois. |
 
 Aucun concurrent ne combine : App Impact Scanner + Ghost Billing + Bot Filter + Agentic Readiness + Browser Automation dans un seul produit.
 
