@@ -32,11 +32,11 @@ AI agent qui scanne la santé d'un store Shopify en 60 secondes. 43 features, 5 
 | Plan | Prix | Inclus |
 |------|------|--------|
 | **Free** | $0 | 1 audit ponctuel, 5 analyses listings, Score Agentic Readiness |
-| **Starter** | $39/mois | 1 store, scan hebdo, 100 produits, Accessibility scan |
-| **Pro** | $99/mois | Scan quotidien, benchmark, bot filter, 1000 produits, bulk ops, tous les modules |
-| **Agency** | $249/mois | 10 stores, white-label, API, illimité, tous les modules + API |
+| **Starter** | $29/mois | 1 store, scan hebdo, 100 produits, Accessibility scan |
+| **Pro** | $79/mois | Scan quotidien, benchmark, bot filter, 1000 produits, bulk ops, tous les modules |
+| **Agency** | $199/mois | 10 stores, white-label, API, illimité, tous les modules + API |
 
-Comparaison marché : agences audit = $500-$2000 one-shot. StoreMD = monitoring continu pour $39/mois. Market Clarity recommande $149-199/mois pour le bot blocking seul.
+Comparaison marché : agences audit = $500-$2000 one-shot. StoreMD = monitoring continu pour $29/mois. Market Clarity recommande $149-199/mois pour le bot blocking seul.
 
 ---
 
