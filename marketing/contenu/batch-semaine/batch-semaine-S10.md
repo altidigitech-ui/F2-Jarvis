@@ -954,7 +954,233 @@ Free scan finds them in 60 seconds at storemd.vercel.app.
 
 ---
 
-# ═══ VENDREDI 22/05 — À remplir au Bloc 5 (V1-26 Free scan ≠ install) ═══
+# ═══ VENDREDI 22/05 — Thème : Free scan ≠ install. (waiting series, clôture pédagogique) ═══
+
+---
+
+#### STOREMD-TW-F-S10-05 — Fabrice (@FabGangi) — Twitter — Ven 22/05 13h00
+
+**Vidéo :** V1-26_free_scan_not_install.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Architecture nerds, this one's for you 🛠️
+
+Free scan = headless browser stack running on Vercel, hits public store data through the storefront API. No OAuth, no merchant scope, no install.
+
+Full agent = embedded Shopify app, OAuth scopes on read_products read_orders read_themes, continuous webhooks.
+
+Different beasts.
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Aux geeks d'architecture, celui-là est pour vous 🛠️
+>
+> Free scan = stack de headless browser qui tourne sur Vercel, attaque la donnée publique du store via la storefront API. Pas d'OAuth, pas de scope merchant, pas d'install.
+>
+> Agent complet = app Shopify embedded, scopes OAuth sur read_products read_orders read_themes, webhooks continus.
+>
+> Deux bêtes différentes.
+
+---
+
+#### STOREMD-TK-S10-05 — StoreMD — TikTok — Ven 22/05 14h00
+
+**Vidéo :** V1-26_free_scan_not_install.mp4 (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Two doors. One open. One locked 🚪
+
+Free scan: public, live now at storemd.vercel.app.
+Install in Shopify admin: pending review.
+
+Yes the app works. No you can't install it yet.
+```
+
+**TRADUCTION :**
+> Deux portes. Une ouverte. Une verrouillée 🚪
+>
+> Free scan : public, live maintenant sur storemd.vercel.app.
+> Install dans l'admin Shopify : pending review.
+>
+> Oui l'app marche. Non tu ne peux pas l'installer encore.
+
+---
+
+#### STOREMD-TW-R-S10-05 — Romain (@delgado_ro72224) — Twitter — Ven 22/05 14h00
+
+**Vidéo :** V1-26_free_scan_not_install.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Getting this question a lot this week 🔍
+
+"If the app is in review, how come the scan works?"
+
+Two different paths:
+
+The free scan runs from our domain. Public, no install needed.
+The full agent installs inside your Shopify admin. That part needs review approval.
+
+Day 11 in the queue. Scan stays open 🔒
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Je reçois beaucoup cette question cette semaine 🔍
+>
+> "Si l'app est en review, comment se fait-il que le scan marche ?"
+>
+> Deux chemins différents :
+>
+> Le free scan tourne depuis notre domaine. Public, pas d'install nécessaire.
+> L'agent complet s'installe dans ton admin Shopify. Cette partie a besoin de l'approbation de la review.
+>
+> Jour 11 dans la queue. Le scan reste ouvert 🔒
+
+---
+
+#### STOREMD-TW-SM-S10-05 — StoreMD (@StoreMd_off) — Twitter — Ven 22/05 15h00
+
+**Vidéo :** V1-26_free_scan_not_install.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Free scan and Shopify install aren't the same thing 🔍
+
+Free scan: public preview, runs on storemd.vercel.app, anyone with a .myshopify.com URL gets a diagnostic.
+
+Shopify install: full agent, continuous monitoring, locked until review clears.
+
+Yes the app works. Install still pending 🔒
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Le free scan et l'install Shopify ne sont pas la même chose 🔍
+>
+> Free scan : preview public, tourne sur storemd.vercel.app, n'importe qui avec une URL .myshopify.com obtient un diagnostic.
+>
+> Install Shopify : agent complet, monitoring continu, verrouillé jusqu'à ce que la review clear.
+>
+> Oui l'app marche. Install toujours en attente 🔒
+
+---
+
+#### STOREMD-LI-F-S10-05 — Fabrice Gangitano — LinkedIn — Ven 22/05 15h30
+
+**Vidéo :** V1-26_free_scan_not_install.mp4 (recyclé TikTok, re-export sans watermark, format vertical compatible LinkedIn natif)
+**UTM :** Aucun (pas de lien dans le corps LinkedIn, pénalité -60% reach). Pour mention en commentaire si besoin : `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Got this question three times this week from merchants and indie builders alike.
+
+"If the StoreMD app is still in Shopify review, how is the scan actually running on your website right now?"
+
+Fair question. The answer is that they're two completely different products sharing the same diagnostic engine.
+
+The free scan on storemd.vercel.app is a headless browser stack. It runs on our infrastructure, not inside Shopify. When you drop a .myshopify.com URL, the scanner opens the storefront in a real browser, crawls the public pages, hits the storefront API, and runs five diagnostic modules in parallel. No OAuth handshake. No merchant scope. No installation. Anyone can use it.
+
+The full Shopify app is an embedded application. It lives inside the merchant's Shopify admin once installed. It requests four OAuth scopes (read_products, read_orders, read_themes, read_script_tags), subscribes to webhook events, and runs continuous monitoring instead of a one-shot scan. That's the part Shopify's App Store team is reviewing right now.
+
+Same underlying logic. Different access paths. Different review processes.
+
+The free scan can stay public forever because it only touches data that's already public. The full agent needs Shopify's approval because it touches merchant data behind OAuth.
+
+Day 11 in the review queue. The scan keeps running 🔍
+
+If you're a Shopify merchant curious about what the diagnostic actually finds, the free scan link is in my profile.
+```
+
+**TRADUCTION :**
+> J'ai eu cette question trois fois cette semaine de la part de merchants et de builders indé.
+>
+> "Si l'app StoreMD est encore en review Shopify, comment ça se fait que le scan tourne sur ton site là maintenant ?"
+>
+> Question légitime. La réponse c'est que ce sont deux produits complètement différents qui partagent le même moteur de diagnostic.
+>
+> Le free scan sur storemd.vercel.app est une stack de headless browser. Elle tourne sur notre infrastructure, pas à l'intérieur de Shopify. Quand tu déposes une URL .myshopify.com, le scanner ouvre la storefront dans un vrai navigateur, crawl les pages publiques, attaque la storefront API, et fait tourner cinq modules de diagnostic en parallèle. Pas de handshake OAuth. Pas de scope merchant. Pas d'installation. N'importe qui peut l'utiliser.
+>
+> L'app Shopify complète est une application embedded. Elle vit dans l'admin Shopify du merchant une fois installée. Elle demande quatre scopes OAuth (read_products, read_orders, read_themes, read_script_tags), s'abonne à des events webhook, et fait tourner du monitoring continu au lieu d'un scan one-shot. C'est cette partie que l'équipe App Store de Shopify est en train de reviewer maintenant.
+>
+> Même logique sous-jacente. Chemins d'accès différents. Processus de review différents.
+>
+> Le free scan peut rester public pour toujours parce qu'il ne touche que de la donnée déjà publique. L'agent complet a besoin de l'approbation de Shopify parce qu'il touche de la donnée merchant derrière l'OAuth.
+>
+> Jour 11 dans la queue de review. Le scan continue de tourner 🔍
+>
+> Si tu es un merchant Shopify curieux de ce que le diagnostic trouve vraiment, le lien du free scan est dans mon profil.
+
+---
+
+#### STOREMD-IG-S10-05 — StoreMD — Instagram — Ven 22/05 18h00
+
+**Vidéo :** V1-26_free_scan_not_install.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
+**Hashtags :** `#shopifyapp` `#storeaudit` `#ecommercegrowth` `#shopifydev` `#storeperformance`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Two doors. One open. One locked 🚪
+
+Free scan: public, live now at storemd.vercel.app.
+Install in Shopify admin: pending review.
+
+Yes the app works. No you can't install it yet.
+```
+
+**TRADUCTION :**
+> Deux portes. Une ouverte. Une verrouillée 🚪
+>
+> Free scan : public, live maintenant sur storemd.vercel.app.
+> Install dans l'admin Shopify : pending review.
+>
+> Oui l'app marche. Non tu ne peux pas l'installer encore.
+
+---
+
+#### STOREMD-FB-S10-05 — StoreMD — Facebook — Ven 22/05 18h30
+
+**Vidéo :** V1-26_free_scan_not_install.mp4 recyclé TikTok (re-export sans watermark)
+**Hashtags :** `#shopifyapps` `#ecommercetools` `#storeoptimization`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**CAPTION :**
+```
+Two doors. One open. One locked 🚪
+
+Free scan: public, live now at storemd.vercel.app.
+Install in Shopify admin: pending review.
+
+Yes the app works. No you can't install it yet.
+```
+
+**TRADUCTION :**
+> Deux portes. Une ouverte. Une verrouillée 🚪
+>
+> Free scan : public, live maintenant sur storemd.vercel.app.
+> Install dans l'admin Shopify : pending review.
+>
+> Oui l'app marche. Non tu ne peux pas l'installer encore.
 
 ---
 
