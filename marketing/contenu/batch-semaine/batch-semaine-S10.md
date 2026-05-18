@@ -325,45 +325,33 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 Spent the last month digging through Shopify app reviews to map what actually breaks merchant stores.
 
-530+ reviews across the top apps. Five patterns kept showing up:
+530+ reviews. Five patterns kept showing up:
 
 Apps still injecting JavaScript after being uninstalled.
 Subscriptions billing months after merchants thought they had cancelled.
-Theme files cluttered with leftover code from apps that no longer exist.
-Product listings invisible to ChatGPT and Perplexity searches.
-Accessibility errors blocking a slice of revenue most owners never measured.
+Theme files cluttered with leftover code from deleted apps.
+Product listings invisible to ChatGPT and Perplexity.
+Accessibility errors blocking real revenue.
 
-Most agencies sell a one-shot audit for $500 to $2000 and disappear.
+I built StoreMD to catch all five in 60 seconds.
 
-That audit goes stale the moment a new app gets installed.
-
-Continuous monitoring closes that loop.
-
-I built StoreMD because every Monday I was running the same manual audit on the same patterns.
-
-The free scan is public while the Shopify App Store review runs 🔍
+The free scan is public while the App Store review runs 🔍
 ```
 
 **TRADUCTION :**
-> J'ai passé le mois dernier à fouiller dans les reviews d'apps Shopify pour cartographier ce qui casse réellement les stores des merchants.
+> J'ai passé le mois dernier à fouiller les reviews d'apps Shopify pour cartographier ce qui casse réellement les stores des merchants.
 >
-> 530+ reviews sur les apps populaires. Cinq patterns ressortent en boucle :
+> 530+ reviews. Cinq patterns ressortent en boucle :
 >
-> Des apps qui continuent d'injecter du JavaScript après avoir été désinstallées.
-> Des abonnements qui continuent de facturer des mois après que les merchants pensaient avoir annulé.
-> Des theme files encombrés de code laissé par des apps qui n'existent plus.
-> Des listings produit invisibles pour les recherches ChatGPT et Perplexity.
-> Des erreurs d'accessibilité qui bloquent une part de revenu que la plupart des owners ne mesurent jamais.
+> Des apps qui continuent d'injecter du JavaScript après désinstall.
+> Des abonnements qui continuent de facturer des mois après annulation supposée.
+> Des theme files encombrés de code laissé par des apps supprimées.
+> Des listings produit invisibles pour ChatGPT et Perplexity.
+> Des erreurs d'accessibilité qui bloquent du vrai revenu.
 >
-> La plupart des agences vendent un audit one-shot à $500-$2000 et disparaissent.
+> J'ai construit StoreMD pour attraper les cinq en 60 secondes.
 >
-> Cet audit devient obsolète à la seconde où une nouvelle app est installée.
->
-> Le monitoring continu boucle ça.
->
-> J'ai construit StoreMD parce que chaque lundi je faisais tourner le même audit manuel sur les mêmes patterns.
->
-> Le free scan est public pendant que la review de la Shopify App Store tourne 🔍
+> Le free scan est public pendant que la review de l'App Store tourne 🔍
 
 ---
 
@@ -563,21 +551,15 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 Day 9 since the resubmission hit Shopify's review queue.
 
-The temptation when you're stuck waiting is to freeze. App not validated, install path locked, no real merchant data coming in. So what do you do with that time?
+The temptation when you're stuck waiting is to freeze. App not validated, install path locked, no real merchant data coming in.
 
-You ship.
+So I shipped instead.
 
-Here's what the agent picked up in the last nine days:
-
-The install middleware got a full rewrite. Twice. The first pass cleaned up the OAuth flow. The second pass hardened the token refresh logic with proper retry and exponential backoff.
-
-Scope alignment moved to API 2026-01. read_products, read_orders, read_themes, read_script_tags. Every scope justified in the manifest with a one-line reason.
-
-App icon redesigned to the 1024×1024 specification. No text overlay this time, clean glyph mark, transparent background. The previous version triggered a remediation note from Shopify.
-
-15 of 15 internal tests pass on the staging environment. End-to-end OAuth validated against three test stores.
-
-None of this would be visible from outside the App Store review process. So I'm writing it down.
+The install middleware got a full rewrite. Twice.
+Token refresh hardened with proper retry logic and exponential backoff.
+Scope alignment moved to API 2026-01.
+App icon redesigned to the 1024×1024 spec.
+15 of 15 internal tests pass on staging.
 
 The free scan stays public on storemd.vercel.app while the install path stays locked.
 
@@ -587,21 +569,15 @@ A locked agent isn't a dormant agent 🛠️
 **TRADUCTION :**
 > Jour 9 depuis que la resubmission est tombée dans la queue de review Shopify.
 >
-> La tentation quand tu es bloqué en attente, c'est de te figer. App pas validée, chemin d'install verrouillé, pas de vraie donnée merchant qui rentre. Donc tu fais quoi de ce temps ?
+> La tentation quand tu es bloqué en attente, c'est de te figer. App pas validée, chemin d'install verrouillé, pas de vraie donnée merchant qui rentre.
 >
-> Tu shipps.
+> Donc j'ai shippé à la place.
 >
-> Voici ce que l'agent a chopé sur les neuf derniers jours :
->
-> Le middleware d'install a eu un rewrite complet. Deux fois. Le premier passage a nettoyé le flow OAuth. Le second passage a durci la logique de token refresh avec retry propre et exponential backoff.
->
-> L'alignement de scope est passé sur l'API 2026-01. read_products, read_orders, read_themes, read_script_tags. Chaque scope justifié dans le manifest avec une ligne de raison.
->
-> App icon redesignée à la spécification 1024×1024. Pas de texte en overlay cette fois, glyph mark propre, fond transparent. La version précédente avait déclenché une note de remediation de Shopify.
->
-> 15 sur 15 tests internes passent sur l'environnement staging. OAuth end-to-end validé contre trois stores de test.
->
-> Rien de tout ça ne serait visible de l'extérieur du processus de review App Store. Donc je l'écris.
+> Le middleware d'install a eu un rewrite complet. Deux fois.
+> Token refresh durci avec retry logic propre et exponential backoff.
+> Alignement de scope passé sur l'API 2026-01.
+> App icon redesignée à la spec 1024×1024.
+> 15 sur 15 tests internes passent sur staging.
 >
 > Le free scan reste public sur storemd.vercel.app pendant que le chemin d'install reste verrouillé.
 >
@@ -862,23 +838,13 @@ The most expensive line on a Shopify merchant's monthly bill isn't usually the p
 
 It's the apps they don't use anymore.
 
-Last month I dug through 530+ public reviews across the most popular Shopify apps. The pattern that came up most often wasn't bugs, wasn't pricing complaints, wasn't even poor support.
+I dug through 530+ public reviews last month. The pattern that came up most often wasn't bugs or pricing. It was billing that kept running after uninstall.
 
-It was billing that kept running after uninstall.
+Privy alone has 40+ public reviews mentioning it. PageFly, Shogun, Avada have similar threads. Subscriptions still active months after merchants thought they had cancelled.
 
-Privy alone has more than 40 public reviews mentioning it. PageFly, Shogun, Avada have similar threads. Subscriptions still active months after merchants thought they had cancelled them. Sometimes the app icon is gone from the admin. Sometimes the theme code is gone too. The charge keeps coming.
+Stack three or four ghost subscriptions and you're looking at $1,000+ a year on stuff merchants don't even see.
 
-The discovery usually happens during a payment reconciliation, never before. By then it's been three to nine months.
-
-That's a real revenue leak.
-
-Most Shopify merchants run 14 to 18 apps. If even one of them stays billable after uninstall, that's $20 to $79 a month gone. Stack three or four ghost subscriptions and you're looking at $1,000+ a year.
-
-I built StoreMD to catch this kind of thing automatically. The detection logic is simple: cross-reference active charge_ids against installed_at events. Any charge tied to a deleted app gets flagged.
-
-It took two days to build that single check. Should be a Shopify default.
-
-The free scan is public while the App Store review runs. storemd.vercel.app 💀
+StoreMD scans for all of it in 60 seconds. Free at storemd.vercel.app 💀
 ```
 
 **TRADUCTION :**
@@ -886,23 +852,13 @@ The free scan is public while the App Store review runs. storemd.vercel.app 💀
 >
 > Ce sont les apps qu'il n'utilise plus.
 >
-> Le mois dernier j'ai fouillé 530+ reviews publiques sur les apps Shopify les plus populaires. Le pattern qui revient le plus souvent ce ne sont pas les bugs, ce ne sont pas les plaintes de pricing, ce n'est même pas le mauvais support.
+> J'ai fouillé 530+ reviews publiques le mois dernier. Le pattern qui revient le plus souvent ce ne sont pas les bugs ou le pricing. C'est la facturation qui continue après désinstall.
 >
-> C'est la facturation qui continue après désinstall.
+> Privy à elle seule a 40+ reviews publiques qui le mentionnent. PageFly, Shogun, Avada ont des threads similaires. Abonnements toujours actifs des mois après que les merchants pensaient avoir annulé.
 >
-> Privy à elle seule a plus de 40 reviews publiques qui le mentionnent. PageFly, Shogun, Avada ont des threads similaires. Abonnements toujours actifs des mois après que les merchants pensaient les avoir annulés. Parfois l'icône de l'app a disparu de l'admin. Parfois le code du theme aussi. La facture continue de tomber.
+> Empile trois ou quatre abonnements fantômes et tu regardes $1,000+ par an sur des trucs que les merchants ne voient même pas.
 >
-> La découverte se fait généralement pendant une réconciliation de paiements, jamais avant. À ce moment-là ça fait trois à neuf mois.
->
-> C'est une vraie fuite de revenu.
->
-> La plupart des merchants Shopify font tourner 14 à 18 apps. Si même une seule reste facturable après désinstall, c'est $20 à $79 par mois qui partent. Empile trois ou quatre abonnements fantômes et tu regardes $1,000+ par an.
->
-> J'ai construit StoreMD pour attraper ce genre de truc automatiquement. La logique de détection est simple : croise les charge_ids actifs contre les events installed_at. Toute charge liée à une app supprimée est flaggée.
->
-> Il a fallu deux jours pour construire ce seul check. Ça devrait être un default Shopify.
->
-> Le free scan est public pendant que la review de l'App Store tourne. storemd.vercel.app 💀
+> StoreMD scanne tout ça en 60 secondes. Gratuit sur storemd.vercel.app 💀
 
 ---
 
@@ -1092,43 +1048,35 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 **TEXTE :**
 ```
-Got this question three times this week from merchants and indie builders alike.
+Got this question three times this week.
 
 "If the StoreMD app is still in Shopify review, how is the scan actually running on your website right now?"
 
-Fair question. The answer is that they're two completely different products sharing the same diagnostic engine.
+Two products, same diagnostic engine.
 
-The free scan on storemd.vercel.app is a headless browser stack. It runs on our infrastructure, not inside Shopify. When you drop a .myshopify.com URL, the scanner opens the storefront in a real browser, crawls the public pages, hits the storefront API, and runs five diagnostic modules in parallel. No OAuth handshake. No merchant scope. No installation. Anyone can use it.
+The free scan on storemd.vercel.app is a headless browser stack. It runs on our infrastructure, hits public store data through the storefront API. No OAuth, no merchant scope, no install. Anyone can use it.
 
-The full Shopify app is an embedded application. It lives inside the merchant's Shopify admin once installed. It requests four OAuth scopes (read_products, read_orders, read_themes, read_script_tags), subscribes to webhook events, and runs continuous monitoring instead of a one-shot scan. That's the part Shopify's App Store team is reviewing right now.
+The full Shopify app is embedded. It lives inside the merchant's admin, requests four OAuth scopes, runs continuous monitoring. That's the part Shopify is reviewing.
 
-Same underlying logic. Different access paths. Different review processes.
+Different access paths. Different review processes.
 
-The free scan can stay public forever because it only touches data that's already public. The full agent needs Shopify's approval because it touches merchant data behind OAuth.
-
-Day 11 in the review queue. The scan keeps running 🔍
-
-If you're a Shopify merchant curious about what the diagnostic actually finds, the free scan link is in my profile.
+Day 11 in the queue. The scan keeps running 🔍
 ```
 
 **TRADUCTION :**
-> J'ai eu cette question trois fois cette semaine de la part de merchants et de builders indé.
+> J'ai eu cette question trois fois cette semaine.
 >
 > "Si l'app StoreMD est encore en review Shopify, comment ça se fait que le scan tourne sur ton site là maintenant ?"
 >
-> Question légitime. La réponse c'est que ce sont deux produits complètement différents qui partagent le même moteur de diagnostic.
+> Deux produits, même moteur de diagnostic.
 >
-> Le free scan sur storemd.vercel.app est une stack de headless browser. Elle tourne sur notre infrastructure, pas à l'intérieur de Shopify. Quand tu déposes une URL .myshopify.com, le scanner ouvre la storefront dans un vrai navigateur, crawl les pages publiques, attaque la storefront API, et fait tourner cinq modules de diagnostic en parallèle. Pas de handshake OAuth. Pas de scope merchant. Pas d'installation. N'importe qui peut l'utiliser.
+> Le free scan sur storemd.vercel.app est une stack de headless browser. Elle tourne sur notre infrastructure, attaque la donnée publique du store via la storefront API. Pas d'OAuth, pas de scope merchant, pas d'install. N'importe qui peut l'utiliser.
 >
-> L'app Shopify complète est une application embedded. Elle vit dans l'admin Shopify du merchant une fois installée. Elle demande quatre scopes OAuth (read_products, read_orders, read_themes, read_script_tags), s'abonne à des events webhook, et fait tourner du monitoring continu au lieu d'un scan one-shot. C'est cette partie que l'équipe App Store de Shopify est en train de reviewer maintenant.
+> L'app Shopify complète est embedded. Elle vit dans l'admin du merchant, demande quatre scopes OAuth, fait tourner du monitoring continu. C'est cette partie que Shopify est en train de reviewer.
 >
-> Même logique sous-jacente. Chemins d'accès différents. Processus de review différents.
+> Chemins d'accès différents. Processus de review différents.
 >
-> Le free scan peut rester public pour toujours parce qu'il ne touche que de la donnée déjà publique. L'agent complet a besoin de l'approbation de Shopify parce qu'il touche de la donnée merchant derrière l'OAuth.
->
-> Jour 11 dans la queue de review. Le scan continue de tourner 🔍
->
-> Si tu es un merchant Shopify curieux de ce que le diagnostic trouve vraiment, le lien du free scan est dans mon profil.
+> Jour 11 dans la queue. Le scan continue de tourner 🔍
 
 ---
 
