@@ -415,7 +415,312 @@ Free scan running at storemd.vercel.app.
 
 ---
 
-# ═══ MERCREDI 20/05 — À remplir au Bloc 3 (V1-25 While we wait + IH FoundryTwo) ═══
+# ═══ MERCREDI 20/05 — Thème : While we wait, we ship. (waiting series + jour IH) ═══
+
+---
+
+#### STOREMD-TW-F-S10-03 — Fabrice (@FabGangi) — Twitter — Mer 20/05 13h00
+
+**Vidéo :** V1-25_while_we_wait_we_ship.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Day 9 in Shopify's review queue 🐢
+
+Shipped while waiting:
+
+Install middleware: full rewrite, OAuth flow validated end-to-end.
+Token refresh: clean retry logic, exponential backoff.
+Scope alignment: read_products, read_orders, read_themes matched to API 2026-01.
+15/15 tests pass.
+
+Locked code is dead code 🛠️
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Jour 9 dans la queue de review Shopify 🐢
+>
+> Shippé pendant l'attente :
+>
+> Middleware d'install : rewrite complet, flow OAuth validé end-to-end.
+> Token refresh : retry logic propre, exponential backoff.
+> Alignement de scope : read_products, read_orders, read_themes matchés à l'API 2026-01.
+> 15/15 tests passent.
+>
+> Du code verrouillé c'est du code mort 🛠️
+
+---
+
+#### STOREMD-TK-S10-03 — StoreMD — TikTok — Mer 20/05 14h00
+
+**Vidéo :** V1-25_while_we_wait_we_ship.mp4 (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Day 9 since the resubmission. App still in review 🐢
+
+While the queue moves, the agent kept getting updates 🛠️
+
+Free scan still public at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> Jour 9 depuis la resubmission. App toujours en review 🐢
+>
+> Pendant que la queue avance, l'agent a continué d'être mis à jour 🛠️
+>
+> Free scan toujours public sur storemd.vercel.app.
+
+---
+
+#### STOREMD-TW-R-S10-03 — Romain (@delgado_ro72224) — Twitter — Mer 20/05 14h00
+
+**Vidéo :** V1-25_while_we_wait_we_ship.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Day 9 in the Shopify review queue 🐢
+
+Most founders go silent waiting for approval.
+
+I'm shipping in public instead. Here's the log:
+
+Install middleware: rewritten twice.
+Token refresh: cleaner.
+Scope alignment: matches API 2026-01.
+App icon: 1024×1024 spec compliant.
+
+Idle isn't a strategy.
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Jour 9 dans la queue de review Shopify 🐢
+>
+> La plupart des founders se taisent en attendant l'approbation.
+>
+> Je ship en public à la place. Voici le log :
+>
+> Middleware d'install : réécrit deux fois.
+> Token refresh : plus propre.
+> Alignement de scope : matche l'API 2026-01.
+> App icon : conforme à la spec 1024×1024.
+>
+> Rester immobile n'est pas une stratégie.
+
+---
+
+#### STOREMD-TW-SM-S10-03 — StoreMD (@StoreMd_off) — Twitter — Mer 20/05 15h00
+
+**Vidéo :** V1-25_while_we_wait_we_ship.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Day 9 since the Shopify review queue swallowed the resubmission 🐢
+
+While we wait, the agent kept shipping fixes:
+
+Install middleware rewritten twice. Token refresh hardened. Scope alignment moved to API 2026-01. App icon redesigned for the spec.
+
+Free scan still public.
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Jour 9 depuis que la queue de review Shopify a avalé la resubmission 🐢
+>
+> Pendant l'attente, l'agent a continué de shipper des fixes :
+>
+> Middleware d'install réécrit deux fois. Token refresh durci. Alignement de scope passé sur l'API 2026-01. App icon redesignée pour la spec.
+>
+> Free scan toujours public.
+
+---
+
+#### STOREMD-LI-F-S10-03 — Fabrice Gangitano — LinkedIn — Mer 20/05 18h00
+
+**Vidéo :** V1-25_while_we_wait_we_ship.mp4 (recyclé TikTok, re-export sans watermark, format vertical compatible LinkedIn natif)
+**UTM :** Aucun (pas de lien dans le corps LinkedIn, pénalité -60% reach). Pour mention en commentaire si besoin : `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Day 9 since the resubmission hit Shopify's review queue.
+
+The temptation when you're stuck waiting is to freeze. App not validated, install path locked, no real merchant data coming in. So what do you do with that time?
+
+You ship.
+
+Here's what the agent picked up in the last nine days:
+
+The install middleware got a full rewrite. Twice. The first pass cleaned up the OAuth flow. The second pass hardened the token refresh logic with proper retry and exponential backoff.
+
+Scope alignment moved to API 2026-01. read_products, read_orders, read_themes, read_script_tags. Every scope justified in the manifest with a one-line reason.
+
+App icon redesigned to the 1024×1024 specification. No text overlay this time, clean glyph mark, transparent background. The previous version triggered a remediation note from Shopify.
+
+15 of 15 internal tests pass on the staging environment. End-to-end OAuth validated against three test stores.
+
+None of this would be visible from outside the App Store review process. So I'm writing it down.
+
+The free scan stays public on storemd.vercel.app while the install path stays locked.
+
+A locked agent isn't a dormant agent 🛠️
+```
+
+**TRADUCTION :**
+> Jour 9 depuis que la resubmission est tombée dans la queue de review Shopify.
+>
+> La tentation quand tu es bloqué en attente, c'est de te figer. App pas validée, chemin d'install verrouillé, pas de vraie donnée merchant qui rentre. Donc tu fais quoi de ce temps ?
+>
+> Tu shipps.
+>
+> Voici ce que l'agent a chopé sur les neuf derniers jours :
+>
+> Le middleware d'install a eu un rewrite complet. Deux fois. Le premier passage a nettoyé le flow OAuth. Le second passage a durci la logique de token refresh avec retry propre et exponential backoff.
+>
+> L'alignement de scope est passé sur l'API 2026-01. read_products, read_orders, read_themes, read_script_tags. Chaque scope justifié dans le manifest avec une ligne de raison.
+>
+> App icon redesignée à la spécification 1024×1024. Pas de texte en overlay cette fois, glyph mark propre, fond transparent. La version précédente avait déclenché une note de remediation de Shopify.
+>
+> 15 sur 15 tests internes passent sur l'environnement staging. OAuth end-to-end validé contre trois stores de test.
+>
+> Rien de tout ça ne serait visible de l'extérieur du processus de review App Store. Donc je l'écris.
+>
+> Le free scan reste public sur storemd.vercel.app pendant que le chemin d'install reste verrouillé.
+>
+> Un agent verrouillé n'est pas un agent dormant 🛠️
+
+---
+
+#### STOREMD-IH-S10-03 — FoundryTwo — IndieHackers — Mer 20/05
+
+**Vidéo :** Aucune (IH = long-form texte + 1 image)
+**Image :** Screenshot Partner Dashboard "In review" (badge officiel Shopify)
+**UTM :** Aucun dans le corps. Mentionner `storemd.vercel.app` en clair dans le texte.
+
+**Titre du post :**
+```
+Day 9 in the Shopify App Store review queue. Here's the log.
+```
+
+**TEXTE :**
+```
+StoreMD got submitted to the Shopify App Store on April 13. Suspended on April 28 over a Managed Pricing configuration issue. Resubmitted on May 11 at around 10pm CEST.
+
+Today is day 9 of the second review cycle.
+
+While the queue moves, we kept shipping. Not because there's a clever marketing reason, but because the alternative is staring at an "In review" badge for two weeks doing nothing.
+
+Here's what changed in the codebase since resubmission:
+
+The install middleware got a full rewrite. Twice. First pass cleaned up the OAuth handshake. Second pass hardened the token refresh with proper retry logic and exponential backoff. End-to-end OAuth validated against three test stores.
+
+Scope alignment moved to API 2026-01. Four scopes used, each justified in the manifest with a single line. read_products, read_orders, read_themes, read_script_tags.
+
+App icon redesigned to the 1024×1024 spec. Clean glyph mark, transparent background, no text overlay. The previous icon had triggered a remediation note from Shopify.
+
+15 of 15 internal tests pass on staging.
+
+Meanwhile the free scan stays public on storemd.vercel.app. Anyone can drop a .myshopify.com URL and get the same diagnostic the installed agent would run, minus the continuous monitoring layer.
+
+We're not pretending the install works. It doesn't yet. The store-side install path is locked until Shopify clears the review.
+
+But the code shipped during the wait is real, the scan logic is the same, and the patterns we built it around come from 530+ reviews of the most-used Shopify apps.
+
+If you've been through Shopify App Store review yourself, what's your average wait time on a second submission?
+```
+
+**TRADUCTION :**
+> Jour 9 dans la queue de review du Shopify App Store. Voici le journal de bord.
+>
+> StoreMD a été soumis au Shopify App Store le 13 avril. Suspendu le 28 avril à cause d'un problème de configuration Managed Pricing. Resoumis le 11 mai aux alentours de 22h CEST.
+>
+> Aujourd'hui c'est le jour 9 du deuxième cycle de review.
+>
+> Pendant que la queue avance, on a continué de shipper. Pas parce qu'il y a une raison marketing maline, mais parce que l'alternative c'est de fixer un badge "In review" pendant deux semaines sans rien faire.
+>
+> Voici ce qui a changé dans la codebase depuis la resubmission :
+>
+> Le middleware d'install a eu un rewrite complet. Deux fois. Premier passage a nettoyé le handshake OAuth. Deuxième passage a durci le token refresh avec retry logic propre et exponential backoff. OAuth end-to-end validé contre trois test stores.
+>
+> L'alignement de scope est passé sur l'API 2026-01. Quatre scopes utilisés, chacun justifié dans le manifest avec une ligne. read_products, read_orders, read_themes, read_script_tags.
+>
+> App icon redesignée à la spec 1024×1024. Glyph mark propre, fond transparent, pas de texte en overlay. L'icône précédente avait déclenché une note de remediation de Shopify.
+>
+> 15 sur 15 tests internes passent sur staging.
+>
+> Pendant ce temps le free scan reste public sur storemd.vercel.app. N'importe qui peut déposer une URL .myshopify.com et obtenir le même diagnostic que l'agent installé tournerait, moins la couche de monitoring continu.
+>
+> On ne prétend pas que l'install marche. Il ne marche pas encore. Le chemin d'install côté store est verrouillé jusqu'à ce que Shopify clear la review.
+>
+> Mais le code shippé pendant l'attente est réel, la logique de scan est la même, et les patterns autour desquels on l'a construit viennent de 530+ reviews des apps Shopify les plus utilisées.
+>
+> Si tu es déjà passé par la review du Shopify App Store toi-même, quel est ton temps d'attente moyen sur une deuxième soumission ?
+
+---
+
+#### STOREMD-IG-S10-03 — StoreMD — Instagram — Mer 20/05 18h00
+
+**Vidéo :** V1-25_while_we_wait_we_ship.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
+**Hashtags :** `#buildinpublic` `#shopifyapp` `#saasbuilder` `#indiehacker` `#ecommercedev`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Day 9 since the resubmission. App still in review 🐢
+
+While the queue moves, the agent kept getting updates 🛠️
+
+Free scan still public at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> Jour 9 depuis la resubmission. App toujours en review 🐢
+>
+> Pendant que la queue avance, l'agent a continué d'être mis à jour 🛠️
+>
+> Free scan toujours public sur storemd.vercel.app.
+
+---
+
+#### STOREMD-FB-S10-03 — StoreMD — Facebook — Mer 20/05 18h30
+
+**Vidéo :** V1-25_while_we_wait_we_ship.mp4 recyclé TikTok (re-export sans watermark)
+**Hashtags :** `#shopifydev` `#saas` `#buildinpublic`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**CAPTION :**
+```
+Day 9 since the resubmission. App still in review 🐢
+
+While the queue moves, the agent kept getting updates 🛠️
+
+Free scan still public at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> Jour 9 depuis la resubmission. App toujours en review 🐢
+>
+> Pendant que la queue avance, l'agent a continué d'être mis à jour 🛠️
+>
+> Free scan toujours public sur storemd.vercel.app.
 
 ---
 
