@@ -3,7 +3,7 @@
 > Ce fichier explique comment produire le batch de la semaine. Jarvis ou toute IA qui lit ce fichier doit suivre CHAQUE étape dans l'ordre.
 > Le batch est produit le SAMEDI. En semaine on ne rédige pas — on exécute (copier-coller + publier).
 > Source de vérité principes : `../../BIBLE.md` + `../../ANTI-IA.md`
-> Dernière mise à jour : 10/05/2026
+> Dernière mise à jour : 18/05/2026
 
 ---
 
@@ -16,6 +16,8 @@ Ces règles sont NON-NÉGOCIABLES. Un post qui en viole une = post bloqué.
 **Zéro feature vendue qui n'est pas live.** Décrire ce que le produit fait MAINTENANT en production. Pas ce qu'il fera un jour.
 
 **Zéro "real scan" / "real store" / "real numbers" sur du contenu fictif.** Si le scan n'a pas vraiment eu lieu et n'est pas documenté dans l'admin, ne pas écrire "real".
+
+**Zéro revendication d'usage merchant tant que l'app Shopify n'est pas validée.** Pas de "j'ai scanné X stores merchants", pas de "median score sur X clients", pas de "X merchants utilisent StoreMD". Les data de `/dashboard/admin` sont du test interne + free scans publics, non représentatives d'un usage merchant réel. Patterns autorisés : research publique (530+ reviews, 40+ reviews Privy, etc.), benchmark concurrents, build technique, free scan public. Règle active tant que la review Shopify est pending.
 
 **Marketing ≠ mensonge.** Tu peux et tu dois vendre fort. Exemples :
 
@@ -118,7 +120,7 @@ Jarvis ou l'IA qui produit le batch DOIT collecter TOUTES ces données et les pr
 
 Avant de sélectionner une vidéo, LIRE SON PROMPT dans le fichier source. Comprendre ce que la vidéo montre. Ne jamais choisir une vidéo sans savoir ce qu'elle contient.
 
-#### Catalogue complet — V1 (13 vidéos)
+#### Catalogue complet — V1 (catalogue de base + série waiting V1-24/25/26)
 
 | Nom V1 | Ce que la vidéo montre |
 |--------|----------------------|
@@ -135,6 +137,16 @@ Avant de sélectionner une vidéo, LIRE SON PROMPT dans le fichier source. Compr
 | `store-md-beta-10-spots` | Beta 10 spots, workaround OAuth |
 | `store-md-scan-demo-agency` | Démo scan pour agency |
 | `store-md-scan-cta` | CTA scan |
+
+#### Série waiting — V1-24/25/26 (à utiliser pendant période d'attente validation Shopify)
+
+| Nom V1 | Durée | Ce que la vidéo montre |
+|--------|-------|------------------------|
+| `V1-24_day7_still_ready.mp4` | 17s | Compteur Day X mécanique + agent dans cage de verre cyan + free scan accessible + install verrouillé |
+| `V1-25_while_we_wait_we_ship.mp4` | 18s | Builder log technique pendant la review Shopify (rewrites, fixes shippés) |
+| `V1-26_free_scan_not_install.mp4` | 16s | Split screen 2 portes : free scan open (vert) / install locked (rouge atténué) |
+
+Ces 3 vidéos forment une série cohérente. Le compteur "Day N" se met à jour à chaque utilisation (cf §4.4 règle Day N).
 
 #### Catalogue complet — V2 (10 vidéos) — `asset-brand/storemd/videos/STOREMD_TIKTOK_10_VIDEOS_V2.md`
 
@@ -168,12 +180,12 @@ Avant de sélectionner une vidéo, LIRE SON PROMPT dans le fichier source. Compr
 
 #### Catalogue complet — Carrousels (4 sets) — `asset-brand/storemd/caroussel/`
 
-| Nom | Dossier | Slides | Ce que le carrousel montre | Prompt |
-|-----|---------|--------|--------------------------|--------|
-| Général | caroussel-général/ | 6 | Présentation StoreMD — c'est quoi | PROMPT_CAROUSSEL_0.md |
-| Installation beta | caroussel-installation-beta/ | 7 | Process beta en 5 étapes (DM → install → scan → résultats) | PROMPT_CAROUSSEL_1.md |
-| Agressif | caroussel-agressif/ | 6 | 5 problèmes que personne ne scanne | PROMPT_CAROUSSEL_2.md |
-| Gains potentiels | caroussel-gains-potentiels/ | 6 | Speed Tax, App Bloat, Time Tax, What Nobody Scans, Solution | PROMPT_CAROUSSEL_3.md |
+| Nom | Dossier | Slides | Ce que le carrousel montre | Prompt | Statut |
+|-----|---------|--------|--------------------------|--------|--------|
+| Général | caroussel-général/ | 6 | Présentation StoreMD — c'est quoi | PROMPT_CAROUSSEL_0.md | ✅ Actif |
+| Installation beta | caroussel-installation-beta/ | 7 | Process beta en 5 étapes (DM → install → scan → résultats) | PROMPT_CAROUSSEL_1.md | ❌ Exclu (app pas validée Shopify) |
+| Agressif | caroussel-agressif/ | 6 | 5 problèmes que personne ne scanne | PROMPT_CAROUSSEL_2.md | ✅ Actif |
+| Gains potentiels | caroussel-gains-potentiels/ | 6 | Speed Tax, App Bloat, Time Tax, What Nobody Scans, Solution | PROMPT_CAROUSSEL_3.md | ✅ Actif |
 
 ### 2.5 Ressentis R et F
 
@@ -340,7 +352,7 @@ Ne touche à rien d'autre dans le fichier.
 | Plateforme | Longueur | Format lien | Hashtags | Spécificité |
 |-----------|---------|------------|---------|------------|
 | Twitter | 100-280 car. | REPLY (format 2-blocs) | 0 | Thread possible (5 tweets max) |
-| LinkedIn | 800-1300 car., 1 phrase/ligne | Commentaire ou Featured bio | 0-3 niche | Carrousel possible |
+| LinkedIn | 600-1300 car. selon angle, 1 phrase/ligne | Commentaire ou Featured bio | 0-3 niche | Carrousel possible. 600 char punchy pour clôtures pédagogiques, 1100-1300 pour story arc complet |
 | TikTok | Caption courte | Lien bio | 0 (keywords caption/audio/overlay) | VIDÉO obligatoire, natif |
 | Instagram | Caption moyenne | Lien bio | 5 max niche | Reel (recyclé TikTok) ou carrousel |
 | Facebook | Caption moyenne | Commentaire | 2-3 max | Reel (recyclé TikTok) |
@@ -378,6 +390,7 @@ Avant de livrer un post, vérifier :
 - Pas de "Here's the thing:", "The reality is", "At the end of the day", "So,", "Look,", "Honestly,"
 - Contractions obligatoires (don't, won't, I've, it's) pour les comptes perso
 - Phrases de longueurs variées, jamais 5 d'affilée de même longueur
+- Si post de la série waiting (V1-24/25/26) : Day N cohérent avec la date du post. Calcul : `N = date_du_post - date_resubmission_Shopify`. Référence active : resubmission 11/05/2026 (à mettre à jour si l'app est validée ou si nouvelle suspension/resubmission). Le compteur doit être identique sur tous les posts du même jour (TT, IG, FB, TW, LinkedIn, IH).
 
 ### 4.5 Cohérence texte/vidéo
 
@@ -527,6 +540,78 @@ Quand un nouveau business arrive (høkuno, ProfitPilot) :
 4. Ajouter une section dans le batch central
 5. Créer un fichier dispatch dans le dossier du business
 6. Le format du post (§3) et les règles (§4) restent les mêmes
+
+---
+
+## 10. PROCÉDURE D'ÉTABLISSEMENT — Production par blocs
+
+Le batch se produit en **7 blocs séquentiels** (1 par jour de la semaine), avec validation R entre chaque bloc.
+
+### 10.1 Workflow par bloc
+
+1. Annoncer le jour, la vidéo source, le thème, le nombre de textes uniques
+2. Rédiger les textes (caption TT/IG/FB + textes par compte + traduction FR)
+3. Auditer chaque texte contre ANTI-IA (§4.4) et RED LINES (§0)
+4. Présenter le récap pour validation R
+5. R valide ou demande ajustements → corriger sur place
+6. Une fois validé → sortir un prompt Claude Code chirurgical
+7. R lance le prompt → bloc suivant
+
+### 10.2 Ordre des 7 blocs
+
+| Bloc | Jour | Opération Claude Code |
+|------|------|------------------------|
+| 1 | Lundi | Write intégral du fichier `batch-semaine-S[N].md` (création + section lundi + 6 placeholders) |
+| 2 | Mardi | str_replace placeholder mardi |
+| 3 | Mercredi | str_replace placeholder mercredi (inclut IH FoundryTwo) |
+| 4 | Jeudi | str_replace placeholder jeudi |
+| 5 | Vendredi | str_replace placeholder vendredi |
+| 6 | Samedi | str_replace placeholder samedi (3 posts seulement) |
+| 7 | Dimanche | str_replace placeholder dimanche (3 posts seulement) |
+
+Après le Bloc 7 : dispatch dans les 3 fichiers `publication/batch-semaine.md` (cf §5).
+
+### 10.3 Phase préliminaire (avant Bloc 1)
+
+Avant de lancer le Bloc 1, valider avec R :
+- Mapping vidéo source pour chaque jour (7 jours)
+- Angle stratégique de la semaine
+- Sets hashtags par jour (rotation A/B/C depuis `saas-app-shopify/hashtags.md`)
+- Si série waiting active : date_resubmission de référence pour le calcul Day N
+
+---
+
+## 11. CONVENTION FENCE — Prompts Claude Code
+
+Les prompts Claude Code contiennent souvent des blocs de code triple-backtick (textes à insérer dans le fichier). L'imbrication des triple-backticks peut casser le rendu du prompt dans le chat.
+
+### 11.1 Règle
+
+Dans le corps d'un prompt Claude Code, remplacer chaque triple-backtick par la chaîne littérale `FENCE` (en majuscules). Le prompt instruit Claude Code de :
+
+1. Compter les occurrences de FENCE attendues
+2. Remplacer chaque FENCE par trois backticks à l'écriture du fichier
+3. Vérifier en post-modification qu'aucune occurrence littérale `FENCE` ne subsiste
+
+### 11.2 Exemple
+
+Au lieu d'écrire (qui casserait le rendu) :
+
+\`\`\`code à insérer\`\`\`
+
+Écrire dans le prompt :
+
+FENCE
+code à insérer
+FENCE
+
+Et ajouter au prompt : "remplacer CHAQUE occurrence de FENCE par trois backticks consécutifs avant l'opération Write/str_replace".
+
+### 11.3 Vérification
+
+Tout prompt Claude Code utilisant la convention FENCE doit inclure une action de vérification finale :
+
+> Confirmer qu'aucune occurrence littérale de la chaîne FENCE ne subsiste dans le fichier.
 
 ---
 
