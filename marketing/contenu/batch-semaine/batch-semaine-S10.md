@@ -1259,4 +1259,75 @@ The scan that finds them is free at storemd.vercel.app.
 
 ---
 
-# ═══ DIMANCHE 24/05 — À remplir au Bloc 7 (V1-20 20 Invisible Questions) ═══
+# ═══ DIMANCHE 24/05 — Thème : 20 Invisible Questions (focus produit, clôture semaine) ═══
+
+---
+
+#### STOREMD-TK-S10-07 — StoreMD — TikTok — Dim 24/05 14h00
+
+**Vidéo :** V1-20_20_invisible_questions.mp4 (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+20 questions every Shopify merchant should ask weekly but never has time to 🔍
+
+Which apps are leaking budget? Which scripts are still loading after uninstall? Which listings are invisible to ChatGPT?
+
+StoreMD answers them in 60 seconds. Free scan at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> 20 questions que chaque merchant Shopify devrait se poser chaque semaine mais n'a jamais le temps 🔍
+>
+> Quelles apps font fuiter du budget ? Quels scripts continuent de charger après désinstall ? Quels listings sont invisibles pour ChatGPT ?
+>
+> StoreMD y répond en 60 secondes. Free scan sur storemd.vercel.app.
+
+---
+
+#### STOREMD-IG-S10-07 — StoreMD — Instagram — Dim 24/05 18h00
+
+**Vidéo :** V1-20_20_invisible_questions.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
+**Hashtags :** `#shopifystore` `#ecommercetips` `#smallbusinessowner` `#shopifytips` `#onlinestore`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+20 questions every Shopify merchant should ask weekly but never has time to 🔍
+
+Which apps are leaking budget? Which scripts are still loading after uninstall? Which listings are invisible to ChatGPT?
+
+StoreMD answers them in 60 seconds. Free scan at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> 20 questions que chaque merchant Shopify devrait se poser chaque semaine mais n'a jamais le temps 🔍
+>
+> Quelles apps font fuiter du budget ? Quels scripts continuent de charger après désinstall ? Quels listings sont invisibles pour ChatGPT ?
+>
+> StoreMD y répond en 60 secondes. Free scan sur storemd.vercel.app.
+
+---
+
+#### STOREMD-FB-S10-07 — StoreMD — Facebook — Dim 24/05 18h30
+
+**Vidéo :** V1-20_20_invisible_questions.mp4 recyclé TikTok (re-export sans watermark)
+**Hashtags :** `#shopify` `#ecommerce` `#smallbusiness`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**CAPTION :**
+```
+20 questions every Shopify merchant should ask weekly but never has time to 🔍
+
+Which apps are leaking budget? Which scripts are still loading after uninstall? Which listings are invisible to ChatGPT?
+
+StoreMD answers them in 60 seconds. Free scan at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> 20 questions que chaque merchant Shopify devrait se poser chaque semaine mais n'a jamais le temps 🔍
+>
+> Quelles apps font fuiter du budget ? Quels scripts continuent de charger après désinstall ? Quels listings sont invisibles pour ChatGPT ?
+>
+> StoreMD y répond en 60 secondes. Free scan sur storemd.vercel.app.
