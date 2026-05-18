@@ -1184,7 +1184,78 @@ Yes the app works. No you can't install it yet.
 
 ---
 
-# ═══ SAMEDI 23/05 — À remplir au Bloc 6 (V1-09 One-Click Fix) ═══
+# ═══ SAMEDI 23/05 — Thème : One-Click Fix (focus produit, week-end) ═══
+
+---
+
+#### STOREMD-TK-S10-06 — StoreMD — TikTok — Sam 23/05 14h00
+
+**Vidéo :** V1-09_one_click_fix.mp4 (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Most audit tools tell you what's broken and leave you with a 47-page PDF 📄
+
+StoreMD shows the issue, then fixes it in one click ⚡
+
+The scan that finds them is free at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> La plupart des outils d'audit te disent ce qui est cassé et te laissent avec un PDF de 47 pages 📄
+>
+> StoreMD montre le problème, puis le règle en un clic ⚡
+>
+> Le scan qui les trouve est gratuit sur storemd.vercel.app.
+
+---
+
+#### STOREMD-IG-S10-06 — StoreMD — Instagram — Sam 23/05 18h00
+
+**Vidéo :** V1-09_one_click_fix.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
+**Hashtags :** `#buildinpublic` `#shopifyapp` `#saasbuilder` `#indiehacker` `#ecommercedev`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Most audit tools tell you what's broken and leave you with a 47-page PDF 📄
+
+StoreMD shows the issue, then fixes it in one click ⚡
+
+The scan that finds them is free at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> La plupart des outils d'audit te disent ce qui est cassé et te laissent avec un PDF de 47 pages 📄
+>
+> StoreMD montre le problème, puis le règle en un clic ⚡
+>
+> Le scan qui les trouve est gratuit sur storemd.vercel.app.
+
+---
+
+#### STOREMD-FB-S10-06 — StoreMD — Facebook — Sam 23/05 18h30
+
+**Vidéo :** V1-09_one_click_fix.mp4 recyclé TikTok (re-export sans watermark)
+**Hashtags :** `#shopifydev` `#saas` `#buildinpublic`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**CAPTION :**
+```
+Most audit tools tell you what's broken and leave you with a 47-page PDF 📄
+
+StoreMD shows the issue, then fixes it in one click ⚡
+
+The scan that finds them is free at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> La plupart des outils d'audit te disent ce qui est cassé et te laissent avec un PDF de 47 pages 📄
+>
+> StoreMD montre le problème, puis le règle en un clic ⚡
+>
+> Le scan qui les trouve est gratuit sur storemd.vercel.app.
 
 ---
 
