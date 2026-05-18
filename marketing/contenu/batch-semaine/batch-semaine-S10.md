@@ -724,7 +724,233 @@ Free scan still public at storemd.vercel.app.
 
 ---
 
-# ═══ JEUDI 21/05 — À remplir au Bloc 4 (V1-11 Ghost Billing) ═══
+# ═══ JEUDI 21/05 — Thème : Ghost Billing POV (focus produit, douleur sourcée 530+ reviews) ═══
+
+---
+
+#### STOREMD-TW-F-S10-04 — Fabrice (@FabGangi) — Twitter — Jeu 21/05 13h00
+
+**Vidéo :** V1-11_ghost_billing_pov.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Detecting ghost billing isn't magic. It's reconciliation 🛠️
+
+The agent pulls the Shopify Partner subscription API. Cross-references against installed_at and uninstalled_at events. Flags any active charge_id tied to a deleted app.
+
+Took 2 days to build. Should be a Shopify default.
+
+Free scan runs it.
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Détecter le ghost billing c'est pas de la magie. C'est de la réconciliation 🛠️
+>
+> L'agent pull la Shopify Partner subscription API. Croise les références contre les events installed_at et uninstalled_at. Flag chaque charge_id actif lié à une app supprimée.
+>
+> 2 jours pour le construire. Ça devrait être un default Shopify.
+>
+> Le free scan le fait tourner.
+
+---
+
+#### STOREMD-TK-S10-04 — StoreMD — TikTok — Jeu 21/05 14h00
+
+**Vidéo :** V1-11_ghost_billing_pov.mp4 (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Most Shopify merchants don't know they're paying for apps they uninstalled months ago 💀
+
+Ghost billing. Dead code. Subscriptions nobody cancelled.
+
+Free scan finds them in 60 seconds at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> La plupart des merchants Shopify ne savent pas qu'ils paient pour des apps désinstallées il y a des mois 💀
+>
+> Ghost billing. Code mort. Abonnements que personne n'a annulés.
+>
+> Le free scan les trouve en 60 secondes sur storemd.vercel.app.
+
+---
+
+#### STOREMD-TW-R-S10-04 — Romain (@delgado_ro72224) — Twitter — Jeu 21/05 14h00
+
+**Vidéo :** V1-11_ghost_billing_pov.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Dug through 530+ reviews across the top Shopify apps last month 🔍
+
+The most common complaint isn't bugs or pricing.
+
+It's billing that continues months after uninstall.
+
+Privy alone has 40+ public reviews mentioning it. Most merchants discover it during a payment audit, never before.
+
+Scan checks for it 💀
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> J'ai fouillé 530+ reviews sur les top apps Shopify le mois dernier 🔍
+>
+> La plainte la plus fréquente ce ne sont pas les bugs ou le pricing.
+>
+> C'est la facturation qui continue des mois après désinstall.
+>
+> Privy à elle seule a 40+ reviews publiques qui le mentionnent. La plupart des merchants le découvrent pendant un audit de paiement, jamais avant.
+>
+> Le scan check ça 💀
+
+---
+
+#### STOREMD-TW-SM-S10-04 — StoreMD (@StoreMd_off) — Twitter — Jeu 21/05 15h00
+
+**Vidéo :** V1-11_ghost_billing_pov.mp4 (recyclé TikTok, re-export sans watermark)
+**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+Ghost billing is the dirtiest secret in the Shopify app ecosystem 💀
+
+40+ Privy reviews. Multiple PageFly and Shogun threads. Same pattern: subscription kept charging months after uninstall.
+
+The scan catches all three in 60 seconds.
+
+storemd.vercel.app stays public while review runs.
+```
+
+**REPLY :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Le ghost billing est le secret le plus crade de l'écosystème d'apps Shopify 💀
+>
+> 40+ reviews sur Privy. Plusieurs threads PageFly et Shogun. Même pattern : abonnement qui continue de facturer des mois après désinstall.
+>
+> Le scan attrape les trois en 60 secondes.
+>
+> storemd.vercel.app reste public pendant que la review tourne.
+
+---
+
+#### STOREMD-LI-R-S10-04 — Romain Delgado — LinkedIn — Jeu 21/05 18h00
+
+**Vidéo :** V1-11_ghost_billing_pov.mp4 (recyclé TikTok, re-export sans watermark, format vertical compatible LinkedIn natif)
+**UTM :** Aucun (pas de lien dans le corps LinkedIn, pénalité -60% reach). Pour mention en commentaire si besoin : `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TEXTE :**
+```
+The most expensive line on a Shopify merchant's monthly bill isn't usually the platform fee.
+
+It's the apps they don't use anymore.
+
+Last month I dug through 530+ public reviews across the most popular Shopify apps. The pattern that came up most often wasn't bugs, wasn't pricing complaints, wasn't even poor support.
+
+It was billing that kept running after uninstall.
+
+Privy alone has more than 40 public reviews mentioning it. PageFly, Shogun, Avada have similar threads. Subscriptions still active months after merchants thought they had cancelled them. Sometimes the app icon is gone from the admin. Sometimes the theme code is gone too. The charge keeps coming.
+
+The discovery usually happens during a payment reconciliation, never before. By then it's been three to nine months.
+
+That's a real revenue leak.
+
+Most Shopify merchants run 14 to 18 apps. If even one of them stays billable after uninstall, that's $20 to $79 a month gone. Stack three or four ghost subscriptions and you're looking at $1,000+ a year.
+
+I built StoreMD to catch this kind of thing automatically. The detection logic is simple: cross-reference active charge_ids against installed_at events. Any charge tied to a deleted app gets flagged.
+
+It took two days to build that single check. Should be a Shopify default.
+
+The free scan is public while the App Store review runs. storemd.vercel.app 💀
+```
+
+**TRADUCTION :**
+> La ligne la plus coûteuse sur la facture mensuelle d'un merchant Shopify n'est généralement pas le plan de la plateforme.
+>
+> Ce sont les apps qu'il n'utilise plus.
+>
+> Le mois dernier j'ai fouillé 530+ reviews publiques sur les apps Shopify les plus populaires. Le pattern qui revient le plus souvent ce ne sont pas les bugs, ce ne sont pas les plaintes de pricing, ce n'est même pas le mauvais support.
+>
+> C'est la facturation qui continue après désinstall.
+>
+> Privy à elle seule a plus de 40 reviews publiques qui le mentionnent. PageFly, Shogun, Avada ont des threads similaires. Abonnements toujours actifs des mois après que les merchants pensaient les avoir annulés. Parfois l'icône de l'app a disparu de l'admin. Parfois le code du theme aussi. La facture continue de tomber.
+>
+> La découverte se fait généralement pendant une réconciliation de paiements, jamais avant. À ce moment-là ça fait trois à neuf mois.
+>
+> C'est une vraie fuite de revenu.
+>
+> La plupart des merchants Shopify font tourner 14 à 18 apps. Si même une seule reste facturable après désinstall, c'est $20 à $79 par mois qui partent. Empile trois ou quatre abonnements fantômes et tu regardes $1,000+ par an.
+>
+> J'ai construit StoreMD pour attraper ce genre de truc automatiquement. La logique de détection est simple : croise les charge_ids actifs contre les events installed_at. Toute charge liée à une app supprimée est flaggée.
+>
+> Il a fallu deux jours pour construire ce seul check. Ça devrait être un default Shopify.
+>
+> Le free scan est public pendant que la review de l'App Store tourne. storemd.vercel.app 💀
+
+---
+
+#### STOREMD-IG-S10-04 — StoreMD — Instagram — Jeu 21/05 18h00
+
+**Vidéo :** V1-11_ghost_billing_pov.mp4 recyclé TikTok (re-export sans watermark, 1080×1350)
+**Hashtags :** `#shopifystore` `#ecommercetips` `#smallbusinessowner` `#shopifytips` `#onlinestore`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**CAPTION :**
+```
+Most Shopify merchants don't know they're paying for apps they uninstalled months ago 💀
+
+Ghost billing. Dead code. Subscriptions nobody cancelled.
+
+Free scan finds them in 60 seconds at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> La plupart des merchants Shopify ne savent pas qu'ils paient pour des apps désinstallées il y a des mois 💀
+>
+> Ghost billing. Code mort. Abonnements que personne n'a annulés.
+>
+> Le free scan les trouve en 60 secondes sur storemd.vercel.app.
+
+---
+
+#### STOREMD-FB-S10-04 — StoreMD — Facebook — Jeu 21/05 18h30
+
+**Vidéo :** V1-11_ghost_billing_pov.mp4 recyclé TikTok (re-export sans watermark)
+**Hashtags :** `#shopify` `#ecommerce` `#smallbusiness`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**CAPTION :**
+```
+Most Shopify merchants don't know they're paying for apps they uninstalled months ago 💀
+
+Ghost billing. Dead code. Subscriptions nobody cancelled.
+
+Free scan finds them in 60 seconds at storemd.vercel.app.
+```
+
+**TRADUCTION :**
+> La plupart des merchants Shopify ne savent pas qu'ils paient pour des apps désinstallées il y a des mois 💀
+>
+> Ghost billing. Code mort. Abonnements que personne n'a annulés.
+>
+> Le free scan les trouve en 60 secondes sur storemd.vercel.app.
 
 ---
 
