@@ -479,7 +479,7 @@ Jamais de dispatch sans validation du batch central.
 
 Quand la semaine est terminée (vendredi soir ou samedi avant le nouveau batch) :
 
-1. Copier le batch central dans `archives/batches/batch-semaine-S[N].md`
+1. Copier le batch central dans `marketing/archives/batch-semaine/batch-semaine-S[N].md`
 2. Vider le contenu des 3 fichiers dispatch (garder les headers/tableaux vides)
 3. Vider le batch central (garder le header, prêt pour le nouveau batch)
 4. Les fichiers dispatch ne sont PAS archivés — le batch central contient tout
