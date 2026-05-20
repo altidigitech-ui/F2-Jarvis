@@ -1,7 +1,7 @@
 # Canal LinkedIn — façade fondateurs F + R + page F2
 
 > Dernière mise à jour : 29 avril 2026
-> Statut : ACTIF — Façade fondateurs + cross-engage
+> Statut : ARCHIVÉ — Remplacé par marketing/canaux/linkedin/ depuis 29/04/2026
 > Hérite de : `../strategie.md` + `../objectifs.md` + `../../la-toile/la-toile.md`
 
 ---
