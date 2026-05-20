@@ -1,7 +1,7 @@
 # Canal Launch Days — IndieHackers + Product Hunt + autres
 
 > Dernière mise à jour : 29 avril 2026
-> Statut : ACTIF — Activation ponctuelle uniquement (jamais cadence continue)
+> Statut : ARCHIVÉ — Splitté entre marketing/canaux/ih/ et marketing/canaux/ph/ depuis 29/04/2026
 > Hérite de : `../strategie.md` + `../objectifs.md` + `../../la-toile/la-toile.md`
 
 ---

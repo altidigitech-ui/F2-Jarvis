@@ -1,7 +1,7 @@
 # Canal TikTok — `@storemd`
 
 > Dernière mise à jour : 29 avril 2026
-> Statut : ACTIF — Canal acquisition #1
+> Statut : ARCHIVÉ — Remplacé par marketing/canaux/tiktok/ depuis 29/04/2026
 > Hérite de : `../strategie.md` + `../objectifs.md` + `../../la-toile/la-toile.md`
 
 ---

@@ -1,7 +1,7 @@
 # Canal Instagram — `@storemd`
 
 > Dernière mise à jour : 29 avril 2026
-> Statut : ACTIF — Canal recyclage + visuel
+> Statut : ARCHIVÉ — Remplacé par marketing/canaux/instagram/ depuis 29/04/2026
 > Hérite de : `../strategie.md` + `../objectifs.md` + `../../la-toile/la-toile.md` + `tiktok.md`
 
 ---

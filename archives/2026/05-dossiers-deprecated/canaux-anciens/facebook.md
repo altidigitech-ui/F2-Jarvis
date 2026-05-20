@@ -1,7 +1,7 @@
 # Canal Facebook — page produit + groupes Shopify
 
 > Dernière mise à jour : 29 avril 2026
-> Statut : ACTIF — Double rôle : recyclage + engagement communautés
+> Statut : ARCHIVÉ — Remplacé par marketing/canaux/facebook/ depuis 29/04/2026
 > Hérite de : `../strategie.md` + `../objectifs.md` + `../../la-toile/la-toile.md` + `tiktok.md` + `instagram.md`
 
 ---
