@@ -7,6 +7,8 @@
 > Ref batch-template : `marketing/contenu/batch-semaine/batch-template.md`
 > RED LINES vérifiées : zéro donnée inventée, zéro feature non-live, UTM copié depuis ref.
 > Hashtags : copiés depuis `saas-app-shopify/hashtags.md` (sets A/B/C en rotation)
+>
+> ⚠️ **REFONTE LAUNCH (22/05/2026).** StoreMD validée sur le Shopify App Store le 22/05. Tous les posts à partir du **vendredi 22/05** ont été refaits sur l'angle « live ». La version **À PUBLIER** est la section **« ✅ LAUNCH V2 »** en fin de document. Les jours ven/sam/dim d'origine (waiting) plus bas sont **conservés pour trace, NE PAS PUBLIER** (zone « ⛔ OBSOLÈTE V1 »). Lundi→jeudi inchangés, à publier normalement.
 
 ---
 
@@ -910,6 +912,12 @@ Free scan finds them in 60 seconds at storemd.vercel.app.
 
 ---
 
+# ═══════════════════════════════════════════════════════════════
+# ⛔ ZONE OBSOLÈTE — VEN→DIM V1 (waiting series) — NE PAS PUBLIER
+# Remplacée par la section « ✅ LAUNCH V2 » en fin de document.
+# Conservée pour trace uniquement (refonte launch du 22/05).
+# ═══════════════════════════════════════════════════════════════
+
 # ═══ VENDREDI 22/05 — Thème : Free scan ≠ install. (waiting series, clôture pédagogique) ═══
 
 ---
@@ -1279,3 +1287,15 @@ StoreMD answers them in 60 seconds. Free scan at storemd.vercel.app.
 > Quelles apps font fuiter du budget ? Quels scripts continuent de charger après désinstall ? Quels listings sont invisibles pour ChatGPT ?
 >
 > StoreMD y répond en 60 secondes. Free scan sur storemd.vercel.app.
+
+---
+---
+
+# ═══════════════════════════════════════════════════════════════
+# ✅ LAUNCH V2 — VEN 22 → DIM 24/05 — VERSION À PUBLIER
+# StoreMD validée Shopify App Store le 22/05. Remplace la zone OBSOLÈTE V1 ci-dessus.
+# ═══════════════════════════════════════════════════════════════
+
+> **Règle liens (2 accès) :** Install = `apps.shopify.com/storemd-1` (URL nue, tracking Partner Dashboard). Free scan = `storemd.vercel.app` + UTM réels copiés depuis `tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`. Twitter/LinkedIn = 1 case copier-coller par lien. TikTok/IG/FB = CTA verbal + free scan en bio.
+
+<!-- INSERT_LAUNCH_V2 -->
