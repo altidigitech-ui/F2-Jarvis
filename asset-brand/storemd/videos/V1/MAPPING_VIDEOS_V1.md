@@ -1,8 +1,8 @@
 # StoreMD — Mapping Vidéos V1
 
-> 23 vidéos (23 produites)
+> 27 vidéos (27 produites) — V1-01 à V1-22 actives · V1-23 exclue (beta/DM) · V1-24/25/26 obsolètes (série waiting, hors rotation depuis 22/05) · V1-27 launch active
 > Produites via Claude Design (HTML → screen-record → MP4)
-> Prompts source : `STOREMD_TIKTOK_10_VIDEOS_V2.md` (V1-01 à V1-10), `STOREMD_TIKTOK_10_VIDEOS_V3.md` (V1-11 à V1-20), standalone (V1-21 à V1-23)
+> Prompts source : `STOREMD_TIKTOK_10_VIDEOS_V2.md` (V1-01 à V1-10), `STOREMD_TIKTOK_10_VIDEOS_V3.md` (V1-11 à V1-20), standalone (V1-21 à V1-27)
 > Format : vertical 9:16, 1080×2338, 30fps, H.264
 > Compte : @StoreMd_off (TikTok, Twitter, Instagram, Facebook)
 
@@ -34,7 +34,13 @@
 | V1-20 | `V1-20_20_invisible_questions.mp4` | "Your Health Score Has 20 Invisible Questions" | 26s | Funnel 3 couches, 20 questions qui apparaissent, score 20/20 | Post diagnostic, curiosité, esthétique médicale premium | ✅ |
 | V1-21 | `V1-21_demo_scan_mobile.mp4` | Demo scan mobile | 25s | Screen-record du flow scan réel sur mobile, iPhone simulé, résultats | Post tutoriel beta, comment scanner, onboarding, preuve produit | ✅ |
 | V1-22 | `V1-22_demo_scan_desktop.mp4` | Demo scan desktop | 25s | Screen-record du flow scan réel sur desktop, même flow version large | Post tutoriel beta version desktop, démonstration produit | ✅ |
-| V1-23 | `V1-23_beta_10_spots.mp4` | "51 Clicked Install. 0 Completed." | 22s | Hook "51/0", mur OAuth 12 étapes, workaround DM, 10 spots beta, CTA "DM your URL" | Post beta access, OAuth workaround, transparence, urgence 10 spots, recrutement beta testers | ✅ |
+| V1-23 | `V1-23_beta_10_spots.mp4` | "51 Clicked Install. 0 Completed." | 22s | Hook "51/0", mur OAuth 12 étapes, workaround DM, 10 spots beta, CTA "DM your URL" | EXCLUE — mention "10 spots beta" + "DM your URL" incompatibles post-launch. Hors rotation. | ❌ |
+| V1-24 | `V1-24_day7_still_ready.mp4` | "Still running." | 12s | Logo slam (impact, anneaux concentriques, scan line) → capsule de verre avec agent StoreMD qui pulse + "The agent is live" / "Pending Shopify review" → badge FREE SCAN "no install needed" + storemd.vercel.app | ⚠️ OBSOLÈTE depuis 22/05 — série waiting (attente validation Shopify). Hors rotation. Conservée pour archive/réf historique. | ⚠️ OBSOLÈTE |
+| V1-25 | `V1-25_while_we_wait_we_ship.mp4` | "While they review, the agent shipped" | 13s | "DAY 7" + bandeau "STILL UNDER REVIEW" → "While they review / The agent shipped" → terminal log 7 features shippées (token refresh, install middleware, app icon, scope alignment, managed pricing, OAuth, billing isolation) → "Ready when you are." + storemd.vercel.app | ⚠️ OBSOLÈTE depuis 22/05 — série waiting. Hors rotation. Conservée pour archive/réf historique. | ⚠️ OBSOLÈTE |
+| V1-26 | `V1-26_free_scan_not_install.mp4` | "Free scan ≠ Install" | 12s | Hook "Free scan ≠ Install" → split screen FREE SCAN (porte ouverte verte, "OPEN. Live now.") vs INSTALL (porte fermée + cadenas rouge, "LOCKED. Pending Shopify.") → "Yes the app works. Shopify just hasn't approved it yet." → "Scan now. Install when Shopify finally moves." | ⚠️ OBSOLÈTE depuis 22/05 — série waiting. Hors rotation. Conservée pour archive/réf historique. | ⚠️ OBSOLÈTE |
+| V1-27 | `V1-27_now_live_shopify.mp4` | "It's live. Install now on Shopify." | 17s | Carte app status PENDING (rouge, cadenas fermé) → bascule (flash cyan, point vert pop, cadenas s'ouvre + se dissout, badge AVAILABLE NOW) → "It's live. / On the Shopify App Store." + "One-click install. Free plan available." → CTA logo + "Install StoreMD on Shopify" + apps.shopify.com/storemd-1 | ✅ LAUNCH DAY 22/05 — annonce validation Shopify, app dispo au téléchargement. Asset central du launch coordonné. Réutilisable en S11 comme rappel "now live". | ✅ LAUNCH |
+
+**Légende statut :** ✅ active · ✅ LAUNCH (asset du launch 22/05) · ⚠️ OBSOLÈTE (série waiting, hors rotation, conservée pour archive) · ❌ exclue
 
 ---
 
