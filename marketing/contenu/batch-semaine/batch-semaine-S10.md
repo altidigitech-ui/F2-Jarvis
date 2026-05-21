@@ -1298,4 +1298,512 @@ StoreMD answers them in 60 seconds. Free scan at storemd.vercel.app.
 
 > **Règle liens (2 accès) :** Install = `apps.shopify.com/storemd-1` (URL nue, tracking Partner Dashboard). Free scan = `storemd.vercel.app` + UTM réels copiés depuis `tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`. Twitter/LinkedIn = 1 case copier-coller par lien. TikTok/IG/FB = CTA verbal + free scan en bio.
 
-<!-- INSERT_LAUNCH_V2 -->
+# ═══ VENDREDI 22/05 — LAUNCH DAY — Thème : It's live on the Shopify App Store ═══
+
+> 9 publications coordonnées (7 standard + R LinkedIn exceptionnel + IH rattrapage). Vidéo V1-27 sur tous les comptes. Teaser "Monday" sur chaque post.
+
+---
+
+#### STOREMD-TK-S10V2-01 — StoreMD (@StoreMd_off) — TikTok — Ven 22/05 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (source du jour)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+It's official. StoreMD is now live on the Shopify App Store 🎉
+
+Scan your store's health in 60 seconds. Five modules, one app, nothing injected in your theme.
+
+Free plan available. Install on Shopify, or scan free first at storemd.vercel.app.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**HASHTAGS (TikTok, Set A adapté launch — 5) :**
+```
+#shopify #shopifystore #shopifyapps #ecommercetips #StoreMD
+```
+
+**TRADUCTION :**
+> C'est officiel. StoreMD est maintenant live sur le Shopify App Store 🎉
+> Scanne la santé de ta boutique en 60 secondes. Cinq modules, une app, aucun code injecté dans ta vitrine.
+> Forfait gratuit disponible. Installe sur Shopify, ou scanne gratuitement d'abord sur storemd.vercel.app.
+> Début de la promo lundi 25/05 🔥
+
+---
+
+#### STOREMD-TW-F-S10V2-01 — Fabrice (@FabGangi) — Twitter — Ven 22/05 13h00
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Built StoreMD. Submitted to Shopify. Got suspended, fixed it, waited a month.
+
+It's live on the App Store today ✅
+
+60s store health scan, five modules, nothing injected in your theme.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**REPLY (mini-thread — 1 lien par reply, carte propre) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> J'ai construit StoreMD. Soumis à Shopify. Suspendu, corrigé, un mois d'attente.
+> C'est live sur l'App Store aujourd'hui ✅
+> Scan santé de boutique en 60s, cinq modules, aucun code injecté dans ta vitrine.
+> Début de la promo lundi 25/05 🔥
+
+---
+
+#### STOREMD-TW-R-S10V2-01 — Romain (@delgado_ro72224) — Twitter — Ven 22/05 14h00
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+A month ago I submitted StoreMD to the Shopify App Store. Then I waited.
+
+Today it's live. Anyone can install it 🎉
+
+It scans a Shopify store's health in 60 seconds. Free plan included.
+
+Launch promo starts Monday, May 25.
+```
+
+**REPLY (mini-thread — 1 lien par reply, carte propre) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Il y a un mois j'ai soumis StoreMD au Shopify App Store. Puis j'ai attendu.
+> Aujourd'hui c'est live. N'importe qui peut l'installer 🎉
+> Il scanne la santé d'une boutique Shopify en 60 secondes. Forfait gratuit inclus.
+> Début de la promo lundi 25/05.
+
+---
+
+#### STOREMD-TW-SM-S10V2-01 — StoreMD (@StoreMd_off) — Twitter — Ven 22/05 15h00
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+StoreMD is now live on the Shopify App Store 🎉
+
+60-second store health scan: speed, dead app code, ghost charges, SEO, security, email.
+
+Five modules. One app. Free plan available.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**REPLY (mini-thread — 1 lien par reply, carte propre) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> StoreMD est maintenant live sur le Shopify App Store 🎉
+> Scan santé de boutique en 60 secondes : vitesse, code mort d'apps, frais fantômes, SEO, sécurité, email.
+> Cinq modules. Une app. Forfait gratuit disponible.
+> Début de la promo lundi 25/05 🔥
+
+---
+
+#### STOREMD-IH-S10V2-01 — FoundryTwo — Indie Hackers — Ven 22/05 15h00 — NOUVEAU (rattrapage mercredi)
+
+**Format :** long-form, voix FoundryTwo (studio dev), transparent. Pas de vidéo (screenshot listing optionnel).
+
+**TEXTE :**
+```
+StoreMD is live on the Shopify App Store.
+
+We submitted it on April 13, got suspended on a Managed Pricing config detail, fixed it, resubmitted on May 11, and waited. Today it cleared review.
+
+It's an AI agent that checks a Shopify store's health in 60 seconds: page speed on mobile and desktop, leftover code from uninstalled apps, ghost charges from apps that keep billing after removal, product listing SEO, security headers, email deliverability. Each issue gets a severity and a clear fix. Five modules in one app, nothing injected into the store theme.
+
+There's a free plan, so you can run a full audit without installing anything.
+
+And our launch promo starts Monday, May 25. More on that then.
+```
+
+**LIENS (in-text, 2) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
+```
+
+---
+
+#### STOREMD-LI-F-S10V2-01 — Fabrice Gangitano — LinkedIn — Ven 22/05 15h30
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+I submitted StoreMD to the Shopify App Store on April 13.
+
+It got suspended on a pricing config detail. I fixed it, resubmitted, and waited.
+
+Today it's live ✅
+
+StoreMD is an AI agent that scans a Shopify store's health in 60 seconds.
+
+Speed, leftover app code, ghost charges, listing SEO, security, email deliverability. Every issue gets a severity and a one-click fix.
+
+Five modules, one app, nothing injected into your theme.
+
+Free plan available, so you can audit before installing anything.
+
+Our launch promo starts Monday, May 25.
+```
+
+**COMMENTAIRE (2 liens — 1 case chacun) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
+```
+
+**TRADUCTION :**
+> J'ai soumis StoreMD au Shopify App Store le 13 avril.
+> Suspendu sur un détail de config pricing. Corrigé, resoumis, attendu.
+> Aujourd'hui c'est live ✅
+> StoreMD est un agent IA qui scanne la santé d'une boutique Shopify en 60 secondes.
+> Vitesse, code résiduel d'apps, frais fantômes, SEO fiches, sécurité, délivrabilité email. Chaque problème : une sévérité et un fix en un clic.
+> Cinq modules, une app, aucun code injecté. Forfait gratuit pour auditer avant d'installer.
+> Notre promo de lancement commence lundi 25/05.
+
+---
+
+#### STOREMD-LI-R-S10V2-01 — Romain Delgado — LinkedIn — Ven 22/05 18h00 — NOUVEAU (exceptionnel launch day)
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+A month ago I submitted StoreMD to the Shopify App Store.
+
+Then came the part nobody posts about: the wait.
+
+Suspended once. Fixed. Resubmitted. Today it's live 🎉
+
+StoreMD is an AI agent that scans a Shopify store's health in 60 seconds.
+
+Most merchants don't lose sales to one big problem. They lose them to a dozen small ones nobody flagged.
+
+The agent finds them, ranks them by severity, and hands you the fix.
+
+Five modules, one app, free plan to scan before you install.
+
+If you run a Shopify store, this is worth 60 seconds.
+
+Launch promo starts Monday, May 25. More on that then.
+```
+
+**COMMENTAIRE (2 liens — 1 case chacun) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
+```
+
+**TRADUCTION :**
+> Il y a un mois j'ai soumis StoreMD au Shopify App Store.
+> Puis est venue la partie dont personne ne parle : l'attente.
+> Suspendu une fois. Corrigé. Resoumis. Aujourd'hui c'est live 🎉
+> StoreMD est un agent IA qui scanne la santé d'une boutique Shopify en 60 secondes.
+> La plupart des merchants ne perdent pas des ventes sur un gros problème. Mais sur une douzaine de petits que personne n'a signalés.
+> L'agent les trouve, les classe par sévérité, et te donne le fix.
+> Cinq modules, une app, forfait gratuit pour scanner avant d'installer.
+> Si tu gères une boutique Shopify, ça vaut 60 secondes.
+> Début de la promo lundi 25/05. Plus de détails à ce moment-là.
+
+---
+
+#### STOREMD-IG-S10V2-01 — StoreMD — Instagram — Ven 22/05 18h00
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE :**
+```
+It's official. StoreMD is now live on the Shopify App Store 🎉
+
+Scan your store's health in 60 seconds. Five modules, one app, nothing injected in your theme.
+
+Free plan available. Install on Shopify, or scan free first at storemd.vercel.app.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**TRADUCTION :**
+> C'est officiel. StoreMD est maintenant live sur le Shopify App Store 🎉
+> Scanne la santé de ta boutique en 60 secondes. Cinq modules, une app, aucun code injecté dans ta vitrine.
+> Forfait gratuit disponible. Installe sur Shopify, ou scanne gratuitement d'abord sur storemd.vercel.app.
+> Début de la promo lundi 25/05 🔥
+
+**HASHTAGS (Instagram, Set A — 5) :**
+```
+#shopifystore #ecommercetips #smallbusinessowner #shopifyapps #StoreMD
+```
+
+---
+
+#### STOREMD-FB-S10V2-01 — StoreMD — Facebook — Ven 22/05 18h30
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export sans watermark)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE :**
+```
+It's official. StoreMD is now live on the Shopify App Store 🎉
+
+Scan your store's health in 60 seconds. Five modules, one app, nothing injected in your theme.
+
+Free plan available. Install on Shopify, or scan free first at storemd.vercel.app.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**TRADUCTION :**
+> C'est officiel. StoreMD est maintenant live sur le Shopify App Store 🎉
+> Scanne la santé de ta boutique en 60 secondes. Cinq modules, une app, aucun code injecté dans ta vitrine.
+> Forfait gratuit disponible. Installe sur Shopify, ou scanne gratuitement d'abord sur storemd.vercel.app.
+> Début de la promo lundi 25/05 🔥
+
+**HASHTAGS (Facebook, Set A posts — 3) :**
+```
+#shopify #ecommerce #smallbusiness
+```
+
+---
+---
+
+# ═══ SAMEDI 23/05 — Thème : focus produit (contexte live) ═══
+
+> 3 publications (TikTok + IG + FB). Angle produit, vidéo produit à choisir dans le mapping. CTA install + free scan. Teaser Monday maintenu.
+
+#### STOREMD-TK-S10V2-02 — StoreMD (@StoreMd_off) — TikTok — Sam 23/05 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-13_real_scan.mp4` (source du jour — démonstration réelle)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+This is what a StoreMD scan actually looks like. Sound on 🔊
+
+60 seconds and you get a store health score, plus every issue ranked by severity. Page speed, leftover app code, ghost charges, listing SEO, security.
+
+Now live on the Shopify App Store. Free plan, or run the scan first at storemd.vercel.app.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**HASHTAGS (TikTok, Set B adapté — 5) :**
+```
+#shopifytips #onlinebusiness #ecommerce #shopifyapps #StoreMD
+```
+
+**TRADUCTION :**
+> Voilà à quoi ressemble vraiment un scan StoreMD. Son activé 🔊
+> 60 secondes et tu obtiens un score de santé de boutique, plus chaque problème classé par sévérité. Vitesse des pages, code résiduel d'apps, frais fantômes, SEO fiches, sécurité.
+> Maintenant live sur le Shopify App Store. Forfait gratuit, ou lance le scan d'abord sur storemd.vercel.app.
+> Début de la promo lundi 25/05 🔥
+
+---
+
+#### STOREMD-IG-S10V2-02 — StoreMD — Instagram — Sam 23/05 18h00
+
+**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE :**
+```
+This is what a StoreMD scan actually looks like. Sound on 🔊
+
+60 seconds and you get a store health score, plus every issue ranked by severity. Page speed, leftover app code, ghost charges, listing SEO, security.
+
+Now live on the Shopify App Store. Free plan, or run the scan first at storemd.vercel.app.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**TRADUCTION :**
+> Voilà à quoi ressemble vraiment un scan StoreMD. Son activé 🔊
+> 60 secondes et tu obtiens un score de santé de boutique, plus chaque problème classé par sévérité. Vitesse des pages, code résiduel d'apps, frais fantômes, SEO fiches, sécurité.
+> Maintenant live sur le Shopify App Store. Forfait gratuit, ou lance le scan d'abord sur storemd.vercel.app.
+> Début de la promo lundi 25/05 🔥
+
+**HASHTAGS (Instagram, Set B — 5) :**
+```
+#shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
+```
+
+---
+
+#### STOREMD-FB-S10V2-02 — StoreMD — Facebook — Sam 23/05 18h30
+
+**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok, re-export sans watermark)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE :**
+```
+This is what a StoreMD scan actually looks like. Sound on 🔊
+
+60 seconds and you get a store health score, plus every issue ranked by severity. Page speed, leftover app code, ghost charges, listing SEO, security.
+
+Now live on the Shopify App Store. Free plan, or run the scan first at storemd.vercel.app.
+
+Launch promo starts Monday, May 25 🔥
+```
+
+**TRADUCTION :**
+> Voilà à quoi ressemble vraiment un scan StoreMD. Son activé 🔊
+> 60 secondes et tu obtiens un score de santé de boutique, plus chaque problème classé par sévérité. Vitesse des pages, code résiduel d'apps, frais fantômes, SEO fiches, sécurité.
+> Maintenant live sur le Shopify App Store. Forfait gratuit, ou lance le scan d'abord sur storemd.vercel.app.
+> Début de la promo lundi 25/05 🔥
+
+**HASHTAGS (Facebook, Set B posts — 3) :**
+```
+#shopifystore #onlinebusiness #ecommercetips
+```
+
+---
+---
+
+# ═══ DIMANCHE 24/05 — Thème : re-célébration "accepté par Shopify" ═══
+
+> 3 publications (TikTok + IG + FB). Clôture semaine launch + dernier teaser avant la révélation de lundi.
+
+#### STOREMD-TK-S10V2-03 — StoreMD (@StoreMd_off) — TikTok — Dim 24/05 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (re-célébration launch — non consécutif au vendredi)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+StoreMD is on the Shopify App Store. After a month of waiting, it's real 🎉
+
+An AI agent that scans your store's health in 60 seconds. Five modules, one app, nothing injected in your theme.
+
+Install on Shopify, or scan free at storemd.vercel.app.
+
+Launch promo starts tomorrow, Monday May 25 🔥
+```
+
+**HASHTAGS (TikTok, Set C adapté — 5) :**
+```
+#shopify #shopifystore #shopifyapps #ecommerce #StoreMD
+```
+
+**TRADUCTION :**
+> StoreMD est sur le Shopify App Store. Après un mois d'attente, c'est réel 🎉
+> Un agent IA qui scanne la santé de ta boutique en 60 secondes. Cinq modules, une app, aucun code injecté dans ta vitrine.
+> Installe sur Shopify, ou scanne gratuitement sur storemd.vercel.app.
+> Début de la promo demain, lundi 25/05 🔥
+
+---
+
+#### STOREMD-IG-S10V2-03 — StoreMD — Instagram — Dim 24/05 18h00
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE :**
+```
+StoreMD is on the Shopify App Store. After a month of waiting, it's real 🎉
+
+An AI agent that scans your store's health in 60 seconds. Five modules, one app, nothing injected in your theme.
+
+Install on Shopify, or scan free at storemd.vercel.app.
+
+Launch promo starts tomorrow, Monday May 25 🔥
+```
+
+**TRADUCTION :**
+> StoreMD est sur le Shopify App Store. Après un mois d'attente, c'est réel 🎉
+> Un agent IA qui scanne la santé de ta boutique en 60 secondes. Cinq modules, une app, aucun code injecté dans ta vitrine.
+> Installe sur Shopify, ou scanne gratuitement sur storemd.vercel.app.
+> Début de la promo demain, lundi 25/05 🔥
+
+**HASHTAGS (Instagram, Set C — 5) :**
+```
+#shopifyexperts #ecommercebusiness #shopifymarketing #shopifyapps #StoreMD
+```
+
+---
+
+#### STOREMD-FB-S10V2-03 — StoreMD — Facebook — Dim 24/05 18h30
+
+**Vidéo :** `V1-27_now_live_shopify.mp4` (recyclé TikTok, re-export sans watermark)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE :**
+```
+StoreMD is on the Shopify App Store. After a month of waiting, it's real 🎉
+
+An AI agent that scans your store's health in 60 seconds. Five modules, one app, nothing injected in your theme.
+
+Install on Shopify, or scan free at storemd.vercel.app.
+
+Launch promo starts tomorrow, Monday May 25 🔥
+```
+
+**TRADUCTION :**
+> StoreMD est sur le Shopify App Store. Après un mois d'attente, c'est réel 🎉
+> Un agent IA qui scanne la santé de ta boutique en 60 secondes. Cinq modules, une app, aucun code injecté dans ta vitrine.
+> Installe sur Shopify, ou scanne gratuitement sur storemd.vercel.app.
+> Début de la promo demain, lundi 25/05 🔥
+
+**HASHTAGS (Facebook, Set A posts — 3) :**
+```
+#shopify #ecommerce #smallbusiness
+```
