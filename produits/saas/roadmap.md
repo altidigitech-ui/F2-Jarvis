@@ -1,7 +1,7 @@
 # ROADMAP SAAS — Pipeline produits FoundryTwo
 
-**Dernière mise à jour :** 04 avril 2026
-**Hérite de :** `saas/context.md` (conventions portefeuille, règles communes, structure sous-dossiers)
+**Dernière mise à jour :** 21/05/2026
+**Hérite de :** `produits/saas/context.md` (conventions portefeuille, règles communes, structure sous-dossiers)
 **Se synchronise avec :** `marketing/objectifs.md` (coordination marketing cross-plateforme), `marketing/objectifs.md` (vision semestrielle), `produits/STATUS.md` (source de vérité produits)
 **Ce fichier contient :** le pipeline des SaaS dans le temps — quand chaque produit lance, les dépendances, les actions à chaque lancement, l'évolution du portefeuille.
 
@@ -9,10 +9,9 @@
 
 ## 1. VUE D'ENSEMBLE
 
-| # | Produit | Vertical | Mois cible | Statut saas/ | Statut produits/ |
+| # | Produit | Vertical | Mois cible | Statut produits/saas/ | Statut produits/ |
 |---|---------|----------|------------|-----------|------------|
-| 0 | **Leak Detector** | (remplacé par StoreMD) | Historique | ARCHIVED | ARCHIVED |
-| 1 | **StoreMD** (43 features, 5 modules) | E-commerce | Mois 1 | ✅ Créé | En développement |
+| 1 | **StoreMD** (43 features, 5 modules) | E-commerce | Mois 1 | ✅ Créé | ✅ Live (14/04/2026) |
 | 2 | **ProfitPilot** (41 features, 4 modules) | E-commerce | Mois 1 | ✅ Créé | Planifié |
 | 3 | **ClientPulse** | Agences/Freelancers | Mois 2 | ✅ Créé | Features validées |
 | 4 | **AdAudit** | Agences | Mois 2 | ✅ Créé | Features validées |
@@ -26,56 +25,11 @@
 
 ---
 
-## 2. LEAK DETECTOR — SaaS #0 (LIVE)
-
-### 2.1 État actuel (post-pivot)
-
-| Aspect | Détail |
-|--------|--------|
-| **URL** | leakdetector.tech |
-| **Lancement** | 16/03/2026 |
-| **Résultats** | ~8 signups, 0€ MRR après 3 semaines |
-| **Diagnostic** | Cible dev = mauvaise. Le produit marche mais le marché ne paie pas. |
-| **Décision** | Mutation vers StoreMD (cible merchants Shopify). Les features LD sont intégrées dans StoreMD comme module d'audit. |
-| **Stack** | FastAPI + Celery + Redis / Next.js 14 + TS / Supabase / Claude API / Playwright / Railway + Vercel |
-| **Pricing** | Free (3/mois) / Pro €29/mois (50/mois) / Agency €99/mois (200/mois) |
-
-### 2.2 Roadmap produit post-lancement
-
-| Phase | Période | Focus | Statut |
-|-------|---------|-------|--------|
-| **Phase 1 — MVP** | Lancement (16/03) | Valider le product-market fit | ✅ Livré |
-| **Phase 2 — Rétention** | M1 → M3 | Engagement + réduire le churn | ⚠️ À RÉÉVALUER après mutation StoreMD |
-| **Phase 3 — Croissance** | M3 → M6 | Scaler l'acquisition et le revenu | ⚠️ À RÉÉVALUER |
-| **Phase 4 — Intelligence** | M6+ | Créer un moat via la data et l'IA | ⚠️ À RÉÉVALUER |
-
-**Note :** Les Phases 2-4 du roadmap original LD sont À RÉÉVALUER après la mutation StoreMD. Les prochaines itérations de LD intègrent les features StoreMD définies dans `../produits/MUTATIONS.md`.
-
-### 2.3 Métriques cibles (ajustées post-pivot)
-
-Les projections originales (100 signups M1, €145 MRR M1) étaient basées sur une cible dev et se sont révélées irréalistes.
-
-| Métrique | Réel (16/03 → 04/04) | Cible post-pivot |
-|----------|----------------------|------------------|
-| Signups | ~8 | Le focus passe à StoreMD |
-| MRR | €0 | StoreMD reprend les objectifs MRR |
-| Analyses/semaine | Faible | LD continue comme module dans StoreMD |
-
-**North Star :** Transférée à StoreMD. LD reste actif en attendant la mutation complète.
-
----
-
-## 3. PAYLOADDIFF — RETIRÉ
-
-PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Le slot avril 2026 est maintenant occupé par **StoreMD et ProfitPilot** (vertical e-commerce). Fusion 08/04 : ListingLab → module Listings de StoreMD, ChargebackShield → module Anti-Fraude de ProfitPilot.
-
----
-
-## 4. LES 7 SaaS
+## 2. LES 7 SaaS
 
 ### Mois 1 — E-commerce (avril 2026)
 
-**StoreMD** (43 features, 5 modules) — Agent IA qui diagnostique et optimise les stores Shopify (vitesse, conversion, SEO). Intègre les features Leak Detector (audit) + module Listings (ex-ListingLab).
+**StoreMD** (43 features, 5 modules) — Agent IA qui diagnostique et optimise les stores Shopify (vitesse, conversion, SEO). Intègre les features Leak Detector (produit archivé, audit) + module Listings (ex-ListingLab).
 - Vertical : E-commerce Shopify
 - Détails : voir `../produits/MUTATIONS.md`
 - Actions au lancement : créer `saas/storemd/`, remplir context.md, uploader dans projets Claude R+F, adapter prompts Grok ECOM, posts launch F2+R+F
@@ -114,11 +68,11 @@ PayloadDiff a été retiré du pipeline lors du pivot du 03/04/2026. Le slot avr
 **Wildcard** — À déterminer en fonction des données terrain et du feedback des 6 premiers SaaS.
 - Vertical : À déterminer
 - Détails : voir `../produits/NOUVEAUX.md`
-- Actions au lancement : process standard (saas/context.md §5.2)
+- Actions au lancement : process standard (produits/saas/context.md §5.2)
 
 ---
 
-## 5. PROCESS RÉPÉTABLE À CHAQUE LANCEMENT
+## 3. PROCESS RÉPÉTABLE À CHAQUE LANCEMENT
 
 Chaque lancement suit le même process. Les actions deviennent plus rapides car :
 - Les templates (prompts Grok par vertical, UTM, context.md) sont rodés
@@ -140,7 +94,7 @@ Chaque lancement suit le même process. Les actions deviennent plus rapides car 
 
 ---
 
-## 6. RISQUES PORTEFEUILLE
+## 4. RISQUES PORTEFEUILLE
 
 | Risque | Impact | Mitigation |
 |--------|--------|-----------|
@@ -152,15 +106,13 @@ Chaque lancement suit le même process. Les actions deviennent plus rapides car 
 
 ---
 
-## 7. DOCUMENTS DE RÉFÉRENCE
+## 5. DOCUMENTS DE RÉFÉRENCE
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| saas/context.md | saas/ | Conventions portefeuille, structure sous-dossiers |
-| saas/leak-detector/context.md | saas/leak-detector/ | Détails produit LD (LIVE) |
+| produits/saas/context.md | produits/saas/ | Conventions portefeuille, structure sous-dossiers |
 | marketing/strategie.md | marketing/ | Pipeline SaaS, modèle usine |
 | marketing/objectifs.md | marketing/ | Vision semestrielle, cadence |
-| marketing/objectifs.md | growth-marketing/ | Coordination marketing cross-plateforme par phase |
 | la-toile/la-toile.md | la-toile/ | Architecture de visibilité, nœuds produits |
 | `produits/STATUS.md` | Racine du repo | **Source de vérité pipeline** (statut de chaque SaaS) |
 | `produits/MUTATIONS.md` | Racine du repo | Mutations LD → StoreMD |
