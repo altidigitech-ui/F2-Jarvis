@@ -1,6 +1,6 @@
 # CONTEXT SAAS — Portefeuille produits FoundryTwo
 
-**Dernière mise à jour :** 04 avril 2026
+**Dernière mise à jour :** 21/05/2026
 **Hérite de :** `marketing/strategie.md` (pipeline §2, funnel §3, comptes §5)
 **Hérite de :** `la-toile/la-toile.md` (architecture de visibilité, nœuds produits)
 **Ce fichier contient :** les conventions du portefeuille SaaS — comment chaque sous-dossier est structuré, ce que chaque fichier contient, les règles communes, le pipeline.
@@ -29,15 +29,14 @@ Détails produits (features, pricing, concurrents) = voir **`produits/`** à la 
 
 ## 2. PIPELINE
 
-| # | Produit | Vertical | Mois | Statut | Sous-dossier saas/ |
+| # | Produit | Vertical | Mois | Statut | Sous-dossier produits/saas/ |
 |---|---------|----------|------|--------|-----------------|
-| 0 | **Leak Detector** | (remplacé par StoreMD) | Historique | ARCHIVED | `saas/leak-detector/` |
-| 1 | **StoreMD** (43 features, 5 modules) | E-commerce | Mois 1 | En développement | `saas/storemd/` |
-| 2 | **ProfitPilot** (41 features, 4 modules) | E-commerce | Mois 1 | Planifié | `saas/profitpilot/` |
-| 3 | **ClientPulse** | Agences/Freelancers | Mois 2 | Planifié | `saas/clientpulse/` |
-| 4 | **AdAudit** | Agences | Mois 2 | Planifié | `saas/adaudit/` |
-| 5 | **CreatorSuite** | Creators | Mois 3 | Planifié | `saas/creatorsuite/` |
-| 6 | **LeadQuiz** (12 features) | E-com + Coaches | Mois 3 | Planifié | `saas/leadquiz/` |
+| 1 | **StoreMD** (43 features, 5 modules) | E-commerce | Mois 1 | ✅ Live (14/04/2026) | `produits/saas/storemd/` |
+| 2 | **ProfitPilot** (41 features, 4 modules) | E-commerce | Mois 1 | Planifié | `produits/saas/profitpilot/` |
+| 3 | **ClientPulse** | Agences/Freelancers | Mois 2 | Planifié | `produits/saas/clientpulse/` |
+| 4 | **AdAudit** | Agences | Mois 2 | Planifié | `produits/saas/adaudit/` |
+| 5 | **CreatorSuite** | Creators | Mois 3 | Planifié | `produits/saas/creatorsuite/` |
+| 6 | **LeadQuiz** (12 features) | E-com + Coaches | Mois 3 | Planifié | `produits/saas/leadquiz/` |
 | - | **Wildcard** | À déterminer | Mois 3 | Planifié | À créer |
 
 > **Fusion 08/04/2026 :** ListingLab → module Listings de StoreMD. ChargebackShield → module Anti-Fraude de ProfitPilot. Total Shopify : 96 features, 3 apps au lieu de 5.
@@ -51,7 +50,7 @@ Détails produits (features, pricing, concurrents) = voir **`produits/`** à la 
 Chaque produit a le même squelette :
 
 ```
-saas/[nom-produit]/
+produits/saas/[nom-produit]/
 ├── context.md      ← Positionnement public, personas Twitter/LinkedIn, messaging par vertical, référence produits/
 ├── metrics.md      ← Template métriques : signups, MRR, conversion, analyses, NPS (rempli au fil du temps)
 ├── README.md       ← Navigation du dossier
@@ -100,22 +99,22 @@ saas/[nom-produit]/
 
 ## 5. RÔLE DANS L'ÉCOSYSTÈME MARKETING
 
-### 5.1 Qui utilise les fichiers saas/
+### 5.1 Qui utilise les fichiers produits/saas/
 
 | Qui | Ce qu'il utilise | Pourquoi |
 |-----|-----------------|----------|
-| **Projet Claude R** | `saas/[produit]/context.md` comme fichier de connaissance | R rédige les posts R + F2. Il utilise les context.md pour le messaging produit. |
-| **Projet Claude F** | `saas/[produit]/context.md` comme fichier de connaissance | F rédige ses propres posts. Il utilise les context.md pour le messaging produit. |
-| **R au batch** | `saas/[produit]/context.md` pour les données | Personas, messaging, USP pour calibrer les angles des posts |
-| **R à la revue vendredi** | `saas/[produit]/metrics.md` | Métriques de la semaine |
+| **Projet Claude R** | `produits/saas/[produit]/context.md` comme fichier de connaissance | R rédige les posts R + F2. Il utilise les context.md pour le messaging produit. |
+| **Projet Claude F** | `produits/saas/[produit]/context.md` comme fichier de connaissance | F rédige ses propres posts. Il utilise les context.md pour le messaging produit. |
+| **R au batch** | `produits/saas/[produit]/context.md` pour les données | Personas, messaging, USP pour calibrer les angles des posts |
+| **R à la revue vendredi** | `produits/saas/[produit]/metrics.md` | Métriques de la semaine |
 
 ### 5.2 Quand ajouter un nouveau produit
 
 | Étape | Action |
 |-------|--------|
-| 1 | Créer le sous-dossier `saas/[nom-produit]/` avec context.md + metrics.md + README.md |
+| 1 | Créer le sous-dossier `produits/saas/[nom-produit]/` avec context.md + metrics.md + README.md |
 | 2 | Remplir context.md avec le positionnement public (adapté depuis `produits/NOUVEAUX.md` ou `produits/MUTATIONS.md`) |
-| 3 | Uploader `saas/[nom-produit]/context.md` dans les projets Claude R et F |
+| 3 | Uploader `produits/saas/[nom-produit]/context.md` dans les projets Claude R et F |
 | 4 | Ajouter le SaaS aux prompts Grok existants du vertical concerné (ECOM-prompt.md, AGENCY-prompt.md, ou CREATOR-prompt.md) — OU créer un nouveau prompt si le vertical est nouveau |
 | 5 | Mettre à jour les bios et profils (Twitter, LinkedIn, IH, PH) — "Currently building: [produit]" |
 | 6 | Ajouter le produit dans le pipeline §2 de ce fichier |
@@ -126,10 +125,8 @@ saas/[nom-produit]/
 
 | Document | Emplacement | Rôle |
 |----------|-------------|------|
-| saas/context.md | saas/ | Conventions portefeuille, structure sous-dossiers |
-| saas/leak-detector/context.md | saas/leak-detector/ | Détails produit LD (LIVE) |
+| produits/saas/context.md | produits/saas/ | Conventions portefeuille, structure sous-dossiers |
 | marketing/strategie.md | marketing/ | Pipeline SaaS, modèle usine |
 | marketing/objectifs.md | marketing/ | Vision semestrielle, cadence |
-| marketing/objectifs.md | growth-marketing/ | Coordination marketing cross-plateforme par phase |
 | la-toile/la-toile.md | la-toile/ | Architecture de visibilité, nœuds produits |
 | `produits/` | Racine du repo | **Source de vérité produits** (features, pricing, concurrents, données marché) |
