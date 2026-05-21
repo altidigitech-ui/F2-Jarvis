@@ -32,12 +32,12 @@
 **StoreMD** (43 features, 5 modules) — Agent IA qui diagnostique et optimise les stores Shopify (vitesse, conversion, SEO). Intègre les features Leak Detector (produit archivé, audit) + module Listings (ex-ListingLab).
 - Vertical : E-commerce Shopify
 - Détails : voir `../produits/MUTATIONS.md`
-- Actions au lancement : créer `saas/storemd/`, remplir context.md, uploader dans projets Claude R+F, adapter prompts Grok ECOM, posts launch F2+R+F
+- Actions au lancement : créer `produits/saas/storemd/`, remplir context.md, uploader dans projets Claude R+F, adapter prompts Grok ECOM, posts launch F2+R+F
 
 **ProfitPilot** (41 features, 4 modules) — Agent IA qui optimise les marges et le pricing pour les stores e-com. Intègre le module Anti-Fraude (ex-ChargebackShield).
 - Vertical : E-commerce Shopify
 - Détails : voir `../produits/NOUVEAUX.md`
-- Actions au lancement : créer `saas/profitpilot/`, adapter prompts Grok ECOM
+- Actions au lancement : créer `produits/saas/profitpilot/`, adapter prompts Grok ECOM
 
 ### Mois 2 — Agences + E-com (mai 2026)
 
@@ -45,12 +45,12 @@
 - Vertical : Agences/Freelancers marketing
 - Douleur : 15h/mois de reporting manuel, $20K+/an d'outils
 - Détails : voir `../produits/NOUVEAUX.md`
-- Actions au lancement : créer `saas/clientpulse/`, adapter prompts Grok AGENCY
+- Actions au lancement : créer `produits/saas/clientpulse/`, adapter prompts Grok AGENCY
 
 **AdAudit** — Agent IA qui audite les campagnes ads (Google, Meta, TikTok) pour agences.
 - Vertical : Agences marketing
 - Détails : voir `../produits/NOUVEAUX.md`
-- Actions au lancement : créer `saas/adaudit/`, adapter prompts Grok AGENCY
+- Actions au lancement : créer `produits/saas/adaudit/`, adapter prompts Grok AGENCY
 
 ### Mois 3 — Creators + E-com (juin 2026)
 
@@ -58,12 +58,12 @@
 - Vertical : Content Creators (YouTube, TikTok, podcast)
 - Douleur : 8h d'editing + 8h de repurposing par vidéo
 - Détails : voir `../produits/NOUVEAUX.md`
-- Actions au lancement : créer `saas/creatorsuite/`, adapter prompts Grok CREATOR
+- Actions au lancement : créer `produits/saas/creatorsuite/`, adapter prompts Grok CREATOR
 
 **LeadQuiz** — Agent IA qui crée des quiz de qualification et capture de leads.
 - Vertical : E-com + Coaches
 - Détails : voir `../produits/NOUVEAUX.md`
-- Actions au lancement : créer `saas/leadquiz/`, adapter prompts Grok ECOM
+- Actions au lancement : créer `produits/saas/leadquiz/`, adapter prompts Grok ECOM
 
 **Wildcard** — À déterminer en fonction des données terrain et du feedback des 6 premiers SaaS.
 - Vertical : À déterminer
@@ -102,7 +102,7 @@ Chaque lancement suit le même process. Les actions deviennent plus rapides car 
 | **Un produit ne trouve pas son marché** | MRR stagne. Temps investi perdu. | Validation terrain (warming Reddit/Facebook) réduit ce risque. Seuil : si 0 conversion payante après 30 jours de distribution → pivoter ou couper. |
 | **Coûts LLM explosent avec le volume** | Marge brute se réduit. | Cache résultats, Haiku fallback, limites strictes par plan. Monitorer le coût/analyse hebdomadairement. |
 | **Cross-sell cannibalise** (les produits se volent des clients) | MRR total ne croît pas malgré les lancements. | Les produits du même vertical résolvent des problèmes DIFFÉRENTS (santé technique ≠ santé financière). Fusion 08/04 réduit ce risque : 3 apps au lieu de 5. |
-| **Désynchronisation entre brand et distribution** | Le messaging public contredit les specs produit. | Règle #9 (context.md racine) : si produits/ est modifié un produit → mettre à jour les fichiers saas/ impactés. Check hebdo vendredi. |
+| **Désynchronisation entre brand et distribution** | Le messaging public contredit les specs produit. | Règle #9 (context.md racine) : si produits/ est modifié un produit → mettre à jour les fichiers produits/saas/ impactés. Check hebdo vendredi. |
 
 ---
 
