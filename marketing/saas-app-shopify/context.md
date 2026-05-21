@@ -2,9 +2,9 @@
 
 > Ce dossier contient toutes les apps Shopify (SaaS) de R et F.
 > Chaque app a son propre sous-dossier avec son context, ses cold-logs, ses templates, sa publication.
-> Hérite de : `../BIBLE.md`, `../strategie/CONTEXT.md`, `../ANTI-IA.md`
+> Hérite de : `../../BIBLE.md`, `../../strategie/CONTEXT.md`, `../../ANTI-IA.md`
 
-**Dernière mise à jour :** 08/05/2026
+**Dernière mise à jour :** 21/05/2026
 
 ---
 
@@ -55,7 +55,7 @@ saas-app-shopify/
 
 | Produit | Type | Statut | Dossier |
 |---------|------|--------|---------|
-| **StoreMD** | AI agent santé Shopify (43 features, 5 modules) | Live — acquisition beta testers | `storemd/` |
+| **StoreMD** | AI agent santé Shopify (43 features, 5 modules) | Live (free scan public) — app Shopify en attente de validation App Store | `storemd/` |
 | **ProfitPilot** | Santé financière Shopify | Prévu — pas encore codé | `profitpilot/` (à créer) |
 
 ---
@@ -72,7 +72,7 @@ Reproduire exactement la même structure que StoreMD :
 6. Si les cibles cold sont différentes de StoreMD : séparer la recherche cold (prompts + logs spécifiques au produit)
 7. La recherche engagement (Reddit, PH) reste partagée — pas besoin de dupliquer
 
-Voir `../strategie/PLAYBOOK-DISTRIBUTION.md` §8 pour la checklist complète d'intégration d'un nouveau business.
+Voir `../../strategie/PLAYBOOK-DISTRIBUTION.md` §8 pour la checklist complète d'intégration d'un nouveau business.
 
 ---
 
@@ -88,7 +88,7 @@ Voir `../strategie/PLAYBOOK-DISTRIBUTION.md` §8 pour la checklist complète d'i
 | Recherche-logs | `recherche/cold/[outil]/[plateforme]/recherche-log.md` |
 | Prompt PH Chrome | `recherche/engagement/ph/prompt-chrome.md` |
 | Pain points Reddit | `recherche/engagement/reddit/recherche-log.md` |
-| BIBLE | `../BIBLE.md` |
-| Stratégie globale | `../strategie/CONTEXT.md` |
-| Playbook distribution | `../strategie/PLAYBOOK-DISTRIBUTION.md` |
-| Context par plateforme | `../marketing/canaux/[plateforme]/context.md` |
+| BIBLE | `../../BIBLE.md` |
+| Stratégie globale | `../../strategie/CONTEXT.md` |
+| Playbook distribution | `../../strategie/PLAYBOOK-DISTRIBUTION.md` |
+| Context par plateforme | `../canaux/[plateforme]/context.md` |
