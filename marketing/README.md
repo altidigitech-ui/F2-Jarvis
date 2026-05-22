@@ -1,4 +1,4 @@
-# Marketing FoundryTwo
+# Marketing 
 
 > Dernière mise à jour : 21/05/2026
 > Statut : ACTIF
