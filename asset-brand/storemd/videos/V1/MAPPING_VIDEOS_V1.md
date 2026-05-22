@@ -1,8 +1,8 @@
 # StoreMD — Mapping Vidéos V1
 
-> 30 vidéos (30 produites) — V1-01 à V1-22 actives · V1-23 exclue (beta/DM) · V1-24/25/26 obsolètes (série waiting, hors rotation depuis 22/05) · V1-27 launch active · V1-28/29/30 offre launch active
+> 31 vidéos (31 produites) — V1-01 à V1-22 actives · V1-23 exclue (beta/DM) · V1-24/25/26 obsolètes (série waiting, hors rotation depuis 22/05) · V1-27 launch active · V1-28/29/30/31 offre launch active
 > Produites via Claude Design (HTML → screen-record → MP4)
-> Prompts source : `STOREMD_TIKTOK_10_VIDEOS_V2.md` (V1-01 à V1-10), `STOREMD_TIKTOK_10_VIDEOS_V3.md` (V1-11 à V1-20), standalone (V1-21 à V1-30)
+> Prompts source : `STOREMD_TIKTOK_10_VIDEOS_V2.md` (V1-01 à V1-10), `STOREMD_TIKTOK_10_VIDEOS_V3.md` (V1-11 à V1-20), standalone (V1-21 à V1-31)
 > Format : vertical 9:16, 1080×2338, 30fps, H.264
 > Compte : @StoreMd_off (TikTok, Twitter, Instagram, Facebook)
 
@@ -42,6 +42,7 @@
 | V1-28 | `V1-28_14_days_pro_free.mp4` | "14 Days of Pro. Free." | 16s | Hook chiffre "14" géant + "Install StoreMD today" → "No card. No commitment." → 5 features Pro déverrouillées une par une (Daily scans, 3 stores, Bulk fixes, Real browsing tests, AI bot tracking) → "After 14 days: keep Pro, or move to Free" → CTA logo + apps.shopify.com/storemd-1 | ✅ OFFRE launch S11 — essai Pro 14 jours offert, sans CB, sans engagement. Déclencheur d'install. | ✅ OFFRE |
 | V1-29 | `V1-29_lock_price_for_life.mp4` | "Lock Your Price For Life" | 18s | Hook "Founding user offer / Lock your price / For life" (cadenas ouvert → fermé, snap + glow vert) → timeline 3 jalons (DAY 1 Install, DAY 14 Pro trial ends, DAY 30 last day to lock) → "Subscribe within your first 30 days / Your price never moves again" → CTA logo + apps.shopify.com/storemd-1 | ✅ OFFRE launch S11 — founding user, prix bloqué à vie si abonnement dans les 30 premiers jours. Timeline J1→J14→J30. | ✅ OFFRE |
 | V1-30 | `V1-30_the_numbers.mp4` | "The Numbers" | 12s | Hook "StoreMD plans" 3 cards (Starter $29 / Pro $79 Most popular / Agency $199) → toggle Yearly ($290 / $790 / $1,990, "2 months free") → zoom Pro "$790/year = $65.83/mo" + "Save $158 a year" → "Lock this price for life — in your first 30 days" + CTA logo + apps.shopify.com/storemd-1 | ✅ OFFRE launch S11 — prix et économie annuel (2 mois offerts) + prix figé. Montants exacts, jamais en %. | ✅ OFFRE |
+| V1-31 | `V1-31_full_offer.mp4` | "The Full Offer" | 22s | Récap tout-en-un de l'offre. Hook néon → "14 days of Pro, free" (25/05 → 07/06), no card → timeline Day 1 Install / Day 14 trial ends / Day 30 lock deadline → 3 cards prix (Starter $29, Pro $79 Most popular, Agency $199 ; yearly = 2 months free ; Pro $790/year = $65.83/mo, save $158) → "Lock your price for life" + CTA logo + apps.shopify.com/storemd-1. Style impact : néon flicker, screen shake, scale overshoot, flash transitions. | ✅ OFFRE launch S11 — vidéo récap complète. Fenêtre de lancement FIXE (identique pour tous) : Pro free 25/05 → 07/06, tarif gelé 25/05 → 22/06 minuit. Asset dimanche 31/05. | ✅ OFFRE |
 
 **Légende statut :** ✅ active · ✅ LAUNCH (asset du launch 22/05) · ✅ OFFRE (série offre de lancement S11) · ⚠️ OBSOLÈTE (série waiting, hors rotation, conservée pour archive) · ❌ exclue
 
