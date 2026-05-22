@@ -1,8 +1,8 @@
 # StoreMD — Mapping Vidéos V1
 
-> 27 vidéos (27 produites) — V1-01 à V1-22 actives · V1-23 exclue (beta/DM) · V1-24/25/26 obsolètes (série waiting, hors rotation depuis 22/05) · V1-27 launch active
+> 30 vidéos (30 produites) — V1-01 à V1-22 actives · V1-23 exclue (beta/DM) · V1-24/25/26 obsolètes (série waiting, hors rotation depuis 22/05) · V1-27 launch active · V1-28/29/30 offre launch active
 > Produites via Claude Design (HTML → screen-record → MP4)
-> Prompts source : `STOREMD_TIKTOK_10_VIDEOS_V2.md` (V1-01 à V1-10), `STOREMD_TIKTOK_10_VIDEOS_V3.md` (V1-11 à V1-20), standalone (V1-21 à V1-27)
+> Prompts source : `STOREMD_TIKTOK_10_VIDEOS_V2.md` (V1-01 à V1-10), `STOREMD_TIKTOK_10_VIDEOS_V3.md` (V1-11 à V1-20), standalone (V1-21 à V1-30)
 > Format : vertical 9:16, 1080×2338, 30fps, H.264
 > Compte : @StoreMd_off (TikTok, Twitter, Instagram, Facebook)
 
@@ -39,8 +39,11 @@
 | V1-25 | `V1-25_while_we_wait_we_ship.mp4` | "While they review, the agent shipped" | 13s | "DAY 7" + bandeau "STILL UNDER REVIEW" → "While they review / The agent shipped" → terminal log 7 features shippées (token refresh, install middleware, app icon, scope alignment, managed pricing, OAuth, billing isolation) → "Ready when you are." + storemd.vercel.app | ⚠️ OBSOLÈTE depuis 22/05 — série waiting. Hors rotation. Conservée pour archive/réf historique. | ⚠️ OBSOLÈTE |
 | V1-26 | `V1-26_free_scan_not_install.mp4` | "Free scan ≠ Install" | 12s | Hook "Free scan ≠ Install" → split screen FREE SCAN (porte ouverte verte, "OPEN. Live now.") vs INSTALL (porte fermée + cadenas rouge, "LOCKED. Pending Shopify.") → "Yes the app works. Shopify just hasn't approved it yet." → "Scan now. Install when Shopify finally moves." | ⚠️ OBSOLÈTE depuis 22/05 — série waiting. Hors rotation. Conservée pour archive/réf historique. | ⚠️ OBSOLÈTE |
 | V1-27 | `V1-27_now_live_shopify.mp4` | "It's live. Install now on Shopify." | 17s | Carte app status PENDING (rouge, cadenas fermé) → bascule (flash cyan, point vert pop, cadenas s'ouvre + se dissout, badge AVAILABLE NOW) → "It's live. / On the Shopify App Store." + "One-click install. Free plan available." → CTA logo + "Install StoreMD on Shopify" + apps.shopify.com/storemd-1 | ✅ LAUNCH DAY 22/05 — annonce validation Shopify, app dispo au téléchargement. Asset central du launch coordonné. Réutilisable en S11 comme rappel "now live". | ✅ LAUNCH |
+| V1-28 | `V1-28_14_days_pro_free.mp4` | "14 Days of Pro. Free." | 16s | Hook chiffre "14" géant + "Install StoreMD today" → "No card. No commitment." → 5 features Pro déverrouillées une par une (Daily scans, 3 stores, Bulk fixes, Real browsing tests, AI bot tracking) → "After 14 days: keep Pro, or move to Free" → CTA logo + apps.shopify.com/storemd-1 | ✅ OFFRE launch S11 — essai Pro 14 jours offert, sans CB, sans engagement. Déclencheur d'install. | ✅ OFFRE |
+| V1-29 | `V1-29_lock_price_for_life.mp4` | "Lock Your Price For Life" | 18s | Hook "Founding user offer / Lock your price / For life" (cadenas ouvert → fermé, snap + glow vert) → timeline 3 jalons (DAY 1 Install, DAY 14 Pro trial ends, DAY 30 last day to lock) → "Subscribe within your first 30 days / Your price never moves again" → CTA logo + apps.shopify.com/storemd-1 | ✅ OFFRE launch S11 — founding user, prix bloqué à vie si abonnement dans les 30 premiers jours. Timeline J1→J14→J30. | ✅ OFFRE |
+| V1-30 | `V1-30_the_numbers.mp4` | "The Numbers" | 12s | Hook "StoreMD plans" 3 cards (Starter $29 / Pro $79 Most popular / Agency $199) → toggle Yearly ($290 / $790 / $1,990, "2 months free") → zoom Pro "$790/year = $65.83/mo" + "Save $158 a year" → "Lock this price for life — in your first 30 days" + CTA logo + apps.shopify.com/storemd-1 | ✅ OFFRE launch S11 — prix et économie annuel (2 mois offerts) + prix figé. Montants exacts, jamais en %. | ✅ OFFRE |
 
-**Légende statut :** ✅ active · ✅ LAUNCH (asset du launch 22/05) · ⚠️ OBSOLÈTE (série waiting, hors rotation, conservée pour archive) · ❌ exclue
+**Légende statut :** ✅ active · ✅ LAUNCH (asset du launch 22/05) · ✅ OFFRE (série offre de lancement S11) · ⚠️ OBSOLÈTE (série waiting, hors rotation, conservée pour archive) · ❌ exclue
 
 ---
 
