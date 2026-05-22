@@ -1,11 +1,11 @@
 # STOREMD — CONTEXTE PRODUIT, COLD & PUBLICATION
 
-**Date :** 08/05/2026
+**Date :** 21/05/2026
 **Statut :** Live (lancé 14/04/2026) — App Shopify NON approuvée sur l'App Store
 **URL landing :** storemd.vercel.app (storemd.com DNS pending)
 **Backend :** storemd-api-production.up.railway.app
 **Cold templates :** `cold/cold-templates.md` (même dossier)
-**Voix R :** `../../romain/VOIX.md` | **Voix F :** `../../fabrice/VOIX.md`
+**Voix R :** `../../../romain/VOIX.md` | **Voix F :** `../../../fabrice/VOIX.md`
 
 ---
 
@@ -181,7 +181,7 @@ La transition est fluide. On ne cherche pas deux types de personnes. On cherche 
 | Twitter | StoreMD | 1/jour lun-ven |
 | IH | FoundryTwo | 1/sem mercredi |
 
-Pour fréquence, horaires précis et règles de recyclage détaillées, voir `../../marketing/contenu/batch-semaine/batch-template.md` §1 (horaires fixés) + §7 (recyclage).
+Pour fréquence, horaires précis et règles de recyclage détaillées, voir `../../contenu/batch-semaine/batch-template.md` §1 (horaires fixés) + §7 (recyclage).
 
 ---
 
@@ -221,8 +221,8 @@ Règles de cohérence :
 
 Tout est batché le samedi et schedulé. En semaine on ne rédige pas.
 Template batch : `publication/batch-semaine.md`
-Batch central : `../../marketing/contenu/batch-semaine/batch-semaine.md`
-Règles complètes recyclage + sélection vidéo : `../../marketing/contenu/batch-semaine/batch-template.md` §4.7 + §7.
+Batch central : `../../contenu/batch-semaine/batch-semaine.md`
+Règles complètes recyclage + sélection vidéo : `../../contenu/batch-semaine/batch-template.md` §4.7 + §7.
 
 ### Cadence
 
@@ -234,12 +234,12 @@ Règles complètes recyclage + sélection vidéo : `../../marketing/contenu/batc
 | Twitter | StoreMD | 1/jour lun-ven | Vidéo TikTok recyclée + texte adapté (format 2-blocs si lien) |
 | IH | FoundryTwo | 1/sem mercredi | Texte long-form focus produit + screenshot optionnel |
 
-Source de vérité fréquence + horaires + règles recyclage : `../../marketing/contenu/batch-semaine/batch-template.md` §1 + §7.
+Source de vérité fréquence + horaires + règles recyclage : `../../contenu/batch-semaine/batch-template.md` §1 + §7.
 
 ### Ton et règles
 
 - Ton neutre produit. Le produit parle de lui-même. Pas de "I", pas de "we".
-- ANTI-IA appliqué sans exception (`../../ANTI-IA.md`).
+- ANTI-IA appliqué sans exception (`../../../ANTI-IA.md`).
 - Hashtags : 0 sur TikTok et Twitter. 5 max niche sur Instagram. 2-3 max sur Facebook.
 - Lien : jamais dans le corps du tweet (-1700% reach). Format 2-blocs sur Twitter. Lien en bio ou commentaire sur LinkedIn/Facebook.
 - Audio original > sound trending sur TikTok.
@@ -247,7 +247,7 @@ Source de vérité fréquence + horaires + règles recyclage : `../../marketing/
 
 ### UTM publication
 
-Source de vérité unique : `../../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
+Source de vérité unique : `../../../tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
 
 Ne JAMAIS copier un UTM de mémoire. Toujours ouvrir le fichier UTM et copier-coller le lien exact pour le placement concerné (bio, post, reply, DM, ads, etc.).
 
@@ -259,7 +259,7 @@ Ne JAMAIS inventer de hashtags. Toujours copier-coller depuis le fichier hashtag
 
 ### Détail par plateforme
 
-Pour les règles algo, formats, timing détaillés → `../../marketing/canaux/[plateforme]/context.md`
+Pour les règles algo, formats, timing détaillés → `../../canaux/[plateforme]/context.md`
 
 ---
 
@@ -287,7 +287,7 @@ Pour les règles algo, formats, timing détaillés → `../../marketing/canaux/[
 - Contractions obligatoires.
 - Structures imparfaites.
 - Pas de patterns IA détectables.
-- Voir `../../ANTI-IA.md` et `../../romain/VOIX.md` ou `../../fabrice/VOIX.md`.
+- Voir `../../../ANTI-IA.md` et `../../../romain/VOIX.md` ou `../../../fabrice/VOIX.md`.
 
 ### Ton (comptes StoreMD)
 
@@ -337,12 +337,12 @@ Les résultats de recherche vont dans `../recherche/cold/[outil]/[plateforme]/re
 > NE PAS inventer de chiffres. NE PAS utiliser de métriques dans les posts si les fichiers ci-dessous ne sont pas à jour.
 
 **Métriques produit (admin dashboard) :**
-`../../tracking/metrics/storemd-admin.md`
+`../../../tracking/metrics/storemd-admin.md`
 → Source : page admin StoreMD (`/dashboard/admin`)
 → Mise à jour : chaque samedi par R avant le batch
 
 **Métriques réseaux sociaux :**
-`../../tracking/metrics/[plateforme].md`
+`../../../tracking/metrics/[plateforme].md`
 → Mise à jour : chaque samedi par R avant le batch
 
 ---
@@ -375,13 +375,13 @@ Ce fichier est spécifique à StoreMD. Quand ProfitPilot (ou un autre SaaS app S
 | Prompts recherche Chrome/Grok | `../recherche/cold/[outil]/[plateforme]/prompt-recherche.md` |
 | Recherche-logs | `../recherche/cold/[outil]/[plateforme]/recherche-log.md` |
 | Cold-logs StoreMD (Instagram, TikTok) | `cold/cold-log-instagram.md`, `cold/cold-log-tiktok.md` |
-| Cold-logs R perso | `../../romain/cold/cold-log-[plateforme].md` |
-| Cold-logs F perso | `../../fabrice/cold/cold-log-[plateforme].md` |
+| Cold-logs R perso | `../../../romain/cold/cold-log-[plateforme].md` |
+| Cold-logs F perso | `../../../fabrice/cold/cold-log-[plateforme].md` |
 | Pipeline conversion | `pipeline-conversion.md` (à confirmer) |
 | Batch-semaine StoreMD | `publication/batch-semaine.md` |
-| BIBLE | `../../BIBLE.md` |
-| ANTI-IA | `../../ANTI-IA.md` |
-| Voix R | `../../romain/VOIX.md` |
-| Voix F | `../../fabrice/VOIX.md` |
-| Stratégie globale | `../../strategie/CONTEXT.md` |
-| Playbook distribution | `../../strategie/PLAYBOOK-DISTRIBUTION.md` |
+| BIBLE | `../../../BIBLE.md` |
+| ANTI-IA | `../../../ANTI-IA.md` |
+| Voix R | `../../../romain/VOIX.md` |
+| Voix F | `../../../fabrice/VOIX.md` |
+| Stratégie globale | `../../../strategie/CONTEXT.md` |
+| Playbook distribution | `../../../strategie/PLAYBOOK-DISTRIBUTION.md` |
