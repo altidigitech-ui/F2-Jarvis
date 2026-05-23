@@ -1,284 +1,272 @@
-# BATCH PUBLICATION — Compte R — S10
+# BATCH PUBLICATION — Compte R — S11
 
 > Compte : Romain Delgado (R perso)
-> Source : `marketing/contenu/batch-semaine/batch-semaine-S10.md` (batch central)
+> Source : `marketing/contenu/batch-semaine/batch-semaine-S11.md` (batch central)
 > Périmètre : posts du compte R uniquement (Twitter @delgado_ro72224 + LinkedIn Romain Delgado)
 > Ne JAMAIS rédiger ici. Toute modification se fait dans le batch central puis re-dispatch.
 
 ---
 
-# ═══ LUNDI 18/05 — Thème : Day 7. Still ready. (waiting series) ═══
+# ═══ LUNDI 25/05 — OFFRE : lancement (14 jours de Pro gratuits) ═══
 
 ---
 
-#### STOREMD-TW-R-S10-01 — Romain (@delgado_ro72224) — Twitter — Lun 18/05 14h00
+#### STOREMD-TW-R-S11-01 — Romain (@delgado_ro72224) — Twitter — Lun 25/05 14h00
 
-**Vidéo :** V1-24_day7_still_ready.mp4 (recyclé TikTok, re-export sans watermark)
-**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+**Vidéo :** `V1-28_14_days_pro_free.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Shipped StoreMD 5 weeks ago 🚀
+The StoreMD launch offer is live today.
 
-Day 7 since I resubmitted to Shopify.
+Install on Shopify, get 14 days of Pro for free. No card, no commitment.
 
-Running it on my own stores while the review queue chews through ⏳
-
-Free scan stays open. Install stays locked 🔒
+Run a full audit, fix what's quietly costing you sales, then decide.
 ```
 
-**REPLY :**
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> J'ai shippé StoreMD il y a 5 semaines 🚀
->
-> Jour 7 depuis que j'ai resoumis à Shopify.
->
-> Je le fais tourner sur mes propres stores pendant que la queue de review avance ⏳
->
-> Le free scan reste ouvert. L'install reste verrouillée 🔒
+> L'offre de lancement StoreMD est live aujourd'hui.
+> Installe sur Shopify, obtiens 14 jours de Pro gratuits. Sans carte, sans engagement.
+> Lance un audit complet, corrige ce qui te coûte des ventes en silence, puis décide.
+---
+
+# ═══ MARDI 26/05 — OFFRE : prix figé (founding user) ═══
 
 ---
 
-# ═══ MARDI 19/05 — Thème : Real Scan (focus produit, démo 60s) ═══
+#### STOREMD-TW-R-S11-02 — Romain (@delgado_ro72224) — Twitter — Mar 26/05 14h00
 
----
-
-#### STOREMD-TW-R-S10-02 — Romain (@delgado_ro72224) — Twitter — Mar 19/05 14h00
-
-**Vidéo :** V1-13_real_scan.mp4 (recyclé TikTok, re-export sans watermark)
-**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Spent last month digging through Shopify app reviews and merchant complaints 🔍
+Install StoreMD now and you can lock your price for life.
 
-3 patterns kept showing up:
+Subscribe by June 22 and it never moves again.
 
-Apps still billing after uninstall.
-Dead code left in theme files.
-Listings invisible to AI search.
-
-Built StoreMD to scan for all 3 at once. Free scan is public.
+Free Pro until June 7, then decide. June 22 the door closes.
 ```
 
-**REPLY :**
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> J'ai passé le mois dernier à fouiller dans les reviews d'apps Shopify et les plaintes de merchants 🔍
->
-> 3 patterns ressortent en boucle :
->
-> Des apps qui continuent de facturer après désinstall.
-> Du code mort qui traîne dans les theme files.
-> Des listings invisibles pour la recherche IA.
->
-> J'ai construit StoreMD pour scanner les 3 d'un coup. Le free scan est public.
+> Installe StoreMD maintenant et tu peux bloquer ton prix à vie.
+> Abonne-toi d'ici le 22 juin et il ne bouge plus jamais.
+> Pro gratuit jusqu'au 7 juin, puis tu décides. Le 22 juin la porte se ferme.
 
 ---
 
-#### STOREMD-LI-R-S10-02 — Romain Delgado — LinkedIn — Mar 19/05 15h30
+#### STOREMD-LI-R-S11-02 — Romain Delgado — LinkedIn — Mar 26/05 15h30
 
-**Vidéo :** V1-13_real_scan.mp4 (recyclé TikTok, re-export sans watermark, format vertical compatible LinkedIn natif)
-**UTM :** Aucun (pas de lien dans le corps LinkedIn, pénalité -60% reach). Pour mention en commentaire si besoin : `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Spent the last month digging through Shopify app reviews to map what actually breaks merchant stores.
+StoreMD has been live on the Shopify App Store for a few days now.
 
-530+ reviews. Five patterns kept showing up:
+Most apps don't do this.
 
-Apps still injecting JavaScript after being uninstalled.
-Subscriptions billing months after merchants thought they had cancelled.
-Theme files cluttered with leftover code from deleted apps.
-Product listings invisible to ChatGPT and Perplexity.
-Accessibility errors blocking real revenue.
+If you subscribe by June 22, your price is locked for life 🔒
 
-I built StoreMD to catch all five in 60 seconds.
+The timeline is simple.
 
-The free scan is public while the App Store review runs 🔍
+The offer opens May 25.
+Free Pro runs until June 7, no card.
+After that you keep Pro or move to Free.
+The price lock stays open until June 22.
+
+Two weeks of free Pro to test everything, then it's your call by June 22.
+
+Once it's locked, your plan price never moves again.
+
+If you run a Shopify store and you've been meaning to try it, this is the window that matters.
+```
+
+**COMMENTAIRE (2 liens — 1 case chacun) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
 **TRADUCTION :**
-> J'ai passé le mois dernier à fouiller les reviews d'apps Shopify pour cartographier ce qui casse réellement les stores des merchants.
->
-> 530+ reviews. Cinq patterns ressortent en boucle :
->
-> Des apps qui continuent d'injecter du JavaScript après désinstall.
-> Des abonnements qui continuent de facturer des mois après annulation supposée.
-> Des theme files encombrés de code laissé par des apps supprimées.
-> Des listings produit invisibles pour ChatGPT et Perplexity.
-> Des erreurs d'accessibilité qui bloquent du vrai revenu.
->
-> J'ai construit StoreMD pour attraper les cinq en 60 secondes.
->
-> Le free scan est public pendant que la review de l'App Store tourne 🔍
+> StoreMD est live sur le Shopify App Store depuis quelques jours.
+> La plupart des apps ne font pas ça.
+> Si tu t'abonnes d'ici le 22 juin, ton prix est bloqué à vie 🔒
+> L'offre ouvre le 25 mai. Le Pro gratuit dure jusqu'au 7 juin, sans carte. Tu gardes Pro ou tu passes Free. Le verrouillage du prix reste ouvert jusqu'au 22 juin.
+> Deux semaines de Pro gratuit pour tout tester, puis c'est ta décision d'ici le 22 juin. Une fois verrouillé, le prix de ton plan ne bouge plus jamais.
+> Si tu gères une boutique Shopify et que tu comptais l'essayer, c'est la fenêtre qui compte.
+---
+
+# ═══ MERCREDI 27/05 — OFFRE : chiffres / économie annuel ═══
 
 ---
 
-# ═══ MERCREDI 20/05 — Thème : While we wait, we ship. (waiting series + jour IH) ═══
+#### STOREMD-TW-R-S11-03 — Romain (@delgado_ro72224) — Twitter — Mer 27/05 14h00
 
----
-
-#### STOREMD-TW-R-S10-03 — Romain (@delgado_ro72224) — Twitter — Mer 20/05 14h00
-
-**Vidéo :** V1-25_while_we_wait_we_ship.mp4 (recyclé TikTok, re-export sans watermark)
-**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Day 9 in the Shopify review queue 🐢
+The math on StoreMD Pro:
 
-Most founders go silent waiting for approval.
+$79/mo, or $790/year with 2 months free. That's $65.83 a month and $158 saved a year.
 
-I'm shipping in public instead. Here's the log:
-
-Install middleware: rewritten twice.
-Token refresh: cleaner.
-Scope alignment: matches API 2026-01.
-App icon: 1024×1024 spec compliant.
-
-Idle isn't a strategy.
+Subscribe by June 22 and that price is locked for life.
 ```
 
-**REPLY :**
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> Jour 9 dans la queue de review Shopify 🐢
->
-> La plupart des founders se taisent en attendant l'approbation.
->
-> Je ship en public à la place. Voici le log :
->
-> Middleware d'install : réécrit deux fois.
-> Token refresh : plus propre.
-> Alignement de scope : matche l'API 2026-01.
-> App icon : conforme à la spec 1024×1024.
->
-> Rester immobile n'est pas une stratégie.
+> Le calcul sur StoreMD Pro :
+> 79$/mois, ou 790$/an avec 2 mois offerts. Soit 65,83$/mois et 158$ économisés par an.
+> Abonne-toi d'ici le 22 juin et ce prix est bloqué à vie.
+---
+
+# ═══ JEUDI 28/05 — PRODUIT : on répare, pas juste un rapport ═══
 
 ---
 
-# ═══ JEUDI 21/05 — Thème : Ghost Billing POV (focus produit, douleur sourcée 530+ reviews) ═══
+#### STOREMD-TW-R-S11-04 — Romain (@delgado_ro72224) — Twitter — Jeu 28/05 14h00
 
----
-
-#### STOREMD-TW-R-S10-04 — Romain (@delgado_ro72224) — Twitter — Jeu 21/05 14h00
-
-**Vidéo :** V1-11_ghost_billing_pov.mp4 (recyclé TikTok, re-export sans watermark)
-**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+**Vidéo :** `V1-04_agent_vs_report.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Dug through 530+ reviews across the top Shopify apps last month 🔍
+A report tells you your store has problems. It doesn't solve them.
 
-The most common complaint isn't bugs or pricing.
+StoreMD finds the issues, ranks them by severity, and fixes them in one click or in bulk.
 
-It's billing that continues months after uninstall.
-
-Privy alone has 40+ public reviews mentioning it. Most merchants discover it during a payment audit, never before.
-
-Scan checks for it 💀
+Less time reading audits, more time selling.
 ```
 
-**REPLY :**
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> J'ai fouillé 530+ reviews sur les top apps Shopify le mois dernier 🔍
->
-> La plainte la plus fréquente ce ne sont pas les bugs ou le pricing.
->
-> C'est la facturation qui continue des mois après désinstall.
->
-> Privy à elle seule a 40+ reviews publiques qui le mentionnent. La plupart des merchants le découvrent pendant un audit de paiement, jamais avant.
->
-> Le scan check ça 💀
+> Un rapport te dit que ta boutique a des problèmes. Il ne les résout pas.
+> StoreMD trouve les problèmes, les classe par sévérité, et les corrige en un clic ou en masse.
+> Moins de temps à lire des audits, plus de temps à vendre.
 
 ---
 
-#### STOREMD-LI-R-S10-04 — Romain Delgado — LinkedIn — Jeu 21/05 18h00
+#### STOREMD-LI-R-S11-04 — Romain Delgado — LinkedIn — Jeu 28/05 18h00
 
-**Vidéo :** V1-11_ghost_billing_pov.mp4 (recyclé TikTok, re-export sans watermark, format vertical compatible LinkedIn natif)
-**UTM :** Aucun (pas de lien dans le corps LinkedIn, pénalité -60% reach). Pour mention en commentaire si besoin : `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+**Vidéo :** `V1-04_agent_vs_report.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-The most expensive line on a Shopify merchant's monthly bill isn't usually the platform fee.
+Most Shopify store audits end the same way.
 
-It's the apps they don't use anymore.
+A long list of problems, and you left to fix them yourself.
 
-I dug through 530+ public reviews last month. The pattern that came up most often wasn't bugs or pricing. It was billing that kept running after uninstall.
+That's the part StoreMD changes.
 
-Privy alone has 40+ public reviews mentioning it. PageFly, Shogun, Avada have similar threads. Subscriptions still active months after merchants thought they had cancelled.
+It scans your store in 60 seconds, finds what's slowing it down or costing you sales, and ranks each issue by severity.
 
-Stack three or four ghost subscriptions and you're looking at $1,000+ a year on stuff merchants don't even see.
+Then it fixes them. One click, or in bulk.
 
-StoreMD scans for all of it in 60 seconds. Free at storemd.vercel.app 💀
+Slow scripts. Leftover code from apps you uninstalled. Broken product SEO. Security gaps.
+
+You're not reading a report and opening ten tabs to act on it. The work is already done ✅
+
+It's live on the Shopify App Store, with 14 days of Pro free to try it.
+```
+
+**COMMENTAIRE (2 liens — 1 case chacun) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
 ```
 
 **TRADUCTION :**
-> La ligne la plus coûteuse sur la facture mensuelle d'un merchant Shopify n'est généralement pas le plan de la plateforme.
->
-> Ce sont les apps qu'il n'utilise plus.
->
-> J'ai fouillé 530+ reviews publiques le mois dernier. Le pattern qui revient le plus souvent ce ne sont pas les bugs ou le pricing. C'est la facturation qui continue après désinstall.
->
-> Privy à elle seule a 40+ reviews publiques qui le mentionnent. PageFly, Shogun, Avada ont des threads similaires. Abonnements toujours actifs des mois après que les merchants pensaient avoir annulé.
->
-> Empile trois ou quatre abonnements fantômes et tu regardes $1,000+ par an sur des trucs que les merchants ne voient même pas.
->
-> StoreMD scanne tout ça en 60 secondes. Gratuit sur storemd.vercel.app 💀
+> La plupart des audits de boutique Shopify finissent pareil.
+> Une longue liste de problèmes, et toi laissé seul pour les corriger.
+> C'est ça que StoreMD change.
+> Il scanne ta boutique en 60 secondes, trouve ce qui la ralentit ou te coûte des ventes, et classe chaque problème par sévérité.
+> Puis il les corrige. En un clic, ou en masse.
+> Scripts lents. Code résiduel d'apps désinstallées. SEO produit cassé. Failles de sécurité.
+> Tu ne lis pas un rapport en ouvrant dix onglets pour agir. Le travail est déjà fait ✅
+> C'est live sur le Shopify App Store, avec 14 jours de Pro gratuits pour l'essayer.
+---
+
+# ═══ VENDREDI 29/05 — PRODUIT : ghost charges (POV) ═══
 
 ---
 
-# ═══ VENDREDI 22/05 — Thème : Free scan ≠ install. (waiting series, clôture pédagogique) ═══
+#### STOREMD-TW-R-S11-05 — Romain (@delgado_ro72224) — Twitter — Ven 29/05 14h00
 
----
-
-#### STOREMD-TW-R-S10-05 — Romain (@delgado_ro72224) — Twitter — Ven 22/05 14h00
-
-**Vidéo :** V1-26_free_scan_not_install.mp4 (recyclé TikTok, re-export sans watermark)
-**UTM :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Getting this question a lot this week 🔍
+Uninstalling a Shopify app doesn't always stop the billing.
 
-"If the app is in review, how come the scan works?"
+Some keep charging for months, quietly, while you assume they're gone.
 
-Two different paths:
-
-The free scan runs from our domain. Public, no install needed.
-The full agent installs inside your Shopify admin. That part needs review approval.
-
-Day 11 in the queue. Scan stays open 🔒
+StoreMD flags those charges and the dead code they leave behind. One scan, and you know.
 ```
 
-**REPLY :**
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> Je reçois beaucoup cette question cette semaine 🔍
->
-> "Si l'app est en review, comment se fait-il que le scan marche ?"
->
-> Deux chemins différents :
->
-> Le free scan tourne depuis notre domaine. Public, pas d'install nécessaire.
-> L'agent complet s'installe dans ton admin Shopify. Cette partie a besoin de l'approbation de la review.
->
-> Jour 11 dans la queue. Le scan reste ouvert 🔒
+> Désinstaller une app Shopify n'arrête pas toujours la facturation.
+> Certaines continuent de facturer pendant des mois, en silence, pendant que tu crois qu'elles sont parties.
+> StoreMD repère ces charges et le code mort qu'elles laissent derrière. Un scan, et tu sais.
+
+---
