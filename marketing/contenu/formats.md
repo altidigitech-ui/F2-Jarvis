@@ -332,7 +332,7 @@ Corps :
 - F : `../../fabrice/VOIX.md` §RÈGLE #0 (filtre anti-IA)
 - R : `../../romain/VOIX.md` §RÈGLE #0
 - F2 : voix studio définie dans `../../f2/system-prompt.md` + `../../asset-brand/FOUNDRYTWO-BRAND-BIBLE.md` §1.3 (pas de fichier VOIX dédié)
-- @storemd : voix compte produit définie inline §9.3 ci-dessous (pas de fichier VOIX dédié)
+- @storemd : voix compte produit → `saas-app-shopify/storemd/VOIX.md`
 
 ### 9.3 Règle absolue
 

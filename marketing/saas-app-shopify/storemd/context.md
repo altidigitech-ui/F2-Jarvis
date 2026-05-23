@@ -238,6 +238,8 @@ Source de vérité fréquence + horaires + règles recyclage : `../../contenu/ba
 
 ### Ton et règles
 
+> Voix complète des comptes StoreMD → `VOIX.md` (même dossier).
+
 - Ton neutre produit. Le produit parle de lui-même. Pas de "I", pas de "we".
 - ANTI-IA appliqué sans exception (`../../../ANTI-IA.md`).
 - Hashtags : 0 sur TikTok et Twitter. 5 max niche sur Instagram. 2-3 max sur Facebook.
