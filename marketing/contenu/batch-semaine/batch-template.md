@@ -345,7 +345,7 @@ Ne touche à rien d'autre dans le fichier.
 |--------|------|--------|---------|
 | R perso | Business, chiffres, conversion, "ton argent brûle" | "I" | `romain/VOIX.md` |
 | F perso | Technique accessible, "sous le capot" | "I" | `fabrice/VOIX.md` |
-| StoreMD | Neutre produit, le scan parle de lui-même | Aucun ("I"/"we" interdits) | `saas-app-shopify/storemd/context.md` §11 |
+| StoreMD | Neutre produit, le scan parle de lui-même | Aucun ("I"/"we" interdits) | `saas-app-shopify/storemd/VOIX.md` + `context.md` §11 |
 
 ### 4.2 Par plateforme
 

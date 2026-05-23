@@ -43,7 +43,7 @@ Vendre un SaaS et vendre des vêtements sont deux métiers complètement différ
 | **Cible** | Merchants Shopify (B2B) | Acheteurs de mode (B2C) |
 | **Conversion** | Scan gratuit → beta → payant | Panier → commande |
 | **Canaux prioritaires** | TikTok, Instagram, Facebook, LinkedIn, Twitter | Instagram, TikTok, Pinterest (à définir) |
-| **Voix** | Technique/business, ton neutre produit | Lifestyle/mode (à définir) |
+| **Voix** | Technique/business, ton neutre produit → `saas-app-shopify/storemd/VOIX.md` | Lifestyle/mode (à définir) |
 | **Cold** | 80 DMs/jour (BIBLE §4) | 0 cold DM |
 
 La stratégie détaillée de chaque business est dans son dossier. Ce fichier ne rentre PAS dans le détail.
