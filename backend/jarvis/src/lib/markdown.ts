@@ -149,7 +149,7 @@ export function updateColdReply(
 }
 
 /**
- * Append a row to an analytics section of progress-semaine.md.
+ * Append a row to an analytics section of tracking/progress-semaines.md.
  * The caller builds the row array matching the table columns.
  * sectionTitle defaults to "ANALYTICS" — matches both "ANALYTICS" and "ANALYTICS TWITTER".
  */

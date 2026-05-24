@@ -32,7 +32,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
       case "mark_published": {
         const title = payload.title || "";
         await ghUpdate(
-          `${prefix}/plan-hebdo.md`,
+          `${prefix}/planning/plan-hebdo.md`,
           (md) => markPlanPublished(md, title),
           `[JARVIS] ✅ Published: ${title.slice(0, 60)}`,
         );
@@ -52,7 +52,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
       case "incident_resolved": {
         const keyword = payload.keyword || "";
         await ghUpdate(
-          `${prefix}/progress-semaine.md`,
+          `${prefix}/tracking/progress-semaines.md`,
           (md) => resolveProgressEvent(md, keyword),
           `[JARVIS] ✅ Resolved: ${keyword.slice(0, 60)}`,
         );
@@ -86,7 +86,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
         );
         if (payload.event) {
           await ghUpdate(
-            `${prefix}/progress-semaine.md`,
+            `${prefix}/tracking/progress-semaines.md`,
             (md) => appendProgressEvent(md, payload.event, platform, payload.activity || "", payload.action_taken || ""),
             `[JARVIS] 📋 Event: ${payload.event.slice(0, 50)}`,
           );
