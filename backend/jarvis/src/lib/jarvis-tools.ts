@@ -122,7 +122,7 @@ export function createJarvisMcpServer(options: {
     {
       query: z.string().describe("Search keywords"),
       scope: z
-        .enum(["all", "fabrice", "romain", "patterns", "strategie", "growth-marketing"])
+        .enum(["all", "fabrice", "romain", "patterns", "strategie"])
         .default("all")
         .describe("Limit search to a top-level folder"),
     },
@@ -484,11 +484,11 @@ export function createJarvisMcpServer(options: {
 - resolve_alert: { keyword: string }
 - log_decision: { decision: string, rationale: string, result?: string }
 - log_analytics: { day: string, impressions: string, eng_rate: string, replies: string, new_follows: string, platform?: string, section?: string }
-  Writes a row to the ANALYTICS section of progress-semaine.md. Use for manual or weekly analytics entry.
+  Writes a row to the ANALYTICS section of tracking/progress-semaines.md. Use for manual or weekly analytics entry.
 - create_file: { path: string, content: string, commit_message?: string }
   Creates a new file OR overwrites an existing file at \`path\` with \`content\`.
   Allowed paths: prefixes fabrice/, romain/, strategie/, patterns/,
-    tracking/, archives/, distribution/, growth-marketing/, saas/, produits/,
+    tracking/, archives/, produits/,
     ops/, marketing/, la-toile/ — OR root files matching BATCH-SEMAINE-N.md,
     PLAN-*.md, HANDOFF*.md, CHANGELOG*.md, REVUE-*.md.
   Allowed extensions: .md .txt .json .yml .yaml .csv.
@@ -591,7 +591,7 @@ The 'preview' field is a human-readable description shown to the user before the
   // ---------------------------------------------------------------------------
   const recentHistory = tool(
     "recent_history",
-    "Summarize what the persona has done in the last N days. Reads progress-semaine.md and recent engagement/cold logs. Returns text summary. Use for 'what have I done this week?', 'recap', 'bilan' type questions.",
+    "Summarize what the persona has done in the last N days. Reads tracking/progress-semaines.md and recent engagement/cold logs. Returns text summary. Use for 'what have I done this week?', 'recap', 'bilan' type questions.",
     {
       persona: z.enum(["fabrice", "romain"]).describe("Which persona"),
       days: z.number().int().min(1).max(14).default(7).describe("Lookback window in days"),
@@ -599,7 +599,7 @@ The 'preview' field is a human-readable description shown to the user before the
     async ({ persona, days }) => {
       try {
         const [progress, cold, engagement] = await Promise.all([
-          ghRead(`${persona}/progress-semaine.md`).catch(() => null),
+          ghRead(`${persona}/tracking/progress-semaines.md`).catch(() => null),
           ghRead(`${persona}/cold/cold-outreach-log.md`).catch(() => null),
           ghRead(`${persona}/engagement/engagement-log.md`).catch(() => null),
         ]);

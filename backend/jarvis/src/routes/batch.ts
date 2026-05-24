@@ -71,10 +71,10 @@ export async function batchStatusRoute(req: Request, res: Response): Promise<voi
       allAnalytics,
     ] = await Promise.all([
       fileExists(`BATCH-SEMAINE-${weekN}.md`),
-      fileExists("romain/plan-hebdo.md"),
-      fileExists("fabrice/plan-hebdo.md"),
-      fileExists("romain/progress-semaine.md"),
-      fileExists("fabrice/progress-semaine.md"),
+      fileExists("romain/planning/plan-hebdo.md"),
+      fileExists("fabrice/planning/plan-hebdo.md"),
+      fileExists("romain/tracking/progress-semaines.md"),
+      fileExists("fabrice/tracking/progress-semaines.md"),
       listAllAnalyticsFiles(weekN1),
     ]);
 

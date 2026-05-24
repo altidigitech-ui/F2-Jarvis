@@ -47,10 +47,7 @@ const CREATE_FILE_ALLOWED_PREFIXES = [
   "patterns/",
   "tracking/",
   "archives/",
-  "distribution/",
-  "growth-marketing/",
   "la-toile/",
-  "saas/",
   "produits/",
   "ops/",
   "marketing/",
@@ -171,7 +168,7 @@ export function resolveFilePath(
 ): { path: string; commitPrefix: string } {
   switch (actionType) {
     case "mark_published":
-      return { path: `${persona}/plan-hebdo.md`, commitPrefix: `${persona}: ✅ published` };
+      return { path: `${persona}/planning/plan-hebdo.md`, commitPrefix: `${persona}: ✅ published` };
     case "log_cold":
     case "batch_cold":
     case "queue_cold_targets":
@@ -184,9 +181,9 @@ export function resolveFilePath(
       };
     case "log_interaction":
     case "resolve_alert":
-      return { path: `${persona}/progress-semaine.md`, commitPrefix: `${persona}: progress` };
+      return { path: `${persona}/tracking/progress-semaines.md`, commitPrefix: `${persona}: progress` };
     case "log_analytics":
-      return { path: `${persona}/progress-semaine.md`, commitPrefix: `${persona}: analytics` };
+      return { path: `${persona}/tracking/progress-semaines.md`, commitPrefix: `${persona}: analytics` };
     case "log_decision":
       return { path: `tracking/decisions-log.md`, commitPrefix: `decision` };
     case "create_file": {
@@ -373,7 +370,7 @@ export async function applySideEffects(
         const title = String(params.title || "");
         const platform = title.toLowerCase().includes("linkedin") ? "LinkedIn" : "Twitter";
         await ghUpdate(
-          `${persona}/progress-semaine.md`,
+          `${persona}/tracking/progress-semaines.md`,
           (md) => appendProgressEvent(
             md,
             `${platform} post publié — "${title.slice(0, 50)}"`,
@@ -396,7 +393,7 @@ export async function applySideEffects(
           ? ((params.targets as unknown[]) || []).length
           : 1;
         await ghUpdate(
-          `${persona}/progress-semaine.md`,
+          `${persona}/tracking/progress-semaines.md`,
           (md) => {
             const updated = incrementCurrentCounter(md, "Cold envoyés", count);
             return appendProgressEvent(
@@ -416,7 +413,7 @@ export async function applySideEffects(
 
       case "log_engagement": {
         await ghUpdate(
-          `${persona}/progress-semaine.md`,
+          `${persona}/tracking/progress-semaines.md`,
           (md) => incrementCurrentCounter(md, "Engagements", 1),
           `[JARVIS] ${persona}: progress — engagement`
         ).catch((err) => {
