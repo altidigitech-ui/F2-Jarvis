@@ -186,11 +186,6 @@ export function resolveFilePath(
     case "log_interaction":
     case "resolve_alert":
       return { path: `${persona}/progress-semaine.md`, commitPrefix: `${persona}: progress` };
-    case "mark_cross_published":
-      return {
-        path: `${persona}/engagement/cross-execution-log.md`,
-        commitPrefix: `${persona}: cross published`,
-      };
     case "log_analytics":
       return { path: `${persona}/progress-semaine.md`, commitPrefix: `${persona}: analytics` };
     case "log_decision":
@@ -300,53 +295,6 @@ export function applyTransform(
         String(params.action || "")
       );
 
-    case "mark_cross_published": {
-      const post = String(params.post || "");
-      const crossId = String(params.cross_id || "");
-      const reply = String(params.reply || "");
-      const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
-
-      const lines = md.split("\n");
-      let matched = false;
-
-      for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-        if (!line.startsWith("|") || line.startsWith("|---") || line.startsWith("|ID")) continue;
-
-        const cells = line.split("|").map(c => c.trim());
-        const cellId = (cells[1] || "").trim();
-        const cellPost = (cells[3] || "").toLowerCase();
-
-        // Priority 1: match by explicit cross_id (B6, A12)
-        const idMatch = crossId && cellId.toLowerCase() === crossId.toLowerCase();
-        // Priority 2: match by ID if post looks like an ID (B6, A12)
-        const postAsId = /^[AB]\d{1,2}$/i.test(post) && cellId.toLowerCase() === post.toLowerCase();
-        // Priority 3: match by content — check if cellPost contains key words from post
-        const postWords = post.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-        const contentMatch = !idMatch && !postAsId && postWords.length > 0 &&
-          postWords.filter(w => cellPost.includes(w)).length >= Math.ceil(postWords.length * 0.4);
-
-        if (idMatch || postAsId || contentMatch) {
-          if (cells.length >= 7) {
-            cells[5] = cells[5] === "—" ? `~${time}` : cells[5];
-            cells[6] = "✅ Fait";
-            if (cells.length >= 8) {
-              cells[7] = reply ? reply.slice(0, 50) : `Confirmé ${time}`;
-            }
-            lines[i] = "|" + cells.slice(1).join("|") + "|";
-            matched = true;
-            break;
-          }
-        }
-      }
-
-      if (!matched) {
-        console.warn(`[action-executor] mark_cross_published: no match for cross_id="${crossId}" post="${post}"`);
-      }
-
-      return lines.join("\n");
-    }
-
     case "resolve_alert":
       return resolveProgressEvent(md, String(params.keyword || ""));
 
@@ -437,26 +385,6 @@ export async function applySideEffects(
           `[JARVIS] ${persona}: progress — published "${title.slice(0, 30)}"`
         ).catch((err) => {
           console.error(`[action-executor] side-effect mark_published failed:`, err instanceof Error ? err.message : err);
-        });
-        break;
-      }
-
-      case "mark_cross_published": {
-        const post = String(params.post || "");
-
-        // Seul side-effect : log in progress-semaine.md
-        await ghUpdate(
-          `${persona}/progress-semaine.md`,
-          (md) => appendProgressEvent(
-            md,
-            `Cross-engagement exécuté — ${post.slice(0, 50)}`,
-            "Cross",
-            `Reply ${time}`,
-            "✅"
-          ),
-          `[JARVIS] ${persona}: progress — cross ${post.slice(0, 30)}`
-        ).catch((err) => {
-          console.error(`[action-executor] side-effect mark_cross progress failed:`, err instanceof Error ? err.message : err);
         });
         break;
       }

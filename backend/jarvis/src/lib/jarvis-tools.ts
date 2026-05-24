@@ -481,7 +481,6 @@ export function createJarvisMcpServer(options: {
 - update_cold_reply: { target: "@handle", reply_status: string, notes?: string }
 - log_engagement: { platform: "TWITTER"|"LINKEDIN"|"REDDIT"|"FACEBOOK"|"IH"|"PH", post: string, reply: string }
 - log_interaction: { event: string, platform: string, activity: string, action: string }
-- mark_cross_published: { post: string, reply: string }
 - resolve_alert: { keyword: string }
 - log_decision: { decision: string, rationale: string, result?: string }
 - log_analytics: { day: string, impressions: string, eng_rate: string, replies: string, new_follows: string, platform?: string, section?: string }
@@ -516,7 +515,6 @@ The 'preview' field is a human-readable description shown to the user before the
           "update_cold_reply",
           "log_engagement",
           "log_interaction",
-          "mark_cross_published",
           "resolve_alert",
           "log_decision",
           "log_analytics",
