@@ -1,7 +1,7 @@
-# PROGRESS SEMAINE F — Semaine du 25/05/2026 au 31/05/2026
+# PROGRESS SEMAINE F — Semaine du 18/05/2026 au 24/05/2026
 
 **Usage :** Rempli au fil de l'eau. Chaque événement notable = une ligne. Toutes les informations renseignées dans ce document doivent contenir date et heure.
-**Contexte :** SEMAINE 11 — [À COMPLÉTER]
+**Contexte :** SEMAINE 10 — [À COMPLÉTER]
 
 -----
 
@@ -9,7 +9,10 @@
 
 |Date|Heure|Événement|Plateforme|Activité|Action prise / à prendre|
 |----|-----|---------|----------|--------|------------------------|
-|    |     |         |          |        |                        |
+| 22/05 | — | StoreMD acceptée sur le Shopify App Store, app live sur `apps.shopify.com/storemd-1` | Shopify App Store | Launch | App dispo au téléchargement |
+| 22/05 | — | Offre de lancement StoreMD finalisée (14j Pro free → 07/06, tarif gelé → 22/06 minuit) | — | Marketing | Offre live lundi 25/05 |
+| S10 | — | Full Hokuno : boutique Shopify quasi finie, détails techniques à régler | Shopify | Produit | Sortie réseaux reportée |
+| S10 | — | Travail sur les vidéos contenu réseaux sociaux Hokuno (contenu lifestyle, différent des vidéos marketing StoreMD) | — | Contenu | Vidéos en production |
 
 -----
 
@@ -25,16 +28,16 @@
 
 | Métrique | Valeur |
 |----------|--------|
-| Cold envoyés S11 | 0 |
+| Cold envoyés S10 | 0 |
 | Cold Twitter F | 0 |
 | Cold LinkedIn F | 0 |
 | Cold Facebook F | 0 |
 | Cold StoreMD TikTok (partagé) | 0 |
 | Cold StoreMD Instagram (partagé) | 0 |
-| Réponses reçues S11 | 0 |
-| Scans proactifs S11 | 0 |
-| Posts publiés F perso S11 | 0 |
-| Posts publiés StoreMD S11 | 0 |
+| Réponses reçues S10 | 0 |
+| Scans proactifs S10 | 0 |
+| Posts publiés F perso S10 | 0 |
+| Posts publiés StoreMD S10 | 0 |
 
 -----
 
