@@ -3,12 +3,11 @@ import { ghUpdate } from "../lib/github.js";
 import { cacheInvalidateAll } from "../lib/cache.js";
 import {
   appendDecision, appendProgressEvent, resolveProgressEvent,
-  appendColdLog, appendEngagementLog, markPlanPublished,
+  appendColdLog, markPlanPublished,
 } from "../lib/markdown.js";
 import { applySideEffects } from "../lib/action-executor.js";
 
 type Persona = "romain" | "fabrice";
-type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";
 
 type ActionBody = {
   persona: Persona;
@@ -90,12 +89,7 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
         break;
       }
       case "log_interaction": {
-        const platform = ((payload.platform || "TWITTER").toUpperCase()) as Platform;
-        await ghUpdate(
-          `${prefix}/engagement/engagement-log.md`,
-          (md) => appendEngagementLog(md, platform, payload.post || "", payload.reply || ""),
-          `[JARVIS] 💬 Interaction: ${platform}`,
-        );
+        const platform = String(payload.platform || "");
         if (payload.event) {
           await ghUpdate(
             `${prefix}/tracking/progress-semaines.md`,

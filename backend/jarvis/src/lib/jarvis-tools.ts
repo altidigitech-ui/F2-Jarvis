@@ -479,7 +479,7 @@ export function createJarvisMcpServer(options: {
 - batch_cold: { platform: (idem), targets: [{target, store_url?, message?, vertical?, insight?, group_source?, notes?}], vertical?, insight? }
 - queue_cold_targets: { platform: (idem), targets: [{target, vertical?, insight?, notes?, store_url?, group_source?}] }
 - update_cold_reply: { target: "@handle", reply_status: string, notes?: string }
-- log_engagement: { platform: "TWITTER"|"LINKEDIN"|"REDDIT"|"FACEBOOK"|"IH"|"PH", post: string, reply: string }
+- log_engagement: { platform: "PH"|"REDDIT", target: string (produit ou subreddit), type: string (upvote/comment/post), summary: string, link?: string, notes?: string }
 - log_interaction: { event: string, platform: string, activity: string, action: string }
 - resolve_alert: { keyword: string }
 - log_decision: { decision: string, rationale: string, result?: string }
