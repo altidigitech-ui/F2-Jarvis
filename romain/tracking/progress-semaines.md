@@ -9,9 +9,12 @@
 
 |Date|Heure|Événement|Plateforme|Activité|Action prise / à prendre|
 |----|-----|---------|----------|--------|------------------------|
-| 22/05 | — | StoreMD acceptée sur le Shopify App Store, app live sur `apps.shopify.com/storemd-1` | Shopify App Store | Launch | Batch S10 launch publié, batch S11 offre prêt |
-| 22/05 | — | Offre de lancement StoreMD finalisée (14j Pro free → 07/06, tarif gelé → 22/06 minuit) | — | Marketing | Offre live à partir du lundi 25/05 |
-| S10 | — | Boutique Hokuno live (hokunostore.com), pas prête pour les réseaux, détails techniques à régler | Shopify | Produit | Sortie réseaux Hokuno reportée |
+| 22/05 | — | StoreMD acceptée sur le Shopify App Store, app live sur `apps.shopify.com/storemd-1` | Shopify App Store | Launch | Batch S10 launch publié |
+| 22/05 | — | Offre de lancement StoreMD finalisée (14j Pro free → 07/06, tarif gelé → 22/06 minuit) | — | Marketing | Offre live lundi 25/05 |
+| S10 | — | Repo F2-Jarvis rangé : structure archivage, README agents locaux, VOIX.md StoreMD créé | GitHub | Ops | Repo prêt pour branchement Jarvis |
+| S10 | — | Système batch industrialisé : batch S10 launch, batch S11 offre construit, dispatch automatisé (script réutilisable) | — | Marketing | Process reproductible chaque semaine |
+| S10 | — | Vidéos offre produites : V1-28, V1-29, V1-30, V1-31 — mapping à 31 vidéos | Claude Design | Contenu | 4 vidéos offre prêtes pour S11 |
+| S10 | — | Branchement Jarvis : prochain chantier, non fait cette semaine | Railway | Ops | À lancer S11 |
 
 -----
 

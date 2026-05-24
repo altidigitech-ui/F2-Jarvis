@@ -9,9 +9,10 @@
 
 |Date|Heure|Événement|Plateforme|Activité|Action prise / à prendre|
 |----|-----|---------|----------|--------|------------------------|
-| 22/05 | — | StoreMD acceptée sur le Shopify App Store, app live sur `apps.shopify.com/storemd-1` | Shopify App Store | Launch | Batch S10 launch publié, batch S11 offre prêt |
-| 22/05 | — | Offre de lancement StoreMD finalisée (14j Pro free → 07/06, tarif gelé → 22/06 minuit) | — | Marketing | Offre live à partir du lundi 25/05 |
-| S10 | — | Boutique Hokuno live (hokunostore.com), pas prête pour les réseaux, détails techniques à régler | Shopify | Produit | Sortie réseaux Hokuno reportée |
+| 22/05 | — | StoreMD acceptée sur le Shopify App Store, app live sur `apps.shopify.com/storemd-1` | Shopify App Store | Launch | App dispo au téléchargement |
+| 22/05 | — | Offre de lancement StoreMD finalisée (14j Pro free → 07/06, tarif gelé → 22/06 minuit) | — | Marketing | Offre live lundi 25/05 |
+| S10 | — | Full Hokuno : boutique Shopify quasi finie, détails techniques à régler | Shopify | Produit | Sortie réseaux reportée |
+| S10 | — | Travail sur les vidéos contenu réseaux sociaux Hokuno (contenu lifestyle, différent des vidéos marketing StoreMD) | — | Contenu | Vidéos en production |
 
 -----
 
