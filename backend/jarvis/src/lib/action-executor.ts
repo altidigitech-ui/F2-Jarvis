@@ -15,7 +15,6 @@ import {
 } from "./markdown.js";
 
 type Persona = "fabrice" | "romain";
-type Platform = "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH";
 
 // ---------------------------------------------------------------------------
 // create_file security guards
@@ -179,11 +178,13 @@ export function resolveFilePath(
         : `${persona}/cold/${file}`;
       return { path, commitPrefix: `${persona}: cold` };
     }
-    case "log_engagement":
+    case "log_engagement": {
+      const pf = String(params.platform || "PH").toUpperCase();
       return {
-        path: `${persona}/engagement/engagement-log.md`,
+        path: `${persona}/engagement/${pf.toLowerCase()}/engagement-log.md`,
         commitPrefix: `${persona}: engagement`,
       };
+    }
     case "log_interaction":
     case "resolve_alert":
       return { path: `${persona}/tracking/progress-semaines.md`, commitPrefix: `${persona}: progress` };
@@ -291,9 +292,14 @@ export function applyTransform(
     case "log_engagement":
       return appendEngagementLog(
         md,
-        (String(params.platform || "TWITTER").toUpperCase() as Platform),
-        String(params.post || ""),
-        String(params.reply || "")
+        String(params.platform || "PH").toUpperCase() as "PH" | "REDDIT",
+        {
+          target: String(params.target || ""),
+          type: String(params.type || ""),
+          summary: String(params.summary || ""),
+          link: params.link ? String(params.link) : undefined,
+          notes: params.notes ? String(params.notes) : undefined,
+        }
       );
 
     case "log_interaction":

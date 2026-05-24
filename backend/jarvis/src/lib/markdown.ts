@@ -107,13 +107,15 @@ export function appendColdLog(
   return appendRowToTable(markdown, row);
 }
 
-export function appendEngagementLog(markdown: string, platform: "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH", postSummary: string, reply: string): string {
-  const now = new Date();
-  const time = now.toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
-  if (platform === "IH") {
-    return appendTableRow(markdown, platform, [cestDate(), postSummary, reply]);
-  }
-  return appendTableRow(markdown, platform, [cestDate(), time, postSummary, reply, "", ""]);
+export function appendEngagementLog(
+  markdown: string,
+  platform: "PH" | "REDDIT",
+  fields: { target: string; type: string; summary: string; link?: string; notes?: string }
+): string {
+  // PH:     Date | Produit  | Type | Résumé commentaire | Lien | Notes
+  // REDDIT: Date | Subreddit | Type | Résumé             | Lien | Notes
+  const row = [cestDate(), fields.target || "", fields.type || "", fields.summary || "", fields.link || "", fields.notes || ""];
+  return appendRowToTable(markdown, row);
 }
 
 export function markPlanPublished(markdown: string, postTitle: string): string {
