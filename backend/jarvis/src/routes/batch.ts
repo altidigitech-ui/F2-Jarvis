@@ -13,7 +13,7 @@ async function fileExists(path: string): Promise<boolean> {
 }
 
 async function listAllAnalyticsFiles(weekN1: number): Promise<Record<string, string[]>> {
-  const result: Record<string, string[]> = { fabrice: [], romain: [], f2: [], shared: [] };
+  const result: Record<string, string[]> = { fabrice: [], romain: [], shared: [] };
 
   try {
     const rootEntries = await ghList(`raw/analytics/S${weekN1}`);
@@ -24,7 +24,7 @@ async function listAllAnalyticsFiles(weekN1: number): Promise<Record<string, str
     }
   } catch { /* dir doesn't exist */ }
 
-  for (const p of ["fabrice", "romain", "f2"]) {
+  for (const p of ["fabrice", "romain"]) {
     try {
       const entries = await ghList(`raw/analytics/S${weekN1}/${p}`);
       result[p] = entries.filter((e) => e.type === "file").map((e) => e.name.toLowerCase());
@@ -66,7 +66,6 @@ export async function batchStatusRoute(req: Request, res: Response): Promise<voi
       hasBatchRef,
       hasPlanR,
       hasPlanF,
-      hasPlanF2,
       hasProgressR,
       hasProgressF,
       allAnalytics,
@@ -74,7 +73,6 @@ export async function batchStatusRoute(req: Request, res: Response): Promise<voi
       fileExists(`BATCH-SEMAINE-${weekN}.md`),
       fileExists("romain/plan-hebdo.md"),
       fileExists("fabrice/plan-hebdo.md"),
-      fileExists("f2/plan-hebdo.md"),
       fileExists("romain/progress-semaine.md"),
       fileExists("fabrice/progress-semaine.md"),
       listAllAnalyticsFiles(weekN1),
@@ -84,7 +82,6 @@ export async function batchStatusRoute(req: Request, res: Response): Promise<voi
       ...allAnalytics.shared,
       ...allAnalytics.fabrice,
       ...allAnalytics.romain,
-      ...allAnalytics.f2,
     ];
 
     const hasTwitter = hasAnalyticsType(allFiles, "twitter");
@@ -94,7 +91,6 @@ export async function batchStatusRoute(req: Request, res: Response): Promise<voi
       { id: "batch_ref", label: `Batch S${weekN} de référence`, done: hasBatchRef },
       { id: "plan_r", label: "Plan hebdo Romain", done: hasPlanR },
       { id: "plan_f", label: "Plan hebdo Fabrice", done: hasPlanF },
-      { id: "plan_f2", label: "Plan hebdo F2", done: hasPlanF2 },
       { id: "progress_r", label: "Progress Romain", done: hasProgressR },
       { id: "progress_f", label: "Progress Fabrice", done: hasProgressF },
       { id: "analytics_tw", label: "Analytics Twitter", done: hasTwitter },

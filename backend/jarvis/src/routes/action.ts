@@ -19,9 +19,8 @@ type ActionBody = {
 
 export async function actionRoute(req: Request, res: Response): Promise<void> {
   const body = req.body as ActionBody;
-  const { persona, mode, action, payload } = body;
-  // F2 mode → files are in f2/, not romain/
-  const prefix = mode === "f2" ? "f2" : persona;
+  const { persona, action, payload } = body;
+  const prefix = persona;
 
   if (!persona || !action) {
     res.status(400).json({ error: "Missing persona or action" });

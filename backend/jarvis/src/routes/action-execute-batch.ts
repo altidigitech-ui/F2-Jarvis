@@ -4,7 +4,7 @@ import { getSupabase } from "../lib/supabase.js";
 import { ghUpdate } from "../lib/github.js";
 import { cacheInvalidateAll } from "../lib/cache.js";
 
-type Persona = "fabrice" | "romain" | "f2";
+type Persona = "fabrice" | "romain";
 
 type ActionRow = {
   id: string;
