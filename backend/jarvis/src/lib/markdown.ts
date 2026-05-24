@@ -75,23 +75,6 @@ export function appendEngagementLog(markdown: string, platform: "TWITTER" | "LIN
   return appendTableRow(markdown, platform, [cestDate(), time, postSummary, reply, "", ""]);
 }
 
-/** @deprecated — never called externally. Logic fully handled in action-executor.ts applyTransform (mark_cross_published case). Remove in next cleanup. */
-export function markCrossPublished(markdown: string, postSummary: string, replyContent: string): string {
-  const lines = markdown.split("\n");
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].toLowerCase().includes(postSummary.toLowerCase()) && /^\|/.test(lines[i].trim())) {
-      const cells = lines[i].split("|");
-      if (cells.length > 4 && !cells[4].includes("✅")) {
-        cells[4] = ` ✅ `;
-        cells[5] = ` ${cestNow()} CEST `;
-        lines[i] = cells.join("|");
-      }
-    }
-  }
-  const suffix2 = `\n\n**Reply R publiée (${cestNow()} CEST) :**\n\n\`\`\`\n${replyContent}\n\`\`\`\n`;
-  return lines.join("\n") + (replyContent ? suffix2 : "");
-}
-
 export function markPlanPublished(markdown: string, postTitle: string): string {
   const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
   const lines = markdown.split("\n");

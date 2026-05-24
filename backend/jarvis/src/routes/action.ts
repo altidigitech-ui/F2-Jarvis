@@ -13,7 +13,7 @@ type Platform = "TWITTER" | "LINKEDIN" | "IH" | "PH";
 type ActionBody = {
   persona: Persona;
   mode?: "normal" | "f2";
-  action: "mark_published" | "mark_cross_published" | "log_decision" | "incident_resolved" | "log_cold" | "log_interaction" | "patch_file";
+  action: "mark_published" | "log_decision" | "incident_resolved" | "log_cold" | "log_interaction" | "patch_file";
   payload: Record<string, string>;
 };
 
@@ -39,53 +39,6 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
         );
         cacheInvalidateAll();
         await applySideEffects("mark_published", { title, _persona_prefix: prefix }, persona);
-        break;
-      }
-      case "mark_cross_published": {
-        const post = payload.post || payload.title || "";
-        const crossId = payload.cross_id || "";
-        const reply = payload.reply || "";
-        const time = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
-
-        await ghUpdate(
-          `${prefix}/engagement/cross-execution-log.md`,
-          (md) => {
-            const lines = md.split("\n");
-            let matched = false;
-            for (let i = 0; i < lines.length; i++) {
-              const line = lines[i];
-              if (!line.startsWith("|") || line.startsWith("|---") || line.startsWith("|ID")) continue;
-              const cells = line.split("|").map(c => c.trim());
-              const cellId = (cells[1] || "").trim();
-              const cellPost = (cells[3] || "").toLowerCase();
-
-              const idMatch = crossId && cellId.toLowerCase() === crossId.toLowerCase();
-              const postAsId = /^[AB]\d{1,2}$/i.test(post) && cellId.toLowerCase() === post.toLowerCase();
-              const postWords = post.toLowerCase().split(/\s+/).filter((w: string) => w.length > 3);
-              const contentMatch = !idMatch && !postAsId && postWords.length > 0 &&
-                postWords.filter((w: string) => cellPost.includes(w)).length >= Math.ceil(postWords.length * 0.4);
-
-              if (idMatch || postAsId || contentMatch) {
-                if (cells.length >= 7) {
-                  cells[5] = cells[5] === "—" ? `~${time}` : cells[5];
-                  cells[6] = "✅ Fait";
-                  if (cells.length >= 8) cells[7] = reply ? reply.slice(0, 50) : `Confirmé ${time}`;
-                  lines[i] = "|" + cells.slice(1).join("|") + "|";
-                  matched = true;
-                  break;
-                }
-              }
-            }
-            if (!matched) {
-              console.warn(`[action] mark_cross_published: no match for cross_id="${crossId}" post="${post}"`);
-            }
-            return lines.join("\n");
-          },
-          `[JARVIS] ✅ Cross: ${post.slice(0, 60)}`,
-        );
-
-        cacheInvalidateAll();
-        await applySideEffects("mark_cross_published", { post, cross_id: crossId, reply, _persona_prefix: prefix }, persona);
         break;
       }
       case "log_decision": {
