@@ -122,7 +122,7 @@ export function createJarvisMcpServer(options: {
     {
       query: z.string().describe("Search keywords"),
       scope: z
-        .enum(["all", "fabrice", "romain", "f2", "patterns", "strategie", "growth-marketing"])
+        .enum(["all", "fabrice", "romain", "patterns", "strategie", "growth-marketing"])
         .default("all")
         .describe("Limit search to a top-level folder"),
     },
@@ -487,7 +487,7 @@ export function createJarvisMcpServer(options: {
   Writes a row to the ANALYTICS section of progress-semaine.md. Use for manual or weekly analytics entry.
 - create_file: { path: string, content: string, commit_message?: string }
   Creates a new file OR overwrites an existing file at \`path\` with \`content\`.
-  Allowed paths: prefixes f2/, fabrice/, romain/, strategie/, patterns/,
+  Allowed paths: prefixes fabrice/, romain/, strategie/, patterns/,
     tracking/, archives/, distribution/, growth-marketing/, saas/, produits/,
     ops/, marketing/, la-toile/ — OR root files matching BATCH-SEMAINE-N.md,
     PLAN-*.md, HANDOFF*.md, CHANGELOG*.md, REVUE-*.md.
@@ -543,7 +543,7 @@ The 'preview' field is a human-readable description shown to the user before the
         const sb = getSupabase();
         const enrichedParams = {
           ...params,
-          _persona_prefix: options.mode === "f2" ? "f2" : options.persona,
+          _persona_prefix: options.persona,
         };
         const { data, error } = await sb
           .from("jarvis_pending_actions")

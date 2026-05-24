@@ -14,7 +14,7 @@ import {
   updateColdReply,
 } from "./markdown.js";
 
-type Persona = "fabrice" | "romain" | "f2";
+type Persona = "fabrice" | "romain";
 type Platform = "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH";
 
 // ---------------------------------------------------------------------------
@@ -41,7 +41,6 @@ const CREATE_FILE_ALLOWED_EXTENSIONS = new Set([
  * Racine allowed if filename starts with BATCH-, PLAN-, HANDOFF-, or CHANGELOG-.
  */
 const CREATE_FILE_ALLOWED_PREFIXES = [
-  "f2/",
   "fabrice/",
   "romain/",
   "strategie/",
@@ -462,8 +461,7 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
   }
 
   const persona = action.jarvis_conversations.persona;
-  const conversationMode = action.jarvis_conversations.mode;
-  const effectivePersona = (action.params._persona_prefix as Persona) || (conversationMode === "f2" ? "f2" : persona);
+  const effectivePersona = (action.params._persona_prefix as Persona) || persona;
 
   try {
     const { path, commitPrefix } = resolveFilePath(action.action_type, effectivePersona, action.params);
