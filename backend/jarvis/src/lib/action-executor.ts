@@ -163,8 +163,7 @@ export interface PendingAction {
 export function resolveFilePath(
   actionType: string,
   persona: Persona,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _params: Record<string, unknown>
+  params: Record<string, unknown>
 ): { path: string; commitPrefix: string } {
   switch (actionType) {
     case "mark_published":
@@ -172,8 +171,14 @@ export function resolveFilePath(
     case "log_cold":
     case "batch_cold":
     case "queue_cold_targets":
-    case "update_cold_reply":
-      return { path: `${persona}/cold/cold-outreach-log.md`, commitPrefix: `${persona}: cold` };
+    case "update_cold_reply": {
+      const pf = String(params.platform || "TWITTER").toUpperCase();
+      const file = `cold-log-${pf.toLowerCase()}.md`;
+      const path = (pf === "TIKTOK" || pf === "INSTAGRAM")
+        ? `marketing/saas-app-shopify/storemd/cold/${file}`
+        : `${persona}/cold/${file}`;
+      return { path, commitPrefix: `${persona}: cold` };
+    }
     case "log_engagement":
       return {
         path: `${persona}/engagement/engagement-log.md`,
@@ -187,7 +192,7 @@ export function resolveFilePath(
     case "log_decision":
       return { path: `tracking/decisions-log.md`, commitPrefix: `decision` };
     case "create_file": {
-      const path = String(_params.path || "");
+      const path = String(params.path || "");
       validateCreateFilePath(path);
       return {
         path,
@@ -195,17 +200,17 @@ export function resolveFilePath(
       };
     }
     case "patch_file": {
-      const path = String(_params.path || "");
+      const path = String(params.path || "");
       validatePatchFilePath(path);
       return { path, commitPrefix: "patch" };
     }
     case "move_file": {
-      const fromPath = String(_params.from || "");
+      const fromPath = String(params.from || "");
       validateCreateFilePath(fromPath);
       return { path: fromPath, commitPrefix: "move" };
     }
     case "delete_file": {
-      const delPath = String(_params.path || "");
+      const delPath = String(params.path || "");
       validateCreateFilePath(delPath);
       return { path: delPath, commitPrefix: "delete" };
     }
@@ -226,44 +231,53 @@ export function applyTransform(
     case "log_cold":
       return appendColdLog(
         md,
-        (String(params.platform || "TWITTER").toUpperCase() as "TWITTER" | "LINKEDIN"),
-        String(params.target || ""),
-        String(params.vertical || ""),
-        String(params.insight || ""),
-        String(params.type || "reply")
+        String(params.platform || "TWITTER").toUpperCase() as "TWITTER" | "LINKEDIN" | "FACEBOOK" | "TIKTOK" | "INSTAGRAM",
+        {
+          target: String(params.target || ""),
+          storeUrl: String(params.store_url || ""),
+          message: String(params.message || ""),
+          status: params.status ? String(params.status) : undefined,
+          vertical: String(params.vertical || ""),
+          insight: String(params.insight || ""),
+          notes: params.notes ? String(params.notes) : undefined,
+          groupSource: String(params.group_source || ""),
+          operator: params._operator ? String(params._operator) : undefined,
+        }
       );
 
     case "batch_cold": {
       const targets = (params.targets as Array<Record<string, string>>) || [];
-      const platform = (String(params.platform || "TWITTER").toUpperCase() as
-        | "TWITTER"
-        | "LINKEDIN");
+      const platform = String(params.platform || "TWITTER").toUpperCase() as "TWITTER" | "LINKEDIN" | "FACEBOOK" | "TIKTOK" | "INSTAGRAM";
+      const operator = params._operator ? String(params._operator) : undefined;
       let out = md;
       for (const t of targets) {
-        out = appendColdLog(
-          out,
-          platform,
-          t.target || "",
-          t.vertical || String(params.vertical || ""),
-          t.insight || String(params.insight || ""),
-          t.type || "reply"
-        );
+        out = appendColdLog(out, platform, {
+          target: t.target || "",
+          storeUrl: t.store_url || String(params.store_url || ""),
+          message: t.message || String(params.message || ""),
+          vertical: t.vertical || String(params.vertical || ""),
+          insight: t.insight || String(params.insight || ""),
+          notes: t.notes,
+          groupSource: t.group_source || String(params.group_source || ""),
+          operator,
+        });
       }
       return out;
     }
 
     case "queue_cold_targets": {
-      const platform = (String(params.platform || "TWITTER").toUpperCase() as
-        | "TWITTER"
-        | "LINKEDIN");
+      const platform = String(params.platform || "TWITTER").toUpperCase() as "TWITTER" | "LINKEDIN" | "FACEBOOK" | "TIKTOK" | "INSTAGRAM";
+      const operator = params._operator ? String(params._operator) : undefined;
       const targets =
         (params.targets as Array<{
           target: string;
           vertical?: string;
           insight?: string;
           notes?: string;
+          storeUrl?: string;
+          groupSource?: string;
         }>) || [];
-      return appendColdQueue(md, platform, targets);
+      return appendColdQueue(md, platform, targets, operator);
     }
 
     case "update_cold_reply":
@@ -459,6 +473,7 @@ export async function executeAction(actionId: string): Promise<PendingAction> {
 
   const persona = action.jarvis_conversations.persona;
   const effectivePersona = (action.params._persona_prefix as Persona) || persona;
+  action.params._operator = effectivePersona === "romain" ? "R" : effectivePersona === "fabrice" ? "F" : "";
 
   try {
     const { path, commitPrefix } = resolveFilePath(action.action_type, effectivePersona, action.params);

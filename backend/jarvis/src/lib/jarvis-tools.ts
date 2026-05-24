@@ -475,9 +475,9 @@ export function createJarvisMcpServer(options: {
     `Propose a repo-modifying action to the user for validation. Returns an action_id (uuid) that you MUST include in your final response as [ACTION_PENDING:uuid] so the UI can render a Validate button. The action will NOT be executed until the user validates via the UI. Supported action_types and their params:
 
 - mark_published: { title: string }
-- log_cold: { platform: "TWITTER"|"LINKEDIN", target: "@handle", vertical: string, insight: string, type?: string }
-- batch_cold: { platform: "TWITTER"|"LINKEDIN", targets: [{target, vertical, insight, type?}], vertical?, insight? }
-- queue_cold_targets: { platform: "TWITTER"|"LINKEDIN", targets: [{target, vertical?, insight?, notes?}] }
+- log_cold: { platform: "TWITTER"|"LINKEDIN"|"FACEBOOK"|"TIKTOK"|"INSTAGRAM", target: "@handle ou nom/profil", store_url?: string, message?: string, status?: string, vertical?: string, insight?: string, group_source?: string (Facebook uniquement), notes?: string }  // tiktok/insta = compte StoreMD, l'opérateur (R/F) est rempli automatiquement
+- batch_cold: { platform: (idem), targets: [{target, store_url?, message?, vertical?, insight?, group_source?, notes?}], vertical?, insight? }
+- queue_cold_targets: { platform: (idem), targets: [{target, vertical?, insight?, notes?, store_url?, group_source?}] }
 - update_cold_reply: { target: "@handle", reply_status: string, notes?: string }
 - log_engagement: { platform: "TWITTER"|"LINKEDIN"|"REDDIT"|"FACEBOOK"|"IH"|"PH", post: string, reply: string }
 - log_interaction: { event: string, platform: string, activity: string, action: string }

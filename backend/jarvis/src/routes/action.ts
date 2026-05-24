@@ -59,19 +59,31 @@ export async function actionRoute(req: Request, res: Response): Promise<void> {
         break;
       }
       case "log_cold": {
-        const platform = ((payload.platform || "TWITTER").toUpperCase()) as "TWITTER" | "LINKEDIN";
+        const platform = ((payload.platform || "TWITTER").toUpperCase()) as "TWITTER" | "LINKEDIN" | "FACEBOOK" | "TIKTOK" | "INSTAGRAM";
+        const coldFile = `cold-log-${platform.toLowerCase()}.md`;
+        const coldPath = (platform === "TIKTOK" || platform === "INSTAGRAM")
+          ? `marketing/saas-app-shopify/storemd/cold/${coldFile}`
+          : `${prefix}/cold/${coldFile}`;
+        const operator = persona === "romain" ? "R" : "F";
         await ghUpdate(
-          `${prefix}/cold/cold-outreach-log.md`,
-          (md) => appendColdLog(md, platform, payload.target || "", payload.vertical || "", payload.insight || "", payload.type || "DM"),
-          `[JARVIS] 📨 Cold: ${payload.target || ""}`,
+          coldPath,
+          (md) => appendColdLog(md, platform, {
+            target: payload.target || "",
+            storeUrl: payload.store_url || "",
+            message: payload.message || "",
+            status: payload.status,
+            vertical: payload.vertical || "",
+            insight: payload.insight || "",
+            notes: payload.notes,
+            groupSource: payload.group_source || "",
+            operator,
+          }),
+          `[JARVIS] 📨 Cold ${platform}: ${payload.target || ""}`,
         );
         cacheInvalidateAll();
         await applySideEffects("log_cold", {
           platform,
           target: payload.target || "",
-          vertical: payload.vertical || "",
-          insight: payload.insight || "",
-          type: payload.type || "DM",
           targets: [{ target: payload.target || "" }],
           _persona_prefix: prefix,
         }, persona);

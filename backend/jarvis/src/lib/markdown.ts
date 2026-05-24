@@ -31,6 +31,17 @@ function appendTableRow(markdown: string, sectionTitle: string, row: string[]): 
   return lines.join("\n");
 }
 
+function appendRowToTable(markdown: string, row: string[]): string {
+  const lines = markdown.split("\n");
+  let lastTableIdx = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (/^\|/.test(lines[i].trim())) lastTableIdx = i;
+  }
+  if (lastTableIdx === -1) return markdown;
+  lines.splice(lastTableIdx + 1, 0, `| ${row.map(cell).join(" | ")} |`);
+  return lines.join("\n");
+}
+
 export function appendDecision(markdown: string, decision: string, rationale: string, result = "En cours"): string {
   const row = [cestDate(), decision, rationale, result];
   const lines = markdown.split("\n");
@@ -60,10 +71,40 @@ export function resolveProgressEvent(markdown: string, eventKeyword: string): st
   return lines.join("\n");
 }
 
-export function appendColdLog(markdown: string, platform: "TWITTER" | "LINKEDIN", target: string, vertical: string, insight: string, type: string): string {
-  const now = new Date();
-  const time = now.toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
-  return appendTableRow(markdown, platform, [cestDate(), time, target, vertical, insight, type, "⏳", ""]);
+export function appendColdLog(
+  markdown: string,
+  platform: "TWITTER" | "LINKEDIN" | "FACEBOOK" | "TIKTOK" | "INSTAGRAM",
+  fields: {
+    target: string;
+    storeUrl?: string;
+    message?: string;
+    status?: string;
+    vertical?: string;
+    insight?: string;
+    notes?: string;
+    groupSource?: string;
+    operator?: string;
+  }
+): string {
+  const date = cestDate();
+  const status = fields.status || "⏳";
+  const notes = [fields.vertical, fields.insight, fields.notes].filter(Boolean).join(" — ");
+  const target = fields.target || "";
+  const storeUrl = fields.storeUrl || "";
+  const message = fields.message || "";
+  let row: string[];
+  switch (platform) {
+    case "FACEBOOK":
+      row = [date, target, storeUrl, fields.groupSource || "", message, status, notes];
+      break;
+    case "TIKTOK":
+    case "INSTAGRAM":
+      row = [date, target, storeUrl, message, status, fields.operator || "", notes];
+      break;
+    default:
+      row = [date, target, storeUrl, message, status, notes];
+  }
+  return appendRowToTable(markdown, row);
 }
 
 export function appendEngagementLog(markdown: string, platform: "TWITTER" | "LINKEDIN" | "REDDIT" | "FACEBOOK" | "IH" | "PH", postSummary: string, reply: string): string {
@@ -93,22 +134,23 @@ export function markPlanPublished(markdown: string, postTitle: string): string {
  */
 export function appendColdQueue(
   markdown: string,
-  platform: "TWITTER" | "LINKEDIN",
-  targets: Array<{ target: string; vertical?: string; insight?: string; notes?: string }>
+  platform: "TWITTER" | "LINKEDIN" | "FACEBOOK" | "TIKTOK" | "INSTAGRAM",
+  targets: Array<{ target: string; vertical?: string; insight?: string; notes?: string; storeUrl?: string; groupSource?: string }>,
+  operator?: string
 ): string {
   let out = markdown;
-  const date = cestDate();
   for (const t of targets) {
-    out = appendTableRow(out, platform, [
-      date,
-      "",
-      t.target,
-      t.vertical || "",
-      t.insight || "",
-      "Queued",
-      "⏳",
-      t.notes || "",
-    ]);
+    out = appendColdLog(out, platform, {
+      target: t.target,
+      storeUrl: t.storeUrl,
+      message: "",
+      status: "⏳ à contacter",
+      vertical: t.vertical,
+      insight: t.insight,
+      notes: t.notes,
+      groupSource: t.groupSource,
+      operator,
+    });
   }
   return out;
 }
