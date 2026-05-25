@@ -1,0 +1,1 @@
+Archivé le 25/05/2026. Ancien skill voix studio (f2-brand-voice), déprécié avec la suppression de la persona/voix studio (BIBLE v3.1 §8). Remplacé par le skill `brand-voice` (garde-fou universel + aiguillage vers les voix R/F/produit).
