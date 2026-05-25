@@ -591,30 +591,60 @@ The 'preview' field is a human-readable description shown to the user before the
   // ---------------------------------------------------------------------------
   const recentHistory = tool(
     "recent_history",
-    "Summarize what the persona has done in the last N days. Reads tracking/progress-semaines.md and recent engagement/cold logs. Returns text summary. Use for 'what have I done this week?', 'recap', 'bilan' type questions.",
+    "Summarize what the persona has done in the last N days. Reads tracking/progress-semaines.md, the cold logs (Twitter/LinkedIn/Facebook + StoreMD TikTok/Instagram filtered by operator), and the PH/Reddit engagement logs. Returns text summary. Use for 'what have I done this week?', 'recap', 'bilan' type questions.",
     {
       persona: z.enum(["fabrice", "romain"]).describe("Which persona"),
       days: z.number().int().min(1).max(14).default(7).describe("Lookback window in days"),
     },
     async ({ persona, days }) => {
       try {
-        const [progress, cold, engagement] = await Promise.all([
+        const operator = persona === "romain" ? "R" : "F";
+
+        // Garde l'en-tête de table + la fin du contenu (entrées les plus récentes : les logs s'ajoutent en bas)
+        const recentTail = (content: string, max: number): string => {
+          const lines = content.split("\n");
+          const hIdx = lines.findIndex((l) => l.trim().startsWith("|"));
+          const header = hIdx >= 0 ? lines.slice(hIdx, hIdx + 2).join("\n") + "\n…\n" : "";
+          return header + content.slice(-max);
+        };
+        // Logs StoreMD partagés : ne garde que les lignes de l'opérateur (col "Envoyé par" = index 5)
+        const filterByOperator = (content: string, op: string): string =>
+          content.split("\n").filter((line) => {
+            const t = line.trim();
+            if (!t.startsWith("|")) return true;
+            const cells = t.split("|").slice(1, -1).map((c) => c.trim());
+            if (cells.some((c) => /^-+$/.test(c))) return true;
+            if (/envoy/i.test(cells[5] || "")) return true;
+            return (cells[5] || "") === op;
+          }).join("\n");
+
+        const [progress, coldTw, coldLi, coldFb, coldTk, coldIg, ph, reddit] = await Promise.all([
           ghRead(`${persona}/tracking/progress-semaines.md`).catch(() => null),
-          ghRead(`${persona}/cold/cold-outreach-log.md`).catch(() => null),
-          ghRead(`${persona}/engagement/engagement-log.md`).catch(() => null),
+          ghRead(`${persona}/cold/cold-log-twitter.md`).catch(() => null),
+          ghRead(`${persona}/cold/cold-log-linkedin.md`).catch(() => null),
+          ghRead(`${persona}/cold/cold-log-facebook.md`).catch(() => null),
+          ghRead(`marketing/saas-app-shopify/storemd/cold/cold-log-tiktok.md`).catch(() => null),
+          ghRead(`marketing/saas-app-shopify/storemd/cold/cold-log-instagram.md`).catch(() => null),
+          ghRead(`${persona}/engagement/ph/engagement-log.md`).catch(() => null),
+          ghRead(`${persona}/engagement/reddit/engagement-log.md`).catch(() => null),
         ]);
+
         const out: string[] = [];
-        if (progress) {
-          out.push(`=== progress-semaine (${persona}) ===\n${progress.content.slice(0, 6000)}`);
-        }
-        if (cold) {
-          out.push(`=== cold-outreach-log (${persona}) ===\n${cold.content.slice(0, 4000)}`);
-        }
-        if (engagement) {
-          out.push(
-            `=== engagement-log (${persona}) ===\n${engagement.content.slice(0, 4000)}`
-          );
-        }
+        if (progress) out.push(`=== progress-semaines (${persona}) ===\n${progress.content.slice(0, 6000)}`);
+
+        const coldParts: string[] = [];
+        if (coldTw) coldParts.push(`-- Twitter --\n${recentTail(coldTw.content, 1200)}`);
+        if (coldLi) coldParts.push(`-- LinkedIn --\n${recentTail(coldLi.content, 1200)}`);
+        if (coldFb) coldParts.push(`-- Facebook --\n${recentTail(coldFb.content, 1200)}`);
+        if (coldTk) coldParts.push(`-- TikTok (StoreMD, ${operator}) --\n${recentTail(filterByOperator(coldTk.content, operator), 1200)}`);
+        if (coldIg) coldParts.push(`-- Instagram (StoreMD, ${operator}) --\n${recentTail(filterByOperator(coldIg.content, operator), 1200)}`);
+        if (coldParts.length) out.push(`=== cold (${persona}) ===\n${coldParts.join("\n\n")}`);
+
+        const engParts: string[] = [];
+        if (ph) engParts.push(`-- PH --\n${recentTail(ph.content, 1200)}`);
+        if (reddit) engParts.push(`-- Reddit --\n${recentTail(reddit.content, 1200)}`);
+        if (engParts.length) out.push(`=== engagement (${persona}) ===\n${engParts.join("\n\n")}`);
+
         return {
           content: [
             {
