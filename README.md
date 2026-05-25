@@ -119,7 +119,7 @@ F2-Jarvis/
 
 1. `CLAUDE.md` (lu automatiquement)
 2. `BIBLE.md` (lu automatiquement)
-3. Skills always-on chargés : graphify, handoff-writer, f2-brand-voice
+3. Skills always-on chargés : graphify, handoff-writer, brand-voice
 4. Slash commands disponibles : `/morning`, `/status`, `/launch`, `/debrief`, `/handoff`, etc.
 
 ---

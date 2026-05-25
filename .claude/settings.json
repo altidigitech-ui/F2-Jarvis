@@ -73,7 +73,7 @@
   "skills": {
     "alwaysLoad": [
       "graphify",
-      "f2-brand-voice",
+      "brand-voice",
       "handoff-writer"
     ],
     "autoDiscover": true

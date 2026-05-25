@@ -155,7 +155,7 @@ F2-Jarvis/
 
 ### Skills (`.claude/skills/`, 16 total)
 
-**Always-on** (chargés à chaque session) : `graphify` (knowledge graph du repo), `handoff-writer` (HANDOFF.md auto), `f2-brand-voice` (voix F2).
+**Always-on** (chargés à chaque session) : `graphify` (knowledge graph du repo), `handoff-writer` (HANDOFF.md auto), `brand-voice` (garde-fou voix + aiguillage R/F/produit).
 
 **On-demand** (activés par contexte ou slash command) :
 - Design : `ui-ux-pro-max`, `frontend-design`, `shadcn-ui`, `web-interface-guidelines`, `web-accessibility`, `brain-3d-renderer`

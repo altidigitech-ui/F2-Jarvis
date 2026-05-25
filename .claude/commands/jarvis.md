@@ -26,7 +26,7 @@ Health check complet :
 - settings.local.json : ⚠️ pas configuré (créer depuis .example)
 
 ### Skills
-- Always-on chargés : graphify ✅, f2-brand-voice ✅, handoff-writer ✅
+- Always-on chargés : graphify ✅, brand-voice ✅, handoff-writer ✅
 - On-demand disponibles : 13
 
 ### Agents
