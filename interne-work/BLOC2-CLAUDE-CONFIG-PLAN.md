@@ -77,48 +77,47 @@
 
 ---
 
-## 3. DÉCISIONS À TRANCHER AVEC R (avant exécution)
+## 3. DÉCISIONS — RÉSOLUES (24/05, via repo)
 
-> Zéro invention : ces points attendent ta décision. Je ne crée/renomme rien sans ça.
+- **D-A ✅ GARDER les noms `f2-*`.** Identifiants internes (comme le nom de repo). Zéro dette, zéro rename, on n'y revient plus.
 
-- **D-A — Rename des agents `f2-*` ?**
-  - Option *garder* : `f2-*` = identifiants internes du studio (comme le nom de repo `F2-Jarvis` qu'on a décidé de garder). Ce ne sont PAS la persona de publication f2 (morte). Zéro rename, zéro couplage.
-  - Option *renommer* (`jarvis-*` p.ex.) : cohérence de marque, mais touche les 8 fichiers + toutes les refs dans commandes.
-  - *Ma reco* : **garder** (cohérent avec ta règle "le nom on s'en fout tant que ça marche ; ce qui meurt = la persona"). À confirmer.
+- **D-B ✅ RÉSOLU — rename + réécriture (pas suppression), scindé en B2.1 (conception) + B2.2 (exécution).** Investigation faite : `f2-brand-voice` est la **couche voix/intégrité always-on** (settings.json alwaysLoad), référencée à **10 endroits** (settings, f2-marketer, marketing-fr:84, jarvis-upgrade:516, jarvis.md:29, .claude/README, README racine, ARCH.md, CLAUDE.md, cache-policy.md). Contenu = moitié mort (identité studio, build-in-public MRR — contredit BIBLE v3.1 §8), moitié vital/universel (zéro fake stats/testimonials, direct, pas de hype AI, TOILE, anti-patterns). **Décision :** renommer → `brand-voice` + **réécrire** en garde-fou universel (intégrité + style + TOILE + carte d'aiguillage vers R/F/produit per BIBLE §8), **archiver** l'ancienne version, **maj les 10 refs**. *Raison de ne pas supprimer : l'intégrité doit s'appliquer à TOUT contenu en permanence, pas seulement quand le marketer tourne.*
 
-- **D-B — skill `f2-brand-voice` → `brand-voice` ?** Rename cosmétique (contenu voix FoundryTwo conservé, vivant pour IH). Si oui : maj `settings.json`, `f2-marketer.md`, `README.md`. À confirmer.
+- **D-C ✅ `/batch` = codifier `marketing/contenu/batch-semaine/batch-template.md`** (à jour 18/05). Workflow complet déjà documenté : §2 collecte data → validation R → §3-4 format/voix/UTM/ANTI-IA → §10 rédaction en 7 blocs jour-par-jour → §5 dispatch → §6 archivage, convention FENCE §11. Rien à inventer.
 
-- **D-C — Spec `/batch`** : que doit-il faire exactement ? (ex : lire le template + demander l'angle à R + chercher la data + produire les posts à la voix de la persona, sans publier). **Tes mots / tes règles.**
+- **D-D ✅ `/archivage` = automatiser `archives/README.md`** (charte : 2 niveaux, set hebdo §2.2, nommage `semaine-NN-DD-DD-mois-YYYY/` padding zéro dès S09, 7 catégories `archives/2026/`) + §6 batch-template. Rien à inventer.
 
-- **D-D — Spec `/archivage`** : périmètre exact de l'archivage hebdo automatisé (quels dossiers, convention `semaine-NN-...`, archives annuelles `archives/2026/`). **Tes mots / tes règles.**
+- **D-E ✅ Format figé = `marketing/contenu/batch-semaine/batch-semaine-S[N].md`** (header §3 du template). ⚠️ `targets.ts` (différé) lit `BATCH-SEMAINE-N.md` à la **racine** = mauvais chemin → son rework devra pointer ici.
 
-- **D-E — Format `BATCH-SEMAINE-N.md`** : on le fige ici (sections, colonnes). Base = format actuel parsé par `targets.ts` ou nouveau format ? **À cadrer.**
+- **D-F ✅ `/handoff` ≠ recap.** `/handoff` = `HANDOFF.md` éphémère (continuité next session Claude Code, <1500 car, écrasé). Le repo a DÉJÀ `tracking/recap-sessions/` (recaps datés persistants + README). **Décision : ajouter `/recap`** léger qui génère `tracking/recap-sessions/YYYY-MM-DD.md` (symétrique à `/handoff`). Validé.
 
-- **D-F — Workflow recap de session** : `/handoff` suffit-il, ou `/recap` dédié (synthèse sans invention, type ce qu'on fait dans ce projet) ?
-
-- **D-G — Structure IH (engagement FoundryTwo)** : la section IH de `f2-marketer.md` pointe vers `f2/engagement/chrome/IH-prompt-*.md` + `f2/engagement/engagement-log.md` (dossier f2 mort). IH = opéré par Romain, voix FoundryTwo, publish-only (pas de compteur). **Où vivent désormais** : (a) les prompts de scan Chrome IH, et (b) le log d'engagement IH ? (ex : sous `romain/` ? un dossier IH dédié ? `marketing/` ?). **Décision structurelle — tes règles.** Conditionne la correction de `f2-marketer.md`.
+- **D-G ✅ Résolu — pas de nouvelle structure.** `marketing/canaux/ih/context.md` : "Pas de compte @foundrytwo, F2 voix séparée n'existe plus, IH = compte StoreMD, R-géré, publish-only". → la section "Engagement IH @foundrytwo" de `f2-marketer` est **morte → à retirer** (B2.1).
 
 ---
 
-## 4. DÉCOUPAGE EN SOUS-ÉTAPES (proposition)
+## 4. DÉCOUPAGE EN SOUS-ÉTAPES — 9 POINTS, DANS L'ORDRE D'EXÉCUTION
 
-> Ordre logique ; chaque étape = audit ciblé → recap → validation → prompt chirurgical → vérif.
+> Chaque étape = audit ciblé → recap → validation R → prompt chirurgical → vérif ZIP → maj trackers.
+> Ordre conçu pour qu'aucun fichier ne soit touché deux fois (voir notes).
 
-| Étape | Objet | Fichiers (pressentis) | Dépend de |
+| # | Objet | Type | Fichiers (pressentis) |
 |---|---|---|---|
-| **B2.1** | Nettoyage contenus obsolètes (7 fichiers) : vieux paths `saas/storemd`→`produits/saas/storemd` (`f2-librarian`, `graphify-all`, `morning`), liste préfixes + ancien CounterData (`jarvis-upgrade`), section IH/paths f2 (`f2-marketer`), produits morts PayloadDiff (`marketing-fr`) + Leak Detector (`launch`) | `agents/f2-marketer.md`, `agents/f2-librarian.md`, `commands/graphify-all.md`, `commands/morning.md`, `commands/launch.md`, `skills/jarvis-upgrade/SKILL.md`, `skills/marketing-fr/SKILL.md` | D-G (pour la partie IH de f2-marketer) |
-| **B2.2** | Rename agents `f2-*` (SI D-A = renommer) + maj refs commandes | `agents/*.md`, `commands/*.md`, `settings.json`, `README.md` | D-A |
-| **B2.3** | Rename skill `f2-brand-voice` → `brand-voice` (SI D-B) | `skills/f2-brand-voice/`, `settings.json`, `agents/f2-marketer.md`, `README.md` | D-B |
-| **B2.4** | Créer `/batch` + figer format `BATCH-SEMAINE-N.md` | `commands/batch.md` (+ template batch) | D-C, D-E |
-| **B2.5** | Créer `/archivage` | `commands/archivage.md` | D-D |
-| **B2.6** | Workflow recap de session (SI D-F = dédié) | `commands/recap.md` ou ajustement `/handoff` | D-F |
-| **B2.7** | Audit + nettoyage hooks (refs f2/paths/budget) | `hooks/*.sh`, `hooks-config.json` | — |
-| **B2.8** | Régénérer `README.md` (.claude overview à jour) | `README.md` | toutes les précédentes |
+| **B2.1** | **Brand-voice — CONCEPTION.** Audit des sources de voix (`romain/VOIX.md`, `fabrice/VOIX.md`, `marketing/saas-app-shopify/storemd/VOIX.md`, BIBLE §2/§3/§8, `marketing-fr`/`marketing-en`) → produire le nouveau `brand-voice/SKILL.md` (garde-fou universel : intégrité + style + anti-hype + TOILE + aiguillage R/F/produit). Nom figé. Contenu validé par R. | conception, **0 mod repo** | sortie `.md` (pas de write repo) |
+| **B2.2** | **Brand-voice — EXÉCUTION.** Créer `skills/brand-voice/SKILL.md`, archiver l'ancien `f2-brand-voice`, maj des refs **ref-only** | mécanique | `skills/brand-voice/` (création), `skills/f2-brand-voice/` (→archive), `settings.json`, `commands/jarvis.md`, `.claude/README.md`, + docs racine `README.md`, `ARCH.md`, `CLAUDE.md`, `ops/monitoring/cache-policy.md` |
+| **B2.3** | **Nettoyage obsolète (7 fichiers).** Vieux paths `saas/storemd` → chemin StoreMD actuel (`produits/saas/storemd/` specs **ou** `marketing/saas-app-shopify/storemd/` marketing — à trancher par fichier à l'audit B2.3) dans `f2-librarian`, `graphify-all`, `morning` ; liste préfixes + ancien CounterData (`jarvis-upgrade`), section IH morte (`f2-marketer`), produits morts PayloadDiff (`marketing-fr`) + Leak Detector (`launch`). **+ on fond le rename brand-voice** dans `f2-marketer`/`marketing-fr`/`jarvis-upgrade` (mêmes edits) | surgical | `agents/f2-marketer.md`, `agents/f2-librarian.md`, `commands/graphify-all.md`, `commands/morning.md`, `commands/launch.md`, `skills/jarvis-upgrade/SKILL.md`, `skills/marketing-fr/SKILL.md` |
+| **B2.4** | `/batch` — codifie `marketing/contenu/batch-semaine/batch-template.md` + fige le format `batch-semaine-S[N].md` | dédié | `commands/batch.md` |
+| **B2.5** | `/archivage` — automatise la charte `archives/README.md` (2 niveaux, set hebdo §2.2, nommage) | dédié | `commands/archivage.md` |
+| **B2.6** | `/recap` — génère `tracking/recap-sessions/YYYY-MM-DD.md` (persistant, ≠ HANDOFF.md éphémère) | léger | `commands/recap.md` |
+| **B2.7** | Audit + nettoyage **hooks** (6 non-cognitive) : refs f2/paths/budget | audit | `hooks/{budget-check,mempalace-save,post-commit-graphify,pre-tool-use-graphify,precompact-save,session-stop-handoff}.sh`, `hooks-config.json` |
+| **B2.8** | Audit **sous-système cognition** : cohérence + refs obsolètes | audit | `agents/f2-thinker.md`, `commands/think.md`, `commands/cognition.md`, `skills/cognitive-loader/`, `hooks/precompact-save-cognitive.sh`, `hooks/session-stop-cognitive.sh` |
+| **B2.9** | Régénérer **`.claude/README.md`** (overview à jour : 8 agents, 14 commandes, skills, hooks, cognition) | dernier | `.claude/README.md` |
 
-**Notes de dépendance :**
-- B2.4 verrouille le format batch → débloque le futur rework `targets.ts` (post-Bloc 2).
-- B2.8 en dernier (il doit refléter l'état final).
-- B2.2/B2.3 conditionnés par D-A/D-B (peuvent devenir no-op si "garder").
+**Notes de dépendance (anti-double-travail) :**
+- **B2.1 → B2.2 → B2.3** : brand-voice est **conçu puis créé AVANT le nettoyage**, pour que B2.3 puisse **fondre le rename de ref** dans les 3 fichiers communs (`f2-marketer`, `marketing-fr`, `jarvis-upgrade`) → chacun touché **une seule fois**. Les refs des fichiers *ref-only* sont faites en B2.2.
+- **Les 2 hooks `*-cognitive`** sont rattachés à **B2.8** (cognition), pas à B2.7, pour ne pas les re-toucher.
+- **B2.9 (README) en dernier** : il compte agents/commandes/skills/hooks et doit refléter l'état final (dont les 3 nouvelles commandes `/batch`, `/archivage`, `/recap` → 11→14).
+- B2.4 fige le format batch → débloque le futur rework `targets.ts` (post-Bloc 2).
+- Ancien « rename agents `f2-*` » = **supprimé** (D-A = garder, zéro dette).
 
 ---
 
@@ -126,14 +125,16 @@
 
 - L'app web (`ui/jarvis/`, `backend/jarvis/`) — Bloc 1 (fait) / Bloc 4.
 - `targets.ts` — rework dédié post-Bloc 2.
-- Le contenu de la voix FoundryTwo (vivante pour IH) — seul le nom du skill peut changer (D-B).
+- Le **fond intégrité/style** de la voix (zéro fake, anti-hype, TOILE) — conservé, mais migré dans `brand-voice` réécrit (B2.3) ; la voix studio "we" morte est purgée.
 - Les skills techniques non concernés (shopify-gql, supabase-rls, stripe-integration, design, etc.) sauf refs obsolètes ponctuelles.
-- La logique du sous-système cognition — on ne le casse pas (au plus, rename `f2-thinker` si D-A).
+- La logique du sous-système cognition — on ne le casse pas (D-A = on garde `f2-thinker`).
 
 ---
 
 ## 6. PROCHAINE ACTION
 
-Valider : (1) le découpage B2.1→B2.8, (2) les décisions D-A à D-F. Dès que tranché, on exécute **point par point** comme au Bloc 1, en commençant par **B2.1** (nettoyage obsolète, le plus sûr, sans dépendance).
+**Toutes les décisions (D-A → D-G) sont résolues.** Découpage figé en **9 points** dans l'ordre d'exécution (§4).
+
+On démarre par **B2.1 — conception de `brand-voice`** : audit exhaustif des sources de voix (`romain/VOIX.md`, `fabrice/VOIX.md`, `marketing/saas-app-shopify/storemd/VOIX.md`, BIBLE §2/§3/§8, `marketing-fr`/`marketing-en`) → production du nouveau `SKILL.md` validé par R, **sans aucune modif repo** (sortie `.md`). Puis B2.2 (exécution) et la suite, point par point comme au Bloc 1.
 
 *Fichier de cadrage Bloc 2. Source de vérité d'exécution : ce plan + `PLAN-BRANCHEMENT-JARVIS.md` + `RECAP-SESSION-JARVIS-2026-05-24.md`.*
