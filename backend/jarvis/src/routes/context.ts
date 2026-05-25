@@ -2,6 +2,9 @@ import { Request, Response } from "express";
 import type { TimelineItem, CounterData, AlertItem } from "../lib/context-types.js";
 import { ghRead } from "../lib/github.js";
 
+const COLD_TARGETS = { tiktok: 10, instagram: 10, facebook: 5, twitter: 5, linkedin: 5 };
+const PH_TARGET = 6;
+
 async function readRepo(relPath: string): Promise<string> {
   try {
     const file = await ghRead(relPath);
@@ -77,7 +80,6 @@ function platformOf(sectionTitle: string): string {
   if (t.includes("REDDIT")) return "Reddit";
   if (t.includes("IH")) return "IH";
   if (t.includes("PH")) return "PH";
-  if (t.includes("F2")) return "F2";
   return "Unknown";
 }
 
@@ -109,7 +111,6 @@ function parseTimeline(planHebdo: string, today: string, dayName: string, publis
       } else {
         if (!dayCell.includes(dayName) && !dayCell.includes(dayAbbr)) continue;
       }
-      // 4-col (Jour|Vidéo|Sujet|Statut) → row[2]; 3-col (Jour|Sujet|Statut) → row[1]
       const subject = row.length >= 4 ? (row[2] || row[1]) : row[1];
       const statusCell = row[row.length - 1] || "";
       const timeMatch = statusCell.match(/(\d{1,2})h/);
@@ -125,51 +126,15 @@ function parseTimeline(planHebdo: string, today: string, dayName: string, publis
   return items;
 }
 
-function countTodayInSection(content: string, sectionTitle: string, today: string): number {
+function countToday(content: string, today: string): number {
   if (!content) return 0;
-  return tableRows(section(content, sectionTitle)).filter((r) => r[0]?.includes(today)).length;
+  return tableRows(content).filter((r) => r[0]?.includes(today)).length;
 }
 
-function countTodayAny(content: string, today: string): number {
+function countTodayByOperator(content: string, today: string, operator: string): number {
   if (!content) return 0;
-  const rows = tableRows(content).filter((r) => r[0]?.includes(today));
-  const seen = new Set<string>();
-  for (const r of rows) {
-    const handle = (r[2] || r[1] || "").trim().toLowerCase();
-    if (handle) seen.add(handle);
-  }
-  return seen.size;
-}
-
-function countCrossFromExecutionLog(executionLog: string, today: string): number {
-  if (!executionLog) return 0;
-  const rows = tableRows(executionLog);
-  return rows.filter(r => {
-    const dayCell = r[1] || "";
-    const statusCell = r[5] || r[4] || "";
-    return dayCell.includes(today) && statusCell.includes("✅");
-  }).length;
-}
-
-function countTotalCrossFromExecutionLog(executionLog: string, today: string): number {
-  if (!executionLog) return 0;
-  const rows = tableRows(executionLog);
-  return rows.filter(r => {
-    const ref = r[0] || "";
-    const dayCell = r[1] || "";
-    if (!ref || /^ref$/i.test(ref)) return false;
-    return dayCell.includes(today);
-  }).length;
-}
-
-function countCrossToday(crossTracker: string, today: string, weekday: string): number {
-  if (!crossTracker) return 0;
-  const sec = section(crossTracker, `${weekday} ${today}`) || section(crossTracker, today);
-  if (!sec) return 0;
-  return tableRows(sec).filter((r) => {
-    const replyCell = r[3] || r[4] || "";
-    return replyCell.includes("✅");
-  }).length;
+  // Format StoreMD : Date | Handle | Store URL | Message | Statut | Envoyé par (R/F) | Notes → opérateur = col index 5
+  return tableRows(content).filter((r) => r[0]?.includes(today) && (r[5] || "").trim() === operator).length;
 }
 
 function parseAlerts(progress: string): AlertItem[] {
@@ -205,159 +170,15 @@ function parseAlerts(progress: string): AlertItem[] {
   return alerts;
 }
 
-function parseObjectiveItems(
-  planHebdo: string,
-  counters: { cold: number; twEng: number; liCom: number; reddit: number; facebook: number; ihPh: number; cross: number },
-  publishedBy: string,
-): TimelineItem[] {
-  if (!planHebdo) return [];
-  const items: TimelineItem[] = [];
-
-  const coldSection = section(planHebdo, "COLD OUTREACH");
-  const coldRows = tableRows(coldSection);
-  const coldDailyTarget = (() => {
-    for (const row of coldRows) {
-      const label = (row[0] || "").toLowerCase();
-      const val = row[1] || "";
-      if (label.includes("/jour") || label.includes("par jour") || label.includes("jour")) {
-        const m = val.match(/(\d+)/);
-        if (m) return parseInt(m[1], 10);
-      }
-    }
-    return 10;
-  })();
-  if (coldDailyTarget > 0) {
-    const done = counters.cold;
-    items.push({
-      time: "",
-      title: `Cold outreach: ${done}/${coldDailyTarget} aujourd'hui`,
-      platform: "OBJECTIF",
-      status: done >= coldDailyTarget ? "done" : "todo",
-      publishedBy,
-    });
-  }
-
-  const engSection = section(planHebdo, "ENGAGEMENT");
-  const engTargetMatch = engSection ? engSection.match(/(\d+)\s*interactions?\/jour/i) : null;
-  const engTotalTarget = engTargetMatch ? parseInt(engTargetMatch[1], 10) : 30;
-  const engDone = counters.twEng + counters.liCom + counters.reddit + counters.facebook + counters.ihPh;
-  items.push({
+function buildObjectives(totalCold: number, ph: number, publishedBy: string): TimelineItem[] {
+  const mk = (label: string, done: number, target: number): TimelineItem => ({
     time: "",
-    title: `Engagement: ${engDone}/${engTotalTarget} interactions aujourd'hui`,
+    title: `${label}: ${done}/${target} aujourd'hui`,
     platform: "OBJECTIF",
-    status: engDone >= engTotalTarget ? "done" : "todo",
+    status: done >= target ? "done" : "todo",
     publishedBy,
   });
-
-  return items;
-}
-
-function parseCrossItemsFromLog(
-  crossExecutionLog: string,
-  today: string,
-  publishedBy: string,
-): TimelineItem[] {
-  if (!crossExecutionLog) return [];
-  const items: TimelineItem[] = [];
-  const rows = tableRows(crossExecutionLog);
-  for (const row of rows) {
-    if (row.length < 5) continue;
-    const ref = (row[0] || "").trim();
-    const dayCell = (row[1] || "").trim();
-    const post = (row[2] || "").trim();
-    const heureCible = (row[3] || "").trim();
-    const statusCell = (row[5] || row[4] || "").trim();
-
-    if (!dayCell.includes(today)) continue;
-    if (!ref || /^ref$/i.test(ref)) continue;
-
-    const done = statusCell.includes("✅");
-    const hourMatch = heureCible.match(/(\d{1,2})h(\d{2})?/);
-    const timeStr = hourMatch
-      ? `${hourMatch[1].padStart(2, "0")}:${hourMatch[2] || "00"}`
-      : "";
-
-    items.push({
-      time: timeStr,
-      title: `Cross ${ref} — ${post.slice(0, 50)}`,
-      platform: "CROSS",
-      status: done ? "done" : "todo",
-      publishedBy,
-    });
-  }
-  return items;
-}
-
-function parseCrossItemsToday(
-  crossTracker: string,
-  today: string,
-  weekday: string,
-  publishedBy: string,
-): TimelineItem[] {
-  if (!crossTracker) return [];
-  const items: TimelineItem[] = [];
-  const sec = section(crossTracker, `${weekday} ${today}`) || section(crossTracker, today);
-  if (!sec) return items;
-  const rows = tableRows(sec);
-  for (const row of rows) {
-    if (row.length < 2) continue;
-    const post = (row[0] || "").trim();
-    if (!post || post.startsWith("---")) continue;
-
-    // Skip table header row (e.g. |Post|Heure pub.|Sujet|...|)
-    if (/^post$/i.test(post)) continue;
-
-    // Skip separator rows (e.g. |---|----|---|)
-    if (/^[-: ]+$/.test(post)) continue;
-
-    // Skip rows where every cell is empty or whitespace (empty template rows)
-    const allEmpty = row.every((c) => !c.trim());
-    if (allEmpty) continue;
-
-    const hour = (row[1] || "").trim();
-    const subject = (row[2] || "").trim();
-    const replyCell = row[3] || row[4] || "";
-    const done = replyCell.includes("✅");
-    const timeMatch = hour.match(/(\d{1,2})h/);
-    items.push({
-      time: timeMatch ? `${timeMatch[1].padStart(2, "0")}:00` : "",
-      title: `Cross: ${post}${subject ? " — " + subject.slice(0, 40) : ""}`,
-      platform: "CROSS",
-      status: done ? "done" : "todo",
-      publishedBy,
-    });
-  }
-  return items;
-}
-
-function parseF2Planning(f2PlanHebdo: string, publishedBy: string): TimelineItem[] {
-  if (!f2PlanHebdo) return [];
-  const items: TimelineItem[] = [];
-  const sectionRegex = /^##\s+\d+[A-Za-z]?\.\s*(POSTS\s+\w+.*)/gm;
-  let match;
-  while ((match = sectionRegex.exec(f2PlanHebdo)) !== null) {
-    const title = match[1];
-    const startIdx = match.index + match[0].length;
-    const nextMatch = /^##\s/m.exec(f2PlanHebdo.slice(startIdx));
-    const endIdx = nextMatch ? startIdx + nextMatch.index : f2PlanHebdo.length;
-    const sectionContent = f2PlanHebdo.slice(startIdx, endIdx);
-    for (const row of tableRows(sectionContent)) {
-      if (row.length < 2) continue;
-      const dayCell = row[0].replace(/\*\*/g, "").replace(/🔴/g, "").trim();
-      // 4-col (Jour|Vidéo|Sujet|Statut) → row[2]; 3-col (Jour|Sujet|Statut) → row[1]
-      const subject = row.length >= 4 ? (row[2] || row[1]) : row[1];
-      const statusCell = row[row.length - 1] || "";
-      const timeMatch = statusCell.match(/(\d{1,2})h/);
-      items.push({
-        time: timeMatch ? `${timeMatch[1].padStart(2, "0")}:00` : "",
-        title: `${dayCell} — ${subject}`,
-        platform: platformOf(title),
-        status: statusOf(statusCell),
-        publishedBy,
-      });
-    }
-  }
-  return items;
+  return [mk("Cold", totalCold, 35), mk("PH", ph, PH_TARGET)];
 }
 
 function parsePipelineScansToday(pipelineContent: string, today: string): number {
@@ -371,9 +192,9 @@ function parsePipelineBetas(pipelineContent: string): number {
   const sec = section(pipelineContent, "BETA SPOTS");
   return tableRows(sec).filter((r) => {
     const spotCell = (r[0] || "").trim();
-    if (/^spot$/i.test(spotCell)) return false; // skip header row
+    if (/^spot$/i.test(spotCell)) return false;
     const dateCell = (r[3] || "").trim();
-    return /\d/.test(dateCell); // a real date contains at least one digit
+    return /\d/.test(dateCell);
   }).length;
 }
 
@@ -388,87 +209,72 @@ function parsePipelineConvos(pipelineContent: string): number {
 
 export async function contextRoute(req: Request, res: Response): Promise<void> {
   const persona = (req.query.persona as string || "romain") as "romain" | "fabrice";
-  const mode = req.query.mode as string || "normal";
-  const isF2 = mode === "f2";
-  // In F2 mode, the "active" files come from f2/, not romain/
-  const activePrefix = isF2 ? "f2" : persona;
-
-  const { day: today, dayName, weekday } = getToday();
-
+  const operator = persona === "romain" ? "R" : "F";
   const otherPersona = persona === "fabrice" ? "romain" : "fabrice";
-  const [planHebdo, coldLog, engagementLog, crossTracker, progressSemaine, f2PlanHebdo, crossExecutionLog, otherPlanHebdo, pipelineConversion] =
-    await Promise.all([
-      readRepo(`${activePrefix}/plan-hebdo.md`),
-      readRepo(`${activePrefix}/cold/cold-outreach-log.md`),
-      readRepo(`${activePrefix}/engagement/engagement-log.md`),
-      readRepo(`${activePrefix}/cross-engagement-tracker.md`),
-      readRepo(`${activePrefix}/progress-semaine.md`),
-      readRepo("f2/plan-hebdo.md"),
-      readRepo(`${activePrefix}/engagement/cross-execution-log.md`),
-      isF2
-        ? readRepo(`fabrice/plan-hebdo.md`)
-        : readRepo(`${otherPersona}/plan-hebdo.md`),
-      persona === "fabrice" && !isF2
-        ? readRepo("fabrice/pipeline-conversion.md")
-        : Promise.resolve(""),
-    ]);
+  const { day: today, dayName } = getToday();
 
-  const publishedBy = isF2 ? "F2" : (persona === "romain" ? "R" : "F");
-  const timelinePosts = parseTimeline(planHebdo, today, dayName, publishedBy);
-  let otherTimelinePosts: TimelineItem[];
-  if (isF2) {
-    const fabricePosts = parseTimeline(otherPlanHebdo, today, dayName, "F");
-    const romainPlanHebdo = await readRepo("romain/plan-hebdo.md");
-    const romainPosts = parseTimeline(romainPlanHebdo, today, dayName, "R");
-    otherTimelinePosts = [...fabricePosts, ...romainPosts];
-  } else {
-    const otherPublishedBy = persona === "fabrice" ? "R" : "F";
-    otherTimelinePosts = parseTimeline(otherPlanHebdo, today, dayName, otherPublishedBy);
-  }
-  const f2TimelinePosts = isF2 ? [] : parseTimeline(f2PlanHebdo, today, dayName, "F2");
-  const cold = countTodayAny(coldLog, today);
-  const twEng = countTodayInSection(engagementLog, "TWITTER", today);
-  const liCom = countTodayInSection(engagementLog, "LINKEDIN", today);
-  const reddit = countTodayInSection(engagementLog, "REDDIT", today);
-  const facebook =
-    countTodayInSection(engagementLog, "FACEBOOK", today) +
-    countTodayInSection(engagementLog, "FB", today);
-  const ih =
-    countTodayInSection(engagementLog, "IH", today) +
-    countTodayInSection(engagementLog, "INDIEHA", today);
-  const ph = countTodayInSection(engagementLog, "PH", today);
-  const ihPh = ih + ph;
-  const cross = countCrossFromExecutionLog(crossExecutionLog, today) || countCrossToday(crossTracker, today, weekday);
-  const crossTarget = countTotalCrossFromExecutionLog(crossExecutionLog, today) || undefined;
+  const [
+    planHebdo, progressSemaine,
+    twActive, liActive, fbActive, phActive, redditActive,
+    twOther, liOther, fbOther, phOther,
+    tiktokLog, instagramLog,
+    otherPlanHebdo, pipelineConversion,
+  ] = await Promise.all([
+    readRepo(`${persona}/planning/plan-hebdo.md`),
+    readRepo(`${persona}/tracking/progress-semaines.md`),
+    readRepo(`${persona}/cold/cold-log-twitter.md`),
+    readRepo(`${persona}/cold/cold-log-linkedin.md`),
+    readRepo(`${persona}/cold/cold-log-facebook.md`),
+    readRepo(`${persona}/engagement/ph/engagement-log.md`),
+    readRepo(`${persona}/engagement/reddit/engagement-log.md`),
+    readRepo(`${otherPersona}/cold/cold-log-twitter.md`),
+    readRepo(`${otherPersona}/cold/cold-log-linkedin.md`),
+    readRepo(`${otherPersona}/cold/cold-log-facebook.md`),
+    readRepo(`${otherPersona}/engagement/ph/engagement-log.md`),
+    readRepo("marketing/saas-app-shopify/storemd/cold/cold-log-tiktok.md"),
+    readRepo("marketing/saas-app-shopify/storemd/cold/cold-log-instagram.md"),
+    readRepo(`${otherPersona}/planning/plan-hebdo.md`),
+    persona === "fabrice" ? readRepo("fabrice/pipeline-conversion.md") : Promise.resolve(""),
+  ]);
+
+  const publishedBy = persona === "romain" ? "R" : "F";
+
+  // Compteurs par persona (interface active)
+  const coldTwitter = countToday(twActive, today);
+  const coldLinkedin = countToday(liActive, today);
+  const coldFacebook = countToday(fbActive, today);
+  const coldTiktok = countTodayByOperator(tiktokLog, today, operator);
+  const coldInstagram = countTodayByOperator(instagramLog, today, operator);
+  const ph = countToday(phActive, today);
+  const reddit = countToday(redditActive, today);
+  const totalCold = coldTwitter + coldLinkedin + coldFacebook + coldTiktok + coldInstagram;
+  const totalPersona = totalCold + ph;
+
+  // Général (R + F) : perso = somme des 2 personas ; StoreMD = toutes les lignes (les 2 opérateurs)
+  const generalCold =
+    countToday(twActive, today) + countToday(liActive, today) + countToday(fbActive, today) +
+    countToday(twOther, today) + countToday(liOther, today) + countToday(fbOther, today) +
+    countToday(tiktokLog, today) + countToday(instagramLog, today);
+  const generalPh = countToday(phActive, today) + countToday(phOther, today);
+  const general = generalCold + generalPh;
+
   const pipelineScans = parsePipelineScansToday(pipelineConversion, today);
   const pipelineBetas = parsePipelineBetas(pipelineConversion);
   const pipelineConvos = parsePipelineConvos(pipelineConversion);
+
   const counters: CounterData = {
-    cold,
-    repliesIn: 0,
-    twEng,
-    liCom,
-    reddit,
-    facebook,
-    cross,
-    crossTarget,
-    ih,
-    ph,
-    ihPh,
-    total: cold + twEng + liCom + reddit + facebook + ihPh + cross,
-    pipelineScans,
-    pipelineBetas,
-    pipelineConvos,
+    coldTiktok, coldInstagram, coldFacebook, coldTwitter, coldLinkedin,
+    ph, reddit, totalPersona, general,
+    pipelineScans, pipelineBetas, pipelineConvos,
   };
 
-  const objectives = parseObjectiveItems(planHebdo, { cold, twEng, liCom, reddit, facebook, ihPh: ih + ph, cross }, publishedBy);
-  const crossItemsFromLog = parseCrossItemsFromLog(crossExecutionLog, today, publishedBy);
-  const crossItems = crossItemsFromLog.length > 0
-    ? crossItemsFromLog
-    : parseCrossItemsToday(crossTracker, today, weekday, publishedBy);
+  const timelinePosts = parseTimeline(planHebdo, today, dayName, publishedBy);
+  const otherPublishedBy = persona === "fabrice" ? "R" : "F";
+  const otherTimelinePosts = parseTimeline(otherPlanHebdo, today, dayName, otherPublishedBy);
+  const objectives = buildObjectives(totalCold, ph, publishedBy);
 
   const pipelineObjectives: TimelineItem[] = [];
-  if (persona === "fabrice" && !isF2 && pipelineConversion) {
+  if (persona === "fabrice" && pipelineConversion) {
     pipelineObjectives.push({
       time: "",
       title: `Scans proactifs: ${pipelineScans}/6 aujourd'hui`,
@@ -490,8 +296,6 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   const timeline = [
     ...timelinePosts,
     ...otherTimelinePosts,
-    ...f2TimelinePosts,
-    ...crossItems,
     ...objectives,
     ...pipelineObjectives,
   ].sort((a, b) => {
@@ -501,7 +305,6 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
   });
 
   const alerts = parseAlerts(progressSemaine);
-  const weekPlanningF2 = mode === "f2" ? parseF2Planning(f2PlanHebdo, "F2") : [];
 
-  res.json({ timeline, counters, alerts, weekPlanningF2 });
+  res.json({ timeline, counters, alerts });
 }
