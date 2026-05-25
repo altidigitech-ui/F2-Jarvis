@@ -65,7 +65,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │   └── skills                                 ← 17 skills (3 always-on + 14 on-demand)
 │       ├── brain-3d-renderer
 │       ├── context-md-generator
-│       ├── f2-brand-voice                     ← always-on
+│       ├── brand-voice                     ← always-on
 │       ├── frontend-design
 │       ├── graphify                           ← always-on
 │       ├── handoff-writer                     ← always-on

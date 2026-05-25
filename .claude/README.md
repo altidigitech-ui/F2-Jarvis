@@ -23,7 +23,7 @@ Fabrice utilise Claude Code localement avec le plan Anthropic Max 5x. Ce dossier
 **Always-on** (chargés à chaque session) :
 - `graphify` — knowledge graph du repo
 - `handoff-writer` — écrit HANDOFF.md automatiquement
-- `f2-brand-voice` — voix F2 pour tout contenu généré
+- `brand-voice` — garde-fou voix always-on (intégrité, anti-hype, TOILE) + aiguillage vers les voix R/F/produit
 
 **On-demand** (activés par contexte ou slash command) :
 
