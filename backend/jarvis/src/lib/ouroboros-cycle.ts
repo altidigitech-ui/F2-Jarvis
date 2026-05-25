@@ -254,12 +254,11 @@ Analyser les signaux du repo et produire :
 
 a) **Incohérences et risques** (observés dans les fichiers, patterns, alertes)
 b) **Actions proactives concrètes**, notamment :
-   - Cross-engagement non fait aujourd'hui → "Proposer rappel cross-engagement"
    - Batch S{N+1} non commencé et on est jeudi/vendredi → "Proposer de commencer le batch"
    - Cold outreach en attente de follow-up (réponses non traitées) → "Proposer suivi cold"
-   - Compteurs Twitter/LinkedIn à <30% de l'objectif en fin de journée → "Proposer sprint engagement"
+   - Compteurs cold à <30% de l'objectif en fin de journée → "Proposer sprint cold"
    - plan-hebdo non mis à jour depuis lundi → "Proposer mise à jour planning"
-   - progress-semaine vide en fin de semaine → "Proposer bilan hebdo"
+   - progress-semaines vide en fin de semaine → "Proposer bilan hebdo"
 
 La priorité est d'être **utile et actionnable**, pas exhaustif. 0 proposal vaut mieux que 5 proposals génériques.
 
@@ -268,13 +267,13 @@ La priorité est d'être **utile et actionnable**, pas exhaustif. 0 proposal vau
 Tu es aussi le **gardien du repo**. Tu dois vérifier la cohérence entre les fichiers et proposer des corrections concrètes. Types de maintenance :
 
 ### Synchronisation des données
-- Si plan-hebdo.md dit ⏳ sur un post mais que progress-semaine.md ou engagement-log.md montre qu'il est fait → proposer la correction du plan-hebdo
-- Si un cold est dans cold-outreach-log.md mais pas compté dans progress-semaine.md → proposer l'ajout
-- Si des analytics (impressions, engagement rate) sont vides dans progress-semaine.md alors que les posts sont publiés depuis plusieurs jours → le signaler
+- Si planning/plan-hebdo.md dit ⏳ sur un post mais que tracking/progress-semaines.md ou un engagement-log (engagement/ph ou engagement/reddit) montre qu'il est fait → proposer la correction du plan-hebdo
+- Si un cold est dans un cold-log (cold/cold-log-{plateforme}.md) mais pas reflété dans tracking/progress-semaines.md → proposer l'ajout
+- Si des analytics (impressions, engagement rate) sont vides dans tracking/progress-semaines.md alors que les posts sont publiés depuis plusieurs jours → le signaler
 
 ### Cohérence structurelle
 - Si un fichier existe en double (ex: un log à deux endroits) → proposer de supprimer le doublon
-- Si un fichier est vide alors qu'il devrait être rempli (ex: cross-execution-log vide avec des cross faits) → proposer le remplissage
+- Si un fichier est vide alors qu'il devrait être rempli (ex: un cold-log vide alors que des cold ont été faits) → proposer le remplissage
 - Si un fichier référence des données obsolètes (ex: mentions de Leak Detector au lieu de StoreMD) → proposer la correction
 
 ### Format des corrections
@@ -284,10 +283,10 @@ Pour les proposals de maintenance, utilise ce format ENRICHI avec un bloc ACTION
 **Priorité:** haute
 **Type:** maintenance
 **Titre:** Synchroniser plan-hebdo F : post Twitter jeudi ⏳ → ✅
-**Contexte:** Le plan-hebdo.md montre ⏳ pour le post Twitter jeudi "5 things Shopify dashboard HIDES" mais le progress-semaine.md ligne 19 confirme "✅ Publié 13h00" le 23/04.
-**Recommandation:** Mettre à jour fabrice/plan-hebdo.md : remplacer ⏳ par ✅ Publié 13h00 sur la ligne du jeudi 23/04.
+**Contexte:** Le planning/plan-hebdo.md montre ⏳ pour le post Twitter jeudi "5 things Shopify dashboard HIDES" mais le tracking/progress-semaines.md ligne 19 confirme "✅ Publié 13h00" le 23/04.
+**Recommandation:** Mettre à jour fabrice/planning/plan-hebdo.md : remplacer ⏳ par ✅ Publié 13h00 sur la ligne du jeudi 23/04.
 **Action:**
-- Fichier: fabrice/plan-hebdo.md
+- Fichier: fabrice/planning/plan-hebdo.md
 - Modifier: ligne "|Jeu 23/04|...|⏳|" → "|Jeu 23/04|...|✅ Publié 13h00|"
 **Risques si ignoré:** Le dashboard et les compteurs montrent un faux état, l'équipe croit que le post n'est pas fait.
 ---END-PROPOSAL---
@@ -316,7 +315,7 @@ Tu peux aussi auditer le code backend et frontend quand quelque chose ne fonctio
 - **Code mort** : fonctions importées mais jamais appelées, variables déclarées mais inutilisées
 - **Performances** : appels GitHub API redondants, cache mal utilisé, fichiers lus en double
 - **Sécurité** : secrets dans le code, endpoints non protégés
-- **Cohérence 3 modes** : une feature qui marche pour Fabrice mais pas pour Romain ou F2
+- **Cohérence 2 personas** : une feature qui marche pour Fabrice mais pas pour Romain
 
 ### Format des proposals techniques
 ---PROPOSAL---
@@ -370,15 +369,14 @@ ${pendingBlock}${conversationContext}${proposalDecisions}`;
 Explore le repo avec tes outils. Commence par :
 1. counters_today pour Fabrice et Romain
 2. timeline_today pour les deux personas
-3. repo_read sur fabrice/plan-hebdo.md et romain/plan-hebdo.md
-4. repo_read sur fabrice/progress-semaine.md et romain/progress-semaine.md
+3. repo_read sur fabrice/planning/plan-hebdo.md et romain/planning/plan-hebdo.md
+4. repo_read sur fabrice/tracking/progress-semaines.md et romain/tracking/progress-semaines.md
 5. recent_history pour les deux personas (7 jours)
 
 ## ÉTAPE 2 — VÉRIFICATION DE COHÉRENCE
 Compare les données entre les fichiers :
 - Les statuts dans plan-hebdo matchent-ils les événements dans progress-semaine ?
 - Les cold loggés matchent-ils les compteurs ?
-- Les cross-engagements faits matchent-ils le tracker ?
 - Y a-t-il des fichiers vides qui devraient être remplis ?
 - Y a-t-il des données contradictoires entre deux fichiers ?
 

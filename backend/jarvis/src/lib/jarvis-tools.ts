@@ -382,7 +382,7 @@ export function createJarvisMcpServer(options: {
   // ---------------------------------------------------------------------------
   const timelineToday = tool(
     "timeline_today",
-    "Get the live timeline of items for today (posts + objectives + cross-engagement). Returns JSON array. Use this to answer 'what do I have today?' or 'am I behind on X?'.",
+    "Get the live timeline of items for today (posts + objectives). Returns JSON array. Use this to answer 'what do I have today?' or 'am I behind on X?'.",
     {
       persona: z.enum(["fabrice", "romain"]).describe("Which persona"),
       mode: z.enum(["normal", "f2"]).default("normal").describe("Mode"),
