@@ -295,8 +295,8 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     "ANTI-IA.md",
     "CLAUDE-JARVIS.md",
     "BIBLE.md",
-    resolvedMode === "f2" ? "f2/context.md" : `${persona}/VOIX.md`,
-    resolvedMode === "f2" ? "f2/plan-hebdo.md" : `${persona}/plan-hebdo.md`,
+    `${persona}/VOIX.md`,
+    `${persona}/planning/plan-hebdo.md`,
   ];
   const contexts = await Promise.all(contextPaths.map(loadFile));
 
@@ -315,7 +315,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
         alerts: Array<{ level: string; title: string; description: string }>;
       };
       const c = ctxData.counters;
-      const counterLine = `Cold: ${c.cold ?? 0} | Twitter: ${c.twEng ?? 0} | LinkedIn: ${c.liCom ?? 0} | Reddit: ${c.reddit ?? 0} | Facebook: ${c.facebook ?? 0} | IH/PH: ${c.ihPh ?? 0} | Cross: ${c.cross ?? 0} | Total: ${c.total ?? 0}/30`;
+      const counterLine = `Cold — TikTok: ${c.coldTiktok ?? 0}/10 · Insta: ${c.coldInstagram ?? 0}/10 · FB: ${c.coldFacebook ?? 0}/5 · Twitter: ${c.coldTwitter ?? 0}/5 · LinkedIn: ${c.coldLinkedin ?? 0}/5 | PH: ${c.ph ?? 0}/6 | Reddit: ${c.reddit ?? 0} | Total persona: ${c.totalPersona ?? 0}/41 | Général: ${c.general ?? 0}/82`;
       const timelineLines = ctxData.timeline
         .filter((t) => t.status !== "done" || t.platform === "OBJECTIF")
         .slice(0, 12)
