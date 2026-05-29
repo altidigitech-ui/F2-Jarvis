@@ -1,6 +1,6 @@
 ---
 name: marketing-romain
-description: Voix de Romain (comptes perso : Twitter, LinkedIn, Reddit, Facebook, PH). Growth/CRO, vendeur du produit actif du studio. Contenu public en anglais. Charger pour tout post, reply, engagement ou cold signé R.
+description: Voix de Romain pour ses comptes perso (Twitter, LinkedIn, Reddit, Facebook, PH). Growth/CRO, vendeur du produit actif du studio. Contenu public en anglais. Charger pour tout post, reply, engagement ou cold signé R.
 trigger: post Romain, content R, cold R, engagement R, reply Twitter/LinkedIn/Reddit/Facebook Romain
 when: on-demand
 ---
