@@ -1,6 +1,6 @@
 ---
 name: marketing-storemd
-description: Voix produit de StoreMD (comptes produit : TikTok, Instagram, page Facebook, Twitter StoreMD) + IH (compte FoundryTwo). Le produit parle de lui-même, ni "I" ni "we". Contenu public en anglais. Charger pour tout contenu publié sur les comptes StoreMD.
+description: Voix produit de StoreMD pour ses comptes produit (TikTok, Instagram, page Facebook, Twitter StoreMD) + IH (compte FoundryTwo). Le produit parle de lui-même, ni "I" ni "we". Contenu public en anglais. Charger pour tout contenu publié sur les comptes StoreMD.
 trigger: post StoreMD, caption TikTok/Instagram/Facebook StoreMD, tweet StoreMD, IH FoundryTwo, contenu produit
 when: on-demand
 ---
