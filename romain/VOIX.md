@@ -237,7 +237,7 @@ Le chiffre quantifie le problème que le produit détecte.
 - DM tous les merchants Shopify qu'on trouve.
 - Ton : direct, personnalisé, court.
 
-### IH (compte StoreMD)
+### IH (compte FoundryTwo)
 
 - Long-form transparent. Chiffres réels obligatoires (BIBLE §3).
 - Orienté produit : ce qu'on a construit, pourquoi, les résultats.

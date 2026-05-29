@@ -1,4 +1,4 @@
-# CONTEXT INDIEHACKERS — Compte StoreMD
+# CONTEXT INDIEHACKERS — Compte FoundryTwo
 
 **Dernière mise à jour :** 05/05/2026
 **Hérite de :** `BIBLE.md` + `ANTI-IA.md` + `marketing/strategie.md`
@@ -23,15 +23,15 @@ Priorité IH dans le stack : BASSE. Le cold sur les autres plateformes est prior
 
 | Champ | Valeur |
 |-------|--------|
-| **Handle** | @[handle StoreMD] |
-| **Nom** | StoreMD |
-| **Avatar** | Logo StoreMD |
-| **Bio** | AI agent that scans Shopify store health in 60 seconds. 43 checks across 5 modules. Free tier available. |
-| **Product** | StoreMD |
-| **Website** | storemd.vercel.app (→ storemd.com quand DNS résolu) |
+| **Handle** | @foundrytwo (`indiehackers.com/@foundrytwo`) |
+| **Nom** | FoundryTwo |
+| **Avatar** | Logo FoundryTwo |
+| **Bio** | SaaS for Shopify and e-commerce merchants. Current product: StoreMD — scans store health across 43 checks. |
+| **SaaS promu** | StoreMD aujourd'hui (la voix suit le SaaS promu) |
+| **Liens en bio** | foundrytwo.com (hub portfolio) + storemd.vercel.app (SaaS promu actuel). Ajouter chaque nouveau SaaS au fil du temps. |
 | **Géré par** | R (Romain) |
 
-**Pas de compte @foundrytwo.** F2 comme voix séparée n'existe plus (BIBLE v3.0 §8). Le compte IH est celui de StoreMD.
+**Le compte IH est le compte FoundryTwo** (`indiehackers.com/@foundrytwo`), seul canal de communication FoundryTwo. Pas de voix studio dédiée : on publie avec la voix du SaaS promu (StoreMD aujourd'hui, un autre SaaS demain). Partout ailleurs : R, F, comptes produit.
 
 ---
 
