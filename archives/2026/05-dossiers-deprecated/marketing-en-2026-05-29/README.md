@@ -1,0 +1,1 @@
+Archivé le 29/05/2026. Ancien skill voix Twitter/LinkedIn EN de Fabrice (découpage par langue), déprécié avec la refonte des skills voix (1 skill par entité, contenu en anglais). Remplacé par le skill `marketing/fabrice` (`.claude/skills/marketing/fabrice/SKILL.md`).
