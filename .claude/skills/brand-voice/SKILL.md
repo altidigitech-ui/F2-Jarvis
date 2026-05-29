@@ -28,8 +28,9 @@ Ce skill **ne duplique pas le canon** — il pointe vers lui et il aiguille. Ce 
 |---|---|
 | **Romain** — comptes perso (Twitter, LinkedIn, Reddit, Facebook) | `romain/VOIX.md` · pour LinkedIn FR, aussi le skill `marketing-fr` |
 | **Fabrice** — comptes perso (Twitter, LinkedIn, Reddit, Facebook) | `fabrice/VOIX.md` · pour Twitter/LinkedIn EN, aussi le skill `marketing-en` |
-| **Produit StoreMD** — comptes produit (TikTok, Instagram, Facebook, Twitter, IH) | `marketing/saas-app-shopify/storemd/VOIX.md` (+ `…/storemd/context.md` §11) |
+| **Produit StoreMD** — comptes produit (TikTok, Instagram, Facebook, Twitter) | `marketing/saas-app-shopify/storemd/VOIX.md` (+ `…/storemd/context.md` §11) |
 | **Futur produit** (Hokuno, etc.) | `{produit}/VOIX.md` dédié |
+| **IH** — compte FoundryTwo (seul canal FoundryTwo, branding) | Voix du **SaaS promu** (StoreMD aujourd'hui) → sa VOIX produit. Pas de voix studio. |
 
 **Autres surfaces** (pas de VOIX dédiée — la règle vit ici) :
 
@@ -39,5 +40,5 @@ Ce skill **ne duplique pas le canon** — il pointe vers lui et il aiguille. Ce 
 
 ## 3. Ce qui n'existe plus (ne pas refaire)
 
-- **Plus de voix studio « we » séparée** (ex-FoundryTwo comme persona de publication). Supprimée par `BIBLE.md` v3.1 §8. IH n'est pas un compte studio : c'est le compte **StoreMD**, voix produit (`marketing/canaux/ih/context.md`).
+- **Plus de voix studio « we » figée.** FoundryTwo n'existe plus comme persona de publication, **sauf le compte IH** — et sur IH on publie avec la **voix du SaaS promu** (StoreMD aujourd'hui), jamais une voix studio dédiée. Per `BIBLE.md` v3.1 §8. Détail : `marketing/canaux/ih/context.md`.
 - **Plus de build-in-public** : pas de partage de MRR, pas de « voici nos échecs », pas de storytelling fondateur en angle. On vend le produit, pas le personal branding (`BIBLE.md` §8).

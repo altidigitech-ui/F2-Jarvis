@@ -1,6 +1,6 @@
 # VOIX STOREMD — Comptes produit
 
-> Ce fichier définit COMMENT StoreMD parle sur tous les comptes produit (TikTok, Twitter, Instagram, Facebook, IH).
+> Ce fichier définit COMMENT StoreMD parle sur ses comptes produit (TikTok, Twitter, Instagram, Facebook) et sur IH (compte FoundryTwo, quand StoreMD est le SaaS promu).
 > Il ne couvre PAS les voix perso R et F (voir `romain/VOIX.md` et `fabrice/VOIX.md`).
 > Source de vérité pour tout contenu publié sur les comptes StoreMD.
 > Dernière mise à jour : 23/05/2026
@@ -45,7 +45,7 @@ Interdiction de faire 5 posts consécutifs avec le même registre (ex: 5x probl�
 | Instagram | Caption identique TikTok (écrite en dur) | Bio | 5 (Set A/B/C IG) | Reel recyclé TikTok |
 | Facebook | Caption identique TikTok (écrite en dur) | Bio | 3 (Set A/B FB) | Reel recyclé TikTok |
 | Twitter StoreMD | 100-280 caractères | Reply (2 liens en cases séparées) | 0 | Jamais de lien dans le corps |
-| IH (FoundryTwo) | Long-form, transparent | In-text (2 liens) | 0 | Voix studio "we" (exception IH uniquement) |
+| IH (FoundryTwo) | Long-form, transparent | In-text (2 liens) | 0 | Voix StoreMD (compte FoundryTwo, voix du SaaS promu) |
 
 ### Emojis
 

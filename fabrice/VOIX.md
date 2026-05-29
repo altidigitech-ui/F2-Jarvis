@@ -225,7 +225,7 @@ Longueur : 3-6 phrases.
 - DM tous les merchants Shopify qu'on trouve.
 - Ton : direct, personnalisé, court.
 
-### IH (compte StoreMD)
+### IH (compte FoundryTwo)
 
 - Long-form transparent. Chiffres réels obligatoires (BIBLE §3).
 - Orienté produit : ce que le scan détecte, les résultats concrets, les patterns trouvés.
