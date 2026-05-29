@@ -20,7 +20,7 @@ when: on-demand
 Observation concrète ou question provocante. Pas de "Hot take 🔥".
 
 Exemples OK :
-- "On a lancé StoreMD en 47 jours. Voilà ce qu'on a appris."
+- "Un store Shopify qui convertit mal, c'est rarement un problème de trafic. C'est ce que personne ne regarde dans l'admin."
 - "Shopify a tué son API REST en avril 2025. Personne n'en parle."
 - "J'ai vu 200 landing pages SaaS cette semaine. 80% font la même erreur."
 
@@ -29,7 +29,7 @@ Bullet points OU paragraphes courts. Pas de fluff. Concret.
 
 ### Closer
 - Soit une question ouverte à l'audience
-- Soit un CTA soft (lien vers le SaaS, newsletter)
+- Soit un CTA soft (lien vers le SaaS, en commentaire — jamais dans le corps sur LinkedIn)
 - **Jamais** "Likez si vous êtes d'accord"
 
 ## Règles spécifiques FR LinkedIn
@@ -50,36 +50,31 @@ Bullet points OU paragraphes courts. Pas de fluff. Concret.
 - Testimonials fake
 - Altistone mentionné
 
-## Contenu récurrent F2
+## Contenu récurrent
 
-- Lancements de SaaS (avec métriques réelles datées)
-- Learnings techniques (Shopify REST → GraphQL, etc.)
-- Décisions stratégiques (pricing, pivots)
-- Feedback client brut
-- Erreurs F2 assumées
-- Benchmarks d'outils réels
+Tout oriente vers la vente produit et la recherche de clients :
+
+- Ce que StoreMD trouve sur les stores (problèmes silencieux, ce qui coûte des ventes)
+- Problèmes concrets des merchants Shopify, et comment le produit les adresse
+- Observations e-com / Shopify (changements d'écosystème, pièges fréquents)
+- Comparaisons d'approches qui positionnent le produit (sans dénigrer)
+- Annonces produit (nouveau SaaS, nouvelle feature) — factuelles, orientées bénéfice merchant
 
 ## Exemple de draft
 
 ```
-Nouveau SaaS F2 : PayloadDiff.
+Ton store Shopify a peut-être un problème que tu ne vois pas.
 
-Pourquoi on le build.
+Pas le design, pas le trafic. Des trucs silencieux : un pixel qui ne fire pas,
+une vitesse qui plombe le mobile, un réglage de taxe qui fait fuir au checkout.
 
-Quand tu reçois un webhook Stripe, Shopify ou GitHub, tu vois 
-juste la payload actuelle. Mais si elle a changé 3 fois en 2 
-minutes (parce que bug, race condition, update client), tu sais 
-pas.
+StoreMD scanne la santé d'un store Shopify sur 43 points, répartis en 5 modules.
+Tu lances le scan, tu vois ce qui cloche et ce qui te coûte des ventes, en clair.
 
-PayloadDiff log chaque version, diff les champs qui bougent, 
-et t'alerte si un champ critique change sans raison.
-
-On le lance fin avril. Early access : payloaddiff.com.
-
-Retour sur StoreMD dans un prochain post.
+Version gratuite pour tester sur ton propre store. Lien en commentaire.
 ```
 
 ## Pair avec
 
-- **f2-brand-voice** (always-on) — principes globaux
+- **brand-voice** (always-on) — principes globaux
 - **handoff-writer** — pour archiver les posts publiés dans `marketing/posts/published/`
