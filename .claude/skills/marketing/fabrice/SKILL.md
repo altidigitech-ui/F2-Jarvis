@@ -1,6 +1,6 @@
 ---
 name: marketing-fabrice
-description: Voix de Fabrice (comptes perso : Twitter, LinkedIn, Reddit, Facebook, PH). CTO/builder, vendeur du produit actif par l'angle technique accessible. Contenu public en anglais. Charger pour tout post, reply, engagement ou cold signé F.
+description: Voix de Fabrice pour ses comptes perso (Twitter, LinkedIn, Reddit, Facebook, PH). CTO/builder, vendeur du produit actif par l'angle technique accessible. Contenu public en anglais. Charger pour tout post, reply, engagement ou cold signé F.
 trigger: post Fabrice, content F, cold F, engagement F, reply Twitter/LinkedIn/Reddit/Facebook Fabrice
 when: on-demand
 ---
