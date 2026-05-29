@@ -102,8 +102,8 @@
 
 | # | Objet | Type | Fichiers (pressentis) |
 |---|---|---|---|
-| **B2.1** | **Brand-voice — CONCEPTION.** Audit des sources de voix (`romain/VOIX.md`, `fabrice/VOIX.md`, `marketing/saas-app-shopify/storemd/VOIX.md`, BIBLE §2/§3/§8, `marketing-fr`/`marketing-en`) → produire le nouveau `brand-voice/SKILL.md` (garde-fou universel : intégrité + style + anti-hype + TOILE + aiguillage R/F/produit). Nom figé. Contenu validé par R. | conception, **0 mod repo** | sortie `.md` (pas de write repo) |
-| **B2.2** | **Brand-voice — EXÉCUTION.** Créer `skills/brand-voice/SKILL.md`, archiver l'ancien `f2-brand-voice`, maj des refs **ref-only** | mécanique | `skills/brand-voice/` (création), `skills/f2-brand-voice/` (→archive), `settings.json`, `commands/jarvis.md`, `.claude/README.md`, + docs racine `README.md`, `ARCH.md`, `CLAUDE.md`, `ops/monitoring/cache-policy.md` |
+| **B2.1** ✅ | **Brand-voice — CONCEPTION.** Audit des sources de voix (`romain/VOIX.md`, `fabrice/VOIX.md`, `marketing/saas-app-shopify/storemd/VOIX.md`, BIBLE §2/§3/§8, `marketing-fr`/`marketing-en`) → produire le nouveau `brand-voice/SKILL.md` (garde-fou universel : intégrité + style + anti-hype + TOILE + aiguillage R/F/produit). Nom figé. Contenu validé par R. | conception, **0 mod repo** | sortie `.md` (pas de write repo) |
+| **B2.2** ✅ | **Brand-voice — EXÉCUTION** (faite : archive+scaffold via Claude Code, SKILL.md poussé par R, 7 refs ref-only renommées, settings.json JSON valide). Baseline repo14. Créer `skills/brand-voice/SKILL.md`, archiver l'ancien `f2-brand-voice`, maj des refs **ref-only** | mécanique | `skills/brand-voice/` (création), `skills/f2-brand-voice/` (→archive), `settings.json`, `commands/jarvis.md`, `.claude/README.md`, + docs racine `README.md`, `ARCH.md`, `CLAUDE.md`, `ops/monitoring/cache-policy.md` |
 | **B2.3** | **Nettoyage obsolète (7 fichiers).** Vieux paths `saas/storemd` → chemin StoreMD actuel (`produits/saas/storemd/` specs **ou** `marketing/saas-app-shopify/storemd/` marketing — à trancher par fichier à l'audit B2.3) dans `f2-librarian`, `graphify-all`, `morning` ; liste préfixes + ancien CounterData (`jarvis-upgrade`), section IH morte (`f2-marketer`), produits morts PayloadDiff (`marketing-fr`) + Leak Detector (`launch`). **+ on fond le rename brand-voice** dans `f2-marketer`/`marketing-fr`/`jarvis-upgrade` (mêmes edits) | surgical | `agents/f2-marketer.md`, `agents/f2-librarian.md`, `commands/graphify-all.md`, `commands/morning.md`, `commands/launch.md`, `skills/jarvis-upgrade/SKILL.md`, `skills/marketing-fr/SKILL.md` |
 | **B2.4** | `/batch` — codifie `marketing/contenu/batch-semaine/batch-template.md` + fige le format `batch-semaine-S[N].md` | dédié | `commands/batch.md` |
 | **B2.5** | `/archivage` — automatise la charte `archives/README.md` (2 niveaux, set hebdo §2.2, nommage) | dédié | `commands/archivage.md` |
@@ -138,3 +138,54 @@
 On démarre par **B2.1 — conception de `brand-voice`** : audit exhaustif des sources de voix (`romain/VOIX.md`, `fabrice/VOIX.md`, `marketing/saas-app-shopify/storemd/VOIX.md`, BIBLE §2/§3/§8, `marketing-fr`/`marketing-en`) → production du nouveau `SKILL.md` validé par R, **sans aucune modif repo** (sortie `.md`). Puis B2.2 (exécution) et la suite, point par point comme au Bloc 1.
 
 *Fichier de cadrage Bloc 2. Source de vérité d'exécution : ce plan + `PLAN-BRANCHEMENT-JARVIS.md` + `RECAP-SESSION-JARVIS-2026-05-24.md`.*
+
+---
+
+## NOTE DE SUIVI — B2.3 (29/05, mise à jour au fil de l'exécution)
+
+B2.3 scindé en 3 lots :
+- **B2.3a ✅** mécanique (5 fichiers : jarvis-upgrade CounterData+préfixes+ref, f2-librarian/graphify-all/morning paths, launch leak-detector+paths). Baseline repo17.
+- **B2.X ✅** canon IH = compte FoundryTwo, voix du SaaS promu (5 fichiers : canaux/ih/context, brand-voice, fabrice/VOIX, romain/VOIX, storemd/VOIX). Baseline repo18.
+- **B2.3b ⏳ — REFONTE (architecture skills voix figée 29/05, remplace l'approche par langue jetée).**
+
+### Décisions B2.3b verrouillées (29/05)
+- Voix = par ENTITÉ, pas par langue. **Tous les posts en anglais** (le FR = langue maternelle R/F, jamais pour publier).
+- Architecture skills figée :
+  ```
+  .claude/skills/marketing/
+  ├── romain/SKILL.md      ← skill détaillé voix Romain (anglais)
+  ├── fabrice/SKILL.md     ← skill détaillé voix Fabrice (anglais)
+  ├── storemd/SKILL.md     ← skill détaillé voix StoreMD
+  └── (1 nouveau par business futur, ex profitpilot/SKILL.md)
+  ```
+- 1 skill DÉTAILLÉ et AUTONOME par voix (pas un pointeur vide). Sources = `romain/VOIX.md`, `fabrice/VOIX.md`, `marketing/saas-app-shopify/storemd/VOIX.md` (jamais touchées, servent de base).
+- Si beaucoup de skills → 1 `README.md` dans `.claude/skills/marketing/`.
+- Build-in-public MORT partout (R+F). Tout oriente vente produit + recherche client. Chiffres réels seulement. Bios « Co-fondateur F2 » / « CTO F2 » gardées.
+- Faisabilité sous-dossier vérifiée (web, 29/05) : Claude Code n'auto-découvre QU'À 1 niveau (`.claude/skills/<nom>/SKILL.md`). Un nesting 2 niveaux n'est PAS auto-découvert → OK ici car ces skills sont `on-demand`, chargés PAR CHEMIN via brand-voice/f2-marketer (pas par autoDiscover).
+- `marketing-fr` / `marketing-en` (découpage par langue) = à SUPPRIMER, remplacés par les 3 skills ci-dessus. Les fichiers que j'avais produits (f2-marketer.md, marketing-fr/en) = PÉRIMÉS, ne pas pousser.
+
+### Avancement B2.3b (maj 29/05, baseline repo21)
+- ✅ Archivage `marketing-fr`/`marketing-en` → `archives/2026/05-dossiers-deprecated/marketing-{fr,en}-2026-05-29/` (SKILL.md + README).
+- ✅ Scaffold `.claude/skills/marketing/{romain,fabrice,storemd}/`.
+- ✅ 3 skills voix créés, poussés, **YAML corrigé** (le `: ` décoratif dans `description` cassait le frontmatter → reformulé "pour ses comptes …"). Parse OK.
+- ✅ point 4 — `f2-marketer.md` corrigé (skills par entité, aiguillage par compte, tout en anglais), poussé, YAML OK, 0 ref marketing-fr/en. **B2.3 ENTIÈREMENT CLOS.** Baseline repo22.
+
+### Ordre d'exécution B2.3b
+1. Skill `marketing/romain/SKILL.md` → validation R
+2. Skill `marketing/fabrice/SKILL.md` → validation R
+3. Skill `marketing/storemd/SKILL.md` → validation R
+4. Corriger `f2-marketer.md` (chemins skills + voix par entité + tout en anglais + build-in-public out + IH publish-only + multi-business/hub) → validation R
+   → tout reste dans `.claude/`, push manuel R, vérif ZIP entre chaque.
+
+### REPORTÉ À LA FIN (lot racine unique, en pack avec Bloc 3) — repointage des refs `marketing-fr/en` → nouveaux skills
+- `.claude/skills/brand-voice/SKILL.md` l.29-30 (lignes router R et F)
+- `.claude/README.md` l.32
+- `ARCH.md` l.73-74
+- `CLAUDE.md` l.163
+- `patterns/dual-llm-sonnet-haiku.md` l.119
+- Faux positifs à NE PAS toucher : `brain/context-cognitif/social/communication.md:26` + `systeme cognitif/WAVE-6...:446` (= « marketing-friendly »).
+- Note : `settings.json` ne référence PAS marketing-fr/en (rien à changer).
+
+### Avancement Bloc 2 — commandes
+- ✅ **B2.4 `/batch`** : `.claude/commands/batch.md` créé (orchestrateur → batch-template.md + dernier batch S11, S[N] via charte, 7 blocs + validation R, dispatch, archivage). Poussé, YAML OK. Baseline repo23.
+- ⏳ **B2.5 `/archivage`** : en audit.
