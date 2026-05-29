@@ -57,8 +57,7 @@ Usage :
 
 ### Communautés
 - F2-core (strategie/, produits/, patterns/)
-- StoreMD (saas/storemd/)
-- StoreMD (saas/storemd/)
+- StoreMD (produits/saas/storemd/)
 - Infra (ops/, .claude/)
 - Brain (brain/)
 

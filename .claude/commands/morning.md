@@ -32,7 +32,7 @@ Génère un brief quotidien pour Fabrice. Orienté action, pas narratif.
 
 ## Git activité (depuis hier)
 - f2-jarvis: 4 commits
-- saas/storemd: 2 commits (derniers)
+- produits/saas/storemd: 2 commits (derniers)
 
 ## État des SaaS
 - ✅ StoreMD — live depuis 14/04/2026, MRR à jour

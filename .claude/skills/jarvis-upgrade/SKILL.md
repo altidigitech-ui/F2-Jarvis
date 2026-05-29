@@ -369,7 +369,7 @@ Le texte des réponses JARVIS contient des markers parsés par `parseJarvisMarke
 
 Chemins autorisés pour `create_file` (dans `action-executor.ts`) :
 
-**Préfixes :** `f2/`, `fabrice/`, `romain/`, `strategie/`, `patterns/`, `tracking/`, `archives/`, `distribution/`, `growth-marketing/`, `saas/`, `produits/`, `ops/`, `marketing/`
+**Préfixes :** `fabrice/`, `romain/`, `strategie/`, `patterns/`, `tracking/`, `archives/`, `la-toile/`, `produits/`, `ops/`, `marketing/`, `brain/jarvis-workspace/`, `brain/context-cognitif/`, `.claude/agents/`
 
 **Patterns root :** `BATCH-SEMAINE-\d+.md`, `PLAN-*.md`, `HANDOFF*.md`, `CHANGELOG*.md`, `REVUE-*.md`
 
@@ -420,15 +420,21 @@ export interface TimelineItem {
 }
 
 export interface CounterData {
-  cold: number;
-  repliesIn: number;
-  twEng: number;
-  liCom: number;
-  reddit: number;
-  facebook: number;
-  cross: number;
-  ihPh: number;
-  total: number;
+  // Compteurs par persona (interface active)
+  coldTiktok: number;      // cible 10 (compte StoreMD, filtré par opérateur)
+  coldInstagram: number;   // cible 10 (compte StoreMD, filtré par opérateur)
+  coldFacebook: number;    // cible 5 (perso)
+  coldTwitter: number;     // cible 5 (perso)
+  coldLinkedin: number;    // cible 5 (perso)
+  ph: number;              // cible 6 (perso)
+  reddit: number;          // logué, pas de cible dure
+  totalPersona: number;    // cible 41
+  // Mutualisé (R + F)
+  general: number;         // cible 82
+  // Pipeline conversion (fabrice)
+  pipelineScans?: number;
+  pipelineBetas?: number;
+  pipelineConvos?: number;
 }
 
 export interface AlertItem {
@@ -513,7 +519,7 @@ Ces couleurs sont utilisées via `accentColor` prop passé à tous les sous-comp
 - **supabase-rls** → si ajout de tables
 - **web-interface-guidelines** → pour audit a11y avant shipping
 - **handoff-writer** → en fin de session
-- **f2-brand-voice** → si le system prompt est modifié (voix Romain/Fabrice/F2)
+- **brand-voice** → si le system prompt est modifié (voix Romain/Fabrice/produit)
 
 ---
 
