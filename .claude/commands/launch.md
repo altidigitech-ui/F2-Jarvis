@@ -5,13 +5,13 @@ description: Active le skill saas-launch-checklist pour un SaaS donné. Usage /l
 
 # /launch <saas>
 
-Utilisation : `/launch storemd` ou `/launch leak-detector`.
+Utilisation : `/launch storemd`.
 
 ## Process
 
-1. Vérifier que `saas/<saas>/` existe
+1. Vérifier que `produits/saas/<saas>/` existe
 2. Charger skill `saas-launch-checklist`
-3. Scanner le repo `saas/<saas>/` :
+3. Scanner le repo `produits/saas/<saas>/` :
    - Tests existent ? (pytest, jest, etc.)
    - Sentry configuré ? (grep `sentry_dsn`)
    - Stripe webhooks présent ? (grep routes)
@@ -19,7 +19,7 @@ Utilisation : `/launch storemd` ou `/launch leak-detector`.
    - A11y setup ? (eslint-plugin-jsx-a11y)
    - etc.
 4. Générer checklist en markdown avec items déjà cochés `[x]` si détectés
-5. Sauvegarder dans `saas/<saas>/LAUNCH-CHECKLIST.md`
+5. Sauvegarder dans `produits/saas/<saas>/LAUNCH-CHECKLIST.md`
 
 ## Items à scanner automatiquement
 

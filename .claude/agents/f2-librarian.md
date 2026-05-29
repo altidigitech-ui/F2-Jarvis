@@ -47,7 +47,7 @@ C'est une tâche de retrieval, pas de raisonnement. Haiku est 5x moins cher que 
 ### 2. `patterns/shopify-rest-is-dead.md` (haute pertinence)
 > Pattern F2 documentant pourquoi REST Shopify est mort et comment migrer.
 
-### 3. `saas/storemd/CONTEXT.md` (moyenne pertinence)
+### 3. `produits/saas/storemd/context.md` (moyenne pertinence)
 > StoreMD utilise exclusivement Shopify GraphQL Admin API.
 ```
 
