@@ -2,7 +2,7 @@
 
 > Document-traqueur maître du rebranchement de Jarvis sur le repo refondu.
 > Sert à figer **les choix faits**, **ce qu'on doit faire**, et **où on en est**.
-> **Créé :** 23/05/2026 · **Dernière maj :** 24/05/2026
+> **Créé :** 23/05/2026 · **Dernière maj :** 29/05/2026
 > **Règle absolue :** aucune opération sur le repo sans validation explicite de R ("go" / "validé" / "ok"). Ce document recense ; il ne déclenche rien.
 
 ---
@@ -179,4 +179,9 @@ Statuts : ⬜ à faire · 🔄 en cours · ✅ fait · 🔒 intouchable
 
 *Source de vérité : repo Jarvis + `ROADMAP-IMPLEMENTATION.md` (22/05) + ce plan. Ce document est mis à jour à chaque étape franchie.*
 
-- **25/05/2026 — B2.1 + B2.2 ✅ (brand-voice)** : conception du nouveau `brand-voice/SKILL.md` (garde-fou universel + aiguillage R/F/produit, anti-duplication, purge studio/build-in-public) validée ; exécution = ancien `f2-brand-voice` archivé (deprecated 2026-05-25), dossier scaffoldé, SKILL.md poussé par R, 7 refs ref-only renommées, `settings.json` JSON valide (alwaysLoad=[graphify, brand-voice, handoff-writer]). Reste 3 refs = fichiers B2.3. Baseline : **repo14**.
+- **29/05/2026 — B2.1 + B2.2 ✅ (brand-voice)** : conception du nouveau `brand-voice/SKILL.md` (garde-fou universel + aiguillage R/F/produit, anti-duplication, purge studio/build-in-public) validée ; exécution = ancien `f2-brand-voice` archivé (deprecated 2026-05-25), dossier scaffoldé, SKILL.md poussé par R, 7 refs ref-only renommées, `settings.json` JSON valide (alwaysLoad=[graphify, brand-voice, handoff-writer]). Reste 3 refs = fichiers B2.3. Baseline : **repo14**.
+- **29/05/2026 — B2.X ✅ (canon IH)** : IH = compte FoundryTwo / voix du SaaS promu (5 fichiers : canaux/ih/context, brand-voice, romain+fabrice VOIX, storemd VOIX). Baseline **repo18**.
+- **29/05/2026 — B2.3a ✅ (nettoyage mécanique)** : 5 fichiers (jarvis-upgrade CounterData+préfixes, f2-librarian/graphify-all/morning paths, launch leak-detector+paths). Baseline **repo17**.
+- **29/05/2026 — B2.3b ✅ (refonte skills voix)** : découpage par langue abandonné → skills **par entité** `marketing/{romain,fabrice,storemd}` (tout en anglais, build-in-public mort), archivage marketing-fr/en, correction `f2-marketer`. Détail : note de suivi B2.3b dans `BLOC2-CLAUDE-CONFIG-PLAN.md`. Baseline **repo19→22**.
+- **29/05/2026 — B2.4 ✅ (`/batch`)** : `commands/batch.md` orchestrateur (→ batch-template + dernier batch S11, S[N] via charte, 7 blocs + validation R, dispatch, archivage). Baseline **repo23**.
+- **29/05/2026 — B2.5 ✅ (`/archivage`)** : `commands/archivage.md` orchestrateur (→ charte `archives/README.md` §2.2-2.4, gate validation R, bascule annuelle exclue). Baseline **repo24** (à vérifier au push). **Prochaine étape : B2.6 `/recap`.**
