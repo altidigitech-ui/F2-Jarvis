@@ -259,7 +259,264 @@ Free scan link in bio 👇
 
 # ═══ MARDI 02/06 — OFFRE : prix figé à vie (founding user) ═══
 
-> ⏳ PLACEHOLDER — Bloc 2. Vidéo V1-29. 6 publications (TK ancre, TW F/R/SM, IG, FB) + LinkedIn R 15h30.
+> 7 publications. Vidéo V1-29. Hook : prix bloqué à vie si abonnement d'ici le 22/06. Hashtags Set B. Mardi inclut LinkedIn R.
+
+---
+
+#### STOREMD-TK-S12-02 — StoreMD (@StoreMd_off) — TikTok — Mar 02/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (source du jour)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+Lock your StoreMD price for life 🔒
+
+Subscribe by June 22 and the price you pay never moves again.
+
+Install on Shopify, run your 14 days of Pro free, then decide.
+
+After June 22 the founding rate is gone.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (TikTok, Set B — 5) :**
+```
+#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #StoreMD
+```
+
+**TRADUCTION :**
+> Bloque ton prix StoreMD à vie 🔒
+> Abonne-toi avant le 22 juin et le prix que tu paies ne bouge plus jamais.
+> Installe sur Shopify, fais tes 14 jours de Pro gratuits, puis décide.
+> Après le 22 juin, le tarif founding disparaît.
+> Lien free scan en bio 👇
+
+---
+
+#### STOREMD-TW-F-S12-02 — Fabrice (@FabGangi) — Twitter — Mar 02/06 13h00
+
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Subscribe to StoreMD before June 22 and your price is locked for life 🔒
+
+I'd rather reward the people who show up early than run discounts later.
+
+Install, do the free Pro trial, check your score.
+
+Decide while the founding rate's still open.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Abonne-toi à StoreMD avant le 22 juin et ton prix est bloqué à vie 🔒
+> Je préfère récompenser ceux qui arrivent tôt plutôt que faire des réductions plus tard.
+> Installe, fais l'essai Pro gratuit, regarde ton score.
+> Décide tant que le tarif founding est encore ouvert.
+
+---
+
+#### STOREMD-TW-R-S12-02 — Romain (@delgado_ro72224) — Twitter — Mar 02/06 14h00
+
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Founding users who lock in StoreMD by June 22 keep their price for life 🔒
+
+I built it that way on purpose.
+
+Install this week, run the free Pro trial, and if it earns its place, that rate is yours for good.
+
+The window won't reopen.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Les founding users qui bloquent StoreMD avant le 22 juin gardent leur prix à vie 🔒
+> Je l'ai construit comme ça exprès.
+> Installe cette semaine, fais l'essai Pro gratuit, et si ça mérite sa place, ce tarif est à toi pour de bon.
+> La fenêtre ne rouvrira pas.
+
+---
+
+#### STOREMD-TW-SM-S12-02 — StoreMD (@StoreMd_off) — Twitter — Mar 02/06 15h00
+
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Lock your StoreMD price for life 🔒
+
+Subscribe by June 22 and what you pay never moves again.
+
+Install on Shopify, start 14 days of Pro free, then decide.
+
+The founding rate won't come back.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Bloque ton prix StoreMD à vie 🔒
+> Abonne-toi avant le 22 juin et ce que tu paies ne bouge plus.
+> Installe sur Shopify, démarre 14 jours de Pro gratuits, puis décide.
+> Le tarif founding ne reviendra pas.
+
+---
+
+#### STOREMD-LI-R-S12-02 — Romain Delgado — LinkedIn — Mar 02/06 15h30
+
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Most software raises its price the moment it gets traction.
+
+I went the other way with StoreMD 🔒
+
+Subscribe before June 22 and the price you pay is locked for life.
+
+It doesn't move when new features ship.
+It doesn't move next year.
+It stays.
+
+How it works for a founding user:
+
+Day 1, you install on Shopify and start 14 days of Pro, free, no card.
+
+Day 14, you keep Pro or drop to Free.
+
+Up to Day 30, you can still lock your rate.
+
+After June 22, the founding window is closed.
+
+StoreMD scans a Shopify store's health in 60 seconds.
+
+Ghost charges from apps you uninstalled. Dead code in your theme. Broken listings. Whether AI assistants can even find your products.
+
+Then it fixes what it finds.
+
+If you run a store, or manage them for clients, this is the cheapest StoreMD will ever be for you.
+
+Free scan in the comments 👇
+```
+
+**COMMENTAIRE (1er, à poster après publication) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
+```
+
+**TRADUCTION :**
+> La plupart des logiciels augmentent leur prix dès qu'ils décollent.
+> Moi j'ai fait l'inverse avec StoreMD 🔒
+> Abonne-toi avant le 22 juin et le prix que tu paies est bloqué à vie.
+> Il ne bouge pas quand de nouvelles features arrivent.
+> Il ne bouge pas l'année prochaine.
+> Il reste.
+> Comment ça marche pour un founding user :
+> Jour 1, tu installes sur Shopify et tu démarres 14 jours de Pro, gratuits, sans carte.
+> Jour 14, tu gardes Pro ou tu passes sur Free.
+> Jusqu'au Jour 30, tu peux encore bloquer ton tarif.
+> Après le 22 juin, la fenêtre founding est fermée.
+> StoreMD scanne la santé d'un store Shopify en 60 secondes.
+> Charges fantômes d'apps désinstallées. Code mort dans ton thème. Listings cassés. Si les assistants IA peuvent même trouver tes produits.
+> Puis il répare ce qu'il trouve.
+> Si tu gères un store, ou que tu en gères pour des clients, c'est le prix le plus bas que StoreMD aura jamais pour toi.
+> Scan gratuit en commentaire 👇
+
+---
+
+#### STOREMD-IG-S12-02 — StoreMD — Instagram — Mar 02/06 18h00
+
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+Lock your StoreMD price for life 🔒
+
+Subscribe by June 22 and the price you pay never moves again.
+
+Install on Shopify, run your 14 days of Pro free, then decide.
+
+After June 22 the founding rate is gone.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Instagram, Set B — 5) :**
+```
+#shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### STOREMD-FB-S12-02 — StoreMD — Facebook — Mar 02/06 18h30
+
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+Lock your StoreMD price for life 🔒
+
+Subscribe by June 22 and the price you pay never moves again.
+
+Install on Shopify, run your 14 days of Pro free, then decide.
+
+After June 22 the founding rate is gone.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Facebook, Set B posts — 3) :**
+```
+#shopifystore #onlinebusiness #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 ---
