@@ -7,6 +7,143 @@
 
 ---
 
+## Semaine 11 — du 25/05/2026 au 31/05/2026
+
+*Snapshot pris le 31/05/2026 (rattrapage). Listes d'événements : uniquement les nouvelles entrées de S11 ; les agrégats current-state sont loggés pleins (état au 31/05).*
+
+**Produit :**
+
+| Métrique | Valeur |
+|----------|--------|
+| Total Merchants | 3 |
+| Total Scans | 46 |
+| Scans this week | 13 |
+| Active Subs | 1 |
+| Avg score | 90.4 |
+| MRR (€) | 199 |
+| Visits Today | 1 |
+| Unique Visitors | 1 |
+| Installs Today | 0 |
+| Conversion Rate | 0% |
+| Email Leads | 0 |
+| Free Scans | 2 |
+
+*Note dashboard : Visits aussi affiché en 21/wk · 169/mo. MRR 199 = sub agency interne (altidigitech), pas du revenu externe réel.*
+
+**Funnel (last 30 days) :**
+
+| Stage | Count |
+|-------|-------|
+| Landing visits | 169 |
+| CTA clicks | 24 |
+| Install starts | 3 |
+| Install completes | 33 |
+| Paid conversions | 1 |
+
+*Note incohérence dashboard : Install completes (33) > Install starts (3) — logiquement impossible, anomalie côté dashboard. Chiffres loggés bruts, non corrigés.*
+
+**Traffic by Source (30d) :**
+
+| Source | Visits | Installs |
+|--------|--------|----------|
+| (direct) | 120 | 2 |
+| foundrytwo | 15 | 0 |
+| linkedin | 12 | 0 |
+| twitter | 7 | 0 |
+| facebook | 5 | 0 |
+| tiktok | 4 | 0 |
+| instagram | 3 | 0 |
+| hackernews | 2 | 0 |
+| reddit | 1 | 0 |
+
+**Traffic by Campaign (30d) :**
+
+| Campaign | Visits | Installs |
+|----------|--------|----------|
+| storemd | 15 | 0 |
+| profile | 13 | 0 |
+| post | 12 | 0 |
+| page | 5 | 0 |
+| comment | 2 | 0 |
+| video | 2 | 0 |
+
+**Recent Merchants (nouveaux cette semaine) :**
+
+| Email | Plan | UTM Source | Domain | Last Score | Created |
+|-------|------|------------|--------|------------|---------|
+| — | — | — | — | — | Aucun nouveau merchant en S11 (dernier : 20/05/2026) |
+
+**Recent Scans (nouveaux cette semaine, 25-31/05) :**
+
+| Domain | Score | Status | Duration (s) | Created |
+|--------|-------|--------|--------------|---------|
+| s6btxa-q0.myshopify.com | 86 | completed | — | 31/05/2026 05:15:02 |
+| s6btxa-q0.myshopify.com | 87 | completed | — | 30/05/2026 05:15:02 |
+| s6btxa-q0.myshopify.com | 87 | completed | — | 29/05/2026 05:15:02 |
+| s6btxa-q0.myshopify.com | 88 | completed | — | 28/05/2026 05:15:02 |
+| s6btxa-q0.myshopify.com | 80 | completed | — | 27/05/2026 05:15:02 |
+| s6btxa-q0.myshopify.com | 87 | completed | — | 26/05/2026 05:15:02 |
+| s6btxa-q0.myshopify.com | 88 | completed | — | 25/05/2026 05:15:01 |
+| storemdtesttt.myshopify.com | 99 | completed | — | 25/05/2026 00:09:31 |
+
+*Tous internes/test.*
+
+**Free Scans (preview) (nouveaux cette semaine) :**
+
+| Domain | Score | Issues | Duration | Created |
+|--------|-------|--------|----------|---------|
+| — | — | — | — | Aucun nouveau free scan en S11 (derniers : 07 et 09/05) |
+
+**Preview Leads (email captured) :**
+
+| Email | Domain | Score | Issues | Created |
+|-------|--------|-------|--------|---------|
+| — | — | — | — | — |
+
+**Errors (webhook events) :**
+
+| Topic | Source | Shop | Error | Created |
+|-------|--------|------|-------|---------|
+| — | — | — | — | — |
+
+---
+
+## Semaine 10 — du 18/05/2026 au 24/05/2026
+
+*Snapshot rattrapage (saisi le 31/05/2026 depuis les listes datées du dashboard). Agrégats current-state NON capturés : le dashboard admin n'a pas été relevé le 24/05, l'état instantané de fin S10 n'est pas reconstituable (zéro invention). Seules les listes d'événements datées 18-24/05 sont loggées.*
+
+**Produit / Funnel (30d) / Traffic (30d) :** — non capturés (voir note ci-dessus).
+
+**Recent Merchants (nouveaux cette semaine) :**
+
+| Email | Plan | UTM Source | Domain | Last Score | Created |
+|-------|------|------------|--------|------------|---------|
+| s6btxa-q0@storemd.app | agency | — | s6btxa-q0.myshopify.com | 86 | 20/05/2026 17:03:40 |
+
+**Recent Scans (nouveaux cette semaine, 18-24/05) :**
+
+27 scans, tous internes/test — stores `storemdtesttt.myshopify.com`, `s6btxa-q0.myshopify.com`, `nh1yvq-86.myshopify.com`. Scores 75-100, tous `completed` (majorité = scans automatiques internes du 21/05, sans valeur analytique externe). Détail non listé.
+
+**Free Scans (preview) (nouveaux cette semaine) :**
+
+| Domain | Score | Issues | Duration | Created |
+|--------|-------|--------|----------|---------|
+| — | — | — | — | Aucun nouveau free scan en S10 |
+
+**Preview Leads (email captured) :**
+
+| Email | Domain | Score | Issues | Created |
+|-------|--------|-------|--------|---------|
+| — | — | — | — | — |
+
+**Errors (webhook events) :**
+
+| Topic | Source | Shop | Error | Created |
+|-------|--------|------|-------|---------|
+| — | — | — | — | — |
+
+---
+
 ## Semaine 9 — du 11/05/2026 au 17/05/2026
 
 *Snapshot pris le 17/05/2026.*
