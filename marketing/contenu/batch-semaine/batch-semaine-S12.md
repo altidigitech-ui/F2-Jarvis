@@ -1041,7 +1041,242 @@ Free scan link in bio 👇
 
 # ═══ VENDREDI 05/06 — PRODUIT : 43 features, personne d'autre ═══
 
-> ⏳ PLACEHOLDER — Bloc 5. Vidéo V1-01. 6 publications + LinkedIn F 15h30.
+> 7 publications. Vidéo V1-01. Hook : 43 features sur 5 modules en une app, là où les autres en couvrent une. Hashtags Set B. Vendredi inclut LinkedIn F.
+
+---
+
+#### STOREMD-TK-S12-05 — StoreMD (@StoreMd_off) — TikTok — Ven 05/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-01_43features_domination.mp4` (source du jour)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+43 features. 5 modules. One app 🔍
+
+Store health, listings, AI readiness, compliance, real browser tests.
+
+Most Shopify tools do one of those. StoreMD does all five.
+
+One scan, 60 seconds, every problem ranked by priority.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (TikTok, Set B — 5) :**
+```
+#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #StoreMD
+```
+
+**TRADUCTION :**
+> 43 features. 5 modules. Une app 🔍
+> Santé du store, listings, compatibilité IA, conformité, tests navigateur réels.
+> La plupart des outils Shopify font une de ces choses. StoreMD fait les cinq.
+> Un scan, 60 secondes, chaque problème classé par priorité.
+> Lien free scan en bio 👇
+
+---
+
+#### STOREMD-TW-F-S12-05 — Fabrice (@FabGangi) — Twitter — Ven 05/06 13h00
+
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+I counted what StoreMD actually does the other day 🔍
+
+43 checks across 5 modules. Store health, listings, AI readiness, compliance, real browser tests.
+
+Most tools cover one of those.
+
+That's the whole reason I built it.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> J'ai compté ce que StoreMD fait vraiment l'autre jour 🔍
+> 43 vérifications sur 5 modules. Santé du store, listings, compatibilité IA, conformité, tests navigateur réels.
+> La plupart des outils couvrent une de ces choses.
+> C'est toute la raison pour laquelle je l'ai construit.
+
+---
+
+#### STOREMD-TW-R-S12-05 — Romain (@delgado_ro72224) — Twitter — Ven 05/06 14h00
+
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+43 features. 5 modules. One Shopify app 🔍
+
+Store health, listings, AI readiness, compliance, browser tests that open your store like a real customer.
+
+You'd need five separate tools to match it.
+
+One scan ranks every problem by priority.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> 43 features. 5 modules. Une app Shopify 🔍
+> Santé du store, listings, compatibilité IA, conformité, tests navigateur qui ouvrent ton store comme un vrai client.
+> Il te faudrait cinq outils séparés pour l'égaler.
+> Un scan classe chaque problème par priorité.
+
+---
+
+#### STOREMD-TW-SM-S12-05 — StoreMD (@StoreMd_off) — Twitter — Ven 05/06 15h00
+
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+43 features. 5 modules. 60 seconds 🔍
+
+Store health, listings, AI readiness, compliance, real browser tests.
+
+Every problem found, then ranked by priority. Fixes included.
+
+Most tools do one module. StoreMD does five.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> 43 features. 5 modules. 60 secondes 🔍
+> Santé du store, listings, compatibilité IA, conformité, tests navigateur réels.
+> Chaque problème trouvé, puis classé par priorité. Corrections incluses.
+> La plupart des outils font un module. StoreMD en fait cinq.
+
+---
+
+#### STOREMD-LI-F-S12-05 — Fabrice Gangitano — LinkedIn — Ven 05/06 15h30
+
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+When I started building StoreMD, I made a list of every Shopify health tool on the market.
+
+Then I listed what each one actually checked.
+
+The pattern was obvious: each tool owned one slice. Speed here, SEO there, an app for billing, another for accessibility 🔍
+
+So a serious store owner ended up paying for four or five of them, and still stitching the results together by hand.
+
+StoreMD runs 43 checks across 5 modules in one scan: store health, listings, AI readiness, compliance, and real browser tests that open your store like a customer would.
+
+One scan. 60 seconds. Every problem ranked by priority, with the fix attached.
+
+That's the whole point: stop renting five tools to get one clear answer.
+
+Free scan in the comments 👇
+```
+
+**COMMENTAIRE (1er, à poster après publication) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
+```
+
+**TRADUCTION :**
+> Quand j'ai commencé à construire StoreMD, j'ai fait une liste de tous les outils de santé Shopify du marché.
+> Puis j'ai listé ce que chacun vérifiait vraiment.
+> Le pattern était évident : chaque outil possédait une tranche. La vitesse ici, le SEO là, une app pour le billing, une autre pour l'accessibilité 🔍
+> Donc un store owner sérieux finissait par en payer quatre ou cinq, et recollait quand même les résultats à la main.
+> StoreMD fait 43 vérifications sur 5 modules en un scan : santé du store, listings, compatibilité IA, conformité, et tests navigateur réels qui ouvrent ton store comme un client.
+> Un scan. 60 secondes. Chaque problème classé par priorité, avec la correction attachée.
+> C'est tout l'intérêt : arrêter de louer cinq outils pour avoir une réponse claire.
+> Scan gratuit en commentaire 👇
+
+---
+
+#### STOREMD-IG-S12-05 — StoreMD — Instagram — Ven 05/06 18h00
+
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+43 features. 5 modules. One app 🔍
+
+Store health, listings, AI readiness, compliance, real browser tests.
+
+Most Shopify tools do one of those. StoreMD does all five.
+
+One scan, 60 seconds, every problem ranked by priority.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Instagram, Set B — 5) :**
+```
+#shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### STOREMD-FB-S12-05 — StoreMD — Facebook — Ven 05/06 18h30
+
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+43 features. 5 modules. One app 🔍
+
+Store health, listings, AI readiness, compliance, real browser tests.
+
+Most Shopify tools do one of those. StoreMD does all five.
+
+One scan, 60 seconds, every problem ranked by priority.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopifystore #onlinebusiness #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 ---
