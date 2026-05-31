@@ -1377,6 +1377,108 @@ Free scan link in bio 👇
 
 # ═══ DIMANCHE 07/06 — OFFRE : DERNIER JOUR Pro gratuit (récap) ═══
 
-> ⏳ PLACEHOLDER — Bloc 7. Vidéo V1-31. 3 publications (TK ancre, IG, FB). Hook : aujourd'hui = dernier jour de Pro gratuit, prix figé jusqu'au 22/06.
+> 3 publications (week-end : TK ancre, IG, FB). Vidéo V1-31. Hook : dernier jour de la fenêtre Pro gratuit, récap complet de l'offre, prix figé jusqu'au 22/06. Hashtags Set A.
+
+---
+
+#### STOREMD-TK-S12-07 — StoreMD (@StoreMd_off) — TikTok — Dim 07/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-31_full_offer.mp4` (source du jour)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+Last day of free Pro on StoreMD ⏳
+
+The launch window closes tonight.
+
+One more recap:
+
+Install on Shopify, run Pro free, no card.
+Subscribe by June 22 to lock your price for life.
+Annual plans get 2 months free.
+
+If you run a Shopify store, today's the day to scan it.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (TikTok, Set A — 5) :**
+```
+#shopify #ecommercetips #shopifystore #smallbusinessowner #StoreMD
+```
+
+**TRADUCTION :**
+> Dernier jour de Pro gratuit sur StoreMD ⏳
+> La fenêtre de lancement ferme ce soir.
+> Un dernier récap :
+> Installe sur Shopify, lance Pro gratuitement, sans carte.
+> Abonne-toi avant le 22 juin pour bloquer ton prix à vie.
+> Les plans annuels ont 2 mois offerts.
+> Si tu gères un store Shopify, aujourd'hui c'est le jour pour le scanner.
+> Lien free scan en bio 👇
+
+---
+
+#### STOREMD-IG-S12-07 — StoreMD — Instagram — Dim 07/06 18h00
+
+**Vidéo :** `V1-31_full_offer.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+Last day of free Pro on StoreMD ⏳
+
+The launch window closes tonight.
+
+One more recap:
+
+Install on Shopify, run Pro free, no card.
+Subscribe by June 22 to lock your price for life.
+Annual plans get 2 months free.
+
+If you run a Shopify store, today's the day to scan it.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Instagram, Set A — 5) :**
+```
+#shopifystore #ecommercetips #smallbusinessowner #shopifytips #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### STOREMD-FB-S12-07 — StoreMD — Facebook — Dim 07/06 18h30
+
+**Vidéo :** `V1-31_full_offer.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+Last day of free Pro on StoreMD ⏳
+
+The launch window closes tonight.
+
+One more recap:
+
+Install on Shopify, run Pro free, no card.
+Subscribe by June 22 to lock your price for life.
+Annual plans get 2 months free.
+
+If you run a Shopify store, today's the day to scan it.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopify #ecommerce #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
