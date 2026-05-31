@@ -65,11 +65,17 @@ Twitter/LinkedIn = 1 case copier-coller par lien. TikTok/IG/FB = CTA verbal + fr
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Free Pro on StoreMD ends June 7. Install on Shopify, run a full store health scan in 60 seconds, no card.
+Free Pro on StoreMD ends June 7 ⏳
 
-It finds the ghost charges, dead code and broken listings quietly costing you sales, then fixes them.
+Install on the Shopify App Store and scan your store's health in 60 seconds. No card.
 
-This is the last week before the free window closes. Free scan link in bio.
+It finds the ghost charges, dead code and broken listings quietly costing you sales.
+
+Then it fixes them.
+
+Last week before the free window closes.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set A — 5) :**
@@ -78,9 +84,12 @@ This is the last week before the free window closes. Free scan link in bio.
 ```
 
 **TRADUCTION :**
-> Le Pro gratuit sur StoreMD se termine le 7 juin. Installe sur Shopify, lance un scan complet de la santé du store en 60 secondes, sans carte.
-> Il trouve les charges fantômes, le code mort et les listings cassés qui te coûtent des ventes en silence, puis les répare.
-> C'est la dernière semaine avant la fermeture de la fenêtre gratuite. Lien free scan en bio.
+> Le Pro gratuit sur StoreMD se termine le 7 juin ⏳
+> Installe sur le Shopify App Store et scanne la santé de ton store en 60 secondes. Sans carte.
+> Il trouve les charges fantômes, le code mort et les listings cassés qui te coûtent des ventes en silence.
+> Puis il les répare.
+> Dernière semaine avant la fermeture de la fenêtre gratuite.
+> Lien free scan en bio 👇
 
 ---
 
@@ -90,11 +99,13 @@ This is the last week before the free window closes. Free scan link in bio.
 
 **TEXTE :**
 ```
-I built StoreMD to do one thing properly: open your Shopify store like a real customer and tell you what's broken.
+I built StoreMD to do one thing right 🛠️
 
-Free Pro runs until June 7. Install it, scan, look at your score.
+Open your Shopify store like a real customer and tell you what's broken.
 
-The browser tests alone catch things no audit PDF ever will.
+Free Pro runs until June 7. Install, scan, check your score.
+
+The browser tests alone catch what no audit PDF ever will.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -109,9 +120,10 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> J'ai construit StoreMD pour faire une chose correctement : ouvrir ton store Shopify comme un vrai client et te dire ce qui est cassé.
+> J'ai construit StoreMD pour faire une chose correctement 🛠️
+> Ouvrir ton store Shopify comme un vrai client et te dire ce qui est cassé.
 > Le Pro gratuit tourne jusqu'au 7 juin. Installe, scanne, regarde ton score.
-> Les tests navigateur à eux seuls chopent des trucs qu'aucun PDF d'audit ne verra.
+> Les tests navigateur à eux seuls chopent ce qu'aucun PDF d'audit ne verra.
 
 ---
 
@@ -121,11 +133,13 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 **TEXTE :**
 ```
-I shipped StoreMD, and the free Pro window closes June 7. If you run a Shopify store, install it this week and let it scan everything for free.
+The free Pro window on StoreMD closes June 7 ⏳
 
-It catches the apps still billing you months after you uninstalled them, and the dead code they leave in your theme.
+Install on Shopify this week and let it scan your whole store for free.
 
-I'd rather you find that now than next quarter.
+It catches apps still billing you after uninstall, and the dead code they leave behind.
+
+Better to know now than next quarter.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -140,9 +154,10 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> J'ai shippé StoreMD, et la fenêtre Pro gratuite ferme le 7 juin. Si tu gères un store Shopify, installe-le cette semaine et laisse-le tout scanner gratuitement.
-> Il chope les apps qui te facturent encore des mois après désinstallation, et le code mort laissé dans ton thème.
-> Je préfère que tu trouves ça maintenant plutôt que le trimestre prochain.
+> La fenêtre Pro gratuite sur StoreMD ferme le 7 juin ⏳
+> Installe sur Shopify cette semaine et laisse-le scanner tout ton store gratuitement.
+> Il chope les apps qui te facturent encore après désinstallation, et le code mort laissé derrière.
+> Mieux vaut savoir maintenant que le trimestre prochain.
 
 ---
 
@@ -152,11 +167,15 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 **TEXTE :**
 ```
-Free Pro on StoreMD ends June 7. Install on Shopify, scan your store's health in 60 seconds, no card.
+Free Pro on StoreMD ends June 7 ⏳
 
-Apps still billing after uninstall, dead code, broken listings: all found, all fixable.
+Install on Shopify and scan your store's health in 60 seconds. No card.
 
-Last week before the free window closes.
+Apps still billing after uninstall. Dead code. Broken listings.
+
+All found, all fixable.
+
+Last week before the window closes.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -171,8 +190,10 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> Le Pro gratuit sur StoreMD se termine le 7 juin. Installe sur Shopify, scanne la santé de ton store en 60 secondes, sans carte.
-> Apps qui facturent encore après désinstallation, code mort, listings cassés : tout est trouvé, tout est réparable.
+> Le Pro gratuit sur StoreMD se termine le 7 juin ⏳
+> Installe sur Shopify et scanne la santé de ton store en 60 secondes. Sans carte.
+> Apps qui facturent encore après désinstallation. Code mort. Listings cassés.
+> Tout est trouvé, tout est réparable.
 > Dernière semaine avant la fermeture.
 
 ---
@@ -184,11 +205,17 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 
 **TEXTE (caption identique TikTok) :**
 ```
-Free Pro on StoreMD ends June 7. Install on Shopify, run a full store health scan in 60 seconds, no card.
+Free Pro on StoreMD ends June 7 ⏳
 
-It finds the ghost charges, dead code and broken listings quietly costing you sales, then fixes them.
+Install on the Shopify App Store and scan your store's health in 60 seconds. No card.
 
-This is the last week before the free window closes. Free scan link in bio.
+It finds the ghost charges, dead code and broken listings quietly costing you sales.
+
+Then it fixes them.
+
+Last week before the free window closes.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set A — 5) :**
@@ -207,11 +234,17 @@ This is the last week before the free window closes. Free scan link in bio.
 
 **TEXTE (caption identique TikTok) :**
 ```
-Free Pro on StoreMD ends June 7. Install on Shopify, run a full store health scan in 60 seconds, no card.
+Free Pro on StoreMD ends June 7 ⏳
 
-It finds the ghost charges, dead code and broken listings quietly costing you sales, then fixes them.
+Install on the Shopify App Store and scan your store's health in 60 seconds. No card.
 
-This is the last week before the free window closes. Free scan link in bio.
+It finds the ghost charges, dead code and broken listings quietly costing you sales.
+
+Then it fixes them.
+
+Last week before the free window closes.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Facebook, Set A posts — 3) :**
