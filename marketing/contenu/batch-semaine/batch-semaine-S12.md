@@ -796,7 +796,245 @@ Free scan link in bio 👇
 
 # ═══ JEUDI 04/06 — PRODUIT : on répare en un clic ═══
 
-> ⏳ PLACEHOLDER — Bloc 4. Vidéo V1-09. 6 publications + LinkedIn R 18h00.
+> 7 publications. Vidéo V1-09. Hook : les autres trouvent les problèmes, StoreMD les répare en un clic. Hashtags Set A. Jeudi inclut LinkedIn R.
+
+---
+
+#### STOREMD-TK-S12-04 — StoreMD (@StoreMd_off) — TikTok — Jeu 04/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (source du jour)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+Most store audits hand you a PDF and walk away 🛠️
+
+StoreMD finds the issue, then fixes it. One click.
+
+Ghost code from a deleted app, a broken meta tag, a listing missing its alt text. Found and fixed.
+
+You approve, it ships the change.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (TikTok, Set A — 5) :**
+```
+#shopify #ecommercetips #shopifystore #smallbusinessowner #StoreMD
+```
+
+**TRADUCTION :**
+> La plupart des audits de store te filent un PDF et se barrent 🛠️
+> StoreMD trouve le problème, puis le répare. En un clic.
+> Code fantôme d'une app supprimée, meta tag cassé, listing sans texte alt. Trouvé et réparé.
+> Tu approuves, il applique le changement.
+> Lien free scan en bio 👇
+
+---
+
+#### STOREMD-TW-F-S12-04 — Fabrice (@FabGangi) — Twitter — Jeu 04/06 13h00
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Every audit tool I tried did the same thing: here's your list of problems, good luck 🛠️
+
+I built StoreMD to fix them instead.
+
+It finds the broken thing, you approve, it ships the fix.
+
+No dev ticket, no waiting.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Chaque outil d'audit que j'ai essayé faisait pareil : voilà ta liste de problèmes, bonne chance 🛠️
+> J'ai construit StoreMD pour les réparer à la place.
+> Il trouve ce qui est cassé, tu approuves, il applique la correction.
+> Pas de ticket dev, pas d'attente.
+
+---
+
+#### STOREMD-TW-R-S12-04 — Romain (@delgado_ro72224) — Twitter — Jeu 04/06 14h00
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Finding problems is easy. Fixing them is the work 🛠️
+
+StoreMD does both. It scans your Shopify store, finds what's broken, and fixes it in one click once you approve.
+
+Ghost code, broken tags, bad listings. Gone.
+
+Free scan if you want to see yours.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Trouver les problèmes c'est facile. Les réparer, c'est le boulot 🛠️
+> StoreMD fait les deux. Il scanne ton store Shopify, trouve ce qui est cassé, et le répare en un clic une fois que tu approuves.
+> Code fantôme, tags cassés, listings pourris. Disparus.
+> Scan gratuit si tu veux voir le tien.
+
+---
+
+#### STOREMD-TW-SM-S12-04 — StoreMD (@StoreMd_off) — Twitter — Jeu 04/06 15h00
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+StoreMD doesn't just find what's broken in your store 🛠️
+
+It fixes it. One click, once you approve.
+
+Ghost code from deleted apps, broken meta tags, listings missing data. Found, then fixed.
+
+No dev ticket needed.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> StoreMD ne se contente pas de trouver ce qui est cassé dans ton store 🛠️
+> Il le répare. En un clic, une fois que tu approuves.
+> Code fantôme d'apps supprimées, meta tags cassés, listings sans données. Trouvé, puis réparé.
+> Pas besoin de ticket dev.
+
+---
+
+#### STOREMD-LI-R-S12-04 — Romain Delgado — LinkedIn — Jeu 04/06 18h00
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+The store audit industry has a quiet problem.
+
+Every tool finds issues. Almost none of them fix anything 🛠️
+
+You pay for a scan, you get a PDF full of red flags, and the actual work lands back on you or your dev.
+
+I built StoreMD to close that gap.
+
+It scans your Shopify store in 60 seconds and finds what's costing you sales: ghost code from apps you deleted, broken meta tags, listings missing data, products invisible to AI assistants.
+
+Then it fixes them. One click, once you approve the change.
+
+No dev ticket. No waiting two weeks for a freelancer.
+
+You see the problem and the fix in the same place, and you decide.
+
+Run a free scan and see what it finds in yours 👇
+```
+
+**COMMENTAIRE (1er, à poster après publication) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
+```
+
+**TRADUCTION :**
+> L'industrie de l'audit de store a un problème discret.
+> Chaque outil trouve des problèmes. Presque aucun n'en répare 🛠️
+> Tu paies un scan, tu reçois un PDF plein d'alertes rouges, et le vrai boulot retombe sur toi ou ton dev.
+> J'ai construit StoreMD pour combler ce trou.
+> Il scanne ton store Shopify en 60 secondes et trouve ce qui te coûte des ventes : code fantôme d'apps supprimées, meta tags cassés, listings sans données, produits invisibles aux assistants IA.
+> Puis il les répare. En un clic, une fois que tu approuves le changement.
+> Pas de ticket dev. Pas deux semaines d'attente pour un freelance.
+> Tu vois le problème et la correction au même endroit, et tu décides.
+> Lance un scan gratuit et vois ce qu'il trouve chez toi 👇
+
+---
+
+#### STOREMD-IG-S12-04 — StoreMD — Instagram — Jeu 04/06 18h00
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+Most store audits hand you a PDF and walk away 🛠️
+
+StoreMD finds the issue, then fixes it. One click.
+
+Ghost code from a deleted app, a broken meta tag, a listing missing its alt text. Found and fixed.
+
+You approve, it ships the change.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Instagram, Set A — 5) :**
+```
+#shopifystore #ecommercetips #smallbusinessowner #shopifytips #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### STOREMD-FB-S12-04 — StoreMD — Facebook — Jeu 04/06 18h30
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+Most store audits hand you a PDF and walk away 🛠️
+
+StoreMD finds the issue, then fixes it. One click.
+
+Ghost code from a deleted app, a broken meta tag, a listing missing its alt text. Found and fixed.
+
+You approve, it ships the change.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopify #ecommerce #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 ---
