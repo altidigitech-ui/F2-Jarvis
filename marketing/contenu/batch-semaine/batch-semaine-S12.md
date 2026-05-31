@@ -1283,7 +1283,94 @@ Free scan link in bio 👇
 
 # ═══ SAMEDI 06/06 — PRODUIT : preuve, vrai scan ═══
 
-> ⏳ PLACEHOLDER — Bloc 6. Vidéo V1-13. 3 publications (TK ancre, IG, FB).
+> 3 publications (week-end : TK ancre, IG, FB). Vidéo V1-13. Hook : un vrai scan de bout en bout, preuve. Hashtags Set C.
+
+---
+
+#### STOREMD-TK-S12-06 — StoreMD (@StoreMd_off) — TikTok — Sam 06/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-13_real_scan.mp4` (source du jour)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+This is a real StoreMD scan, start to finish 🔍
+
+You connect your Shopify store, it runs for about 60 seconds, and you get a score.
+
+Then a list of what's broken, ranked, with the fix for each one.
+
+No PDF, no waiting. Just what's wrong and how to fix it.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (TikTok, Set C — 5) :**
+```
+#shopifybusiness #packingorders #shopifyseller #entrepreneur #StoreMD
+```
+
+**TRADUCTION :**
+> Voici un vrai scan StoreMD, du début à la fin 🔍
+> Tu connectes ton store Shopify, il tourne environ 60 secondes, et tu obtiens un score.
+> Puis une liste de ce qui est cassé, classée, avec la correction pour chaque point.
+> Pas de PDF, pas d'attente. Juste ce qui ne va pas et comment le réparer.
+> Lien free scan en bio 👇
+
+---
+
+#### STOREMD-IG-S12-06 — StoreMD — Instagram — Sam 06/06 18h00
+
+**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+This is a real StoreMD scan, start to finish 🔍
+
+You connect your Shopify store, it runs for about 60 seconds, and you get a score.
+
+Then a list of what's broken, ranked, with the fix for each one.
+
+No PDF, no waiting. Just what's wrong and how to fix it.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Instagram, Set C — 5) :**
+```
+#shopifyexperts #ecommercebusiness #shopifymarketing #smallbusiness #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### STOREMD-FB-S12-06 — StoreMD — Facebook — Sam 06/06 18h30
+
+**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+This is a real StoreMD scan, start to finish 🔍
+
+You connect your Shopify store, it runs for about 60 seconds, and you get a score.
+
+Then a list of what's broken, ranked, with the fix for each one.
+
+No PDF, no waiting. Just what's wrong and how to fix it.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopify #ecommerce #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 ---
