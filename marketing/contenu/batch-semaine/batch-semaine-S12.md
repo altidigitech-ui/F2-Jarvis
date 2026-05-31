@@ -523,7 +523,273 @@ Free scan link in bio 👇
 
 # ═══ MERCREDI 03/06 — OFFRE : les chiffres / économie annuel ═══
 
-> ⏳ PLACEHOLDER — Bloc 3. Vidéo V1-30. 6 publications + LinkedIn F 18h00 + IH FoundryTwo 15h00.
+> 8 publications. Vidéo V1-30. Hook : prix en clair, économie annuel, prix figé d'ici le 22/06. Hashtags Set C. Mercredi inclut LinkedIn F + IH FoundryTwo.
+
+---
+
+#### STOREMD-TK-S12-03 — StoreMD (@StoreMd_off) — TikTok — Mer 03/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-30_the_numbers.mp4` (source du jour)
+**Lien Install :** `apps.shopify.com/storemd-1`
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption native — source IG + FB) :**
+```
+StoreMD pricing, in plain numbers 💰
+
+Starter $29/mo. Pro $79/mo. Agency $199/mo.
+
+Pay yearly and you get 2 months free. Pro drops to $65.83/mo, $158 saved a year.
+
+Lock that price for life if you subscribe by June 22.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (TikTok, Set C — 5) :**
+```
+#shopifybusiness #packingorders #shopifyseller #entrepreneur #StoreMD
+```
+
+**TRADUCTION :**
+> Le pricing StoreMD, en chiffres clairs 💰
+> Starter 29$/mo. Pro 79$/mo. Agency 199$/mo.
+> Paie à l'année et tu as 2 mois offerts. Pro tombe à 65,83$/mo, 158$ économisés par an.
+> Bloque ce prix à vie si tu t'abonnes avant le 22 juin.
+> Lien free scan en bio 👇
+
+---
+
+#### STOREMD-TW-F-S12-03 — Fabrice (@FabGangi) — Twitter — Mer 03/06 13h00
+
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+The StoreMD numbers, straight up 💰
+
+Pro is $79/mo, or $790/year with 2 months free. Works out to $65.83/mo, $158 saved a year.
+
+Lock that rate for life before June 22.
+
+Cheapest it'll ever be.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Les chiffres StoreMD, cash 💰
+> Pro c'est 79$/mo, ou 790$/an avec 2 mois offerts. Ça fait 65,83$/mo, 158$ économisés par an.
+> Bloque ce tarif à vie avant le 22 juin.
+> Le moins cher que ce sera jamais.
+
+---
+
+#### STOREMD-TW-R-S12-03 — Romain (@delgado_ro72224) — Twitter — Mer 03/06 14h00
+
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Quick math on StoreMD Pro 💰
+
+$79/mo, or $790 a year with 2 months free. That's $65.83/mo and $158 saved over the year.
+
+Subscribe by June 22 and that price is locked for life.
+
+I'd lock it now if I ran a store.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Petit calcul sur StoreMD Pro 💰
+> 79$/mo, ou 790$ par an avec 2 mois offerts. Ça fait 65,83$/mo et 158$ économisés sur l'année.
+> Abonne-toi avant le 22 juin et ce prix est bloqué à vie.
+> Je le bloquerais maintenant si je gérais un store.
+
+---
+
+#### STOREMD-TW-SM-S12-03 — StoreMD (@StoreMd_off) — Twitter — Mer 03/06 15h00
+
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+StoreMD pricing, no fine print 💰
+
+Starter $29. Pro $79. Agency $199. Per month.
+
+Pay yearly, get 2 months free. Pro becomes $65.83/mo, $158 saved a year.
+
+Lock it for life if you subscribe by June 22.
+```
+
+**REPLY (mini-thread — 1 lien par reply) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+```
+
+**TRADUCTION :**
+> Le pricing StoreMD, sans petits caractères 💰
+> Starter 29$. Pro 79$. Agency 199$. Par mois.
+> Paie à l'année, 2 mois offerts. Pro devient 65,83$/mo, 158$ économisés par an.
+> Bloque-le à vie si tu t'abonnes avant le 22 juin.
+
+---
+
+#### STOREMD-LI-F-S12-03 — Fabrice Gangitano — LinkedIn — Mer 03/06 18h00
+
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
+
+**TEXTE :**
+```
+Founders ask me what StoreMD actually costs. Here are the plain numbers 💰
+
+Starter $29/mo.
+Pro $79/mo.
+Agency $199/mo.
+
+Pay yearly and you get 2 months free.
+
+Pro at $790 a year works out to $65.83/mo. That's $158 saved over twelve months.
+
+And if you subscribe before June 22, that price is locked for life. It doesn't move later.
+
+For $79/mo, StoreMD scans your whole Shopify store in 60 seconds, finds the apps still billing you after uninstall, the dead code, the broken listings, the AI readiness gaps, then fixes them.
+
+One agency audit costs more than a year of this.
+
+Free scan in the comments 👇
+```
+
+**COMMENTAIRE (1er, à poster après publication) :**
+
+**Lien 1 — Install :**
+```
+apps.shopify.com/storemd-1
+```
+**Lien 2 — Free scan :**
+```
+https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
+```
+
+**TRADUCTION :**
+> Les fondateurs me demandent ce que coûte vraiment StoreMD. Voici les chiffres clairs 💰
+> Starter 29$/mo.
+> Pro 79$/mo.
+> Agency 199$/mo.
+> Paie à l'année et tu as 2 mois offerts.
+> Pro à 790$ par an fait 65,83$/mo. C'est 158$ économisés sur douze mois.
+> Et si tu t'abonnes avant le 22 juin, ce prix est bloqué à vie. Il ne bouge pas plus tard.
+> Pour 79$/mo, StoreMD scanne tout ton store Shopify en 60 secondes, trouve les apps qui te facturent encore après désinstallation, le code mort, les listings cassés, les manques de compatibilité IA, puis les répare.
+> Un seul audit d'agence coûte plus qu'une année de ça.
+> Scan gratuit en commentaire 👇
+
+---
+
+#### STOREMD-IH-S12-03 — FoundryTwo — IndieHackers — Mer 03/06 15h00
+
+**Texte long-form transparent (voix F2 "we"), lien in-text :**
+```
+We launched StoreMD on the Shopify App Store, and the founding offer runs until June 22.
+
+The pricing is simple and public: Starter $29/mo, Pro $79/mo, Agency $199/mo. Pay yearly and you get 2 months free, so Pro lands at $65.83/mo, $158 saved a year.
+
+The part that matters for early users: subscribe before June 22 and your price is locked for life. It doesn't move as we ship more.
+
+Right now Pro is free for 14 days from install, no card. We'd rather you run a full scan and see what's broken in your store than take our word for it.
+
+StoreMD checks 43 things across store health, listings, AI readiness, compliance and real browser tests: ghost charges from uninstalled apps, dead code, broken listings, products invisible to AI assistants. It finds them, then fixes them.
+
+Free scan, no install needed: https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
+```
+
+**TRADUCTION :**
+> On a lancé StoreMD sur le Shopify App Store, et l'offre founding tourne jusqu'au 22 juin.
+> Le pricing est simple et public : Starter 29$/mo, Pro 79$/mo, Agency 199$/mo. Paie à l'année et tu as 2 mois offerts, donc Pro tombe à 65,83$/mo, 158$ économisés par an.
+> Ce qui compte pour les early users : abonne-toi avant le 22 juin et ton prix est bloqué à vie. Il ne bouge pas au fur et à mesure qu'on ship.
+> Là, Pro est gratuit 14 jours dès l'install, sans carte. On préfère que tu lances un scan complet et que tu voies ce qui est cassé dans ton store plutôt que de nous croire sur parole.
+> StoreMD vérifie 43 points sur la santé du store, les listings, la compatibilité IA, la conformité et des tests navigateur réels : charges fantômes d'apps désinstallées, code mort, listings cassés, produits invisibles aux assistants IA. Il les trouve, puis les répare.
+> Scan gratuit, sans install : https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
+
+---
+
+#### STOREMD-IG-S12-03 — StoreMD — Instagram — Mer 03/06 18h00
+
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
+**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+StoreMD pricing, in plain numbers 💰
+
+Starter $29/mo. Pro $79/mo. Agency $199/mo.
+
+Pay yearly and you get 2 months free. Pro drops to $65.83/mo, $158 saved a year.
+
+Lock that price for life if you subscribe by June 22.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Instagram, Set C — 5) :**
+```
+#shopifyexperts #ecommercebusiness #shopifymarketing #smallbusiness #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### STOREMD-FB-S12-03 — StoreMD — Facebook — Mer 03/06 18h30
+
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+StoreMD pricing, in plain numbers 💰
+
+Starter $29/mo. Pro $79/mo. Agency $199/mo.
+
+Pay yearly and you get 2 months free. Pro drops to $65.83/mo, $158 saved a year.
+
+Lock that price for life if you subscribe by June 22.
+
+Free scan link in bio 👇
+```
+
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopify #ecommerce #StoreMD
+```
+
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 ---
