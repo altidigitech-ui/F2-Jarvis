@@ -77,3 +77,66 @@
 | Territoire | Distribution |
 |------------|--------------|
 | 0 | 0 |
+
+---
+
+## Semaine 10 — du 18/05/2026 au 24/05/2026
+
+*Snapshot pris le 31/05/2026 (rattrapage). Source : export CSV Meta (Page Facebook), données journalières.*
+
+**Statistiques (jour par jour) :**
+
+| Date | Vues | Visites | Interactions | Spectateur(ice)s | Followers en plus | Clics sur un lien |
+|------|---|---|---|---|---|---|
+| 18/05/2026 | 19 | 0 | 0 | 3 | 0 | 0 |
+| 19/05/2026 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 20/05/2026 | 5 | 0 | 0 | 2 | 0 | 0 |
+| 21/05/2026 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 22/05/2026 | 25 | 4 | 1 | 1 | 0 | 0 |
+| 23/05/2026 | 1 | 0 | 0 | 1 | 0 | 0 |
+| 24/05/2026 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **Total** | **50** | **4** | **1** | **7** | **0** | **0** |
+
+---
+
+## Semaine 11 — du 25/05/2026 au 31/05/2026
+
+*Snapshot pris le 31/05/2026 (rattrapage). Source : export CSV Meta (Page Facebook), données journalières.*
+
+**Statistiques (jour par jour) :**
+
+| Date | Vues | Visites | Interactions | Spectateur(ice)s | Followers en plus | Clics sur un lien |
+|------|---|---|---|---|---|---|
+| 25/05/2026 | 5 | 0 | 0 | 1 | 0 | 0 |
+| 26/05/2026 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 27/05/2026 | 1 | 0 | 0 | 1 | 0 | 0 |
+| 28/05/2026 | 3 | 0 | 0 | 2 | 0 | 0 |
+| 29/05/2026 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 30/05/2026 | 1 | 0 | 0 | 1 | 0 | 0 |
+| 31/05/2026 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **Total** | **10** | **0** | **0** | **5** | **0** | **0** |
+
+**Compléments agrégés (source screenshots, agrégat 14 jours 17-30/05 — métriques non disponibles en CSV journalier) :**
+
+| Métrique | Valeur | Évolution vs 14 jours précédents |
+|----------|--------|----------------------------------|
+| Vues | 60 | -26% |
+| Vues de 3 secondes | 16 | 0% |
+| Vues de 1 minute | 0 | 0% |
+| Durée de vue | 4 min 34 s | +41% |
+
+**Vues par type de contenu (agrégat 17-30/05) :**
+
+| Type | Distribution |
+|------|--------------|
+| Reel | 95% |
+| Plusieurs photos | 1.7% |
+| Photo | 1.7% |
+| Autre | 1.7% |
+
+**Vues par followers vs non-followers (agrégat 17-30/05) :**
+
+| Catégorie | Distribution |
+|-----------|--------------|
+| Non-followers | 100% |
+| Followers | 0% |
