@@ -73,3 +73,45 @@
 | Top territories | Distribution |
 |-----------------|--------------|
 | 0 | 0 |
+
+---
+
+## Semaine 10 — du 17/05/2026 au 23/05/2026
+
+*Snapshot pris le 31/05/2026 (rattrapage). Convention TikTok : décalage d'1 jour, dimanche 31/05 non encore agrégé.*
+
+**Overview (jour par jour) :**
+
+| Date | Video Views | Profile Views | Likes | Comments | Shares |
+|------|-------------|---------------|-------|----------|--------|
+| 17/05/2026 | 1 | 0 | 0 | 0 | 0 |
+| 18/05/2026 | 29 | 0 | 0 | 0 | 6 |
+| 19/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 20/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 21/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 22/05/2026 | 9 | 0 | 0 | 0 | 1 |
+| 23/05/2026 | 1 | 0 | 0 | 0 | 0 |
+| **Total** | **40** | **0** | **0** | **0** | **7** |
+
+*Onglets Content, FollowerHistory, Viewers, FollowerActivity, FollowerGender, FollowerTopTerritories : non fournis dans cet export (seul Overview transmis).*
+
+---
+
+## Semaine 11 — du 24/05/2026 au 30/05/2026
+
+*Snapshot pris le 31/05/2026 (rattrapage). Convention TikTok : décalage d'1 jour, dimanche 31/05 non encore agrégé.*
+
+**Overview (jour par jour) :**
+
+| Date | Video Views | Profile Views | Likes | Comments | Shares |
+|------|-------------|---------------|-------|----------|--------|
+| 24/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 25/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 26/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 27/05/2026 | 23 | 0 | 0 | 0 | 0 |
+| 28/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 29/05/2026 | 0 | 0 | 0 | 0 | 0 |
+| 30/05/2026 | 0 | 1 | 0 | 0 | 0 |
+| **Total** | **23** | **1** | **0** | **0** | **0** |
+
+*Onglets Content, FollowerHistory, Viewers, FollowerActivity, FollowerGender, FollowerTopTerritories : non fournis dans cet export (seul Overview transmis).*
