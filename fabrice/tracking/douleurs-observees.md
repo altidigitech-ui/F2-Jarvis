@@ -38,6 +38,11 @@
 | 31 | 17/04 | r/shopify | "EU company selling US, banks flag charges, losing orders silently" (6 upvotes, 15 comments) | Conversion invisible | Fort — StoreMD angle |
 | 32 | 17/04 | r/shopify | "Orders from ChatGPT channel — anyone received one?" (11 upvotes) | Nouveau canal | Moyen |
 | 33 | 17/04 | r/shopify | "Buy with Shop button forces app registration" (5 upvotes) | Checkout / conversion | Moyen |
+| 34 | 01/06 | r/shopify | "Live View tons of visitors, 0 carts, bots? hurting my CVR?" (9 upvotes, 22 comments) — spike Washington/Ohio/China datacenters | Bot traffic / monitoring | Fort — StoreMD Bot Filter |
+| 35 | 01/06 | r/shopify | "AI-generated links could turn product pages into new homepage" (10 upvotes, 11 comments) | Agentic / AI commerce | Fort — StoreMD Agentic Readiness |
+| 36 | 01/06 | r/shopify | "Anyone using Sidekick? wants to message-update catalog + weekly audits SEO/alt text/low-rotation" (12 upvotes, 44 comments) | Audits auto / listings | Fort — StoreMD Listings + Health |
+| 37 | 01/06 | r/shopify | "Store info scattered across product/FAQ/blog/shipping/returns pages" (2 upvotes, 8 comments) | Findability / listings | Moyen — StoreMD angle |
+| 38 | 01/06 | r/shopify | "T&C checkbox not enforced at checkout + Sezzle popup fires 3x" (3 upvotes, 17 comments) | Conflit d'app / checkout | Moyen — StoreMD App Impact |
 
 ## Facebook
 

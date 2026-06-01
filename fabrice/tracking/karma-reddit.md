@@ -13,3 +13,4 @@
 | J10 | 15/04 | ___ | +___ | Reprise terrain. 1 commentaire posté r/AskReddit avec nouvelles règles anti-IA. |
 | J12 | 17/04 | 3 | +0 | 4 commentaires r/AskReddit (posts frais <10 min). Stratégie "New" lancée. |
 | J13 | 18/04 | 23 | +20 | Stratégie "New" payante. 3 AskReddit + 1er commentaire r/ecommerce (MILESTONE). |
+| J57 | 01/06 | ___ | +___ | 5 commentaires r/shopify : 3 avec mention app soft (bots / AI readiness / audits listings) + 2 pure valeur (findability, conflit app). Espacés sur la journée. Vérifier karma demain. |
