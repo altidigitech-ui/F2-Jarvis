@@ -12,7 +12,7 @@
 
 | # | Fichier | Titre | Durée | Description | Quand l'utiliser | Statut |
 |---|---------|-------|-------|-------------|-----------------|--------|
-| V1-01 | `V1-01_43features_domination.mp4` | "43 Features. One App. Nobody Comes Close." | 22s | Hook chiffre 43 en arme, défilé 5 modules avec compteur, kill shot "We studied every competitor" | Post domination produit, chiffre 43 en arme, supériorité globale | ✅ |
+| V1-01 | `V1-01_43features_domination.mp4` | "43 Features. One App. Nobody Comes Close." | 16s | Kinetic typography fond noir, hook "43 features · 5 modules · 1 agent", défilé modules avec badges EXCL (AI Commerce + Browser Auto), recap table 5 modules, kill shot "studied every competitor, built 4 they can't copy" | Post domination produit, chiffre 43 en arme, supériorité globale | ✅ |
 | V1-02 | `V1-02_reverse_engineered.mp4` | "We Scraped Every Competitor" | 20s | Origin story, tableau comparatif 5 concurrents avec failles en rouge, 4 badges exclusifs | Post origin story, crédibilité research, pourquoi StoreMD existe | ✅ |
 | V1-03 | `V1-03_4features_exclusives.mp4` | "4 Features Nobody Has" | 22s | AI Commerce Scanner avec gauge, Visual Store Test, Real User Simulation, Live Accessibility Test | Post exclusivités, AI readiness, browser automation, FOMO concurrence | ✅ |
 | V1-04 | `V1-04_agent_vs_report.mp4` | "We Don't Send Reports. We Fix Your Store." | 18s | Split screen them vs us, notifications PDF à gauche, fixes en cascade à droite | Post agent vs audit, USP, split comparison them/us | ✅ |
