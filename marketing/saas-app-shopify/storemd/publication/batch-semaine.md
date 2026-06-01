@@ -1,17 +1,17 @@
-# BATCH PUBLICATION — Comptes StoreMD — S11
+# BATCH PUBLICATION — Comptes StoreMD — S12
 
 > Comptes : StoreMD (TikTok + Twitter @StoreMd_off + Instagram + Facebook + IH FoundryTwo)
-> Source : `marketing/contenu/batch-semaine/batch-semaine-S11.md` (batch central)
+> Source : `marketing/contenu/batch-semaine/batch-semaine-S12.md` (batch central)
 > Périmètre : posts des comptes StoreMD uniquement (toutes plateformes du studio sauf perso R/F)
 > Ne JAMAIS rédiger ici. Toute modification se fait dans le batch central puis re-dispatch.
 
 ---
 
-# ═══ LUNDI 25/05 — OFFRE : lancement (14 jours de Pro gratuits) ═══
-
 ---
 
-#### STOREMD-TK-S11-01 — StoreMD (@StoreMd_off) — TikTok — Lun 25/05 14h00 — ⚓ ANCRE DU JOUR
+# ═══ LUNDI 01/06 — OFFRE : dernière semaine de Pro gratuit ═══
+
+#### STOREMD-TK-S12-01 — StoreMD (@StoreMd_off) — TikTok — Lun 01/06 14h00 — ⚓ ANCRE DU JOUR
 
 **Vidéo :** `V1-28_14_days_pro_free.mp4` (source du jour)
 **Lien Install :** `apps.shopify.com/storemd-1`
@@ -19,39 +19,49 @@
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-The StoreMD launch offer is here 🚀
+Free Pro on StoreMD ends June 7 ⏳
 
-Install on the Shopify App Store and get 14 days of Pro, free. No card, no commitment.
+Install on the Shopify App Store and scan your store's health in 60 seconds. No card.
 
-Daily scans, 3 stores, bulk fixes, real browsing tests, AI bot tracking. You see everything Pro does before you decide.
+It finds the ghost charges, dead code and broken listings quietly costing you sales.
 
-After 14 days, keep Pro or move to Free.
+Then it fixes them.
+
+Last week before the free window closes.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set A — 5) :**
 ```
-#shopify #shopifystore #shopifyapps #ecommercetips #StoreMD
+#shopify #ecommercetips #shopifystore #smallbusinessowner #StoreMD
 ```
 
 **TRADUCTION :**
-> L'offre de lancement StoreMD est là 🚀
-> Installe sur le Shopify App Store et obtiens 14 jours de Pro, gratuits. Sans carte, sans engagement.
-> Scans quotidiens, 3 boutiques, corrections en masse, tests de navigation réelle, suivi des robots IA. Tu vois tout ce que fait Pro avant de décider.
-> Après 14 jours, tu gardes Pro ou tu passes sur Free.
+> Le Pro gratuit sur StoreMD se termine le 7 juin ⏳
+> Installe sur le Shopify App Store et scanne la santé de ton store en 60 secondes. Sans carte.
+> Il trouve les charges fantômes, le code mort et les listings cassés qui te coûtent des ventes en silence.
+> Puis il les répare.
+> Dernière semaine avant la fermeture de la fenêtre gratuite.
+> Lien free scan en bio 👇
 
 ---
 
-#### STOREMD-TW-SM-S11-01 — StoreMD (@StoreMd_off) — Twitter — Lun 25/05 15h00
+#### STOREMD-TW-SM-S12-01 — StoreMD (@StoreMd_off) — Twitter — Lun 01/06 15h00
 
 **Vidéo :** `V1-28_14_days_pro_free.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-The launch offer is here.
+Free Pro on StoreMD ends June 7 ⏳
 
-Install StoreMD on the Shopify App Store: 14 days of Pro, free. No card.
+Install on Shopify and scan your store's health in 60 seconds. No card.
 
-Daily scans, bulk fixes, browsing tests, AI bot tracking. Everything Pro, before you decide.
+Apps still billing after uninstall. Dead code. Broken listings.
+
+All found, all fixable.
+
+Last week before the window closes.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -66,76 +76,75 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> L'offre de lancement est là.
-> Installe StoreMD sur le Shopify App Store : 14 jours de Pro, gratuits. Sans carte.
-> Scans quotidiens, corrections en masse, tests de navigation, suivi des robots IA. Tout Pro, avant de décider.
+> Le Pro gratuit sur StoreMD se termine le 7 juin ⏳
+> Installe sur Shopify et scanne la santé de ton store en 60 secondes. Sans carte.
+> Apps qui facturent encore après désinstallation. Code mort. Listings cassés.
+> Tout est trouvé, tout est réparable.
+> Dernière semaine avant la fermeture.
 
 ---
 
-#### STOREMD-IG-S11-01 — StoreMD — Instagram — Lun 25/05 18h00
+#### STOREMD-IG-S12-01 — StoreMD — Instagram — Lun 01/06 18h00
 
-**Vidéo :** `V1-28_14_days_pro_free.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
-**Lien Install :** `apps.shopify.com/storemd-1`
+**Vidéo :** `V1-28_14_days_pro_free.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-The StoreMD launch offer is here 🚀
+Free Pro on StoreMD ends June 7 ⏳
 
-Install on the Shopify App Store and get 14 days of Pro, free. No card, no commitment.
+Install on the Shopify App Store and scan your store's health in 60 seconds. No card.
 
-Daily scans, 3 stores, bulk fixes, real browsing tests, AI bot tracking. You see everything Pro does before you decide.
+It finds the ghost charges, dead code and broken listings quietly costing you sales.
 
-After 14 days, keep Pro or move to Free.
+Then it fixes them.
+
+Last week before the free window closes.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set A — 5) :**
 ```
-#shopifystore #ecommercetips #smallbusinessowner #shopifyapps #StoreMD
+#shopifystore #ecommercetips #smallbusinessowner #shopifytips #StoreMD
 ```
 
-**TRADUCTION :**
-> L'offre de lancement StoreMD est là 🚀
-> Installe sur le Shopify App Store et obtiens 14 jours de Pro, gratuits. Sans carte, sans engagement.
-> Scans quotidiens, 3 boutiques, corrections en masse, tests de navigation réelle, suivi des robots IA. Tu vois tout ce que fait Pro avant de décider.
-> Après 14 jours, tu gardes Pro ou tu passes sur Free.
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S11-01 — StoreMD — Facebook — Lun 25/05 18h30
+#### STOREMD-FB-S12-01 — StoreMD — Facebook — Lun 01/06 18h30
 
-**Vidéo :** `V1-28_14_days_pro_free.mp4` (recyclé TikTok, re-export sans watermark)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-28_14_days_pro_free.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-The StoreMD launch offer is here 🚀
+Free Pro on StoreMD ends June 7 ⏳
 
-Install on the Shopify App Store and get 14 days of Pro, free. No card, no commitment.
+Install on the Shopify App Store and scan your store's health in 60 seconds. No card.
 
-Daily scans, 3 stores, bulk fixes, real browsing tests, AI bot tracking. You see everything Pro does before you decide.
+It finds the ghost charges, dead code and broken listings quietly costing you sales.
 
-After 14 days, keep Pro or move to Free.
+Then it fixes them.
+
+Last week before the free window closes.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Facebook, Set A posts — 3) :**
 ```
-#shopify #ecommerce #smallbusiness
+#shopify #ecommerce #StoreMD
 ```
 
-**TRADUCTION :**
-> L'offre de lancement StoreMD est là 🚀
-> Installe sur le Shopify App Store et obtiens 14 jours de Pro, gratuits. Sans carte, sans engagement.
-> Scans quotidiens, 3 boutiques, corrections en masse, tests de navigation réelle, suivi des robots IA. Tu vois tout ce que fait Pro avant de décider.
-> Après 14 jours, tu gardes Pro ou tu passes sur Free.
----
-
-# ═══ MARDI 26/05 — OFFRE : prix figé (founding user) ═══
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-TK-S11-02 — StoreMD (@StoreMd_off) — TikTok — Mar 26/05 14h00 — ⚓ ANCRE DU JOUR
+# ═══ MARDI 02/06 — OFFRE : prix figé à vie (founding user) ═══
+
+#### STOREMD-TK-S12-02 — StoreMD (@StoreMd_off) — TikTok — Mar 02/06 14h00 — ⚓ ANCRE DU JOUR
 
 **Vidéo :** `V1-29_lock_price_for_life.mp4` (source du jour)
 **Lien Install :** `apps.shopify.com/storemd-1`
@@ -143,39 +152,44 @@ After 14 days, keep Pro or move to Free.
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Install StoreMD now and lock your price for life 🔒
+Lock your StoreMD price for life 🔒
 
-Subscribe by June 22 and your plan price never moves again.
+Subscribe by June 22 and the price you pay never moves again.
 
-Free Pro runs until June 7. The price lock stays open until June 22. After that, the launch offer is gone.
+Install on Shopify, run your 14 days of Pro free, then decide.
 
-Install once, lock your price, keep it forever.
+After June 22 the founding rate is gone.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set B — 5) :**
 ```
-#shopifytips #onlinebusiness #ecommerce #shopifyapps #StoreMD
+#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #StoreMD
 ```
 
 **TRADUCTION :**
-> Installe StoreMD maintenant et bloque ton prix à vie 🔒
-> Abonne-toi d'ici le 22 juin et le prix de ton plan ne bouge plus jamais.
-> Le Pro gratuit dure jusqu'au 7 juin. Le verrouillage du prix reste ouvert jusqu'au 22 juin. Après ça, l'offre de lancement disparaît.
-> Installe une fois, verrouille ton prix, garde-le pour toujours.
+> Bloque ton prix StoreMD à vie 🔒
+> Abonne-toi avant le 22 juin et le prix que tu paies ne bouge plus jamais.
+> Installe sur Shopify, fais tes 14 jours de Pro gratuits, puis décide.
+> Après le 22 juin, le tarif founding disparaît.
+> Lien free scan en bio 👇
 
 ---
 
-#### STOREMD-TW-SM-S11-02 — StoreMD (@StoreMd_off) — Twitter — Mar 26/05 15h00
+#### STOREMD-TW-SM-S12-02 — StoreMD (@StoreMd_off) — Twitter — Mar 02/06 15h00
 
 **Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Founding user offer: lock your price for life.
+Lock your StoreMD price for life 🔒
 
-Install StoreMD, subscribe by June 22, and your plan price never changes again.
+Subscribe by June 22 and what you pay never moves again.
 
-Free Pro until June 7. Lock your price any time by June 22.
+Install on Shopify, start 14 days of Pro free, then decide.
+
+The founding rate won't come back.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -190,27 +204,29 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> Offre founding user : bloque ton prix à vie.
-> Installe StoreMD, abonne-toi d'ici le 22 juin, et le prix de ton plan ne change plus jamais.
-> Pro gratuit jusqu'au 7 juin. Verrouille ton prix d'ici le 22 juin.
+> Bloque ton prix StoreMD à vie 🔒
+> Abonne-toi avant le 22 juin et ce que tu paies ne bouge plus.
+> Installe sur Shopify, démarre 14 jours de Pro gratuits, puis décide.
+> Le tarif founding ne reviendra pas.
 
 ---
 
-#### STOREMD-IG-S11-02 — StoreMD — Instagram — Mar 26/05 18h00
+#### STOREMD-IG-S12-02 — StoreMD — Instagram — Mar 02/06 18h00
 
-**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
-**Lien Install :** `apps.shopify.com/storemd-1`
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Install StoreMD now and lock your price for life 🔒
+Lock your StoreMD price for life 🔒
 
-Subscribe by June 22 and your plan price never moves again.
+Subscribe by June 22 and the price you pay never moves again.
 
-Free Pro runs until June 7. The price lock stays open until June 22. After that, the launch offer is gone.
+Install on Shopify, run your 14 days of Pro free, then decide.
 
-Install once, lock your price, keep it forever.
+After June 22 the founding rate is gone.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set B — 5) :**
@@ -218,48 +234,40 @@ Install once, lock your price, keep it forever.
 #shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
 ```
 
-**TRADUCTION :**
-> Installe StoreMD maintenant et bloque ton prix à vie 🔒
-> Abonne-toi d'ici le 22 juin et le prix de ton plan ne bouge plus jamais.
-> Le Pro gratuit dure jusqu'au 7 juin. Le verrouillage du prix reste ouvert jusqu'au 22 juin. Après ça, l'offre de lancement disparaît.
-> Installe une fois, verrouille ton prix, garde-le pour toujours.
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S11-02 — StoreMD — Facebook — Mar 26/05 18h30
+#### STOREMD-FB-S12-02 — StoreMD — Facebook — Mar 02/06 18h30
 
-**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Install StoreMD now and lock your price for life 🔒
+Lock your StoreMD price for life 🔒
 
-Subscribe by June 22 and your plan price never moves again.
+Subscribe by June 22 and the price you pay never moves again.
 
-Free Pro runs until June 7. The price lock stays open until June 22. After that, the launch offer is gone.
+Install on Shopify, run your 14 days of Pro free, then decide.
 
-Install once, lock your price, keep it forever.
+After June 22 the founding rate is gone.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Facebook, Set B posts — 3) :**
 ```
-#shopifystore #onlinebusiness #ecommercetips
+#shopifystore #onlinebusiness #StoreMD
 ```
 
-**TRADUCTION :**
-> Installe StoreMD maintenant et bloque ton prix à vie 🔒
-> Abonne-toi d'ici le 22 juin et le prix de ton plan ne bouge plus jamais.
-> Le Pro gratuit dure jusqu'au 7 juin. Le verrouillage du prix reste ouvert jusqu'au 22 juin. Après ça, l'offre de lancement disparaît.
-> Installe une fois, verrouille ton prix, garde-le pour toujours.
----
-
-# ═══ MERCREDI 27/05 — OFFRE : chiffres / économie annuel ═══
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-TK-S11-03 — StoreMD (@StoreMd_off) — TikTok — Mer 27/05 14h00 — ⚓ ANCRE DU JOUR
+# ═══ MERCREDI 03/06 — OFFRE : les chiffres / économie annuel ═══
+
+#### STOREMD-TK-S12-03 — StoreMD (@StoreMd_off) — TikTok — Mer 03/06 14h00 — ⚓ ANCRE DU JOUR
 
 **Vidéo :** `V1-30_the_numbers.mp4` (source du jour)
 **Lien Install :** `apps.shopify.com/storemd-1`
@@ -271,35 +279,40 @@ StoreMD pricing, in plain numbers 💰
 
 Starter $29/mo. Pro $79/mo. Agency $199/mo.
 
-Pay yearly and you get 2 months free. Pro drops to $790 a year, that's $65.83 a month. You save $158 a year.
+Pay yearly and you get 2 months free. Pro drops to $65.83/mo, $158 saved a year.
 
 Lock that price for life if you subscribe by June 22.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set C — 5) :**
 ```
-#shopify #shopifystore #shopifyseller #ecommerce #StoreMD
+#shopifybusiness #packingorders #shopifyseller #entrepreneur #StoreMD
 ```
 
 **TRADUCTION :**
 > Le pricing StoreMD, en chiffres clairs 💰
-> Starter 29$/mois. Pro 79$/mois. Agency 199$/mois.
-> Paye à l'année et tu as 2 mois offerts. Pro descend à 790$/an, soit 65,83$/mois. Tu économises 158$/an.
-> Bloque ce prix à vie si tu t'abonnes d'ici le 22 juin.
+> Starter 29$/mo. Pro 79$/mo. Agency 199$/mo.
+> Paie à l'année et tu as 2 mois offerts. Pro tombe à 65,83$/mo, 158$ économisés par an.
+> Bloque ce prix à vie si tu t'abonnes avant le 22 juin.
+> Lien free scan en bio 👇
 
 ---
 
-#### STOREMD-TW-SM-S11-03 — StoreMD (@StoreMd_off) — Twitter — Mer 27/05 15h00
+#### STOREMD-TW-SM-S12-03 — StoreMD (@StoreMd_off) — Twitter — Mer 03/06 15h00
 
 **Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-StoreMD plans: Starter $29, Pro $79, Agency $199 a month.
+StoreMD pricing, no fine print 💰
 
-Pay yearly, get 2 months free. Pro is $790/year, $65.83/mo, save $158.
+Starter $29. Pro $79. Agency $199. Per month.
 
-Lock your price for life if you subscribe by June 22.
+Pay yearly, get 2 months free. Pro becomes $65.83/mo, $158 saved a year.
+
+Lock it for life if you subscribe by June 22.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -314,149 +327,142 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> Plans StoreMD : Starter 29$, Pro 79$, Agency 199$ par mois.
-> Paye à l'année, 2 mois offerts. Pro à 790$/an, 65,83$/mois, économise 158$.
-> Bloque ton prix à vie si tu t'abonnes d'ici le 22 juin.
+> Le pricing StoreMD, sans petits caractères 💰
+> Starter 29$. Pro 79$. Agency 199$. Par mois.
+> Paie à l'année, 2 mois offerts. Pro devient 65,83$/mo, 158$ économisés par an.
+> Bloque-le à vie si tu t'abonnes avant le 22 juin.
 
 ---
 
-#### STOREMD-IH-S11-03 — FoundryTwo — Indie Hackers — Mer 27/05 15h00
+#### STOREMD-IH-S12-03 — FoundryTwo — IndieHackers — Mer 03/06 15h00
 
-**Format :** long-form, voix FoundryTwo (studio dev), transparent. Pas de vidéo (screenshot pricing optionnel).
-
-**TEXTE :**
+**Texte long-form transparent (voix F2 "we"), lien in-text :**
 ```
-A few people asked how StoreMD is priced, so here it is in full.
+We launched StoreMD on the Shopify App Store, and the founding offer runs until June 22.
 
-Three paid plans: Starter at $29/mo, Pro at $79/mo, Agency at $199/mo. There's also a free plan with your store health score and 3 scans a day.
+The pricing is simple and public: Starter $29/mo, Pro $79/mo, Agency $199/mo. Pay yearly and you get 2 months free, so Pro lands at $65.83/mo, $158 saved a year.
 
-Pay yearly and you get 2 months free. Pro works out to $790 a year, which is $65.83 a month. That's $158 saved over paying monthly.
+The part that matters for early users: subscribe before June 22 and your price is locked for life. It doesn't move as we ship more.
 
-One thing we added for early users: subscribe by June 22 and your price is locked for life. It never moves again.
+Right now Pro is free for 14 days from install, no card. We'd rather you run a full scan and see what's broken in your store than take our word for it.
 
-Every plan starts with 14 days of Pro, free, no card. So you can run the full thing before you pay anything.
+StoreMD checks 43 things across store health, listings, AI readiness, compliance and real browser tests: ghost charges from uninstalled apps, dead code, broken listings, products invisible to AI assistants. It finds them, then fixes them.
+
+Free scan, no install needed: https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
 ```
 
-**LIENS (in-text, 2) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
-```
+**TRADUCTION :**
+> On a lancé StoreMD sur le Shopify App Store, et l'offre founding tourne jusqu'au 22 juin.
+> Le pricing est simple et public : Starter 29$/mo, Pro 79$/mo, Agency 199$/mo. Paie à l'année et tu as 2 mois offerts, donc Pro tombe à 65,83$/mo, 158$ économisés par an.
+> Ce qui compte pour les early users : abonne-toi avant le 22 juin et ton prix est bloqué à vie. Il ne bouge pas au fur et à mesure qu'on ship.
+> Là, Pro est gratuit 14 jours dès l'install, sans carte. On préfère que tu lances un scan complet et que tu voies ce qui est cassé dans ton store plutôt que de nous croire sur parole.
+> StoreMD vérifie 43 points sur la santé du store, les listings, la compatibilité IA, la conformité et des tests navigateur réels : charges fantômes d'apps désinstallées, code mort, listings cassés, produits invisibles aux assistants IA. Il les trouve, puis les répare.
+> Scan gratuit, sans install : https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
 
 ---
 
-#### STOREMD-IG-S11-03 — StoreMD — Instagram — Mer 27/05 18h00
+#### STOREMD-IG-S12-03 — StoreMD — Instagram — Mer 03/06 18h00
 
-**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
-**Lien Install :** `apps.shopify.com/storemd-1`
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
 StoreMD pricing, in plain numbers 💰
 
 Starter $29/mo. Pro $79/mo. Agency $199/mo.
 
-Pay yearly and you get 2 months free. Pro drops to $790 a year, that's $65.83 a month. You save $158 a year.
+Pay yearly and you get 2 months free. Pro drops to $65.83/mo, $158 saved a year.
 
 Lock that price for life if you subscribe by June 22.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set C — 5) :**
 ```
-#shopifyexperts #ecommercebusiness #shopifymarketing #shopifyapps #StoreMD
+#shopifyexperts #ecommercebusiness #shopifymarketing #smallbusiness #StoreMD
 ```
 
-**TRADUCTION :**
-> Le pricing StoreMD, en chiffres clairs 💰
-> Starter 29$/mois. Pro 79$/mois. Agency 199$/mois.
-> Paye à l'année et tu as 2 mois offerts. Pro descend à 790$/an, soit 65,83$/mois. Tu économises 158$/an.
-> Bloque ce prix à vie si tu t'abonnes d'ici le 22 juin.
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S11-03 — StoreMD — Facebook — Mer 27/05 18h30
+#### STOREMD-FB-S12-03 — StoreMD — Facebook — Mer 03/06 18h30
 
-**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
 StoreMD pricing, in plain numbers 💰
 
 Starter $29/mo. Pro $79/mo. Agency $199/mo.
 
-Pay yearly and you get 2 months free. Pro drops to $790 a year, that's $65.83 a month. You save $158 a year.
+Pay yearly and you get 2 months free. Pro drops to $65.83/mo, $158 saved a year.
 
 Lock that price for life if you subscribe by June 22.
+
+Free scan link in bio 👇
 ```
 
-**HASHTAGS (Facebook, Set A posts — 3) :**
+**HASHTAGS (Facebook, posts — 3) :**
 ```
-#shopify #ecommerce #smallbusiness
+#shopify #ecommerce #StoreMD
 ```
 
-**TRADUCTION :**
-> Le pricing StoreMD, en chiffres clairs 💰
-> Starter 29$/mois. Pro 79$/mois. Agency 199$/mois.
-> Paye à l'année et tu as 2 mois offerts. Pro descend à 790$/an, soit 65,83$/mois. Tu économises 158$/an.
-> Bloque ce prix à vie si tu t'abonnes d'ici le 22 juin.
----
-
-# ═══ JEUDI 28/05 — PRODUIT : on répare, pas juste un rapport ═══
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-TK-S11-04 — StoreMD (@StoreMd_off) — TikTok — Jeu 28/05 14h00 — ⚓ ANCRE DU JOUR
+# ═══ JEUDI 04/06 — PRODUIT : on répare en un clic ═══
 
-**Vidéo :** `V1-04_agent_vs_report.mp4` (source du jour — confirmer nom exact du fichier)
+#### STOREMD-TK-S12-04 — StoreMD (@StoreMd_off) — TikTok — Jeu 04/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-09_oneclick_fix.mp4` (source du jour)
 **Lien Install :** `apps.shopify.com/storemd-1`
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Most store audit tools hand you a report and walk away 📋
+Most store audits hand you a PDF and walk away 🛠️
 
-StoreMD finds the issue, ranks it by severity, and fixes it for you.
+StoreMD finds the issue, then fixes it. One click.
 
-Slow scripts, leftover code from old apps, broken SEO, security gaps. One click, or fix them in bulk.
+Ghost code from a deleted app, a broken meta tag, a listing missing its alt text. Found and fixed.
 
-Other tools leave you with a to-do list. StoreMD leaves you with a fixed store.
+You approve, it ships the change.
 
-Install on the Shopify App Store.
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set A — 5) :**
 ```
-#shopify #shopifystore #shopifyapps #ecommercetips #StoreMD
+#shopify #ecommercetips #shopifystore #smallbusinessowner #StoreMD
 ```
 
 **TRADUCTION :**
-> La plupart des outils d'audit te tendent un rapport et s'en vont 📋
-> StoreMD trouve le problème, le classe par sévérité, et le corrige pour toi.
-> Scripts lents, code résiduel de vieilles apps, SEO cassé, failles de sécurité. En un clic, ou corrige-les en masse.
-> Les autres outils te laissent une to-do list. StoreMD te laisse une boutique réparée.
-> Installe sur le Shopify App Store.
+> La plupart des audits de store te filent un PDF et se barrent 🛠️
+> StoreMD trouve le problème, puis le répare. En un clic.
+> Code fantôme d'une app supprimée, meta tag cassé, listing sans texte alt. Trouvé et réparé.
+> Tu approuves, il applique le changement.
+> Lien free scan en bio 👇
 
 ---
 
-#### STOREMD-TW-SM-S11-04 — StoreMD (@StoreMd_off) — Twitter — Jeu 28/05 15h00
+#### STOREMD-TW-SM-S12-04 — StoreMD (@StoreMd_off) — Twitter — Jeu 04/06 15h00
 
-**Vidéo :** `V1-04_agent_vs_report.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-StoreMD doesn't just audit your store. It fixes it.
+StoreMD doesn't just find what's broken in your store 🛠️
 
-Slow scripts, leftover app code, broken SEO, security gaps. Found, ranked by severity, fixed in one click or in bulk.
+It fixes it. One click, once you approve.
 
-Install it on the Shopify App Store.
+Ghost code from deleted apps, broken meta tags, listings missing data. Found, then fixed.
+
+No dev ticket needed.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -471,125 +477,115 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> StoreMD ne fait pas qu'auditer ta boutique. Il la répare.
-> Scripts lents, code résiduel d'apps, SEO cassé, failles de sécurité. Trouvés, classés par sévérité, corrigés en un clic ou en masse.
-> Installe-le sur le Shopify App Store.
+> StoreMD ne se contente pas de trouver ce qui est cassé dans ton store 🛠️
+> Il le répare. En un clic, une fois que tu approuves.
+> Code fantôme d'apps supprimées, meta tags cassés, listings sans données. Trouvé, puis réparé.
+> Pas besoin de ticket dev.
 
 ---
 
-#### STOREMD-IG-S11-04 — StoreMD — Instagram — Jeu 28/05 18h00
+#### STOREMD-IG-S12-04 — StoreMD — Instagram — Jeu 04/06 18h00
 
-**Vidéo :** `V1-04_agent_vs_report.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
-**Lien Install :** `apps.shopify.com/storemd-1`
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Most store audit tools hand you a report and walk away 📋
+Most store audits hand you a PDF and walk away 🛠️
 
-StoreMD finds the issue, ranks it by severity, and fixes it for you.
+StoreMD finds the issue, then fixes it. One click.
 
-Slow scripts, leftover code from old apps, broken SEO, security gaps. One click, or fix them in bulk.
+Ghost code from a deleted app, a broken meta tag, a listing missing its alt text. Found and fixed.
 
-Other tools leave you with a to-do list. StoreMD leaves you with a fixed store.
+You approve, it ships the change.
 
-Install on the Shopify App Store.
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set A — 5) :**
 ```
-#shopifystore #ecommercetips #smallbusinessowner #shopifyapps #StoreMD
+#shopifystore #ecommercetips #smallbusinessowner #shopifytips #StoreMD
 ```
 
-**TRADUCTION :**
-> La plupart des outils d'audit te tendent un rapport et s'en vont 📋
-> StoreMD trouve le problème, le classe par sévérité, et le corrige pour toi.
-> Scripts lents, code résiduel de vieilles apps, SEO cassé, failles de sécurité. En un clic, ou corrige-les en masse.
-> Les autres outils te laissent une to-do list. StoreMD te laisse une boutique réparée.
-> Installe sur le Shopify App Store.
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S11-04 — StoreMD — Facebook — Jeu 28/05 18h30
+#### STOREMD-FB-S12-04 — StoreMD — Facebook — Jeu 04/06 18h30
 
-**Vidéo :** `V1-04_agent_vs_report.mp4` (recyclé TikTok, re-export sans watermark)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Most store audit tools hand you a report and walk away 📋
+Most store audits hand you a PDF and walk away 🛠️
 
-StoreMD finds the issue, ranks it by severity, and fixes it for you.
+StoreMD finds the issue, then fixes it. One click.
 
-Slow scripts, leftover code from old apps, broken SEO, security gaps. One click, or fix them in bulk.
+Ghost code from a deleted app, a broken meta tag, a listing missing its alt text. Found and fixed.
 
-Other tools leave you with a to-do list. StoreMD leaves you with a fixed store.
+You approve, it ships the change.
 
-Install on the Shopify App Store.
-```
-
-**HASHTAGS (Facebook, Set B posts — 3) :**
-```
-#shopifystore #onlinebusiness #ecommercetips
+Free scan link in bio 👇
 ```
 
-**TRADUCTION :**
-> La plupart des outils d'audit te tendent un rapport et s'en vont 📋
-> StoreMD trouve le problème, le classe par sévérité, et le corrige pour toi.
-> Scripts lents, code résiduel de vieilles apps, SEO cassé, failles de sécurité. En un clic, ou corrige-les en masse.
-> Les autres outils te laissent une to-do list. StoreMD te laisse une boutique réparée.
-> Installe sur le Shopify App Store.
----
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopify #ecommerce #StoreMD
+```
 
-# ═══ VENDREDI 29/05 — PRODUIT : ghost charges (POV) ═══
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-TK-S11-05 — StoreMD (@StoreMd_off) — TikTok — Ven 29/05 14h00 — ⚓ ANCRE DU JOUR
+# ═══ VENDREDI 05/06 — PRODUIT : 43 features, personne d'autre ═══
 
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (source du jour — confirmer nom exact du fichier)
+#### STOREMD-TK-S12-05 — StoreMD (@StoreMd_off) — TikTok — Ven 05/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-01_43features_domination.mp4` (source du jour)
 **Lien Install :** `apps.shopify.com/storemd-1`
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-POV: an app you uninstalled 8 months ago is still charging you 👻
+43 features. 5 modules. One app 🔍
 
-It happens more than you'd think. You remove an app, but the billing keeps running quietly in the background.
+Store health, listings, AI readiness, compliance, real browser tests.
 
-StoreMD scans your store and flags charges and leftover code from apps you no longer use.
+Most Shopify tools do one of those. StoreMD does all five.
 
-Find what's draining your account before another month goes by.
+One scan, 60 seconds, every problem ranked by priority.
 
-Install on the Shopify App Store.
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set B — 5) :**
 ```
-#shopifytips #onlinebusiness #ecommerce #shopifyapps #StoreMD
+#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #StoreMD
 ```
 
 **TRADUCTION :**
-> POV : une app que tu as désinstallée il y a 8 mois te facture encore 👻
-> Ça arrive plus souvent que tu ne crois. Tu retires une app, mais la facturation continue tranquillement en arrière-plan.
-> StoreMD scanne ta boutique et repère les charges et le code résiduel des apps que tu n'utilises plus.
-> Trouve ce qui vide ton compte avant qu'un mois de plus passe.
-> Installe sur le Shopify App Store.
+> 43 features. 5 modules. Une app 🔍
+> Santé du store, listings, compatibilité IA, conformité, tests navigateur réels.
+> La plupart des outils Shopify font une de ces choses. StoreMD fait les cinq.
+> Un scan, 60 secondes, chaque problème classé par priorité.
+> Lien free scan en bio 👇
 
 ---
 
-#### STOREMD-TW-SM-S11-05 — StoreMD (@StoreMd_off) — Twitter — Ven 29/05 15h00
+#### STOREMD-TW-SM-S12-05 — StoreMD (@StoreMd_off) — Twitter — Ven 05/06 15h00
 
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-An app you uninstalled can keep charging you for months.
+43 features. 5 modules. 60 seconds 🔍
 
-StoreMD scans your store and flags ghost charges and leftover code from apps you no longer use.
+Store health, listings, AI readiness, compliance, real browser tests.
 
-Find what's draining your account. Install on the Shopify App Store.
+Every problem found, then ranked by priority. Fixes included.
+
+Most tools do one module. StoreMD does five.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -604,29 +600,29 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> Une app que tu as désinstallée peut continuer à te facturer pendant des mois.
-> StoreMD scanne ta boutique et repère les charges fantômes et le code résiduel des apps que tu n'utilises plus.
-> Trouve ce qui vide ton compte. Installe sur le Shopify App Store.
+> 43 features. 5 modules. 60 secondes 🔍
+> Santé du store, listings, compatibilité IA, conformité, tests navigateur réels.
+> Chaque problème trouvé, puis classé par priorité. Corrections incluses.
+> La plupart des outils font un module. StoreMD en fait cinq.
 
 ---
 
-#### STOREMD-IG-S11-05 — StoreMD — Instagram — Ven 29/05 18h00
+#### STOREMD-IG-S12-05 — StoreMD — Instagram — Ven 05/06 18h00
 
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
-**Lien Install :** `apps.shopify.com/storemd-1`
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-POV: an app you uninstalled 8 months ago is still charging you 👻
+43 features. 5 modules. One app 🔍
 
-It happens more than you'd think. You remove an app, but the billing keeps running quietly in the background.
+Store health, listings, AI readiness, compliance, real browser tests.
 
-StoreMD scans your store and flags charges and leftover code from apps you no longer use.
+Most Shopify tools do one of those. StoreMD does all five.
 
-Find what's draining your account before another month goes by.
+One scan, 60 seconds, every problem ranked by priority.
 
-Install on the Shopify App Store.
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set B — 5) :**
@@ -634,154 +630,129 @@ Install on the Shopify App Store.
 #shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
 ```
 
-**TRADUCTION :**
-> POV : une app que tu as désinstallée il y a 8 mois te facture encore 👻
-> Ça arrive plus souvent que tu ne crois. Tu retires une app, mais la facturation continue tranquillement en arrière-plan.
-> StoreMD scanne ta boutique et repère les charges et le code résiduel des apps que tu n'utilises plus.
-> Trouve ce qui vide ton compte avant qu'un mois de plus passe.
-> Installe sur le Shopify App Store.
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S11-05 — StoreMD — Facebook — Ven 29/05 18h30
+#### STOREMD-FB-S12-05 — StoreMD — Facebook — Ven 05/06 18h30
 
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok, re-export sans watermark)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-POV: an app you uninstalled 8 months ago is still charging you 👻
+43 features. 5 modules. One app 🔍
 
-It happens more than you'd think. You remove an app, but the billing keeps running quietly in the background.
+Store health, listings, AI readiness, compliance, real browser tests.
 
-StoreMD scans your store and flags charges and leftover code from apps you no longer use.
+Most Shopify tools do one of those. StoreMD does all five.
 
-Find what's draining your account before another month goes by.
+One scan, 60 seconds, every problem ranked by priority.
 
-Install on the Shopify App Store.
-```
-
-**HASHTAGS (Facebook, Set A posts — 3) :**
-```
-#shopify #ecommerce #smallbusiness
+Free scan link in bio 👇
 ```
 
-**TRADUCTION :**
-> POV : une app que tu as désinstallée il y a 8 mois te facture encore 👻
-> Ça arrive plus souvent que tu ne crois. Tu retires une app, mais la facturation continue tranquillement en arrière-plan.
-> StoreMD scanne ta boutique et repère les charges et le code résiduel des apps que tu n'utilises plus.
-> Trouve ce qui vide ton compte avant qu'un mois de plus passe.
-> Installe sur le Shopify App Store.
----
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopifystore #onlinebusiness #StoreMD
+```
 
-# ═══ SAMEDI 30/05 — PRODUIT : invisible to ChatGPT (AI readiness) ═══
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-TK-S11-06 — StoreMD (@StoreMd_off) — TikTok — Sam 30/05 14h00 — ⚓ ANCRE DU JOUR
+# ═══ SAMEDI 06/06 — PRODUIT : preuve, vrai scan ═══
 
-**Vidéo :** `V1-07_invisible_chatgpt.mp4` (source du jour)
+#### STOREMD-TK-S12-06 — StoreMD (@StoreMd_off) — TikTok — Sam 06/06 14h00 — ⚓ ANCRE DU JOUR
+
+**Vidéo :** `V1-13_real_scan.mp4` (source du jour)
 **Lien Install :** `apps.shopify.com/storemd-1`
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Your store might be invisible to ChatGPT 🤖
+This is a real StoreMD scan, start to finish 🔍
 
-More shoppers are asking AI which products and stores to trust. If your store isn't readable to those models, it just doesn't come up.
+You connect your Shopify store, it runs for about 60 seconds, and you get a score.
 
-StoreMD checks how AI bots actually see your store, and shows you what's missing.
+Then a list of what's broken, ranked, with the fix for each one.
 
-Get visible before your competitors do.
+No PDF, no waiting. Just what's wrong and how to fix it.
 
-Install on the Shopify App Store.
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set C — 5) :**
 ```
-#shopify #shopifystore #shopifyseller #ecommerce #StoreMD
+#shopifybusiness #packingorders #shopifyseller #entrepreneur #StoreMD
 ```
 
 **TRADUCTION :**
-> Ta boutique est peut-être invisible pour ChatGPT 🤖
-> De plus en plus d'acheteurs demandent à l'IA quels produits et quelles boutiques privilégier. Si ta boutique n'est pas lisible pour ces modèles, elle ne ressort tout simplement pas.
-> StoreMD vérifie comment les bots IA voient réellement ta boutique, et te montre ce qui manque.
-> Deviens visible avant tes concurrents.
-> Installe sur le Shopify App Store.
+> Voici un vrai scan StoreMD, du début à la fin 🔍
+> Tu connectes ton store Shopify, il tourne environ 60 secondes, et tu obtiens un score.
+> Puis une liste de ce qui est cassé, classée, avec la correction pour chaque point.
+> Pas de PDF, pas d'attente. Juste ce qui ne va pas et comment le réparer.
+> Lien free scan en bio 👇
 
 ---
 
-#### STOREMD-IG-S11-06 — StoreMD — Instagram — Sam 30/05 18h00
+#### STOREMD-IG-S12-06 — StoreMD — Instagram — Sam 06/06 18h00
 
-**Vidéo :** `V1-07_invisible_chatgpt.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
-**Lien Install :** `apps.shopify.com/storemd-1`
+**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Your store might be invisible to ChatGPT 🤖
+This is a real StoreMD scan, start to finish 🔍
 
-More shoppers are asking AI which products and stores to trust. If your store isn't readable to those models, it just doesn't come up.
+You connect your Shopify store, it runs for about 60 seconds, and you get a score.
 
-StoreMD checks how AI bots actually see your store, and shows you what's missing.
+Then a list of what's broken, ranked, with the fix for each one.
 
-Get visible before your competitors do.
+No PDF, no waiting. Just what's wrong and how to fix it.
 
-Install on the Shopify App Store.
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set C — 5) :**
 ```
-#shopifyexperts #ecommercebusiness #shopifymarketing #shopifyapps #StoreMD
+#shopifyexperts #ecommercebusiness #shopifymarketing #smallbusiness #StoreMD
 ```
 
-**TRADUCTION :**
-> Ta boutique est peut-être invisible pour ChatGPT 🤖
-> De plus en plus d'acheteurs demandent à l'IA quels produits et quelles boutiques privilégier. Si ta boutique n'est pas lisible pour ces modèles, elle ne ressort tout simplement pas.
-> StoreMD vérifie comment les bots IA voient réellement ta boutique, et te montre ce qui manque.
-> Deviens visible avant tes concurrents.
-> Installe sur le Shopify App Store.
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S11-06 — StoreMD — Facebook — Sam 30/05 18h30
+#### STOREMD-FB-S12-06 — StoreMD — Facebook — Sam 06/06 18h30
 
-**Vidéo :** `V1-07_invisible_chatgpt.mp4` (recyclé TikTok, re-export sans watermark)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Your store might be invisible to ChatGPT 🤖
+This is a real StoreMD scan, start to finish 🔍
 
-More shoppers are asking AI which products and stores to trust. If your store isn't readable to those models, it just doesn't come up.
+You connect your Shopify store, it runs for about 60 seconds, and you get a score.
 
-StoreMD checks how AI bots actually see your store, and shows you what's missing.
+Then a list of what's broken, ranked, with the fix for each one.
 
-Get visible before your competitors do.
+No PDF, no waiting. Just what's wrong and how to fix it.
 
-Install on the Shopify App Store.
-```
-
-**HASHTAGS (Facebook, Set B posts — 3) :**
-```
-#shopifystore #onlinebusiness #ecommercetips
+Free scan link in bio 👇
 ```
 
-**TRADUCTION :**
-> Ta boutique est peut-être invisible pour ChatGPT 🤖
-> De plus en plus d'acheteurs demandent à l'IA quels produits et quelles boutiques privilégier. Si ta boutique n'est pas lisible pour ces modèles, elle ne ressort tout simplement pas.
-> StoreMD vérifie comment les bots IA voient réellement ta boutique, et te montre ce qui manque.
-> Deviens visible avant tes concurrents.
-> Installe sur le Shopify App Store.
----
+**HASHTAGS (Facebook, posts — 3) :**
+```
+#shopify #ecommerce #StoreMD
+```
 
-# ═══ DIMANCHE 31/05 — OFFRE : récap complet (tout-en-un) ═══
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-TK-S11-07 — StoreMD (@StoreMd_off) — TikTok — Dim 31/05 14h00 — ⚓ ANCRE DU JOUR
+# ═══ DIMANCHE 07/06 — OFFRE : DERNIER JOUR Pro gratuit (récap) ═══
+
+#### STOREMD-TK-S12-07 — StoreMD (@StoreMd_off) — TikTok — Dim 07/06 14h00 — ⚓ ANCRE DU JOUR
 
 **Vidéo :** `V1-31_full_offer.mp4` (source du jour)
 **Lien Install :** `apps.shopify.com/storemd-1`
@@ -789,88 +760,94 @@ Install on the Shopify App Store.
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Everything about the StoreMD launch offer, in one place 🚀
+Last day of free Pro on StoreMD ⏳
 
-Install on the Shopify App Store and get 14 days of Pro, free. No card. Free Pro runs until June 7.
+The launch window closes tonight.
 
-Subscribe by June 22 and your price is locked for life. Starter $29, Pro $79, Agency $199 a month, or pay yearly and get 2 months free.
+One more recap:
 
-After June 22, the launch offer is gone.
+Install on Shopify, run Pro free, no card.
+Subscribe by June 22 to lock your price for life.
+Annual plans get 2 months free.
+
+If you run a Shopify store, today's the day to scan it.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (TikTok, Set A — 5) :**
 ```
-#shopify #shopifystore #shopifyapps #ecommercetips #StoreMD
+#shopify #ecommercetips #shopifystore #smallbusinessowner #StoreMD
 ```
 
 **TRADUCTION :**
-> Toute l'offre de lancement StoreMD, au même endroit 🚀
-> Installe sur le Shopify App Store et obtiens 14 jours de Pro, gratuits. Sans carte. Le Pro gratuit dure jusqu'au 7 juin.
-> Abonne-toi d'ici le 22 juin et ton prix est bloqué à vie. Starter 29$, Pro 79$, Agency 199$ par mois, ou paye à l'année et obtiens 2 mois offerts.
-> Après le 22 juin, l'offre de lancement disparaît.
+> Dernier jour de Pro gratuit sur StoreMD ⏳
+> La fenêtre de lancement ferme ce soir.
+> Un dernier récap :
+> Installe sur Shopify, lance Pro gratuitement, sans carte.
+> Abonne-toi avant le 22 juin pour bloquer ton prix à vie.
+> Les plans annuels ont 2 mois offerts.
+> Si tu gères un store Shopify, aujourd'hui c'est le jour pour le scanner.
+> Lien free scan en bio 👇
 
 ---
 
-#### STOREMD-IG-S11-07 — StoreMD — Instagram — Dim 31/05 18h00
+#### STOREMD-IG-S12-07 — StoreMD — Instagram — Dim 07/06 18h00
 
-**Vidéo :** `V1-31_full_offer.mp4` (recyclé TikTok, re-export 1080×1350 si Reel)
-**Lien Install :** `apps.shopify.com/storemd-1`
+**Vidéo :** `V1-31_full_offer.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
 **Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Everything about the StoreMD launch offer, in one place 🚀
+Last day of free Pro on StoreMD ⏳
 
-Install on the Shopify App Store and get 14 days of Pro, free. No card. Free Pro runs until June 7.
+The launch window closes tonight.
 
-Subscribe by June 22 and your price is locked for life. Starter $29, Pro $79, Agency $199 a month, or pay yearly and get 2 months free.
+One more recap:
 
-After June 22, the launch offer is gone.
+Install on Shopify, run Pro free, no card.
+Subscribe by June 22 to lock your price for life.
+Annual plans get 2 months free.
+
+If you run a Shopify store, today's the day to scan it.
+
+Free scan link in bio 👇
 ```
 
 **HASHTAGS (Instagram, Set A — 5) :**
 ```
-#shopifystore #ecommercetips #smallbusinessowner #shopifyapps #StoreMD
+#shopifystore #ecommercetips #smallbusinessowner #shopifytips #StoreMD
 ```
 
-**TRADUCTION :**
-> Toute l'offre de lancement StoreMD, au même endroit 🚀
-> Installe sur le Shopify App Store et obtiens 14 jours de Pro, gratuits. Sans carte. Le Pro gratuit dure jusqu'au 7 juin.
-> Abonne-toi d'ici le 22 juin et ton prix est bloqué à vie. Starter 29$, Pro 79$, Agency 199$ par mois, ou paye à l'année et obtiens 2 mois offerts.
-> Après le 22 juin, l'offre de lancement disparaît.
+**TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S11-07 — StoreMD — Facebook — Dim 31/05 18h30
+#### STOREMD-FB-S12-07 — StoreMD — Facebook — Dim 07/06 18h30
 
-**Vidéo :** `V1-31_full_offer.mp4` (recyclé TikTok, re-export sans watermark)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-31_full_offer.mp4` (recyclé TikTok)
+**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
 
-**TEXTE :**
+**TEXTE (caption identique TikTok) :**
 ```
-Everything about the StoreMD launch offer, in one place 🚀
+Last day of free Pro on StoreMD ⏳
 
-Install on the Shopify App Store and get 14 days of Pro, free. No card. Free Pro runs until June 7.
+The launch window closes tonight.
 
-Subscribe by June 22 and your price is locked for life. Starter $29, Pro $79, Agency $199 a month, or pay yearly and get 2 months free.
+One more recap:
 
-After June 22, the launch offer is gone.
+Install on Shopify, run Pro free, no card.
+Subscribe by June 22 to lock your price for life.
+Annual plans get 2 months free.
+
+If you run a Shopify store, today's the day to scan it.
+
+Free scan link in bio 👇
 ```
 
-**HASHTAGS (Facebook, Set A posts — 3) :**
+**HASHTAGS (Facebook, posts — 3) :**
 ```
-#shopify #ecommerce #smallbusiness
+#shopify #ecommerce #StoreMD
 ```
 
-**TRADUCTION :**
-> Toute l'offre de lancement StoreMD, au même endroit 🚀
-> Installe sur le Shopify App Store et obtiens 14 jours de Pro, gratuits. Sans carte. Le Pro gratuit dure jusqu'au 7 juin.
-> Abonne-toi d'ici le 22 juin et ton prix est bloqué à vie. Starter 29$, Pro 79$, Agency 199$ par mois, ou paye à l'année et obtiens 2 mois offerts.
-> Après le 22 juin, l'offre de lancement disparaît.
-
----
-
-*Fin du batch S11 — semaine complète (7 jours, 4 offre + 3 produit). V1-27 "now live" non utilisé cette semaine, reste dispo dans le mapping comme rappel réutilisable.*
-
----
+**TRADUCTION :** identique au TikTok du jour.
