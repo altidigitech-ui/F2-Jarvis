@@ -27,17 +27,18 @@ Format figé (README §2) : `YYYY-MM-DD.md` (date ISO de la session).
 1. **Timestamp** : `TZ='Europe/Paris' date '+%A %d %B %Y — %H:%M:%S %Z'`
 2. **Lire le README local** `tracking/recap-sessions/README.md` (vérifier nommage + cas particuliers) et déterminer le nom du fichier.
 3. **Collecter** la matière de la session : git diff + actions réalisées, décisions prises, points de reprise, fichiers produits.
-4. **Écrire** `tracking/recap-sessions/<nom>.md` au format observé dans le dossier :
-   - `# RECAP SESSION — <date> — <SUJET>`
-   - `## CONTEXTE`
-   - `## ACTÉ EN SYNTHÈSE` (décisions clés)
-   - `## CHANTIERS RÉALISÉS` (sous-points `### N. Titre [FAIT — poussé]` / `[PRÊT]` / `[COMPLETED — vérifié]`)
-   - `## À FAIRE DEMAIN` (points de reprise, dans l'ordre)
-   - `## DONNÉES CANON` (si applicable — **sourcées**, jamais inventées)
-   - `## RÈGLES ÉTABLIES / RAPPELS`
-   - `## FICHIERS PRODUITS` (dans `outputs`)
-   - `## CHEMINS REPO CRITIQUES`
-5. **Mettre à jour l'index** : ajouter une ligne dans le tableau `## 5. Index des recaps` du `README.md` local (`| <nom>.md | <sujet de la session> |`). L'index doit toujours refléter le contenu réel du dossier.
+4. **Écrire** `tracking/recap-sessions/<nom>.md`. Le format **n'est pas figé au titre près** — **regarde les recaps récents du dossier comme modèle** et suis le squelette récurrent (adapte les titres et ajoute des sections selon la session) :
+   - Titre : `# RECAP SESSION — <date> — <SUJET>`
+   - Contexte de la session
+   - Décisions actées (synthèse)
+   - Chantiers réalisés (sous-points avec tag d'état : `[FAIT — poussé]`, `[PRÊT]`, `[COMPLETED — vérifié]`…)
+   - Points de reprise / à faire (dans l'ordre)
+   - Données canon si applicable (**sourcées**, jamais inventées)
+   - Règles établies / rappels
+   - Fichiers produits (dans `outputs`)
+   - Chemins repo critiques
+   - Session multi-jours → structurer en `PARTIE 1 / PARTIE 2`. Extras possibles selon la session (totaux, assets, conventions…).
+5. **Mettre à jour l'index** : ajouter une ligne dans le tableau `## 5. Index des recaps` du `README.md` local — format `| `<nom>.md` | <sujet de la session> |` (nom de fichier **entre backticks**, comme les entrées existantes). Rafraîchir aussi la date du titre de section (« au JJ/MM/AAAA ») si présente. L'index doit toujours refléter le contenu réel du dossier.
 6. **Confirmer** : nom du fichier créé + une ligne de résumé.
 
 ## Garde-fous
