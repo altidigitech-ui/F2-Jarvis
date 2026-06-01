@@ -2,7 +2,7 @@
 
 > Document-traqueur maître du rebranchement de Jarvis sur le repo refondu.
 > Sert à figer **les choix faits**, **ce qu'on doit faire**, et **où on en est**.
-> **Créé :** 23/05/2026 · **Dernière maj :** 29/05/2026
+> **Créé :** 23/05/2026 · **Dernière maj :** 01/06/2026
 > **Règle absolue :** aucune opération sur le repo sans validation explicite de R ("go" / "validé" / "ok"). Ce document recense ; il ne déclenche rien.
 
 ---
@@ -184,4 +184,5 @@ Statuts : ⬜ à faire · 🔄 en cours · ✅ fait · 🔒 intouchable
 - **29/05/2026 — B2.3a ✅ (nettoyage mécanique)** : 5 fichiers (jarvis-upgrade CounterData+préfixes, f2-librarian/graphify-all/morning paths, launch leak-detector+paths). Baseline **repo17**.
 - **29/05/2026 — B2.3b ✅ (refonte skills voix)** : découpage par langue abandonné → skills **par entité** `marketing/{romain,fabrice,storemd}` (tout en anglais, build-in-public mort), archivage marketing-fr/en, correction `f2-marketer`. Détail : note de suivi B2.3b dans `BLOC2-CLAUDE-CONFIG-PLAN.md`. Baseline **repo19→22**.
 - **29/05/2026 — B2.4 ✅ (`/batch`)** : `commands/batch.md` orchestrateur (→ batch-template + dernier batch S11, S[N] via charte, 7 blocs + validation R, dispatch, archivage). Baseline **repo23**.
-- **29/05/2026 — B2.5 ✅ (`/archivage`)** : `commands/archivage.md` orchestrateur (→ charte `archives/README.md` §2.2-2.4, gate validation R, bascule annuelle exclue). Baseline **repo24** (à vérifier au push). **Prochaine étape : B2.6 `/recap`.**
+- **29/05/2026 — B2.5 ✅ (`/archivage`)** : `commands/archivage.md` orchestrateur (→ charte `archives/README.md` §2.2-2.4, gate validation R, bascule annuelle exclue). Baseline **repo24** (vérifié ✅).
+- **01/06/2026 — B2.6 ✅ (`/recap`)** : `commands/recap.md` orchestrateur (→ README local de `tracking/recap-sessions/`, format adaptable + MAJ index, frontière ≠ `/handoff` ≠ `/debrief`), corrigé après audit puis vérifié. Baseline **repo25**. **Prochaine étape : B2.7 (hooks).**
