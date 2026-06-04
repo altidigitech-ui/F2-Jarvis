@@ -26,7 +26,7 @@ Un ban Reddit/LinkedIn/Facebook = compte grillé = semaines de travail perdues.
 
 Ce repo s'appelle **F2-Jarvis**. C'est l'OS du studio **FoundryTwo**.
 
-- **F2-Jarvis** = repo GitHub. Il contient l'infrastructure AI (`.claude/`, `brain/`, `ops/`, `patterns/`, `raw/`, `ui/`) ET le contenu opérationnel (`strategie/`, `produits/`, `marketing/`, `f2/`, `romain/`, `fabrice/`, `saas/`, etc.).
+- **F2-Jarvis** = repo GitHub. Il contient l'infrastructure AI (`.claude/`, `brain/`, `ops/`, `patterns/`, `raw/`, `ui/`) ET le contenu opérationnel (`strategie/`, `produits/`, `marketing/`, `romain/`, `fabrice/`, `saas/`, etc.).
 - **FoundryTwo** = identité publique du studio, ses SaaS, ses comptes sociaux.
 
 **Utilisateurs du repo :**
@@ -64,7 +64,7 @@ COMMUNAUTÉ → DOULEUR → VALIDATION (10 signups/48h) → BUILD → DISTRIBUTI
 ## §2bis : Qui gère quoi
 
 ### Romain (R)
-- Compte studio `@foundrytwo` (publication F2)
+- Gère FoundryTwo (hub `foundrytwo.com` + IndieHackers)
 - Ses comptes perso : Twitter, LinkedIn, Reddit, Facebook, ProductHunt
 - Positionnement : Growth/CRO, e-commerce + agences/freelancers
 
@@ -73,10 +73,10 @@ COMMUNAUTÉ → DOULEUR → VALIDATION (10 signups/48h) → BUILD → DISTRIBUTI
 - Infra technique (code SaaS, F2-Jarvis infra)
 - Positionnement : Builder technique, e-commerce + content creators
 
-### Compte studio @foundrytwo (F2)
+### FoundryTwo (studio — R)
 - Géré par R
-- Canaux : Twitter, LinkedIn, IndieHackers, ProductHunt, TikTok (différé)
-- Rôle : hub central, sales-mode dominant, Friday Studio Update (build-in-public format réservé, règle stricte BIBLE.md §3), milestones
+- Présence : page hub `foundrytwo.com` (linkinbio statique sur Vercel : produits + liens sociaux) + publication sur IndieHackers
+- Voix : celle du SaaS promu (StoreMD), pas de persona studio séparé
 
 ---
 
@@ -109,7 +109,6 @@ F2-Jarvis/
 ├── growth-marketing/         ← Algos + context par plateforme (twitter, linkedin, ih, ph, tiktok)
 ├── distribution/             ← Règles communes + PLAYBOOK_DISTRI_3_VERTICAL
 │
-├── f2/                       ← Compte studio @foundrytwo (R le gère)
 ├── romain/                   ← R : {twitter, linkedin, reddit, facebook, ph, cold, engagement, publication, tracking, archives, semaine-*}
 ├── fabrice/                  ← F : {twitter, linkedin, reddit, facebook, ph, cold, engagement, publication, tracking, archives, semaine-*}
 │
@@ -132,7 +131,7 @@ F2-Jarvis/
 | `produits/STATUS.md` | Portefeuille produits (features, mutations, pricing) |
 | `produits/MUTATIONS.md` | Décisions de mutation SaaS (fusions, kills, pivots) |
 | `VISUELS.md` | Algorithme visuel |
-| `f2/context.md`, `romain/VOIX.md`, `fabrice/VOIX.md` | Identité et voix par compte |
+| `romain/VOIX.md`, `fabrice/VOIX.md` | Identité et voix par compte |
 | `brain/ouroboros/identity.md` + `bible.md` | Constitution Ouroboros |
 | `ops/budget/limits.yaml` | Caps et alertes budget |
 | `ops/monitoring/model-tier-rules.yaml` | Routage Haiku/Sonnet/Opus |
@@ -153,14 +152,14 @@ F2-Jarvis/
 > - `.claude/README.md` : Config Claude Code
 > - `ops/README.md` : Budget & kill-switches
 
-### Skills (`.claude/skills/`, 16 total)
+### Skills (`.claude/skills/`, 19 total)
 
 **Always-on** (chargés à chaque session) : `graphify` (knowledge graph du repo), `handoff-writer` (HANDOFF.md auto), `brand-voice` (garde-fou voix + aiguillage R/F/produit).
 
 **On-demand** (activés par contexte ou slash command) :
 - Design : `ui-ux-pro-max`, `frontend-design`, `shadcn-ui`, `web-interface-guidelines`, `web-accessibility`, `brain-3d-renderer`
 - Stack : `shopify-gql`, `supabase-rls`, `stripe-integration`
-- Marketing : `marketing-fr` (voix Romain), `marketing-en` (voix Fabrice)
+- Marketing : `marketing/` (sous-skills voix : `romain`, `fabrice`, `storemd`)
 - Ops : `saas-launch-checklist`, `context-md-generator`
 
 Quand F demande du UI : activer dans l'ordre `ui-ux-pro-max` → `frontend-design` → `shadcn-ui` → `web-interface-guidelines` + `web-accessibility`.
@@ -180,12 +179,15 @@ Quand F demande du UI : activer dans l'ordre `ui-ux-pro-max` → `frontend-desig
 | `f2-accountant` | Budget, tokens, coûts | Haiku |
 | `f2-thinker` | Analyse profonde, décisions stratégiques (profil deep) | Sonnet |
 
-### Slash commands (`.claude/commands/`, 11 total)
+### Slash commands (`.claude/commands/`, 14 total)
 
 - `/morning` : brief du jour (état SaaS, décisions en attente, posts à publier, 3 priorités)
 - `/status` : état complet F2 (plus long que /morning)
 - `/launch <saas>` : checklist de lancement
 - `/debrief` : post-mortem structuré via f2-auditor
+- `/batch` : orchestre le batch hebdo (7 blocs → dispatch publication + archivage S-1)
+- `/archivage` : archive selon la charte `archives/README.md` (validation R requise)
+- `/recap` : recap de session → `tracking/recap-sessions/YYYY-MM-DD.md`
 - `/graphify-all` : réindexation Graphify (`--force` pour full rebuild)
 - `/budget` : dépenses tokens par service
 - `/review-proposals` : valide/rejette les propositions Ouroboros
@@ -237,7 +239,7 @@ Quand F demande du UI : activer dans l'ordre `ui-ux-pro-max` → `frontend-desig
 4. **Volume × Constance.** R : 30 interactions/jour + 10 cold outreach/jour + 7 posts/sem. F : 30 interactions/jour + 10 cold outreach/jour + 5 posts/sem. Non-négociable.
 5. **Cible NON-dev.** Aucun produit pour codeurs. Build in public peut exposer le code (angle F), mais le produit cible un non-dev.
 6. **Zéro donnée inventée.** Pas de "many users", "great results", "impressive growth". Exemples marqués, templates avec placeholders.
-7. **Voix séparées.** R, F, F2, Produits ont chacun leur vocabulaire exclusif. Jamais de mélange. Voir `romain/VOIX.md`, `fabrice/VOIX.md`, `f2/context.md`.
+7. **Voix séparées.** R, F, F2, Produits ont chacun leur vocabulaire exclusif. Jamais de mélange. Voir `romain/VOIX.md`, `fabrice/VOIX.md`.
 8. **Règle TOILE.** Altistone et la toile restent invisibles en public. Aucune mention dans posts, replies, cold, ou docs publics.
 9. **Synchronisation canaux.** Brand (Twitter, LinkedIn, IH, PH) et distribution (Reddit, Facebook) restent cohérents pour une même personne : même ton, mêmes angles, seuls les formats changent.
 10. **Discipline budget.** Haiku par défaut. Escalade Sonnet justifiée. Opus sur demande explicite seulement. Vérifier `ops/budget/history.csv` si doute.
