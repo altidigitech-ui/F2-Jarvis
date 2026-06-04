@@ -26,7 +26,7 @@ Ce fichier est la **référence rapide des formats** utilisés à travers toute 
 | Carousel | ❌ | ✅ saves élevés | ❌ | ❌ | ❌ | ❌ | ⚠️ PDF documents | ❌ |
 | Post photo + lien | ❌ | ⚠️ rare | ✅ recyclage | ❌ | ❌ | ❌ | ⚠️ rare | ❌ |
 | Tweet simple | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ format 2-blocs | ❌ | ❌ |
-| Thread Twitter | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ F2 prio | ❌ | ❌ |
+| Thread Twitter | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ |
 | Post texte long (800-1300 char) | ❌ | ❌ | ⚠️ acceptable | ⚠️ acceptable | ✅ post original | ❌ | ✅ format dominant | ❌ |
 | Article long format | ❌ | ❌ | ❌ | ❌ | ⚠️ rare | ❌ | ✅ LinkedIn Article | ❌ |
 | Commentaire de valeur (15+ mots) | ❌ | ❌ | ⚠️ secondaire | ✅ engagement | ✅ engagement | ✅ cross-engage | ✅ cross-engage | ⚠️ post-launch |
@@ -109,7 +109,6 @@ Commentaire de l'autre fondateur sur un post pour amplifier.
 **Pattern type** :
 - F poste sur tech → R reply avec angle GROWTH/business
 - R poste sur growth → F reply avec angle TECHNIQUE
-- F2 poste → F + R reply chacun avec leur angle
 
 Cf. `../../romain/reddit/cross-replies.md`, `../../romain/facebook/cross-replies.md`, `../../fabrice/reddit/cross-replies.md`, `../../fabrice/facebook/cross-replies.md` (cross-replies formalisés uniquement pour Reddit et Facebook ; Twitter et LinkedIn voir patterns dans canaux/twitter.md §8 et canaux/linkedin.md §7).
 
@@ -130,7 +129,7 @@ Tweet 8 : Reply automatique avec lien UTM (lien dans dernier tweet, pas le premi
 
 **Longueur** : 5-8 tweets typique. Plus long = drop-off lecture.
 
-**Compte prioritaire** : @foundrytwo (vitrine studio) > @FabGangi > @delgado_ro72224.
+**Compte prioritaire** : @FabGangi > @delgado_ro72224.
 
 ### 5.2 Post LinkedIn long (800-1300 caractères)
 
@@ -275,7 +274,7 @@ Format plus poli (LinkedIn = pro), avec connexion request d'abord, attendre 3-7 
 
 **Référence** : `../canaux/launch-days.md` §3.3.
 
-Premier commentaire du fil PH posté par F2 le jour du launch (00:05 PT). Doit contenir :
+Premier commentaire du fil PH posté par le maker (compte perso R ou F) le jour du launch (00:05 PT). Doit contenir :
 - Pourquoi on a buildé ça
 - Ce que ça fait concrètement
 - Lien UTM F29
@@ -325,13 +324,13 @@ Corps :
 | **@storemd** (compte produit) | TikTok, Insta, FB Page | Neutre, factuel, axé résultats | "scan", "findings", "$X saved", pas de "I", pas de "we" | "This Shopify store loses $4,200/month — and the owner has no idea" |
 | **F (@FabGangi, Fabrice Gangitano)** | Twitter, LinkedIn, Reddit, FB Groupes (compte perso) | Technique, analytique, builder | "code", "infra", "I scanned", "the data shows" | "Most Shopify 'speed apps' make your store slower." |
 | **R (@delgado_ro72224, Romain Delgado)** | Twitter, LinkedIn, Reddit, FB Groupes (compte perso) | Business, growth, conversion | "merchants", "conversion rate", "ROI", observations terrain | "71% of Shopify chargebacks are friendly fraud." |
-| **@foundrytwo (F2)** | Twitter, LinkedIn Page, IH, PH | "We" pluriel, studio, vocabulaire forge dosé, neutre | "we built", "the studio", "we learned" | "We built StoreMD because we kept seeing the same 3 problems on every Shopify store we audited." |
+| **FoundryTwo (IH)** | IndieHackers | Voix du SaaS promu (actuellement StoreMD), pas de persona studio séparé | identique au SaaS promu (cf. @storemd) | cf. ligne @storemd |
 
 ### 9.2 Sources de référence détaillées
 
 - F : `../../fabrice/VOIX.md` §RÈGLE #0 (filtre anti-IA)
 - R : `../../romain/VOIX.md` §RÈGLE #0
-- F2 : voix studio définie dans `../../f2/system-prompt.md` + `../../asset-brand/FOUNDRYTWO-BRAND-BIBLE.md` §1.3 (pas de fichier VOIX dédié)
+- FoundryTwo (IH) : voix du SaaS promu (pas de voix studio séparée) → cf. @storemd ci-dessous ; branding studio : `../../asset-brand/FOUNDRYTWO-BRAND-BIBLE.md` §1.3
 - @storemd : voix compte produit → `saas-app-shopify/storemd/VOIX.md`
 
 ### 9.3 Règle absolue
@@ -363,7 +362,7 @@ Source : `../../asset-brand/FOUNDRYTWO-BRAND-BIBLE.md`.
 - **Logo FoundryTwo** : F2 sur enclume avec sparks (Ash White F + Forge Amber 2). Cf. `../../asset-brand/FOUNDRYTWO-LOGO-GUIDELINES.md`.
 - **Logo @storemd** : icône produit `storemd_icon_1200x1200.png` (repo StoreMD).
 - **Sur les vidéos compte produit @storemd** : logo @storemd discret (bas-droite ou haut-droite). PAS de logo F2.
-- **Sur les visuels @foundrytwo** : logo F2.
+- **Sur les visuels FoundryTwo** : logo F2.
 
 ### 10.3 Briefer Claude Design
 
