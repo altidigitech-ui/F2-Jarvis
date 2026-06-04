@@ -108,9 +108,9 @@
 | **B2.4** ✅ | `/batch` — codifie `marketing/contenu/batch-semaine/batch-template.md` + fige le format `batch-semaine-S[N].md` | dédié | `commands/batch.md` |
 | **B2.5** ✅ | `/archivage` — automatise la charte `archives/README.md` (2 niveaux, set hebdo §2.2, nommage) | dédié | `commands/archivage.md` |
 | **B2.6** ✅ | `/recap` — génère `tracking/recap-sessions/YYYY-MM-DD.md` (persistant, ≠ HANDOFF.md éphémère) | léger | `commands/recap.md` |
-| **B2.7** | Audit + nettoyage **hooks** (6 non-cognitive) : refs f2/paths/budget | audit | `hooks/{budget-check,mempalace-save,post-commit-graphify,pre-tool-use-graphify,precompact-save,session-stop-handoff}.sh`, `hooks-config.json` |
-| **B2.8** | Audit **sous-système cognition** : cohérence + refs obsolètes | audit | `agents/f2-thinker.md`, `commands/think.md`, `commands/cognition.md`, `skills/cognitive-loader/`, `hooks/precompact-save-cognitive.sh`, `hooks/session-stop-cognitive.sh` |
-| **B2.9** | Régénérer **`.claude/README.md`** (overview à jour : 8 agents, 14 commandes, skills, hooks, cognition) | dernier | `.claude/README.md` |
+| **B2.7** ✅ | Audit + nettoyage **hooks** (6 non-cognitive) : refs f2/paths/budget | audit | `hooks/{budget-check,mempalace-save,post-commit-graphify,pre-tool-use-graphify,precompact-save,session-stop-handoff}.sh`, `hooks-config.json` |
+| **B2.8** ✅ | Audit **sous-système cognition** : cohérence + refs obsolètes | audit | `agents/f2-thinker.md`, `commands/think.md`, `commands/cognition.md`, `skills/cognitive-loader/`, `hooks/precompact-save-cognitive.sh`, `hooks/session-stop-cognitive.sh` |
+| **B2.9** ✅ | Régénérer **`.claude/README.md`** (overview à jour : 8 agents, 14 commandes, skills, hooks, cognition) | dernier | `.claude/README.md` |
 
 **Notes de dépendance (anti-double-travail) :**
 - **B2.1 → B2.2 → B2.3** : brand-voice est **conçu puis créé AVANT le nettoyage**, pour que B2.3 puisse **fondre le rename de ref** dans les 3 fichiers communs (`f2-marketer`, `marketing-fr`, `jarvis-upgrade`) → chacun touché **une seule fois**. Les refs des fichiers *ref-only* sont faites en B2.2.
@@ -189,4 +189,7 @@ B2.3 scindé en 3 lots :
 ### Avancement Bloc 2 — commandes
 - ✅ **B2.4 `/batch`** : `.claude/commands/batch.md` créé (orchestrateur → batch-template.md + dernier batch S11, S[N] via charte, 7 blocs + validation R, dispatch, archivage). Poussé, YAML OK. Baseline repo23.
 - ✅ **B2.5 `/archivage`** : `.claude/commands/archivage.md` créé (orchestrateur → charte `archives/README.md` §2.2-2.4, gate validation R, bascule annuelle exclue). Poussé, YAML OK. Baseline repo24.
-- ✅ **B2.6 `/recap`** : `.claude/commands/recap.md` créé (orchestrateur → README local de `tracking/recap-sessions/`, format adaptable + MAJ index, frontière ≠ `/handoff` ≠ `/debrief`). Corrigé après audit (format assoupli), poussé, YAML OK. Baseline repo25. **B2.1→B2.6 faits. Reste B2.7-B2.9.**
+- ✅ **B2.6 `/recap`** : `.claude/commands/recap.md` créé (orchestrateur → README local de `tracking/recap-sessions/`, format adaptable + MAJ index, frontière ≠ `/handoff` ≠ `/debrief`). Corrigé après audit (format assoupli), poussé, YAML OK. Baseline repo25. **B2.1→B2.6 faits.**
+- ✅ **B2.7 hooks** : audit des 6 hooks non-cognitifs + `hooks-config.json`. Aucune ref morte (f2/paths/budget), paths valides, budget aligné, JSON valide. **Rien à nettoyer** (comme B1.6). Baseline repo25. **B2.1→B2.7 faits.**
+- ✅ **B2.8 cognition** : audit des 6 fichiers (`f2-thinker`, `/think`, `/cognition`, `cognitive-loader`, 2 hooks cognitifs). Refs valides, hooks cognitifs câblés (`settings.json`), aucune ref morte. **Rien à nettoyer.** Note cohérence hooks (settings.json = source réelle vs hooks-config.json doc-only ; `mempalace-save` non câblé) consignée au RECAP §8. **B2.1→B2.8 faits.**
+- ✅ **B2.9 README .claude** : refresh complet (19 skills / 8 agents / 14 commands / 8 hooks recomptés, voix marketing par entité, +5 commandes, +f2-thinker, +2 hooks cognitifs, budget vérifié vs limits.yaml, date 04/06). Poussé + vérifié identique. **🎯 BLOC 2 CLOS (B2.1→B2.9). Baseline repo26.**
