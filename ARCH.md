@@ -70,8 +70,7 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │       ├── graphify                           ← always-on
 │       ├── handoff-writer                     ← always-on
 │       ├── jarvis-upgrade
-│       ├── marketing-en                       ← voix Fabrice
-│       ├── marketing-fr                       ← voix Romain
+│       ├── marketing                          ← skills voix (romain / fabrice / storemd)
 │       ├── saas-launch-checklist
 │       ├── shadcn-ui
 │       ├── shopify-gql
@@ -127,46 +126,6 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 ├── distribution
 │   ├── PLAYBOOK_DISTRI_3_VERTICAL
 │   └── README.md
-│
-├── f2                                         ← Compte studio @foundrytwo (R gère)
-│   ├── agencies-onboarded-S6.md              ← (stub)
-│   ├── claude-code-prompts.md
-│   ├── cold
-│   ├── context.md
-│   ├── cross-engagement-tracker.md           ← (READ-ONLY) textes cross S7
-│   ├── engagement
-│   │   ├── chrome
-│   │   │   ├── IH-prompt-engagement.md       ← scan feed IH : 10 opportunités/jour
-│   │   │   ├── IH-prompt-notifications.md    ← scan notifications : replies en attente
-│   │   │   └── LINKEDIN-prompt.md
-│   │   ├── cross-execution-log.md            ← log dynamique crosses S7
-│   │   ├── engagement-log.md                 ← S7 actif
-│   │   └── archives
-│   ├── ih
-│   │   ├── context.md
-│   │   └── roadmap.md
-│   ├── linkedin
-│   │   ├── context.md
-│   │   └── roadmap.md
-│   ├── ph
-│   │   ├── context.md
-│   │   └── roadmap.md
-│   ├── plan-hebdo.md                         ← S7 actif
-│   ├── playbook-semaine.md
-│   ├── progress-semaine.md                   ← S7 actif
-│   ├── publication
-│   │   ├── context.md
-│   │   ├── grok
-│   │   ├── posts-valides.md                  ← S7 actif
-│   │   └── prompt.md
-│   ├── roadmap.md
-│   ├── system-prompt.md
-│   ├── tiktok
-│   │   ├── context.md
-│   │   └── roadmap.md
-│   └── twitter
-│       ├── context.md
-│       └── roadmap.md
 │
 ├── fabrice                                    ← F : CTO/Builder
 │   ├── VOIX.md
@@ -429,20 +388,3 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 | `cross-execution-log.md` | dans `{persona}/engagement/` | Tracking dynamique crosses exécutés (⏳/✅/❌) |
 | `progress-semaine.md` | dans chaque `{persona}/` | Mémoire de travail active : reset chaque semaine |
 | `posts-valides.md` | `fabrice/` (root) ou `{persona}/publication/` | Checklist posts S7 à publier |
-
----
-
-## État au 26/04/2026
-
-| Zone | État |
-|------|------|
-| Batch actif | **BATCH-SEMAINE-7.md** (27/04 → 03/05) : Couche A sales + Couche B beta no-install |
-| F Twitter | 29 followers · 855 imp S6 · best post Jeu 23/04 (273 imp) |
-| R Twitter | 24 followers · 1 111 imp S6 · best post Ven 24/04 (638 imp) |
-| F2 Twitter | 12 followers · 164 imp S6 |
-| LinkedIn F | 13 connexions (6 → 13 en S6) |
-| LinkedIn R | 135 relations |
-| StoreMD | 0€ MRR · pivot no-install beta · 51 starts / 0 completes OAuth |
-| Ouroboros | 0 proposals pending · cycle 25/04 |
-| Graphify | ⚠️ Stale (19/04, 23 fichiers / 71 nodes) : régénérer avec `/graphify-all` |
-| Backend | ✅ Fix timeline context.ts déployé |
