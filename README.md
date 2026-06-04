@@ -67,7 +67,6 @@ F2-Jarvis/
 ├── growth-marketing/      ← Algos plateforme (twitter, linkedin, ih, ph, tiktok) + context résiduel
 ├── distribution/          ← Règles Reddit + Facebook
 │
-├── f2/                    ← Compte studio @foundrytwo (R gère)
 ├── romain/                ← R — full-time, angle growth
 ├── fabrice/               ← F — full-time, angle technique
 │
@@ -108,12 +107,10 @@ F2-Jarvis/
 4. `{vous}/{canal}/` selon la journée
 5. `{vous}/tracking/` pour logger
 
-### Vous gérez @foundrytwo (R)
+### Vous publiez sur IndieHackers (FoundryTwo, R)
 
-1. `f2/context.md`
-2. `f2/plan-hebdo.md`
-3. `f2/{canal}/` pour le canal du jour
-4. `BATCH-SEMAINE-N.md` pour le batch en cours
+1. `marketing/canaux/ih/context.md` (voix du SaaS promu — StoreMD)
+2. `BATCH-SEMAINE-N.md` pour le contenu IH du batch
 
 ### Vous êtes Claude Code (terminal F)
 
@@ -144,7 +141,6 @@ F2-Jarvis/
 | `distribution/` | Minimal | À enrichir |
 | `marketing/` | Complet | Source de vérité tactique depuis 29/04/2026 |
 | `growth-marketing/` | Résiduel | Algos plateforme uniquement (stratégies archivées 29/04/2026) |
-| `f2/` | Complet | |
 | `romain/` | Complet | |
 | `fabrice/` | Complet | |
 | `saas/` | Complet | |
