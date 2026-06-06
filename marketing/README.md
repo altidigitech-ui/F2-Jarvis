@@ -68,7 +68,7 @@ marketing/
 │   ├── instagram/                      # recyclage TikTok (compte produit @storemd)
 │   │   ├── algo.md
 │   │   └── context.md
-│   ├── linkedin/                       # façade fondateurs F + R + page F2 vitrine
+│   ├── linkedin/                       # façade fondateurs F + R
 │   │   ├── algo.md
 │   │   └── context.md
 │   ├── ph/                             # Product Hunt (launch days)
@@ -136,8 +136,8 @@ Les 8 canaux :
 - **`canaux/instagram/`** — Recyclage TikTok (Reels). Compte produit `@storemd`. Stories pour Couche B beta, carousels pour saves.
 - **`canaux/facebook/`** — Double rôle : (1) page produit `@storemd` recyclage Reels + (2) comptes perso F+R engagement dans groupes Shopify. Règle 80/20 stricte dans les groupes.
 - **`canaux/reddit/`** — Comptes perso F+R sur r/shopify, r/ecommerce, r/entrepreneur. Karma building avant toute mention StoreMD. Cross-replies F↔R.
-- **`canaux/twitter/`** — Façade fondateurs : @FabGangi (F) + @delgado_ro72224 (R) + @foundrytwo (F2). **Format 2-blocs OBLIGATOIRE** (lien dans corps = -1700% reach).
-- **`canaux/linkedin/`** — Façade fondateurs : Fabrice Gangitano + Romain Delgado + page FoundryTwo (vitrine). **Profils perso = SEUL canal** (reach >> page company).
+- **`canaux/twitter/`** — Façade fondateurs : @FabGangi (F) + @delgado_ro72224 (R). **Format 2-blocs OBLIGATOIRE** (lien dans corps = -1700% reach).
+- **`canaux/linkedin/`** — Façade fondateurs : Fabrice Gangitano + Romain Delgado. **Profils perso = SEUL canal** (reach >> page company).
 - **`canaux/ih/`** — Indie Hackers. Posts milestones (si milestone réel) + Show IH aux launches.
 - **`canaux/ph/`** — Product Hunt. Protocole launch day, **uniquement aux launches**, jamais cadence continue.
 
@@ -201,7 +201,7 @@ Sur LinkedIn et Twitter, F (Fabrice) et R (Romain) ont des **rôles publics dist
 | Compte produit `@storemd` | TikTok, Insta, FB Page | Neutre, factuel, pas de "I" / "we" | Aucune (ne montre pas F ni R) |
 | Comptes perso F+R | Reddit, FB Groupes | Humain first-person | F builder / R growth |
 | Comptes façade F+R | Twitter, LinkedIn | Humain personal branding | F builder / R growth |
-| Compte studio F2 (`@foundrytwo`) | Twitter, LinkedIn Page, IH, PH | "We" pluriel, neutre | Studio identity |
+| FoundryTwo (IH) | IndieHackers | Voix du SaaS promu | — |
 
 ### La Toile
 
