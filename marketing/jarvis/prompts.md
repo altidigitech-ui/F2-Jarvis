@@ -26,7 +26,7 @@ Ce fichier est un **cookbook de prompts** à copier-adapter selon le besoin. Pas
 | Information | Pourquoi |
 |---|---|
 | **Plateforme cible** | TikTok, Insta, Twitter, LinkedIn, Reddit, FB, etc. — détermine la voix et le format |
-| **Compte qui poste** | @storemd, F (FabGangi), R (delgado_ro72224), F2 (foundrytwo) — détermine la voix |
+| **Compte qui poste** | @storemd, F (FabGangi), R (delgado_ro72224) — détermine la voix |
 | **Couche A ou Couche B** | Vente directe ou recrutement beta — détermine l'angle |
 | **Sujet ou angle précis** | Sinon JARVIS doit deviner et la qualité chute |
 
@@ -39,7 +39,7 @@ Ce fichier est un **cookbook de prompts** à copier-adapter selon le besoin. Pas
 
 ### 2.3 Persona JARVIS active
 
-Si tu es loggé en tant que persona Romain (vert) ou Fabrice (violet), la voix par défaut est celle de la persona. Pour basculer en mode @foundrytwo : toggle ROMAIN/F2 dans la barre du haut (uniquement sur le cockpit Romain — cf. `../../JARVIS.md` §"Mode F2").
+Si tu es loggé en tant que persona Romain (vert) ou Fabrice (violet), la voix par défaut est celle de la persona.
 
 ---
 
@@ -62,7 +62,7 @@ Sortie attendue :
 - 6 scripts vidéo TikTok @storemd (4 Couche A + 2 Couche B)
 - 3 posts Twitter @FabGangi
 - 3 posts Twitter @delgado_ro72224
-- 5 posts Twitter @foundrytwo (dont 1-2 threads)
+- 1 post IndieHackers FoundryTwo (voix du SaaS promu)
 - 2 posts LinkedIn Fabrice Gangitano
 - 2 posts LinkedIn Romain Delgado
 - Briefs cross-engage F↔R par jour
@@ -158,14 +158,14 @@ Chaque hook doit être :
 ### 5.1 Tweet simple (avec CTA lien — format 2-blocs)
 
 ```
-Génère un tweet [@FabGangi / @delgado_ro72224 / @foundrytwo] sur [sujet].
+Génère un tweet [@FabGangi / @delgado_ro72224] sur [sujet].
 Couche [A / B].
 
 Format 2-blocs OBLIGATOIRE :
 - Bloc POST : tweet sans URL, max 280 chars
 - Bloc REPLY : URL UTM tagué + phrase courte
 
-Voix : [F technique builder / R growth marketeur / F2 studio "we"]
+Voix : [F technique builder / R growth marketeur]
 UTM depuis UTM_TRACKING_LINKS.md Section 1 (reply_cta).
 
 Pas de hashtags. Pas de patterns IA.
@@ -174,7 +174,7 @@ Pas de hashtags. Pas de patterns IA.
 ### 5.2 Thread Twitter
 
 ```
-Génère un thread Twitter @foundrytwo (ou @FabGangi/R selon contexte) sur [sujet].
+Génère un thread Twitter [@FabGangi / @delgado_ro72224] sur [sujet].
 
 5-8 tweets typique :
 - Tweet 1 : Hook + promesse
@@ -505,7 +505,7 @@ JARVIS appelle l'action `create_file` (cf. `../../JARVIS.md` §"Types d'actions"
 ### 12.2 Plan hebdomadaire
 
 ```
-Crée le plan-hebdo S[X] pour [F / R / F2].
+Crée le plan-hebdo S[X] pour [F / R].
 
 Inclure :
 - Posts schedulés par jour
