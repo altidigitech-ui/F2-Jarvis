@@ -635,7 +635,6 @@ Patterns natifs JARVIS — automatique.
 - `../contenu/pipeline-video.md` — pipeline vidéo Phase 1 + 2
 - `../canaux/*.md` — détails par canal
 - `../../romain/VOIX.md` + `../../fabrice/VOIX.md` — voix par persona (filtre anti-IA RÈGLE #0)
-- `../../romain/system-prompt.md` + `../../fabrice/system-prompt.md` + `../../f2/system-prompt.md` — system prompts JARVIS par persona
 - `../../ANTI-IA.md` — règles anti-detection IA
 - `../../BIBLE.md` §3 — lignes rouges intégrité données
 - `../../produits/MUTATIONS.md` — sources chiffrées StoreMD

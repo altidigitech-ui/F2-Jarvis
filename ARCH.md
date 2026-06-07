@@ -169,7 +169,6 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │   │   └── posts-prets.md
 │   ├── roadmap.md
 │   ├── suivi-comptes.md
-│   ├── system-prompt.md
 │   ├── tracking
 │   │   ├── comptes-groupes.md
 │   │   ├── douleurs-observees.md
@@ -301,7 +300,6 @@ Profondeur max : 3. Dossiers ignorés : _ft_original, _cdv_original, .git, node_
 │   │   └── posts-prets.md
 │   ├── roadmap.md
 │   ├── suivi-comptes.md
-│   ├── system-prompt.md
 │   ├── tracking
 │   │   ├── comptes-groupes.md
 │   │   ├── douleurs-observees.md
