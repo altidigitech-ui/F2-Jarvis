@@ -116,6 +116,6 @@ Le +50% temps est négligeable pour un pipeline async.
 
 ## Références
 
-- Skill : `.claude/skills/marketing-fr/SKILL.md`
+- Skill : `.claude/skills/marketing/romain/SKILL.md`
 - Décision : `tracking/decisions-log.md` (entrée 2026-03-10-dual-llm-adoption)
 - Similar pattern : "generator + discriminator" in ML literature
