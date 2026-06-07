@@ -23,7 +23,7 @@ La Toile FoundryTwo applique exactement ce principe au marketing StoreMD :
 
 - **Le centre public** : `storemd.vercel.app` — où on veut que tout prospect arrive.
 - **Le centre interne** : le dashboard admin StoreMD (`/dashboard/admin`) — où on voit qui est arrivé, par quel fil, et qui a converti.
-- **Les nœuds périphériques** : les comptes (TikTok / Insta / FB produit, comptes perso F+R sur Reddit + groupes FB Shopify, comptes façade F+R sur Twitter + LinkedIn, F2/foundrytwo).
+- **Les nœuds périphériques** : les comptes (TikTok / Insta / FB produit, comptes perso F+R sur Reddit + groupes FB Shopify, comptes façade F+R sur Twitter + LinkedIn, FoundryTwo (hub foundrytwo.com + IH)).
 - **Les fils** : 33 chemins concrets détaillés (F1 à F33), chacun avec son UTM tagué qui remonte au dashboard admin.
 
 **Règle non-négociable** : aucun fil cassé. Compte inactif, lien sans UTM, bio orpheline = trou dans la toile = prospects perdus.

@@ -72,9 +72,9 @@ F et R utilisent leurs comptes perso pour engager dans :
 
 **Action** : on répond aux merchants qui décrivent un problème StoreMD résout. Lien UTM tagué quand pertinent. JARVIS aide à proposer la réponse.
 
-### 3.4 Compte F2 / FoundryTwo — vitrine minimale
+### 3.4 FoundryTwo — hub + IndieHackers
 
-`@foundrytwo` (Twitter EN, LinkedIn Company, IH, PH) — minimal hors launch days. Pas de personal branding studio. Sert essentiellement aux launches IH/PH ponctuels.
+Page hub `foundrytwo.com` (linkinbio qui regroupe les produits + leurs liens) + publication IndieHackers (voix du SaaS promu). Pas de compte « we » qui poste sur Twitter/LinkedIn. Launches PH = comptes perso R/F.
 
 ### 3.5 Comptes corporate — statiques
 
@@ -163,13 +163,12 @@ Une toile d'araignée tient parce que les fils sont reliés entre eux, pas seule
 |---|---|
 | F engage chaque post de R sur Twitter < 30 min, et vice versa | L'algo Twitter détecte une conversation engagée par l'auteur (signal × 150). Boost de visibilité pour les deux. |
 | F engage chaque post LinkedIn de R, et vice versa | Idem LinkedIn — golden hour (60 premières minutes critiques). |
-| Bio Twitter F → mention de @foundrytwo et lien storemd | Le visiteur du profil F découvre le studio + le produit |
+| Bio Twitter F → mention de FoundryTwo (foundrytwo.com) et lien storemd | Le visiteur du profil F découvre FoundryTwo + le produit |
 | Bio LinkedIn F+R → Featured link vers storemd.vercel.app | Idem LinkedIn |
-| Bio TikTok `@storemd` → mention F2 / lien éventuel | Reverse : le visiteur du compte produit voit qu'il y a un studio derrière |
+| Bio TikTok `@storemd` → mention FoundryTwo / lien éventuel | Reverse : le visiteur du compte produit voit qu'il y a FoundryTwo derrière |
 | Vidéo TikTok recyclée → Instagram Reels → Facebook page (même jour) | Une seule production, trois canaux. Économie d'effort. |
-| Comment perso F sur thread Reddit qui mentionne discrètement Romain ou foundrytwo | Cross-référence subtile, jamais spammeuse |
+| Comment perso F sur thread Reddit qui mentionne discrètement Romain ou FoundryTwo | Cross-référence subtile, jamais spammeuse |
 | Posts façade fondateurs qui mentionnent le produit (sans pitcher) | Le merchant qui suit F ou R pour leur expertise apprend que StoreMD existe |
-| Page Facebook `@storemd` qui partage occasionnellement les posts F2 | Renforce la cohérence brand |
 
 **Règle** : aucun nœud isolé. Chaque profil contient au minimum un lien vers le centre (storemd.vercel.app) ou vers un autre nœud de la toile (qui mène lui-même au centre).
 
