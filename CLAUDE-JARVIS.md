@@ -43,7 +43,7 @@ COMMUNAUTÉ → DOULEUR → VALIDATION (10 signups/48h) → BUILD → DISTRIBUTI
 ## §2bis : Qui gère quoi
 
 ### Romain (R)
-- Compte studio `@foundrytwo` (publication F2)
+- Gère FoundryTwo (hub `foundrytwo.com` + IndieHackers)
 - Ses comptes perso : Twitter, LinkedIn, Reddit, Facebook, ProductHunt
 - Positionnement : Growth/CRO, e-commerce + agences/freelancers
 
@@ -52,10 +52,10 @@ COMMUNAUTÉ → DOULEUR → VALIDATION (10 signups/48h) → BUILD → DISTRIBUTI
 - Infra technique (code SaaS, F2-Jarvis infra)
 - Positionnement : Builder technique, e-commerce + content creators
 
-### Compte studio @foundrytwo (F2)
+### FoundryTwo (studio — R)
 - Géré par R
-- Canaux : Twitter, LinkedIn, IndieHackers, ProductHunt, TikTok (différé)
-- Rôle : hub central, sales-mode dominant, Friday Studio Update (build-in-public format réservé, règle stricte BIBLE.md §3), milestones
+- Présence : page hub `foundrytwo.com` (linkinbio statique sur Vercel : produits + liens sociaux) + publication sur IndieHackers
+- Voix : celle du SaaS promu (StoreMD), pas de persona studio séparé
 
 ---
 
