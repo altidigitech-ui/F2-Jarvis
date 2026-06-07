@@ -26,8 +26,8 @@ Ce skill **ne duplique pas le canon** — il pointe vers lui et il aiguille. Ce 
 
 | Contexte du contenu | Voix à charger |
 |---|---|
-| **Romain** — comptes perso (Twitter, LinkedIn, Reddit, Facebook) | `romain/VOIX.md` · pour LinkedIn FR, aussi le skill `marketing-fr` |
-| **Fabrice** — comptes perso (Twitter, LinkedIn, Reddit, Facebook) | `fabrice/VOIX.md` · pour Twitter/LinkedIn EN, aussi le skill `marketing-en` |
+| **Romain** — comptes perso (Twitter, LinkedIn, Reddit, Facebook) | `romain/VOIX.md` · pour LinkedIn FR, aussi le skill `marketing/romain` |
+| **Fabrice** — comptes perso (Twitter, LinkedIn, Reddit, Facebook) | `fabrice/VOIX.md` · pour Twitter/LinkedIn EN, aussi le skill `marketing/fabrice` |
 | **Produit StoreMD** — comptes produit (TikTok, Instagram, Facebook, Twitter) | `marketing/saas-app-shopify/storemd/VOIX.md` (+ `…/storemd/context.md` §11) |
 | **Futur produit** (Hokuno, etc.) | `{produit}/VOIX.md` dédié |
 | **IH** — compte FoundryTwo (seul canal FoundryTwo, branding) | Voix du **SaaS promu** (StoreMD aujourd'hui) → sa VOIX produit. Pas de voix studio. |
