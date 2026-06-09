@@ -1,7 +1,7 @@
-# BATCH PUBLICATION — Compte F — S12
+# BATCH PUBLICATION — Compte F — S13
 
 > Compte : Fabrice Gangitano (F perso)
-> Source : `marketing/contenu/batch-semaine/batch-semaine-S12.md` (batch central)
+> Source : `marketing/contenu/batch-semaine/batch-semaine-S13.md` (batch central)
 > Périmètre : posts du compte F uniquement (Twitter @FabGangi + LinkedIn Fabrice Gangitano)
 > Ne JAMAIS rédiger ici. Toute modification se fait dans le batch central puis re-dispatch.
 
@@ -9,21 +9,21 @@
 
 ---
 
-# ═══ LUNDI 01/06 — OFFRE : dernière semaine de Pro gratuit ═══
+---
 
-#### STOREMD-TW-F-S12-01 — Fabrice (@FabGangi) — Twitter — Lun 01/06 13h00
+# ═══ MARDI 09/06 — PRODUIT : invisible pour ChatGPT (POV) ═══
 
-**Vidéo :** `V1-28_14_days_pro_free.mp4` (recyclé TikTok, re-export sans watermark)
+#### STOREMD-TW-F-S13-02 — Fabrice (@FabGangi) — Twitter — Mar 09/06 13h00
+
+**Vidéo :** `V1-12_agentic_pov.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-I built StoreMD to do one thing right 🛠️
+AI search is sending real orders now, and most Shopify stores are invisible to it 🤖
 
-Open your Shopify store like a real customer and tell you what's broken.
+I built StoreMD to check if ChatGPT, Gemini and Copilot can actually read your store, then fix what's blocking them.
 
-Free Pro runs until June 7. Install, scan, check your score.
-
-The browser tests alone catch what no audit PDF ever will.
+Pro's free through June 22.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -38,28 +38,27 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> J'ai construit StoreMD pour faire une chose correctement 🛠️
-> Ouvrir ton store Shopify comme un vrai client et te dire ce qui est cassé.
-> Le Pro gratuit tourne jusqu'au 7 juin. Installe, scanne, regarde ton score.
-> Les tests navigateur à eux seuls chopent ce qu'aucun PDF d'audit ne verra.
+> La recherche IA envoie de vraies commandes maintenant, et la plupart des stores Shopify y sont invisibles 🤖
+> J'ai construit StoreMD pour vérifier si ChatGPT, Gemini et Copilot savent vraiment lire ton store, puis réparer ce qui les bloque.
+> Pro gratuit jusqu'au 22 juin.
 
 ---
 
-# ═══ MARDI 02/06 — OFFRE : prix figé à vie (founding user) ═══
+# ═══ MERCREDI 10/06 — PRODUIT : on a disséqué les concurrents ═══
 
-#### STOREMD-TW-F-S12-02 — Fabrice (@FabGangi) — Twitter — Mar 02/06 13h00
+#### STOREMD-TW-F-S13-03 — Fabrice (@FabGangi) — Twitter — Mer 10/06 13h00
 
-**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-02_reverse_engineered.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Subscribe to StoreMD before June 22 and your price is locked for life 🔒
+Before I wrote a line of StoreMD, I mapped every Shopify health app on the market 🔍
 
-I'd rather reward the people who show up early than run discounts later.
+Each one owned a slice: speed here, SEO there, billing somewhere else.
 
-Install, do the free Pro trial, check your score.
+So I built one scan that covers all of it, plus four checks none of them have.
 
-Decide while the founding rate's still open.
+Pro's free through June 22.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -74,70 +73,34 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> Abonne-toi à StoreMD avant le 22 juin et ton prix est bloqué à vie 🔒
-> Je préfère récompenser ceux qui arrivent tôt plutôt que faire des réductions plus tard.
-> Installe, fais l'essai Pro gratuit, regarde ton score.
-> Décide tant que le tarif founding est encore ouvert.
+> Avant d'écrire une ligne de StoreMD, j'ai cartographié toutes les apps de santé Shopify du marché 🔍
+> Chacune possédait une tranche : la vitesse ici, le SEO là, le billing ailleurs.
+> Alors j'ai construit un scan qui couvre tout, plus quatre checks qu'aucune n'a.
+> Pro gratuit jusqu'au 22 juin.
 
 ---
 
-# ═══ MERCREDI 03/06 — OFFRE : les chiffres / économie annuel ═══
+#### STOREMD-LI-F-S13-03 — Fabrice Gangitano — LinkedIn — Mer 10/06 18h00
 
-#### STOREMD-TW-F-S12-03 — Fabrice (@FabGangi) — Twitter — Mer 03/06 13h00
-
-**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-02_reverse_engineered.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-The StoreMD numbers, straight up 💰
+Before building StoreMD, I did something unglamorous.
 
-Pro is $79/mo, or $790/year with 2 months free. Works out to $65.83/mo, $158 saved a year.
+I opened every Shopify health and audit app I could find and wrote down exactly what each one checked 🔍
 
-Lock that rate for life before June 22.
+The picture was clear fast. One app owned speed. Another owned SEO. A third watched your app bills. A fourth did accessibility. Each was good at its slice and blind to the rest.
 
-Cheapest it'll ever be.
-```
+So a serious store owner ended up paying for four or five tools and stitching the results together by hand.
 
-**REPLY (mini-thread — 1 lien par reply) :**
+I took the best of what they all did, put it in one scan, then built four things none of them have: an AI readiness check, a visual store test, a real-browser purchase simulation, and a live accessibility scan.
 
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
-```
+43 features, 5 modules, one 60-second scan, with the fixes attached.
 
-**TRADUCTION :**
-> Les chiffres StoreMD, cash 💰
-> Pro c'est 79$/mo, ou 790$/an avec 2 mois offerts. Ça fait 65,83$/mo, 158$ économisés par an.
-> Bloque ce tarif à vie avant le 22 juin.
-> Le moins cher que ce sera jamais.
+That's the whole thesis: stop renting five tools to get one clear answer about your store.
 
----
-
-#### STOREMD-LI-F-S12-03 — Fabrice Gangitano — LinkedIn — Mer 03/06 18h00
-
-**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export sans watermark)
-
-**TEXTE :**
-```
-Founders ask me what StoreMD actually costs. Here are the plain numbers 💰
-
-Starter $29/mo.
-Pro $79/mo.
-Agency $199/mo.
-
-Pay yearly and you get 2 months free.
-
-Pro at $790 a year works out to $65.83/mo. That's $158 saved over twelve months.
-
-And if you subscribe before June 22, that price is locked for life. It doesn't move later.
-
-For $79/mo, StoreMD scans your whole Shopify store in 60 seconds, finds the apps still billing you after uninstall, the dead code, the broken listings, the AI readiness gaps, then fixes them.
-
-One agency audit costs more than a year of this.
+Pro's free through June 22 if you want to run it. No card.
 
 Free scan in the comments 👇
 ```
@@ -154,34 +117,33 @@ https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=
 ```
 
 **TRADUCTION :**
-> Les fondateurs me demandent ce que coûte vraiment StoreMD. Voici les chiffres clairs 💰
-> Starter 29$/mo.
-> Pro 79$/mo.
-> Agency 199$/mo.
-> Paie à l'année et tu as 2 mois offerts.
-> Pro à 790$ par an fait 65,83$/mo. C'est 158$ économisés sur douze mois.
-> Et si tu t'abonnes avant le 22 juin, ce prix est bloqué à vie. Il ne bouge pas plus tard.
-> Pour 79$/mo, StoreMD scanne tout ton store Shopify en 60 secondes, trouve les apps qui te facturent encore après désinstallation, le code mort, les listings cassés, les manques de compatibilité IA, puis les répare.
-> Un seul audit d'agence coûte plus qu'une année de ça.
+> Avant de construire StoreMD, j'ai fait un truc pas glamour.
+> J'ai ouvert toutes les apps de santé et d'audit Shopify que j'ai trouvées et noté exactement ce que chacune vérifiait 🔍
+> Le tableau a été clair vite. Une app possédait la vitesse. Une autre le SEO. Une troisième surveillait tes factures d'apps. Une quatrième faisait l'accessibilité. Chacune bonne sur sa tranche et aveugle au reste.
+> Donc un store owner sérieux finissait par payer quatre ou cinq outils et recoller les résultats à la main.
+> J'ai pris le meilleur de ce qu'elles faisaient, mis dans un scan, puis construit quatre choses qu'aucune n'a : un check de compatibilité IA, un test visuel du store, une simulation d'achat en navigateur réel, et un scan d'accessibilité en direct.
+> 43 features, 5 modules, un scan de 60 secondes, corrections attachées.
+> C'est toute la thèse : arrêter de louer cinq outils pour avoir une réponse claire sur ton store.
+> Pro gratuit jusqu'au 22 juin si tu veux le lancer. Sans carte.
 > Scan gratuit en commentaire 👇
 
 ---
 
-# ═══ JEUDI 04/06 — PRODUIT : on répare en un clic ═══
+# ═══ JEUDI 11/06 — PRODUIT : le cimetière de code mort ═══
 
-#### STOREMD-TW-F-S12-04 — Fabrice (@FabGangi) — Twitter — Jeu 04/06 13h00
+#### STOREMD-TW-F-S13-04 — Fabrice (@FabGangi) — Twitter — Jeu 11/06 13h00
 
-**Vidéo :** `V1-09_oneclick_fix.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-16_code_graveyard.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Every audit tool I tried did the same thing: here's your list of problems, good luck 🛠️
+Uninstalling a Shopify app rarely removes its code 🪦
 
-I built StoreMD to fix them instead.
+Scripts, snippets and Liquid get left in your theme, and they keep loading on every page.
 
-It finds the broken thing, you approve, it ships the fix.
+StoreMD finds that dead code and strips it out. One click, reversible.
 
-No dev ticket, no waiting.
+Pro's free through June 22.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -196,28 +158,26 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> Chaque outil d'audit que j'ai essayé faisait pareil : voilà ta liste de problèmes, bonne chance 🛠️
-> J'ai construit StoreMD pour les réparer à la place.
-> Il trouve ce qui est cassé, tu approuves, il applique la correction.
-> Pas de ticket dev, pas d'attente.
+> Désinstaller une app Shopify retire rarement son code 🪦
+> Scripts, snippets et Liquid restent dans ton thème, et continuent de charger sur chaque page.
+> StoreMD trouve ce code mort et l'arrache. Un clic, réversible.
+> Pro gratuit jusqu'au 22 juin.
 
 ---
 
-# ═══ VENDREDI 05/06 — PRODUIT : 43 features, personne d'autre ═══
+# ═══ VENDREDI 12/06 — PRODUIT : on ouvre ton store comme un client ═══
 
-#### STOREMD-TW-F-S12-05 — Fabrice (@FabGangi) — Twitter — Ven 05/06 13h00
+#### STOREMD-TW-F-S13-05 — Fabrice (@FabGangi) — Twitter — Ven 12/06 13h00
 
-**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-08_browser_simulation.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-I counted what StoreMD actually does the other day 🔍
+Reading your store's code tells you what should happen. It doesn't tell you what a customer actually feels 🛒
 
-43 checks across 5 modules. Store health, listings, AI readiness, compliance, real browser tests.
+StoreMD opens your store in a real browser and walks homepage to checkout, timing each step.
 
-Most tools cover one of those.
-
-That's the whole reason I built it.
+It finds the bottleneck. Pro's free through June 22.
 ```
 
 **REPLY (mini-thread — 1 lien par reply) :**
@@ -232,32 +192,31 @@ https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=f
 ```
 
 **TRADUCTION :**
-> J'ai compté ce que StoreMD fait vraiment l'autre jour 🔍
-> 43 vérifications sur 5 modules. Santé du store, listings, compatibilité IA, conformité, tests navigateur réels.
-> La plupart des outils couvrent une de ces choses.
-> C'est toute la raison pour laquelle je l'ai construit.
+> Lire le code de ton store te dit ce qui devrait se passer. Pas ce qu'un client ressent vraiment 🛒
+> StoreMD ouvre ton store dans un vrai navigateur et parcourt homepage à checkout, en chronométrant chaque étape.
+> Il trouve le goulot. Pro gratuit jusqu'au 22 juin.
 
 ---
 
-#### STOREMD-LI-F-S12-05 — Fabrice Gangitano — LinkedIn — Ven 05/06 15h30
+#### STOREMD-LI-F-S13-05 — Fabrice Gangitano — LinkedIn — Ven 12/06 15h30
 
-**Vidéo :** `V1-01_43features_domination.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-08_browser_simulation.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-When I started building StoreMD, I made a list of every Shopify health tool on the market.
+There are two ways to check if a store works.
 
-Then I listed what each one actually checked.
+You can read its code, or you can use it 🛒
 
-The pattern was obvious: each tool owned one slice. Speed here, SEO there, an app for billing, another for accessibility 🔍
+Almost every audit tool reads the code. It parses your theme, checks your tags, scores your setup, and hands you a report. Useful, but it tells you what should happen, not what a customer actually experiences.
 
-So a serious store owner ended up paying for four or five of them, and still stitching the results together by hand.
+StoreMD does the second thing. It opens your store in a real browser and walks the full path a buyer takes: homepage, product page, add to cart, checkout. It screenshots each step on mobile and desktop, times them, and shows you where the path slows down or breaks.
 
-StoreMD runs 43 checks across 5 modules in one scan: store health, listings, AI readiness, compliance, and real browser tests that open your store like a customer would.
+That bottleneck, the slow product page or the checkout that hangs, is where real money leaks. You can't catch it by reading code. You catch it by walking the store.
 
-One scan. 60 seconds. Every problem ranked by priority, with the fix attached.
+No other Shopify app I know of does this.
 
-That's the whole point: stop renting five tools to get one clear answer.
+Pro's free through June 22 if you want to watch your own store get tested. No card.
 
 Free scan in the comments 👇
 ```
@@ -274,11 +233,11 @@ https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=
 ```
 
 **TRADUCTION :**
-> Quand j'ai commencé à construire StoreMD, j'ai fait une liste de tous les outils de santé Shopify du marché.
-> Puis j'ai listé ce que chacun vérifiait vraiment.
-> Le pattern était évident : chaque outil possédait une tranche. La vitesse ici, le SEO là, une app pour le billing, une autre pour l'accessibilité 🔍
-> Donc un store owner sérieux finissait par en payer quatre ou cinq, et recollait quand même les résultats à la main.
-> StoreMD fait 43 vérifications sur 5 modules en un scan : santé du store, listings, compatibilité IA, conformité, et tests navigateur réels qui ouvrent ton store comme un client.
-> Un scan. 60 secondes. Chaque problème classé par priorité, avec la correction attachée.
-> C'est tout l'intérêt : arrêter de louer cinq outils pour avoir une réponse claire.
+> Il y a deux façons de vérifier si un store marche.
+> Tu peux lire son code, ou tu peux l'utiliser 🛒
+> Presque tous les outils d'audit lisent le code. Ils parsent ton thème, vérifient tes tags, notent ta config, et te filent un rapport. Utile, mais ça te dit ce qui devrait se passer, pas ce qu'un client vit vraiment.
+> StoreMD fait la deuxième chose. Il ouvre ton store dans un vrai navigateur et parcourt tout le chemin d'un acheteur : homepage, page produit, ajout au panier, checkout. Il screenshote chaque étape sur mobile et desktop, les chronomètre, et te montre où le chemin ralentit ou casse.
+> Ce goulot, la page produit lente ou le checkout qui rame, c'est là que l'argent fuit vraiment. Tu ne le chopes pas en lisant le code. Tu le chopes en parcourant le store.
+> Aucune autre app Shopify que je connaisse ne fait ça.
+> Pro gratuit jusqu'au 22 juin si tu veux voir ton propre store se faire tester. Sans carte.
 > Scan gratuit en commentaire 👇
