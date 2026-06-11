@@ -287,7 +287,7 @@ export default function GraphifyView({ accentColor, onSendToJarvis, onClose }: P
 
   const handleSendToJarvis = useCallback(
     (label: string) => {
-      onSendToJarvis?.(`Explique-moi le concept "${label}" dans le contexte F2/FoundryTwo.`);
+      onSendToJarvis?.(`Explique-moi le concept "${label}" dans le contexte FoundryTwo.`);
       onClose?.();
     },
     [onSendToJarvis, onClose]
@@ -310,7 +310,7 @@ export default function GraphifyView({ accentColor, onSendToJarvis, onClose }: P
         <div className="text-[11px] font-mono text-slate-600 text-center max-w-xs leading-relaxed">
           Graphify n&apos;est pas initialisé. Lance{" "}
           <code className="text-slate-400">graphify update .</code> dans le repo pour générer le
-          graph sémantique F2.
+          graph sémantique FoundryTwo.
         </div>
         <button
           className="text-[10px] font-mono px-4 py-2 rounded-lg transition-all"

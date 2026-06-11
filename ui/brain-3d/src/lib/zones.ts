@@ -21,7 +21,7 @@ export const BRAIN_REGIONS: BrainRegion[] = [
     label: "Cortex préfrontal",
     labelShort: "Decisions",
     folder: "tracking",
-    description: "Décisions stratégiques F2 (DDR)",
+    description: "Décisions stratégiques FoundryTwo (DDR)",
     position: [0, 1.2, 1.3],
     color: "#3b4fd8",
   },

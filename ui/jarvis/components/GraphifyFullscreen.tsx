@@ -27,7 +27,7 @@ export default function GraphifyFullscreen({ accentColor, onClose, onSendToJarvi
             ⬡ GRAPHIFY
           </span>
           <span className="text-[9px] font-mono text-slate-600">
-            Concepts sémantiques F2 · FoundryTwo
+            Concepts sémantiques · FoundryTwo
           </span>
         </div>
         <button
