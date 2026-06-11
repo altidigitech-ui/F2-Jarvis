@@ -40,32 +40,26 @@ const PERSONA_STATIC = {
 } as const;
 
 interface PersonaTargets {
-  cold: number;
-  twEng: number;
-  liCom: number;
-  reddit: number;
-  facebook: number;
-  cross: number;
+  coldTiktok: number;
+  coldInstagram: number;
+  coldFacebook: number;
+  coldTwitter: number;
+  coldLinkedin: number;
   ph: number;
-  ih: number;
-  ihPh: number;
-  engTarget: number;
-  platforms: string[];
-  hasIhPh: boolean;
-  hasPh: boolean;
-  hasIh: boolean;
+  totalPersona: number;
+  general: number;
 }
 
-// Fallback targets used when the /targets fetch fails
+// Fallback targets si le fetch /targets échoue — canon 41/82 (cibles officielles fixes)
+const CANON_TARGETS: PersonaTargets = { coldTiktok: 10, coldInstagram: 10, coldFacebook: 5, coldTwitter: 5, coldLinkedin: 5, ph: 6, totalPersona: 41, general: 82 };
 const TARGETS_FALLBACK: Record<string, PersonaTargets> = {
-  romain:  { cold: 10, twEng: 10, liCom: 10, reddit: 8, facebook: 6, cross: 4, ph: 0, ih: 0, ihPh: 0, engTarget: 48, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"], hasIhPh: false, hasPh: false, hasIh: false },
-  fabrice: { cold: 10, twEng: 15, liCom: 15, reddit: 8, facebook: 6, cross: 4, ph: 0, ih: 0, ihPh: 0, engTarget: 58, platforms: ["TWITTER","LINKEDIN","REDDIT","FACEBOOK"], hasIhPh: false, hasPh: false, hasIh: false },
-  f2:      { cold: 0,  twEng: 0,  liCom: 0,  reddit: 0, facebook: 0, cross: 0, ph: 0, ih: 10, ihPh: 10, engTarget: 10, platforms: ["IH"],                              hasIhPh: true,  hasPh: false, hasIh: true  },
+  romain:  { ...CANON_TARGETS },
+  fabrice: { ...CANON_TARGETS },
 };
 
 const EMPTY_CONTEXT: ContextData = {
   timeline: [],
-  counters: { cold: 0, repliesIn: 0, twEng: 0, liCom: 0, reddit: 0, facebook: 0, cross: 0, ihPh: 0, ph: 0, ih: 0, total: 0 },
+  counters: { coldTiktok: 0, coldInstagram: 0, coldFacebook: 0, coldTwitter: 0, coldLinkedin: 0, ph: 0, reddit: 0, totalPersona: 0, general: 0 },
   alerts: [],
   weekPlanningF2: [],
 };
@@ -394,9 +388,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
       .then((r) => r.ok ? r.json() : null)
       .then((data) => {
         if (data) {
-          const targetKey = f2Mode ? "f2" : persona;
-          if (data[targetKey]) {
-            setTargets(data[targetKey] as PersonaTargets);
+          if (data[persona]) {
+            setTargets(data[persona] as PersonaTargets);
           }
           setWeekNumber(data.weekNumber ?? 1);
         }
@@ -462,8 +455,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   }, [fetchContext]);
 
   const { counters, alerts } = ctx;
-  const effectiveCrossTarget = (counters.crossTarget !== undefined && counters.crossTarget > 0) ? counters.crossTarget : targets.cross;
-  const totalTarget = targets.engTarget - targets.cross + effectiveCrossTarget;
+  const totalTarget = targets.totalPersona;
   const rawTimeline = f2Mode ? ctx.weekPlanningF2 : ctx.timeline;
   const timeline = rawTimeline.map((item) =>
     doneItems.has(item.title) ? { ...item, status: "done" as const } : item
@@ -640,31 +632,21 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
           <div className="flex-1 overflow-y-auto p-4">
             <div className="grid grid-cols-2 gap-2">
-              {targets.cold > 0 && (
-                <CounterTile label="Cold" value={counters.cold} target={targets.cold} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
-              )}
-              {targets.platforms.includes("TWITTER") && (
-                <CounterTile label="TW eng." value={counters.twEng} target={targets.twEng} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
-              )}
-              {targets.platforms.includes("LINKEDIN") && (
-                <CounterTile label="LI com." value={counters.liCom} target={targets.liCom} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
-              )}
-              {targets.platforms.includes("REDDIT") && (
-                <CounterTile label="Reddit" value={counters.reddit} target={targets.reddit} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
-              )}
-              {targets.hasIhPh && (
-                <CounterTile label="IH + PH" value={counters.ihPh} target={targets.ihPh} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
-              )}
-              {(targets.cross > 0 || (counters.crossTarget !== undefined && counters.crossTarget > 0)) && (
-                <CounterTile label="Cross" value={counters.cross} target={counters.crossTarget && counters.crossTarget > 0 ? counters.crossTarget : targets.cross} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
-              )}
+              <CounterTile label="TikTok" value={counters.coldTiktok} target={targets.coldTiktok} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Insta" value={counters.coldInstagram} target={targets.coldInstagram} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Facebook" value={counters.coldFacebook} target={targets.coldFacebook} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Twitter" value={counters.coldTwitter} target={targets.coldTwitter} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="LinkedIn" value={counters.coldLinkedin} target={targets.coldLinkedin} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="PH" value={counters.ph} target={targets.ph} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Reddit" value={counters.reddit} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               {persona === "fabrice" && mode !== "f2" && (
                 <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
               {persona === "fabrice" && mode !== "f2" && (
                 <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
-              <CounterTile label="Total" value={counters.total} target={totalTarget} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Total persona" value={counters.totalPersona} target={targets.totalPersona} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
+              <CounterTile label="Général R+F" value={counters.general} target={targets.general} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
             </div>
           </div>
         </div>
@@ -821,112 +803,21 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               Compteurs du jour
             </div>
             <div className="grid grid-cols-2 gap-1.5">
-              {targets.cold > 0 && (
-              <CounterTile
-                label="Cold"
-                value={counters.cold}
-                target={targets.cold}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(filePaths.cold)}
-              />
-              )}
-              {targets.platforms.includes("TWITTER") && (
-                <CounterTile
-                  label="TW eng."
-                  value={counters.twEng}
-                  target={targets.twEng}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-                />
-              )}
-              {targets.platforms.includes("LINKEDIN") && (
-                <CounterTile
-                  label="LI com."
-                  value={counters.liCom}
-                  target={targets.liCom}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-                />
-              )}
-              {targets.platforms.includes("REDDIT") && (
-                <CounterTile
-                  label="Reddit"
-                  value={counters.reddit}
-                  target={targets.reddit}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-                />
-              )}
-              {targets.platforms.includes("FACEBOOK") && (
-                <CounterTile
-                  label="Facebook"
-                  value={counters.facebook}
-                  target={targets.facebook}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-                />
-              )}
-              {targets.hasIh && targets.hasPh && (
-                <CounterTile
-                  label="IH + PH"
-                  value={counters.ihPh}
-                  target={targets.ihPh}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-                />
-              )}
-              {targets.hasIh && !targets.hasPh && (
-                <CounterTile
-                  label="IH"
-                  value={counters.ih ?? counters.ihPh}
-                  target={targets.ih}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-                />
-              )}
-              {targets.hasPh && !targets.hasIh && (
-                <CounterTile
-                  label="PH"
-                  value={counters.ph ?? counters.ihPh}
-                  target={targets.ph}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath(`${persona}/engagement/engagement-log.md`)}
-                />
-              )}
-              {(targets.cross > 0 || (counters.crossTarget !== undefined && counters.crossTarget > 0)) && (
-              <CounterTile
-                label="Cross"
-                value={counters.cross}
-                target={counters.crossTarget && counters.crossTarget > 0 ? counters.crossTarget : targets.cross}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(filePaths.crossEng)}
-              />
+              <CounterTile label="TikTok" value={counters.coldTiktok} target={targets.coldTiktok} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.cold)} />
+              <CounterTile label="Insta" value={counters.coldInstagram} target={targets.coldInstagram} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.cold)} />
+              <CounterTile label="Facebook" value={counters.coldFacebook} target={targets.coldFacebook} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.cold)} />
+              <CounterTile label="Twitter" value={counters.coldTwitter} target={targets.coldTwitter} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.cold)} />
+              <CounterTile label="LinkedIn" value={counters.coldLinkedin} target={targets.coldLinkedin} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.cold)} />
+              <CounterTile label="PH" value={counters.ph} target={targets.ph} accentColor={accentColor} onClick={() => setOpenFilePath(`${persona}/engagement/ph/engagement-log.md`)} />
+              <CounterTile label="Reddit" value={counters.reddit} accentColor={accentColor} onClick={() => setOpenFilePath(`${persona}/engagement/reddit/engagement-log.md`)} />
+              {persona === "fabrice" && mode !== "f2" && (
+                <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")} />
               )}
               {persona === "fabrice" && mode !== "f2" && (
-                <CounterTile
-                  label="Scans/j"
-                  value={counters.pipelineScans ?? 0}
-                  target={6}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")}
-                />
+                <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")} />
               )}
-              {persona === "fabrice" && mode !== "f2" && (
-                <CounterTile
-                  label="Beta spots"
-                  value={counters.pipelineBetas ?? 0}
-                  target={8}
-                  accentColor={accentColor}
-                  onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")}
-                />
-              )}
-              <CounterTile
-                label="Total"
-                value={counters.total}
-                target={totalTarget}
-                accentColor={accentColor}
-                onClick={() => setOpenFilePath(filePaths.progress)}
-              />
+              <CounterTile label="Total persona" value={counters.totalPersona} target={targets.totalPersona} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.progress)} />
+              <CounterTile label="Général R+F" value={counters.general} target={targets.general} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.progress)} />
             </div>
           </div>
 
