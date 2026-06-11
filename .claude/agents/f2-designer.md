@@ -68,7 +68,7 @@ Passer au web-interface-guidelines + web-accessibility :
 
 ## Contextes F2
 
-### Dashboard F2-JARVIS web (`ui/web/`)
+### Cockpit Jarvis (`ui/jarvis/`)
 Interne. Dense, technique, rapide. Pas de "onboarding friendly".
 
 ### Cerveau 3D (`ui/brain-3d/`)

@@ -638,13 +638,9 @@ Bus de communication inter-composants via `CustomEvent` :
 
 App séparée (Vite + React + Tailwind + React Three Fiber + Zustand) pour une visualisation 3D immersive du brain. Composants : Brain.tsx, Region.tsx, DropZone.tsx, SidePanel.tsx. Store Zustand avec zones configurables.
 
-### 3.10 ui/web/ — app secondaire
+### 3.10 ui/web/ — ARCHIVÉ (11/06/2026)
 
-App Next.js légère avec pages :
-- `/morning` : briefing matinal
-- `/proposals` : review proposals Ouroboros
-- `/budget` : suivi budget
-- `/graph` : visualisation graphe
+Brouillon v1 du dashboard (app Next.js légère : `/morning`, `/proposals`, `/budget`, `/graph`), jamais câblé, supplanté par `ui/jarvis`. Déplacé vers `archives/2026/07-tech-legacy/ui-web-dashboard-2026-06-11/`. Idées uniques (page `/budget`, vue Overview business) = futurs panneaux possibles de `ui/jarvis` si besoin.
 
 ---
 
