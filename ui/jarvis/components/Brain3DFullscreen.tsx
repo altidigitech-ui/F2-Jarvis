@@ -62,12 +62,11 @@ function WingsSphere({ wingColor, activeWing, onHover }: WingsSphereProps) {
 
 type Props = {
   persona: "romain" | "fabrice";
-  mode: "normal" | "f2";
   onClose: () => void;
 };
 
-export function Brain3DFullscreen({ persona, mode, onClose }: Props) {
-  const colorKey: ColorKey = mode === "f2" ? "f2" : persona;
+export function Brain3DFullscreen({ persona, onClose }: Props) {
+  const colorKey: ColorKey = persona;
   const colors = BRAIN_COLORS[colorKey];
   const [hoveredWing, setHoveredWing] = useState<string | null>(null);
   const [selectedWing, setSelectedWing] = useState<string | null>(null);

@@ -21,7 +21,6 @@ interface BatchStatus {
 type Props = {
   accentColor: string;
   persona: string;
-  mode: string;
 };
 
 function readFileAsBase64(file: File): Promise<string> {
@@ -33,7 +32,7 @@ function readFileAsBase64(file: File): Promise<string> {
   });
 }
 
-export function BatchCard({ accentColor, persona, mode }: Props) {
+export function BatchCard({ accentColor, persona }: Props) {
   const [status, setStatus] = useState<BatchStatus | null>(null);
   const [expanded, setExpanded] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -58,7 +57,7 @@ export function BatchCard({ accentColor, persona, mode }: Props) {
     setUploading(true);
     try {
       const contentBase64 = await readFileAsBase64(file);
-      const uploadPersona = mode === "f2" ? "f2" : persona;
+      const uploadPersona = persona;
       const res = await fetch("/api/batch/upload", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

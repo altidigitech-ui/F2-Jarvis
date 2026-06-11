@@ -72,17 +72,15 @@ const ForceGraph3D = dynamic(
 
 type Props = {
   persona: "romain" | "fabrice";
-  mode: "normal" | "f2";
   onExpand?: () => void;
 };
 
-export default function RepoGraph3D({ persona, mode, onExpand }: Props) {
+export default function RepoGraph3D({ persona, onExpand }: Props) {
   const [data, setData] = useState<GraphData>({ nodes: [], links: [] });
   const [ready, setReady] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const accentColor =
-    mode === "f2" ? "#97C459" : persona === "romain" ? "#00ffb4" : "#9b8fff";
+  const accentColor = persona === "romain" ? "#00ffb4" : "#9b8fff";
 
   useEffect(() => {
     fetchGraph().then((d) => { setData(d); setReady(true); });

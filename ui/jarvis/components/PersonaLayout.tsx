@@ -157,11 +157,10 @@ function Bar({ value, target, label, color }: { value: number; target: number; l
 type AlertRowProps = {
   alert: { title: string; description?: string; level: string };
   persona: Persona;
-  mode: "normal" | "f2";
   onResolved: () => void;
 };
 
-function AlertRow({ alert, persona, mode, onResolved }: AlertRowProps) {
+function AlertRow({ alert, persona, onResolved }: AlertRowProps) {
   const [state, setState] = useState<"idle" | "resolving" | "done" | "error">("idle");
 
   async function resolve() {
@@ -173,7 +172,6 @@ function AlertRow({ alert, persona, mode, onResolved }: AlertRowProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           persona,
-          mode,
           action_type: "resolve_alert",
           params: { keyword: alert.title.slice(0, 60) },
           preview: `Résoudre alerte: ${alert.title}`,
@@ -405,7 +403,6 @@ export function PersonaLayout({ persona }: Props) {
         <ErrorBoundary>
           <RepoGraph3DFullscreen
             persona={persona}
-            mode="normal"
             onClose={() => setBrainExpanded(false)}
             onLoadFile={(name, content) => setFileContext({ name, content })}
           />
@@ -440,7 +437,6 @@ export function PersonaLayout({ persona }: Props) {
         accentColor={accentColor}
         onClose={() => setOpenFilePath(null)}
         persona={persona}
-        mode="normal"
       />
       {promptsOpen && (
         <PromptsModal
@@ -510,7 +506,6 @@ export function PersonaLayout({ persona }: Props) {
               accentColor={accentColor}
               loading={loading}
               persona={persona}
-              mode="normal"
               onItemDone={markTimelineItemDone}
             />
           </div>
@@ -589,7 +584,7 @@ export function PersonaLayout({ persona }: Props) {
               onOpenPrompts={() => { setPromptsOpen(true); setMobilePanel(null); }}
               onOpenUtmLinks={() => { setOpenFilePath(utmPath); setMobilePanel(null); }}
             />
-            <BatchCard accentColor={accentColor} persona={persona} mode="normal" />
+            <BatchCard accentColor={accentColor} persona={persona} />
             <OuroborosPanel accentColor={accentColor} persona={persona} />
           </div>
           <div className="flex-1" />
@@ -606,7 +601,6 @@ export function PersonaLayout({ persona }: Props) {
           <div className="p-3">
             <RepoGraph3D
               persona={persona}
-              mode="normal"
               onExpand={() => setBrainExpanded(true)}
             />
           </div>
@@ -666,7 +660,6 @@ export function PersonaLayout({ persona }: Props) {
             accentColor={accentColor}
             loading={loading}
             persona={persona}
-            mode="normal"
             onItemDone={markTimelineItemDone}
           />
         </div>
@@ -677,7 +670,6 @@ export function PersonaLayout({ persona }: Props) {
           <div className="flex-1 overflow-hidden">
             <Chat
               persona={persona}
-              mode="normal"
               onAction={handleAction}
               fileContext={fileContext}
               onFileContextClear={() => setFileContext(null)}
@@ -775,7 +767,6 @@ export function PersonaLayout({ persona }: Props) {
                   key={`${alert.title}-${i}`}
                   alert={alert}
                   persona={persona}
-                  mode="normal"
                   onResolved={() => fetchContext()}
                 />
               ))
@@ -783,7 +774,7 @@ export function PersonaLayout({ persona }: Props) {
           </div>
 
           {/* Batch S{N+1} card */}
-          <BatchCard accentColor={accentColor} persona={persona} mode="normal" />
+          <BatchCard accentColor={accentColor} persona={persona} />
 
           {/* Ouroboros panel */}
           <OuroborosPanel accentColor={accentColor} persona={persona} />
