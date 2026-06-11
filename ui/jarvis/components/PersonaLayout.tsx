@@ -61,7 +61,6 @@ const EMPTY_CONTEXT: ContextData = {
   timeline: [],
   counters: { coldTiktok: 0, coldInstagram: 0, coldFacebook: 0, coldTwitter: 0, coldLinkedin: 0, ph: 0, reddit: 0, totalPersona: 0, general: 0 },
   alerts: [],
-  weekPlanningF2: [],
 };
 
 // Compute next batch time (12h, 18h, 22h CEST) and countdown
@@ -251,72 +250,16 @@ function AlertRow({ alert, persona, mode, onResolved }: AlertRowProps) {
   );
 }
 
-function F2Banner() {
-  const [expanded, setExpanded] = useState(false);
-  const rules = [
-    "Pronom : we / our / the studio (jamais I)",
-    "Data-driven, neutre, transparent sur les échecs",
-    "Pas de revolutionary, game-changing, 🚀🔥",
-    "Pas d'em-dash comme pivot, pas de Not X it's Y",
-    "Contractions obligatoires en anglais",
-    "Zéro fake stats, zéro fake testimonials",
-  ];
-  return (
-    <div
-      className="absolute left-0 right-0 z-30 text-center text-[11px] font-mono tracking-widest"
-      style={{
-        top: "100%",
-        background: "rgba(151,196,89,0.92)",
-        backdropFilter: "blur(8px)",
-        borderBottom: "1px solid rgba(151,196,89,0.35)",
-        color: "#1a2e0a",
-      }}
-    >
-      <button
-        onClick={() => setExpanded((v) => !v)}
-        className="w-full py-1 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
-      >
-        <span className="font-semibold">◈ MODE F2 ACTIF — @foundrytwo</span>
-        <span className="opacity-70 text-[10px]">{expanded ? "▲" : "▼"}</span>
-      </button>
-      {expanded && (
-        <div
-          className="px-6 py-3 text-left"
-          style={{ background: "rgba(120,180,60,0.15)" }}
-        >
-          <div className="text-[10px] font-mono uppercase opacity-70 mb-2" style={{ color: "#1a2e0a" }}>
-            Règles voix F2 (checklist avant publication)
-          </div>
-          <ul className="space-y-1">
-            {rules.map((r, i) => (
-              <li
-                key={i}
-                className="text-[11px] font-mono flex gap-2 opacity-90"
-                style={{ color: "#1a2e0a" }}
-              >
-                <span>✓</span>
-                <span>{r}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
-}
 
 type Props = {
   persona: Persona;
-  showF2Toggle?: boolean;
 };
 
-export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
+export function PersonaLayout({ persona }: Props) {
   const cfg = PERSONA_STATIC[persona];
-  const lsKey = `jarvis_f2mode_${persona}`;
 
   const [targets, setTargets] = useState<PersonaTargets>(TARGETS_FALLBACK[persona] as PersonaTargets);
   const [weekNumber, setWeekNumber] = useState<number>(1);
-  const [f2Mode, setF2ModeState] = useState(false);
   const [brainExpanded, setBrainExpanded] = useState(false);
   const [graphifyExpanded, setGraphifyExpanded] = useState(false);
   const [graphifyPrefill, setGraphifyPrefill] = useState<string | null>(null);
@@ -333,7 +276,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
   const pendingOpsRef = useRef(0);
 
   const todayKey = new Date().toISOString().slice(0, 10);
-  const doneItemsKey = `jarvis_done_${persona}_${f2Mode ? "f2" : "normal"}_${todayKey}`;
+  const doneItemsKey = `jarvis_done_${persona}_normal_${todayKey}`;
 
   const [doneItems, setDoneItems] = useState<Set<string>>(() => {
     if (typeof window === "undefined") return new Set();
@@ -373,15 +316,6 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
     });
   }, []);
 
-  // Restore f2Mode from localStorage (client-only)
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem(lsKey);
-      if (stored === "true") setF2ModeState(true);
-    } catch { /* SSR or private mode */ }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   // Fetch dynamic targets from batch
   useEffect(() => {
     fetch("/api/config/targets")
@@ -395,15 +329,9 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         }
       })
       .catch(() => { /* keep fallback */ });
-  }, [persona, f2Mode]);
+  }, [persona]);
 
-  const setF2Mode = useCallback((val: boolean) => {
-    setF2ModeState(val);
-    try { localStorage.setItem(lsKey, String(val)); } catch { /* ignore */ }
-  }, [lsKey]);
-
-  const accentColor = f2Mode ? "#97C459" : cfg.color;
-  const mode = f2Mode ? "f2" : "normal";
+  const accentColor = cfg.color;
 
   // Batch countdown ticker
   useEffect(() => {
@@ -419,7 +347,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
   const fetchContext = useCallback(async () => {
     try {
-      const res = await fetch(`/api/context?persona=${persona}&mode=${mode}`);
+      const res = await fetch(`/api/context?persona=${persona}`);
       if (res.ok) {
         const data: ContextData = await res.json();
         setCtx(data);
@@ -429,7 +357,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
     } finally {
       setLoading(false);
     }
-  }, [persona, mode]);
+  }, [persona]);
 
   useEffect(() => {
     setLoading(true);
@@ -456,28 +384,20 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
 
   const { counters, alerts } = ctx;
   const totalTarget = targets.totalPersona;
-  const rawTimeline = f2Mode ? ctx.weekPlanningF2 : ctx.timeline;
+  const rawTimeline = ctx.timeline;
   const timeline = rawTimeline.map((item) =>
     doneItems.has(item.title) ? { ...item, status: "done" as const } : item
   );
 
   const utmPath = "tracking/utm/StoreMD/UTM_TRACKING_LINKS.md";
 
-  const filePaths = f2Mode
-    ? {
-        planHebdo: "f2/plan-hebdo.md",
-        postsBatch: `BATCH-SEMAINE-${weekNumber}.md`,
-        crossEng: `${persona}/cross-engagement-tracker.md`,
-        cold: `${persona}/cold/cold-outreach-log.md`,
-        progress: "f2/progress-semaine.md",
-      }
-    : {
-        planHebdo: `${persona}/plan-hebdo.md`,
-        postsBatch: `BATCH-SEMAINE-${weekNumber}.md`,
-        crossEng: `${persona}/cross-engagement-tracker.md`,
-        cold: `${persona}/cold/cold-outreach-log.md`,
-        progress: `${persona}/progress-semaine.md`,
-      };
+  const filePaths = {
+    planHebdo: `${persona}/plan-hebdo.md`,
+    postsBatch: `BATCH-SEMAINE-${weekNumber}.md`,
+    crossEng: `${persona}/cross-engagement-tracker.md`,
+    cold: `${persona}/cold/cold-outreach-log.md`,
+    progress: `${persona}/progress-semaine.md`,
+  };
 
   return (
     <div className="relative h-screen overflow-hidden flex flex-col z-10">
@@ -485,7 +405,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         <ErrorBoundary>
           <RepoGraph3DFullscreen
             persona={persona}
-            mode={mode as "normal" | "f2"}
+            mode="normal"
             onClose={() => setBrainExpanded(false)}
             onLoadFile={(name, content) => setFileContext({ name, content })}
           />
@@ -520,7 +440,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         accentColor={accentColor}
         onClose={() => setOpenFilePath(null)}
         persona={persona}
-        mode={mode}
+        mode="normal"
       />
       {promptsOpen && (
         <PromptsModal
@@ -530,13 +450,8 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
         />
       )}
       {/* Top bar */}
-      {f2Mode && (
-        <div className="fixed top-0 left-0 right-0 z-30">
-          <F2Banner />
-        </div>
-      )}
       <header
-        className={`glass flex items-center justify-between px-6 py-3 sticky top-0 z-20 ${f2Mode ? "mt-8" : ""}`}
+        className="glass flex items-center justify-between px-6 py-3 sticky top-0 z-20"
         style={{ borderBottom: `1px solid ${accentColor}20` }}
       >
         <div className="flex items-center gap-4">
@@ -562,26 +477,6 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             <span className="text-[10px] text-slate-600">{cfg.role}</span>
           </div>
 
-          {showF2Toggle && (
-            <div className="flex items-center gap-1 ml-4">
-              <button
-                onClick={() => setF2Mode(false)}
-                className={`text-[12px] font-mono px-2 py-1 rounded transition-all ${
-                  !f2Mode ? "text-slate-200 bg-white/10" : "text-slate-500 hover:text-slate-300"
-                }`}
-              >
-                ROMAIN
-              </button>
-              <button
-                onClick={() => setF2Mode(true)}
-                className={`text-[12px] font-mono px-2 py-1 rounded transition-all ${
-                  f2Mode ? "text-[#97C459] bg-[#97C459]/10" : "text-slate-500 hover:text-slate-300"
-                }`}
-              >
-                F2
-              </button>
-            </div>
-          )}
         </div>
 
         <div className="flex items-center gap-4">
@@ -615,7 +510,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               accentColor={accentColor}
               loading={loading}
               persona={persona}
-              mode={mode as "normal" | "f2"}
+              mode="normal"
               onItemDone={markTimelineItemDone}
             />
           </div>
@@ -639,10 +534,10 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               <CounterTile label="LinkedIn" value={counters.coldLinkedin} target={targets.coldLinkedin} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               <CounterTile label="PH" value={counters.ph} target={targets.ph} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               <CounterTile label="Reddit" value={counters.reddit} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
-              {persona === "fabrice" && mode !== "f2" && (
+              {persona === "fabrice" && (
                 <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
-              {persona === "fabrice" && mode !== "f2" && (
+              {persona === "fabrice" && (
                 <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
               )}
               <CounterTile label="Total persona" value={counters.totalPersona} target={targets.totalPersona} accentColor={accentColor} onClick={() => setMobilePanel(null)} />
@@ -694,7 +589,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               onOpenPrompts={() => { setPromptsOpen(true); setMobilePanel(null); }}
               onOpenUtmLinks={() => { setOpenFilePath(utmPath); setMobilePanel(null); }}
             />
-            <BatchCard accentColor={accentColor} persona={persona} mode={mode} />
+            <BatchCard accentColor={accentColor} persona={persona} mode="normal" />
             <OuroborosPanel accentColor={accentColor} persona={persona} />
           </div>
           <div className="flex-1" />
@@ -711,7 +606,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           <div className="p-3">
             <RepoGraph3D
               persona={persona}
-              mode={mode as "normal" | "f2"}
+              mode="normal"
               onExpand={() => setBrainExpanded(true)}
             />
           </div>
@@ -771,7 +666,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
             accentColor={accentColor}
             loading={loading}
             persona={persona}
-            mode={mode as "normal" | "f2"}
+            mode="normal"
             onItemDone={markTimelineItemDone}
           />
         </div>
@@ -782,7 +677,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           <div className="flex-1 overflow-hidden">
             <Chat
               persona={persona}
-              mode={mode}
+              mode="normal"
               onAction={handleAction}
               fileContext={fileContext}
               onFileContextClear={() => setFileContext(null)}
@@ -810,10 +705,10 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
               <CounterTile label="LinkedIn" value={counters.coldLinkedin} target={targets.coldLinkedin} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.cold)} />
               <CounterTile label="PH" value={counters.ph} target={targets.ph} accentColor={accentColor} onClick={() => setOpenFilePath(`${persona}/engagement/ph/engagement-log.md`)} />
               <CounterTile label="Reddit" value={counters.reddit} accentColor={accentColor} onClick={() => setOpenFilePath(`${persona}/engagement/reddit/engagement-log.md`)} />
-              {persona === "fabrice" && mode !== "f2" && (
+              {persona === "fabrice" && (
                 <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")} />
               )}
-              {persona === "fabrice" && mode !== "f2" && (
+              {persona === "fabrice" && (
                 <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")} />
               )}
               <CounterTile label="Total persona" value={counters.totalPersona} target={targets.totalPersona} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.progress)} />
@@ -880,7 +775,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
                   key={`${alert.title}-${i}`}
                   alert={alert}
                   persona={persona}
-                  mode={mode}
+                  mode="normal"
                   onResolved={() => fetchContext()}
                 />
               ))
@@ -888,7 +783,7 @@ export function PersonaLayout({ persona, showF2Toggle = false }: Props) {
           </div>
 
           {/* Batch S{N+1} card */}
-          <BatchCard accentColor={accentColor} persona={persona} mode={mode} />
+          <BatchCard accentColor={accentColor} persona={persona} mode="normal" />
 
           {/* Ouroboros panel */}
           <OuroborosPanel accentColor={accentColor} persona={persona} />

@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default function RomainPage() {
-  return <PersonaLayout persona="romain" showF2Toggle={true} />;
+  return <PersonaLayout persona="romain" />;
 }

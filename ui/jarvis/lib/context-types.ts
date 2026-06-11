@@ -34,5 +34,4 @@ export interface ContextData {
   timeline: TimelineItem[];
   counters: CounterData;
   alerts: AlertItem[];
-  weekPlanningF2: TimelineItem[];
 }
