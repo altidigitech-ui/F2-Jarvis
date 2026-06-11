@@ -7,7 +7,6 @@ import * as THREE from "three";
 export const BRAIN_COLORS = {
   romain: { core: "#00ffb4", glow: "#00b890", wings: "#00ffcc" },
   fabrice: { core: "#9b8fff", glow: "#6d5fe0", wings: "#b3a8ff" },
-  f2: { core: "#97C459", glow: "#6f9a39", wings: "#aed873" },
 } as const;
 
 export type ColorKey = keyof typeof BRAIN_COLORS;
@@ -234,12 +233,11 @@ function WingOrbit({ color, count }: { color: string; count: number }) {
 
 type Props = {
   persona: "romain" | "fabrice";
-  mode: "normal" | "f2";
   onClick?: () => void;
 };
 
-export function Brain3D({ persona, mode, onClick }: Props) {
-  const colorKey: ColorKey = mode === "f2" ? "f2" : persona;
+export function Brain3D({ persona, onClick }: Props) {
+  const colorKey: ColorKey = persona;
   const colors = BRAIN_COLORS[colorKey];
 
   return (

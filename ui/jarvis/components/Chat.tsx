@@ -10,7 +10,6 @@ import { onSendToChat, onAutoSendChat, emitRepoUpdated } from "@/lib/jarvisEvent
 import { MarkdownRenderer } from "./jarvis/MarkdownRenderer";
 
 type Persona = "romain" | "fabrice";
-type Mode = "normal" | "f2";
 type ActionType = "mark_published" | "log_decision" | "incident_resolved" | null;
 
 type ImageAttachment = {
@@ -173,13 +172,12 @@ async function processZipFile(file: File): Promise<FileAttachment[]> {
 type ActionFormProps = {
   action: ActionType;
   persona: Persona;
-  mode: Mode;
   accentColor: string;
   onClose: () => void;
   onSuccess: () => void;
 };
 
-function ActionForm({ action, persona, mode, accentColor, onClose, onSuccess }: ActionFormProps) {
+function ActionForm({ action, persona, accentColor, onClose, onSuccess }: ActionFormProps) {
   const [fields, setFields] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -194,7 +192,7 @@ function ActionForm({ action, persona, mode, accentColor, onClose, onSuccess }: 
       const res = await fetch("/api/action", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ persona, mode, action, payload: fields }),
+        body: JSON.stringify({ persona, action, payload: fields }),
       });
       const data = await res.json() as { ok?: boolean; error?: string };
       if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
@@ -498,7 +496,6 @@ function ToolCallLine({ event, accentColor }: { event: ToolEvent; accentColor: s
 
 type Props = {
   persona: Persona;
-  mode?: Mode;
   onAction?: () => void;
   fileContext?: { name: string; content: string } | null;
   onFileContextClear?: () => void;
@@ -506,7 +503,7 @@ type Props = {
   onGraphifyPrefillClear?: () => void;
 };
 
-export function Chat({ persona, mode = "normal", onAction, fileContext, onFileContextClear, graphifyPrefill, onGraphifyPrefillClear }: Props) {
+export function Chat({ persona, onAction, fileContext, onFileContextClear, graphifyPrefill, onGraphifyPrefillClear }: Props) {
   const colors = PERSONA_COLORS[persona];
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -559,7 +556,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     });
     return unsubscribe;
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [persona, mode, messages, isStreaming]);
+  }, [persona, messages, isStreaming]);
 
   // Abort in-flight stream when persona or mode changes (or component unmounts)
   useEffect(() => {
@@ -569,7 +566,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
         abortRef.current = null;
       }
     };
-  }, [persona, mode]);
+  }, [persona]);
 
   // Load persisted history on mount and when persona/mode changes
   useEffect(() => {
@@ -578,7 +575,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
     setHistoryLoaded(false);
     async function loadHistory() {
       try {
-        const res = await fetch(`/api/chat/history?persona=${persona}&mode=${mode}`);
+        const res = await fetch(`/api/chat/history?persona=${persona}`);
         if (!res.ok) {
           if (!cancelled) setHistoryLoaded(true);
           return;
@@ -595,7 +592,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
           }>;
         };
         if (cancelled) return;
-        console.log("[Chat] loading history for", persona, mode, "response:", data);
+        console.log("[Chat] loading history for", persona, "response:", data);
         if (data.messages && data.messages.length > 0) {
           const rehydrated: Message[] = data.messages
             .filter((m) => m.role === "user" || m.role === "assistant")
@@ -636,7 +633,7 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [persona, mode]);
+  }, [persona]);
 
   const attachImage = useCallback(async (file: File) => {
     setImageSizeError(false);
@@ -851,7 +848,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
 
       const body: Record<string, unknown> = {
         persona,
-        mode,
         message: messageToSend,
       };
 
@@ -1401,7 +1397,6 @@ export function Chat({ persona, mode = "normal", onAction, fileContext, onFileCo
                       <ActionForm
                         action={activeAction}
                         persona={persona}
-                        mode={mode}
                         accentColor={colors.primary}
                         onClose={() => setActiveAction(null)}
                         onSuccess={handleActionSuccess}

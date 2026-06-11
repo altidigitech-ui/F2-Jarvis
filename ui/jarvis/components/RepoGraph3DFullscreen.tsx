@@ -13,7 +13,6 @@ type FilePreview = { path: string; content: string } | null;
 
 type Props = {
   persona: "romain" | "fabrice";
-  mode: "normal" | "f2";
   onClose: () => void;
   onLoadFile?: (name: string, content: string) => void;
 };
@@ -35,9 +34,8 @@ const WING_LABELS: Record<string, string> = {
   "default":          "Autre",
 };
 
-export default function RepoGraph3DFullscreen({ persona, mode, onClose, onLoadFile }: Props) {
-  const accentColor =
-    mode === "f2" ? "#97C459" : persona === "romain" ? "#00ffb4" : "#9b8fff";
+export default function RepoGraph3DFullscreen({ persona, onClose, onLoadFile }: Props) {
+  const accentColor = persona === "romain" ? "#00ffb4" : "#9b8fff";
 
   const [data, setData] = useState<GraphData>({ nodes: [], links: [] });
   const [search, setSearch] = useState("");

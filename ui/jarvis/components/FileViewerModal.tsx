@@ -4,61 +4,16 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 type Persona = "romain" | "fabrice";
-type Mode = "normal" | "f2";
 
 type Props = {
   filePath: string | null;
   accentColor: string;
   onClose: () => void;
   persona?: Persona;
-  mode?: Mode;
 };
 
-/**
- * Filters BATCH-SEMAINE-*.md to show only sections relevant to the active persona.
- *
- * Fabrice (normal): sections 1-2 + 5, 6, 9 + 10+
- * Romain  (normal): sections 1-2 + 3, 4 + 10+
- * F2      (f2):     sections 1-2 + 7, 8 + 10+
- *
- * Sections detected by "## N." at line start.
- */
-function filterBatchByPersona(
-  content: string,
-  persona: Persona,
-  mode: Mode
-): string {
-  if (!content) return content;
 
-  const keepPersonaSections: Set<number> =
-    mode === "f2"
-      ? new Set([7, 8])
-      : persona === "fabrice"
-      ? new Set([5, 6, 9])
-      : new Set([3, 4]);
-
-  const lines = content.split("\n");
-  const out: string[] = [];
-
-  let keepCurrent = true; // keep preamble before first section header
-  const sectionHeaderRe = /^##\s+(\d+)\.\s+/;
-
-  for (const line of lines) {
-    const match = sectionHeaderRe.exec(line);
-    if (match) {
-      const n = parseInt(match[1], 10);
-      keepCurrent = n <= 2 || n >= 10 || keepPersonaSections.has(n);
-    }
-    if (keepCurrent) out.push(line);
-  }
-
-  const personaLabel =
-    mode === "f2" ? "FoundryTwo (F2)" : persona === "fabrice" ? "Fabrice" : "Romain";
-  const header = `> **Vue filtrée : ${personaLabel}**\n> Sections globales (1-2, 10+) incluses. Sections des autres personas masquées.\n\n---\n\n`;
-  return header + out.join("\n");
-}
-
-export function FileViewerModal({ filePath, accentColor, onClose, persona, mode }: Props) {
+export function FileViewerModal({ filePath, accentColor, onClose, persona }: Props) {
   const [rawContent, setRawContent] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
