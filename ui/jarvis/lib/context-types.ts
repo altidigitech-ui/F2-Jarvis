@@ -7,18 +7,18 @@ export interface TimelineItem {
 }
 
 export interface CounterData {
-  cold: number;
-  repliesIn: number;
-  twEng: number;
-  liCom: number;
-  reddit: number;
-  facebook: number;
-  cross: number;
-  crossTarget?: number;
-  ih: number;
-  ph: number;
-  ihPh: number;
-  total: number;
+  // Compteurs par persona (canon 41/82)
+  coldTiktok: number;      // cible 10 (compte StoreMD, par opérateur)
+  coldInstagram: number;   // cible 10 (compte StoreMD, par opérateur)
+  coldFacebook: number;    // cible 5 (perso)
+  coldTwitter: number;     // cible 5 (perso)
+  coldLinkedin: number;    // cible 5 (perso)
+  ph: number;              // cible 6 (perso)
+  reddit: number;          // logué, pas de cible dure
+  totalPersona: number;    // cible 41
+  // Mutualisé (R + F)
+  general: number;         // cible 82
+  // Pipeline conversion (fabrice)
   pipelineScans?: number;
   pipelineBetas?: number;
   pipelineConvos?: number;

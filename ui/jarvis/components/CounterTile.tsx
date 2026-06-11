@@ -3,14 +3,14 @@
 type Props = {
   label: string;
   value: number;
-  target: number;
+  target?: number;
   accentColor: string;
   onClick?: () => void;
 };
 
 export function CounterTile({ label, value, target, accentColor, onClick }: Props) {
-  const pct = target > 0 ? Math.min(100, (value / target) * 100) : 0;
-  const isComplete = value >= target && target > 0;
+  const pct = target && target > 0 ? Math.min(100, (value / target) * 100) : 0;
+  const isComplete = !!target && target > 0 && value >= target;
   return (
     <button
       type="button"
@@ -29,7 +29,7 @@ export function CounterTile({ label, value, target, accentColor, onClick }: Prop
           className="text-[13px] font-mono font-semibold"
           style={{ color: isComplete ? accentColor : "#94a3b8" }}
         >
-          {value}/{target}
+          {target && target > 0 ? `${value}/${target}` : value}
         </span>
       </div>
       <div className="h-0.5 bg-white/5 rounded-full overflow-hidden">
