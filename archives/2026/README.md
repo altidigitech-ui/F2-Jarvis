@@ -114,6 +114,7 @@ Les dashboards hebdo 2026 restent dans `tracking/archives/dashboard-hebdo/` tout
 - `2026-05-17_xlsx-deprecated/` — XLSX Growth Tracker abandonné (migration vers `tracking/metrics/` par dossiers)
 - `cleanup/` — rapports cleanup historiques
 - `2026-04-29_audit.md` — ex-`archives/AUDIT.md` (audit historique du repo)
+- `ui-web-dashboard-2026-06-11/` — brouillon v1 du dashboard Next.js (jamais câblé, supplanté par `ui/jarvis`) — archivé le 11/06/2026
 
 **Critère d'éligibilité :** code ou documents techniques qui ne sont plus utilisés mais peuvent servir de référence historique. Ouroboros peut s'y plonger pour comprendre l'évolution technique du repo.
 
