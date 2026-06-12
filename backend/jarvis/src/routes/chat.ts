@@ -297,6 +297,7 @@ export async function chatRoute(req: Request, res: Response): Promise<void> {
     "BIBLE.md",
     `${persona}/VOIX.md`,
     `${persona}/planning/plan-hebdo.md`,
+    "produits/STATUS.md",
   ];
   const contexts = await Promise.all(contextPaths.map(loadFile));
 

@@ -1,19 +1,20 @@
 # STATUS PRODUITS
 
-Dernière mise à jour : 21/04/2026
+Dernière mise à jour : 12/06/2026
 Quand F finit un build → mettre à jour ce fichier → R commence la distribution.
 
-| # | Produit | Statut | Mois | Vertical | Features | Modules | Distribué dans |
-|---|---------|--------|------|----------|----------|---------|----------------|
-| 1 | StoreMD | ✅ Live (14/04/2026) | Mois 1 | E-commerce | 43 | 5 (Health+Listings+Agentic+Compliance+Browser) | r/shopify, Shopify Entrepreneurs FB |
-| 2 | ProfitPilot | ⏳ Backlog | Mois 1 | E-commerce | 41 | 4 (Profit+Anti-Fraude+Intelligence+Tarifs) | r/shopify, Shopify Entrepreneurs FB |
-| 3 | ClientPulse | ⏳ Backlog | Mois 2 | Agences/Freelancers | 6 modules | 6 | r/digital_marketing, r/freelance |
-| 4 | AdAudit | ⏳ Backlog | Mois 2 | Agences | 10 | — | r/digital_marketing, r/PPC |
-| 5 | CreatorSuite | ⏳ Backlog | Mois 3 | Creators | 14 | — | r/NewTubers, r/youtubers |
-| 6 | LeadQuiz | ⏳ Backlog | Mois 3 | E-com + Coaches | 12 | 2 (Core+Concurrence) | r/shopify |
-| - | [Wildcard] | ⏳ Backlog | Mois 3 | À déterminer | ? | ? | Douleurs communautés |
+## Tableau canon — les 4 business actifs
 
-Statuts : ⏳ Backlog | 🔨 En cours | ✅ Live | 🔴 Killed
+| # | Business | Type | Statut | Positionnement | Distribué dans |
+|---|----------|------|--------|----------------|----------------|
+| 1 | StoreMD | SaaS (app Shopify) | ✅ Live — Shopify App Store (22/05/2026) | Audit de boutiques Shopify — 43 checks, 5 modules (Health+Listings+Agentic+Compliance+Browser) | TikTok, Instagram, Facebook, Twitter, LinkedIn (comptes StoreMD) + cold outreach |
+| 2 | ProfitPilot | SaaS (app Shopify) | ⏳ Backlog | E-commerce — 41 features, 4 modules (Profit+Anti-Fraude+Intelligence+Tarifs) | À définir au lancement |
+| 3 | Hokuno | Boutique Shopify | 🔨 En préparation — lancement après le branchement Jarvis | Marque streetwear — designs propres, développement d'une marque | À définir au lancement — aucun cold outreach pour Hokuno |
+| 4 | Otaku-Store | Boutique Shopify | 🔨 En préparation | Boutique « délire » (pas une marque) — caricatures mangas, démarrée sur One Piece, d'autres mangas suivront | À définir au lancement |
+
+Statuts : ⏳ Backlog | 🔨 En préparation | ✅ Live | 🔴 Killed
+
+**Décision dissociation (12/06/2026) :** Hokuno (marque, designs propres) et la boutique mangas (« délire », caricatures) étaient un seul projet → dissociés en 2 boutiques distinctes : Hokuno + Otaku-Store. Positionnements et contenus vidéo différents.
 
 **Décisions fusion (08/04/2026) :**
 - ListingLab (14 features) → Module Listings de StoreMD
@@ -22,6 +23,20 @@ Statuts : ⏳ Backlog | 🔨 En cours | ✅ Live | 🔴 Killed
 
 **Décisions mutation (14/04/2026) :**
 - Leak Detector (site leakdetector.tech) → muté intégralement en StoreMD (storemd.vercel.app). Module Health Check = héritage direct LD. Compte Twitter @LeakDetectorF2 archivé.
+
+## Vivier — à étudier (pas actifs, gardés pour trace)
+
+Priorité absolue aux 4 business ci-dessus. Ce vivier ne se rouvre qu'une fois tout sorti et carré.
+
+| Produit | Vertical | Features | Notes |
+|---------|----------|----------|-------|
+| ClientPulse | Agences/Freelancers | 6 modules | Possibilité |
+| AdAudit | Agences | 10 | Possibilité |
+| CreatorSuite | Creators | 14 | Possibilité |
+| LeadQuiz | E-com + Coaches | 12 (2 modules Core+Concurrence) | Possibilité |
+| [Wildcard] | À déterminer | ? | Douleurs communautés |
+
+**Trace — planning d'origine (avril 2026, modifié le 12/06/2026) :** le plan initial échelonnait par mois : Mois 1 = StoreMD + ProfitPilot, Mois 2 = ClientPulse + AdAudit, Mois 3 = CreatorSuite + LeadQuiz + Wildcard. Remplacé le 12/06 par le focus exclusif sur les 4 business du tableau canon (2 SaaS + 2 boutiques).
 
 Specs détaillées : voir MUTATIONS.md et NOUVEAUX.md dans ce dossier.
 Total features Shopify : 96 (StoreMD 43 + ProfitPilot 41 + LeadQuiz 12)
