@@ -28,7 +28,6 @@ URL : `https://f2-jarvis.vercel.app`
 2. Se connecter avec email + mot de passe (Supabase Auth)
 3. Seuls les comptes avec le flag `f2_authorized` peuvent accéder
 4. Choisir sa persona : Romain ou Fabrice
-5. Romain a un toggle ROMAIN/F2 pour basculer en mode compte studio @foundrytwo
 
 ---
 
@@ -306,16 +305,9 @@ Countdown vers le prochain batch automatique (12h, 18h, 22h CEST). Nombre d'acti
 
 ---
 
-## Mode F2
+## Mode F2 — retiré (11/06/2026)
 
-Disponible uniquement sur le cockpit Romain (toggle ROMAIN/F2 dans la barre du haut).
-
-Quand le mode F2 est actif :
-- L'accent color passe au vert olive (#97C459)
-- Un banner s'affiche avec les règles voix F2 (pronom "we", pas de "revolutionary", etc.)
-- La timeline affiche le planning F2 de la semaine (pas le planning personnel de Romain)
-- Les fichiers ouverts depuis la sidebar sont ceux du dossier `f2/` au lieu de `romain/`
-- JARVIS adapte sa voix au registre F2 (studio, "we/our", data-driven, neutre)
+Le mode F2 et la persona f2 ont été retirés (décision : FoundryTwo = hub + IndieHackers, pas un compte qui poste). Les cockpits sont Romain et Fabrice uniquement. L'historique F2 reste visible : items timeline attribués à Romain, mémoire (wings f2) conservée.
 
 ---
 

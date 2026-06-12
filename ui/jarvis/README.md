@@ -56,7 +56,7 @@ Utilisateur (navigateur) → f2-jarvis.vercel.app (Next.js)
 |-------|------|
 | `/` | Écran d'accueil "Qui êtes-vous ? Romain / Fabrice" |
 | `/login` | Auth Supabase (email magic link) |
-| `/romain` | Dashboard Romain + toggle F2 mode + chat Claude persona Romain |
+| `/romain` | Dashboard Romain + chat Claude persona Romain |
 | `/fabrice` | Dashboard Fabrice + chat Claude persona Fabrice |
 
 ---
@@ -65,7 +65,7 @@ Utilisateur (navigateur) → f2-jarvis.vercel.app (Next.js)
 
 | Composant | Rôle |
 |-----------|------|
-| `PersonaLayout.tsx` | Layout principal dashboard persona (timeline, compteurs, alertes, chat, toggle F2) |
+| `PersonaLayout.tsx` | Layout principal dashboard persona (timeline, compteurs, alertes, chat) |
 | `Chat.tsx` | Chat Claude Agent streaming + rendering des `[ACTION_PENDING:uuid]` en boutons valider |
 | `TimelineColumn.tsx` | Affichage timeline du jour (publications, cold, engagement) |
 | `CounterTile.tsx` | Tuile compteur avec progress bar vs target |
