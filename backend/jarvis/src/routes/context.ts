@@ -234,7 +234,7 @@ export async function contextRoute(req: Request, res: Response): Promise<void> {
     readRepo("marketing/saas-app-shopify/storemd/cold/cold-log-tiktok.md"),
     readRepo("marketing/saas-app-shopify/storemd/cold/cold-log-instagram.md"),
     readRepo(`${otherPersona}/planning/plan-hebdo.md`),
-    persona === "fabrice" ? readRepo("fabrice/pipeline-conversion.md") : Promise.resolve(""),
+    persona === "fabrice" ? readRepo("marketing/saas-app-shopify/storemd/pipeline-conversion.md") : Promise.resolve(""),
   ]);
 
   const publishedBy = persona === "romain" ? "R" : "F";

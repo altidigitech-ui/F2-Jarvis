@@ -1,6 +1,7 @@
 import { ghList } from "./github.js";
 
-const BATCH_RE = /^BATCH-SEMAINE-(\d+)\.md$/;
+const BATCH_DIR = "marketing/contenu/batch-semaine";
+const BATCH_RE = /^batch-semaine-S(\d+)\.md$/i;
 const CACHE_MS = 30 * 60 * 1000;
 
 let _cache: { number: number; expiresAt: number } | null = null;
@@ -11,7 +12,7 @@ export async function resolveCurrentBatchNumber(): Promise<number> {
   }
 
   try {
-    const entries = await ghList("");
+    const entries = await ghList(BATCH_DIR);
     let max = 0;
     for (const entry of entries) {
       const m = BATCH_RE.exec(entry.name);
