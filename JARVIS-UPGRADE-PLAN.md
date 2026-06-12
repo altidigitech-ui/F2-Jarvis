@@ -130,7 +130,7 @@ Remplacer par une logique basée sur les plateformes dynamiques :
 - Si contient seulement `"IH"` → afficher "IH" (target = targets.ih)
 - Si ni l'un ni l'autre → ne pas afficher
 
-**Même logique pour le mode F2 :** quand le toggle F2 est actif, charger les targets F2 (si disponibles dans le batch) ou afficher IH + PH uniquement.
+**Même logique pour le mode F2 :** quand le toggle F2 est actif, charger les targets F2 (si disponibles dans le batch) ou afficher IH + PH uniquement. *(Obsolète — mode F2 et targets F2 retirés le 11/06/2026, B4.1-B4.3.)*
 
 ---
 
@@ -869,7 +869,7 @@ Alternativement, simplement supprimer le bouton "Mémoire" puisque MemPalace est
 - Ce que JARVIS ne peut PAS faire (modifier du code sans validation, accéder aux APIs externes en write, bypass les kill-switches)
 - Comment valider/rejeter les actions
 - Comment uploader des images/fichiers
-- Comment utiliser le mode F2
+- ~~Comment utiliser le mode F2~~ *(mode retiré le 11/06/2026)*
 - Les raccourcis clavier
 - Les commandes spéciales (/search, /wing)
 - Troubleshooting (si les compteurs ne se mettent pas à jour, si Ouroboros est bloqué, etc.)

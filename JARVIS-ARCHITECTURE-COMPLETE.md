@@ -509,10 +509,9 @@ Next.js 14 sur Vercel. 3 pages principales + 29 proxy API routes.
 |---|---|---|
 | `/` | `page.tsx` | Accueil "Bonjour" — choix persona (Romain ou Fabrice) |
 | `/login` | `login/page.tsx` | Authentification Supabase (email/password) |
-| `/romain` | `romain/page.tsx` | `<PersonaLayout persona="romain" showF2Toggle={true} />` |
+| `/romain` | `romain/page.tsx` | `<PersonaLayout persona="romain" />` |
 | `/fabrice` | `fabrice/page.tsx` | `<PersonaLayout persona="fabrice" />` |
 
-Seul Romain a le toggle F2/personnel (`showF2Toggle`).
 
 ### 3.2 Auth et middleware
 
@@ -568,9 +567,9 @@ Cockpit principal en 4 colonnes :
 └──────────┴───────────┴─────────────────┴─────────────┘
 ```
 
-**Couleurs persona** : Romain = #00ffb4 (vert), Fabrice = #9b8fff (violet), F2 = #97C459 (vert olive)
+**Couleurs persona** : Romain = #00ffb4 (vert), Fabrice = #9b8fff (violet)
 
-**Mode F2** : change l'accent color, affiche le banner F2 avec les règles voix, switch la timeline sur weekPlanningF2.
+**Mode F2** : retiré le 11/06/2026 (persona f2 morte ; cockpits Romain et Fabrice uniquement).
 
 **Refresh** : context reloadé toutes les 60 secondes + après chaque `jarvis:repo-updated` event (avec 1.5s de délai).
 

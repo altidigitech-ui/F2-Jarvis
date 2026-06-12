@@ -491,7 +491,6 @@ npx next build         # Next.js build doit passer sans erreur
 |---|---|---|---|
 | Romain | `#00ffb4` | `#00b890` | Cockpit /romain |
 | Fabrice | `#9b8fff` | `#6d5fe0` | Cockpit /fabrice |
-| F2 | `#97C459` | — | Mode F2 (toggle Romain) |
 
 Ces couleurs sont utilisées via `accentColor` prop passé à tous les sous-composants.
 
