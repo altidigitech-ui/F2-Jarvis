@@ -391,7 +391,7 @@ export function PersonaLayout({ persona }: Props) {
 
   const filePaths = {
     planHebdo: `${persona}/plan-hebdo.md`,
-    postsBatch: `BATCH-SEMAINE-${weekNumber}.md`,
+    postsBatch: `marketing/contenu/batch-semaine/batch-semaine-S${weekNumber}.md`,
     crossEng: `${persona}/cross-engagement-tracker.md`,
     cold: `${persona}/cold/cold-outreach-log.md`,
     progress: `${persona}/progress-semaine.md`,
@@ -698,10 +698,10 @@ export function PersonaLayout({ persona }: Props) {
               <CounterTile label="PH" value={counters.ph} target={targets.ph} accentColor={accentColor} onClick={() => setOpenFilePath(`${persona}/engagement/ph/engagement-log.md`)} />
               <CounterTile label="Reddit" value={counters.reddit} accentColor={accentColor} onClick={() => setOpenFilePath(`${persona}/engagement/reddit/engagement-log.md`)} />
               {persona === "fabrice" && (
-                <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")} />
+                <CounterTile label="Scans/j" value={counters.pipelineScans ?? 0} target={6} accentColor={accentColor} onClick={() => setOpenFilePath("marketing/saas-app-shopify/storemd/pipeline-conversion.md")} />
               )}
               {persona === "fabrice" && (
-                <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setOpenFilePath("fabrice/pipeline-conversion.md")} />
+                <CounterTile label="Beta spots" value={counters.pipelineBetas ?? 0} target={8} accentColor={accentColor} onClick={() => setOpenFilePath("marketing/saas-app-shopify/storemd/pipeline-conversion.md")} />
               )}
               <CounterTile label="Total persona" value={counters.totalPersona} target={targets.totalPersona} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.progress)} />
               <CounterTile label="Général R+F" value={counters.general} target={targets.general} accentColor={accentColor} onClick={() => setOpenFilePath(filePaths.progress)} />
