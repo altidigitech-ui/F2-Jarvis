@@ -120,6 +120,8 @@ Jarvis ou l'IA qui produit le batch DOIT collecter TOUTES ces données et les pr
 
 Avant de sélectionner une vidéo, LIRE SON PROMPT dans le fichier source. Comprendre ce que la vidéo montre. Ne jamais choisir une vidéo sans savoir ce qu'elle contient.
 
+> ⚡ PERF — NE JAMAIS utiliser `repo_search` pour trouver les vidéos. Le catalogue V1 est déjà listé ci-dessous, et la source unique est `asset-brand/storemd/videos/V1/MAPPING_VIDEOS_V1.md` : faire un `repo_read` direct sur ce fichier si besoin. `repo_search` est lent et rate-limité, il fait timeout le batch.
+
 #### Catalogue complet — V1 (catalogue de base + série waiting V1-24/25/26)
 
 | Nom V1 | Ce que la vidéo montre |
