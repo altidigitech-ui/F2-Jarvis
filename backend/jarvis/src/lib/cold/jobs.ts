@@ -8,8 +8,10 @@ import { sendColdEmail } from "./mailer.js";
 import { pollAllReplies } from "./imap.js";
 import { nextTouchAfter, MAX_TOUCHES } from "./sequence.js";
 import { runPreviewScan, topFindings } from "./storemd.js";
-import { appendEmailLog, type ColdEmailLogRow } from "./cold-log.js";
+import { appendEmailLog, appendConversionPipeline, type ColdEmailLogRow } from "./cold-log.js";
 import { evaluateGuardrails, recordComplaint } from "./guardrails.js";
+import { classifyReply } from "./classify.js";
+import { notify } from "./notify.js";
 import type { ColdTarget, ScanFinding } from "./types.js";
 
 const TABLE = "cold_targets";
@@ -210,12 +212,18 @@ function extractEmails(text: string): string[] {
   return (text.match(/[\w.+-]+@[\w-]+\.[\w.-]+/g) || []).map((e) => e.toLowerCase());
 }
 
-interface TargetRow { id: string; store_url: string; scan_score: number | null; }
+interface TargetRow {
+  id: string;
+  store_url: string;
+  store_domain: string;
+  scan_score: number | null;
+  scan_findings: ScanFinding[] | null;
+}
 
 async function findActiveTarget(email: string): Promise<TargetRow | null> {
   const { data } = await getSupabase()
     .from(TABLE)
-    .select("id, store_url, scan_score")
+    .select("id, store_url, store_domain, scan_score, scan_findings")
     .eq("decision_maker_email", email)
     .in("status", ["in_sequence", "replied"])
     .maybeSingle();
@@ -256,14 +264,32 @@ export async function jobImapPoll(): Promise<{ matched: number; bounced: number 
       continue;
     }
 
+    // Désinscription par mot-clé (rapide, déterministe) — court-circuite le LLM.
     if (UNSUB_RE.test(r.text) || UNSUB_RE.test(r.subject)) {
       await sb.from("cold_suppression").upsert({ email: r.fromEmail, reason: "reply opt-out" });
       await patch(t.id, { status: "unsubscribed", reply_category: "unsubscribe", next_touch_at: null });
       logRows.push({ storeUrl: t.store_url, score: t.scan_score, status: "désinscrit" });
+      matched++;
+      continue;
+    }
+
+    // Sinon : classification fine via Claude (Phase 5). Toute réponse humaine
+    // stoppe la séquence (next_touch_at null) — pas de relance après engagement.
+    const category = await classifyReply(r.subject, r.text);
+    if (category === "unsubscribe") {
+      await sb.from("cold_suppression").upsert({ email: r.fromEmail, reason: "classified opt-out" });
+      await patch(t.id, { status: "unsubscribed", reply_category: "unsubscribe", next_touch_at: null });
+      logRows.push({ storeUrl: t.store_url, score: t.scan_score, status: "désinscrit" });
+    } else if (category === "interested") {
+      await patch(t.id, { status: "interested", reply_category: "interested", next_touch_at: null });
+      const summary = (t.scan_findings || []).slice(0, 3).map((f) => f.title).join("; ") || "voir scan";
+      await appendConversionPipeline({ storeDomain: t.store_domain, storeUrl: t.store_url, score: t.scan_score, findingsSummary: summary });
+      await notify(`Cold StoreMD: ${t.store_domain} a répondu INTÉRESSÉ (${t.scan_score ?? "?"}/100). → pipeline-conversion`);
+      logRows.push({ storeUrl: t.store_url, score: t.scan_score, status: "intéressé" });
     } else {
-      // Réponse positive/neutre : on stoppe la séquence, classification = Phase 5.
-      await patch(t.id, { status: "replied", next_touch_at: null });
-      logRows.push({ storeUrl: t.store_url, score: t.scan_score, status: "répondu" });
+      // objection | not_now : on stoppe la séquence et on logge la réponse.
+      await patch(t.id, { status: "replied", reply_category: category, next_touch_at: null });
+      logRows.push({ storeUrl: t.store_url, score: t.scan_score, status: category === "objection" ? "objection" : "répondu" });
     }
     matched++;
   }
