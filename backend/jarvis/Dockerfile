@@ -22,6 +22,8 @@ RUN echo "=== Claude binaries found ===" && \
     which claude 2>/dev/null || echo "claude not in PATH" && \
     echo "==========================="
 
+ARG CACHE_BUST=unset
+RUN echo "cache-bust ${CACHE_BUST}"
 COPY . .
 RUN npm run build
 
