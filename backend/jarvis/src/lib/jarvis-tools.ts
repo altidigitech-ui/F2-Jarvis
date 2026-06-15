@@ -145,6 +145,7 @@ export function createJarvisMcpServer(options: {
             Authorization: `Bearer ${token}`,
             Accept: "application/vnd.github.v3.text-match+json",
           },
+          signal: AbortSignal.timeout(20_000),
         });
         if (!res.ok) {
           const txt = await res.text();
@@ -325,6 +326,7 @@ export function createJarvisMcpServer(options: {
             Authorization: `Bearer ${token}`,
             Accept: "application/vnd.github.v3.text-match+json",
           },
+          signal: AbortSignal.timeout(20_000),
         });
         if (!res.ok) {
           return {
