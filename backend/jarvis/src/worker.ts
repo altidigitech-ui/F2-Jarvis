@@ -157,7 +157,8 @@ new Worker(
       }
       case "imap-poll": {
         const r = await jobImapPoll();
-        if (r.matched) console.log(`[worker] cold imap-poll: ${r.matched} réponses matchées`);
+        if (r.matched || r.bounced)
+          console.log(`[worker] cold imap-poll: ${r.matched} réponses, ${r.bounced} bounces`);
         break;
       }
       default:
