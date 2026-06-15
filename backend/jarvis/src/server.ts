@@ -110,6 +110,9 @@ app.listen(PORT, () => {
   scheduleOuroborosCycle().catch((err) =>
     console.warn("[server] ouroboros init error:", err instanceof Error ? err.message : err)
   );
+  scheduleColdCrons().catch((err) =>
+    console.warn("[server] cold crons init error:", err instanceof Error ? err.message : err)
+  );
 });
 
 async function scheduleOuroborosCycle() {
@@ -124,4 +127,20 @@ async function scheduleOuroborosCycle() {
   } catch (err) {
     console.warn("[server] ouroboros scheduling skipped:", err instanceof Error ? err.message : err);
   }
+}
+
+// Crons du pipeline cold : envoi des relances dues + poll IMAP des réponses.
+// Ne planifie que si des boîtes d'envoi sont configurées (sinon inutile/erreurs).
+async function scheduleColdCrons() {
+  const { loadMailboxes } = await import("./lib/cold/mailboxes.js");
+  if (loadMailboxes().length === 0) {
+    console.log("[server] cold crons non planifiés (aucune boîte MAILBOX_* configurée)");
+    return;
+  }
+  const { coldQueue } = await import("./lib/queues.js");
+  // Relances dues : toutes les 15 min.
+  await coldQueue.upsertJobScheduler("cold-sequence-tick", { every: 900_000 }, { name: "sequence-tick" });
+  // Poll IMAP des réponses : toutes les 10 min.
+  await coldQueue.upsertJobScheduler("cold-imap-poll", { every: 600_000 }, { name: "imap-poll" });
+  console.log("[server] cold crons scheduled (sequence-tick 15m, imap-poll 10m)");
 }
