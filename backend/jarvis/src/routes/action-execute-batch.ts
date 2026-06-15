@@ -65,8 +65,9 @@ export async function actionExecuteBatchRoute(req: Request, res: Response): Prom
     const normalExecutedIds: string[] = [];
     const failedById = new Map<string, string>();
 
-    // create_file: each writes to its own unique file — call executeAction individually
-    const createFileActions = actions.filter((a) => a.action_type === "create_file");
+    // create_file / move_file / delete_file: chemin dédié (executeAction), pas applyTransform
+    const STANDALONE_TYPES = ["create_file", "move_file", "delete_file"];
+    const createFileActions = actions.filter((a) => STANDALONE_TYPES.includes(a.action_type));
     for (const action of createFileActions) {
       try {
         await executeAction(action.id);
@@ -77,7 +78,7 @@ export async function actionExecuteBatchRoute(req: Request, res: Response): Prom
     }
 
     // Normal actions: group by target file path → 1 ghRead + N transforms + 1 ghWrite per group
-    const normalActions = actions.filter((a) => a.action_type !== "create_file");
+    const normalActions = actions.filter((a) => !STANDALONE_TYPES.includes(a.action_type));
     const fileGroups = new Map<string, ActionRow[]>();
 
     for (const action of normalActions) {
