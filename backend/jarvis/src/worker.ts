@@ -18,6 +18,8 @@ import {
   jobImapPoll,
 } from "./lib/cold/jobs.js";
 import type { ColdJobName, ColdJobData } from "./lib/cold/types.js";
+import { jobSocialGenerate, jobSocialPublish } from "./lib/social/jobs.js";
+import type { SocialJobName } from "./lib/social/types.js";
 
 new Worker(
   "ouroboros-cycle",
@@ -166,6 +168,32 @@ new Worker(
     }
   },
   { connection: getRedis(), concurrency: Number(process.env.COLD_WORKER_CONCURRENCY || 5) }
+);
+
+// ───────────────────────────────────────────────────────────────────────────
+// Social engine worker — social-generate (drafts) · social-publish (approuvés)
+// ───────────────────────────────────────────────────────────────────────────
+new Worker(
+  "social",
+  async (job) => {
+    const name = job.name as SocialJobName;
+    switch (name) {
+      case "social-generate": {
+        const r = await jobSocialGenerate();
+        if (r.created) console.log(`[worker] social-generate: ${r.created} brouillon(s) créé(s)`);
+        break;
+      }
+      case "social-publish": {
+        const r = await jobSocialPublish();
+        if (r.published || r.failed)
+          console.log(`[worker] social-publish: ${r.published} publié(s), ${r.failed} échec(s)`);
+        break;
+      }
+      default:
+        throw new Error(`[worker] social job inconnu: ${name}`);
+    }
+  },
+  { connection: getRedis(), concurrency: 1 }
 );
 
 console.log("[worker] JARVIS worker started, waiting for jobs...");
