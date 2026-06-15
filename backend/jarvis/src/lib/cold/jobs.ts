@@ -7,6 +7,9 @@ import { enrichTarget } from "./scraper.js";
 import { sendColdEmail } from "./mailer.js";
 import { pollAllReplies } from "./imap.js";
 import { nextTouchAfter, MAX_TOUCHES } from "./sequence.js";
+import { runPreviewScan, topFindings } from "./storemd.js";
+import { appendEmailLog, type ColdEmailLogRow } from "./cold-log.js";
+import { evaluateGuardrails, recordComplaint } from "./guardrails.js";
 import type { ColdTarget, ScanFinding } from "./types.js";
 
 const TABLE = "cold_targets";
@@ -45,19 +48,18 @@ export async function jobEnrich(id: string): Promise<void> {
   await enrichTarget(t);
 }
 
-// --- scan : enriched → scanned  [STUB] --------------------------------------
-// Volontairement non implémenté : l'endpoint interne StoreMD qui renvoie les
-// findings détaillés n'est pas prêt (cf. reco-findings.md Tâche B). Quand il le
-// sera : POST {STOREMD_PREVIEW_SCAN_URL} { store_url } -> { score, findings[] },
-// puis patch({ scan_score, scan_findings, status: "scanned" }).
-export class ColdScanNotReadyError extends Error {
-  constructor() {
-    super("[cold/jobs] job scan en STUB — endpoint interne StoreMD pas encore livré");
-    this.name = "ColdScanNotReadyError";
-  }
-}
-export async function jobScan(_id: string): Promise<void> {
-  throw new ColdScanNotReadyError();
+// --- scan : enriched → scanned ----------------------------------------------
+// Appelle l'endpoint interne StoreMD (POST /internal/preview-scan) sur la
+// store_url, récupère score + findings détaillés, garde les 3 plus parlants.
+export async function jobScan(id: string): Promise<void> {
+  const t = await getTarget(id);
+  const result = await runPreviewScan(t.store_url);
+  await patch(id, {
+    scan_score: result.score,
+    scan_findings: topFindings(result.findings, 3),
+    status: "scanned",
+    error: null,
+  });
 }
 
 // --- compose : scanned → composed -------------------------------------------
@@ -195,31 +197,80 @@ export async function jobSequenceTick(): Promise<{ sent: number }> {
   return { sent };
 }
 
-// --- imap-poll (cron) : détecte les réponses, matche au lead ----------------
-// Phase 2 = détecter + router le minimum (réponse / désinscription). La
-// classification fine (interested/objection/not_now) est Phase 5.
-export async function jobImapPoll(): Promise<{ matched: number }> {
+// --- imap-poll (cron) : réponses + bounces + plaintes (garde-fous Phase 7) ---
+// Réponses/désinscriptions humaines → cold-log-email.md. Bounces/plaintes →
+// Supabase + compteurs (alimentent evaluateGuardrails). Classification fine
+// (interested/objection/not_now) = Phase 5.
+const DAEMON_FROM = /(mailer-daemon|postmaster|no-?reply|mail.?delivery|bounce)@/i;
+const DSN_SUBJECT = /(delivery status|undeliverable|delivery failure|failure notice|returned mail|mail delivery failed|delivery has failed)/i;
+const UNSUB_RE = /unsubscrib|^\s*stop\b|remove me|opt[\s-]?out|take me off/i;
+const COMPLAINT_RE = /this is spam|spam report|abuse report|report(ed|ing)? (this )?as spam|marked as spam/i;
+
+function extractEmails(text: string): string[] {
+  return (text.match(/[\w.+-]+@[\w-]+\.[\w.-]+/g) || []).map((e) => e.toLowerCase());
+}
+
+interface TargetRow { id: string; store_url: string; scan_score: number | null; }
+
+async function findActiveTarget(email: string): Promise<TargetRow | null> {
+  const { data } = await getSupabase()
+    .from(TABLE)
+    .select("id, store_url, scan_score")
+    .eq("decision_maker_email", email)
+    .in("status", ["in_sequence", "replied"])
+    .maybeSingle();
+  return (data as TargetRow | null) || null;
+}
+
+export async function jobImapPoll(): Promise<{ matched: number; bounced: number }> {
   const sb = getSupabase();
   const replies = await pollAllReplies();
+  const logRows: ColdEmailLogRow[] = [];
   let matched = 0;
-  for (const r of replies) {
-    const { data } = await sb
-      .from(TABLE)
-      .select("id, status")
-      .eq("decision_maker_email", r.fromEmail)
-      .in("status", ["in_sequence", "replied"])
-      .maybeSingle();
-    if (!data) continue;
+  let bounced = 0;
 
-    const isUnsub = /unsubscrib|^\s*stop\b|remove me|opt[\s-]?out/i.test(r.text) || /unsubscrib|stop/i.test(r.subject);
-    if (isUnsub) {
+  for (const r of replies) {
+    // 1) Bounce : l'expéditeur est un daemon / le sujet est un DSN.
+    if (DAEMON_FROM.test(r.fromEmail) || DSN_SUBJECT.test(r.subject)) {
+      // Le prospect en échec est dans le corps du bounce.
+      for (const failed of extractEmails(r.text)) {
+        const t = await findActiveTarget(failed);
+        if (!t) continue;
+        await sb.from("cold_suppression").upsert({ email: failed, reason: "hard bounce" });
+        await patch(t.id, { status: "bounced", next_touch_at: null, error: "hard bounce" });
+        bounced++;
+      }
+      continue; // un bounce n'est pas une réponse humaine → pas de ligne cold-log
+    }
+
+    // 2) Réponse humaine : matcher le prospect.
+    const t = await findActiveTarget(r.fromEmail);
+    if (!t) continue;
+
+    if (COMPLAINT_RE.test(r.text) || COMPLAINT_RE.test(r.subject)) {
+      // Plainte : suppression + compteur (alimente le seuil plaintes), stop.
+      await sb.from("cold_suppression").upsert({ email: r.fromEmail, reason: "complaint" });
+      await patch(t.id, { status: "unsubscribed", reply_category: "unsubscribe", next_touch_at: null });
+      await recordComplaint();
+      matched++;
+      continue;
+    }
+
+    if (UNSUB_RE.test(r.text) || UNSUB_RE.test(r.subject)) {
       await sb.from("cold_suppression").upsert({ email: r.fromEmail, reason: "reply opt-out" });
-      await patch((data as { id: string }).id, { status: "unsubscribed", reply_category: "unsubscribe", next_touch_at: null });
+      await patch(t.id, { status: "unsubscribed", reply_category: "unsubscribe", next_touch_at: null });
+      logRows.push({ storeUrl: t.store_url, score: t.scan_score, status: "désinscrit" });
     } else {
       // Réponse positive/neutre : on stoppe la séquence, classification = Phase 5.
-      await patch((data as { id: string }).id, { status: "replied", next_touch_at: null });
+      await patch(t.id, { status: "replied", next_touch_at: null });
+      logRows.push({ storeUrl: t.store_url, score: t.scan_score, status: "répondu" });
     }
     matched++;
   }
-  return { matched };
+
+  // Log agrégé (1 commit pour le lot) + évaluation des garde-fous.
+  await appendEmailLog(logRows);
+  await evaluateGuardrails();
+
+  return { matched, bounced };
 }

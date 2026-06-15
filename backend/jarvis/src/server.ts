@@ -24,6 +24,7 @@ import {
   mempalaceStatsRoute,
 } from "./routes/mempalace.js";
 import { targetsRoute } from "./routes/targets.js";
+import { coldCycleLogRoute } from "./routes/cold.js";
 import { promptsRoute } from "./routes/prompts.js";
 import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
 import { batchStatusRoute, batchUploadRoute } from "./routes/batch.js";
@@ -89,6 +90,7 @@ app.get("/mempalace/wing/:id", mempalaceWingRoute);
 app.get("/mempalace/drawer/:wing/:filename", mempalaceDrawerRoute);
 
 app.get("/targets", targetsRoute);
+app.get("/cold/cycle-log", coldCycleLogRoute);
 app.get("/prompts", promptsRoute);
 app.post("/action/execute-batch", actionExecuteBatchRoute);
 app.get("/batch/status", batchStatusRoute);

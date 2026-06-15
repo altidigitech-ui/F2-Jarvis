@@ -45,5 +45,20 @@ export async function GET(req: NextRequest) {
     // batch log write failure is non-fatal
   }
 
-  return Response.json({ ok: true, timestamp: now });
+  // Cold pipeline cycle line (plan §8) — réutilise ce cron, pas de cron parallèle.
+  // Le backend a l'accès service-role à cold_targets ; il calcule + écrit la ligne.
+  let cold: unknown = null;
+  const backend = process.env.RAILWAY_BACKEND_URL;
+  if (backend) {
+    try {
+      const res = await fetch(`${backend}/cold/cycle-log`, {
+        headers: { "X-JARVIS-AUTH": process.env.BACKEND_SHARED_SECRET || "" },
+      });
+      cold = await res.json().catch(() => null);
+    } catch {
+      // cold cycle log failure is non-fatal
+    }
+  }
+
+  return Response.json({ ok: true, timestamp: now, cold });
 }
