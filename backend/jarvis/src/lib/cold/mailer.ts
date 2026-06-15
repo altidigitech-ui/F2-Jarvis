@@ -5,6 +5,7 @@
 import nodemailer, { type Transporter } from "nodemailer";
 import { getRedis } from "../redis.js";
 import { loadMailboxes, dailyCapPerInbox } from "./mailboxes.js";
+import { pauseReason, ColdPausedError } from "./guardrails.js";
 import type { Mailbox } from "./types.js";
 
 const _transports = new Map<string, Transporter>();
@@ -70,6 +71,10 @@ export async function sendColdEmail(args: {
   subject: string;
   body: string;
 }): Promise<SendResult> {
+  // Garde-fou : aucun envoi si la campagne est en pause (seuils délivrabilité).
+  const reason = await pauseReason();
+  if (reason) throw new ColdPausedError(reason);
+
   const box = await pickMailbox();
   if (!box) {
     throw new Error("[cold/mailer] cap quotidien atteint sur toutes les boîtes");
