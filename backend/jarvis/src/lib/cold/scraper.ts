@@ -3,6 +3,7 @@
 // qualif, dédup, vérif SMTP, drop role) et écrit dans cold_targets.
 
 import { getSupabase } from "../supabase.js";
+import { isColdPaused } from "./guardrails.js";
 import { discoverStores, findDecisionMakerEmail } from "./openclaw.js";
 import { detectShopify, guessCountry, normalizeDomain } from "./shopify-detect.js";
 import { verifyEmail, isRoleAddress } from "./smtp-verify.js";
@@ -38,6 +39,11 @@ export interface SourceResult {
 // Découvre des boutiques pour une niche, détecte/qualifie/dédup, insère en
 // statut `sourced`. Renvoie un résumé (pour le batch-log).
 export async function sourceStores(niche: string, count: number): Promise<SourceResult> {
+  // Garde-fou : stop sourcing quand la campagne est en pause (plan §7).
+  if (await isColdPaused()) {
+    console.warn("[cold/scraper] sourcing ignoré — campagne en pause");
+    return { discovered: 0, inserted: 0, skipped: 0 };
+  }
   const urls = await discoverStores(niche, count);
   const sb = getSupabase();
   let inserted = 0;
