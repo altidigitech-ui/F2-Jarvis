@@ -54,11 +54,14 @@ Ce n'est pas un journal quotidien. C'est un **filet de sécurité contextuel** p
 
 ---
 
-## 5. Index des recaps (au 19/05/2026)
+## 5. Index des recaps (au 15/06/2026)
 
 | Fichier | Sujet de la session |
 |---------|---------------------|
 | `2026-05-17.md` | Audit + plan archivage repo F2-Jarvis (consolidation patterns figés, méthodologie scalable) |
+| `2026-05-18_20.md` | Système d'archivage repo (architecture 2 niveaux, 7 catégories, archivage S9) |
+| `2026-05-21_22.md` | Launch StoreMD (22/05) + batch S10 V2 + prépa S11 + fin du rangement repo |
+| `2026-06-15.md` | La Machine F2 — build cold acquisition + moteur réseaux (Phases 1-8, 6 PRs stacked #328→#337) + RECO + diagnostic /doctor |
 
 ---
 
