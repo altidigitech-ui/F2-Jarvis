@@ -18,8 +18,10 @@ Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue B
 | `scraper.ts` | SOURCE + ENRICH (orchestration) | 3 |
 | `storemd.ts` | Client endpoint interne preview-scan StoreMD + top-3 findings | 4 |
 | `jobs.ts` | Jobs `qualify` · `enrich` · `scan` · `compose` · `push` + crons | 4 |
+| `classify.ts` | Classification d'une réponse (Haiku) : interested/objection/not_now/unsubscribe | 5 |
+| `notify.ts` | Notif opérateur (webhook best-effort) sur prospect interested | 5 |
 | `guardrails.ts` | Pause auto sur seuils bounce/plaintes + état pause (Redis) | 7 |
-| `cold-log.ts` | Append cold-log-email.md + decisions-log.md (API GitHub) | 8 |
+| `cold-log.ts` | Append cold-log-email.md + decisions-log.md + pipeline-conversion.md | 8 / 5 |
 
 ## Flux
 
@@ -32,8 +34,17 @@ SOURCE (scraper.sourceStores)         → cold_targets [sourced]
   → (auto) enqueueCold("push")        → [in_sequence]  (1ère touche J0)
 crons:
   sequence-tick (15m)                 → relances J3/J7/J15 dues → stop après 4
-  imap-poll (10m)                     → réponses → [replied] | [unsubscribed]
+  imap-poll (10m)                     → bounces → [bounced] + suppression
+                                      → réponses → classification (Phase 5) :
+                                         interested → [interested] + pipeline-conversion.md + notif
+                                         objection/not_now → [replied]
+                                         unsubscribe → [unsubscribed] + suppression
 ```
+
+**Phase 5 (LISTEN) :** toute réponse humaine (hors bounce/plainte/opt-out par
+mot-clé) est classée par Haiku. `interested` route vers `pipeline-conversion.md`
+(tableau PIPELINE ACTIF, sans PII) + notif opérateur. Toute réponse stoppe la
+séquence. Défaut prudent `not_now` si la classification est incertaine.
 
 `scan` appelle l'endpoint interne StoreMD (`POST /internal/preview-scan`, auth
 Bearer), récupère `score` + `findings[]`, et écrit `scan_score` + les **3
@@ -53,6 +64,7 @@ COLD_SMTP_PROBE_FROM=verify@leakdetector.tech
 COLD_BOUNCE_MAX=0.02               # seuil bounce → pause auto (Phase 7)
 COLD_COMPLAINT_MAX=0.003           # seuil plaintes → pause auto
 COLD_GUARD_MIN_SAMPLE=20           # échantillon mini avant d'armer les seuils
+COLD_NOTIFY_WEBHOOK=               # (option) webhook notif prospect interested (Phase 5)
 GITHUB_TOKEN=                      # écriture des logs repo (déjà utilisé par Jarvis)
 
 ANTHROPIC_API_KEY=                 # compose (Haiku) — déjà utilisé par Jarvis

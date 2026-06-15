@@ -10,6 +10,7 @@ import { ghUpdate } from "../github.js";
 
 const COLD_LOG_EMAIL = "marketing/saas-app-shopify/storemd/cold/cold-log-email.md";
 const DECISIONS_LOG = "tracking/decisions-log.md";
+const PIPELINE_CONVERSION = "marketing/saas-app-shopify/storemd/pipeline-conversion.md";
 
 // Date CEST "DD/MM/YYYY".
 export function cestDate(): string {
@@ -54,6 +55,58 @@ export async function appendEmailLog(rows: ColdEmailLogRow[]): Promise<void> {
   } catch (err) {
     // Échec d'écriture log = non bloquant pour le pipeline.
     console.error("[cold/log] appendEmailLog échec:", err instanceof Error ? err.message : err);
+  }
+}
+
+// Insère une ligne sous une section `## <heading>` précise, après la dernière
+// ligne de tableau de CETTE section (s'arrête au prochain `## `). Nécessaire car
+// pipeline-conversion.md contient plusieurs tableaux.
+function insertRowUnderSection(md: string, heading: string, row: string): string {
+  const lines = md.split("\n");
+  const hIdx = lines.findIndex((l) => l.trim() === heading);
+  if (hIdx === -1) return md.trimEnd() + "\n" + row + "\n";
+  let lastRow = -1;
+  for (let i = hIdx + 1; i < lines.length; i++) {
+    if (/^##\s/.test(lines[i])) break;
+    if (/^\s*\|/.test(lines[i])) lastRow = i;
+  }
+  if (lastRow === -1) return md;
+  lines.splice(lastRow + 1, 0, row);
+  return lines.join("\n");
+}
+
+export interface ConversionRow {
+  storeDomain: string;
+  storeUrl: string;
+  score: number | null;
+  findingsSummary: string;
+}
+
+// Route un prospect "interested" vers le tableau PIPELINE ACTIF de
+// pipeline-conversion.md. Pas d'email (PII) : on identifie par le domaine.
+export async function appendConversionPipeline(c: ConversionRow): Promise<void> {
+  const cols = [
+    "", // # (compteur laissé vide, rempli à la main si besoin)
+    cestDate(),
+    "cold email",
+    "Email",
+    c.storeDomain,
+    c.storeUrl,
+    "", // Vertical
+    `${c.score ?? "?"}/100 — ${c.findingsSummary}`.replace(/\|/g, "/"),
+    "💬 EN CONVERSATION",
+    "Réponse positive (cold email)",
+    "Qualifier + proposer beta",
+  ];
+  const row = `| ${cols.join(" | ")} |`;
+  try {
+    await ghUpdate(
+      PIPELINE_CONVERSION,
+      (md) => insertRowUnderSection(md, "## PIPELINE ACTIF", row),
+      `[COLD] interested → pipeline (${c.storeDomain})`
+    );
+  } catch (err) {
+    console.error("[cold/log] appendConversionPipeline échec:", err instanceof Error ? err.message : err);
   }
 }
 
