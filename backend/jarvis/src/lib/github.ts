@@ -18,6 +18,13 @@ function headers() {
   };
 }
 
+// Timeout 20s sur les LECTURES GitHub — évite qu'un fetch de lecture pende et bloque le batch.
+// Volontairement PAS appliqué aux écritures/commits (couper un commit en vol = état incertain).
+const GH_READ_TIMEOUT_MS = 20_000;
+function ghReadFetch(url: string, init: RequestInit = {}): Promise<Response> {
+  return fetch(url, { ...init, signal: AbortSignal.timeout(GH_READ_TIMEOUT_MS) });
+}
+
 export interface GitHubFile {
   content: string;
   sha: string;
@@ -27,7 +34,7 @@ export async function ghRead(filePath: string): Promise<GitHubFile | null> {
   const cached = cacheGet(filePath);
   if (cached) return cached;
 
-  const res = await fetch(apiUrl(`contents/${filePath}?ref=${BRANCH}`), {
+  const res = await ghReadFetch(apiUrl(`contents/${filePath}?ref=${BRANCH}`), {
     headers: headers(),
   });
   if (res.status === 404) return null;
@@ -90,7 +97,7 @@ export interface GitHubDirEntry {
 }
 
 export async function ghList(dirPath: string): Promise<GitHubDirEntry[]> {
-  const res = await fetch(apiUrl(`contents/${dirPath}?ref=${BRANCH}`), {
+  const res = await ghReadFetch(apiUrl(`contents/${dirPath}?ref=${BRANCH}`), {
     headers: headers(),
   });
   if (res.status === 404) return [];
@@ -361,7 +368,7 @@ export async function ghReadExternal(
   const token = process.env.GITHUB_TOKEN;
   if (!token) throw new Error("GITHUB_TOKEN not set");
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}?ref=${branch}`;
-  const res = await fetch(url, {
+  const res = await ghReadFetch(url, {
     headers: {
       Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github.v3+json",
@@ -385,7 +392,7 @@ export async function ghListExternal(
   const token = process.env.GITHUB_TOKEN;
   if (!token) throw new Error("GITHUB_TOKEN not set");
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${dirPath}?ref=${branch}`;
-  const res = await fetch(url, {
+  const res = await ghReadFetch(url, {
     headers: {
       Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github.v3+json",
@@ -401,7 +408,7 @@ export async function ghListExternal(
 export async function ghReadRaw(filePath: string): Promise<{ base64: string; sha: string } | null> {
   const cached = cacheGet(filePath);
   if (cached) return { base64: Buffer.from(cached.content).toString("base64"), sha: cached.sha };
-  const res = await fetch(apiUrl(`contents/${filePath}?ref=${BRANCH}`), { headers: headers() });
+  const res = await ghReadFetch(apiUrl(`contents/${filePath}?ref=${BRANCH}`), { headers: headers() });
   if (!res.ok) return null;
   const data = (await res.json()) as { content?: string; sha?: string };
   if (!data.content || !data.sha) return null;
