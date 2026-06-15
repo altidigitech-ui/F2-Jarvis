@@ -6,6 +6,18 @@ import {
   ingestToMemPalaceBatch,
   archiveAllDailyConversations,
 } from "./lib/mempalace-ingest.js";
+import { getSupabase } from "./lib/supabase.js";
+import { enqueueCold } from "./lib/queues.js";
+import {
+  jobQualify,
+  jobEnrich,
+  jobScan,
+  jobCompose,
+  jobPush,
+  jobSequenceTick,
+  jobImapPoll,
+} from "./lib/cold/jobs.js";
+import type { ColdJobName, ColdJobData } from "./lib/cold/types.js";
 
 new Worker(
   "ouroboros-cycle",
@@ -82,6 +94,75 @@ new Worker(
     }
   },
   { connection: getRedis(), concurrency: 1 }
+);
+
+// ───────────────────────────────────────────────────────────────────────────
+// Cold pipeline worker — qualify · enrich · scan(stub) · compose · push + crons
+// ───────────────────────────────────────────────────────────────────────────
+
+// Enchaînement déterministe entre étapes. NB : on n'enchaîne PAS vers `scan`
+// (stub, endpoint StoreMD non livré) — la cible reste `enriched` en attente.
+async function chainAfter(targetId: string, step: ColdJobName): Promise<void> {
+  const { data } = await getSupabase()
+    .from("cold_targets")
+    .select("status")
+    .eq("id", targetId)
+    .single();
+  const status = (data as { status?: string } | null)?.status;
+  if (step === "qualify" && status === "qualified") {
+    await enqueueCold("enrich", { targetId });
+  } else if (step === "enrich" && status === "enriched") {
+    console.log(`[worker] cold ${targetId} enriched → en attente du scan (endpoint StoreMD non livré)`);
+  } else if (step === "compose" && status === "composed") {
+    await enqueueCold("push", { targetId });
+  }
+}
+
+new Worker(
+  "cold",
+  async (job) => {
+    const name = job.name as ColdJobName;
+    const { targetId } = (job.data || {}) as ColdJobData;
+
+    switch (name) {
+      case "qualify":
+        if (!targetId) throw new Error("[worker] cold qualify sans targetId");
+        await jobQualify(targetId);
+        await chainAfter(targetId, "qualify");
+        break;
+      case "enrich":
+        if (!targetId) throw new Error("[worker] cold enrich sans targetId");
+        await jobEnrich(targetId);
+        await chainAfter(targetId, "enrich");
+        break;
+      case "scan":
+        if (!targetId) throw new Error("[worker] cold scan sans targetId");
+        await jobScan(targetId); // STUB → lève ColdScanNotReadyError
+        break;
+      case "compose":
+        if (!targetId) throw new Error("[worker] cold compose sans targetId");
+        await jobCompose(targetId);
+        await chainAfter(targetId, "compose");
+        break;
+      case "push":
+        if (!targetId) throw new Error("[worker] cold push sans targetId");
+        await jobPush(targetId);
+        break;
+      case "sequence-tick": {
+        const r = await jobSequenceTick();
+        if (r.sent) console.log(`[worker] cold sequence-tick: ${r.sent} relances envoyées`);
+        break;
+      }
+      case "imap-poll": {
+        const r = await jobImapPoll();
+        if (r.matched) console.log(`[worker] cold imap-poll: ${r.matched} réponses matchées`);
+        break;
+      }
+      default:
+        throw new Error(`[worker] cold job inconnu: ${name}`);
+    }
+  },
+  { connection: getRedis(), concurrency: Number(process.env.COLD_WORKER_CONCURRENCY || 5) }
 );
 
 console.log("[worker] JARVIS worker started, waiting for jobs...");
