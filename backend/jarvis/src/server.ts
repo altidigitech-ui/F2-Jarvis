@@ -25,6 +25,7 @@ import {
 } from "./routes/mempalace.js";
 import { targetsRoute } from "./routes/targets.js";
 import { coldCycleLogRoute } from "./routes/cold.js";
+import { socialPendingRoute, socialApproveRoute, socialRejectRoute } from "./routes/social.js";
 import { promptsRoute } from "./routes/prompts.js";
 import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
 import { batchStatusRoute, batchUploadRoute } from "./routes/batch.js";
@@ -91,6 +92,9 @@ app.get("/mempalace/drawer/:wing/:filename", mempalaceDrawerRoute);
 
 app.get("/targets", targetsRoute);
 app.get("/cold/cycle-log", coldCycleLogRoute);
+app.get("/social/pending", socialPendingRoute);
+app.post("/social/approve", socialApproveRoute);
+app.post("/social/reject", socialRejectRoute);
 app.get("/prompts", promptsRoute);
 app.post("/action/execute-batch", actionExecuteBatchRoute);
 app.get("/batch/status", batchStatusRoute);
@@ -114,6 +118,9 @@ app.listen(PORT, () => {
   );
   scheduleColdCrons().catch((err) =>
     console.warn("[server] cold crons init error:", err instanceof Error ? err.message : err)
+  );
+  scheduleSocialCrons().catch((err) =>
+    console.warn("[server] social crons init error:", err instanceof Error ? err.message : err)
   );
 });
 
@@ -145,4 +152,20 @@ async function scheduleColdCrons() {
   // Poll IMAP des réponses : toutes les 10 min.
   await coldQueue.upsertJobScheduler("cold-imap-poll", { every: 600_000 }, { name: "imap-poll" });
   console.log("[server] cold crons scheduled (sequence-tick 15m, imap-poll 10m)");
+}
+
+// Crons du moteur réseaux : génération quotidienne + publication des approuvés.
+// Ne planifie que si au moins un canal est activé (publisher + creds présents).
+async function scheduleSocialCrons() {
+  const { enabledPlatforms } = await import("./lib/social/publishers/index.js");
+  if (enabledPlatforms().length === 0) {
+    console.log("[server] social crons non planifiés (aucun canal activé)");
+    return;
+  }
+  const { socialQueue } = await import("./lib/queues.js");
+  // Génération : 1×/jour à 8h UTC (créneau de relecture matinale).
+  await socialQueue.upsertJobScheduler("social-generate", { pattern: "0 8 * * *" }, { name: "social-generate" });
+  // Publication des approuvés dus : toutes les 15 min.
+  await socialQueue.upsertJobScheduler("social-publish", { every: 900_000 }, { name: "social-publish" });
+  console.log(`[server] social crons scheduled (generate daily, publish 15m) — canaux: ${enabledPlatforms().join(",")}`);
 }
