@@ -87,15 +87,19 @@ Lundi S10 (18/05/2026) :
 
 ---
 
-## 6. Index des batches archivés (au 19/05/2026)
+## 6. Index des batches archivés (au 15/06/2026)
 
 | Batch archivé | Période |
 |---------------|---------|
 | `batch-semaine-S6.md` | 20/04 → 26/04/2026 |
 | `batch-semaine-S7.md` | 27/04 → 03/05/2026 |
 | `batch-semaine-S9.md` | 11/05 → 17/05/2026 (S8 non archivée — semaine de transition fusionnée S7-8 côté personas) |
+| `batch-semaine-S10.md` | 18/05 → 24/05/2026 |
+| `batch-semaine-S11.md` | 25/05 → 31/05/2026 |
+| `batch-semaine-S12.md` | 01/06 → 07/06/2026 |
+| `batch-semaine-S13.md` | 08/06 → 14/06/2026 |
 
-**Note** : `batch-semaine-S10.md` (semaine courante) est actuellement dans `marketing/contenu/batch-semaine/` et basculera ici le lundi 25/05/2026 quand S11 commencera.
+**Note** : `batch-semaine-S14.md` (semaine courante) est actuellement dans `marketing/contenu/batch-semaine/` et basculera ici le lundi 22/06/2026 quand S15 commencera.
 
 ---
 
