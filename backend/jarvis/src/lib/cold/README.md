@@ -16,7 +16,8 @@ Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue B
 | `smtp-verify.ts` | Vérif SMTP (MX → RCPT) sans envoyer + drop role | 3 |
 | `openclaw.ts` | Client du Gateway OpenClaw (découverte + email décideur) | 3 |
 | `scraper.ts` | SOURCE + ENRICH (orchestration) | 3 |
-| `jobs.ts` | Jobs `qualify` · `enrich` · `scan`(STUB) · `compose` · `push` + crons | 4 |
+| `storemd.ts` | Client endpoint interne preview-scan StoreMD + top-3 findings | 4 |
+| `jobs.ts` | Jobs `qualify` · `enrich` · `scan` · `compose` · `push` + crons | 4 |
 
 ## Flux
 
@@ -24,19 +25,18 @@ Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue B
 SOURCE (scraper.sourceStores)         → cold_targets [sourced]
   → enqueueCold("qualify")            → [qualified] | [rejected]
   → (auto) enqueueCold("enrich")      → [enriched]  | [unreachable]
-  → ⛔ scan EN STUB                    → s'arrête à [enriched]
-  → (quand endpoint StoreMD prêt)     → [scanned]
-  → compose                           → [composed]
-  → (auto) push                       → [in_sequence]  (1ère touche J0)
+  → (auto) enqueueCold("scan")        → [scanned]   (StoreMD preview-scan)
+  → (auto) enqueueCold("compose")     → [composed]
+  → (auto) enqueueCold("push")        → [in_sequence]  (1ère touche J0)
 crons:
   sequence-tick (15m)                 → relances J3/J7/J15 dues → stop après 4
   imap-poll (10m)                     → réponses → [replied] | [unsubscribed]
 ```
 
-`scan` est volontairement un stub : l'endpoint interne StoreMD qui renvoie les
-findings détaillés n'est pas encore livré (cf. `reco-findings.md` Tâche B). Le
-pipeline tourne donc jusqu'à `enriched` ; `compose`/`push` sont prêts et se
-déclenchent dès qu'un row a `scan_score` + `scan_findings`.
+`scan` appelle l'endpoint interne StoreMD (`POST /internal/preview-scan`, auth
+Bearer), récupère `score` + `findings[]`, et écrit `scan_score` + les **3
+findings les plus parlants** (sévérité puis présence d'un chiffre d'impact) dans
+`cold_targets`. Le pipeline tourne désormais de bout en bout jusqu'à `in_sequence`.
 
 ## Variables d'environnement
 
@@ -50,7 +50,8 @@ COLD_WORKER_CONCURRENCY=5
 COLD_SMTP_PROBE_FROM=verify@leakdetector.tech
 
 ANTHROPIC_API_KEY=                 # compose (Haiku) — déjà utilisé par Jarvis
-STOREMD_PREVIEW_SCAN_URL=          # endpoint interne StoreMD (Phase scan, à venir)
+STOREMD_PREVIEW_SCAN_URL=          # URL complète de POST /internal/preview-scan
+STOREMD_PREVIEW_SCAN_KEY=          # clé partagée (Authorization: Bearer)
 
 # Gateway OpenClaw (VPS) — SOURCE + ENRICH
 OPENCLAW_GATEWAY_URL=
