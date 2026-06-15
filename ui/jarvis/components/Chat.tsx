@@ -882,14 +882,14 @@ export function Chat({ persona, onAction, fileContext, onFileContextClear, graph
       const toolEvents: ToolEvent[] = [];
 
       // Watchdog 1 — connexion morte : 25s sans aucun octet reçu (3 pings manqués)
-      // Watchdog 2 — réponse bloquée : 90s sans text/tool_use = Claude figé après tool calls
+      // Watchdog 2 — réponse bloquée : 180s sans text/tool_use/tool_result = Claude réellement figé
       const resetPingWatchdog = () => {
         if (pingWatchdogId) clearTimeout(pingWatchdogId);
         pingWatchdogId = setTimeout(() => controller.abort(), 25_000);
       };
       const resetResponseWatchdog = () => {
         if (responseWatchdogId) clearTimeout(responseWatchdogId);
-        responseWatchdogId = setTimeout(() => { isResponseTimeout = true; controller.abort(); }, 90_000);
+        responseWatchdogId = setTimeout(() => { isResponseTimeout = true; controller.abort(); }, 180_000);
       };
       resetPingWatchdog();
       resetResponseWatchdog();
@@ -915,7 +915,7 @@ export function Chat({ persona, onAction, fileContext, onFileContextClear, graph
             continue;
           }
           if (event.type === "ping") continue; // Keepalive, ignore
-          if (event.type === "text" || event.type === "tool_use") resetResponseWatchdog(); // Progrès réel
+          if (event.type === "text" || event.type === "tool_use" || event.type === "tool_result" || event.type === "error") resetResponseWatchdog(); // Progrès réel (tool_result = un outil vient de finir)
           if (event.type === "text" && typeof event.content === "string") {
             fullText += event.content;
             setMessages((prev) =>
