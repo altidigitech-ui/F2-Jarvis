@@ -7,6 +7,7 @@ import { enrichTarget } from "./scraper.js";
 import { sendColdEmail } from "./mailer.js";
 import { pollAllReplies } from "./imap.js";
 import { nextTouchAfter, MAX_TOUCHES } from "./sequence.js";
+import { runPreviewScan, topFindings } from "./storemd.js";
 import type { ColdTarget, ScanFinding } from "./types.js";
 
 const TABLE = "cold_targets";
@@ -45,19 +46,18 @@ export async function jobEnrich(id: string): Promise<void> {
   await enrichTarget(t);
 }
 
-// --- scan : enriched → scanned  [STUB] --------------------------------------
-// Volontairement non implémenté : l'endpoint interne StoreMD qui renvoie les
-// findings détaillés n'est pas prêt (cf. reco-findings.md Tâche B). Quand il le
-// sera : POST {STOREMD_PREVIEW_SCAN_URL} { store_url } -> { score, findings[] },
-// puis patch({ scan_score, scan_findings, status: "scanned" }).
-export class ColdScanNotReadyError extends Error {
-  constructor() {
-    super("[cold/jobs] job scan en STUB — endpoint interne StoreMD pas encore livré");
-    this.name = "ColdScanNotReadyError";
-  }
-}
-export async function jobScan(_id: string): Promise<void> {
-  throw new ColdScanNotReadyError();
+// --- scan : enriched → scanned ----------------------------------------------
+// Appelle l'endpoint interne StoreMD (POST /internal/preview-scan) sur la
+// store_url, récupère score + findings détaillés, garde les 3 plus parlants.
+export async function jobScan(id: string): Promise<void> {
+  const t = await getTarget(id);
+  const result = await runPreviewScan(t.store_url);
+  await patch(id, {
+    scan_score: result.score,
+    scan_findings: topFindings(result.findings, 3),
+    status: "scanned",
+    error: null,
+  });
 }
 
 // --- compose : scanned → composed -------------------------------------------

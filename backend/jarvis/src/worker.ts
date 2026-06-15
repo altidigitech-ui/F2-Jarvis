@@ -100,8 +100,7 @@ new Worker(
 // Cold pipeline worker — qualify · enrich · scan(stub) · compose · push + crons
 // ───────────────────────────────────────────────────────────────────────────
 
-// Enchaînement déterministe entre étapes. NB : on n'enchaîne PAS vers `scan`
-// (stub, endpoint StoreMD non livré) — la cible reste `enriched` en attente.
+// Enchaînement déterministe : qualify → enrich → scan → compose → push.
 async function chainAfter(targetId: string, step: ColdJobName): Promise<void> {
   const { data } = await getSupabase()
     .from("cold_targets")
@@ -112,7 +111,9 @@ async function chainAfter(targetId: string, step: ColdJobName): Promise<void> {
   if (step === "qualify" && status === "qualified") {
     await enqueueCold("enrich", { targetId });
   } else if (step === "enrich" && status === "enriched") {
-    console.log(`[worker] cold ${targetId} enriched → en attente du scan (endpoint StoreMD non livré)`);
+    await enqueueCold("scan", { targetId });
+  } else if (step === "scan" && status === "scanned") {
+    await enqueueCold("compose", { targetId });
   } else if (step === "compose" && status === "composed") {
     await enqueueCold("push", { targetId });
   }
@@ -137,7 +138,8 @@ new Worker(
         break;
       case "scan":
         if (!targetId) throw new Error("[worker] cold scan sans targetId");
-        await jobScan(targetId); // STUB → lève ColdScanNotReadyError
+        await jobScan(targetId);
+        await chainAfter(targetId, "scan");
         break;
       case "compose":
         if (!targetId) throw new Error("[worker] cold compose sans targetId");
