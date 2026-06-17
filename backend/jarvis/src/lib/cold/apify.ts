@@ -57,7 +57,9 @@ interface ApifyLeadItem {
   domain?: string | null;
   url?: string | null;
   name?: string | null;
-  contacts?: Array<{ email?: string | null } | null> | null;
+  // L'actor renvoie chaque contact sous forme { method, target } (ex.
+  // { method: "email", target: "owner@store.com" }), pas { email }.
+  contacts?: Array<{ method?: string | null; target?: string | null } | null> | null;
   address?: { country?: string | null } | null;
 }
 
@@ -78,12 +80,13 @@ function extractDomain(item: ApifyLeadItem): string | null {
   return cleanDomain(item.myshopifyDomain) || cleanDomain(item.domain) || cleanDomain(item.url);
 }
 
-// Premier contact porteur d'un email valide, normalisé en minuscules.
+// Premier contact dont method === "email", target normalisé en minuscules.
 function extractEmail(item: ApifyLeadItem): string | null {
   if (!Array.isArray(item.contacts)) return null;
   for (const c of item.contacts) {
-    const e = c?.email;
-    if (e && typeof e === "string" && e.includes("@")) return e.trim().toLowerCase();
+    if (c?.method !== "email") continue;
+    const t = c.target;
+    if (t && typeof t === "string" && t.includes("@")) return t.trim().toLowerCase();
   }
   return null;
 }
