@@ -1,7 +1,7 @@
 // Détection Shopify déterministe (sans browser) : signatures HTML/headers +
-// endpoint public /products.json. Fait côté Jarvis ; OpenClaw ne sert qu'à
-// DÉCOUVRIR des URLs candidates et à enrichir les emails (pages contact).
-// Cf. 01-SCRAPING.md.
+// endpoint public /products.json. Fait côté Jarvis ; la SOURCE (domaine +
+// email + pays) vient de l'actor Apify clearpath/shopify-store-leads
+// (cf. lib/cold/apify.ts).
 
 import type { Country, PlatformData } from "./types.js";
 

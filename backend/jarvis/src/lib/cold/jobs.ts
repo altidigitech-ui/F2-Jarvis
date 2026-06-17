@@ -42,7 +42,7 @@ export async function jobQualify(id: string): Promise<void> {
 }
 
 // --- enrich : qualified → enriched|unreachable ------------------------------
-// Délègue au scraper (OpenClaw + vérif SMTP + drop role).
+// Délègue au scraper (SOURCE Apify + vérif SMTP + drop role).
 export async function jobEnrich(id: string): Promise<void> {
   const t = await getTarget(id);
   await enrichTarget(t);

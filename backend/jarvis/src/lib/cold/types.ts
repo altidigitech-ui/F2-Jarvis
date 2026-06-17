@@ -29,7 +29,7 @@ export interface ScanFinding {
   metric?: string;     // ex. "+2.3s LCP", "-7% conversion"
 }
 
-// Données scrapées par OpenClaw + détection déterministe (platform_data).
+// Données issues de la SOURCE Apify + détection déterministe (platform_data).
 export interface PlatformData {
   is_shopify: boolean;
   product_count?: number;
