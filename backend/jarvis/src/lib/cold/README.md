@@ -1,6 +1,7 @@
 # Cold pipeline (`lib/cold/`)
 
-Implémentation des Phases 2 à 4 de `marketing/saas-app-shopify/storemd/machine/plan.md`.
+Implémentation du pipeline cold (SOURCE Apify → ENRICH → SCAN StoreMD → COMPOSE → PUSH).
+Ce README + le code de ce dossier sont la spec de référence.
 Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue BullMQ `cold`.
 
 ## Modules
