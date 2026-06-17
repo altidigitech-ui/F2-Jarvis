@@ -104,11 +104,14 @@ ${name ? `- Address the owner as ${name}.` : ""}
 
 Return only the email body text.`;
 
+  if (!process.env.COLD_ANTHROPIC_API_KEY) {
+    throw new Error("[cold/jobs] COLD_ANTHROPIC_API_KEY manquante");
+  }
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": process.env.ANTHROPIC_API_KEY || "",
+      "x-api-key": process.env.COLD_ANTHROPIC_API_KEY,
       "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({

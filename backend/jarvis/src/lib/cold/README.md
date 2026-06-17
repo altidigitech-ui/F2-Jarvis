@@ -55,7 +55,7 @@ COLD_COMPLAINT_MAX=0.003           # seuil plaintes → pause auto
 COLD_GUARD_MIN_SAMPLE=20           # échantillon mini avant d'armer les seuils
 GITHUB_TOKEN=                      # écriture des logs repo (déjà utilisé par Jarvis)
 
-ANTHROPIC_API_KEY=                 # compose (Haiku) — déjà utilisé par Jarvis
+COLD_ANTHROPIC_API_KEY=            # compose (Haiku) — clé dédiée au cold, jamais ANTHROPIC_API_KEY
 STOREMD_PREVIEW_SCAN_URL=          # URL complète de POST /internal/preview-scan
 STOREMD_PREVIEW_SCAN_KEY=          # clé partagée (Authorization: Bearer)
 
