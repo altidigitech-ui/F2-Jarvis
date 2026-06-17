@@ -1,5 +1,6 @@
-import { tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
+import { tool, createSdkMcpServer, query as sdkQuery } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
+import { resolveClaudeBinary } from "./claude-binary.js";
 import { ghRead, ghList, ghReadExternal, ghListExternal, ghReadRaw } from "./github.js";
 import { readZipFile, listZipFiles, getZipMeta } from "./zip-store.js";
 import { getSupabase } from "./supabase.js";
@@ -1226,26 +1227,27 @@ The 'preview' field is a human-readable description shown to the user before the
     },
     async ({ query }) => {
       try {
-        const res = await fetch("https://api.anthropic.com/v1/messages", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.ANTHROPIC_API_KEY || "",
-            "anthropic-version": "2023-06-01",
+        // Recherche web via l'Agent SDK (abonnement, zéro clé API), tool intégré WebSearch.
+        // maxTurns ~4 : le modèle cherche puis synthétise. Garde une vraie recherche web.
+        const claudePath = await resolveClaudeBinary();
+        const texts: string[] = [];
+        for await (const msg of sdkQuery({
+          prompt: query,
+          options: {
+            maxTurns: 4,
+            allowedTools: ["WebSearch"],
+            permissionMode: "dontAsk",
+            ...(claudePath ? { pathToClaudeCodeExecutable: claudePath } : {}),
           },
-          body: JSON.stringify({
-            model: "claude-haiku-4-5",
-            max_tokens: 2048,
-            tools: [{ type: "web_search_20250305", name: "web_search" }],
-            messages: [{ role: "user", content: query }],
-          }),
-        });
-        if (!res.ok) {
-          const errText = await res.text();
-          return { content: [{ type: "text" as const, text: `web_search HTTP ${res.status}: ${errText.slice(0, 200)}` }], isError: true };
+        })) {
+          if (msg.type === "assistant" && msg.message?.content) {
+            for (const block of msg.message.content) {
+              if (block.type === "text" && block.text) {
+                texts.push(block.text);
+              }
+            }
+          }
         }
-        const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
-        const texts = (data.content || []).filter(b => b.type === "text" && b.text).map(b => b.text!);
         return {
           content: [{ type: "text" as const, text: texts.join("\n\n") || "No results found." }],
         };

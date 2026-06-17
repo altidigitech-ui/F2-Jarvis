@@ -1,4 +1,6 @@
+import { query } from "@anthropic-ai/claude-agent-sdk";
 import { getSupabase } from "./supabase.js";
+import { resolveClaudeBinary } from "./claude-binary.js";
 
 type Persona = "fabrice" | "romain";
 type Mode = "normal" | "f2";
@@ -151,27 +153,26 @@ export async function compressConversationIfNeeded(
       .map(m => `[${m.role.toUpperCase()}]: ${m.content.slice(0, 400)}`)
       .join("\n\n");
 
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": process.env.ANTHROPIC_API_KEY || "",
-        "anthropic-version": "2023-06-01",
+    const promptText = `Résume cette conversation FoundryTwo en 5-8 bullets clairs (français). Capture : décisions prises, actions validées, publications, cold envoyés, contexte clé. Format : "- [sujet] : [info clé]"\n\n${transcript}`;
+
+    // Compression via l'Agent SDK (abonnement, zéro clé API). maxTurns: 1 suffit — pas d'outils.
+    const claudePath = await resolveClaudeBinary();
+    let summary = "";
+    for await (const msg of query({
+      prompt: promptText,
+      options: {
+        maxTurns: 1,
+        ...(claudePath ? { pathToClaudeCodeExecutable: claudePath } : {}),
       },
-      body: JSON.stringify({
-        model: "claude-haiku-4-5",
-        max_tokens: 1024,
-        messages: [{
-          role: "user",
-          content: `Résume cette conversation FoundryTwo en 5-8 bullets clairs (français). Capture : décisions prises, actions validées, publications, cold envoyés, contexte clé. Format : "- [sujet] : [info clé]"\n\n${transcript}`,
-        }],
-      }),
-    });
-
-    if (!res.ok) return;
-
-    const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
-    const summary = (data.content || []).filter(b => b.type === "text" && b.text).map(b => b.text!).join("\n");
+    })) {
+      if (msg.type === "assistant" && msg.message?.content) {
+        for (const block of msg.message.content) {
+          if (block.type === "text" && block.text) {
+            summary += block.text;
+          }
+        }
+      }
+    }
 
     if (summary) {
       await sb.from("jarvis_conversations").update({
