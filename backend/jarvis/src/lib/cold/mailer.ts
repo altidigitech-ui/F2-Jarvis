@@ -1,27 +1,12 @@
-// Envoi SMTP via nodemailer, rotation round-robin sur les boîtes du fournisseur
-// cold, avec cap d'envoi/jour par boîte tracké en Redis.
+// Rotation round-robin sur les boîtes du fournisseur cold, avec cap d'envoi/jour
+// par boîte tracké en Redis. L'envoi SMTP est délégué à un relais HTTPS (Railway
+// bloque le SMTP direct) ; Jarvis garde toute la logique de sélection de boîte.
 // Jarvis EST le séquenceur : pas de SaaS d'envoi tiers.
 
-import nodemailer, { type Transporter } from "nodemailer";
 import { getRedis } from "../redis.js";
 import { loadMailboxes, dailyCapPerInbox } from "./mailboxes.js";
 import { pauseReason, ColdPausedError } from "./guardrails.js";
 import type { Mailbox } from "./types.js";
-
-const _transports = new Map<string, Transporter>();
-
-function transportFor(box: Mailbox): Transporter {
-  let t = _transports.get(box.id);
-  if (t) return t;
-  t = nodemailer.createTransport({
-    host: box.smtpHost,
-    port: box.smtpPort,
-    secure: box.smtpPort === 465, // 465 = TLS implicite, sinon STARTTLS
-    auth: { user: box.smtpUser, pass: box.smtpPass },
-  });
-  _transports.set(box.id, t);
-  return t;
-}
 
 // Clé Redis du compteur quotidien par boîte (UTC, reset naturel à minuit).
 function capKey(inboxId: string): string {
@@ -71,24 +56,34 @@ export async function sendColdEmail(args: {
   subject: string;
   body: string;
 }): Promise<SendResult> {
-  // Garde-fou : aucun envoi si la campagne est en pause (seuils délivrabilité).
   const reason = await pauseReason();
   if (reason) throw new ColdPausedError(reason);
 
   const box = await pickMailbox();
-  if (!box) {
-    throw new Error("[cold/mailer] cap quotidien atteint sur toutes les boîtes");
+  if (!box) throw new Error("[cold/mailer] cap quotidien atteint sur toutes les boîtes");
+
+  const relayUrl = process.env.COLD_RELAY_URL;
+  const relaySecret = process.env.COLD_RELAY_SECRET;
+  if (!relayUrl || !relaySecret) {
+    throw new Error("[cold/mailer] COLD_RELAY_URL / COLD_RELAY_SECRET non configurés");
   }
-  const info = await transportFor(box).sendMail({
-    from: box.from,
-    to: args.to,
-    subject: args.subject,
-    text: args.body,
-    // List-Unsubscribe : conformité + délivrabilité. mailto opt-out vers la boîte.
-    headers: {
-      "List-Unsubscribe": `<mailto:${box.smtpUser}?subject=unsubscribe>`,
-    },
+
+  const res = await fetch(relayUrl, {
+    method: "POST",
+    headers: { "content-type": "application/json", "x-relay-secret": relaySecret },
+    body: JSON.stringify({
+      to: args.to,
+      subject: args.subject,
+      body: args.body,
+      smtp: { host: box.smtpHost, port: box.smtpPort, user: box.smtpUser, pass: box.smtpPass, from: box.from },
+    }),
   });
+  if (!res.ok) {
+    const txt = await res.text().catch(() => "");
+    throw new Error(`[cold/mailer] relais ${res.status}: ${txt.slice(0, 200)}`);
+  }
+  const data = (await res.json()) as { messageId?: string };
+
   await incrSent(box.id);
-  return { inbox: box.id, messageId: info.messageId };
+  return { inbox: box.id, messageId: data.messageId || "" };
 }
