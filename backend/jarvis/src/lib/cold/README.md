@@ -10,7 +10,7 @@ Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue B
 |---|---|---|
 | `types.ts` | Types partagés (miroir de `cold_targets`) | — |
 | `mailboxes.ts` | Parse les boîtes du fournisseur cold depuis l'env + cap/jour | 2 |
-| `mailer.ts` | Envoi SMTP (nodemailer), round-robin, cap/jour par boîte (Redis) | 2 |
+| `mailer.ts` | Sélection boîte (round-robin, cap/jour Redis) + envoi délégué au relais HTTPS (Railway bloque le SMTP direct) | 2 |
 | `imap.ts` | Lecture IMAP (imapflow), poll des réponses | 2 |
 | `sequence.ts` | Séquence J0 / J3 / J7 / J15 puis stop | 2 |
 | `shopify-detect.ts` | Détection Shopify déterministe (`/products.json`, signatures) + pays | 3 |
@@ -57,6 +57,8 @@ COLD_GUARD_MIN_SAMPLE=20           # échantillon mini avant d'armer les seuils
 GITHUB_TOKEN=                      # écriture des logs repo (déjà utilisé par Jarvis)
 
 COLD_ANTHROPIC_API_KEY=            # compose (Haiku) — clé dédiée au cold, jamais ANTHROPIC_API_KEY
+COLD_RELAY_URL=                    # relais HTTPS d'envoi SMTP (route Vercel) — POST email + creds boîte
+COLD_RELAY_SECRET=                 # secret partagé (header x-relay-secret) du relais
 STOREMD_PREVIEW_SCAN_URL=          # URL complète de POST /internal/preview-scan
 STOREMD_PREVIEW_SCAN_KEY=          # clé partagée (Authorization: Bearer)
 
