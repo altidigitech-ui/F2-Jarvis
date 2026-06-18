@@ -2,6 +2,8 @@
 // Plus les ticks cron : sequence-tick (relances dues) et imap-poll (réponses).
 // Convention Claude : REST direct Haiku (cf. jarvis-memory.ts), service-role Supabase.
 
+import { query } from "@anthropic-ai/claude-agent-sdk";
+import { resolveClaudeBinary } from "../claude-binary.js";
 import { getSupabase } from "../supabase.js";
 import { enrichTarget } from "./scraper.js";
 import { sendColdEmail } from "./mailer.js";
@@ -104,27 +106,27 @@ ${name ? `- Address the owner as ${name}.` : ""}
 
 Return only the email body text.`;
 
-  if (!process.env.COLD_ANTHROPIC_API_KEY) {
-    throw new Error("[cold/jobs] COLD_ANTHROPIC_API_KEY manquante");
+  const claudePath = await resolveClaudeBinary();
+  let raw = "";
+  try {
+    for await (const msg of query({
+      prompt,
+      options: {
+        maxTurns: 1,
+        ...(claudePath ? { pathToClaudeCodeExecutable: claudePath } : {}),
+      },
+    })) {
+      if (msg.type === "assistant" && msg.message?.content) {
+        for (const block of msg.message.content) {
+          if (block.type === "text" && block.text) raw += block.text;
+        }
+      }
+    }
+  } catch (err) {
+    throw new Error(`[cold/jobs] compose SDK failed: ${err instanceof Error ? err.message : String(err)}`);
   }
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": process.env.COLD_ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: "claude-haiku-4-5",
-      max_tokens: 600,
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
-  if (!res.ok) {
-    throw new Error(`[cold/jobs] compose Haiku HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  }
-  const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
-  let body = (data.content || []).filter((b) => b.type === "text" && b.text).map((b) => b.text!).join("\n").trim();
+  let body = raw.trim();
+  if (!body) throw new Error("[cold/jobs] compose SDK: réponse vide");
 
   // Garde-fou : em-dash neutralisé si le modèle en glisse un (ANTI-IA prime).
   body = body.replace(/—/g, ", ");
