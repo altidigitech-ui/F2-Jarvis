@@ -5,7 +5,8 @@
 import { query } from "@anthropic-ai/claude-agent-sdk";
 import { resolveClaudeBinary } from "../claude-binary.js";
 import { getSupabase } from "../supabase.js";
-import { enrichTarget } from "./scraper.js";
+import { enqueueCold } from "../queues.js";
+import { enrichTarget, sourceStores } from "./scraper.js";
 import { sendColdEmail } from "./mailer.js";
 import { pollAllReplies } from "./imap.js";
 import { nextTouchAfter, MAX_TOUCHES } from "./sequence.js";
@@ -161,6 +162,20 @@ export async function jobPush(id: string): Promise<void> {
 async function isSuppressed(email: string): Promise<boolean> {
   const { data } = await getSupabase().from("cold_suppression").select("email").eq("email", email.toLowerCase()).maybeSingle();
   return Boolean(data);
+}
+
+// --- source-tick : Apify SOURCE puis lance la chaîne (enfile qualify) --------
+export async function jobSourceTick(count: number): Promise<{
+  keyword: string | null; inserted: number; qualifyEnqueued: number;
+}> {
+  const result = await sourceStores(count);
+  // Enfile qualify pour TOUS les targets en statut 'sourced' (inclut restes).
+  const { data, error } = await getSupabase()
+    .from(TABLE).select("id").eq("status", "sourced").limit(500);
+  if (error) throw new Error(`[cold/jobs] source-tick select sourced: ${error.message}`);
+  const ids = (data as Array<{ id: string }> | null) ?? [];
+  for (const r of ids) await enqueueCold("qualify", { targetId: r.id });
+  return { keyword: result.keyword, inserted: result.inserted, qualifyEnqueued: ids.length };
 }
 
 // --- sequence-tick (cron) : envoie les relances dues -------------------------

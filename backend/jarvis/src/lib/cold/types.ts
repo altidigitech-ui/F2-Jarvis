@@ -85,8 +85,10 @@ export type ColdJobName =
   | "compose"
   | "push"
   | "sequence-tick"
-  | "imap-poll";
+  | "imap-poll"
+  | "source-tick";
 
 export interface ColdJobData {
   targetId?: string;   // pour qualify/enrich/scan/compose/push
+  count?: number;      // pour source-tick
 }
