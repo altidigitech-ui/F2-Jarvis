@@ -56,13 +56,19 @@ export async function jobEnrich(id: string): Promise<void> {
 // store_url, récupère score + findings détaillés, garde les 3 plus parlants.
 export async function jobScan(id: string): Promise<void> {
   const t = await getTarget(id);
-  const result = await runPreviewScan(t.store_url);
-  await patch(id, {
-    scan_score: result.score,
-    scan_findings: topFindings(result.findings, 3),
-    status: "scanned",
-    error: null,
-  });
+  try {
+    const result = await runPreviewScan(t.store_url);
+    await patch(id, {
+      scan_score: result.score,
+      scan_findings: topFindings(result.findings, 3),
+      status: "scanned",
+      error: null,
+    });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    await patch(id, { error: `scan: ${msg}`.slice(0, 500) });
+    throw err; // laisse BullMQ enregistrer l'échec
+  }
 }
 
 // --- compose : scanned → composed -------------------------------------------
