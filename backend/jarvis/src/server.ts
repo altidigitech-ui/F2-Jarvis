@@ -24,7 +24,7 @@ import {
   mempalaceStatsRoute,
 } from "./routes/mempalace.js";
 import { targetsRoute } from "./routes/targets.js";
-import { coldCycleLogRoute, coldEnqueueRoute } from "./routes/cold.js";
+import { coldCycleLogRoute, coldEnqueueRoute, coldSourceRoute } from "./routes/cold.js";
 import { promptsRoute } from "./routes/prompts.js";
 import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
 import { batchStatusRoute, batchUploadRoute } from "./routes/batch.js";
@@ -92,6 +92,7 @@ app.get("/mempalace/drawer/:wing/:filename", mempalaceDrawerRoute);
 app.get("/targets", targetsRoute);
 app.get("/cold/cycle-log", coldCycleLogRoute);
 app.post("/cold/enqueue", coldEnqueueRoute);
+app.post("/cold/source", coldSourceRoute);
 app.get("/prompts", promptsRoute);
 app.post("/action/execute-batch", actionExecuteBatchRoute);
 app.get("/batch/status", batchStatusRoute);
@@ -135,6 +136,17 @@ async function scheduleOuroborosCycle() {
 // Crons du pipeline cold : envoi des relances dues + poll IMAP des réponses.
 // Ne planifie que si des boîtes d'envoi sont configurées (sinon inutile/erreurs).
 async function scheduleColdCrons() {
+  // Cron SOURCE quotidien : indépendant des mailboxes (sourcing + qualify ne pousse pas).
+  if (process.env.COLD_SOURCE_CRON_ENABLED === "true") {
+    const { coldQueue } = await import("./lib/queues.js");
+    await coldQueue.upsertJobScheduler(
+      "cold-source-repeat",
+      { every: 86_400_000 },               // 1x/jour
+      { name: "source-tick" }
+    );
+    console.log("[server] cold source-tick scheduled (daily)");
+  }
+
   const { loadMailboxes } = await import("./lib/cold/mailboxes.js");
   if (loadMailboxes().length === 0) {
     console.log("[server] cold crons non planifiés (aucune boîte MAILBOX_* configurée)");

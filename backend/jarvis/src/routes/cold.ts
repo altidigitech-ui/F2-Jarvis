@@ -108,3 +108,17 @@ export async function coldEnqueueRoute(req: Request, res: Response): Promise<voi
     res.status(500).json({ error: msg });
   }
 }
+
+// POST /cold/source { count? } — lance un batch SOURCE (Apify) + relance la chaîne.
+export async function coldSourceRoute(req: Request, res: Response): Promise<void> {
+  const raw = Number((req.body || {}).count);
+  const count = Number.isFinite(raw) ? Math.min(Math.max(Math.trunc(raw), 1), 200) : 25;
+  try {
+    const job = await enqueueCold("source-tick", { count });
+    res.json({ ok: true, jobId: job.id, count });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[/cold/source]", msg);
+    res.status(500).json({ error: msg });
+  }
+}
