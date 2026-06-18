@@ -91,10 +91,18 @@ export async function verifyEmail(email: string): Promise<VerifyVerdict> {
   }
 }
 
-// Adresses role à drop (on veut le décideur). Cf. 01-SCRAPING.md ENRICH.
-const ROLE_PREFIXES = ["info", "support", "contact", "hello", "sales", "admin", "team", "help", "service", "orders"];
+// Adresses non-délivrables / sans humain : à droper (bounce, auto, alias système).
+// On GARDE les boîtes business génériques (info/contact/hello/sales/orders…) : pour
+// du cold SMB, c'est souvent l'inbox que lit réellement le proprio.
+const DEAD_PREFIXES = [
+  "postmaster", "mailer-daemon", "mailerdaemon", "abuse", "bounce", "bounces",
+  "notifications", "notification", "hostmaster", "webmaster", "root",
+];
 
 export function isRoleAddress(email: string): boolean {
   const local = email.split("@")[0]?.toLowerCase() || "";
-  return ROLE_PREFIXES.includes(local);
+  if (DEAD_PREFIXES.includes(local)) return true;
+  // variantes no-reply / do-not-reply
+  if (/no[-_.]?reply|do[-_.]?not[-_.]?reply|donotreply/.test(local)) return true;
+  return false;
 }
