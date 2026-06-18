@@ -147,22 +147,29 @@ Return only the email body text.`;
 // --- push : composed → in_sequence (1ère touche J0 + planif relances) -------
 export async function jobPush(id: string): Promise<void> {
   const t = await getTarget(id);
-  if (!t.decision_maker_email) throw new Error(`[cold/jobs] push ${id}: pas d'email`);
-  if (!t.email_subject || !t.email_body) throw new Error(`[cold/jobs] push ${id}: email non composé`);
+  try {
+    if (!t.decision_maker_email) throw new Error("pas d'email");
+    if (!t.email_subject || !t.email_body) throw new Error("email non composé");
 
-  // Garde-fou suppression : jamais recontacter une adresse supprimée.
-  if (await isSuppressed(t.decision_maker_email)) {
-    await patch(id, { status: "unsubscribed", error: "suppressed before send" });
-    return;
+    // Garde-fou suppression : jamais recontacter une adresse supprimée.
+    if (await isSuppressed(t.decision_maker_email)) {
+      await patch(id, { status: "unsubscribed", error: "suppressed before send" });
+      return;
+    }
+
+    const sent = await sendColdEmail({ to: t.decision_maker_email, subject: t.email_subject, body: t.email_body });
+    await patch(id, {
+      sending_inbox: sent.inbox,
+      status: "in_sequence",
+      touch_count: 1,
+      next_touch_at: nextTouchAfter(1),
+      error: null,
+    });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    await patch(id, { error: `push: ${msg}`.slice(0, 500) });
+    throw err; // laisse BullMQ enregistrer l'échec
   }
-
-  const sent = await sendColdEmail({ to: t.decision_maker_email, subject: t.email_subject, body: t.email_body });
-  await patch(id, {
-    sending_inbox: sent.inbox,
-    status: "in_sequence",
-    touch_count: 1,
-    next_touch_at: nextTouchAfter(1),
-  });
 }
 
 async function isSuppressed(email: string): Promise<boolean> {
