@@ -56,6 +56,7 @@ export interface ColdTarget {
   email_subject: string | null;
   email_body: string | null;
   sending_inbox: string | null;
+  resend_message_id: string | null;  // id du message retourné par l'API Resend à l'envoi
   next_touch_at: string | null;
   touch_count: number;
   status: ColdStatus;
