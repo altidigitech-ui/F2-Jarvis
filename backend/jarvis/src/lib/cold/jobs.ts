@@ -5,12 +5,13 @@
 import { query } from "@anthropic-ai/claude-agent-sdk";
 import { resolveClaudeBinary } from "../claude-binary.js";
 import { getSupabase } from "../supabase.js";
+import { getRedis } from "../redis.js";
 import { enqueueCold } from "../queues.js";
 import { enrichTarget, sourceStores } from "./scraper.js";
 import { sendColdEmail } from "./mailer.js";
 import { pollAllReplies } from "./imap.js";
 import { nextTouchAfter, MAX_TOUCHES } from "./sequence.js";
-import { runPreviewScan, topFindings } from "./storemd.js";
+import { runPreviewScan, topFindings, StoreMdSaturatedError } from "./storemd.js";
 import { appendEmailLog, type ColdEmailLogRow } from "./cold-log.js";
 import { evaluateGuardrails, recordComplaint } from "./guardrails.js";
 import type { ColdTarget, ScanFinding } from "./types.js";
@@ -54,10 +55,17 @@ export async function jobEnrich(id: string): Promise<void> {
 // --- scan : enriched → scanned ----------------------------------------------
 // Appelle l'endpoint interne StoreMD (POST /internal/preview-scan) sur la
 // store_url, récupère score + findings détaillés, garde les 3 plus parlants.
+// Re-scan différé quand StoreMD sert le stub de saturation. Compteur de retries
+// en Redis (clé par target, TTL 1h) → toute la logique reste dans jobScan.
+const SCAN_RETRY_MAX = Number(process.env.STOREMD_SCAN_RETRY_MAX || 5);
+const SCAN_RETRY_DELAY_MS = Number(process.env.STOREMD_SCAN_RETRY_DELAY_MS || 60000);
+const scanRetryKey = (id: string) => `cold:scanretry:${id}`;
+
 export async function jobScan(id: string): Promise<void> {
   const t = await getTarget(id);
   try {
     const result = await runPreviewScan(t.store_url);
+    await getRedis().del(scanRetryKey(id)); // succès → reset du compteur de retries
     await patch(id, {
       scan_score: result.score,
       scan_findings: topFindings(result.findings, 3),
@@ -65,6 +73,22 @@ export async function jobScan(id: string): Promise<void> {
       error: null,
     });
   } catch (err) {
+    // Stub de saturation : on ne stocke pas le faux 68, on planifie un re-scan différé.
+    if (err instanceof StoreMdSaturatedError) {
+      const r = getRedis();
+      const n = await r.incr(scanRetryKey(id));
+      if (n === 1) await r.expire(scanRetryKey(id), 3600);
+      if (n <= SCAN_RETRY_MAX) {
+        await enqueueCold("scan", { targetId: id }, { delay: SCAN_RETRY_DELAY_MS });
+        await patch(id, {
+          error: `scan: StoreMD saturé (stub 68), re-scan ${n}/${SCAN_RETRY_MAX} dans ${Math.round(SCAN_RETRY_DELAY_MS / 1000)}s`,
+        });
+        return; // retry planifié → pas d'échec BullMQ, status reste 'enriched' (pas de compose)
+      }
+      await r.del(scanRetryKey(id));
+      await patch(id, { error: `scan: StoreMD saturé (stub 68) après ${SCAN_RETRY_MAX} re-scans` });
+      return; // abandon propre, target reste 'enriched' avec error renseignée
+    }
     const msg = err instanceof Error ? err.message : String(err);
     await patch(id, { error: `scan: ${msg}`.slice(0, 500) });
     throw err; // laisse BullMQ enregistrer l'échec
