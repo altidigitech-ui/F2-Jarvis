@@ -15,6 +15,33 @@ import type { ScanFinding } from "./types.js";
 
 const TIMEOUT_MS = 60000; // un scan peut prendre quelques dizaines de secondes
 
+// Sérialisation des appels preview-scan. L'API StoreMD se dégrade sous charge
+// concurrente (elle sert un stub 68 ; cf. reproduction du 20/06). On garantit
+// UN SEUL appel à la fois, quelle que soit la concurrence du worker (qui reste
+// à 5 pour source/compose/push). Mutex in-process (chaîne de promesses) : un
+// seul worker, pas besoin d'un lock Redis distribué. Délai d'espacement après
+// chaque appel = ceinture + bretelles contre le burst.
+const SCAN_GAP_MS = Number(process.env.STOREMD_SCAN_GAP_MS || 500);
+let _scanChain: Promise<unknown> = Promise.resolve();
+
+function delay(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+// Enfile `task` derrière les scans en cours : exécution strictement sérialisée,
+// puis délai d'espacement avant de libérer le suivant. La file ne conserve
+// jamais l'erreur de `task` dans son état (sinon elle resterait "rejected" et
+// bloquerait les scans suivants) : on la neutralise pour la file tout en la
+// propageant à l'appelant via `run`.
+function serializeScan<T>(task: () => Promise<T>): Promise<T> {
+  const run = _scanChain.then(task, task);
+  _scanChain = run.then(
+    () => delay(SCAN_GAP_MS),
+    () => delay(SCAN_GAP_MS)
+  );
+  return run;
+}
+
 function endpoint(): { url: string; key: string } {
   const url = process.env.STOREMD_PREVIEW_SCAN_URL;
   const key = process.env.STOREMD_PREVIEW_SCAN_KEY;
@@ -74,7 +101,14 @@ export interface PreviewScanResult {
   findings: ScanFinding[];
 }
 
+// Point d'entrée : SÉRIALISE l'appel HTTP à StoreMD (anti-burst). Le reste de
+// jobScan (Supabase, compose) n'est PAS dans le mutex.
 export async function runPreviewScan(storeUrl: string): Promise<PreviewScanResult> {
+  return serializeScan(() => doPreviewScan(storeUrl));
+}
+
+// Appel HTTP réel — un seul à la fois, garanti par serializeScan.
+async function doPreviewScan(storeUrl: string): Promise<PreviewScanResult> {
   const { url, key } = endpoint();
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
