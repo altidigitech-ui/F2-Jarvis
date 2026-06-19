@@ -15,13 +15,13 @@ import type { ScanFinding } from "./types.js";
 
 const TIMEOUT_MS = 60000; // un scan peut prendre quelques dizaines de secondes
 
-// Sérialisation des appels preview-scan. L'API StoreMD se dégrade sous charge
-// concurrente (elle sert un stub 68 ; cf. reproduction du 20/06). On garantit
-// UN SEUL appel à la fois, quelle que soit la concurrence du worker (qui reste
-// à 5 pour source/compose/push). Mutex in-process (chaîne de promesses) : un
-// seul worker, pas besoin d'un lock Redis distribué. Délai d'espacement après
-// chaque appel = ceinture + bretelles contre le burst.
-const SCAN_GAP_MS = Number(process.env.STOREMD_SCAN_GAP_MS || 500);
+// Sérialisation + ESPACEMENT des appels preview-scan. L'API StoreMD sature à
+// ~7 vrais scans/min : au-delà elle sert un stub 68 quasi instantané (~80ms).
+// Le mutex in-process (un seul worker, pas de lock Redis) garantit UN SEUL appel
+// à la fois ET applique un délai entre deux appels. Défaut 10s = ~6 scans/min,
+// sous le seuil de saturation (couvre la cible 20→200 scans/jour). Réglable via
+// STOREMD_SCAN_GAP_MS. La concurrence worker reste à 5 (source/compose/push).
+const SCAN_GAP_MS = Number(process.env.STOREMD_SCAN_GAP_MS || 10000);
 let _scanChain: Promise<unknown> = Promise.resolve();
 
 function delay(ms: number): Promise<void> {
@@ -101,7 +101,27 @@ export interface PreviewScanResult {
   findings: ScanFinding[];
 }
 
-// Point d'entrée : SÉRIALISE l'appel HTTP à StoreMD (anti-burst). Le reste de
+// Détection du stub de saturation : StoreMD saturé renvoie un 68 quasi instantané
+// avec des findings figés au lieu de scanner. Signature STRICTE (les 3 conditions)
+// pour ne jamais confondre avec un vrai store qui scorerait réellement 68.
+// Durée : on se fie d'abord au scan_duration_ms du BODY (mesure serveur, ~80ms
+// pour le stub, 500ms+ pour un vrai scan), sans bruit réseau. Repli sur la durée
+// client (seuil plus large) seulement si le champ est absent de la réponse.
+const STUB_MAX_MS = Number(process.env.STOREMD_STUB_MAX_MS || 150);
+const STUB_FALLBACK_MAX_MS = Number(process.env.STOREMD_STUB_FALLBACK_MAX_MS || 250);
+const STUB_SCORE = 68;
+const STUB_TITLES = ["Missing meta description", "Missing canonical URL"];
+
+// Levée quand doPreviewScan détecte le stub (≠ vrai résultat). jobScan la traite
+// à part : re-scan différé, sans stocker le faux score.
+export class StoreMdSaturatedError extends Error {
+  constructor(public readonly durationMs: number, public readonly durationSource: "server" | "client") {
+    super(`[cold/storemd] preview-scan saturé : stub ${STUB_SCORE} servi en ${durationMs}ms (${durationSource})`);
+    this.name = "StoreMdSaturatedError";
+  }
+}
+
+// Point d'entrée : SÉRIALISE + espace l'appel HTTP à StoreMD. Le reste de
 // jobScan (Supabase, compose) n'est PAS dans le mutex.
 export async function runPreviewScan(storeUrl: string): Promise<PreviewScanResult> {
   return serializeScan(() => doPreviewScan(storeUrl));
@@ -112,6 +132,7 @@ async function doPreviewScan(storeUrl: string): Promise<PreviewScanResult> {
   const { url, key } = endpoint();
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  const startedAt = Date.now();
   try {
     const res = await fetch(url, {
       method: "POST",
@@ -126,6 +147,7 @@ async function doPreviewScan(storeUrl: string): Promise<PreviewScanResult> {
       throw new Error(`[cold/storemd] preview-scan HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
     }
     const data = (await res.json()) as Record<string, unknown>;
+    const clientMs = Date.now() - startedAt; // durée client (repli si pas de mesure serveur)
 
     const rawScore = data.preview_score ?? data.score ?? data.scan_score ?? data.health_score;
     const score = Number(rawScore);
@@ -137,6 +159,25 @@ async function doPreviewScan(storeUrl: string): Promise<PreviewScanResult> {
     const findings = Array.isArray(rawFindings)
       ? rawFindings.map(normFinding).filter((f): f is ScanFinding => f !== null)
       : [];
+
+    // Filet : si StoreMD a servi le stub de saturation, on NE le stocke PAS.
+    // Durée principale = scan_duration_ms du body (serveur) ; repli sur la durée
+    // client (seuil élargi) uniquement si le champ est absent.
+    const serverMs = Number(data.scan_duration_ms);
+    const hasServerMs = Number.isFinite(serverMs);
+    const durationLooksStub = hasServerMs ? serverMs < STUB_MAX_MS : clientMs < STUB_FALLBACK_MAX_MS;
+    if (
+      durationLooksStub &&
+      score === STUB_SCORE &&
+      findings.length >= 2 &&
+      findings[0]?.title === STUB_TITLES[0] &&
+      findings[1]?.title === STUB_TITLES[1]
+    ) {
+      throw new StoreMdSaturatedError(
+        hasServerMs ? serverMs : clientMs,
+        hasServerMs ? "server" : "client"
+      );
+    }
 
     return { score, findings };
   } finally {

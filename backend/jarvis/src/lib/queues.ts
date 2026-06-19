@@ -1,4 +1,4 @@
-import { Queue } from "bullmq";
+import { Queue, type JobsOptions } from "bullmq";
 import { getRedis } from "./redis.js";
 import type { ColdJobName, ColdJobData } from "./cold/types.js";
 
@@ -23,9 +23,10 @@ export const coldQueue = new Queue("cold", {
   },
 });
 
-// Enqueue un job cold pour une cible donnée.
-export function enqueueCold(name: ColdJobName, data: ColdJobData = {}) {
-  return coldQueue.add(name, data);
+// Enqueue un job cold pour une cible donnée. opts : options BullMQ (ex. delay
+// pour le re-scan différé sur saturation StoreMD).
+export function enqueueCold(name: ColdJobName, data: ColdJobData = {}, opts?: JobsOptions) {
+  return coldQueue.add(name, data, opts);
 }
 
 export const mempalaceQueue = new Queue("mempalace-ingest", {
