@@ -9,9 +9,10 @@ Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue B
 | Fichier | Rôle | Phase |
 |---|---|---|
 | `types.ts` | Types partagés (miroir de `cold_targets`) | — |
-| `mailboxes.ts` | Parse les boîtes du fournisseur cold depuis l'env + cap/jour | 2 |
-| `mailer.ts` | Sélection boîte (round-robin, cap/jour Redis) + envoi délégué au relais HTTPS (Railway bloque le SMTP direct) | 2 |
-| `imap.ts` | Lecture IMAP (imapflow), poll des réponses | 2 |
+| `mailboxes.ts` | Parse les boîtes du fournisseur cold depuis l'env (utilisé par `imap.ts` pour le poll des réponses) | 2 |
+| `resend.ts` | Transport bas niveau : `sendColdEmailResend` (POST api.resend.com/emails), erreurs structurées, rate limit 5 req/s | 4b |
+| `mailer.ts` | Garde-fous d'envoi : pause campagne + cap/jour **global** (Redis), délègue à `resend.ts` | 4b |
+| `imap.ts` | Lecture IMAP (imapflow), poll des réponses humaines | 2 |
 | `sequence.ts` | Séquence J0 / J3 / J7 / J15 puis stop | 2 |
 | `shopify-detect.ts` | Détection Shopify déterministe (`/products.json`, signatures) + pays | 3 |
 | `smtp-verify.ts` | Vérif SMTP (MX → RCPT) sans envoyer + drop role | 3 |
@@ -44,11 +45,17 @@ findings les plus parlants** (sévérité puis présence d'un chiffre d'impact) 
 ## Variables d'environnement
 
 ```
-# Boîtes du fournisseur cold (Maildoso/Mailforge), ~10, numérotées sans trou
-MAILBOX_1_SMTP_HOST=  MAILBOX_1_SMTP_PORT=587  MAILBOX_1_SMTP_USER=  MAILBOX_1_SMTP_PASS=
-MAILBOX_1_IMAP_HOST=  MAILBOX_1_IMAP_PORT=993  MAILBOX_1_FROM="Jane Doe <jane@leakdetector.tech>"
+# Envoi cold via l'API Resend (HTTP direct depuis le worker)
+RESEND_API_KEY=                    # Bearer pour POST api.resend.com/emails
+COLD_FROM=hello@mail.altidigitech.com   # expéditeur (domaine vérifié Resend)
+COLD_REPLY_TO=                     # adresse de réponse (reply_to) — boîte de réception cold
+COLD_DAILY_CAP=5                   # cap/jour GLOBAL (un seul expéditeur) — montée au signal
+RESEND_MAX_RPS=5                   # plafond req/s respecté par le worker (rate limit Resend)
+
+# Boîtes du fournisseur cold (Maildoso/Mailforge) — désormais utilisées UNIQUEMENT
+# par imap.ts pour le poll des réponses humaines (plus pour l'envoi).
+MAILBOX_1_IMAP_HOST=  MAILBOX_1_IMAP_PORT=993  MAILBOX_1_IMAP_USER=  MAILBOX_1_IMAP_PASS=
 # ... _2, _3, ...
-COLD_DAILY_CAP_PER_INBOX=15        # cap/jour/boîte (à confirmer avec le fournisseur)
 COLD_WORKER_CONCURRENCY=5
 COLD_SMTP_PROBE_FROM=verify@leakdetector.tech
 COLD_BOUNCE_MAX=0.02               # seuil bounce → pause auto (Phase 7)
@@ -56,9 +63,8 @@ COLD_COMPLAINT_MAX=0.003           # seuil plaintes → pause auto
 COLD_GUARD_MIN_SAMPLE=20           # échantillon mini avant d'armer les seuils
 GITHUB_TOKEN=                      # écriture des logs repo (déjà utilisé par Jarvis)
 
-COLD_ANTHROPIC_API_KEY=            # compose (Haiku) — clé dédiée au cold, jamais ANTHROPIC_API_KEY
-COLD_RELAY_URL=                    # relais HTTPS d'envoi SMTP (route Vercel) — POST email + creds boîte
-COLD_RELAY_SECRET=                 # secret partagé (header x-relay-secret) du relais
+# compose passe par l'Agent SDK (claude-binary), plus de clé API cold ici.
+# l'envoi passe par Resend (cf. plus haut), l'ancien relais HTTPS est retiré.
 STOREMD_PREVIEW_SCAN_URL=          # URL complète de POST /internal/preview-scan
 STOREMD_PREVIEW_SCAN_KEY=          # clé partagée (Authorization: Bearer)
 
@@ -73,14 +79,21 @@ Si aucune boîte `MAILBOX_*` n'est configurée, les crons cold ne sont pas plani
 
 - **Filtres durs SOURCE** : pays ∈ {US,UK,AU} + dédup (`scraper.ts`).
 - **Suppression** vérifiée avant chaque envoi (`jobs.ts` push + sequence-tick) ;
-  `List-Unsubscribe` posé sur chaque mail ; désinscriptions → `cold_suppression`.
-- **Cap/boîte** respecté (`mailer.ts`, compteur Redis quotidien).
+  désinscriptions → `cold_suppression`.
+- **Cap/jour global** respecté (`mailer.ts`, compteur Redis `cold:cap:global:<jour>`).
+- **Rate limit Resend** (5 req/s) respecté par `resend.ts` (gate process).
+- **Persistance d'erreur** : tout échec d'envoi écrit l'erreur tronquée dans
+  `cold_targets.error` (push relaie à BullMQ pour retry ; relances loguées + persistées).
 - **Seuils délivrabilité** (`guardrails.ts`) : `bounce > 2%` ou `plaintes > 0,3%`
   (au-delà de `COLD_GUARD_MIN_SAMPLE`) → **pause auto** : flag Redis `cold:paused`,
   `sendColdEmail` et `sourceStores` refusent, ligne ajoutée à `decisions-log.md`.
-  Levée manuelle via `resumeCold()` après correction. Bounces détectés via les
-  DSN au poll IMAP ; plaintes via heuristique + compteur (FBL = source réelle à
-  brancher).
+  Levée manuelle via `resumeCold()` après correction.
+
+> **Lot 2 (à venir) :** avec Resend, bounces et plaintes arrivent par **webhook**
+> (`email.bounced` / `email.complained`), plus par IMAP. Tant que le webhook
+> `POST /cold/resend-webhook` n'est pas branché, le compteur bounce n'est plus
+> alimenté et la pause auto ne se déclenche pas. `imap-poll` reste en place pour
+> les **réponses humaines** (reply_to = `COLD_REPLY_TO`).
 
 ## Logging (Phase 8) — fichiers EXISTANTS, agrégé dans Git, nominatif dans Supabase
 

@@ -1,53 +1,41 @@
-// Rotation round-robin sur les boîtes du fournisseur cold, avec cap d'envoi/jour
-// par boîte tracké en Redis. L'envoi SMTP est délégué à un relais HTTPS (Railway
-// bloque le SMTP direct) ; Jarvis garde toute la logique de sélection de boîte.
+// Envoi cold via l'API Resend (HTTP direct depuis le worker). Le transport bas
+// niveau vit dans resend.ts ; ce module porte les garde-fous d'envoi :
+//   - pause campagne (seuils délivrabilité, guardrails.ts),
+//   - cap quotidien GLOBAL (un seul expéditeur COLD_FROM, plus de rotation boîtes).
+// Remplace l'ancien relais HTTPS SMTP (COLD_RELAY_URL) : Resend est l'unique canal.
 // Jarvis EST le séquenceur : pas de SaaS d'envoi tiers.
 
 import { getRedis } from "../redis.js";
-import { loadMailboxes, dailyCapPerInbox } from "./mailboxes.js";
 import { pauseReason, ColdPausedError } from "./guardrails.js";
-import type { Mailbox } from "./types.js";
+import { sendColdEmailResend } from "./resend.js";
 
-// Clé Redis du compteur quotidien par boîte (UTC, reset naturel à minuit).
-function capKey(inboxId: string): string {
-  const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-  return `cold:cap:${inboxId}:${day}`;
+// Cap d'envoi/jour GLOBAL (l'envoi part d'un unique expéditeur COLD_FROM via Resend).
+// Démarrage prudent à 5 (warming), montée au signal via l'env.
+function globalDailyCap(): number {
+  return Number(process.env.COLD_DAILY_CAP || 5);
 }
 
-async function sentToday(inboxId: string): Promise<number> {
-  const v = await getRedis().get(capKey(inboxId));
+// Clé Redis du compteur quotidien global (UTC, reset naturel à minuit).
+function capKey(): string {
+  const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  return `cold:cap:global:${day}`;
+}
+
+async function sentToday(): Promise<number> {
+  const v = await getRedis().get(capKey());
   return v ? Number(v) : 0;
 }
 
-async function incrSent(inboxId: string): Promise<void> {
+async function incrSent(): Promise<void> {
   const r = getRedis();
-  const key = capKey(inboxId);
+  const key = capKey();
   const n = await r.incr(key);
   if (n === 1) await r.expire(key, 60 * 60 * 48); // TTL 2j, garde-fou
 }
 
-let _rrIndex = 0;
-
-// Choisit la prochaine boîte sous son cap, en round-robin. null si tout est plein.
-export async function pickMailbox(): Promise<Mailbox | null> {
-  const boxes = loadMailboxes();
-  if (boxes.length === 0) {
-    throw new Error("[cold/mailer] aucune boîte d'envoi configurée (MAILBOX_*)");
-  }
-  const cap = dailyCapPerInbox();
-  for (let n = 0; n < boxes.length; n++) {
-    const box = boxes[(_rrIndex + n) % boxes.length];
-    if ((await sentToday(box.id)) < cap) {
-      _rrIndex = (_rrIndex + n + 1) % boxes.length;
-      return box;
-    }
-  }
-  return null; // toutes les boîtes ont atteint leur cap aujourd'hui
-}
-
 export interface SendResult {
-  inbox: string;     // box.id → à stocker dans cold_targets.sending_inbox
-  messageId: string;
+  inbox: string; // expéditeur effectif (COLD_FROM) → stocké dans cold_targets.sending_inbox
+  messageId: string; // id Resend → stocké dans cold_targets.resend_message_id
 }
 
 // Envoie un email cold. Texte brut uniquement (anti-détection + délivrabilité).
@@ -59,31 +47,18 @@ export async function sendColdEmail(args: {
   const reason = await pauseReason();
   if (reason) throw new ColdPausedError(reason);
 
-  const box = await pickMailbox();
-  if (!box) throw new Error("[cold/mailer] cap quotidien atteint sur toutes les boîtes");
-
-  const relayUrl = process.env.COLD_RELAY_URL;
-  const relaySecret = process.env.COLD_RELAY_SECRET;
-  if (!relayUrl || !relaySecret) {
-    throw new Error("[cold/mailer] COLD_RELAY_URL / COLD_RELAY_SECRET non configurés");
+  // Garde-fou : cap quotidien global.
+  const cap = globalDailyCap();
+  if ((await sentToday()) >= cap) {
+    throw new Error(`[cold/mailer] cap quotidien global atteint (${cap}/j)`);
   }
 
-  const res = await fetch(relayUrl, {
-    method: "POST",
-    headers: { "content-type": "application/json", "x-relay-secret": relaySecret },
-    body: JSON.stringify({
-      to: args.to,
-      subject: args.subject,
-      body: args.body,
-      smtp: { host: box.smtpHost, port: box.smtpPort, user: box.smtpUser, pass: box.smtpPass, from: box.from },
-    }),
+  const { id, from } = await sendColdEmailResend({
+    to: args.to,
+    subject: args.subject,
+    text: args.body,
+    replyTo: process.env.COLD_REPLY_TO,
   });
-  if (!res.ok) {
-    const txt = await res.text().catch(() => "");
-    throw new Error(`[cold/mailer] relais ${res.status}: ${txt.slice(0, 200)}`);
-  }
-  const data = (await res.json()) as { messageId?: string };
-
-  await incrSent(box.id);
-  return { inbox: box.id, messageId: data.messageId || "" };
+  await incrSent();
+  return { inbox: from, messageId: id };
 }

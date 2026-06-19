@@ -103,3 +103,5 @@ ui/brain-3d/dist/
 # MemPalace per-project files (issue #185)
 mempalace.yaml
 entities.json
+.vercel
+.env*

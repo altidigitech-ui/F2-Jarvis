@@ -160,12 +160,15 @@ export async function jobPush(id: string): Promise<void> {
     const sent = await sendColdEmail({ to: t.decision_maker_email, subject: t.email_subject, body: t.email_body });
     await patch(id, {
       sending_inbox: sent.inbox,
+      resend_message_id: sent.messageId,
       status: "in_sequence",
       touch_count: 1,
       next_touch_at: nextTouchAfter(1),
       error: null,
     });
   } catch (err) {
+    // Pas de silent failure : on persiste l'erreur tronquée (pattern cold_targets.error)
+    // et on relaie à BullMQ. Le scheduling J+3 n'a lieu qu'en cas de succès.
     const msg = err instanceof Error ? err.message : String(err);
     await patch(id, { error: `push: ${msg}`.slice(0, 500) });
     throw err; // laisse BullMQ enregistrer l'échec
@@ -219,12 +222,16 @@ export async function jobSequenceTick(): Promise<{ sent: number }> {
       const nextCount = t.touch_count + 1;
       await patch(t.id, {
         sending_inbox: r.inbox,
+        resend_message_id: r.messageId,
         touch_count: nextCount,
         next_touch_at: nextTouchAfter(nextCount),
       });
       sent++;
     } catch (err) {
-      console.error(`[cold/jobs] relance ${t.store_domain}:`, err instanceof Error ? err.message : err);
+      // Pas de silent failure : log + persistance de l'erreur tronquée (pattern cold_targets.error).
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error(`[cold/jobs] relance ${t.store_domain}:`, msg);
+      await patch(t.id, { error: msg.slice(0, 500) });
     }
   }
   return { sent };
