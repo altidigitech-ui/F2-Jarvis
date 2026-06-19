@@ -4,11 +4,27 @@
 // Le rate limit Resend (5 req/s par défaut) est respecté par un gate global au
 // process (sérialise les envois et garantit l'espacement minimal entre appels).
 
+import { makeUnsubToken } from "./unsub-token.js";
+
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
 // Espacement minimal entre deux POST, dérivé du plafond req/s Resend.
 const MAX_RPS = Number(process.env.RESEND_MAX_RPS || 5);
 const MIN_INTERVAL_MS = Math.ceil(1000 / Math.max(1, MAX_RPS));
+
+// Headers List-Unsubscribe (RFC 8058) pour un destinataire, ou null si l'unsub
+// n'est pas configuré (COLD_UNSUB_BASE_URL + COLD_UNSUB_SECRET requis).
+function unsubscribeHeaders(to: string): Record<string, string> | null {
+  const base = process.env.COLD_UNSUB_BASE_URL;
+  const secret = process.env.COLD_UNSUB_SECRET;
+  if (!base || !secret) return null;
+  const token = makeUnsubToken(to, secret);
+  const url = `https://${base}/cold/unsubscribe?t=${encodeURIComponent(token)}`;
+  return {
+    "List-Unsubscribe": `<${url}>`,
+    "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+  };
+}
 
 // Catégories d'échec explicites (cf. statuts Resend documentés).
 export type ResendErrorCategory =
@@ -66,6 +82,10 @@ export async function sendColdEmailResend(args: {
   if (!from) throw new Error("[cold/resend] COLD_FROM manquante");
   const replyTo = args.replyTo ?? process.env.COLD_REPLY_TO;
 
+  // List-Unsubscribe one-click (RFC 8058) : lien HTTPS signé, pas de mailto.
+  // Conformité Gmail/Yahoo + point mail-tester. Posé seulement si l'unsub est configuré.
+  const mailHeaders = unsubscribeHeaders(args.to);
+
   await rateLimit();
 
   let res: Response;
@@ -82,6 +102,7 @@ export async function sendColdEmailResend(args: {
         subject: args.subject,
         text: args.text,
         ...(replyTo ? { reply_to: replyTo } : {}),
+        ...(mailHeaders ? { headers: mailHeaders } : {}),
       }),
     });
   } catch (err) {

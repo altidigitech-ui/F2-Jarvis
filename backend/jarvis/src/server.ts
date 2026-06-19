@@ -25,6 +25,8 @@ import {
 } from "./routes/mempalace.js";
 import { targetsRoute } from "./routes/targets.js";
 import { coldCycleLogRoute, coldEnqueueRoute, coldSourceRoute } from "./routes/cold.js";
+import { coldResendWebhookRoute } from "./routes/cold-webhook.js";
+import { coldUnsubscribeRoute } from "./routes/cold-unsubscribe.js";
 import { promptsRoute } from "./routes/prompts.js";
 import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
 import { batchStatusRoute, batchUploadRoute } from "./routes/batch.js";
@@ -50,6 +52,14 @@ app.use(cors({
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type", "X-JARVIS-AUTH", "X-USER-ID"],
 }));
+
+// Routes PUBLIQUES (appels externes) — enregistrées AVANT express.json() et le
+// middleware auth. Sécurité : signature Svix (webhook) / token HMAC (unsub),
+// pas le header X-JARVIS-AUTH. Le webhook a besoin du body BRUT pour Svix.
+app.post("/cold/resend-webhook", express.raw({ type: "*/*" }), coldResendWebhookRoute);
+app.get("/cold/unsubscribe", coldUnsubscribeRoute);
+app.post("/cold/unsubscribe", coldUnsubscribeRoute);
+
 app.use(express.json({ limit: "25mb" }));
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

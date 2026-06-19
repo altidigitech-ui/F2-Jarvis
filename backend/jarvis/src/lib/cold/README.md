@@ -10,8 +10,9 @@ Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue B
 |---|---|---|
 | `types.ts` | Types partagés (miroir de `cold_targets`) | — |
 | `mailboxes.ts` | Parse les boîtes du fournisseur cold depuis l'env (utilisé par `imap.ts` pour le poll des réponses) | 2 |
-| `resend.ts` | Transport bas niveau : `sendColdEmailResend` (POST api.resend.com/emails), erreurs structurées, rate limit 5 req/s | 4b |
+| `resend.ts` | Transport bas niveau : `sendColdEmailResend` (POST api.resend.com/emails) + headers `List-Unsubscribe` one-click, erreurs structurées, rate limit 5 req/s | 4b |
 | `mailer.ts` | Garde-fous d'envoi : pause campagne + cap/jour **global** (Redis), délègue à `resend.ts` | 4b |
+| `unsub-token.ts` | Token de désinscription signé (base64url(email) + HMAC) : `makeUnsubToken` / `verifyUnsubToken` | 4c |
 | `imap.ts` | Lecture IMAP (imapflow), poll des réponses humaines | 2 |
 | `sequence.ts` | Séquence J0 / J3 / J7 / J15 puis stop | 2 |
 | `shopify-detect.ts` | Détection Shopify déterministe (`/products.json`, signatures) + pays | 3 |
@@ -52,6 +53,13 @@ COLD_REPLY_TO=                     # adresse de réponse (reply_to) — boîte d
 COLD_DAILY_CAP=5                   # cap/jour GLOBAL (un seul expéditeur) — montée au signal
 RESEND_MAX_RPS=5                   # plafond req/s respecté par le worker (rate limit Resend)
 
+# Webhook Resend (bounce/plainte) — sur le SERVEUR WEB (F2-Jarvis), hors auth interne
+RESEND_WEBHOOK_SECRET=             # secret Svix, vérif signature de POST /cold/resend-webhook
+
+# List-Unsubscribe one-click (RFC 8058)
+COLD_UNSUB_SECRET=                 # HMAC du token unsub — MÊME valeur sur web + worker
+COLD_UNSUB_BASE_URL=f2-jarvis-production.up.railway.app   # host public web (worker : construit le lien)
+
 # Boîtes du fournisseur cold (Maildoso/Mailforge) — désormais utilisées UNIQUEMENT
 # par imap.ts pour le poll des réponses humaines (plus pour l'envoi).
 MAILBOX_1_IMAP_HOST=  MAILBOX_1_IMAP_PORT=993  MAILBOX_1_IMAP_USER=  MAILBOX_1_IMAP_PASS=
@@ -88,12 +96,20 @@ Si aucune boîte `MAILBOX_*` n'est configurée, les crons cold ne sont pas plani
   (au-delà de `COLD_GUARD_MIN_SAMPLE`) → **pause auto** : flag Redis `cold:paused`,
   `sendColdEmail` et `sourceStores` refusent, ligne ajoutée à `decisions-log.md`.
   Levée manuelle via `resumeCold()` après correction.
+- **Webhook Resend** (`routes/cold-webhook.ts`, `POST /cold/resend-webhook` sur le
+  serveur web, hors auth — signature Svix) réalimente ces seuils depuis Resend :
+  `email.bounced` → `status='bounced'` + suppression ; `email.complained` →
+  `recordComplaint()` (Redis `cold:complaints:total`) + suppression. Puis
+  `evaluateGuardrails()`. Idempotent (dédup `svix-id` Redis `SETNX` TTL 7j).
+  Lookup du target par `resend_message_id` (= `email_id` du payload), fallback email.
+- **List-Unsubscribe one-click** (`routes/cold-unsubscribe.ts`, `GET`+`POST
+  /cold/unsubscribe`, hors auth — token HMAC signé) : ajoute l'adresse à
+  `cold_suppression` et stoppe la séquence. Header posé à l'envoi par `resend.ts`.
 
-> **Lot 2 (à venir) :** avec Resend, bounces et plaintes arrivent par **webhook**
-> (`email.bounced` / `email.complained`), plus par IMAP. Tant que le webhook
-> `POST /cold/resend-webhook` n'est pas branché, le compteur bounce n'est plus
-> alimenté et la pause auto ne se déclenche pas. `imap-poll` reste en place pour
-> les **réponses humaines** (reply_to = `COLD_REPLY_TO`).
+> **Rappel délivrabilité :** le garde-fou bounce/plainte est alimenté par le
+> **webhook Resend** (plus par IMAP). `imap-poll` reste en place pour les
+> **réponses humaines** (reply_to = `COLD_REPLY_TO`). Déclarer l'URL webhook
+> `https://{COLD_UNSUB_BASE_URL}/cold/resend-webhook` dans le dashboard Resend.
 
 ## Logging (Phase 8) — fichiers EXISTANTS, agrégé dans Git, nominatif dans Supabase
 
