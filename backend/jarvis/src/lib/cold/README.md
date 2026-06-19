@@ -1,6 +1,7 @@
 # Cold pipeline (`lib/cold/`)
 
-Implémentation des Phases 2 à 4 de `marketing/saas-app-shopify/storemd/machine/plan.md`.
+Implémentation du pipeline cold (SOURCE Apify → ENRICH → SCAN StoreMD → COMPOSE → PUSH).
+Ce README + le code de ce dossier sont la spec de référence.
 Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue BullMQ `cold`.
 
 ## Modules
@@ -15,8 +16,8 @@ Jarvis EST le séquenceur (pas de SaaS d'envoi). Tout est piloté par la queue B
 | `sequence.ts` | Séquence J0 / J3 / J7 / J15 puis stop | 2 |
 | `shopify-detect.ts` | Détection Shopify déterministe (`/products.json`, signatures) + pays | 3 |
 | `smtp-verify.ts` | Vérif SMTP (MX → RCPT) sans envoyer + drop role | 3 |
-| `openclaw.ts` | Client du Gateway OpenClaw (découverte + email décideur) | 3 |
-| `scraper.ts` | SOURCE + ENRICH (orchestration) | 3 |
+| `apify.ts` | Client actor Apify `clearpath/shopify-store-leads` (SOURCE : domaine + email + nom + pays) | 3 |
+| `scraper.ts` | SOURCE (rotation mots-clés `cold_source_seeds` + ingestion) + ENRICH (vérif SMTP) | 3 |
 | `storemd.ts` | Client endpoint interne preview-scan StoreMD + top-3 findings | 4 |
 | `jobs.ts` | Jobs `qualify` · `enrich` · `scan` · `compose` · `push` + crons | 4 |
 | `guardrails.ts` | Pause auto sur seuils bounce/plaintes + état pause (Redis) | 7 |
@@ -62,13 +63,14 @@ COLD_COMPLAINT_MAX=0.003           # seuil plaintes → pause auto
 COLD_GUARD_MIN_SAMPLE=20           # échantillon mini avant d'armer les seuils
 GITHUB_TOKEN=                      # écriture des logs repo (déjà utilisé par Jarvis)
 
-COLD_ANTHROPIC_API_KEY=            # compose (Haiku) — clé dédiée facturation cold
+# compose passe par l'Agent SDK (claude-binary), plus de clé API cold ici.
+# l'envoi passe par Resend (cf. plus haut), l'ancien relais HTTPS est retiré.
 STOREMD_PREVIEW_SCAN_URL=          # URL complète de POST /internal/preview-scan
 STOREMD_PREVIEW_SCAN_KEY=          # clé partagée (Authorization: Bearer)
 
-# Gateway OpenClaw (VPS) — SOURCE + ENRICH
-OPENCLAW_GATEWAY_URL=
-OPENCLAW_API_KEY=
+# Apify — SOURCE (actor clearpath/shopify-store-leads = R9SL2PPdhdhLQwdck)
+APIFY_API_TOKEN=
+APIFY_SHOPIFY_ACTOR_ID=R9SL2PPdhdhLQwdck
 ```
 
 Si aucune boîte `MAILBOX_*` n'est configurée, les crons cold ne sont pas planifiés.

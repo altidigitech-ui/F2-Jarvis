@@ -2,6 +2,7 @@
 // niveau vit dans resend.ts ; ce module porte les garde-fous d'envoi :
 //   - pause campagne (seuils délivrabilité, guardrails.ts),
 //   - cap quotidien GLOBAL (un seul expéditeur COLD_FROM, plus de rotation boîtes).
+// Remplace l'ancien relais HTTPS SMTP (COLD_RELAY_URL) : Resend est l'unique canal.
 // Jarvis EST le séquenceur : pas de SaaS d'envoi tiers.
 
 import { getRedis } from "../redis.js";
@@ -43,7 +44,6 @@ export async function sendColdEmail(args: {
   subject: string;
   body: string;
 }): Promise<SendResult> {
-  // Garde-fou : aucun envoi si la campagne est en pause (seuils délivrabilité).
   const reason = await pauseReason();
   if (reason) throw new ColdPausedError(reason);
 

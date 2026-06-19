@@ -2,8 +2,11 @@
 // Plus les ticks cron : sequence-tick (relances dues) et imap-poll (réponses).
 // Convention Claude : REST direct Haiku (cf. jarvis-memory.ts), service-role Supabase.
 
+import { query } from "@anthropic-ai/claude-agent-sdk";
+import { resolveClaudeBinary } from "../claude-binary.js";
 import { getSupabase } from "../supabase.js";
-import { enrichTarget } from "./scraper.js";
+import { enqueueCold } from "../queues.js";
+import { enrichTarget, sourceStores } from "./scraper.js";
 import { sendColdEmail } from "./mailer.js";
 import { pollAllReplies } from "./imap.js";
 import { nextTouchAfter, MAX_TOUCHES } from "./sequence.js";
@@ -42,7 +45,7 @@ export async function jobQualify(id: string): Promise<void> {
 }
 
 // --- enrich : qualified → enriched|unreachable ------------------------------
-// Délègue au scraper (OpenClaw + vérif SMTP + drop role).
+// Délègue au scraper (SOURCE Apify + vérif SMTP + drop role).
 export async function jobEnrich(id: string): Promise<void> {
   const t = await getTarget(id);
   await enrichTarget(t);
@@ -53,13 +56,19 @@ export async function jobEnrich(id: string): Promise<void> {
 // store_url, récupère score + findings détaillés, garde les 3 plus parlants.
 export async function jobScan(id: string): Promise<void> {
   const t = await getTarget(id);
-  const result = await runPreviewScan(t.store_url);
-  await patch(id, {
-    scan_score: result.score,
-    scan_findings: topFindings(result.findings, 3),
-    status: "scanned",
-    error: null,
-  });
+  try {
+    const result = await runPreviewScan(t.store_url);
+    await patch(id, {
+      scan_score: result.score,
+      scan_findings: topFindings(result.findings, 3),
+      status: "scanned",
+      error: null,
+    });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    await patch(id, { error: `scan: ${msg}`.slice(0, 500) });
+    throw err; // laisse BullMQ enregistrer l'échec
+  }
 }
 
 // --- compose : scanned → composed -------------------------------------------
@@ -104,29 +113,27 @@ ${name ? `- Address the owner as ${name}.` : ""}
 
 Return only the email body text.`;
 
-  const coldApiKey = process.env.COLD_ANTHROPIC_API_KEY;
-  if (!coldApiKey) {
-    throw new Error("[cold/jobs] COLD_ANTHROPIC_API_KEY manquante");
+  const claudePath = await resolveClaudeBinary();
+  let raw = "";
+  try {
+    for await (const msg of query({
+      prompt,
+      options: {
+        maxTurns: 1,
+        ...(claudePath ? { pathToClaudeCodeExecutable: claudePath } : {}),
+      },
+    })) {
+      if (msg.type === "assistant" && msg.message?.content) {
+        for (const block of msg.message.content) {
+          if (block.type === "text" && block.text) raw += block.text;
+        }
+      }
+    }
+  } catch (err) {
+    throw new Error(`[cold/jobs] compose SDK failed: ${err instanceof Error ? err.message : String(err)}`);
   }
-
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": coldApiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: "claude-haiku-4-5",
-      max_tokens: 600,
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
-  if (!res.ok) {
-    throw new Error(`[cold/jobs] compose Haiku HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  }
-  const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
-  let body = (data.content || []).filter((b) => b.type === "text" && b.text).map((b) => b.text!).join("\n").trim();
+  let body = raw.trim();
+  if (!body) throw new Error("[cold/jobs] compose SDK: réponse vide");
 
   // Garde-fou : em-dash neutralisé si le modèle en glisse un (ANTI-IA prime).
   body = body.replace(/—/g, ", ");
@@ -140,16 +147,16 @@ Return only the email body text.`;
 // --- push : composed → in_sequence (1ère touche J0 + planif relances) -------
 export async function jobPush(id: string): Promise<void> {
   const t = await getTarget(id);
-  if (!t.decision_maker_email) throw new Error(`[cold/jobs] push ${id}: pas d'email`);
-  if (!t.email_subject || !t.email_body) throw new Error(`[cold/jobs] push ${id}: email non composé`);
-
-  // Garde-fou suppression : jamais recontacter une adresse supprimée.
-  if (await isSuppressed(t.decision_maker_email)) {
-    await patch(id, { status: "unsubscribed", error: "suppressed before send" });
-    return;
-  }
-
   try {
+    if (!t.decision_maker_email) throw new Error("pas d'email");
+    if (!t.email_subject || !t.email_body) throw new Error("email non composé");
+
+    // Garde-fou suppression : jamais recontacter une adresse supprimée.
+    if (await isSuppressed(t.decision_maker_email)) {
+      await patch(id, { status: "unsubscribed", error: "suppressed before send" });
+      return;
+    }
+
     const sent = await sendColdEmail({ to: t.decision_maker_email, subject: t.email_subject, body: t.email_body });
     await patch(id, {
       sending_inbox: sent.inbox,
@@ -161,16 +168,30 @@ export async function jobPush(id: string): Promise<void> {
     });
   } catch (err) {
     // Pas de silent failure : on persiste l'erreur tronquée (pattern cold_targets.error)
-    // et on relaie à BullMQ pour le retry. Le scheduling J+3 n'a lieu qu'en cas de succès.
+    // et on relaie à BullMQ. Le scheduling J+3 n'a lieu qu'en cas de succès.
     const msg = err instanceof Error ? err.message : String(err);
-    await patch(id, { error: msg.slice(0, 500) });
-    throw err;
+    await patch(id, { error: `push: ${msg}`.slice(0, 500) });
+    throw err; // laisse BullMQ enregistrer l'échec
   }
 }
 
 async function isSuppressed(email: string): Promise<boolean> {
   const { data } = await getSupabase().from("cold_suppression").select("email").eq("email", email.toLowerCase()).maybeSingle();
   return Boolean(data);
+}
+
+// --- source-tick : Apify SOURCE puis lance la chaîne (enfile qualify) --------
+export async function jobSourceTick(count: number): Promise<{
+  keyword: string | null; inserted: number; qualifyEnqueued: number;
+}> {
+  const result = await sourceStores(count);
+  // Enfile qualify pour TOUS les targets en statut 'sourced' (inclut restes).
+  const { data, error } = await getSupabase()
+    .from(TABLE).select("id").eq("status", "sourced").limit(500);
+  if (error) throw new Error(`[cold/jobs] source-tick select sourced: ${error.message}`);
+  const ids = (data as Array<{ id: string }> | null) ?? [];
+  for (const r of ids) await enqueueCold("qualify", { targetId: r.id });
+  return { keyword: result.keyword, inserted: result.inserted, qualifyEnqueued: ids.length };
 }
 
 // --- sequence-tick (cron) : envoie les relances dues -------------------------

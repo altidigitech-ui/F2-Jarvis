@@ -16,6 +16,7 @@ import {
   jobPush,
   jobSequenceTick,
   jobImapPoll,
+  jobSourceTick,
 } from "./lib/cold/jobs.js";
 import type { ColdJobName, ColdJobData } from "./lib/cold/types.js";
 
@@ -159,6 +160,12 @@ new Worker(
         const r = await jobImapPoll();
         if (r.matched || r.bounced)
           console.log(`[worker] cold imap-poll: ${r.matched} réponses, ${r.bounced} bounces`);
+        break;
+      }
+      case "source-tick": {
+        const count = (job.data as ColdJobData)?.count ?? Number(process.env.COLD_SOURCE_DAILY_COUNT || 25);
+        const r = await jobSourceTick(count);
+        console.log(`[worker] cold source-tick: kw=${r.keyword} insérés=${r.inserted} qualify=${r.qualifyEnqueued}`);
         break;
       }
       default:

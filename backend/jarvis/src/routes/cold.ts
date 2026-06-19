@@ -82,3 +82,43 @@ export async function coldCycleLogRoute(_req: Request, res: Response): Promise<v
     res.status(500).json({ error: msg });
   }
 }
+
+import { enqueueCold } from "../lib/queues.js";
+import type { ColdJobName } from "../lib/cold/types.js";
+
+const VALID_COLD_JOBS: ColdJobName[] = ["qualify", "enrich", "scan", "compose", "push"];
+
+// POST /cold/enqueue { name, targetId } — enfile un job cold sur une cible.
+export async function coldEnqueueRoute(req: Request, res: Response): Promise<void> {
+  const { name, targetId } = (req.body || {}) as { name?: string; targetId?: string };
+  if (!name || !VALID_COLD_JOBS.includes(name as ColdJobName)) {
+    res.status(400).json({ error: `name invalide (attendu: ${VALID_COLD_JOBS.join(", ")})` });
+    return;
+  }
+  if (!targetId) {
+    res.status(400).json({ error: "targetId requis" });
+    return;
+  }
+  try {
+    const job = await enqueueCold(name as ColdJobName, { targetId });
+    res.json({ ok: true, jobId: job.id, name, targetId });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[/cold/enqueue]", msg);
+    res.status(500).json({ error: msg });
+  }
+}
+
+// POST /cold/source { count? } — lance un batch SOURCE (Apify) + relance la chaîne.
+export async function coldSourceRoute(req: Request, res: Response): Promise<void> {
+  const raw = Number((req.body || {}).count);
+  const count = Number.isFinite(raw) ? Math.min(Math.max(Math.trunc(raw), 1), 200) : 25;
+  try {
+    const job = await enqueueCold("source-tick", { count });
+    res.json({ ok: true, jobId: job.id, count });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[/cold/source]", msg);
+    res.status(500).json({ error: msg });
+  }
+}
