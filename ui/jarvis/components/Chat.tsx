@@ -526,6 +526,7 @@ export function Chat({ persona, onAction, fileContext, onFileContextClear, graph
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const batchPollsRef = useRef<Map<string, ReturnType<typeof setInterval>>>(new Map());
 
   useEffect(() => {
     if (chatScrollRef.current) {
@@ -565,6 +566,92 @@ export function Chat({ persona, onAction, fileContext, onFileContextClear, graph
         abortRef.current.abort();
         abortRef.current = null;
       }
+    };
+  }, [persona]);
+
+  // Polling des jobs de génération de batch (async, hors flux /chat).
+  // Quand un message assistant contient [BATCH_JOB:jobId], on interroge le statut ;
+  // à "done" on remplace le marqueur par [ACTION_PENDING:actionId] -> la carte
+  // Valider existante se rend toute seule. On ne touche ni au stream ni au watchdog.
+  useEffect(() => {
+    const re = /\[BATCH_JOB:([^\]\s]+)\]/g;
+    for (const m of messages) {
+      if (m.role !== "assistant") continue;
+      re.lastIndex = 0;
+      let match: RegExpExecArray | null;
+      while ((match = re.exec(m.content)) !== null) {
+        const jobId = match[1];
+        if (batchPollsRef.current.has(jobId)) continue;
+        const startedAt = Date.now();
+        const interval = setInterval(async () => {
+          // Garde-fou timeout (10 min) : on arrête et on signale.
+          if (Date.now() - startedAt > 10 * 60 * 1000) {
+            clearInterval(interval);
+            batchPollsRef.current.delete(jobId);
+            setMessages((prev) =>
+              prev.map((x) =>
+                x.content.includes(`[BATCH_JOB:${jobId}]`)
+                  ? {
+                      ...x,
+                      content: x.content.replace(
+                        `[BATCH_JOB:${jobId}]`,
+                        "\n\n⚠️ *Batch : délai dépassé, relancez la génération.*"
+                      ),
+                    }
+                  : x
+              )
+            );
+            return;
+          }
+          try {
+            const res = await fetch(`/api/batch/job-status?jobId=${encodeURIComponent(jobId)}`);
+            // 404 = statut pas encore écrit (job pas encore pris) ou expiré : on continue jusqu'au timeout.
+            if (!res.ok) return;
+            const data = (await res.json()) as {
+              status?: string;
+              actionId?: string;
+              error?: string;
+            };
+            if (data.status === "done" && data.actionId) {
+              clearInterval(interval);
+              batchPollsRef.current.delete(jobId);
+              const actionId = data.actionId;
+              setMessages((prev) =>
+                prev.map((x) =>
+                  x.content.includes(`[BATCH_JOB:${jobId}]`)
+                    ? { ...x, content: x.content.replace(`[BATCH_JOB:${jobId}]`, `[ACTION_PENDING:${actionId}]`) }
+                    : x
+                )
+              );
+            } else if (data.status === "error") {
+              clearInterval(interval);
+              batchPollsRef.current.delete(jobId);
+              const errMsg = data.error ?? "inconnue";
+              setMessages((prev) =>
+                prev.map((x) =>
+                  x.content.includes(`[BATCH_JOB:${jobId}]`)
+                    ? { ...x, content: x.content.replace(`[BATCH_JOB:${jobId}]`, `\n\n⚠️ *Batch : erreur — ${errMsg}.*`) }
+                    : x
+                )
+              );
+            }
+            // status "running" -> on continue le poll.
+          } catch {
+            // Erreur réseau ponctuelle : on laisse le timeout gérer.
+          }
+        }, 5000);
+        batchPollsRef.current.set(jobId, interval);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [messages]);
+
+  // Stoppe tous les polls batch au changement de persona et au démontage.
+  useEffect(() => {
+    const polls = batchPollsRef.current;
+    return () => {
+      for (const interval of polls.values()) clearInterval(interval);
+      polls.clear();
     };
   }, [persona]);
 
