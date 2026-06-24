@@ -30,6 +30,7 @@ import { coldUnsubscribeRoute } from "./routes/cold-unsubscribe.js";
 import { promptsRoute } from "./routes/prompts.js";
 import { actionExecuteBatchRoute } from "./routes/action-execute-batch.js";
 import { batchStatusRoute, batchUploadRoute } from "./routes/batch.js";
+import { batchGenerateRoute, batchJobStatusRoute } from "./routes/batch-generate.js";
 import { uploadZipRoute } from "./routes/upload-zip.js";
 import {
   ouroborosStatus,
@@ -107,6 +108,8 @@ app.get("/prompts", promptsRoute);
 app.post("/action/execute-batch", actionExecuteBatchRoute);
 app.get("/batch/status", batchStatusRoute);
 app.post("/batch/upload", batchUploadRoute);
+app.post("/batch/generate", batchGenerateRoute);
+app.get("/batch/job/:id", batchJobStatusRoute);
 app.post("/upload-zip", uploadZipRoute);
 
 app.get("/ouroboros/status", ouroborosStatus);
