@@ -19,6 +19,8 @@ import {
   jobSourceTick,
 } from "./lib/cold/jobs.js";
 import type { ColdJobName, ColdJobData } from "./lib/cold/types.js";
+import { jobGenerateBatch } from "./lib/batch/jobs.js";
+import type { BatchJobData } from "./lib/batch/types.js";
 
 new Worker(
   "ouroboros-cycle",
@@ -173,6 +175,21 @@ new Worker(
     }
   },
   { connection: getRedis(), concurrency: Number(process.env.COLD_WORKER_CONCURRENCY || 5) }
+);
+
+// ───────────────────────────────────────────────────────────────────────────
+// Batch worker — génération de batch hebdo hors du flux /chat (sans plafond).
+// Consomme la queue "batch" ; alimentée par enqueueBatch (tool generate_batch, phase 5).
+// ───────────────────────────────────────────────────────────────────────────
+new Worker(
+  "batch",
+  async (job) => {
+    const data = job.data as BatchJobData;
+    console.log(`[worker] batch ${job.id} started (S${data.weekNumber})`);
+    await jobGenerateBatch(data, job.id ?? "");
+    console.log(`[worker] batch ${job.id} done`);
+  },
+  { connection: getRedis(), concurrency: 2 }
 );
 
 console.log("[worker] JARVIS worker started, waiting for jobs...");
