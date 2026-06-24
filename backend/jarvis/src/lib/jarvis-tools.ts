@@ -5,6 +5,7 @@ import { ghRead, ghList, ghReadExternal, ghListExternal, ghReadRaw } from "./git
 import { readZipFile, listZipFiles, getZipMeta } from "./zip-store.js";
 import { getSupabase } from "./supabase.js";
 import { searchDrawers } from "./mempalace.js";
+import { enqueueBatch } from "./queues.js";
 
 type Persona = "fabrice" | "romain";
 type Mode = "normal" | "f2";
@@ -1372,6 +1373,70 @@ The 'preview' field is a human-readable description shown to the user before the
     }
   );
 
+  // ---------------------------------------------------------------------------
+  // generate_batch — lance la génération du batch hebdo en arrière-plan (worker).
+  // Le batch n'est PAS généré dans le chat (plafond 300s) : on enfile un job, et
+  // l'action create_file à valider apparaît quand c'est prêt (~3-5 min).
+  // ---------------------------------------------------------------------------
+  const generateBatch = tool(
+    "generate_batch",
+    "Génère le batch hebdomadaire de contenu social en arrière-plan (worker, sans plafond de durée). À utiliser quand l'utilisateur demande de générer le batch de la semaine. Le batch n'est PAS généré dans le chat : un job est enfilé et l'action create_file à valider apparaîtra quand c'est prêt (3-5 min). Tu fournis le numéro de semaine et le cadrage éditorial.",
+    {
+      weekNumber: z
+        .number()
+        .int()
+        .min(1)
+        .describe("Numéro de semaine du batch (ex. 15 pour S15)"),
+      framing: z
+        .string()
+        .describe(
+          "Cadrage éditorial de la semaine (ex. 'offre de lancement terminée le 21/06 à minuit, contenu produit pur')"
+        ),
+      product: z.string().optional().describe("Produit cible (défaut: storemd)"),
+    },
+    async ({ weekNumber, framing, product }) => {
+      if (!conversationId) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: "generate_batch: no active conversation (user not authenticated). Cannot enqueue. Ask the user to log in and retry.",
+            },
+          ],
+          isError: true,
+        };
+      }
+      try {
+        const job = await enqueueBatch({
+          conversationId,
+          persona: options.persona,
+          mode: options.mode,
+          weekNumber,
+          framing,
+          product,
+        });
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `Batch S${weekNumber} generation enqueued (jobId=${job.id}). It runs in the background (~3-5 min). When ready, a create_file action will appear for the user to validate.\n\nIMPORTANT: include [BATCH_JOB:${job.id}] in your final message so the UI starts polling and shows the Validate button when the batch is ready. Tell the user the batch is being generated in the background.`,
+            },
+          ],
+        };
+      } catch (err) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `generate_batch error: ${err instanceof Error ? err.message : String(err)}`,
+            },
+          ],
+          isError: true,
+        };
+      }
+    }
+  );
+
   return createSdkMcpServer({
     name: "jarvis",
     version: "1.0.0",
@@ -1398,6 +1463,7 @@ The 'preview' field is a human-readable description shown to the user before the
       readXlsx,
       webSearch,
       cognitiveLoad,
+      generateBatch,
     ],
   });
 }
@@ -1428,4 +1494,5 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__read_xlsx",
   "mcp__jarvis__web_search",
   "mcp__jarvis__cognitive_load",
+  "mcp__jarvis__generate_batch",
 ];
