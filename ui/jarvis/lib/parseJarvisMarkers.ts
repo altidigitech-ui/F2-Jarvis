@@ -19,12 +19,14 @@ export type ParsedResponse = {
   actions: ParsedActionPending[];
   contents: ParsedContentBlock[];
   tags: ParsedTag[];
+  batchJobId?: string;
 };
 
 const ACTION_RE = /\[ACTION_PENDING:([0-9a-f-]+)\]/gi;
 const CONTENT_RE = /\[CONTENT:([a-zA-Z0-9_-]+)\]([\s\S]*?)\[\/CONTENT\]/g;
 const CONTENT_FR_RE = /\[CONTENT-FR\]([\s\S]*?)\[\/CONTENT-FR\]/g;
 const TAG_RE = /\[TAG:([^\]\n]+)\]/g;
+const BATCH_JOB_RE = /\[BATCH_JOB:([^\]\s]+)\]/g;
 
 export function parseJarvisMarkers(text: string): ParsedResponse {
   if (!text) {
@@ -67,13 +69,18 @@ export function parseJarvisMarkers(text: string): ParsedResponse {
     }
   }
 
+  let batchJobId: string | undefined;
+  const batchMatch = [...text.matchAll(BATCH_JOB_RE)][0];
+  if (batchMatch) batchJobId = batchMatch[1];
+
   let cleanText = text
     .replace(ACTION_RE, "")
     .replace(CONTENT_RE, "")
     .replace(CONTENT_FR_RE, "")
-    .replace(TAG_RE, "");
+    .replace(TAG_RE, "")
+    .replace(BATCH_JOB_RE, "");
 
   cleanText = cleanText.replace(/\n{3,}/g, "\n\n").trim();
 
-  return { cleanText, actions, contents, tags };
+  return { cleanText, actions, contents, tags, batchJobId };
 }
