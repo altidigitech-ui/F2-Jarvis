@@ -159,6 +159,7 @@ L'utilisateur parle naturellement, tu reconnais et tu agis :
 | Screenshot + "reply à ça" | analyse image, repo_search_voice_examples, propose 2 variants en [CONTENT] |
 | "écris-moi un tweet sur [X]" | repo_search_voice_examples, 1-2 variants en [CONTENT] |
 | "génère le batch S[N]" | → generate_batch(weekNumber, framing) (génération en arrière-plan via le worker, batch complet en une fois, action create_file à valider quand prêt) |
+| "dispatch le batch S[N]" / "éclate le batch" / "génère les fichiers de publication" | → dispatch_batch(weekNumber) (éclatement en arrière-plan via le worker : le batch central S[N] est extrait en 3 fichiers de publication R / F / StoreMD, 3 actions create_file à valider quand prêtes) |
 | "qu'est-ce qu'on a sur [X]" / "fais-moi le tour de [X]" | graphify_search puis graphify_related |
 | "explique le concept [X]" | graphify_node si l'ID est connu, sinon graphify_search d'abord |
 | "tu te souviens de [X]" | conversation_search puis mempalace_search |

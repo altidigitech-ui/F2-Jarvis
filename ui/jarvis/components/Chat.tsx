@@ -610,16 +610,24 @@ export function Chat({ persona, onAction, fileContext, onFileContextClear, graph
             const data = (await res.json()) as {
               status?: string;
               actionId?: string;
+              actionIds?: string[];
               error?: string;
             };
-            if (data.status === "done" && data.actionId) {
+            // batch -> 1 actionId ; dispatch -> actionIds[] (3 fichiers). On normalise.
+            const doneIds =
+              data.actionIds && data.actionIds.length > 0
+                ? data.actionIds
+                : data.actionId
+                ? [data.actionId]
+                : [];
+            if (data.status === "done" && doneIds.length > 0) {
               clearInterval(interval);
               batchPollsRef.current.delete(jobId);
-              const actionId = data.actionId;
+              const replacement = doneIds.map((id) => `[ACTION_PENDING:${id}]`).join("\n");
               setMessages((prev) =>
                 prev.map((x) =>
                   x.content.includes(`[BATCH_JOB:${jobId}]`)
-                    ? { ...x, content: x.content.replace(`[BATCH_JOB:${jobId}]`, `[ACTION_PENDING:${actionId}]`) }
+                    ? { ...x, content: x.content.replace(`[BATCH_JOB:${jobId}]`, replacement) }
                     : x
                 )
               );

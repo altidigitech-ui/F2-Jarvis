@@ -5,7 +5,7 @@ import { ghRead, ghList, ghReadExternal, ghListExternal, ghReadRaw } from "./git
 import { readZipFile, listZipFiles, getZipMeta } from "./zip-store.js";
 import { getSupabase } from "./supabase.js";
 import { searchDrawers } from "./mempalace.js";
-import { enqueueBatch } from "./queues.js";
+import { enqueueBatch, enqueueDispatch } from "./queues.js";
 
 type Persona = "fabrice" | "romain";
 type Mode = "normal" | "f2";
@@ -1437,6 +1437,67 @@ The 'preview' field is a human-readable description shown to the user before the
     }
   );
 
+  // ---------------------------------------------------------------------------
+  // dispatch_batch — éclate le batch central S{N} en 3 fichiers de publication
+  // (R / F / StoreMD) en arrière-plan (worker, sans plafond de durée). Le dispatch
+  // n'est PAS fait dans le chat (mur ~90s) : un job est enfilé et les 3 actions
+  // create_file à valider apparaissent quand c'est prêt. Extraction verbatim depuis
+  // le batch central (les posts y existent déjà par compte avec leurs IDs).
+  // ---------------------------------------------------------------------------
+  const dispatchBatch = tool(
+    "dispatch_batch",
+    "Éclate (dispatch) le batch central de la semaine en 3 fichiers de publication (compte R, compte F, comptes StoreMD) en arrière-plan (worker, sans plafond de durée). À utiliser quand l'utilisateur demande de dispatcher/éclater le batch ou de générer les fichiers de publication. Ce n'est PAS fait dans le chat : un job est enfilé et 3 actions create_file à valider apparaîtront quand c'est prêt. Tu fournis seulement le numéro de semaine ; le batch central S{weekNumber} doit déjà exister dans le repo.",
+    {
+      weekNumber: z
+        .number()
+        .int()
+        .min(1)
+        .describe("Numéro de semaine du batch central à dispatcher (ex. 15 pour S15)"),
+      product: z.string().optional().describe("Produit cible (défaut: storemd)"),
+    },
+    async ({ weekNumber, product }) => {
+      if (!conversationId) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: "dispatch_batch: no active conversation (user not authenticated). Cannot enqueue. Ask the user to log in and retry.",
+            },
+          ],
+          isError: true,
+        };
+      }
+      try {
+        const job = await enqueueDispatch({
+          conversationId,
+          persona: options.persona,
+          mode: options.mode,
+          weekNumber,
+          product,
+        });
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `Dispatch S${weekNumber} enqueued (jobId=${job.id}). It runs in the background. When ready, 3 create_file actions (R / F / StoreMD publication files) will appear for the user to validate.\n\nIMPORTANT: include [BATCH_JOB:${job.id}] in your final message so the UI starts polling and shows the Validate buttons when the dispatch is ready. Tell the user the dispatch is running in the background.`,
+            },
+          ],
+        };
+      } catch (err) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `dispatch_batch error: ${err instanceof Error ? err.message : String(err)}`,
+            },
+          ],
+          isError: true,
+        };
+      }
+    }
+  );
+
+
   return createSdkMcpServer({
     name: "jarvis",
     version: "1.0.0",
@@ -1464,6 +1525,7 @@ The 'preview' field is a human-readable description shown to the user before the
       webSearch,
       cognitiveLoad,
       generateBatch,
+      dispatchBatch,
     ],
   });
 }
@@ -1495,4 +1557,5 @@ export const JARVIS_ALLOWED_TOOLS = [
   "mcp__jarvis__web_search",
   "mcp__jarvis__cognitive_load",
   "mcp__jarvis__generate_batch",
+  "mcp__jarvis__dispatch_batch",
 ];
