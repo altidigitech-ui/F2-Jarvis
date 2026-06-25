@@ -1,7 +1,7 @@
-# BATCH PUBLICATION — Comptes StoreMD — S14
+# BATCH PUBLICATION — Comptes StoreMD — S15
 
 > Comptes : StoreMD (TikTok + Twitter @StoreMd_off + Instagram + Facebook + IH FoundryTwo)
-> Source : `marketing/contenu/batch-semaine/batch-semaine-S14.md` (batch central)
+> Source : `marketing/contenu/batch-semaine/batch-semaine-S15.md` (batch central)
 > Périmètre : posts des comptes StoreMD uniquement (toutes plateformes du studio sauf perso R/F)
 > Ne JAMAIS rédiger ici. Toute modification se fait dans le batch central puis re-dispatch.
 
@@ -11,254 +11,102 @@
 
 ---
 
-# ═══ LUNDI 15/06 — GHOST BILLING : Privy, 8 mois après uninstall ═══
+# ═══ LUNDI 22/06 — FIX ENGINE : 12 issues, 1 click, 22 seconds ═══
 
-#### STOREMD-TK-S14-01 — StoreMD (@StoreMd_off) — TikTok — Lun 15/06 14h00 — ⚓ ANCRE DU JOUR
+#### STOREMD-TK-S15-01 — StoreMD (@StoreMd_off) — TikTok — Lun 22/06 14h00 — ⚓ ANCRE DU JOUR
 
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (source du jour)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
-
-**TEXTE (caption native — source IG + FB) :**
-```
-POV: you uninstalled Privy 8 months ago. It's still charging you 💀
-
-$232 in silent charges. Shopify never flagged it. The app never reminded you.
-
-StoreMD detects every app that's still billing after uninstall, and shows you exactly how long it's been running.
-
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
-```
-
-**HASHTAGS (TikTok, Set B — 5) :**
-```
-#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #StoreMD
-```
-
-**TRADUCTION :**
-> POV : tu as désinstallé Privy il y a 8 mois. Il te facture encore 💀
-> $232 en charges silencieuses. Shopify ne l'a jamais signalé. L'app ne t'a jamais rappelé.
-> StoreMD détecte chaque app qui facture encore après uninstall, et te montre exactement depuis combien de temps elle tourne.
-> Pro gratuit jusqu'au 22 juin, sans carte.
-> Lien free scan en bio 👇
-
----
-
-#### STOREMD-TW-SM-S14-01 — StoreMD (@StoreMd_off) — Twitter — Lun 15/06 15h00
-
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok, re-export sans watermark)
-
-**TEXTE :**
-```
-Ghost billing is real. Uninstalling a Shopify app doesn't cancel its subscription 💀
-
-The charges keep running until you cancel inside the app, which most people never think to do.
-
-StoreMD flags every app still billing after uninstall, with how long it's been running.
-
-Pro's free through June 22, no card.
-```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
-```
-
-**TRADUCTION :**
-> Le ghost billing est réel. Désinstaller une app Shopify n'annule pas son abonnement 💀
-> Les charges continuent de tourner jusqu'à ce que tu cancelles dans l'app, ce que la plupart des gens ne pensent jamais à faire.
-> StoreMD signale chaque app qui facture encore après uninstall, avec depuis combien de temps elle tourne.
-> Pro gratuit jusqu'au 22 juin, sans carte.
-
----
-
-#### STOREMD-IG-S14-01 — StoreMD — Instagram — Lun 15/06 18h00
-
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
-
-**TEXTE (caption identique TikTok) :**
-```
-POV: you uninstalled Privy 8 months ago. It's still charging you 💀
-
-$232 in silent charges. Shopify never flagged it. The app never reminded you.
-
-StoreMD detects every app that's still billing after uninstall, and shows you exactly how long it's been running.
-
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Instagram, Set B — 5) :**
-```
-#shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
-```
-
-**TRADUCTION :** identique au TikTok du jour.
-
----
-
-#### STOREMD-FB-S14-01 — StoreMD — Facebook — Lun 15/06 18h30
-
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok)
-**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
-
-**TEXTE (caption identique TikTok) :**
-```
-POV: you uninstalled Privy 8 months ago. It's still charging you 💀
-
-$232 in silent charges. Shopify never flagged it. The app never reminded you.
-
-StoreMD detects every app that's still billing after uninstall, and shows you exactly how long it's been running.
-
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Facebook, Set B posts — 3) :**
-```
-#shopifystore #onlinebusiness #StoreMD
-```
-
-**TRADUCTION :** identique au TikTok du jour.
-
----
----
-
-# ═══ MARDI 16/06 — RÉGRESSION SILENCIEUSE : même store, 47 jours, score 78→52 ═══
-
-#### STOREMD-TK-S14-02 — StoreMD (@StoreMd_off) — TikTok — Mar 16/06 14h00 — ⚓ ANCRE DU JOUR
-
-**Vidéo :** `V1-17_47days_apart.mp4` (source du jour)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-14_12fixes_asmr.mp4` (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Same store. 47 days apart. Nobody told them 📉
+12 issues. One click. 22 seconds. 🎯
 
-Score went from 78 to 52 while they were running ads and launching products.
+Ghost scripts removed. Alt text generated. Broken links fixed. Dead listings archived.
 
-Five app updates pushed changes they never reviewed.
+StoreMD doesn't send you a report. It runs the fixes.
 
-StoreMD monitors automatically and alerts you the moment something breaks.
+Score: 41 → 94. No dev needed.
 
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
+Install free → link in bio
 ```
 
 **HASHTAGS (TikTok, Set C — 5) :**
 ```
-#shopifybusiness #packingorders #shopifyseller #entrepreneur #StoreMD
+#shopifybusiness #packingorders #shopifyseller #entrepreneur #trending
 ```
 
 **TRADUCTION :**
-> Même store. 47 jours d'écart. Personne ne les a prévenus 📉
-> Le score est passé de 78 à 52 pendant qu'ils faisaient tourner des pubs et lançaient des produits.
-> Cinq mises à jour d'apps ont poussé des changements qu'ils n'ont jamais vérifiés.
-> StoreMD monitore automatiquement et t'alerte dès que quelque chose casse.
-> Pro gratuit jusqu'au 22 juin, sans carte.
-> Lien free scan en bio 👇
+> 12 problèmes. Un clic. 22 secondes.
+> Scripts fantômes supprimés. Textes alt générés. Liens cassés corrigés. Listings morts archivés.
+> StoreMD n'envoie pas de rapport. Il lance les corrections.
+> Score : 41 → 94. Aucun dev nécessaire.
+> Installez gratuitement → lien en bio
 
 ---
 
-#### STOREMD-TW-SM-S14-02 — StoreMD (@StoreMd_off) — Twitter — Mar 16/06 15h00
+#### STOREMD-TW-SM-S15-01 — StoreMD (@StoreMd_off) — Twitter — Lun 22/06 15h00
 
-**Vidéo :** `V1-17_47days_apart.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-14_12fixes_asmr.mp4` (recyclé)
 
 **TEXTE :**
 ```
-Same store. 47 days apart. Score 78 → 52. Nobody noticed 📉
+12 issues. One click. 22 seconds. 🎯
 
-Five app updates. No alerts. No warnings. The store kept running while its health quietly fell apart.
+Most tools send a PDF.
 
-StoreMD watches your store between scans and alerts you when something breaks.
-
-Pro's free through June 22, no card.
+StoreMD runs the actual fixes — dead scripts removed, alt text generated, broken links redirected.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
-```
+**REPLY 1 :** `apps.shopify.com/storemd-1`
+**REPLY 2 :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TRADUCTION :**
-> Même store. 47 jours d'écart. Score 78 → 52. Personne n'a remarqué 📉
-> Cinq mises à jour d'apps. Zéro alerte. Zéro avertissement. Le store a continué de tourner pendant que sa santé s'effondrait silencieusement.
-> StoreMD surveille ton store entre les scans et t'alerte quand quelque chose casse.
-> Pro gratuit jusqu'au 22 juin, sans carte.
+> 12 problèmes. Un clic. 22 secondes.
+> La plupart des outils envoient un PDF.
+> StoreMD lance les vraies corrections — scripts morts supprimés, textes alt générés, liens cassés redirigés.
 
 ---
 
-#### STOREMD-IG-S14-02 — StoreMD — Instagram — Mar 16/06 18h00
+#### STOREMD-IG-S15-01 — StoreMD — Instagram — Lun 22/06 18h00
 
-**Vidéo :** `V1-17_47days_apart.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-14_12fixes_asmr.mp4` (recyclé TikTok, re-export sans watermark 1080×1350)
+**Hashtags Set C :** `#shopifyexperts` `#ecommercebusiness` `#shopifymarketing` `#packingorders` `#StoreMD`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Same store. 47 days apart. Nobody told them 📉
+12 issues. One click. 22 seconds. 🎯
 
-Score went from 78 to 52 while they were running ads and launching products.
+Ghost scripts removed. Alt text generated. Broken links fixed. Dead listings archived.
 
-Five app updates pushed changes they never reviewed.
+StoreMD doesn't send you a report. It runs the fixes.
 
-StoreMD monitors automatically and alerts you the moment something breaks.
+Score: 41 → 94. No dev needed.
 
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Instagram, Set C — 5) :**
-```
-#shopifyexperts #ecommercebusiness #shopifymarketing #smallbusiness #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S14-02 — StoreMD — Facebook — Mar 16/06 18h30
+#### STOREMD-FB-S15-01 — StoreMD — Facebook — Lun 22/06 18h30
 
-**Vidéo :** `V1-17_47days_apart.mp4` (recyclé TikTok)
-**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-14_12fixes_asmr.mp4` (recyclé TikTok)
+**Hashtags FB Reels Set B :** `#shopifytips` `#ecommercebusiness` `#entrepreneur` `#shopifyseller` `#onlineshopping`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Same store. 47 days apart. Nobody told them 📉
+12 issues. One click. 22 seconds. 🎯
 
-Score went from 78 to 52 while they were running ads and launching products.
+Ghost scripts removed. Alt text generated. Broken links fixed. Dead listings archived.
 
-Five app updates pushed changes they never reviewed.
+StoreMD doesn't send you a report. It runs the fixes.
 
-StoreMD monitors automatically and alerts you the moment something breaks.
+Score: 41 → 94. No dev needed.
 
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Facebook, Set C posts — 3) :**
-```
-#shopify #ecommerce #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
@@ -266,150 +114,107 @@ Free scan link in bio 👇
 ---
 ---
 
-# ═══ MERCREDI 17/06 — PREUVE PRODUIT : scan réel, screen-record ═══
+# ═══ MARDI 23/06 — CODE GRAVEYARD : les scripts que tes apps ont oubliés ═══
 
-#### STOREMD-TK-S14-03 — StoreMD (@StoreMd_off) — TikTok — Mer 17/06 14h00 — ⚓ ANCRE DU JOUR
+#### STOREMD-TK-S15-02 — StoreMD (@StoreMd_off) — TikTok — Mar 23/06 14h00 — ⚓ ANCRE DU JOUR
 
-**Vidéo :** `V1-13_real_scan.mp4` (source du jour)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-16_code_graveyard.mp4` (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Watch a real scan. Sound on 🎧
+Every app you've ever uninstalled left something behind. 👻
 
-No pitch. No animation. Just the product scanning a live store: health check, listings, agentic readiness, compliance, browser test.
+PageFly. Shogun. Privy. Avada.
 
-43 checks. About 60 seconds.
+The app is gone. The code isn't.
 
-Pro's free through June 22, no card.
+380+ reviews confirming this across those 4 apps alone. The scripts keep loading on every page, every visit, every sale you almost made.
 
-Free scan link in bio 👇
+StoreMD detects every dead script. Removes it in one click.
+
+Install free → link in bio
 ```
 
 **HASHTAGS (TikTok, Set A — 5) :**
 ```
-#shopify #ecommercetips #shopifystore #smallbusinessowner #StoreMD
+#shopify #ecommercetips #smallbusinessowner #shopifystore #fyp
 ```
 
 **TRADUCTION :**
-> Regarde un vrai scan. Son activé 🎧
-> Aucun pitch. Aucune animation. Juste le produit qui scanne un store en direct : health check, listings, compatibilité agentique, conformité, test navigateur.
-> 43 checks. Environ 60 secondes.
-> Pro gratuit jusqu'au 22 juin, sans carte.
-> Lien free scan en bio 👇
+> Chaque app que t'as désinstallée a laissé quelque chose derrière.
+> PageFly. Shogun. Privy. Avada. L'app est partie. Le code, non.
+> 380+ reviews le confirment sur ces 4 apps seules. Les scripts continuent à charger sur chaque page, chaque visite, chaque vente presque faite.
+> StoreMD détecte chaque script mort. Supprime en un clic.
 
 ---
 
-#### STOREMD-TW-SM-S14-03 — StoreMD (@StoreMd_off) — Twitter — Mer 17/06 15h00
+#### STOREMD-TW-SM-S15-02 — StoreMD (@StoreMd_off) — Twitter — Mar 23/06 15h00
 
-**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-16_code_graveyard.mp4` (recyclé)
 
 **TEXTE :**
 ```
-We screen-recorded a real scan 🎧
+Uninstalled PageFly 6 months ago?
 
-Health check, listings, agentic readiness, compliance, browser test. A live store. 43 checks in about 60 seconds.
+The code is still there. Loading on every page. 👻
 
-No pitching. Just the product running.
-
-Pro's free through June 22, no card.
+380+ reviews documenting this. StoreMD finds every dead script and removes it.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
-```
+**REPLY 1 :** `apps.shopify.com/storemd-1`
+**REPLY 2 :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TRADUCTION :**
-> On a screenrecordé un vrai scan 🎧
-> Health check, listings, compatibilité agentique, conformité, test navigateur. Un store réel. 43 checks en environ 60 secondes.
-> Aucun pitch. Juste le produit qui tourne.
-> Pro gratuit jusqu'au 22 juin, sans carte.
+> T'as désinstallé PageFly il y a 6 mois ?
+> Le code est encore là. Il charge sur chaque page.
+> 380+ reviews documentant ça. StoreMD trouve chaque script mort et le supprime.
 
 ---
 
-#### STOREMD-IH-S14-03 — FoundryTwo — IndieHackers — Mer 17/06 15h00
+#### STOREMD-IG-S15-02 — StoreMD — Instagram — Mar 23/06 18h00
 
-**Texte long-form transparent (voix FoundryTwo "we"), lien in-text :**
-```
-We stopped explaining StoreMD and just screen-recorded it.
-
-Five modules. A live Shopify store. About 60 seconds from start to results.
-
-Here's what the scan covers: store health (speed issues, dead code, orphaned scripts, broken links), listings (GTINs, metafields, structured data, HS codes for cross-border), agentic readiness (whether ChatGPT and AI assistants can parse the products), compliance (accessibility audit, GDPR markers, missing legal pages), and a real browser test where the app opens the store in a Playwright browser, walks homepage to checkout, and times each node.
-
-43 checks. Results ranked by priority. One-click fixes from the dashboard, with preview and undo.
-
-The thing we kept hearing from early users was that they didn't understand what "AI readiness" meant until they saw their score. The scan makes the abstract tangible. That's the real value of a screen-record over a feature list.
-
-Pro is free through June 22, no card. Free scan (no install needed): https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
-```
-
-**TRADUCTION :**
-> On a arrêté d'expliquer StoreMD et on l'a juste enregistré.
-> Cinq modules. Un store Shopify réel. Environ 60 secondes du début aux résultats.
-> Voici ce que le scan couvre : santé du store (problèmes de vitesse, code mort, scripts orphelins, liens cassés), listings (GTINs, metafields, données structurées, codes HS pour le cross-border), compatibilité agentique (si ChatGPT et les assistants IA savent parser les produits), conformité (audit accessibilité, marqueurs RGPD, pages légales manquantes), et un vrai test navigateur où l'app ouvre le store dans un navigateur Playwright, parcourt homepage jusqu'au checkout, et chronomètre chaque nœud.
-> 43 checks. Résultats classés par priorité. Corrections en un clic depuis le dashboard, avec prévisualisation et annulation.
-> Ce qu'on entendait des premiers utilisateurs : ils ne comprenaient pas ce que "compatibilité IA" signifiait avant de voir leur score. Le scan rend l'abstrait concret.
-> Pro est gratuit jusqu'au 22 juin, sans carte. Scan gratuit (sans install) : https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
-
----
-
-#### STOREMD-IG-S14-03 — StoreMD — Instagram — Mer 17/06 18h00
-
-**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-16_code_graveyard.mp4` (recyclé TikTok, re-export sans watermark 1080×1350)
+**Hashtags Set A :** `#shopifystore` `#ecommercetips` `#smallbusinessowner` `#shopifytips` `#StoreMD`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Watch a real scan. Sound on 🎧
+Every app you've ever uninstalled left something behind. 👻
 
-No pitch. No animation. Just the product scanning a live store: health check, listings, agentic readiness, compliance, browser test.
+PageFly. Shogun. Privy. Avada.
 
-43 checks. About 60 seconds.
+The app is gone. The code isn't.
 
-Pro's free through June 22, no card.
+380+ reviews confirming this across those 4 apps alone. The scripts keep loading on every page, every visit, every sale you almost made.
 
-Free scan link in bio 👇
-```
+StoreMD detects every dead script. Removes it in one click.
 
-**HASHTAGS (Instagram, Set A — 5) :**
-```
-#shopifystore #ecommercetips #smallbusinessowner #shopifytips #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S14-03 — StoreMD — Facebook — Mer 17/06 18h30
+#### STOREMD-FB-S15-02 — StoreMD — Facebook — Mar 23/06 18h30
 
-**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok)
-**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-16_code_graveyard.mp4` (recyclé TikTok)
+**Hashtags FB Reels Set A :** `#shopify` `#ecommerce` `#smallbusiness` `#shopifystore` `#onlinebusiness`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Watch a real scan. Sound on 🎧
+Every app you've ever uninstalled left something behind. 👻
 
-No pitch. No animation. Just the product scanning a live store: health check, listings, agentic readiness, compliance, browser test.
+PageFly. Shogun. Privy. Avada.
 
-43 checks. About 60 seconds.
+The app is gone. The code isn't.
 
-Pro's free through June 22, no card.
+380+ reviews confirming this across those 4 apps alone. The scripts keep loading on every page, every visit, every sale you almost made.
 
-Free scan link in bio 👇
-```
+StoreMD detects every dead script. Removes it in one click.
 
-**HASHTAGS (Facebook, Set A posts — 3) :**
-```
-#shopify #ecommerce #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
@@ -417,254 +222,245 @@ Free scan link in bio 👇
 ---
 ---
 
-# ═══ JEUDI 18/06 — PERTES INVISIBLES : counter $ en temps réel ═══
+# ═══ MERCREDI 24/06 — 530 REVIEWS : la recherche qu'on a faite avant de coder ═══
 
-#### STOREMD-TK-S14-04 — StoreMD (@StoreMd_off) — TikTok — Jeu 18/06 14h00 — ⚓ ANCRE DU JOUR
+#### STOREMD-TK-S15-03 — StoreMD (@StoreMd_off) — TikTok — Mer 24/06 14h00 — ⚓ ANCRE DU JOUR
 
-**Vidéo :** `V1-15_store_lost_money.mp4` (source du jour)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-18_530reviews_wall.mp4` (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-While you watched this, your store lost money 💸
+530 reviews. One wall. Sound up. 🔊
 
-Not from bad products. Not from bad ads.
+These aren't StoreMD reviews.
 
-From apps that slow your load time, ghost charges running in the background, and listings nobody can find.
+These are reviews of your current apps — ghost billing complaints, dead code complaints, app bloat complaints.
 
-StoreMD shows you exactly where it's going.
+Filed by merchants for years. Ignored by the apps.
 
-Pro's free through June 22, no card.
+StoreMD was built from the patterns in this wall.
 
-Free scan link in bio 👇
+Install free → link in bio
 ```
 
 **HASHTAGS (TikTok, Set B — 5) :**
 ```
-#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #StoreMD
+#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #viral
 ```
 
 **TRADUCTION :**
-> Pendant que tu regardais ça, ton store a perdu de l'argent 💸
-> Pas à cause de mauvais produits. Pas à cause de mauvaises pubs.
-> À cause d'apps qui ralentissent ton temps de chargement, de charges fantômes qui tournent en arrière-plan, et de listings que personne ne peut trouver.
-> StoreMD te montre exactement où ça part.
-> Pro gratuit jusqu'au 22 juin, sans carte.
-> Lien free scan en bio 👇
+> 530 reviews. Un mur. Son activé.
+> Ce ne sont pas des reviews StoreMD. Ce sont des reviews de tes apps actuelles — plaintes ghost billing, code mort, app bloat.
+> Déposées par des merchants depuis des années. Ignorées par les apps.
+> StoreMD a été construit à partir des patterns de ce mur.
 
 ---
 
-#### STOREMD-TW-SM-S14-04 — StoreMD (@StoreMd_off) — Twitter — Jeu 18/06 15h00
+#### STOREMD-TW-SM-S15-03 — StoreMD (@StoreMd_off) — Twitter — Mer 24/06 15h00
 
-**Vidéo :** `V1-15_store_lost_money.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-18_530reviews_wall.mp4` (recyclé)
 
 **TEXTE :**
 ```
-Your store is probably losing money right now from things you can't see 💸
+530 reviews. Same complaints. Different merchants. 🔊
 
-Ghost billing. Orphaned scripts. Broken listings. A checkout that drags on mobile.
+Ghost billing. Dead code. App bloat. Filed for years, ignored by the apps.
 
-StoreMD finds every invisible leak. One scan.
+StoreMD was built from these patterns.
+```
+**REPLY 1 :** `apps.shopify.com/storemd-1`
+**REPLY 2 :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
-Pro's free through June 22, no card.
+**TRADUCTION :**
+> 530 reviews. Mêmes plaintes. Merchants différents.
+> Ghost billing. Code mort. App bloat. Déposées depuis des années, ignorées par les apps.
+> StoreMD a été construit à partir de ces patterns.
+
+---
+
+#### STOREMD-IG-S15-03 — StoreMD — Instagram — Mer 24/06 18h00
+
+**Vidéo :** `V1-18_530reviews_wall.mp4` (recyclé TikTok, re-export sans watermark 1080×1350)
+**Hashtags Set B :** `#shopifybusiness` `#ecommercestore` `#shopifyseller` `#shopsmall` `#StoreMD`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+530 reviews. One wall. Sound up. 🔊
+
+These aren't StoreMD reviews.
+
+These are reviews of your current apps — ghost billing complaints, dead code complaints, app bloat complaints.
+
+Filed by merchants for years. Ignored by the apps.
+
+StoreMD was built from the patterns in this wall.
+
+Install free → link in bio
 ```
 
-**REPLY (mini-thread — 1 lien par reply) :**
+**TRADUCTION :** identique au TikTok du jour.
 
-**Lien 1 — Install :**
+---
+
+#### STOREMD-FB-S15-03 — StoreMD — Facebook — Mer 24/06 18h30
+
+**Vidéo :** `V1-18_530reviews_wall.mp4` (recyclé TikTok)
+**Hashtags FB Reels Set B :** `#shopifytips` `#ecommercebusiness` `#entrepreneur` `#shopifyseller` `#onlineshopping`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**TEXTE (caption identique TikTok) :**
 ```
-apps.shopify.com/storemd-1
+530 reviews. One wall. Sound up. 🔊
+
+These aren't StoreMD reviews.
+
+These are reviews of your current apps — ghost billing complaints, dead code complaints, app bloat complaints.
+
+Filed by merchants for years. Ignored by the apps.
+
+StoreMD was built from the patterns in this wall.
+
+Install free → link in bio
 ```
-**Lien 2 — Free scan :**
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### IH-S15-01 — FoundryTwo — IndieHackers — Mer 24/06 15h00
+
+**UTM :** `https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**TEXTE :**
 ```
-https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
+We built StoreMD from 530 app reviews we weren't supposed to care about.
+
+Before writing a line of code, I spent weeks going through Shopify App Store reviews for the most-used merchant apps. Not for customer quotes. For technical patterns.
+
+The standard SaaS playbook says: find a gap, validate with interviews, build.
+
+We went sideways. The gap wasn't in interviews. It was in the reviews that merchants filed, repeatedly, over years, and that the apps ignored.
+
+530 reviews. Three problems, documented so many times they became obvious.
+
+Ghost billing — apps that keep charging after uninstall, indefinitely, with no flag from Shopify.
+Script residue — app code left in theme files after removal, loading on every page request.
+App bloat — each installed app injecting javascript on every page, stacking into 2-7 extra seconds across 14 apps.
+
+The merchants knew something was off. They couldn't pinpoint it. The apps had no incentive to tell them.
+
+StoreMD went live on the Shopify App Store on May 22. 43 checks, 5 modules: Store Health, Listings, Agentic Readiness, Compliance, Browser Automation.
+
+Free tier available. If you're running a Shopify store, the scan is worth 60 seconds.
+
+https://storemd.vercel.app/?utm_source=indiehackers&utm_medium=organic&utm_campaign=post&utm_content=post_cta
 ```
 
 **TRADUCTION :**
-> Ton store perd probablement de l'argent en ce moment à cause de choses que tu ne peux pas voir 💸
-> Ghost billing. Scripts orphelins. Listings cassés. Un checkout qui traîne sur mobile.
-> StoreMD trouve chaque fuite invisible. Un scan.
-> Pro gratuit jusqu'au 22 juin, sans carte.
-
----
-
-#### STOREMD-IG-S14-04 — StoreMD — Instagram — Jeu 18/06 18h00
-
-**Vidéo :** `V1-15_store_lost_money.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
-
-**TEXTE (caption identique TikTok) :**
-```
-While you watched this, your store lost money 💸
-
-Not from bad products. Not from bad ads.
-
-From apps that slow your load time, ghost charges running in the background, and listings nobody can find.
-
-StoreMD shows you exactly where it's going.
-
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Instagram, Set B — 5) :**
-```
-#shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
-```
-
-**TRADUCTION :** identique au TikTok du jour.
-
----
-
-#### STOREMD-FB-S14-04 — StoreMD — Facebook — Jeu 18/06 18h30
-
-**Vidéo :** `V1-15_store_lost_money.mp4` (recyclé TikTok)
-**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
-
-**TEXTE (caption identique TikTok) :**
-```
-While you watched this, your store lost money 💸
-
-Not from bad products. Not from bad ads.
-
-From apps that slow your load time, ghost charges running in the background, and listings nobody can find.
-
-StoreMD shows you exactly where it's going.
-
-Pro's free through June 22, no card.
-
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Facebook, Set B posts — 3) :**
-```
-#shopifystore #onlinebusiness #StoreMD
-```
-
-**TRADUCTION :** identique au TikTok du jour.
+> Construit StoreMD à partir de 530 reviews d'apps que personne ne regardait.
+> 3 problèmes documentés sur des années : ghost billing, résidus de scripts, app bloat.
+> App live sur l'App Store Shopify depuis le 22 mai. 43 checks, 5 modules. Free tier disponible.
 
 ---
 ---
 
-# ═══ VENDREDI 19/06 — BROWSER AUTOMATION : on utilise ton store ═══
+# ═══ JEUDI 25/06 — AI BLINDSPOT : ChatGPT ignore ton store ═══
 
-#### STOREMD-TK-S14-05 — StoreMD (@StoreMd_off) — TikTok — Ven 19/06 14h00 — ⚓ ANCRE DU JOUR
+#### STOREMD-TK-S15-04 — StoreMD (@StoreMd_off) — TikTok — Jeu 25/06 14h00 — ⚓ ANCRE DU JOUR
 
-**Vidéo :** `V1-19_we_use_your_store.mp4` (source du jour)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-12_chatgpt_refused.mp4` (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-Your checkout has a timer running. You just can't see it 🛒
+POV: ChatGPT is shopping for your customer. And your store doesn't show up. 🤖
 
-StoreMD opens your store in a real browser. Homepage. Product page. Cart. Checkout. It times every node and flags the one where buyers drop.
+ChatGPT Shopping. Perplexity Commerce. They're recommending products right now.
 
-4 steps. Real data. No guessing.
+If your store isn't structured for AI crawlers, you're invisible.
 
-Pro's free through June 22, no card. 3 days left.
+StoreMD's Agentic Readiness module checks your score.
 
-Free scan link in bio 👇
+Install free → link in bio
 ```
 
 **HASHTAGS (TikTok, Set C — 5) :**
 ```
-#shopifybusiness #packingorders #shopifyseller #entrepreneur #StoreMD
+#shopifybusiness #packingorders #shopifyseller #entrepreneur #trending
 ```
 
 **TRADUCTION :**
-> Ton checkout a un timer qui tourne. Tu ne peux juste pas le voir 🛒
-> StoreMD ouvre ton store dans un vrai navigateur. Homepage. Page produit. Panier. Checkout. Il chronomètre chaque nœud et identifie celui où les acheteurs décrochent.
-> 4 étapes. Données réelles. Zéro approximation.
-> Pro gratuit jusqu'au 22 juin, sans carte. 3 jours restants.
-> Lien free scan en bio 👇
+> POV : ChatGPT fait du shopping pour ton client. Et ton store n'apparaît pas.
+> ChatGPT Shopping. Perplexity Commerce. Ils recommandent des produits en ce moment.
+> Si ton store n'est pas structuré pour les crawlers IA, tu es invisible.
+> Le module Agentic Readiness de StoreMD vérifie ton score.
 
 ---
 
-#### STOREMD-TW-SM-S14-05 — StoreMD (@StoreMd_off) — Twitter — Ven 19/06 15h00
+#### STOREMD-TW-SM-S15-04 — StoreMD (@StoreMd_off) — Twitter — Jeu 25/06 15h00
 
-**Vidéo :** `V1-19_we_use_your_store.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-12_chatgpt_refused.mp4` (recyclé)
 
 **TEXTE :**
 ```
-StoreMD doesn't analyze your store from the outside. It uses it 🛒
+ChatGPT Shopping is live. Perplexity is recommending products. 🤖
 
-Real browser. Homepage to checkout. Every step timed. The slowest node flagged.
+If your store isn't structured for AI crawlers, you're not in the results.
 
-That's where you're losing sales.
-
-Pro's free through June 22, no card. 3 days left.
+StoreMD checks your Agentic Readiness score in 60 seconds.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
-```
+**REPLY 1 :** `apps.shopify.com/storemd-1`
+**REPLY 2 :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
 
 **TRADUCTION :**
-> StoreMD n'analyse pas ton store de l'extérieur. Il l'utilise 🛒
-> Vrai navigateur. Homepage jusqu'au checkout. Chaque étape chronométrée. Le nœud le plus lent signalé.
-> C'est là que tu perds des ventes.
-> Pro gratuit jusqu'au 22 juin, sans carte. 3 jours restants.
+> ChatGPT Shopping est live. Perplexity recommande des produits.
+> Si ton store n'est pas structuré pour les crawlers IA, tu n'es pas dans les résultats.
+> StoreMD vérifie ton score Agentic Readiness en 60 secondes.
 
 ---
 
-#### STOREMD-IG-S14-05 — StoreMD — Instagram — Ven 19/06 18h00
+#### STOREMD-IG-S15-04 — StoreMD — Instagram — Jeu 25/06 18h00
 
-**Vidéo :** `V1-19_we_use_your_store.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-12_chatgpt_refused.mp4` (recyclé TikTok, re-export sans watermark 1080×1350)
+**Hashtags Set C :** `#shopifyexperts` `#ecommercebusiness` `#shopifymarketing` `#packingorders` `#StoreMD`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Your checkout has a timer running. You just can't see it 🛒
+POV: ChatGPT is shopping for your customer. And your store doesn't show up. 🤖
 
-StoreMD opens your store in a real browser. Homepage. Product page. Cart. Checkout. It times every node and flags the one where buyers drop.
+ChatGPT Shopping. Perplexity Commerce. They're recommending products right now.
 
-4 steps. Real data. No guessing.
+If your store isn't structured for AI crawlers, you're invisible.
 
-Pro's free through June 22, no card. 3 days left.
+StoreMD's Agentic Readiness module checks your score.
 
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Instagram, Set C — 5) :**
-```
-#shopifyexperts #ecommercebusiness #shopifymarketing #smallbusiness #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S14-05 — StoreMD — Facebook — Ven 19/06 18h30
+#### STOREMD-FB-S15-04 — StoreMD — Facebook — Jeu 25/06 18h30
 
-**Vidéo :** `V1-19_we_use_your_store.mp4` (recyclé TikTok)
-**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-12_chatgpt_refused.mp4` (recyclé TikTok)
+**Hashtags FB Reels Set B :** `#shopifytips` `#ecommercebusiness` `#entrepreneur` `#shopifyseller` `#onlineshopping`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Your checkout has a timer running. You just can't see it 🛒
+POV: ChatGPT is shopping for your customer. And your store doesn't show up. 🤖
 
-StoreMD opens your store in a real browser. Homepage. Product page. Cart. Checkout. It times every node and flags the one where buyers drop.
+ChatGPT Shopping. Perplexity Commerce. They're recommending products right now.
 
-4 steps. Real data. No guessing.
+If your store isn't structured for AI crawlers, you're invisible.
 
-Pro's free through June 22, no card. 3 days left.
+StoreMD's Agentic Readiness module checks your score.
 
-Free scan link in bio 👇
-```
-
-**HASHTAGS (Facebook, Set C posts — 3) :**
-```
-#shopify #ecommerce #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
@@ -672,89 +468,103 @@ Free scan link in bio 👇
 ---
 ---
 
-# ═══ SAMEDI 20/06 — LES CHIFFRES : pricing transparent, last weekend ═══
+# ═══ VENDREDI 26/06 — HEALTH SCORE : 20 questions invisibles ═══
 
-#### STOREMD-TK-S14-06 — StoreMD (@StoreMd_off) — TikTok — Sam 20/06 14h00 — ⚓ ANCRE DU JOUR
+#### STOREMD-TK-S15-05 — StoreMD (@StoreMd_off) — TikTok — Ven 26/06 14h00 — ⚓ ANCRE DU JOUR
 
-**Vidéo :** `V1-30_the_numbers.mp4` (source du jour)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-20_health_score_20.mp4` (source du jour)
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption native — source IG + FB) :**
 ```
-The numbers, since you asked 💰
+Your health score isn't a single number. It's 20 invisible questions. 🔍
 
-Starter $29/mo. Pro $79/mo. Agency $199/mo.
+Is your theme code clean?
+Are your listings indexed?
+Is your store visible to AI crawlers?
+Are you being billed for apps you uninstalled?
 
-Go annual: 2 months free. Pro drops to $65.83/mo.
+StoreMD runs all 20. Shows you exactly where you're losing.
 
-Lock that price for life if you subscribe by June 22. Last weekend.
-
-Free plan always available. Free scan link in bio 👇
+Install free → link in bio
 ```
 
 **HASHTAGS (TikTok, Set A — 5) :**
 ```
-#shopify #ecommercetips #shopifystore #smallbusinessowner #StoreMD
+#shopify #ecommercetips #smallbusinessowner #shopifystore #fyp
 ```
 
 **TRADUCTION :**
-> Les chiffres, puisque tu as demandé 💰
-> Starter 29$/mois. Pro 79$/mois. Agency 199$/mois.
-> Passe en annuel : 2 mois offerts. Le Pro descend à 65,83$/mois.
-> Bloque ce prix à vie si tu t'abonnes avant le 22 juin. Dernier weekend.
-> Plan gratuit toujours disponible. Lien free scan en bio 👇
+> Ton score de santé n'est pas un seul chiffre. C'est 20 questions invisibles.
+> Ton code de thème est-il propre ? Tes listings sont-ils indexés ? Ton store est-il visible pour les crawlers IA ? Es-tu facturé pour des apps désinstallées ?
+> StoreMD répond aux 20. Te montre exactement où tu perds.
 
 ---
 
-#### STOREMD-IG-S14-06 — StoreMD — Instagram — Sam 20/06 18h00
+#### STOREMD-TW-SM-S15-05 — StoreMD (@StoreMd_off) — Twitter — Ven 26/06 15h00
 
-**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Vidéo :** `V1-20_health_score_20.mp4` (recyclé)
+
+**TEXTE :**
+```
+Your store health score is 20 checks running at once. 🔍
+
+Most merchants fail 7-8 of them without knowing.
+
+StoreMD shows you exactly which ones and where to fix first.
+```
+**REPLY 1 :** `apps.shopify.com/storemd-1`
+**REPLY 2 :** `https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post`
+
+**TRADUCTION :**
+> Ton score de santé de store c'est 20 vérifications qui tournent simultanément.
+> La plupart des merchants en ratent 7-8 sans le savoir.
+> StoreMD te montre exactement lesquelles et où corriger en premier.
+
+---
+
+#### STOREMD-IG-S15-05 — StoreMD — Instagram — Ven 26/06 18h00
+
+**Vidéo :** `V1-20_health_score_20.mp4` (recyclé TikTok, re-export sans watermark 1080×1350)
+**Hashtags Set A :** `#shopifystore` `#ecommercetips` `#smallbusinessowner` `#shopifytips` `#StoreMD`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption identique TikTok) :**
 ```
-The numbers, since you asked 💰
+Your health score isn't a single number. It's 20 invisible questions. 🔍
 
-Starter $29/mo. Pro $79/mo. Agency $199/mo.
+Is your theme code clean?
+Are your listings indexed?
+Is your store visible to AI crawlers?
+Are you being billed for apps you uninstalled?
 
-Go annual: 2 months free. Pro drops to $65.83/mo.
+StoreMD runs all 20. Shows you exactly where you're losing.
 
-Lock that price for life if you subscribe by June 22. Last weekend.
-
-Free plan always available. Free scan link in bio 👇
-```
-
-**HASHTAGS (Instagram, Set A — 5) :**
-```
-#shopifystore #ecommercetips #smallbusinessowner #shopifytips #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S14-06 — StoreMD — Facebook — Sam 20/06 18h30
+#### STOREMD-FB-S15-05 — StoreMD — Facebook — Ven 26/06 18h30
 
-**Vidéo :** `V1-30_the_numbers.mp4` (recyclé TikTok)
-**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Vidéo :** `V1-20_health_score_20.mp4` (recyclé TikTok)
+**Hashtags FB Reels Set A :** `#shopify` `#ecommerce` `#smallbusiness` `#shopifystore` `#onlinebusiness`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
 **TEXTE (caption identique TikTok) :**
 ```
-The numbers, since you asked 💰
+Your health score isn't a single number. It's 20 invisible questions. 🔍
 
-Starter $29/mo. Pro $79/mo. Agency $199/mo.
+Is your theme code clean?
+Are your listings indexed?
+Is your store visible to AI crawlers?
+Are you being billed for apps you uninstalled?
 
-Go annual: 2 months free. Pro drops to $65.83/mo.
+StoreMD runs all 20. Shows you exactly where you're losing.
 
-Lock that price for life if you subscribe by June 22. Last weekend.
-
-Free plan always available. Free scan link in bio 👇
-```
-
-**HASHTAGS (Facebook, Set A posts — 3) :**
-```
-#shopify #ecommerce #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
@@ -762,82 +572,151 @@ Free plan always available. Free scan link in bio 👇
 ---
 ---
 
-# ═══ DIMANCHE 21/06 — LOCK PRICE FOR LIFE : ends tomorrow ═══
+# ═══ SAMEDI 27/06 — CARROUSEL GAINS POTENTIELS ═══
 
-#### STOREMD-TK-S14-07 — StoreMD (@StoreMd_off) — TikTok — Dim 21/06 14h00 — ⚓ ANCRE DU JOUR
+#### STOREMD-TK-S15-06 — StoreMD (@StoreMd_off) — TikTok — Sam 27/06 14h00
 
-**Vidéo :** `V1-29_lock_price_for_life.mp4` (source du jour)
-**Lien Install :** `apps.shopify.com/storemd-1`
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Carrousel :** "Gains Potentiels" — 6 slides, PROMPT_CAROUSSEL_3.md
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
-**TEXTE (caption native — source IG + FB) :**
+**TEXTE :**
 ```
-Last call to lock your price for life 🔒
+Here's what's quietly leaving your Shopify store every month. 📊
 
-Install StoreMD. Run the 14-day free Pro trial. If you subscribe within your first 30 days, your price never moves again.
+Speed Tax. App Bloat. Time Tax.
 
-Pro's free through June 22. That's tomorrow.
+The leaks nobody scans.
 
-Free scan link in bio 👇
+6 slides. The full breakdown.
+
+Install free → link in bio
 ```
 
 **HASHTAGS (TikTok, Set B — 5) :**
 ```
-#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #StoreMD
+#shopifytips #onlinebusiness #ecommerce #smallbusinesscheck #viral
 ```
 
 **TRADUCTION :**
-> Dernier appel pour bloquer ton prix à vie 🔒
-> Installe StoreMD. Lance l'essai Pro gratuit 14 jours. Si tu t'abonnes dans tes 30 premiers jours, ton prix ne bouge plus jamais.
-> Pro gratuit jusqu'au 22 juin. C'est demain.
-> Lien free scan en bio 👇
+> Voilà ce qui quitte silencieusement ton store Shopify chaque mois.
+> Speed Tax. App Bloat. Time Tax. Les fuites que personne ne scanne.
+> 6 slides. Le bilan complet.
 
 ---
 
-#### STOREMD-IG-S14-07 — StoreMD — Instagram — Dim 21/06 18h00
+#### STOREMD-IG-S15-06 — StoreMD — Instagram — Sam 27/06 18h00
 
-**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok, re-export 1080×1350 si besoin)
-**Lien Free scan (bio) :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+**Carrousel :** "Gains Potentiels" — 6 slides, PROMPT_CAROUSSEL_3.md (re-export 1080×1350)
+**Hashtags Set B :** `#shopifybusiness` `#ecommercestore` `#shopifyseller` `#shopsmall` `#StoreMD`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Last call to lock your price for life 🔒
+Here's what's quietly leaving your Shopify store every month. 📊
 
-Install StoreMD. Run the 14-day free Pro trial. If you subscribe within your first 30 days, your price never moves again.
+Speed Tax. App Bloat. Time Tax.
 
-Pro's free through June 22. That's tomorrow.
+The leaks nobody scans.
 
-Free scan link in bio 👇
-```
+6 slides. The full breakdown.
 
-**HASHTAGS (Instagram, Set B — 5) :**
-```
-#shopifybusiness #ecommercestore #shopifyseller #shopifyapps #StoreMD
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
 
 ---
 
-#### STOREMD-FB-S14-07 — StoreMD — Facebook — Dim 21/06 18h30
+#### STOREMD-FB-S15-06 — StoreMD — Facebook — Sam 27/06 18h30
 
-**Vidéo :** `V1-29_lock_price_for_life.mp4` (recyclé TikTok)
-**Lien Free scan (bio/page) :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=bio&utm_campaign=page&utm_content=about_link`
+**Carrousel :** "Gains Potentiels" — 6 slides, PROMPT_CAROUSSEL_3.md (recyclé)
+**Hashtags FB Reels Set B :** `#shopifytips` `#ecommercebusiness` `#entrepreneur` `#shopifyseller` `#onlineshopping`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
 
 **TEXTE (caption identique TikTok) :**
 ```
-Last call to lock your price for life 🔒
+Here's what's quietly leaving your Shopify store every month. 📊
 
-Install StoreMD. Run the 14-day free Pro trial. If you subscribe within your first 30 days, your price never moves again.
+Speed Tax. App Bloat. Time Tax.
 
-Pro's free through June 22. That's tomorrow.
+The leaks nobody scans.
 
-Free scan link in bio 👇
+6 slides. The full breakdown.
+
+Install free → link in bio
 ```
 
-**HASHTAGS (Facebook, Set B posts — 3) :**
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+---
+
+# ═══ DIMANCHE 28/06 — CARROUSEL AGRESSIF ═══
+
+#### STOREMD-TK-S15-07 — StoreMD (@StoreMd_off) — TikTok — Dim 28/06 14h00
+
+**Carrousel :** "Agressif" — 6 slides, PROMPT_CAROUSSEL_2.md
+**UTM bio :** `https://storemd.vercel.app/?utm_source=tiktok&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE :**
 ```
-#shopifystore #onlinebusiness #StoreMD
+5 things your store is doing right now that nobody's catching. 🚨
+
+Ghost billing. Dead code. Bot traffic. AI blindspot. Broken listings.
+
+6 slides. Real problems, specific fixes.
+
+Install free → link in bio
+```
+
+**HASHTAGS (TikTok, Set C — 5) :**
+```
+#shopifybusiness #packingorders #shopifyseller #entrepreneur #trending
+```
+
+**TRADUCTION :**
+> 5 choses que ton store fait en ce moment que personne ne détecte.
+> Ghost billing. Code mort. Bot traffic. Angle mort IA. Listings cassés.
+> 6 slides. Vrais problèmes, corrections spécifiques.
+
+---
+
+#### STOREMD-IG-S15-07 — StoreMD — Instagram — Dim 28/06 18h00
+
+**Carrousel :** "Agressif" — 6 slides, PROMPT_CAROUSSEL_2.md (re-export 1080×1350)
+**Hashtags Set C :** `#shopifyexperts` `#ecommercebusiness` `#shopifymarketing` `#packingorders` `#StoreMD`
+**UTM bio :** `https://storemd.vercel.app/?utm_source=instagram&utm_medium=bio&utm_campaign=profile&utm_content=bio_link`
+
+**TEXTE (caption identique TikTok) :**
+```
+5 things your store is doing right now that nobody's catching. 🚨
+
+Ghost billing. Dead code. Bot traffic. AI blindspot. Broken listings.
+
+6 slides. Real problems, specific fixes.
+
+Install free → link in bio
+```
+
+**TRADUCTION :** identique au TikTok du jour.
+
+---
+
+#### STOREMD-FB-S15-07 — StoreMD — Facebook — Dim 28/06 18h30
+
+**Carrousel :** "Agressif" — 6 slides, PROMPT_CAROUSSEL_2.md (recyclé)
+**Hashtags FB Reels Set B :** `#shopifytips` `#ecommercebusiness` `#entrepreneur` `#shopifyseller` `#onlineshopping`
+**UTM :** `https://storemd.vercel.app/?utm_source=facebook&utm_medium=organic&utm_campaign=post&utm_content=post_cta`
+
+**TEXTE (caption identique TikTok) :**
+```
+5 things your store is doing right now that nobody's catching. 🚨
+
+Ghost billing. Dead code. Bot traffic. AI blindspot. Broken listings.
+
+6 slides. Real problems, specific fixes.
+
+Install free → link in bio
 ```
 
 **TRADUCTION :** identique au TikTok du jour.
