@@ -1,7 +1,7 @@
-# BATCH PUBLICATION — Compte R — S14
+# BATCH PUBLICATION — Compte R — S15
 
 > Compte : Romain Delgado (R perso)
-> Source : `marketing/contenu/batch-semaine/batch-semaine-S14.md` (batch central)
+> Source : `marketing/contenu/batch-semaine/batch-semaine-S15.md` (batch central)
 > Périmètre : posts du compte R uniquement (Twitter @delgado_ro72224 + LinkedIn Romain Delgado)
 > Ne JAMAIS rédiger ici. Toute modification se fait dans le batch central puis re-dispatch.
 
@@ -11,280 +11,218 @@
 
 ---
 
-# ═══ LUNDI 15/06 — GHOST BILLING : Privy, 8 mois après uninstall ═══
+# ═══ LUNDI 22/06 — FIX ENGINE : 12 issues, 1 click, 22 seconds ═══
 
-#### STOREMD-TW-R-S14-01 — Romain (@delgado_ro72224) — Twitter — Lun 15/06 14h00
+#### TW-R-S15-01 — R (@delgado_ro72224) — Twitter — Lun 22/06 14h00
 
-**Vidéo :** `V1-11_ghost_billing_pov.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-14_12fixes_asmr.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-I've seen merchants paying for apps they deleted 8 months ago 💀
+most audit tools send you a PDF and call it done.
 
-Shopify doesn't cancel subscriptions on uninstall. The app has to do it. Most don't.
+I've seen stores sit on $200/month in ghost billing for months because "someone will deal with it."
 
-StoreMD shows you every app still on your bill after you removed it.
-
-Free to try Pro through June 22.
+StoreMD doesn't wait. one click, 12 issues fixed, 22 seconds. the fixes run automatically.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
+**REPLY :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> J'ai vu des merchants payer des apps qu'ils ont supprimées il y a 8 mois 💀
-> Shopify n'annule pas les abonnements à la désinstallation. L'app doit le faire. La plupart ne le font pas.
-> StoreMD te montre chaque app encore sur ta facture après que tu l'as retirée.
-> Pro gratuit à tester jusqu'au 22 juin.
+> La plupart des outils d'audit t'envoient un PDF et appellent ça du boulot.
+> J'ai vu des stores traîner $200/mois en ghost billing pendant des mois parce que « quelqu'un s'en occupera ».
+> StoreMD n'attend pas. Un clic, 12 problèmes corrigés, 22 secondes. Les corrections tournent automatiquement.
 
 ---
 
 ---
 
-# ═══ MARDI 16/06 — RÉGRESSION SILENCIEUSE : même store, 47 jours, score 78→52 ═══
+# ═══ MARDI 23/06 — CODE GRAVEYARD : les scripts que tes apps ont oubliés ═══
 
-#### STOREMD-TW-R-S14-02 — Romain (@delgado_ro72224) — Twitter — Mar 16/06 14h00
+#### TW-R-S15-02 — R (@delgado_ro72224) — Twitter — Mar 23/06 14h00
 
-**Vidéo :** `V1-17_47days_apart.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-16_code_graveyard.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-Your store can go from healthy to broken without you doing anything 📉
+I've seen stores loading javascript from tools they deleted a year ago.
 
-App updates ship changes to your theme, your scripts, your checkout. Most merchants find out when a customer complains.
+the merchant thinks they removed it. they didn't. 380+ reviews document this across PageFly, Shogun, Avada, Privy.
 
-StoreMD catches the drift before it costs you. Free to try Pro through June 22.
+each dead script adds 200-500ms. three of them is 1.5 seconds you're burning for nothing.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
+**REPLY :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> Ton store peut passer de sain à cassé sans que tu fasses quoi que ce soit 📉
-> Les mises à jour d'apps envoient des changements sur ton thème, tes scripts, ton checkout. La plupart des merchants l'apprennent quand un client se plaint.
-> StoreMD capte la dérive avant qu'elle te coûte. Pro gratuit à tester jusqu'au 22 juin.
+> J'ai vu des stores charger du javascript d'outils supprimés il y a un an.
+> Le merchant pense qu'il l'a supprimé. Pas du tout. 380+ reviews documentent ça.
+> Chaque script mort ajoute 200-500ms. Trois = 1,5 seconde que tu brûles pour rien.
 
 ---
 
-#### STOREMD-LI-R-S14-02 — Romain Delgado — LinkedIn — Mar 16/06 15h30
+#### LI-R-S15-01 — R (Romain Delgado) — LinkedIn — Mar 23/06 15h30
 
-**Vidéo :** `V1-17_47days_apart.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-16_code_graveyard.mp4` (recyclé)
 
 **TEXTE :**
 ```
-I scanned a store six weeks ago. Scanned it again this week.
+You uninstalled PageFly 8 months ago.
 
-Same store. Same team. Nobody touched the theme 📉
+Moved to a new theme. Cleaned up the design. Felt good about it.
 
-The score went from 78 to 52.
+The code is still loading on every page of your store.
 
-Five app updates shipped over six weeks, each one pushing changes to the theme or the scripts. None of them required approval. None of them triggered an alert. The merchant kept running ads, launching products, doing everything right, while their store quietly fell apart underneath them.
+PageFly, Shogun, Avada, Privy — every app you've ever installed leaves script tags in your theme files when it goes.
 
-This is the part nobody talks about. You can do everything right and still watch your store degrade, because the apps you installed are modifying it without telling you.
+Shopify doesn't clean them up.
+The apps don't clean them up.
+Nobody tells you.
 
-StoreMD monitors your store continuously. It baselines your score, watches for changes, and alerts you the moment something shifts. Not when a customer complains. Before.
+380+ reviews documenting this across those 4 apps alone.
 
-Most merchants don't find out until the checkout breaks or a campaign tanks. That's the expensive version.
+Each dead script adds 200-500ms to your page load.
 
-Pro's free through June 22 if you want to check where yours stands. No card.
+Three of them? That's up to 1.5 seconds burning on every single visit.
 
-Free scan in the comments 👇
+On a store doing $15k/month, that slowdown costs roughly $1,400/month in lost conversions.
+
+StoreMD detects every residual script in your theme. Shows you exactly which app left it. Removes it in one click.
 ```
-
-**COMMENTAIRE (1er, à poster après publication) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
-```
+**COMMENTAIRE 1 :** `apps.shopify.com/storemd-1`
+**COMMENTAIRE 2 :** `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 
 **TRADUCTION :**
-> J'ai scanné un store il y a six semaines. Je l'ai rescané cette semaine.
-> Même store. Même équipe. Personne n'a touché le thème 📉
-> Le score est passé de 78 à 52.
-> Cinq mises à jour d'apps shippées sur six semaines, chacune poussant des changements sur le thème ou les scripts. Aucune n'a requis d'approbation. Aucune n'a déclenché d'alerte. Le merchant a continué de faire tourner des pubs, de lancer des produits, de tout faire bien, pendant que son store s'effondrait silencieusement en dessous.
-> C'est la partie dont personne ne parle. Tu peux tout faire correctement et quand même regarder ton store se dégrader, parce que les apps que tu as installées le modifient sans te prévenir.
-> StoreMD monitore ton store en continu. Il établit une baseline de ton score, surveille les changements, et t'alerte dès que quelque chose bouge. Pas quand un client se plaint. Avant.
-> La plupart des merchants ne l'apprennent qu'au moment où le checkout casse ou qu'une campagne s'effondre. C'est la version coûteuse.
-> Pro gratuit jusqu'au 22 juin si tu veux vérifier où en est le tien. Sans carte.
-> Scan gratuit en commentaire 👇
+> T'as désinstallé PageFly il y a 8 mois. Migré vers un nouveau thème. Nettoyé le design.
+> Le code tourne encore sur chaque page de ton store.
+> PageFly, Shogun, Avada, Privy — 380+ reviews le documentent. Chaque script mort = 200-500ms. Trois = 1,5s brûlée pour rien sur chaque visite.
+> StoreMD détecte chaque script résiduel. Montre quelle app l'a laissé. Supprime en un clic.
 
 ---
 
 ---
 
-# ═══ MERCREDI 17/06 — PREUVE PRODUIT : scan réel, screen-record ═══
+# ═══ MERCREDI 24/06 — 530 REVIEWS : la recherche qu'on a faite avant de coder ═══
 
-#### STOREMD-TW-R-S14-03 — Romain (@delgado_ro72224) — Twitter — Mer 17/06 14h00
+#### TW-R-S15-03 — R (@delgado_ro72224) — Twitter — Mer 24/06 14h00
 
-**Vidéo :** `V1-13_real_scan.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-18_530reviews_wall.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-No slides. No demo environment. Just the product 🎧
+530 app reviews. same three complaints, filed by merchants across years.
 
-43 checks, 5 modules, live store, 60 seconds. Health, listings, AI readiness, compliance, browser test.
+"still billing me after I uninstalled"
+"slowed my store down after I installed"
+"left code everywhere when I deleted it"
 
-That's what StoreMD does. Free to try Pro through June 22.
+that's the research. that's what StoreMD was built to fix.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
+**REPLY :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> Pas de slides. Pas d'environnement démo. Juste le produit 🎧
-> 43 checks, 5 modules, store réel, 60 secondes. Santé, listings, compatibilité IA, conformité, test navigateur.
-> C'est ce que fait StoreMD. Pro gratuit à tester jusqu'au 22 juin.
+> 530 reviews d'apps. Trois mêmes plaintes, déposées par des merchants sur des années.
+> « Me facture encore après désinstallation. » « A ralenti mon store. » « A laissé du code partout. »
+> C'est ça la recherche. C'est ça que StoreMD a été construit pour résoudre.
 
 ---
 
 ---
 
-# ═══ JEUDI 18/06 — PERTES INVISIBLES : counter $ en temps réel ═══
+# ═══ JEUDI 25/06 — AI BLINDSPOT : ChatGPT ignore ton store ═══
 
-#### STOREMD-TW-R-S14-04 — Romain (@delgado_ro72224) — Twitter — Jeu 18/06 14h00
+#### TW-R-S15-04 — R (@delgado_ro72224) — Twitter — Jeu 25/06 14h00
 
-**Vidéo :** `V1-15_store_lost_money.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-12_chatgpt_refused.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-The money most stores lose isn't from bad products or bad ads 💸
+there's a traffic channel most Shopify merchants aren't thinking about yet.
 
-It's from the invisible stuff. Apps that still charge after uninstall. Scripts that slow every page. Product listings search can't read.
+ChatGPT Shopping. Perplexity. AI agents recommending products to buyers right now.
 
-StoreMD surfaces those. Free to try Pro through June 22.
+if your store isn't structured for AI crawlers, you don't exist to them. not a future problem.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
+**REPLY :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> L'argent que la plupart des stores perdent ne vient pas de mauvais produits ou de mauvaises pubs 💸
-> Il vient des trucs invisibles. Apps qui facturent encore après uninstall. Scripts qui ralentissent chaque page. Listings produit que la recherche ne sait pas lire.
-> StoreMD fait remonter ça. Pro gratuit à tester jusqu'au 22 juin.
+> Il y a un canal de trafic auquel la plupart des merchants Shopify ne pensent pas encore.
+> ChatGPT Shopping. Perplexity. Des agents IA qui recommandent des produits aux acheteurs en ce moment.
+> Si ton store n'est pas structuré pour les crawlers IA, tu n'existes pas pour eux. Pas un problème futur.
 
 ---
 
-#### STOREMD-LI-R-S14-04 — Romain Delgado — LinkedIn — Jeu 18/06 18h00
+#### LI-R-S15-02 — R (Romain Delgado) — LinkedIn — Jeu 25/06 18h00
 
-**Vidéo :** `V1-15_store_lost_money.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-12_chatgpt_refused.mp4` (recyclé)
 
 **TEXTE :**
 ```
-The stores that lose the most money usually have one thing in common.
+There's a traffic channel most Shopify merchants aren't thinking about yet.
 
-They look fine from the outside 💸
+ChatGPT Shopping.
 
-Traffic is decent. Products are good. Ads are running. But revenue is flat, or slower than it should be.
+Perplexity recommending products.
 
-When I dig into those stores, the leaks are almost always in the same three places.
+AI agents browsing and recommending to buyers — right now, today, while you're reading this.
 
-First: ghost billing. Apps uninstalled months ago that are still charging every month. Not a lot individually, but it adds up, and Shopify doesn't flag it.
+The problem is these crawlers don't read your store the way Google does.
 
-Second: dead code. Scripts from uninstalled apps still loading on every page, adding 200-500ms per script. Five old apps means 1-2 seconds of drag you're paying for in bounce rate.
+They look for structured data. Proper schema. Crawlable product pages with complete metadata.
 
-Third: broken listings. Products with missing GTINs, wrong categories, no structured data. Search engines can't read them. AI assistants can't recommend them.
+Most Shopify stores weren't built with that in mind.
 
-None of these show up in your analytics. They just quietly drain margin.
+Which means when a customer asks ChatGPT "what's a good [product]?", your store isn't in the answer.
 
-StoreMD finds all three in a single scan and lets you fix them from the dashboard.
+Your competitor's might be.
 
-Pro's free through June 22 if you want to check your numbers. No card.
+StoreMD's Agentic Readiness module scans exactly this. Checks your schema markup, crawler accessibility, structured product data. Gives you a score. Shows what to fix.
 
-Free scan in the comments 👇
+The merchants who address this now will have an edge when AI shopping goes mainstream. And it's moving faster than most people realize.
 ```
-
-**COMMENTAIRE (1er, à poster après publication) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
-```
-https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post
-```
+**COMMENTAIRE 1 :** `apps.shopify.com/storemd-1`
+**COMMENTAIRE 2 :** `https://storemd.vercel.app/?utm_source=linkedin&utm_medium=organic&utm_campaign=post&utm_content=cta_post`
 
 **TRADUCTION :**
-> Les stores qui perdent le plus d'argent ont généralement un point commun.
-> Ils ont l'air bien de l'extérieur 💸
-> Le trafic est correct. Les produits sont bons. Les pubs tournent. Mais le revenu est plat, ou plus lent que ça devrait être.
-> Quand je creuse dans ces stores, les fuites sont presque toujours aux mêmes trois endroits.
-> Premier : ghost billing. Apps désinstallées il y a des mois qui facturent encore chaque mois. Pas beaucoup individuellement, mais ça s'additionne, et Shopify ne le signale pas.
-> Deuxième : code mort. Scripts d'apps désinstallées qui chargent encore sur chaque page, ajoutant 200-500ms par script. Cinq vieilles apps c'est 1-2 secondes de lag que tu paies en taux de rebond.
-> Troisième : listings cassés. Produits avec GTINs manquants, mauvaises catégories, aucune donnée structurée. Les moteurs de recherche ne savent pas les lire. Les assistants IA ne peuvent pas les recommander.
-> Aucune de ces choses n'apparaît dans tes analytics. Elles drainent juste silencieusement la marge.
-> StoreMD trouve les trois en un seul scan et te laisse les corriger depuis le dashboard.
-> Pro gratuit jusqu'au 22 juin si tu veux vérifier tes chiffres. Sans carte.
-> Scan gratuit en commentaire 👇
+> Il y a un canal de trafic que la plupart des merchants ignorent encore.
+> ChatGPT Shopping. Perplexity. Ils recommandent des produits maintenant.
+> Les crawlers IA cherchent des données structurées, un schema propre, des pages crawlables. La plupart des stores Shopify n'ont pas été pensés pour ça.
+> Le module Agentic Readiness de StoreMD scanne exactement ça.
 
 ---
 
 ---
 
-# ═══ VENDREDI 19/06 — BROWSER AUTOMATION : on utilise ton store ═══
+# ═══ VENDREDI 26/06 — HEALTH SCORE : 20 questions invisibles ═══
 
-#### STOREMD-TW-R-S14-05 — Romain (@delgado_ro72224) — Twitter — Ven 19/06 14h00
+#### TW-R-S15-05 — R (@delgado_ro72224) — Twitter — Ven 26/06 14h00
 
-**Vidéo :** `V1-19_we_use_your_store.mp4` (recyclé TikTok, re-export sans watermark)
+**Vidéo :** `V1-20_health_score_20.mp4` (recyclé TikTok, re-export sans watermark)
 
 **TEXTE :**
 ```
-There's a big difference between auditing a store and actually using one 🛒
+merchants I've seen panic over slow stores are usually chasing the wrong thing.
 
-Code audits tell you what's there. StoreMD opens your store in a real browser, walks homepage to checkout, and shows you where buyers slow down.
+images. theme. page builder. sure. but the real leaks are quieter.
 
-3 days left on Pro free through June 22.
+dead scripts. ghost billing. products invisible to AI crawlers. StoreMD catches the 20 things that actually cost you money.
 ```
-
-**REPLY (mini-thread — 1 lien par reply) :**
-
-**Lien 1 — Install :**
-```
-apps.shopify.com/storemd-1
-```
-**Lien 2 — Free scan :**
+**REPLY :**
 ```
 https://storemd.vercel.app/?utm_source=twitter&utm_medium=organic&utm_campaign=feature_launch&utm_content=post
 ```
 
 **TRADUCTION :**
-> Il y a une grande différence entre auditer un store et vraiment l'utiliser 🛒
-> Les audits de code te disent ce qui est là. StoreMD ouvre ton store dans un vrai navigateur, parcourt la homepage jusqu'au checkout, et te montre où les acheteurs ralentissent.
-> 3 jours restants sur Pro gratuit jusqu'au 22 juin.
+> Les merchants que j'ai vus paniquer pour des stores lents chassent généralement la mauvaise chose.
+> Images. Thème. Page builder. Oui. Mais les vraies fuites sont plus silencieuses.
+> Scripts morts. Ghost billing. Produits invisibles pour les crawlers IA. StoreMD attrape les 20 trucs qui te coûtent vraiment de l'argent.
