@@ -21,22 +21,25 @@ const STATUS_TTL_SECONDS = 3600;
 export interface BatchJobStatus {
   status: "running" | "done" | "error";
   weekNumber: number;
+  /** Action unique (génération de batch). */
   actionId?: string;
+  /** Actions multiples (dispatch : 3 fichiers de publication). */
+  actionIds?: string[];
   error?: string;
 }
 
-function statusKey(jobId: string): string {
+export function statusKey(jobId: string): string {
   return `batch:job:${jobId}`;
 }
 
-async function writeStatus(jobId: string, payload: BatchJobStatus): Promise<void> {
+export async function writeStatus(jobId: string, payload: BatchJobStatus): Promise<void> {
   const r = getRedis();
   await r.set(statusKey(jobId), JSON.stringify(payload));
   await r.expire(statusKey(jobId), STATUS_TTL_SECONDS);
 }
 
 /** Lit un fichier du repo ; renvoie "" si absent (pas d'exception bloquante). */
-async function readRepo(path: string): Promise<string> {
+export async function readRepo(path: string): Promise<string> {
   const f = await ghRead(path);
   return f?.content ?? "";
 }

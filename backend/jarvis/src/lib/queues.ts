@@ -1,7 +1,7 @@
 import { Queue, type JobsOptions } from "bullmq";
 import { getRedis } from "./redis.js";
 import type { ColdJobName, ColdJobData } from "./cold/types.js";
-import type { BatchJobData } from "./batch/types.js";
+import type { BatchJobData, DispatchJobData } from "./batch/types.js";
 
 export const ouroborosQueue = new Queue("ouroboros-cycle", {
   connection: getRedis(),
@@ -56,4 +56,10 @@ export const batchQueue = new Queue("batch", {
 // Enfile un job de génération de batch. Nom de job fixe "generate".
 export function enqueueBatch(data: BatchJobData, opts?: JobsOptions) {
   return batchQueue.add("generate", data, opts);
+}
+
+// Enfile un job de DISPATCH (batch central -> 3 fichiers de publication). Même queue
+// "batch", nom de job "dispatch" : le worker route sur jobDispatch via job.name.
+export function enqueueDispatch(data: DispatchJobData, opts?: JobsOptions) {
+  return batchQueue.add("dispatch", data, opts);
 }

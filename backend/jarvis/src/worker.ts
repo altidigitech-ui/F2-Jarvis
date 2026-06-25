@@ -20,7 +20,8 @@ import {
 } from "./lib/cold/jobs.js";
 import type { ColdJobName, ColdJobData } from "./lib/cold/types.js";
 import { jobGenerateBatch } from "./lib/batch/jobs.js";
-import type { BatchJobData } from "./lib/batch/types.js";
+import { jobDispatch } from "./lib/batch/dispatch-job.js";
+import type { BatchJobData, DispatchJobData } from "./lib/batch/types.js";
 
 new Worker(
   "ouroboros-cycle",
@@ -178,12 +179,20 @@ new Worker(
 );
 
 // ───────────────────────────────────────────────────────────────────────────
-// Batch worker — génération de batch hebdo hors du flux /chat (sans plafond).
-// Consomme la queue "batch" ; alimentée par enqueueBatch (tool generate_batch, phase 5).
+// Batch worker — génération de batch hebdo + dispatch (3 fichiers de publication),
+// hors du flux /chat (sans plafond). Consomme la queue "batch".
+// Routage par job.name : "generate" -> jobGenerateBatch, "dispatch" -> jobDispatch.
 // ───────────────────────────────────────────────────────────────────────────
 new Worker(
   "batch",
   async (job) => {
+    if (job.name === "dispatch") {
+      const data = job.data as DispatchJobData;
+      console.log(`[worker] dispatch ${job.id} started (S${data.weekNumber})`);
+      await jobDispatch(data, job.id ?? "");
+      console.log(`[worker] dispatch ${job.id} done`);
+      return;
+    }
     const data = job.data as BatchJobData;
     console.log(`[worker] batch ${job.id} started (S${data.weekNumber})`);
     await jobGenerateBatch(data, job.id ?? "");
