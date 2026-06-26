@@ -22,8 +22,8 @@ Stratégie : cold DM quotidien + publication schedulée + Reddit warming si le t
 
 | Ordre | Plateforme | Compte | Volume | Action |
 |-------|-----------|--------|--------|--------|
-| 1 | TikTok | StoreMD (avec R) | 10 DMs | Recherche Chrome → DM merchants Shopify |
-| 2 | Instagram | StoreMD (avec R) | 10 DMs | Recherche Chrome → DM merchants Shopify |
+| 1 | TikTok | StoreMD (avec R) | 10 DMs | Recherche Apify → DM merchants Shopify |
+| 2 | Instagram | StoreMD (avec R) | 10 DMs | Recherche Apify → DM merchants Shopify |
 | 3 | Facebook | F perso | 10 DMs | Groupes Shopify → DM merchants |
 | 4 | Twitter | F perso | 10 DMs | Recherche Grok → DM merchants Shopify |
 | 5 | LinkedIn | F perso | 10 connexions+DMs | Recherche booléenne → connexion → DM |
@@ -46,7 +46,7 @@ Total : 50 DMs/jour. Personnalisés (voir `saas-app-shopify/storemd/cold/[cold-t
 
 - Mettre à jour les cold-logs
 - Vérifier les DMs en attente
-- Préparer les cibles du lendemain (Grok, Chrome)
+- Préparer les cibles du lendemain (Grok, Apify)
 
 ---
 
@@ -69,7 +69,7 @@ Le samedi est le jour de production :
 ### Phase 1 — Lancement machine cold (J1-J7 : 05-11 mai)
 
 - Installer la routine quotidienne
-- Lancer les premières sessions de recherche Chrome/Grok sur chaque plateforme
+- Lancer les premières sessions de recherche Apify/Grok sur chaque plateforme
 - Remplir les recherche-logs avec les premiers merchants trouvés
 - Premiers 50 DMs/jour
 - Mesurer les taux de réponse par plateforme
@@ -120,10 +120,6 @@ Tout est batché le samedi et schedulé. En semaine on ne rédige pas, on publie
 
 | Plateforme | Outil de recherche | Fichier prompt | Fichier log |
 |-----------|-------------------|----------------|-------------|
-| Instagram | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/instagram/[prompt-recherche.md](http://prompt-recherche.md)` | `[recherche-log.md](http://recherche-log.md)` |
-| TikTok | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/tiktok/[prompt-recherche.md](http://prompt-recherche.md)` | `[recherche-log.md](http://recherche-log.md)` |
-| Facebook | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/facebook/[prompt-recherche.md](http://prompt-recherche.md)` | `[recherche-log.md](http://recherche-log.md)` |
-| LinkedIn | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/linkedin/[prompt-recherche.md](http://prompt-recherche.md)` | `[recherche-log.md](http://recherche-log.md)` |
 | Twitter | Grok | `saas-app-shopify/recherche/cold/grok/twitter/[prompt-recherche.md](http://prompt-recherche.md)` | `[recherche-log.md](http://recherche-log.md)` |
 
 ---

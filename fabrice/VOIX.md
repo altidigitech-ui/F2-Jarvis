@@ -213,7 +213,7 @@ Longueur : 3-6 phrases.
 - Après J22 : mention produit UNIQUEMENT en réponse à un problème pertinent, ratio 90/10.
 - PAS de listes, PAS de bullet points.
 - PAS de cold. Reddit = veille terrain + construction de réputation.
-- Pas de Claude Chrome. Tout manuellement.
+- Tout manuellement (pas d'automatisation).
 - Restriction 30 jours pour les comptes neufs.
 - Ton : le gars technique qui aide, pas le dev qui flex.
 

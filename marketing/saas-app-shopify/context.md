@@ -21,16 +21,11 @@ saas-app-shopify/
 ├── context.md                  ← CE FICHIER (porte d'entrée)
 ├── hashtags.md                 ← Hashtags par plateforme (partagé)
 ├── recherche/                  ← PARTAGÉ entre tous les produits
-│   ├── capacite-recherche-claude-chrome.md
-│   ├── strategie-recherche-social.md
 │   ├── cold/                   ← Recherche de cibles pour le cold
-│   │   ├── chrome/             ← Via Claude Chrome (Instagram, TikTok, Facebook, LinkedIn)
-│   │   │   └── [plateforme]/   ← prompt-recherche.md + recherche-log.md + template-reprise.md
 │   │   └── grok/               ← Via Grok (Twitter)
 │   │       └── twitter/        ← prompt-recherche.md + recherche-log.md + template-reprise.md
 │   └── engagement/             ← Warming et karma farming (pas lié à un produit)
-│       ├── reddit/             ← recherche-log.md (pain points centralisé)
-│       └── ph/                 ← prompt-chrome.md (karma farming)
+│       └── reddit/             ← recherche-log.md (pain points centralisé)
 └── storemd/                    ← SPÉCIFIQUE à StoreMD
     ├── context.md              ← Contexte produit complet (produit + cold + publication)
     ├── cold/
@@ -43,7 +38,7 @@ saas-app-shopify/
 
 ### Partagé vs Spécifique
 
-- **recherche/** = partagé. Les prompts Chrome/Grok, les logs de recherche, les templates de reprise servent à trouver des merchants Shopify. Les cibles trouvées alimentent le cold de n'importe quel produit.
+- **recherche/** = partagé. Les prompts Apify/Grok, les logs de recherche, les templates de reprise servent à trouver des merchants Shopify. Les cibles trouvées alimentent le cold de n'importe quel produit.
 - **recherche/engagement/** = partagé. Reddit pain points et PH karma farming ne sont pas liés à un produit spécifique.
 - **[produit]/** = spécifique. Context, cold-logs, cold-templates, publication — chaque produit est autonome.
 
@@ -84,9 +79,7 @@ Voir `../../strategie/PLAYBOOK-DISTRIBUTION.md` §8 pour la checklist complète 
 | Cold templates StoreMD | `storemd/cold/cold-templates.md` |
 | Cold-logs StoreMD | `storemd/cold/cold-log-instagram.md`, `cold-log-tiktok.md` |
 | Batch-semaine StoreMD | `storemd/publication/batch-semaine.md` |
-| Prompts recherche Chrome | `recherche/cold/chrome/[plateforme]/prompt-recherche.md` |
 | Recherche-logs | `recherche/cold/[outil]/[plateforme]/recherche-log.md` |
-| Prompt PH Chrome | `recherche/engagement/ph/prompt-chrome.md` |
 | Pain points Reddit | `recherche/engagement/reddit/recherche-log.md` |
 | BIBLE | `../../BIBLE.md` |
 | Stratégie globale | `../../strategie/CONTEXT.md` |

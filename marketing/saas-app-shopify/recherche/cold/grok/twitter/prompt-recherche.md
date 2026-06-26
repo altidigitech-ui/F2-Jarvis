@@ -132,4 +132,4 @@ Après le tableau, donne-moi :
   3. Copier les résultats vérifiés dans le recherche-log
   4. Cold DM depuis les comptes perso R/F (templates dans storemd/cold/cold-templates.md)
 
-- **Grok ne remplace PAS Claude Chrome.** Grok est meilleur pour la découverte en volume (20 comptes en une requête). Claude Chrome est meilleur pour la vérification détaillée (lire un profil, scanner un site). Utiliser les deux en complémentaire.
+- **Grok** est l'outil de découverte en volume sur Twitter (jusqu'à 20 comptes en une requête).

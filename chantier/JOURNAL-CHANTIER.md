@@ -5,7 +5,7 @@
 > Toute ligne du journal est horodatée date + heure (Europe/Paris).
 
 ## ÉTAT DES ÉTAPES
-- [EN COURS] Étape 1 — Suppression de Claude Chrome
+- [TERMINÉE] Étape 1 — Suppression de Claude Chrome (CAT A + B + C ✅ — sauf ARCH.md et interne-work/BLOC2-CLAUDE-CONFIG-PLAN.md reportés à l'étape 7)
 - [À FAIRE]  Étape 2 — Cold mail (fenêtres horaires, capture email+site+réseaux, templates + offre)
 - [À FAIRE]  Étape 3 — Cold DM automatique post-séquence (déclencheur J23, DM prêts, surface Jarvis, validation)
 - [À FAIRE]  Étape 4 — Batch mensuel + métriques mensuelles
@@ -59,7 +59,7 @@ Autres fichiers de recherche entièrement dédiés à Claude Chrome :
 | backend/jarvis/src/routes/prompts.ts | 16 | `const tools = ["grok", "chrome", "claude"];` → retirer `"chrome"` → `const tools = ["grok", "claude"];` (supprime la boucle qui liste `${persona}/${cat}/chrome`). |
 | ui/jarvis/components/PromptsModal.tsx | 21 | Dans la map `TOOL_ICON` (l.19-23), retirer l'entrée `chrome: "🌐",`. Conserver `grok` et `claude`. |
 
-### CAT C — Docs vivants à NETTOYER (retirer les mentions chrome, garder le fichier)
+### CAT C — Docs vivants à NETTOYER (retirer les mentions chrome, garder le fichier)  — ✅ TRAITÉ (samedi 27 juin 2026 — 00:12 CEST, prompt 2C : sourcing→Apify, liens morts retirés, négations ; les 4 fichiers planning R/F nettoyés en plus via les règles générales A/B/C ; ARCH.md + interne-work reportés à l'étape 7)
 
 | Chemin | Occ. | Lignes concernées (extraits) |
 |--------|------|------------------------------|
@@ -106,3 +106,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | vendredi 26 juin 2026 — 22:30 CEST | Étape 1 | Rangement des 3 docs + création du journal + audit Chrome (lecture seule) | Claude Code |
 | vendredi 26 juin 2026 — 23:10 CEST | Étape 1 | Suppression CAT A : 15 fichiers du système Claude Chrome | Claude Code |
 | vendredi 26 juin 2026 — 23:53 CEST | Étape 1 | CAT B : retrait de "chrome" dans prompts.ts et PromptsModal.tsx (tsc OK) | Claude Code |
+| samedi 27 juin 2026 — 00:12 CEST | Étape 1 | CAT C : nettoyage chrome dans les docs (sourcing→Apify, liens morts retirés, négations) — Étape 1 TERMINÉE (ARCH.md/interne-work reportés à l'étape 7) | Claude Code |

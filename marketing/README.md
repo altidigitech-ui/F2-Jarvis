@@ -99,7 +99,7 @@ marketing/
 ├── saas-app-shopify/                   # distribution Shopify par produit (cold, recherche, publication)
 │   ├── context.md                      # cadre du dossier
 │   ├── hashtags.md                     # banque de hashtags
-│   ├── recherche/                      # recherche de cibles (Chrome + Grok) + engagement
+│   ├── recherche/                      # recherche de cibles (Apify + Grok) + engagement
 │   └── storemd/                        # cold, contexte, pipeline-conversion, publication StoreMD
 │
 └── archives/                           # archives vivantes des productions marketing hebdo
@@ -167,7 +167,7 @@ Cookbook de prompts marketing à utiliser avec JARVIS. Templates : génération 
 
 ### `saas-app-shopify/`
 
-Distribution Shopify organisée par produit. Contient le cadre du dossier (`context.md`), la banque de hashtags, la recherche de cibles (`recherche/` — Chrome + Grok par plateforme, + engagement), et le dossier produit `storemd/` (cold, contexte produit/cold/publication, pipeline de conversion, batch de publication).
+Distribution Shopify organisée par produit. Contient le cadre du dossier (`context.md`), la banque de hashtags, la recherche de cibles (`recherche/` — Apify + Grok par plateforme, + engagement), et le dossier produit `storemd/` (cold, contexte produit/cold/publication, pipeline de conversion, batch de publication).
 
 ### `archives/`
 

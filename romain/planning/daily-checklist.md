@@ -11,7 +11,7 @@
 
 ### TikTok — Compte StoreMD (avec F) — 10 DMs
 
-- [ ] Ouvrir Chrome → lancer le prompt recherche TikTok (`saas-app-shopify/recherche/cold/chrome/tiktok/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] Récupérer les cibles TikTok via Apify (ou utiliser le recherche-log existant)
 - [ ] DM #1 : identifier cible + personnaliser DM (voir `saas-app-shopify/storemd/cold/[cold-templates.md](http://cold-templates.md)`)
 - [ ] DM #2
 - [ ] DM #3
@@ -26,19 +26,19 @@
 
 ### Instagram — Compte StoreMD (avec F) — 10 DMs
 
-- [ ] Ouvrir Chrome → lancer le prompt recherche Instagram (`saas-app-shopify/recherche/cold/chrome/instagram/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] Récupérer les cibles Instagram via Apify (ou utiliser le recherche-log existant)
 - [ ] DM #1 à #10 (personnalisés, voir [cold-templates.md](http://cold-templates.md))
 - [ ] Logger dans `saas-app-shopify/storemd/cold/[cold-log-instagram.md](http://cold-log-instagram.md)`
 
 ### Facebook — Compte R perso — 10 DMs
 
-- [ ] Ouvrir Chrome → lancer le prompt recherche Facebook (`saas-app-shopify/recherche/cold/chrome/facebook/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] Récupérer les cibles Facebook via Apify (ou utiliser le recherche-log existant)
 - [ ] DM #1 à #10 (personnalisés, voir [cold-templates.md](http://cold-templates.md) section R)
 - [ ] Logger dans `cold/[cold-log-facebook.md](http://cold-log-facebook.md)`
 
 ### LinkedIn — Compte R perso — 10 connexions+DMs
 
-- [ ] Ouvrir Chrome → lancer le prompt recherche LinkedIn (`saas-app-shopify/recherche/cold/chrome/linkedin/[prompt-recherche.md](http://prompt-recherche.md)`) OU utiliser le recherche-log existant
+- [ ] Récupérer les cibles LinkedIn via Apify (ou utiliser le recherche-log existant)
 - [ ] Connexion+DM #1 à #10 (personnalisés, voir [cold-templates.md](http://cold-templates.md) section R)
 - [ ] Logger dans `cold/[cold-log-linkedin.md](http://cold-log-linkedin.md)`
 
@@ -68,7 +68,7 @@
 ### PH — 6 interactions
 
 - [ ] 5 upvotes sur des lancements pertinents
-- [ ] 1 commentaire substantif (voir `saas-app-shopify/recherche/engagement/ph/[prompt-chrome.md](http://prompt-chrome.md)`)
+- [ ] 1 commentaire substantif
 
 ---
 
@@ -84,7 +84,7 @@
 
 - [ ] Répondre aux derniers DMs de la journée
 - [ ] Mettre à jour les cold-logs si pas fait en temps réel
-- [ ] Préparer les cibles du lendemain (Grok, Chrome — recherche-logs)
+- [ ] Préparer les cibles du lendemain (Grok, Apify — recherche-logs)
 - [ ] Si événement notable → noter dans `tracking/[progress.md](http://progress.md)`
 
 ---
@@ -130,4 +130,4 @@
 - Les cases se réinitialisent chaque jour — ce fichier est un template, pas un log.
 - Les posts sont schedulés au batch samedi — en semaine on vérifie qu'ils sont publiés, on ne rédige pas.
 - Les DMs cold sont personnalisés en live — voir [cold-templates.md](http://cold-templates.md) pour les frameworks.
-- Pour les recherches de cibles : Chrome pour Instagram/TikTok/Facebook/LinkedIn, Grok pour Twitter.
+- Pour les recherches de cibles : Apify pour Instagram/TikTok/Facebook/LinkedIn, Grok pour Twitter.

@@ -53,10 +53,10 @@ Cold = SaaS seulement. høkuno = pas de cold.
 
 | Ordre | Plateforme | Compte | Volume/jour | Recherche via |
 |-------|-----------|--------|-------------|---------------|
-| 1 | TikTok | StoreMD | 10 (partagés R+F) | Chrome |
-| 2 | Instagram | StoreMD | 10 (partagés R+F) | Chrome |
-| 3 | Facebook | R perso + F perso | 10 chacun | Chrome |
-| 4 | LinkedIn | R perso + F perso | 10 chacun | Chrome |
+| 1 | TikTok | StoreMD | 10 (partagés R+F) | Apify |
+| 2 | Instagram | StoreMD | 10 (partagés R+F) | Apify |
+| 3 | Facebook | R perso + F perso | 10 chacun | Apify |
+| 4 | LinkedIn | R perso + F perso | 10 chacun | Apify |
 | 5 | Twitter | R perso + F perso | 10 chacun | Grok |
 | **Total** | | | **80/jour** | |
 

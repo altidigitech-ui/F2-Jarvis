@@ -41,7 +41,7 @@ Merchants qui ont une boutique Shopify. Uniquement. BIBLE §5 : ciblage logique 
 
 ### Source de cibles
 
-**Grok** (pas Claude Chrome). Prompt de recherche : `saas-app-shopify/recherche/cold/grok/twitter/prompt-recherche.md`. Résultats dans `recherche-log.md`.
+**Grok**. Prompt de recherche : `saas-app-shopify/recherche/cold/grok/twitter/prompt-recherche.md`. Résultats dans `recherche-log.md`.
 
 **Grok peut halluciner des handles.** Vérifier chaque handle manuellement sur x.com avant d'envoyer le DM.
 

@@ -43,7 +43,7 @@ Merchants qui ont une boutique Shopify. Identifiés dans les groupes Shopify. BI
 
 ### Source de cibles
 
-Claude Chrome. Prompt de recherche : `saas-app-shopify/recherche/cold/chrome/facebook/prompt-recherche.md`. Résultats dans `recherche-log.md`. Les groupes Shopify sont le vivier principal — les merchants y postent leurs problèmes et leurs URLs.
+Apify. Les groupes Shopify sont le vivier principal — les merchants y postent leurs problèmes et leurs URLs.
 
 ### Templates
 
@@ -478,8 +478,6 @@ Jarvis sort chaque vendredi :
 | Objectifs et KPIs | `marketing/objectifs.md` |
 | Pipeline vidéo | `marketing/contenu/pipeline-video.md` |
 | Réponses commentaires Jarvis | `marketing/jarvis/reponses-commentaires.md` |
-| Prompt Chrome recherche | `saas-app-shopify/recherche/cold/chrome/facebook/prompt-recherche.md` |
-| Recherche-log | `saas-app-shopify/recherche/cold/chrome/facebook/recherche-log.md` |
 | Cold-log R | `romain/cold/cold-log-facebook.md` |
 | Cold-log F | `fabrice/cold/cold-log-facebook.md` |
 | Cold templates | `saas-app-shopify/storemd/cold/cold-templates.md` |

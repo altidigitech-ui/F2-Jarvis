@@ -29,7 +29,7 @@ Comptes **perso Romain et Fabrice** exclusivement. Pas de compte StoreMD sur Red
 ### Contraintes fortes
 
 - **Pas de cold** — Les DMs non-sollicités sont flaggés comme spam. Les mods bannissent les comptes promotionnels. Reddit n'est PAS un canal de cold.
-- **Pas d'automatisation** — Pas de Claude Chrome, pas de bot, pas de scheduling Reddit. Tout se fait manuellement.
+- **Pas d'automatisation** — pas de bot, pas de scheduling Reddit. Tout se fait manuellement.
 - **Restriction 30 jours** — Les comptes neufs sont bloqués pour beaucoup d'actions (poster dans certains subs, commenter à haute fréquence, karma minimum requis). Phase de trust-building obligatoire.
 - **Mods les plus agressifs** de toutes les plateformes. Un ban subreddit est rarement réversible.
 - **89% des marketers bannis en 30 jours** sur Reddit (ReddiReach, 340 tentatives analysées).

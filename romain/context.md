@@ -90,7 +90,7 @@ Trouver et contacter des potentiels clients. C'est LA priorité. Chaque jour san
 - **Twitter :** DM direct aux merchants Shopify trouvés par Grok
 - **LinkedIn :** demandes de connexion + DM quand accepté
 - **Facebook :** DM direct aux merchants trouvés dans les groupes Shopify
-- **Instagram/TikTok :** DM depuis les comptes StoreMD aux merchants trouvés par Claude Chrome
+- **Instagram/TikTok :** DM depuis les comptes StoreMD aux merchants trouvés par Apify
 
 ### 2. Publication (priorité #2)
 
@@ -137,9 +137,9 @@ Les publications comptes StoreMD (Instagram, TikTok, Twitter StoreMD, Facebook, 
 | **Jarvis** (Claude Code + agents dans le repo) | Production opérationnelle. Batch posts, cold volume, logs, mise à jour structure repo. |
 | **Claude** (projet "Romain") | War room stratégique. Réflexion, debriefs, rédaction ponctuelle. |
 | **Grok** | Détective Twitter. Recherche cibles cold, tendances, comptes. |
-| **Claude Chrome** | Recherche read-only. Instagram, TikTok, Facebook, LinkedIn. Trouver des merchants à contacter. |
+| **Apify** | Source de cibles. Instagram, TikTok, Facebook, LinkedIn. Trouver des merchants à contacter. |
 
-Règle : Grok = détective Twitter. Claude Chrome = détective autres plateformes. Jarvis = production. Claude projet = réflexion. Ne pas mélanger.
+Règle : Grok = détective Twitter. Apify = source de cibles autres plateformes. Jarvis = production. Claude projet = réflexion. Ne pas mélanger.
 
 ---
 

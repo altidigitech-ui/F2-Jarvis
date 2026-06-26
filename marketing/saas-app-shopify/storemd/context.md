@@ -167,9 +167,9 @@ La transition est fluide. On ne cherche pas deux types de personnes. On cherche 
 
 **Facebook :** Trouver des merchants dans les groupes Shopify. DM direct. Référencer le groupe ou le post source dans le DM.
 
-**Instagram :** DM depuis le compte StoreMD. Trouver des merchants via Claude Chrome (recherche). Référencer le contenu du merchant (post, reel, bio).
+**Instagram :** DM depuis le compte StoreMD. Trouver des merchants via Apify (recherche). Référencer le contenu du merchant (post, reel, bio).
 
-**TikTok :** DM depuis le compte StoreMD. Trouver des merchants via Claude Chrome. Référencer une vidéo du merchant.
+**TikTok :** DM depuis le compte StoreMD. Trouver des merchants via Apify. Référencer une vidéo du merchant.
 
 ### Publication (comptes StoreMD)
 
@@ -324,10 +324,6 @@ Pour les règles algo, formats, timing détaillés → `../../canaux/[plateforme
 
 | Outil | Plateforme | Ce qu'il trouve |
 |-------|-----------|----------------|
-| Claude Chrome | Instagram | Merchants Shopify (bio, hashtags, contenu) |
-| Claude Chrome | TikTok | Merchants Shopify (vidéos, bio) |
-| Claude Chrome | Facebook | Merchants dans les groupes Shopify |
-| Claude Chrome | LinkedIn | Merchants / agency owners Shopify |
 | Grok | Twitter | Merchants Shopify (tweets, bio, conversations) |
 
 Les résultats de recherche vont dans `../recherche/cold/[outil]/[plateforme]/recherche-log.md`.
@@ -374,7 +370,7 @@ Ce fichier est spécifique à StoreMD. Quand ProfitPilot (ou un autre SaaS app S
 | Document | Chemin |
 |----------|--------|
 | Cold templates | `cold/cold-templates.md` (même dossier storemd/) |
-| Prompts recherche Chrome/Grok | `../recherche/cold/[outil]/[plateforme]/prompt-recherche.md` |
+| Prompts recherche Grok | `../recherche/cold/grok/twitter/prompt-recherche.md` |
 | Recherche-logs | `../recherche/cold/[outil]/[plateforme]/recherche-log.md` |
 | Cold-logs StoreMD (Instagram, TikTok) | `cold/cold-log-instagram.md`, `cold/cold-log-tiktok.md` |
 | Cold-logs R perso | `../../../romain/cold/cold-log-[plateforme].md` |

@@ -70,14 +70,14 @@
 
 ### Plateformes de recherche cold (ajout mai 2026)
 
-Les communautés Reddit et Facebook servent aussi de source pour la recherche de cibles cold via Claude Chrome. Mais les merchants Shopify se trouvent aussi sur :
+Les communautés Reddit et Facebook servent aussi de source pour la recherche de cibles cold via Apify. Mais les merchants Shopify se trouvent aussi sur :
 
 | Plateforme | Méthode recherche | Outil | Prompt |
 |-----------|-------------------|-------|--------|
-| TikTok | Keywords + hashtags Shopify | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/tiktok/prompt-recherche.md` |
-| Instagram | Hashtags Shopify + comptes similaires | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/instagram/prompt-recherche.md` |
-| Facebook | Groupes Shopify + Pages entreprise | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/facebook/prompt-recherche.md` |
-| LinkedIn | Recherche booléenne merchants Shopify | Claude Chrome | `saas-app-shopify/recherche/cold/chrome/linkedin/prompt-recherche.md` |
+| TikTok | Keywords + hashtags Shopify | Apify | |
+| Instagram | Hashtags Shopify + comptes similaires | Apify | |
+| Facebook | Groupes Shopify + Pages entreprise | Apify | |
+| LinkedIn | Recherche booléenne merchants Shopify | Apify | |
 | Twitter | Recherche posts + bios Shopify | Grok | `saas-app-shopify/recherche/cold/grok/twitter/prompt-recherche.md` |
 
 ### Autres plateformes
@@ -208,7 +208,7 @@ L'ancienne stratégie d'infiltration communautaire (engagement proactif, comment
 | Engagement proactif dans les communautés | Cold DM direct aux merchants |
 | Commenter 5-10 questions/jour sur Reddit/FB | 80 cold DMs/jour (BIBLE §4) |
 | Free audits publics dans les subs | Cold DM personnalisé avec lien StoreMD |
-| Infiltration communautaire | Recherche ciblée (Chrome/Grok) + DM |
+| Infiltration communautaire | Recherche ciblée (Apify/Grok) + DM |
 
 ### Où trouver les merchants Shopify
 

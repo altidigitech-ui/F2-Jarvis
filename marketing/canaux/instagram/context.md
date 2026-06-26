@@ -27,7 +27,7 @@ Priorité Instagram dans le stack cold : 2ème position (après TikTok, avant Fa
 
 ### Usage principal : Cold
 
-Instagram est un vivier de merchants Shopify qui postent du contenu autour de leur boutique. Le travail principal = trouver ces merchants via Claude Chrome et les contacter en cold DM.
+Instagram est un vivier de merchants Shopify qui postent du contenu autour de leur boutique. Le travail principal = trouver ces merchants via Apify et les contacter en cold DM.
 
 ### Usage secondaire : Publication
 
@@ -43,7 +43,7 @@ Merchants qui ont une boutique Shopify. Uniquement. Pas de devs, pas d'agencies,
 
 ### Source de cibles
 
-Claude Chrome. Prompt de recherche : `saas-app-shopify/recherche/cold/chrome/instagram/prompt-recherche.md`. Résultats dans `recherche-log.md`.
+Apify.
 
 ### Templates
 
@@ -444,8 +444,6 @@ Jarvis sort chaque vendredi un comparatif :
 | Pipeline vidéo | `marketing/contenu/pipeline-video.md` |
 | Réponses commentaires Jarvis | `marketing/jarvis/reponses-commentaires.md` |
 | Hashtags validés | `saas-app-shopify/hashtags.md` |
-| Prompt Chrome recherche | `saas-app-shopify/recherche/cold/chrome/instagram/prompt-recherche.md` |
-| Recherche-log | `saas-app-shopify/recherche/cold/chrome/instagram/recherche-log.md` |
 | Cold-log Instagram | `saas-app-shopify/storemd/cold/cold-log-instagram.md` |
 | Cold templates | `saas-app-shopify/storemd/cold/cold-templates.md` |
 | Context StoreMD | `saas-app-shopify/storemd/context.md` |

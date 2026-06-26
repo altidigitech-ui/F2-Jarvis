@@ -42,7 +42,7 @@ Le piège LinkedIn : beaucoup de résultats pour "Shopify" sont des Shopify DEVE
 
 ### Source de cibles
 
-Claude Chrome. Prompt de recherche : `saas-app-shopify/recherche/cold/chrome/linkedin/prompt-recherche.md`. Recherche booléenne (AND, OR, NOT en MAJUSCULES).
+Apify.
 
 ### Commercial Use Limit (compte gratuit)
 
@@ -387,8 +387,6 @@ Pour tout placement non listé dans `tracking/utm/StoreMD/UTM_TRACKING_LINKS.md`
 | Stratégie marketing globale | `marketing/strategie.md` |
 | Objectifs et KPIs | `marketing/objectifs.md` |
 | Réponses commentaires Jarvis | `marketing/jarvis/reponses-commentaires.md` |
-| Prompt Chrome recherche | `saas-app-shopify/recherche/cold/chrome/linkedin/prompt-recherche.md` |
-| Recherche-log | `saas-app-shopify/recherche/cold/chrome/linkedin/recherche-log.md` |
 | Cold-log R | `romain/cold/cold-log-linkedin.md` |
 | Cold-log F | `fabrice/cold/cold-log-linkedin.md` |
 | Cold templates | `saas-app-shopify/storemd/cold/cold-templates.md` |

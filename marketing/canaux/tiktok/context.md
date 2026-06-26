@@ -47,7 +47,7 @@ Priorité TikTok dans le stack cold : 1ère position.
 
 ### Usage principal : Cold
 
-TikTok est un vivier de merchants Shopify qui postent du contenu autour de leur boutique. Le travail principal = trouver ces merchants via Claude Chrome et les contacter en cold DM. Recherche via `saas-app-shopify/recherche/cold/chrome/tiktok/`.
+TikTok est un vivier de merchants Shopify qui postent du contenu autour de leur boutique. Le travail principal = trouver ces merchants via Apify et les contacter en cold DM.
 
 ### Usage secondaire : Publication
 
@@ -63,9 +63,7 @@ Merchants qui ont une boutique Shopify. Uniquement. BIBLE §5 : ciblage logique 
 
 ### Source de cibles
 
-Claude Chrome. Prompt de recherche : `saas-app-shopify/recherche/cold/chrome/tiktok/prompt-recherche.md`. Résultats dans `recherche-log.md`.
-
-**Note TikTok web dégradé** : TikTok sur navigateur est limité (pas de For You exploitable, recherche bridée). Chrome navigue la version web mais les résultats sont moins riches que sur l'app mobile. La recherche cible les profils (Users tab), pas le For You.
+Apify.
 
 ### Templates
 
@@ -609,8 +607,6 @@ Workflow : checker 2-3x/semaine, identifier les sons rising + high fit pour la n
 | Objectifs et KPIs | `marketing/objectifs.md` |
 | Pipeline vidéo | `marketing/contenu/pipeline-video.md` |
 | Réponses commentaires Jarvis | `marketing/jarvis/reponses-commentaires.md` |
-| Prompt Chrome recherche | `saas-app-shopify/recherche/cold/chrome/tiktok/prompt-recherche.md` |
-| Recherche-log | `saas-app-shopify/recherche/cold/chrome/tiktok/recherche-log.md` |
 | Cold-log TikTok | `saas-app-shopify/storemd/cold/cold-log-tiktok.md` |
 | Cold templates | `saas-app-shopify/storemd/cold/cold-templates.md` |
 | Context StoreMD | `saas-app-shopify/storemd/context.md` |

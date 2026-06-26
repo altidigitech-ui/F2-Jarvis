@@ -225,7 +225,7 @@ Le chiffre quantifie le problème que le produit détecte.
 - PAS de listes, PAS de bullet points.
 - PAS de cold. Reddit = veille terrain + construction de réputation.
 - Longueur selon le sub : r/AskReddit 1-3 phrases, r/shopify 2-4 paragraphes inégaux.
-- Pas de Claude Chrome (la plateforme ne le permet pas). Tout manuellement.
+- Tout manuellement (pas d'automatisation).
 - Restriction 30 jours pour les comptes neufs.
 - Ton : gars qui s'y connaît et aide, pas marketeur qui pitche.
 
