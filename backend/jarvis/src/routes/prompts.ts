@@ -13,7 +13,7 @@ export async function promptsRoute(req: Request, res: Response): Promise<void> {
   const persona = (req.query.persona as string) || "fabrice";
 
   const categories = ["cold", "engagement", "publication"];
-  const tools = ["grok", "chrome", "claude"];
+  const tools = ["grok", "claude"];
   const prompts: PromptItem[] = [];
 
   for (const cat of categories) {
