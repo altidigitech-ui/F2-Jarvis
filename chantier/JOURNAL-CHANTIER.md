@@ -25,7 +25,7 @@
 > Total : 37 fichiers retournés (dont 1 fichier Grok, conservé, et 2 faux positifs "Chrome DevTools" / dossier mort signalés ci-dessous).
 > Note : `brain/` et `archives/` contiennent aussi des mentions "chrome", volontairement exclues (mémoire intouchable).
 
-### CAT A — Système Chrome actif à SUPPRIMER (fichier entier)
+### CAT A — Système Chrome actif à SUPPRIMER (fichier entier)  — ✅ TRAITÉ (vendredi 26 juin 2026 — 23:10 CEST, prompt 2A : 15 fichiers supprimés)
 
 Sous-dossier `marketing/saas-app-shopify/recherche/cold/chrome/**` (tout le dossier, 4 plateformes × 3 fichiers) :
 
@@ -104,3 +104,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | Date + heure | Étape | Action réalisée | Auteur |
 |--------------|-------|-----------------|--------|
 | vendredi 26 juin 2026 — 22:30 CEST | Étape 1 | Rangement des 3 docs + création du journal + audit Chrome (lecture seule) | Claude Code |
+| vendredi 26 juin 2026 — 23:10 CEST | Étape 1 | Suppression CAT A : 15 fichiers du système Claude Chrome | Claude Code |
