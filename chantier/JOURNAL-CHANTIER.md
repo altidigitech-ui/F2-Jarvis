@@ -52,7 +52,7 @@ Autres fichiers de recherche entièrement dédiés à Claude Chrome :
 | marketing/saas-app-shopify/recherche/engagement/ph/prompt-chrome.md | 1 | Prompt de karma farming PH via Chrome. |
 | marketing/saas-app-shopify/recherche/strategie-recherche-social.md | 20 | CONFIRMÉ entièrement Chrome : en-tête « Outil principal : Claude in Chrome » (l.5), toute la stratégie repose dessus. |
 
-### CAT B — Code à MODIFIER (retirer chrome, garder le fichier)
+### CAT B — Code à MODIFIER (retirer chrome, garder le fichier)  — ✅ TRAITÉ (vendredi 26 juin 2026 — 23:53 CEST, prompt 2B : tsc OK)
 
 | Chemin | Ligne | Ce qu'il faut retirer exactement |
 |--------|-------|----------------------------------|
@@ -105,3 +105,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 |--------------|-------|-----------------|--------|
 | vendredi 26 juin 2026 — 22:30 CEST | Étape 1 | Rangement des 3 docs + création du journal + audit Chrome (lecture seule) | Claude Code |
 | vendredi 26 juin 2026 — 23:10 CEST | Étape 1 | Suppression CAT A : 15 fichiers du système Claude Chrome | Claude Code |
+| vendredi 26 juin 2026 — 23:53 CEST | Étape 1 | CAT B : retrait de "chrome" dans prompts.ts et PromptsModal.tsx (tsc OK) | Claude Code |

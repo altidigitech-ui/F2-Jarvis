@@ -18,7 +18,6 @@ type Props = {
 
 const TOOL_ICON: Record<string, string> = {
   grok: "🔍",
-  chrome: "🌐",
   claude: "🤖",
 };
 
