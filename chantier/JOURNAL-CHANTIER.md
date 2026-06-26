@@ -13,6 +13,13 @@
 - [À FAIRE]  Étape 6 — Logs unifiés + horodatage date+heure partout
 - [À FAIRE]  Étape 7 — Restructuration du repo (nouveaux fichiers, archi, ARCH.md, CLAUDE.md, README.md)
 
+## REPRISE — PROCHAINE SESSION
+- Dernière session close : samedi 27 juin 2026 — 00:32 CEST. Étape 1 (suppression Claude Chrome) TERMINÉE et poussée sur main.
+- Prochaine étape : Étape 2 — Cold mail.
+- Premier pas étape 2 : AUDIT EN LECTURE SEULE de la chaîne cold (recherche/scan/séquence/capture réseaux). Aucune modif tant que l'audit n'est pas relu et validé.
+- Règle : attendre le prompt d'audit (fourni par le projet Claude "war room") avant toute action Claude Code.
+- Reste reporté à l'étape 7 : ARCH.md (régénération) + interne-work/BLOC2-CLAUDE-CONFIG-PLAN.md.
+
 ## QUESTIONS OUVERTES
 - Q1 — Webhook métriques admin StoreMD : existe-t-il ? où pousse-t-il ? (à confirmer avec Fabrice — bloque l'Étape 4 seulement)
 - Q2 — Offre exacte à mettre dans les mails et les DM (à définir à l'Étape 2/9)
@@ -107,3 +114,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | vendredi 26 juin 2026 — 23:10 CEST | Étape 1 | Suppression CAT A : 15 fichiers du système Claude Chrome | Claude Code |
 | vendredi 26 juin 2026 — 23:53 CEST | Étape 1 | CAT B : retrait de "chrome" dans prompts.ts et PromptsModal.tsx (tsc OK) | Claude Code |
 | samedi 27 juin 2026 — 00:12 CEST | Étape 1 | CAT C : nettoyage chrome dans les docs (sourcing→Apify, liens morts retirés, négations) — Étape 1 TERMINÉE (ARCH.md/interne-work reportés à l'étape 7) | Claude Code |
+| samedi 27 juin 2026 — 00:32 CEST | Étape 1 | Clôture de session — étape 1 terminée, point de reprise posé pour l'étape 2 | Claude Code |
