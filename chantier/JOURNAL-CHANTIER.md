@@ -116,3 +116,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | samedi 27 juin 2026 — 00:12 CEST | Étape 1 | CAT C : nettoyage chrome dans les docs (sourcing→Apify, liens morts retirés, négations) — Étape 1 TERMINÉE (ARCH.md/interne-work reportés à l'étape 7) | Claude Code |
 | samedi 27 juin 2026 — 00:32 CEST | Étape 1 | Clôture de session — étape 1 terminée, point de reprise posé pour l'étape 2 | Claude Code |
 | lundi 30 juin 2026 — 20:12 CEST | Infra | Fix .claude/settings.json au nouveau schéma Claude Code (model string, hooks format, statusLine retirée) | Claude Code |
+| mardi 30 juin 2026 — 20:30 CEST | Étape 2 | Audit cold mail (lecture seule) → chantier/AUDIT-ETAPE2-COLD-MAIL.md (5 sections : sourcing, capture données, séquence, crons, logs) | Claude Code |
