@@ -115,3 +115,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | vendredi 26 juin 2026 — 23:53 CEST | Étape 1 | CAT B : retrait de "chrome" dans prompts.ts et PromptsModal.tsx (tsc OK) | Claude Code |
 | samedi 27 juin 2026 — 00:12 CEST | Étape 1 | CAT C : nettoyage chrome dans les docs (sourcing→Apify, liens morts retirés, négations) — Étape 1 TERMINÉE (ARCH.md/interne-work reportés à l'étape 7) | Claude Code |
 | samedi 27 juin 2026 — 00:32 CEST | Étape 1 | Clôture de session — étape 1 terminée, point de reprise posé pour l'étape 2 | Claude Code |
+| lundi 30 juin 2026 — 20:12 CEST | Infra | Fix .claude/settings.json au nouveau schéma Claude Code (model string, hooks format, statusLine retirée) | Claude Code |

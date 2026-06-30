@@ -1,10 +1,6 @@
 {
   "$schema": "https://code.claude.com/schemas/settings.json",
-  "model": {
-    "default": "claude-haiku-4-5",
-    "planMode": "claude-sonnet-4-6",
-    "escalateRequiresExplicit": true
-  },
+  "model": "claude-haiku-4-5",
   "outputStyle": "explanatory",
   "thinking": true,
   "permissions": {
@@ -36,33 +32,39 @@
     "PreToolUse": [
       {
         "matcher": "Glob|Grep",
-        "command": ".claude/hooks/pre-tool-use-graphify.sh"
+        "hooks": [
+          { "type": "command", "command": ".claude/hooks/pre-tool-use-graphify.sh" }
+        ]
       },
       {
         "matcher": "Bash",
-        "command": ".claude/hooks/budget-check.sh"
+        "hooks": [
+          { "type": "command", "command": ".claude/hooks/budget-check.sh" }
+        ]
       }
     ],
     "PostToolUse": [
       {
         "matcher": "git_commit",
-        "command": ".claude/hooks/post-commit-graphify.sh"
+        "hooks": [
+          { "type": "command", "command": ".claude/hooks/post-commit-graphify.sh" }
+        ]
       }
     ],
     "Stop": [
       {
-        "command": ".claude/hooks/session-stop-handoff.sh"
-      },
-      {
-        "command": ".claude/hooks/session-stop-cognitive.sh"
+        "hooks": [
+          { "type": "command", "command": ".claude/hooks/session-stop-handoff.sh" },
+          { "type": "command", "command": ".claude/hooks/session-stop-cognitive.sh" }
+        ]
       }
     ],
     "PreCompact": [
       {
-        "command": ".claude/hooks/precompact-save.sh"
-      },
-      {
-        "command": ".claude/hooks/precompact-save-cognitive.sh"
+        "hooks": [
+          { "type": "command", "command": ".claude/hooks/precompact-save.sh" },
+          { "type": "command", "command": ".claude/hooks/precompact-save-cognitive.sh" }
+        ]
       }
     ]
   },
@@ -81,10 +83,5 @@
   "agents": {
     "defaultEffort": "medium",
     "backgroundAllowed": true
-  },
-  "statusLine": {
-    "showTokens": true,
-    "showBudget": true,
-    "showModel": true
   }
 }
