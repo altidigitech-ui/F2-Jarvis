@@ -40,13 +40,16 @@ Chaque prompt se termine par "mets à jour le journal du chantier (date + heure)
 - **Sortie :** plus aucune trace de Claude Chrome dans les fichiers vivants du repo.
 
 ### ÉTAPE 2 — Cold mail (chantiers 2 et 9)
-- **Audit Claude Code** : comprendre la chaîne actuelle (recherche, qualif, scan, rédaction, envoi, séquence) en détail.
-- **Modifications** :
-  1. Recherche : passer d'un passage quotidien à deux passages de 10 boutiques, dans des fenêtres horaires adaptées US/UK/AU.
-  2. Capture : récupérer et enregistrer, pour chaque boutique, l'email + le site + les réseaux (depuis Apify).
-  3. Templates : créer un template par étape de séquence (J0, J3, J7, J15), anti-IA, avec une offre.
-- **Dépend de** : décision Q2 (offre) pour les templates.
-- **Sortie :** 20 boutiques scannées/jour aux bonnes heures, données complètes enregistrées, mails avec vrais templates et offre.
+- **Audit Claude Code** : fait → chantier/AUDIT-ETAPE2-COLD-MAIL.md.
+- **Découpage en 3 blocs** :
+  - **2.1 — Sourcing** ✅ FAIT : deux passages de 10 boutiques à 09:00 et 15:00 UTC (fenêtres US/UK/AU), relances alignées.
+  - **2.2 — Capture réseaux** ✅ FAIT : réseaux sociaux extraits d'Apify contacts[] (hors web/contact_url/email/phone) → colonne social_handles jsonb sur cold_targets.
+  - **2.3 — Offres + mails personnalisés** ⬜ À FAIRE, séquencé a → b → c :
+    - **2.3.a — Route coupon (repo StoreMD, HORS PÉRIMÈTRE Jarvis)** : StoreMD expose POST /api/v1/internal/create-coupon (même pattern que /internal/preview-scan, auth X-Internal-Key). Crée dans Stripe un coupon percent_off/duration:once + un promotion code max_redemptions:1 (usage unique) + expires_at (expiration dure), renvoie le code. Secret Stripe reste chez StoreMD. Prérequis dur : se fait EN PREMIER.
+    - **2.3.b — Colonne + client (repo Jarvis)** : migration jsonb offers sur cold_targets (codes J0/J3/J7 et J15 + dates d'expiration) + fonction client appelant la route StoreMD (calquée sur storemd.ts).
+    - **2.3.c — Génération des 4 mails (repo Jarvis)** : J0 + relances J3/J7/J15 générés et personnalisés par boutique (extension du J0 génératif actuel, pas de templates figés), chacun injectant le bon code. Séquence : J0 -20%+CTA / J3 relance / J7 urgence dernier jour / vide J8-14 / J15 -50% (nouveau code, 7 j).
+- **Dépend de** : 2.3.a (route StoreMD) est le prérequis de 2.3.b et 2.3.c.
+- **Sortie :** 20 boutiques scannées/jour, réseaux capturés, 4 mails personnalisés avec offre réelle et codes Stripe uniques traçables par boutique.
 
 ### ÉTAPE 3 — Cold DM automatique après la séquence (chantiers 3 et 4)
 - **Audit Claude Code** : comprendre comment les DM sont notés aujourd'hui et comment l'interface affiche les données.

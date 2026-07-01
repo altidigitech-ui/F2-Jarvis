@@ -6,7 +6,7 @@
 
 ## ÉTAT DES ÉTAPES
 - [TERMINÉE] Étape 1 — Suppression de Claude Chrome (CAT A + B + C ✅ — sauf ARCH.md et interne-work/BLOC2-CLAUDE-CONFIG-PLAN.md reportés à l'étape 7)
-- [À FAIRE]  Étape 2 — Cold mail (fenêtres horaires, capture email+site+réseaux, templates + offre)
+- [EN COURS] Étape 2 — Cold mail : 2.1 sourcing ✅, 2.2 capture réseaux ✅, 2.3 offres + mails personnalisés ⬜ (2.3.a route coupon StoreMD → 2.3.b colonne jsonb + client → 2.3.c génération 4 mails)
 - [À FAIRE]  Étape 3 — Cold DM automatique post-séquence (déclencheur J23, DM prêts, surface Jarvis, validation)
 - [À FAIRE]  Étape 4 — Batch mensuel + métriques mensuelles
 - [À FAIRE]  Étape 5 — Interface Jarvis (commandes + boutons + compteurs/planning)
@@ -14,12 +14,12 @@
 - [À FAIRE]  Étape 7 — Restructuration du repo (nouveaux fichiers, archi, ARCH.md, CLAUDE.md, README.md)
 
 ## REPRISE — PROCHAINE SESSION
-- Bloc 2.2 (capture réseaux) fait — migration 005 À APPLIQUER dans Supabase Jarvis PUIS redéployer Railway avant tout nouveau sourcing. Reste 2.3 (templates + offres).
+- Bloc 2.2 (capture réseaux) TERMINÉ : migration 005 appliquée dans Supabase Jarvis + backend redéployé (sourcing reste OFF jusqu'à la fin du chantier). Reste 2.3, séquencé : 2.3.a route coupon StoreMD (repo StoreMD, prérequis) → 2.3.b colonne jsonb offers + client Jarvis → 2.3.c génération des 4 mails personnalisés avec code injecté.
 - Reste reporté à l'étape 7 : ARCH.md (régénération) + interne-work/BLOC2-CLAUDE-CONFIG-PLAN.md.
 
 ## QUESTIONS OUVERTES
 - Q1 — Webhook métriques admin StoreMD : existe-t-il ? où pousse-t-il ? (à confirmer avec Fabrice — bloque l'Étape 4 seulement)
-- Q2 — Offre exacte à mettre dans les mails et les DM (à définir à l'Étape 2/9)
+- Q2 — RÉSOLUE : offre verrouillée (coupon Stripe percent_off/once, J0 -20% / J15 -50%, codes uniques via StoreMD Option B)
 
 ## AUDIT ÉTAPE 1 — CLAUDE CHROME
 
@@ -116,3 +116,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | mardi 30 juin 2026 — 20:30 CEST | Étape 2 | Audit cold mail (lecture seule) → chantier/AUDIT-ETAPE2-COLD-MAIL.md (5 sections : sourcing, capture données, séquence, crons, logs) | Claude Code |
 | mercredi 01 juillet 2026 — 17:10 CEST | Étape 2 | Bloc 2.1 sourcing : 2 crons source-tick 09:00/15:00 UTC (10 chacun) + relances alignées sur ces créneaux (tsc OK) | Claude Code |
 | mercredi 01 juillet 2026 — 20:56 CEST | Étape 2 | Bloc 2.2 capture : extraction réseaux sociaux Apify (contacts[] hors web/contact_url/email/phone) → colonne social_handles jsonb + migration 005 (tsc OK) | Claude Code |
+| mercredi 01 juillet 2026 — 23:37 CEST | Étape 2 | Docs chantier mis à jour : découpage 2.3 (a route coupon StoreMD / b colonne jsonb + client / c génération 4 mails) + décision offre/Option B loggée, plafond 20 mails/jour abandonné, Q2 résolue | Claude Code |

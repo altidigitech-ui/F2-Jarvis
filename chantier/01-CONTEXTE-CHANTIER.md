@@ -119,19 +119,22 @@ sont adaptés au nouveau fonctionnement. On nettoie ce qui ne sert plus.
 
 ---
 
-## CHANTIER 9 — TEMPLATES DE MAIL ET OFFRES
+## CHANTIER 9 — MAILS PERSONNALISÉS ET OFFRES
 
 **Aujourd'hui.** Pour l'email, pas de vrais templates : le premier mail est rédigé par l'IA à partir du score de scan,
 et les relances utilisent un seul texte générique recopié. Aucune offre n'apparaît dans les mails.
 Les frameworks de message existants ne concernent que les DM réseaux.
 
-**Cible.** Un template par étape de la séquence (J0, J3, J7, J15), qui ne sonne pas IA, qui donne envie d'ouvrir,
-subtil et bien fait. Et une offre pour pousser le téléchargement de l'app et l'achat (même si l'offre de lancement
-est finie, on fait quand même une offre aux gens qu'on contacte, pour avoir des clients). Même logique pour les
-cold DM : personnalisé, pas IA, chaleureux.
+**Cible (décidée).** PAS de templates figés : un mail générique finit à la corbeille. Les 4 mails (J0, J3, J7, J15)
+sont GÉNÉRÉS et personnalisés par boutique via le SDK (on étend le mécanisme du J0 actuel), à partir des findings du
+scan. Chaque mail porte l'offre et un code promo. Même logique pour les cold DM (étape 3) : personnalisé, pas IA.
 
-**Base pour l'offre.** Pricing actuel = Free / Starter $29/mois / Pro $79/mois / Agency $199/mois.
-L'offre exacte est à définir au chantier 9 (voir Q2).
+**Offre (décidée, Q2 résolue).** Pricing réel = Free / Starter $29 / Pro $79 / Agency $199 (facturé via Stripe ;
+Shopify Billing désactivé). Mécanique : coupon Stripe percent_off / duration:once (1er mois), un code UNIQUE par
+boutique (traçable, anti-fuite), usage unique, expiration dure. Séquence : J0 = -20% (relances J3/J7 = même code,
+deadline J7), trou volontaire J8-J14, J15 = -50% (nouveau code, expire J22). Le cold DM J23 (-50%) relève de l'étape 3.
+Création des codes : Option B — StoreMD crée le coupon via une route interne, Jarvis le demande et le stocke ; le secret
+Stripe ne quitte jamais StoreMD.
 
 ---
 
@@ -157,8 +160,10 @@ pour que tout soit clair pour nous et pour Jarvis. (Détail dans le Document 3 �
 ## DÉCISIONS VERROUILLÉES
 
 - Scan : 20 boutiques/jour, en 2 passages de 10, bonnes heures US/UK/AU.
-- Mails : 20/jour maximum (premiers envois + relances confondus).
+- Volume mails : pas de plafond quotidien (plafond 20/jour abandonné). Rythme porté par le sourcing (2×10/jour) et les relances dues.
 - Séquence mail : J0 / J3 / J7 / J15 (inchangée).
+- Contenu mails : générés et personnalisés par boutique (pas de templates figés).
+- Offre : coupon Stripe percent_off/once (1er mois), code unique/boutique, usage unique, expiration dure. J0 = -20% (code réutilisé J3/J7, deadline J7), J15 = -50% (nouveau code, 7 j). Codes créés par StoreMD (Option B), stockés côté Jarvis dans cold_targets.offers (jsonb).
 - Cold DM : démarre à J23 (8 jours après J15). 20 boutiques/jour, un DM par réseau de chaque boutique.
 - Réseaux : récupérés depuis Apify, enregistrés avec le mail et le site.
 - Batch et métriques : mensuels.
@@ -171,10 +176,11 @@ pour que tout soit clair pour nous et pour Jarvis. (Détail dans le Document 3 �
 
 - **Q1** — Webhook des métriques admin StoreMD : à confirmer avec Fabrice (existe-t-il ? où pousse-t-il ?).
   Ne bloque que le chantier 5.
-- **Q2** — Offre exacte à mettre dans les mails et les DM : à définir au chantier 9.
+- **Q2** — RÉSOLUE : offre verrouillée (coupon Stripe percent_off/once, J0 -20% / J15 -50%, codes uniques via StoreMD Option B). Voir chantier 9 + Décisions verrouillées.
 
 ## UN POINT À GARDER EN TÊTE
 
-Pour avoir 20 boutiques qui arrivent à J23 chaque jour, il faut ~20 nouvelles boutiques qui entrent dans la séquence
-23 jours plus tôt. Comme les 20 mails/jour incluent les relances, il y a moins de 20 nouvelles boutiques par jour
-au démarrage. Le nombre de DM/jour montera donc progressivement au début. Ce n'est pas un bug.
+Le sourcing fait entrer ~20 nouvelles boutiques par jour dans la séquence (2×10). Les relances (J3/J7/J15) s'ajoutent
+par-dessus les nouveaux envois, sans plafond quotidien. Comme il faut 23 jours pour qu'une boutique atteigne le cold DM,
+le pipeline se remplit progressivement : au démarrage peu de boutiques arrivent à J23, puis le rythme monte jusqu'à
+~20 DM/jour en régime établi. Ce n'est pas un bug.

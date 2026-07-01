@@ -26,8 +26,11 @@ On ajoute un seul nouveau dossier de pilotage du chantier : `chantier/` (peut au
 - `tracking/CHANTIER.md` — fichier de suivi unique (contexte verrouillé, plan, questions ouvertes, journal horodaté).
 
 ### Cold mail (étape 2)
-- `marketing/saas-app-shopify/storemd/cold/email-templates.md` — les 4 templates d'email (J0, J3, J7, J15) + l'offre, anti-IA.
-  (Aujourd'hui les templates email n'existent pas : le J0 est généré par l'IA, les relances sont une string générique.)
+Décision : PAS de templates figés (un mail générique = corbeille). Les 4 mails sont GÉNÉRÉS et personnalisés par boutique via le SDK (extension du J0 actuel). À faire :
+- **[MOD, repo Jarvis]** backend/jarvis/src/lib/cold/jobs.ts — jobSequenceTick : remplacer la string de relance générique par une génération personnalisée par touche (J3/J7/J15) avec injection du code ; composeBody (J0) reste génératif, on y ajoute l'offre.
+- **[NEW, repo Jarvis]** migration supabase-migrations/00X_cold_targets_offers.sql — colonne jsonb offers sur cold_targets (code J0/J3/J7 + code J15 + dates d'expiration).
+- **[NEW, repo Jarvis]** client coupon dans backend/jarvis/src/lib/cold/ (calqué sur storemd.ts) appelant la route StoreMD.
+- **[NEW, repo StoreMD — HORS PÉRIMÈTRE]** POST /api/v1/internal/create-coupon dans backend/app/api/routes/internal.py (auth X-Internal-Key via require_internal_key, à ajouter dans PUBLIC_PATHS de api/middleware/auth.py). Crée coupon Stripe percent_off/once + promotion code max_redemptions:1 + expires_at via services/stripe_billing.py. Renvoie { code, expires_at }. Réutilise INTERNAL_SCAN_KEY.
 
 ### Cold DM (étapes 3 et 4)
 - Fichier(s) de DM prêts générés automatiquement à J23 — chemin exact à arrêter à l'étape 3
