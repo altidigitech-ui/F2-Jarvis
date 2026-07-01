@@ -220,6 +220,12 @@ export async function jobSourceTick(count: number): Promise<{
 
 // --- sequence-tick (cron) : envoie les relances dues -------------------------
 export async function jobSequenceTick(): Promise<{ sent: number }> {
+  // Relances alignées sur les créneaux d'envoi 09:00 / 15:00 UTC (comme le sourcing).
+  // Le cron tourne toutes les 15 min mais n'envoie que pendant ces deux fenêtres horaires.
+  const utcHour = new Date().getUTCHours();
+  if (utcHour !== 9 && utcHour !== 15) {
+    return { sent: 0 };
+  }
   const sb = getSupabase();
   const nowIso = new Date().toISOString();
   const { data, error } = await sb

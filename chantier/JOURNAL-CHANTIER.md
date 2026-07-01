@@ -14,10 +14,7 @@
 - [À FAIRE]  Étape 7 — Restructuration du repo (nouveaux fichiers, archi, ARCH.md, CLAUDE.md, README.md)
 
 ## REPRISE — PROCHAINE SESSION
-- Dernière session close : samedi 27 juin 2026 — 00:32 CEST. Étape 1 (suppression Claude Chrome) TERMINÉE et poussée sur main.
-- Prochaine étape : Étape 2 — Cold mail.
-- Premier pas étape 2 : AUDIT EN LECTURE SEULE de la chaîne cold (recherche/scan/séquence/capture réseaux). Aucune modif tant que l'audit n'est pas relu et validé.
-- Règle : attendre le prompt d'audit (fourni par le projet Claude "war room") avant toute action Claude Code.
+- Bloc 2.1 (sourcing) fait. Reste 2.2 (capture réseaux) puis 2.3 (templates + offres).
 - Reste reporté à l'étape 7 : ARCH.md (régénération) + interne-work/BLOC2-CLAUDE-CONFIG-PLAN.md.
 
 ## QUESTIONS OUVERTES
@@ -117,3 +114,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | samedi 27 juin 2026 — 00:32 CEST | Étape 1 | Clôture de session — étape 1 terminée, point de reprise posé pour l'étape 2 | Claude Code |
 | lundi 30 juin 2026 — 20:12 CEST | Infra | Fix .claude/settings.json au nouveau schéma Claude Code (model string, hooks format, statusLine retirée) | Claude Code |
 | mardi 30 juin 2026 — 20:30 CEST | Étape 2 | Audit cold mail (lecture seule) → chantier/AUDIT-ETAPE2-COLD-MAIL.md (5 sections : sourcing, capture données, séquence, crons, logs) | Claude Code |
+| mercredi 01 juillet 2026 — 17:10 CEST | Étape 2 | Bloc 2.1 sourcing : 2 crons source-tick 09:00/15:00 UTC (10 chacun) + relances alignées sur ces créneaux (tsc OK) | Claude Code |

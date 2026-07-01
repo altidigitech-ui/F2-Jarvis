@@ -152,12 +152,20 @@ async function scheduleColdCrons() {
   // Cron SOURCE quotidien : indépendant des mailboxes (sourcing + qualify ne pousse pas).
   if (process.env.COLD_SOURCE_CRON_ENABLED === "true") {
     const { coldQueue } = await import("./lib/queues.js");
+    // Nettoie l'ancien scheduler quotidien unique s'il subsiste en Redis (évite un cumul avec les nouveaux).
+    await coldQueue.removeJobScheduler("cold-source-repeat").catch(() => {});
+    // 2 passages/jour de 10 boutiques, à 09:00 et 15:00 UTC (fenêtres US/UK/EU).
     await coldQueue.upsertJobScheduler(
-      "cold-source-repeat",
-      { every: 86_400_000 },               // 1x/jour
-      { name: "source-tick" }
+      "cold-source-0900",
+      { pattern: "0 9 * * *", tz: "UTC" },
+      { name: "source-tick", data: { count: 10 } }
     );
-    console.log("[server] cold source-tick scheduled (daily)");
+    await coldQueue.upsertJobScheduler(
+      "cold-source-1500",
+      { pattern: "0 15 * * *", tz: "UTC" },
+      { name: "source-tick", data: { count: 10 } }
+    );
+    console.log("[server] cold source-tick scheduled (09:00 & 15:00 UTC, 10 chacun)");
   }
 
   const { loadMailboxes } = await import("./lib/cold/mailboxes.js");
