@@ -14,7 +14,7 @@
 - [À FAIRE]  Étape 7 — Restructuration du repo (nouveaux fichiers, archi, ARCH.md, CLAUDE.md, README.md)
 
 ## REPRISE — PROCHAINE SESSION
-- Bloc 2.1 (sourcing) fait. Reste 2.2 (capture réseaux) puis 2.3 (templates + offres).
+- Bloc 2.2 (capture réseaux) fait — migration 005 À APPLIQUER dans Supabase Jarvis PUIS redéployer Railway avant tout nouveau sourcing. Reste 2.3 (templates + offres).
 - Reste reporté à l'étape 7 : ARCH.md (régénération) + interne-work/BLOC2-CLAUDE-CONFIG-PLAN.md.
 
 ## QUESTIONS OUVERTES
@@ -115,3 +115,4 @@ Le seul fichier Grok retourné par le grep est `marketing/saas-app-shopify/reche
 | lundi 30 juin 2026 — 20:12 CEST | Infra | Fix .claude/settings.json au nouveau schéma Claude Code (model string, hooks format, statusLine retirée) | Claude Code |
 | mardi 30 juin 2026 — 20:30 CEST | Étape 2 | Audit cold mail (lecture seule) → chantier/AUDIT-ETAPE2-COLD-MAIL.md (5 sections : sourcing, capture données, séquence, crons, logs) | Claude Code |
 | mercredi 01 juillet 2026 — 17:10 CEST | Étape 2 | Bloc 2.1 sourcing : 2 crons source-tick 09:00/15:00 UTC (10 chacun) + relances alignées sur ces créneaux (tsc OK) | Claude Code |
+| mercredi 01 juillet 2026 — 20:56 CEST | Étape 2 | Bloc 2.2 capture : extraction réseaux sociaux Apify (contacts[] hors web/contact_url/email/phone) → colonne social_handles jsonb + migration 005 (tsc OK) | Claude Code |

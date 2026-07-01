@@ -39,6 +39,10 @@ export interface PlatformData {
   source?: string;     // d'où vient le lead (annuaire, bio réseau, recherche)
 }
 
+// Réseaux sociaux de la boutique, extraits de Apify contacts[] (méthode → URL verbatim).
+// Clés dynamiques : tout réseau renvoyé par l'actor, hors web/contact_url/email/phone.
+export type SocialHandles = Record<string, string>;
+
 export interface ColdTarget {
   id: string;
   created_at: string;
@@ -47,6 +51,7 @@ export interface ColdTarget {
   store_domain: string;
   country: Country | null;
   platform_data: PlatformData | null;
+  social_handles: SocialHandles | null;
   qualify_score: number | null;
   decision_maker_name: string | null;
   decision_maker_email: string | null;

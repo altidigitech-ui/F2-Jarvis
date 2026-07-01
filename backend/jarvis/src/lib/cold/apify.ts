@@ -12,7 +12,7 @@
 // On lit l'email dans contacts[].email, le pays dans address.country, le
 // domaine dans myshopifyDomain.
 
-import type { Country } from "./types.js";
+import type { Country, SocialHandles } from "./types.js";
 
 const APIFY_BASE = "https://api.apify.com/v2";
 const TIMEOUT_MS = 120000; // l'actor scrape réellement, la run peut être longue.
@@ -27,6 +27,7 @@ export interface ApifyLead {
   email: string | null;
   name: string | null;
   country: Country;
+  socials: SocialHandles | null;
 }
 
 interface ApifyConfig {
@@ -91,6 +92,28 @@ function extractEmail(item: ApifyLeadItem): string | null {
   return null;
 }
 
+// Réseaux sociaux : tout contact dont la method n'est ni web/contact_url/email/phone.
+// On garde le premier target de chaque réseau, URL verbatim (déjà propre côté actor).
+// Renvoie null si la boutique n'a aucun réseau.
+const NON_SOCIAL_METHODS = new Set(["web", "contact_url", "email", "phone"]);
+
+function extractSocials(item: ApifyLeadItem): SocialHandles | null {
+  if (!Array.isArray(item.contacts)) return null;
+  const socials: SocialHandles = {};
+  for (const c of item.contacts) {
+    const method = c?.method;
+    const target = c?.target;
+    if (!method || typeof method !== "string") continue;
+    const key = method.trim().toLowerCase();
+    if (NON_SOCIAL_METHODS.has(key)) continue;
+    if (!target || typeof target !== "string") continue;
+    const url = target.trim();
+    if (!url) continue;
+    if (!(key in socials)) socials[key] = url; // premier de chaque réseau
+  }
+  return Object.keys(socials).length > 0 ? socials : null;
+}
+
 // Mappe address.country (libellé libre de l'actor) vers US/UK/AU, sinon null.
 function normalizeCountry(raw: string | null | undefined): Country | null {
   if (!raw || typeof raw !== "string") return null;
@@ -149,6 +172,7 @@ export async function fetchShopifyLeads(query: string, maxItems: number): Promis
       email: extractEmail(item),
       name: item.name ? String(item.name).trim() || null : null,
       country,
+      socials: extractSocials(item),
     });
   }
   return leads;

@@ -99,6 +99,7 @@ export async function sourceStores(count: number): Promise<SourceResult> {
       platform_data: platform,
       decision_maker_name: lead.name,
       decision_maker_email: lead.email,
+      social_handles: lead.socials,
       status: "sourced",
     });
     if (error) {
